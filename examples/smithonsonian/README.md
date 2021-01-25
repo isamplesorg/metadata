@@ -1,6 +1,6 @@
 # Smithonsian Example Metadata
 
-These samples were pulled from the [Smithsonian fish collection]() 
+These samples were pulled from the [Smithsonian fish collection](https://collections.nmnh.si.edu/search/fishes/) 
 using an unpublished service.
 
 * Example 01
