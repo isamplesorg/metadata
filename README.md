@@ -1,2 +1,2 @@
 # metadata
-Collation of metadata examples and notes for the project
+Collation of metadata examples and notes for the project 
