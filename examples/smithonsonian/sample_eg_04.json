@@ -1,0 +1,160 @@
+{
+  "executionTimeMs": 2,
+  "qtype": 12,
+  "recordCount": 1,
+  "recordLimit": 10,
+  "recordStart": 0,
+  "recordsFetched": 1,
+  "recordsGeorefed": 1,
+  "sort": {
+    "idefa.ideqn": 1
+  },
+  "totalRecords": 1,
+  "records": [
+    {
+      "_id": 13556179,
+      "acqln": "2081815",
+      "admdm": {
+        "$date": {
+          "$numberLong": "1556315400000"
+        }
+      },
+      "admuu": "0b98d09f61ee4e68ae1313a9cc97a8ae",
+      "bioar": "Philippine Archipelago",
+      "biocm": "SCUBA; Rotenone",
+      "bioex": "Philippines 2016 Smithsonian-California Academy of Sciences Survey",
+      "biooc": "Pacific",
+      "biopl": "Philippines, Negros Oriental, Dauin, off VIP Resort reef.",
+      "biopp": [
+        {
+          "bppid": 5001208,
+          "namcn": "Williams, J. T.",
+          "namfn": "Jeffrey T. Williams"
+        },
+        {
+          "bppid": 5005130,
+          "namcn": "Carpenter, K. E.",
+          "namfn": "Kent E. Carpenter"
+        }
+      ],
+      "biopr": [
+        "Williams, J. T.",
+        "Carpenter, K. E."
+      ],
+      "catdp": "fs",
+      "catms": "NMNH",
+      "catnb": {
+        "catnc": "   442955",
+        "catnm": 442955
+      },
+      "caton": [
+        {
+          "catnt": "Specimen voucher field number",
+          "catnv": "PHISH-060"
+        }
+      ],
+      "catot": "Image",
+      "catsc": 1,
+      "cevid": 11858682,
+      "coldv": {
+        "colvd": "9 Apr 2016",
+        "colvf": "20160409",
+        "colvt": "20160409"
+      },
+      "darcl": "Actinopterygii",
+      "darco": "Pacific",
+      "darct": "Philippines",
+      "dardp": {
+        "dardm": "5 to 6",
+        "dard1": 5,
+        "dard2": 6
+      },
+      "darfb": "PHISH-2016-09; DAU-18",
+      "darfm": "Tetrarogidae",
+      "dargn": "Ablabys",
+      "darht": "Animalia, Chordata, Vertebrata, Osteichthyes, Actinopterygii, Neopterygii, Acanthopterygii, Scorpaeniformes, Tetrarogidae",
+      "daric": "USNM",
+      "darin": 1,
+      "daris": "Negros",
+      "dariu": "13001905",
+      "darkn": "Animalia",
+      "darln": 123.275,
+      "darlt": 9.19664,
+      "daror": "Scorpaeniformes",
+      "darph": "Chordata",
+      "darsn": "Ablabys taenianotus",
+      "darsp": "taenianotus",
+      "darst": "Negros Oriental",
+      "darwb": "Pacific",
+      "flags": 8453,
+      "idefa": {
+        "ifaid": 5017585,
+        "idefn": "Ablabys taenianotus : Tetrarogidae : Scorpaeniformes : Actinopterygii : Chordata",
+        "ideqn": "Ablabys taenianotus"
+      },
+      "meams": [
+        {
+          "meaof": "Length",
+          "measu": "mm",
+          "measv": 110,
+          "meaty": "SL"
+        }
+      ],
+      "mulmm": [
+        {
+          "mulid": 13001905,
+          "muluu": "d26d1af2e7b74ebca416f81c5154a9ec",
+          "chaih": 3628,
+          "chaiw": 6016,
+          "detrg": "This image may be freely used for personal or academic non-commercial purposes without prior permission provided the image is clearly credited to Jeffrey T. Williams, Smithsonian Institution.",
+          "detrs": "Usage conditions apply",
+          "detrt": "Specimen/Object",
+          "docrs": [
+            {
+              "dochg": 54,
+              "docmf": "jpeg",
+              "docmt": "image",
+              "docwd": 90
+            },
+            {
+              "dochg": 193,
+              "docmf": "jpeg",
+              "docmt": "image",
+              "docwd": 320
+            },
+            {
+              "dochg": 386,
+              "docmf": "jpeg",
+              "docmt": "image",
+              "docwd": 640
+            },
+            {
+              "dochg": 3628,
+              "docmf": "jpeg",
+              "docmt": "image",
+              "docwd": 6016
+            }
+          ],
+          "mulcr": [
+            "Williams, Jeffrey T."
+          ],
+          "mulds": "SL=110 mm. Photo taken during 2016 Philippines FDA market survey. Specimen voucher field number : PHISH-060.",
+          "mulmf": "tiff",
+          "mulmt": "image",
+          "multt": "Ablabys taenianotus USNM 442955 photograph lateral view",
+          "siids": true
+        }
+      ],
+      "tstmp": 1571732896,
+      "ustmp": 1611322266,
+      "vtree": "<dl><dt id=\"vt-13556179\" class=\"gs-vtree-selected\">Ablabys taenianotus,    442955</dt><dt><dl><dd id=\"vt-13556924\" class=\"gs-vtree-handle\">   442955, Fin-clip</dd></dl></dt></dl>",
+      "xname": "Ablabys taenianotus",
+      "zoopp": [
+        {
+          "zoopc": 1,
+          "zoopr": "Photograph"
+        }
+      ]
+    }
+  ]
+}
