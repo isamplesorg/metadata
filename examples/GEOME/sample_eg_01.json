@@ -1,0 +1,42 @@
+{
+  "projectId": 67,
+  "parent": {
+    "country": "Australia",
+    "decimalLatitude": "-44.2017",
+    "eventID": "1552460",
+    "yearCollected": "2007",
+    "eventEnteredBy": "Wirshing",
+    "decimalLongitude": "147.318",
+    "locality": "Tasmanian Seamounts",
+    "expeditionCode": "IZ_Cairns",
+    "projectId": "67",
+    "bcid": "ark:/21547/CvM21552460",
+    "entity": "Event"
+  },
+  "record": {
+    "eventID": "1552460",
+    "scientificName": "Pleurogorgia/Artosmonicasis",
+    "phylum": "Cnidaria",
+    "taxonRank": "genus",
+    "genus": "Pleurogorgia/Artosmonicasis",
+    "materialSampleID": "1552460",
+    "sampleEnteredBy": "Wirshing",
+    "institutionCode": "Smithsonian",
+    "expeditionCode": "IZ_Cairns",
+    "projectId": "67",
+    "bcid": "ark:/21547/CvL21552460",
+    "entity": "Sample"
+  },
+  "children": [
+    {
+      "tissuePlate": "chrysogorgiid_6",
+      "tissueWell": "D01",
+      "materialSampleID": "1552460",
+      "tissueID": "1552460.1",
+      "expeditionCode": "IZ_Cairns",
+      "projectId": "67",
+      "bcid": "ark:/21547/CvN21552460.1",
+      "entity": "Tissue"
+    }
+  ]
+}
