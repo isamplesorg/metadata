@@ -1,0 +1,291 @@
+{
+  "@context": [
+    "https://opencontext.org/contexts/search.json",
+    "http://geojson.org/geojson-ld/geojson-context.jsonld"
+  ],
+  "id": "http://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk2sx64g08",
+  "label": "Open Context API",
+  "dcmi:modified": "2017-02-10T06:55:40Z",
+  "dcmi:created": "2012-03-28T00:00:00Z",
+  "oai-pmh:earliestDatestamp": "2012-03-28T00:00:00Z",
+  "start": null,
+  "stop": null,
+  "dc-terms:temporal": null,
+  "totalResults": 1,
+  "startIndex": 0,
+  "itemsPerPage": 20,
+  "last": "https://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk2sx64g08&rows=20&start=0",
+  "last-json": "https://opencontext.org/subjects-search/.json?id=ark%3A%2F28722%2Fk2sx64g08&rows=20&start=0",
+  "oc-api:active-sorting": [
+    {
+      "id": "#current-sort-1",
+      "type": "oc-api:interest-score",
+      "label": "Interest score",
+      "oc-api:sort-order": "descending"
+    }
+  ],
+  "oc-api:has-sorting": [
+    {
+      "id": "https://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk2sx64g08&sort=item--asc",
+      "json": "https://opencontext.org/subjects-search/.json?id=ark%3A%2F28722%2Fk2sx64g08&sort=item--asc",
+      "type": "oc-api:sort-item",
+      "label": "Item (type, provenance, label)",
+      "oc-api:sort-order": "ascending"
+    },
+    {
+      "id": "https://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk2sx64g08&sort=item--desc",
+      "json": "https://opencontext.org/subjects-search/.json?id=ark%3A%2F28722%2Fk2sx64g08&sort=item--desc",
+      "type": "oc-api:sort-item",
+      "label": "Item (type, provenance, label)",
+      "oc-api:sort-order": "descending"
+    },
+    {
+      "id": "https://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk2sx64g08&sort=updated--asc",
+      "json": "https://opencontext.org/subjects-search/.json?id=ark%3A%2F28722%2Fk2sx64g08&sort=updated--asc",
+      "type": "oc-api:sort-updated",
+      "label": "Updated",
+      "oc-api:sort-order": "ascending"
+    },
+    {
+      "id": "https://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk2sx64g08&sort=updated--desc",
+      "json": "https://opencontext.org/subjects-search/.json?id=ark%3A%2F28722%2Fk2sx64g08&sort=updated--desc",
+      "type": "oc-api:sort-updated",
+      "label": "Updated",
+      "oc-api:sort-order": "descending"
+    }
+  ],
+  "oc-api:active-filters": [
+    {
+      "id": "#filter-1",
+      "oc-api:filter": "Identifier Lookup",
+      "label": "Identifier: 'ark:/28722/k2sx64g08'",
+      "oc-api:remove": "https://opencontext.org/subjects-search/",
+      "oc-api:remove-json": "https://opencontext.org/subjects-search/.json"
+    }
+  ],
+  "oc-api:has-text-search": [
+    {
+      "id": "#textfield-keyword-search",
+      "label": "Filter by Text Search",
+      "oc-api:search-term": null,
+      "oc-api:template": "https://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk2sx64g08&q={SearchTerm}",
+      "oc-api:template-json": "https://opencontext.org/subjects-search/.json?id=ark%3A%2F28722%2Fk2sx64g08&q={SearchTerm}"
+    }
+  ],
+  "oc-api:max-disc-tile-zoom": 20,
+  "oc-api:response-tile-zoom": 20,
+  "oc-api:geotile-scope": "1221112122200321112",
+  "oc-api:has-facets": [
+    {
+      "id": "#facet-context",
+      "rdfs:isDefinedBy": "oc-api:facet-context",
+      "label": "Context",
+      "data-type": "id",
+      "type": "oc-api:facet-context",
+      "oc-api:has-id-options": [
+        {
+          "id": "https://opencontext.org/subjects-search/Turkey?id=ark%3A%2F28722%2Fk2sx64g08",
+          "json": "https://opencontext.org/subjects-search/Turkey.json?id=ark%3A%2F28722%2Fk2sx64g08",
+          "rdfs:isDefinedBy": "http://opencontext.org/subjects/1_Global_Spatial",
+          "label": "Turkey",
+          "count": 1,
+          "slug": "turkey"
+        }
+      ]
+    },
+    {
+      "id": "#facet-prop-oc-gen-subjects",
+      "rdfs:isDefinedBy": "http://opencontext.org/vocabularies/oc-general/subjects",
+      "label": "Subjects",
+      "slug": "oc-gen-subjects",
+      "data-type": "id",
+      "type": "oc-api:facet-prop",
+      "oc-api:has-id-options": [
+        {
+          "id": "https://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk2sx64g08&prop=oc-gen-cat-loc-or-context",
+          "json": "https://opencontext.org/subjects-search/.json?id=ark%3A%2F28722%2Fk2sx64g08&prop=oc-gen-cat-loc-or-context",
+          "rdfs:isDefinedBy": "http://opencontext.org/vocabularies/oc-general/cat-loc-or-context",
+          "label": "Location or Context",
+          "count": 1,
+          "slug": "oc-gen-cat-loc-or-context"
+        }
+      ]
+    },
+    {
+      "id": "#facet-project",
+      "rdfs:isDefinedBy": "oc-api:facet-project",
+      "label": "Project",
+      "data-type": "id",
+      "type": "oc-api:facet-project",
+      "oc-api:has-id-options": [
+        {
+          "id": "https://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk2sx64g08&proj=22-kenan-tepe",
+          "json": "https://opencontext.org/subjects-search/.json?id=ark%3A%2F28722%2Fk2sx64g08&proj=22-kenan-tepe",
+          "rdfs:isDefinedBy": "http://opencontext.org/projects/3DE4CD9C-259E-4C14-9B03-8B10454BA66E",
+          "label": "Kenan Tepe",
+          "count": 1,
+          "slug": "22-kenan-tepe"
+        }
+      ]
+    },
+    {
+      "id": "#facet-prop-var",
+      "rdfs:isDefinedBy": "oc-api:facet-prop-var",
+      "label": "Descriptions (Project Defined)",
+      "data-type": "id",
+      "type": "oc-api:facet-prop",
+      "oc-api:has-id-options": [
+        {
+          "id": "https://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk2sx64g08&prop=22-director",
+          "json": "https://opencontext.org/subjects-search/.json?id=ark%3A%2F28722%2Fk2sx64g08&prop=22-director",
+          "rdfs:isDefinedBy": "http://opencontext.org/predicates/BAF309C6-478C-4E6D-9F5E-46B48146CFA0",
+          "label": "Director",
+          "count": 1,
+          "slug": "22-director"
+        },
+        {
+          "id": "https://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk2sx64g08&prop=22-tentative-dating",
+          "json": "https://opencontext.org/subjects-search/.json?id=ark%3A%2F28722%2Fk2sx64g08&prop=22-tentative-dating",
+          "rdfs:isDefinedBy": "http://opencontext.org/predicates/09E1A5FA-A6CB-4F13-D27A-197E624AEF96",
+          "label": "Tentative Dating",
+          "count": 1,
+          "slug": "22-tentative-dating"
+        }
+      ],
+      "oc-api:has-numeric-options": [
+        {
+          "id": "https://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk2sx64g08&prop=22-trench-length-m",
+          "json": "https://opencontext.org/subjects-search/.json?id=ark%3A%2F28722%2Fk2sx64g08&prop=22-trench-length-m",
+          "rdfs:isDefinedBy": "http://opencontext.org/predicates/5DF78D1C-2047-48C6-D905-71775B1F4A1D",
+          "label": "Trench Length (m)",
+          "count": 1,
+          "slug": "22-trench-length-m"
+        },
+        {
+          "id": "https://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk2sx64g08&prop=22-trench-width-m",
+          "json": "https://opencontext.org/subjects-search/.json?id=ark%3A%2F28722%2Fk2sx64g08&prop=22-trench-width-m",
+          "rdfs:isDefinedBy": "http://opencontext.org/predicates/F02DB2A8-3F91-46ED-660E-C57FEBD8437B",
+          "label": "Trench Width (m)",
+          "count": 1,
+          "slug": "22-trench-width-m"
+        },
+        {
+          "id": "https://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk2sx64g08&prop=22-year-2",
+          "json": "https://opencontext.org/subjects-search/.json?id=ark%3A%2F28722%2Fk2sx64g08&prop=22-year-2",
+          "rdfs:isDefinedBy": "http://opencontext.org/predicates/2120E57F-3EF2-452F-B927-880D873FE896",
+          "label": "Year",
+          "count": 1,
+          "slug": "22-year-2"
+        }
+      ],
+      "oc-api:has-text-options": [
+        {
+          "id": "https://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk2sx64g08&prop=22-description-2",
+          "json": "https://opencontext.org/subjects-search/.json?id=ark%3A%2F28722%2Fk2sx64g08&prop=22-description-2",
+          "rdfs:isDefinedBy": "http://opencontext.org/predicates/0276EEB0-0665-4281-69E7-125890F3419C",
+          "label": "Description",
+          "count": 1,
+          "slug": "22-description-2"
+        }
+      ]
+    },
+    {
+      "id": "#related-media",
+      "label": "Has Related Media",
+      "oc-api:has-rel-media-options": [
+        {
+          "id": "https://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk2sx64g08&images=1",
+          "json": "https://opencontext.org/subjects-search/.json?id=ark%3A%2F28722%2Fk2sx64g08&images=1",
+          "label": "Linked with images",
+          "count": 1
+        },
+        {
+          "id": "https://opencontext.org/subjects-search/?documents=1&id=ark%3A%2F28722%2Fk2sx64g08",
+          "json": "https://opencontext.org/subjects-search/.json?documents=1&id=ark%3A%2F28722%2Fk2sx64g08",
+          "label": "Linked with documents",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "https://opencontext.org/search/?disc-geotile=12211121222003211121&id=ark%3A%2F28722%2Fk2sx64g08",
+      "json": "https://opencontext.org/search/.json?disc-geotile=12211121222003211121&id=ark%3A%2F28722%2Fk2sx64g08",
+      "count": 1,
+      "type": "Feature",
+      "category": "oc-api:geo-facet",
+      "geometry": {
+        "id": "#geo-disc-tile-geom-12211121222003211121",
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              40.813179016113295,
+              37.830666652929224
+            ],
+            [
+              40.81352233886719,
+              37.830666652929224
+            ],
+            [
+              40.81352233886719,
+              37.83093781796035
+            ],
+            [
+              40.813179016113295,
+              37.83093781796035
+            ],
+            [
+              40.813179016113295,
+              37.830666652929224
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "#geo-disc-tile-12211121222003211121",
+        "href": "https://opencontext.org/search/?disc-geotile=12211121222003211121&id=ark%3A%2F28722%2Fk2sx64g08",
+        "label": "Discovery region (1)",
+        "feature-type": "discovery region (facet)",
+        "count": 1,
+        "early bce/ce": false,
+        "late bce/ce": false
+      }
+    },
+    {
+      "id": "#record-1-of-1",
+      "label": "Trench 2",
+      "rdfs:isDefinedBy": "http://opencontext.org/subjects/FC96A49E-FE12-488B-4EFF-02D4E147B885",
+      "type": "Feature",
+      "category": "oc-api:geo-record",
+      "geometry": {
+        "id": "#geo-rec-geom-1-of-1",
+        "type": "Point",
+        "coordinates": [
+          40.813314,
+          37.830724
+        ]
+      },
+      "properties": {
+        "id": "#rec-1-of-1",
+        "feature-type": "item record",
+        "uri": "http://opencontext.org/subjects/FC96A49E-FE12-488B-4EFF-02D4E147B885",
+        "href": "https://opencontext.org/subjects/FC96A49E-FE12-488B-4EFF-02D4E147B885",
+        "citation uri": "http://n2t.net/ark:/28722/k2sx64g08",
+        "label": "Trench 2",
+        "project label": "Kenan Tepe",
+        "project href": "https://opencontext.org/projects/3DE4CD9C-259E-4C14-9B03-8B10454BA66E",
+        "context label": "Turkey/Kenan Tepe/Area A",
+        "context href": "https://opencontext.org/subjects/F40478A6-1844-4650-2080-905040836D59",
+        "early bce/ce": false,
+        "late bce/ce": false,
+        "item category": "Trench",
+        "thumbnail": "https://iiif.archivelab.org/iiif/opencontext-22-a2-figure-1/full/150,/0/default.jpg",
+        "published": "2012-03-28T00:00:00Z",
+        "updated": "2017-02-10T06:55:40Z"
+      }
+    }
+  ]
+}
