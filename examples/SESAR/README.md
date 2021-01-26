@@ -1,4 +1,4 @@
-# Smithonsian Example Metadata
+# SESAR Example Metadata
 
 These samples were pulled from the [SESAR](https://www.iedadata.org/sesar-api/) service API. 
 using an unpublished service.
