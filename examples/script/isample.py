@@ -9,6 +9,7 @@ import logging
 import json
 import requests
 import click
+import common
 
 LOG_LEVELS = {
     "DEBUG": logging.DEBUG,
@@ -181,15 +182,7 @@ def getOpenContextRecord(identifier, accept=DEFAULT_ACCEPT):
 )
 @click.argument("identifier")
 def main(verbosity, accept, collection, identifier):
-    verbosity = verbosity.upper()
-    logging.basicConfig(
-        level=LOG_LEVELS.get(verbosity, logging.INFO),
-        format=LOG_FORMAT,
-        datefmt=LOG_DATE_FORMAT,
-    )
-    L = getLogger()
-    if verbosity not in LOG_LEVELS.keys():
-        L.warning("%s is not a log level, set to INFO", verbosity)
+    common.setupLogging(verbosity)
     collection = collection.lower()
     data = {}
     if collection.find("smith") >= 0:
