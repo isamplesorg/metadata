@@ -1,0 +1,95 @@
+{
+    "@context": "https://raw.githubusercontent.com/IGSN/igsn-json/master/schema.igsn.org/json/registration/v0.1/context.jsonld",
+    "igsn": "XXXCSIRO0001",
+    "registrant": {
+        "name": "CSIRO",
+        "identifiers": [
+            {
+                "kind": "orcid",
+                "id": "0001-0001-0001-0001"
+            },
+            {
+                "kind": "viaf",
+                "id": "https://csiro.au/path/to/viaf.file"
+            },
+            {
+                "kind": "uri",
+                "id": "https://csiro.au"
+            }
+        ]
+    },
+    "related": [
+        {
+            "identifier": {
+                "id": "https://igsn.org/XXXCSIRO0002",
+                "kind": "igsn"
+            },
+            "relationshipType": "relatedTo"
+        },
+        {
+            "identifier": {
+                "id": "https://igsn.org/XXXCSIROCOLL001",
+                "kind": "igsn"
+            },
+            "relationship": "childOf"
+        },
+        {
+            "identifier": {
+                "id": "https://csiro.au/sampleDocs/XXCSIRO0001",
+                "kind": "uri"
+            },
+            "relationship": "documentedBy"
+        }
+    ],
+    "log": [
+        {
+            "type": "submitted",
+            "timestamp": "2020-04-13T11:33:04",
+            "comment": "Initial submission by Jess to CSIRO"
+        },
+        {
+            "type": "registered",
+            "timestamp": "2020-05-21T14:32:58",
+            "comment": "Sample registered by CSIRO with IGSN"
+        },
+        {
+            "type": "updated",
+            "timestamp": "2020-05-21T14:33:45",
+            "comment": "Sample description updated by Jess"
+        }
+    ],
+    "description": {
+        "@context": "https://raw.githubusercontent.com/IGSN/igsn-json/master/schema.igsn.org/observations/v0.1/sosa_context.jsonld",
+        "sampleType": "rock",
+        "collector": "Jess Robertson",
+        "curator": "Doug Fils",
+        "samplingLocation": {
+            "@context": "https://geojson.org/geojson-ld/geojson-context.jsonld",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [  0,  1 ],
+                    [  2,  3  ],
+                    [  4,  5  ],
+                    [ -3,  -2 ]
+                ]
+            }
+        },
+        "observations": [
+            {
+                "featureOfInterest": "rockiness",
+                "madeBySensor": "Jess",
+                "usedProcedure": "looked at it",
+                "hasSimpleResult": "rock level 9000",
+                "resultTime": "2020-05-21T15:06:47"
+            },
+            {
+                "featureOfInterest": "taste",
+                "madeBySensor": "Jess",
+                "usedProcedure": "engage rocklicker",
+                "hasSimpleResult": "tastes like chicken",
+                "resultTime": "2020-05-21T15:10:19"
+            }
+        ]
+    }
+}

@@ -1,0 +1,186 @@
+{
+    "@context": [
+        "https://opencontext.org/contexts/search.json",
+        "http://geojson.org/geojson-ld/geojson-context.jsonld"
+    ],
+    "id": "http://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk2sx64g08",
+    "label": "Open Context API",
+    "dcmi:modified": "2017-02-10T06:55:40Z",
+    "dcmi:created": "2012-03-28T00:00:00Z",
+    "oai-pmh:earliestDatestamp": "2012-03-28T00:00:00Z",
+    "start": null,
+    "stop": null,
+    "dc-terms:temporal": null,
+
+    "oc-api:active-filters": [
+        {
+            "oc-api:filter": "Identifier Lookup",
+            "label": "Identifier: 'ark:/28722/k2sx64g08'"       }
+    ],
+
+    "oc-api:geotile-scope": "1221112122200321112",
+    "oc-api:has-facets": [
+        {
+            "label": "Context",
+            "data-type": "id",
+            "type": "oc-api:facet-context",
+            "oc-api:has-id-options": [
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/subjects/1_Global_Spatial",
+                    "label": "Turkey"
+                }
+            ]
+        },
+        {
+
+            "rdfs:isDefinedBy": "http://opencontext.org/vocabularies/oc-general/subjects",
+            "label": "Subjects",
+            "data-type": "id",
+            "type": "oc-api:facet-prop",
+            "oc-api:has-id-options": [
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/vocabularies/oc-general/cat-loc-or-context",
+                    "label": "Location or Context"
+                }
+            ]
+        },
+        {
+            "label": "Project",
+            "data-type": "id",
+            "type": "oc-api:facet-project",
+            "oc-api:has-id-options": [
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/projects/3DE4CD9C-259E-4C14-9B03-8B10454BA66E",
+                    "label": "Kenan Tepe",
+                    "count": 1,
+                    "slug": "22-kenan-tepe"
+                }
+            ]
+        },
+        {
+            "label": "Descriptions (Project Defined)",
+            "data-type": "id",
+            "type": "oc-api:facet-prop",
+            "oc-api:has-id-options": [
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/predicates/BAF309C6-478C-4E6D-9F5E-46B48146CFA0",
+                    "label": "Director"
+                },
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/predicates/09E1A5FA-A6CB-4F13-D27A-197E624AEF96",
+                    "label": "Tentative Dating"
+                }
+            ],
+            "oc-api:has-numeric-options": [
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/predicates/5DF78D1C-2047-48C6-D905-71775B1F4A1D",
+                    "label": "Trench Length (m)"
+
+                },
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/predicates/F02DB2A8-3F91-46ED-660E-C57FEBD8437B",
+                    "label": "Trench Width (m)"
+
+                },
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/predicates/2120E57F-3EF2-452F-B927-880D873FE896",
+                    "label": "Year"
+                }
+            ],
+            "oc-api:has-text-options": [
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/predicates/0276EEB0-0665-4281-69E7-125890F3419C",
+                    "label": "Description",
+                    "count": 1
+                }
+            ]
+        },
+        {
+            "id": "#related-media",
+            "label": "Has Related Media",
+            "oc-api:has-rel-media-options": [
+                {
+                    "label": "Linked with images",
+                    "count": 1
+                },
+                {
+                    "label": "Linked with documents",
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "count": 1,
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            40.813179016113295,
+                            37.830666652929224
+                        ],
+                        [
+                            40.81352233886719,
+                            37.830666652929224
+                        ],
+                        [
+                            40.81352233886719,
+                            37.83093781796035
+                        ],
+                        [
+                            40.813179016113295,
+                            37.83093781796035
+                        ],
+                        [
+                            40.813179016113295,
+                            37.830666652929224
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "label": "Discovery region (1)",
+                "feature-type": "discovery region (facet)",
+                "count": 1,
+                "early bce/ce": false,
+                "late bce/ce": false
+            }
+        },
+        {
+            "label": "Trench 2",
+            "rdfs:isDefinedBy": "http://opencontext.org/subjects/FC96A49E-FE12-488B-4EFF-02D4E147B885",
+            "type": "Feature",
+            "category": "oc-api:geo-record",
+            "geometry": {
+                "id": "#geo-rec-geom-1-of-1",
+                "type": "Point",
+                "coordinates": [
+                    40.813314,
+                    37.830724
+                ]
+            },
+            "properties": {
+                "id": "#rec-1-of-1",
+                "feature-type": "item record",
+                "uri": "http://opencontext.org/subjects/FC96A49E-FE12-488B-4EFF-02D4E147B885",
+                "href": "https://opencontext.org/subjects/FC96A49E-FE12-488B-4EFF-02D4E147B885",
+                "citation uri": "http://n2t.net/ark:/28722/k2sx64g08",
+                "label": "Trench 2",
+                "project label": "Kenan Tepe",
+                "project href": "https://opencontext.org/projects/3DE4CD9C-259E-4C14-9B03-8B10454BA66E",
+                "context label": "Turkey/Kenan Tepe/Area A",
+                "context href": "https://opencontext.org/subjects/F40478A6-1844-4650-2080-905040836D59",
+                "early bce/ce": false,
+                "late bce/ce": false,
+                "item category": "Trench",
+                "thumbnail": "https://iiif.archivelab.org/iiif/opencontext-22-a2-figure-1/full/150,/0/default.jpg",
+                "published": "2012-03-28T00:00:00Z",
+                "updated": "2017-02-10T06:55:40Z"
+            }
+        }
+    ]
+}

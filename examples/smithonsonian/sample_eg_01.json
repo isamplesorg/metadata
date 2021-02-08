@@ -1,108 +1,98 @@
 {
-  "executionTimeMs": 2,
-  "qtype": 12,
-  "recordCount": 1,
-  "recordLimit": 10,
-  "recordStart": 0,
-  "recordsFetched": 1,
-  "recordsGeorefed": 1,
-  "sort": {
-    "idefa.ideqn": 1
-  },
-  "totalRecords": 1,
-  "records": [
-    {
-      "_id": 11609143,
-      "acqln": "2032743",
-      "admdm": {
-        "$date": {
-          "$numberLong": "1490621640000"
-        }
-      },
-      "admuu": "1304f805b35d4be4b30e7a588b93b68d",
-      "biocm": "hand",
-      "bioex": "Belize 2004",
-      "biooc": "Atlantic",
-      "biopl": "Belize, Carrie Bow Cay, rocks off ocean side.",
-      "biopp": [
+    "executionTimeMs": 2,
+    "qtype": 12,
+    "recordCount": 1,
+    "recordLimit": 10,
+    "recordStart": 0,
+    "recordsFetched": 1,
+    "recordsGeorefed": 1,
+    "sort": {"idefa.ideqn": 1},
+    "totalRecords": 1,
+    "records": [
         {
-          "bppid": 5019307,
-          "namcn": "Weigt, L. A.",
-          "namfn": "Lee A. Weigt"
+            "_id": 11609143,
+            "acqln": "2032743",  ## accession number
+            "admdm": {
+                "$date": {"$numberLong": "1490621640000"}
+            },
+            "admuu": "1304f805b35d4be4b30e7a588b93b68d",  ### ark token (	http://n2t.net/ark:/65665/)
+            "biocm": "hand",  ## collection method
+            "bioex": "Belize 2004", ##expedition
+            "biooc": "Atlantic", ##Ocean
+            "biopl": "Belize, Carrie Bow Cay, rocks off ocean side.",  ## precise location
+            "biopp": [   ##collector
+                {
+                    "bppid": 5019307,
+                    "namcn": "Weigt, L. A.",
+                    "namfn": "Lee A. Weigt"
+                }
+            ],
+            "biopr": ["Weigt, L. A."],
+            "biosg": "Caribbean Sea",  ## sea/gulf
+            "catdp": "fs",
+            "catms": "NMNH",
+            "catnb": {
+                "catnc": "   376266", ##catalog number
+                "catnm": 376266
+            },
+            "caton": [  ## Specimen/Sample
+                {
+                    "catnt": "Specimen voucher field number",
+                    "catnv": "BLZ 4531"
+                }
+            ],
+            "catot": "Genetic Sample",  ##??object type?
+            "catsc": 1,
+            "cevid": 5120585,
+            "coldv": {
+                "colvd": "8 Mar 2004", ##Date collected
+                "colvf": "20040308",
+                "colvt": "20040308"
+            },
+            "darco": "Atlantic",  ##Ocean
+            "darct": "Belize", ##country
+            "dardp": {  ## depth
+                "dardm": "0",
+                "dard1": 0
+            },
+            "darcl": "Actinopterygii",
+            "darfm": "Muraenidae",
+            "dargn": "Enchelycore",
+            "daror": "Anguilliformes",
+            "darph": "Chordata",
+            "darsn": "Enchelycore nigricans",
+            "darsp": "nigricans",
+             "darht": "Animalia, Chordata, Vertebrata, Osteichthyes, Actinopterygii, Neopterygii, Elopomorpha, Anguilliformes, Muraenoidei, Muraenidae, Muraeninae",
+            "daric": "USNM",
+            "darin": 1,
+            "daris": "Carrie Bow Cay",
+            "darkn": "Animalia",
+            "darln": -88.08,  ##Centroid longitude
+            "darlt": 16.8083, ##Centroid Latitude
+           "darwb": "Atlantic, Caribbean Sea", ##Ocean,Sea/Gulf
+            "flags": 4100,
+            "gsbld": "BZLWA479-06",
+            "gsbri": "AC3XN34",
+            "gsemb": "No",
+            "gsgbn": ["JQ840043"],
+            "gsprm": ["Tris-EDTA"],  ##Preservation Method
+            "gstyp": "DNA, RNA, Proteins",
+            "gstys": "Whole genomic DNA",
+            "gsvid": 5290799,
+            "gsvlc": "USNM",
+            "gsvnm": "376266",  ## usnm catalog number
+            "gsvty": "Specimen Voucher",
+            "idefa": {   ## identification
+                "ifaid": 5001127,
+                "idefn": "Enchelycore nigricans : Muraenidae : Anguilliformes : Actinopterygii : Chordata",
+                "ideqn": "Enchelycore nigricans",
+                "idesf": "Muraeninae"  ##family
+            },
+            "relid": 10943361,
+            "tstmp": 1571732852,
+            "ustmp": 1611322240,
+            "vtree": "<dl><dt id=\"vt-5290799\" class=\"gs-vtree-handle\">Enchelycore nigricans,    376266</dt><dt><dl><dd id=\"vt-10943361\" class=\"gs-vtree-handle\">   376266, Unknown tissue sample</dd><dd><dl><dd id=\"vt-11609143\" class=\"gs-vtree-selected\">   376266, Whole genomic DNA</dd></dl></dd></dl></dt></dl>",
+            "xname": "Enchelycore nigricans"
         }
-      ],
-      "biopr": [
-        "Weigt, L. A."
-      ],
-      "biosg": "Caribbean Sea",
-      "catdp": "fs",
-      "catms": "NMNH",
-      "catnb": {
-        "catnc": "   376266",
-        "catnm": 376266
-      },
-      "caton": [
-        {
-          "catnt": "Specimen voucher field number",
-          "catnv": "BLZ 4531"
-        }
-      ],
-      "catot": "Genetic Sample",
-      "catsc": 1,
-      "cevid": 5120585,
-      "coldv": {
-        "colvd": "8 Mar 2004",
-        "colvf": "20040308",
-        "colvt": "20040308"
-      },
-      "darcl": "Actinopterygii",
-      "darco": "Atlantic",
-      "darct": "Belize",
-      "dardp": {
-        "dardm": "0",
-        "dard1": 0
-      },
-      "darfm": "Muraenidae",
-      "dargn": "Enchelycore",
-      "darht": "Animalia, Chordata, Vertebrata, Osteichthyes, Actinopterygii, Neopterygii, Elopomorpha, Anguilliformes, Muraenoidei, Muraenidae, Muraeninae",
-      "daric": "USNM",
-      "darin": 1,
-      "daris": "Carrie Bow Cay",
-      "darkn": "Animalia",
-      "darln": -88.08,
-      "darlt": 16.8083,
-      "daror": "Anguilliformes",
-      "darph": "Chordata",
-      "darsn": "Enchelycore nigricans",
-      "darsp": "nigricans",
-      "darwb": "Atlantic, Caribbean Sea",
-      "flags": 4100,
-      "gsbld": "BZLWA479-06",
-      "gsbri": "AC3XN34",
-      "gsemb": "No",
-      "gsgbn": [
-        "JQ840043"
-      ],
-      "gsprm": [
-        "Tris-EDTA"
-      ],
-      "gstyp": "DNA, RNA, Proteins",
-      "gstys": "Whole genomic DNA",
-      "gsvid": 5290799,
-      "gsvlc": "USNM",
-      "gsvnm": "376266",
-      "gsvty": "Specimen Voucher",
-      "idefa": {
-        "ifaid": 5001127,
-        "idefn": "Enchelycore nigricans : Muraenidae : Anguilliformes : Actinopterygii : Chordata",
-        "ideqn": "Enchelycore nigricans",
-        "idesf": "Muraeninae"
-      },
-      "relid": 10943361,
-      "tstmp": 1571732852,
-      "ustmp": 1611322240,
-      "vtree": "<dl><dt id=\"vt-5290799\" class=\"gs-vtree-handle\">Enchelycore nigricans,    376266</dt><dt><dl><dd id=\"vt-10943361\" class=\"gs-vtree-handle\">   376266, Unknown tissue sample</dd><dd><dl><dd id=\"vt-11609143\" class=\"gs-vtree-selected\">   376266, Whole genomic DNA</dd></dl></dd></dl></dt></dl>",
-      "xname": "Enchelycore nigricans"
-    }
-  ]
+    ]
 }
