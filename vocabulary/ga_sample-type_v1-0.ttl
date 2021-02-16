@@ -1,0 +1,817 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sesame: <http://www.openrdf.org/schema/sesame#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix cycAnnot: <http://sw.cyc.com/CycAnnotations_v1#> .
+@prefix csw: <http://semantic-web.at/ontologies/csw.owl#> .
+@prefix freebase: <http://rdf.freebase.com/ns/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix cyc: <http://sw.cyc.com/concept/> .
+@prefix tags: <http://www.holygoat.co.uk/owl/redwood/0.1/tags/> .
+@prefix opencyc: <http://sw.opencyc.org/concept/> .
+@prefix ctag: <http://commontag.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+rdf:type a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdfs:Resource ;
+	rdfs:range rdfs:Class ;
+	rdfs:subPropertyOf rdf:type .
+
+rdf:Property a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdf:Property , rdfs:Resource .
+
+rdf:subject a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdf:Statement ;
+	rdfs:range rdfs:Resource ;
+	rdfs:subPropertyOf rdf:subject .
+
+rdf:predicate a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdf:Statement ;
+	rdfs:range rdfs:Resource ;
+	rdfs:subPropertyOf rdf:predicate .
+
+rdf:object a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdf:Statement ;
+	rdfs:range rdfs:Resource ;
+	rdfs:subPropertyOf rdf:object .
+
+rdf:first a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdf:List ;
+	rdfs:range rdfs:Resource ;
+	rdfs:subPropertyOf rdf:first .
+
+rdf:rest a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdf:List ;
+	rdfs:range rdf:List ;
+	rdfs:subPropertyOf rdf:rest .
+
+rdf:value a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdfs:Resource ;
+	rdfs:range rdfs:Resource ;
+	rdfs:subPropertyOf rdf:value .
+
+rdf:nil a rdf:List , rdfs:Resource .
+
+rdf:List a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdf:List , rdfs:Resource .
+
+rdfs:domain a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdf:Property ;
+	rdfs:range rdfs:Class ;
+	rdfs:subPropertyOf rdfs:domain .
+
+rdfs:Resource a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource .
+
+rdfs:range a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdf:Property ;
+	rdfs:range rdfs:Class ;
+	rdfs:subPropertyOf rdfs:range .
+
+rdfs:subPropertyOf a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdf:Property ;
+	rdfs:range rdf:Property ;
+	rdfs:subPropertyOf rdfs:subPropertyOf .
+
+rdfs:subClassOf a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdfs:Class ;
+	rdfs:range rdfs:Class ;
+	rdfs:subPropertyOf rdfs:subClassOf .
+
+rdfs:Class a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , rdfs:Class .
+
+rdf:Statement a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , rdf:Statement .
+
+rdfs:member a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdfs:Resource ;
+	rdfs:range rdfs:Resource ;
+	rdfs:subPropertyOf rdfs:member .
+
+rdfs:seeAlso a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdfs:Resource ;
+	rdfs:range rdfs:Resource ;
+	rdfs:subPropertyOf rdfs:seeAlso .
+
+rdfs:isDefinedBy a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdfs:Resource ;
+	rdfs:range rdfs:Resource ;
+	rdfs:subPropertyOf rdfs:seeAlso , rdfs:isDefinedBy .
+
+rdfs:comment a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdfs:Resource ;
+	rdfs:range rdfs:Literal ;
+	rdfs:subPropertyOf rdfs:comment .
+
+rdfs:label a rdf:Property , rdfs:Resource ;
+	rdfs:domain rdfs:Resource ;
+	rdfs:range rdfs:Literal ;
+	rdfs:subPropertyOf rdfs:label .
+
+rdfs:Literal a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , rdfs:Literal .
+
+rdf:Alt a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , rdf:Alt , rdfs:Container .
+
+rdfs:Container a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , rdfs:Container .
+
+rdf:Bag a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , rdfs:Container , rdf:Bag .
+
+rdf:Seq a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , rdfs:Container , rdf:Seq .
+
+rdfs:ContainerMembershipProperty a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdf:Property , rdfs:Resource , rdfs:ContainerMembershipProperty .
+
+rdf:XMLLiteral a rdfs:Resource , rdfs:Class , rdfs:Datatype ;
+	rdfs:subClassOf rdfs:Resource , rdfs:Literal , rdf:XMLLiteral .
+
+rdfs:Datatype a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , rdfs:Class , rdfs:Datatype .
+
+<http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> a rdfs:Resource , dcterms:Agent ;
+	foaf:name "GA_Sedgmen.Lara_Admin" .
+
+dcterms:Agent a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , dcterms:Agent .
+
+foaf:name a rdf:Property , rdfs:Resource ;
+	rdfs:subPropertyOf foaf:name .
+
+<http://editor.vocabs.ands.org.au/user/turdeant> a rdfs:Resource , dcterms:Agent ;
+	foaf:name "turdeant" .
+
+<http://editor.vocabs.ands.org.au/user/Geoscience-Australia> a rdfs:Resource , dcterms:Agent ;
+	foaf:name "Geoscience Australia" .
+
+<http://editor.vocabs.ands.org.au/user/Nicholas-Car> a rdfs:Resource , dcterms:Agent ;
+	foaf:name "Nicholas Car" .
+
+<http://editor.vocabs.ands.org.au/user/Oliver-Raymond> a rdfs:Resource , dcterms:Agent ;
+	foaf:name "Oliver Raymond" .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype> a rdfs:Resource , skos:ConceptScheme ;
+	rdfs:label "Sample Types"@en ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:title "Sample Type"@en ;
+	skos:hasTopConcept <http://pid.geoscience.gov.au/def/voc/ga/sampletype/analytical_blank> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/borehole_specimen> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/burn_spot> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/crush> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/downhole_reservoir_fluid_sample> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/fluid/melt_inclusion_section> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/fluid_inclusion> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/fossil> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/fraction> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/gas_specimen> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/isotube> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/marine_survey_specimen> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/melt_inclusion> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/mineral_grain> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/mineral_precipitate> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/mineral_specimen> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/observation_only> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/pellet> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/photograph> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/polished_mount> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/polished_slab> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/powder> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/replicate_specimen> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/rock_pieces> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/specimen_blank> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/stained_sample> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/standard_reference_material> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/thin_section> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/unconsolidated_surficial_specimen> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/unknown> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/vegetation_specimen> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/video> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/vitrinite_reflectance_specimen> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/water_specimen> ;
+	dcterms:modified "2017-11-15T09:59:00Z"^^xsd:dateTime ;
+	dcterms:issued "2017-11-15" ;
+	owl:versionInfo "v1.0" .
+
+dcterms:created a rdf:Property , rdfs:Resource ;
+	rdfs:subPropertyOf dcterms:created .
+
+dcterms:creator a rdf:Property , rdfs:Resource ;
+	rdfs:subPropertyOf dcterms:creator .
+
+dcterms:title a rdf:Property , rdfs:Resource ;
+	rdfs:subPropertyOf dcterms:title .
+
+skos:ConceptScheme a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , skos:ConceptScheme .
+
+skos:hasTopConcept a rdf:Property , rdfs:Resource ;
+	rdfs:subPropertyOf skos:hasTopConcept .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/analytical_blank> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:contributor <http://editor.vocabs.ands.org.au/user/turdeant> ;
+	dcterms:modified "2017-08-28T15:39:14Z"^^xsd:dateTime ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "An analytical procedure run without a substitute material and results obtained are considered to be the analytical blank. Example 1.: An acid digestion procedure is run without a sample, to show level of impurities introduced by the acids and the digestion vessels used."@en ;
+	skos:prefLabel "analytical blank"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/borehole_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "Any specimen of material taken from a borehole. Only used where no other information about the borehole specimen type is available."@en ;
+	skos:prefLabel "borehole specimen"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/core> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/drill_chips_cuttings> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/drilling_fluid_sample> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/burn_spot> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A part of a grain which is the subject of a detailed analysis via a microprobe beam of electrons or energised ions."@en ;
+	skos:prefLabel "burn spot"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/crush> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A coarse crushed sample."@en ;
+	skos:prefLabel "crush"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/downhole_reservoir_fluid_sample> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A fluid sample retrieved from a downhole formation test (WFT)"@en ;
+	skos:prefLabel "downhole reservoir fluid sample"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/fluid/melt_inclusion_section> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A thick section used to examine tiny inclusions of liquid, vapour, solid, or mixtures of these phases, trapped as impurities within mineral grains."@en ;
+	skos:prefLabel "fluid/melt inclusion section"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/fluid_inclusion> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A fluid-filled inclusion in a rock or mineral (may also contain vapour and solids at room temperature)."@en ;
+	skos:prefLabel "fluid inclusion"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/fossil> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A specimen of remains or traces of a plant or animal preserved in the Earth's crust."@en ;
+	skos:prefLabel "fossil"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/microfossil_slide> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/fraction> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A specimen that has been modified to be a specific fraction separated from the original sample eg. a panned or separated sample."@en ;
+	skos:prefLabel "fraction"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/concentrate> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/grainsize_fraction> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/separator_fluid> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/separator_gas> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/gas_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A generic specimen of gas of any type. Includes gas specimen types collected by any method."@en ;
+	skos:prefLabel "gas specimen"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/isotube> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/separator_gas> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/isotube> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en , "http://www.isotechlabs.com/products/isotubes/"@en ;
+	skos:definition "A 110ml aluminium cylinder used to collect and store gas from a sampling manifold on a borehole druing mudgas logging. A product of ISOTECH Laboratories."@en ;
+	skos:prefLabel "IsoTube"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/gas_specimen> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/marine_survey_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A specimen of unspecified type taken during a marine survey."@en ;
+	skos:prefLabel "marine survey specimen"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/unconsolidated_seabed_specimen> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/melt_inclusion> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A glassy inclusion in a rock or mineral (may also contain liquid, vapour and crystals at room temperature)."@en ;
+	skos:prefLabel "melt inclusion"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/mineral_grain> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "An individual mineralogical particle, usually isolated from a thin section, or mounted with other grains in a polished mount."@en ;
+	skos:prefLabel "mineral grain"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/mineral_precipitate> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A collection of one or more minerals precipitated from solution (eg, salt crust or gypsum crystals precipitated on a salt lake)."@en ;
+	skos:prefLabel "mineral precipitate"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/mineral_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A high quality or type mineral specimen, collected for scientific or display purposes in a museum or similar setting"@en ;
+	skos:prefLabel "mineral specimen"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/observation_only> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "An observation made of a feature, without collection of a physical specimen."@en ;
+	skos:prefLabel "observation only"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/field_site_observation> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/marine_survey_observation> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/observation_log> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/water_column_observation> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/pellet> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A specimen that has been ground into a powder and pressed into a pellet."@en ;
+	skos:prefLabel "pellet"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/photograph> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A digital or film photographic still image"@en ;
+	skos:prefLabel "photograph"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/polished_mount> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "Materials mounted in a medium, typically an epoxy glue or resin, and polished."@en ;
+	skos:prefLabel "polished mount"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/polished_slab> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A polished slab of rock material."@en ;
+	skos:prefLabel "polished slab"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/powder> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A specimen that has been ground into a powder in a tungsten alloy mill."@en , "A specimen that has been ground into a powder."@en ;
+	skos:prefLabel "powder"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/replicate_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A repeat analytical specimen designed to replicate the original specimen type and method of sample preparation and/or collection. Should be related to a previous original specimen."@en ;
+	skos:prefLabel "replicate specimen"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/replicate_field_specimen> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/replicate_laboratory_specimen> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/rock_pieces> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "Unspecified rock samples or fragments of rock of unknown origin."@en ;
+	skos:prefLabel "rock pieces"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/float_specimen> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/outcrop_specimen> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/rock_chips> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/thin_section_offcut> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/specimen_blank> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A specimen blank is used to determine if any impurities are introduced during sample preparation procedures. A sample blank material substitutes regular sample material in the procedure. Example 1: Quartz substitutes a rock sample to determine levels of impurities introduced by grinding equipment. Example 2: Cellulose substitutes vegetable material to determine levels of impurities introduced during sample preparation. Example 3: Pure deionized water is substituted for sample water to determine if impurities are introduced during sample filtering and bottling procedures."@en ;
+	skos:prefLabel "specimen blank"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> ;
+	skos:altLabel "sample blank"@en .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/stained_sample> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A specimen, often a rock slab, that has been stained for mineral idenification."@en ;
+	skos:prefLabel "stained sample"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/standard_reference_material> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "Also known as SRM,  International Standards or Certified Reference Materials (CRMs). The actual material of this standard (eg, rock, mineral, water, etc) should be denoted in material type.  A homogenous material prepared under strict guidelines, divided into numerous aliquots and sent to reputable laboratories world-wide to derive an assigned value. The values for Standard Reference Materials are generally well known published figures. The blended material is used by laboratories to calibrate instruments, analytical techniques and to verify new or improved analytical techniques."@en , "An unspecified residue from a sample preparation or analytical technique."@en ;
+	skos:prefLabel "residue"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/thin_section> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A translucent thin section of a material for microscope analysis."@en ;
+	skos:prefLabel "thin section"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/polished_thin_section> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/unconsolidated_surficial_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A specimen of unconsolidated materials (eg, regolith, sediment, gravel, soil) collected by any method at or near the ground surface, including soil and organic matter."@en ;
+	skos:prefLabel "unconsolidated surficial specimen"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/gravel> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/soil_sample> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/stream_sediment_specimen> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/unknown> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "The sample_type is unknown"@en ;
+	skos:prefLabel "unknown"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/vegetation_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A specimen of vegetation collected by any method."@en ;
+	skos:prefLabel "vegetation specimen"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/video> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A digital or film capture of a sequence of still images representing scenes in motion"@en ;
+	skos:prefLabel "video"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/vitrinite_reflectance_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A polished slab, mount, or slide for analysing vitrinite reflectance."@en ;
+	skos:prefLabel "vitrinite reflectance specimen"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/water_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A generic specimen of water of any type. Includes water specimen types collected by any method."@en ;
+	skos:prefLabel "water specimen"@en ;
+	skos:topConceptOf <http://pid.geoscience.gov.au/def/voc/ga/sampletype> ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/water_column_specimen> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/incubation_water_specimen> .
+
+dcterms:contributor a rdf:Property , rdfs:Resource ;
+	rdfs:subPropertyOf dcterms:contributor .
+
+dcterms:modified a rdf:Property , rdfs:Resource ;
+	rdfs:subPropertyOf dcterms:modified .
+
+dcterms:source a rdf:Property , rdfs:Resource ;
+	rdfs:subPropertyOf dcterms:source .
+
+skos:Concept a rdfs:Resource , rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource , skos:Concept .
+
+skos:definition a rdf:Property , rdfs:Resource ;
+	rdfs:subPropertyOf skos:definition .
+
+skos:prefLabel a rdf:Property , rdfs:Resource ;
+	rdfs:subPropertyOf skos:prefLabel .
+
+skos:topConceptOf a rdf:Property , rdfs:Resource ;
+	rdfs:subPropertyOf skos:topConceptOf .
+
+skos:narrower a rdf:Property , rdfs:Resource ;
+	rdfs:subPropertyOf skos:narrower .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/core> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A specimen (often, but not always cylindrical) of rock, regolith, or vegetation."@en ;
+	skos:prefLabel "core"@en ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/core_slice> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/half_core> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/oriented_core> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/quarter_core> ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/borehole_specimen> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/drill_chips_cuttings> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "Rock or sediment chips or fragments derived from any drilling method."@en ;
+	skos:prefLabel "drill chips/cuttings"@en ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/cavings> ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/borehole_specimen> ;
+	skos:altLabel "chips"@en , "cuttings"@en .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/drilling_fluid_sample> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "Fluid used for drill bit lubrication and return of ground rock material from the drill bit, e.g. drilling mud."@en ;
+	skos:prefLabel "drilling fluid sample"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/borehole_specimen> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/cavings> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "Drill chips/cuttings material that is foreign to the depth interval sampled and most likely derived from higher in the stratigraphic column or possibly recirculated within the mud system from previous drilling activity."@en ;
+	skos:prefLabel "cavings"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/drill_chips_cuttings> .
+
+skos:broader a rdf:Property , rdfs:Resource ;
+	rdfs:subPropertyOf skos:broader .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/coastal_float_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A float specimen collected along the coastline, usually washed up on beaches. (eg, coastal bitumen)."@en ;
+	skos:prefLabel "coastal float specimen"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/float_specimen> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/float_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A specimen taken of an isolated fragment or rock or other consolidated earth material, displaced from its original outcrop or location."@en ;
+	skos:prefLabel "float specimen"@en ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/coastal_float_specimen> ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/rock_pieces> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/concentrate> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A form of substance which has had the majority of its base component (in the case of a liquid: the solvent) removed. Typically this will be the removal of water from a solution or suspension"@en ;
+	skos:prefLabel "concentrate"@en ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/mineral_separate> ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/fraction> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/mineral_separate> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A collection of mineral grains separated using density and magnetic contrast from other mineral grains."@en ;
+	skos:prefLabel "mineral separate"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/concentrate> ;
+	skos:altLabel "mineral concetrate"@en .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/core_slice> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A section of core that represents a specified depth interval, typically cut from a larger core specimen."@en ;
+	skos:prefLabel "core slice"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/core> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/half_core> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A cylindrical drill core which has been cut in half parallel to its length."@en ;
+	skos:prefLabel "half core"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/core> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/oriented_core> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A drill core specimen taken with its orientation preserved to enable structural or other oriented analysis."@en ;
+	skos:prefLabel "oriented core"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/core> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/quarter_core> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A cylindrical drill core which has been cut in quarters parallel to its length."@en ;
+	skos:prefLabel "quarter core"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/core> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/dredge_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A specimen of unconsolidated materials collected on the seabed by dredging, including sediment and organic matter."@en ;
+	skos:prefLabel "dredge specimen"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/unconsolidated_seabed_specimen> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/unconsolidated_seabed_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A specimen of unconsolidated materials collected on the seabed by any method, including sediment and organic matter."@en ;
+	skos:prefLabel "unconsolidated seabed specimen"@en ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/dredge_specimen> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/seabed_subsample> ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/marine_survey_specimen> .
+
+skos:altLabel a rdf:Property , rdfs:Resource ;
+	rdfs:subPropertyOf skos:altLabel .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/field_site_observation> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "An observation made of a field site (eg, an outcrop), without collection of a physical specimen."@en ;
+	skos:prefLabel "field site observation"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/observation_only> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/filtered_water_column_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A water column specimen filtered for suspended solids."@en ;
+	skos:prefLabel "filtered water column specimen"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/water_column_specimen> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/water_column_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A water specimen taken at measured intervals in the water column."@en ;
+	skos:prefLabel "water column specimen"@en ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/filtered_water_column_specimen> ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/water_specimen> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/microfossil_slide> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A slide prepared for microscope analysis of microfossils."@en ;
+	skos:prefLabel "microfossil slide"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/fossil> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/grainsize_fraction> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A specimen that has been generated by separating various size fractions from the original sample. For example, a sieved sediment sample."@en ;
+	skos:prefLabel "grainsize fraction"@en ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/sieved_sample> ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/fraction> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/separator_fluid> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "Liquid that has been separated from a gas phase at a surface separator."@en ;
+	skos:prefLabel "separator fluid"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/fraction> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/separator_gas> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "Natural gas that has been separated from a liquid phase at a surface separator."@en ;
+	skos:prefLabel "separator gas"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/fraction> , <http://pid.geoscience.gov.au/def/voc/ga/sampletype/gas_specimen> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/sieved_sample> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A grainsize fraction specimen generated by sieving"@en ;
+	skos:prefLabel "sieved sample"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/grainsize_fraction> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/gravel> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A specimen of unconsolidated gravel size regolith material."@en ;
+	skos:prefLabel "gravel"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/unconsolidated_surficial_specimen> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/incubation_water_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A water sample collected from a chamber or core incubation for the purpose of use of profiling the water column."@en ;
+	skos:prefLabel "incubation water specimen"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/water_specimen> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/marine_survey_observation> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "An observation made during a marine survey, of unspecified type, without collection of a physical specimen."@en ;
+	skos:prefLabel "marine survey observation"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/observation_only> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/observation_log> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A description of a sampling feature in a continuous linear format (e.g. grainsize or lithology logs for drillholes and measured sections), where the observation description is not related to a specific collected specimen"@en ;
+	skos:prefLabel "observation log"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/observation_only> ;
+	skos:altLabel "borehole observation log"@en , "measured section log"@en .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/water_column_observation> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "An observation of the water column recorded by a sonde/probe, typically taken at measured intervals used to profile the water column. No actual specimen is collected but the observation records the water conditions at a particular time and place."@en ;
+	skos:prefLabel "water column observation"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/observation_only> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/oriented_outcrop_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "An outcrop specimen taken with its orientation preserved to enable structural or geophysical analysis."@en ;
+	skos:prefLabel "oriented outcrop specimen"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/outcrop_specimen> ;
+	skos:altLabel "oriented hand specimen"@en .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/outcrop_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A specimen of material removed from outcropping or near-outcropping bedrock. Includes subterranean rock outcrops (ie, from a mine)."@en ;
+	skos:prefLabel "outcrop specimen"@en ;
+	skos:narrower <http://pid.geoscience.gov.au/def/voc/ga/sampletype/oriented_outcrop_specimen> ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/rock_pieces> ;
+	skos:altLabel "hand specimen"@en .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/polished_thin_section> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A polished thin section of a material for microscope analysis."@en ;
+	skos:prefLabel "polished thin section"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/thin_section> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/replicate_field_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "Repeat specimen taken in the field over given space and/or time scales to test field heterogeneity of a sampling medium.  Should be related to a previous original specimen."@en ;
+	skos:prefLabel "replicate field specimen"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/replicate_specimen> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/replicate_laboratory_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "Identical split(s) of an original sample submitted blindly to the laboratory to test reproducibility (bias) of results.  Should be related to a previous original specimen."@en ;
+	skos:prefLabel "replicate laboratory specimen"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/replicate_specimen> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/rock_chips> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "Rock fragments derived from crushing or chipping material other than by drilling (eg, chips from an outcrop or mine channel sampling)."@en ;
+	skos:prefLabel "rock chips"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/rock_pieces> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/thin_section_offcut> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A small slab of rock remaining from the preparation of a thin section."@en ;
+	skos:prefLabel "thin section offcut"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/rock_pieces> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/seabed_subsample> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "Samples of surficial seafloor sediments obtained by sub-sampling the contents of a grab or box core. Depending on the intended analyses, these may be volumetric, gravimetric or qualitative."@en ;
+	skos:prefLabel "seabed subsample"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/unconsolidated_seabed_specimen> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/soil_sample> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A specimen of soil or similar regolith materials, collected by any method."@en ;
+	skos:prefLabel "soil specimen"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/unconsolidated_surficial_specimen> .
+
+<http://pid.geoscience.gov.au/def/voc/ga/sampletype/stream_sediment_specimen> a rdfs:Resource , skos:Concept ;
+	dcterms:created "2017-08-24T00:11:33Z"^^xsd:dateTime ;
+	dcterms:creator <http://editor.vocabs.ands.org.au/user/GA_Sedgmen.Lara_Admin> ;
+	dcterms:source "Geoscience Australia"@en ;
+	skos:definition "A sample of sediment taken from the bed of a river or stream."@en ;
+	skos:prefLabel "stream sediment specimen"@en ;
+	skos:broader <http://pid.geoscience.gov.au/def/voc/ga/sampletype/unconsolidated_surficial_specimen> .
+
+dcterms:issued a rdf:Property , rdfs:Resource ;
+	rdfs:subPropertyOf dcterms:issued .
+
+owl:versionInfo a rdf:Property , rdfs:Resource ;
+	rdfs:subPropertyOf owl:versionInfo .
