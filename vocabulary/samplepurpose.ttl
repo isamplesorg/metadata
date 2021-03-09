@@ -1,0 +1,67 @@
+# baseURI: http://isampleorg.org/vocab/samplepurpose
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://isampleorg.org/vocab/samplepurpose#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://isampleorg.org/vocab/samplepurpose>
+  rdf:type owl:Ontology ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+.
+<http://isampleorg.org/vocab/samplepurpose/genomicanalysis>
+  rdf:type skos:Concept ;
+  skos:inScheme <http://isampleorg.org/vocab/samplepurpose/samplepurposescheme> ;
+  skos:prefLabel "genomic analysis"@en ;
+.
+<http://isampleorg.org/vocab/samplepurpose/inclusionanalysis>
+  rdf:type skos:Concept ;
+  skos:broader <http://isampleorg.org/vocab/samplepurpose/specificanalysis> ;
+  skos:inScheme <http://isampleorg.org/vocab/samplepurpose/samplepurposescheme> ;
+  skos:prefLabel "inclusion analysis"@en ;
+.
+<http://isampleorg.org/vocab/samplepurpose/labbackground>
+  rdf:type skos:Concept ;
+  skos:inScheme <http://isampleorg.org/vocab/samplepurpose/samplepurposescheme> ;
+  skos:prefLabel "laboratory blank"@en ;
+  skos:topConceptOf <http://isampleorg.org/vocab/samplepurpose/samplepurposescheme> ;
+.
+<http://isampleorg.org/vocab/samplepurpose/microscopicanalysis>
+  rdf:type skos:Concept ;
+  skos:broader <http://isampleorg.org/vocab/samplepurpose/specificanalysis> ;
+  skos:inScheme <http://isampleorg.org/vocab/samplepurpose/samplepurposescheme> ;
+  skos:prefLabel "microscopic analysis"@en ;
+.
+<http://isampleorg.org/vocab/samplepurpose/processresidue>
+  rdf:type skos:Concept ;
+  skos:definition "Material remaining after sample has undergone processing to separate some specific component"@en ;
+  skos:inScheme <http://isampleorg.org/vocab/samplepurpose/samplepurposescheme> ;
+  skos:prefLabel "process residue"@en ;
+  skos:topConceptOf <http://isampleorg.org/vocab/samplepurpose/samplepurposescheme> ;
+.
+<http://isampleorg.org/vocab/samplepurpose/reference>
+  rdf:type skos:Concept ;
+  skos:inScheme <http://isampleorg.org/vocab/samplepurpose/samplepurposescheme> ;
+  skos:prefLabel "reference standard"@en ;
+  skos:topConceptOf <http://isampleorg.org/vocab/samplepurpose/samplepurposescheme> ;
+.
+<http://isampleorg.org/vocab/samplepurpose/samplepurposescheme>
+  rdf:type skos:ConceptScheme ;
+  skos:prefLabel "Sample Purpose Vocabulary"@en ;
+.
+<http://isampleorg.org/vocab/samplepurpose/specificanalysis>
+  rdf:type skos:Concept ;
+  skos:inScheme <http://isampleorg.org/vocab/samplepurpose/samplepurposescheme> ;
+  skos:prefLabel "specific analysis"@en ;
+  skos:topConceptOf <http://isampleorg.org/vocab/samplepurpose/samplepurposescheme> ;
+.
+<http://isampleorg.org/vocab/samplepurpose/vitrinite_reflectance_measurement>
+  rdf:type skos:Concept ;
+  skos:broader <http://isampleorg.org/vocab/samplepurpose/specificanalysis> ;
+  skos:inScheme <http://isampleorg.org/vocab/samplepurpose/samplepurposescheme> ;
+  skos:prefLabel "vitrinite reflectance measurement"@en ;
+.
