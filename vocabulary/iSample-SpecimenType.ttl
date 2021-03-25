@@ -1,0 +1,121 @@
+# baseURI: http://resource.isamples.org/vocabulary/specimentype/ontology
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://resource.isamples.org/vocabulary/specimentype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix spt: <http://resource.isamples.org/vocabulary/specimentype/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+spt:aggregation
+  rdf:type skos:Concept ;
+  rdfs:comment "" ;
+  rdfs:label "Aggregation specimen "@en ;
+  skos:broader spt:physicalspecimen ;
+  skos:prefLabel "Aggregation specimen "@en ;
+.
+spt:artifact
+  rdf:type skos:Concept ;
+  rdfs:comment "An object made by a human being, typically an item of cultural or historical interest. (Definition from Oxford Languages). Include a set of pieces belonging originally to a single object and treated as a single specimen."@en ;
+  rdfs:label "Artifact "@en ;
+  skos:broader spt:piecesolidmaterial ;
+  skos:inScheme spt:specimenttypevocabulary ;
+  skos:prefLabel "Artifact "@en ;
+.
+spt:biologicalspecimen
+  rdf:type skos:Concept ;
+  rdfs:comment "Specimen for which the sampled feature is one or more living organisms from a particular biome context, megascopic or microscopic"@en ;
+  rdfs:label "Biological specimen"@en ;
+  skos:broader spt:physicalspecimen ;
+  skos:inScheme spt:specimenttypevocabulary ;
+  skos:prefLabel "Biological specimen"@en ;
+.
+spt:biomeaggregation
+  rdf:type skos:Concept ;
+  rdfs:comment "Specimen is an aggregation of whole or fragmentary parts of multiple organisms representative of some site."@en ;
+  rdfs:label "Biome aggregation specimen "@en ;
+  skos:broader spt:aggregation ;
+  skos:broader spt:biologicalspecimen ;
+  skos:inScheme spt:specimenttypevocabulary ;
+  skos:prefLabel "Biome aggregation specimen "@en ;
+.
+spt:containerfluid
+  rdf:type skos:Concept ;
+  rdfs:comment "" ;
+  rdfs:label "Container with fluid "@en ;
+  skos:broader spt:physicalspecimen ;
+  skos:inScheme spt:specimenttypevocabulary ;
+  skos:prefLabel "Container with fluid "@en ;
+.
+spt:fossil
+  rdf:type skos:Concept ;
+  rdfs:comment "" ;
+  rdfs:label "Fossil "@en ;
+  skos:broader spt:piecesolidmaterial ;
+  skos:inScheme spt:specimenttypevocabulary ;
+  skos:prefLabel "Fossil "@en ;
+.
+spt:ontology
+  rdf:type owl:Ontology ;
+  dct:created "2021-03-24"^^xsd:date ;
+  dct:creator <https://orcid.org/0000-0001-6041-5302> ;
+  dct:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
+  dct:modified "2021-03-24"^^xsd:date ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "0.1" ;
+.
+spt:organismpart
+  rdf:type skos:Concept ;
+  rdfs:comment "" ;
+  rdfs:label "Organism part "@en ;
+  skos:broader spt:biologicalspecimen ;
+  skos:broader spt:specimenpart ;
+  skos:inScheme spt:specimenttypevocabulary ;
+  skos:prefLabel "Organism part "@en ;
+.
+spt:physicalspecimen
+  rdf:type skos:Concept ;
+  rdfs:comment "top concept in specimen type hierarchy. Represents any physical specimen."@en ;
+  rdfs:label "Physical specimen"@en ;
+  skos:prefLabel "Physical specimen"@en ;
+  skos:topConceptOf spt:specimenttypevocabulary ;
+.
+spt:piecesolidmaterial
+  rdf:type skos:Concept ;
+  rdfs:comment "" ;
+  rdfs:label "Piece of Solid Material "@en ;
+  skos:broader spt:physicalspecimen ;
+  skos:inScheme spt:specimenttypevocabulary ;
+  skos:prefLabel "Piece of Solid Material "@en ;
+.
+spt:specimenpart
+  rdf:type skos:Concept ;
+  rdfs:comment "" ;
+  rdfs:label "Specimen part "@en ;
+  skos:broader spt:physicalspecimen ;
+  skos:inScheme spt:specimenttypevocabulary ;
+  skos:prefLabel "Specimen part "@en ;
+.
+spt:specimenttypevocabulary
+  rdf:type skos:ConceptScheme ;
+  rdfs:comment "Broad categories to classify any kind of physical specimen"@en ;
+  rdfs:label "iSamples Specimen Type Vocabulary "@en ;
+  skos:prefLabel "iSamples Specimen Type Vocabulary "@en ;
+.
+spt:wholeorganism
+  rdf:type skos:Concept ;
+  rdfs:comment "Specimen consists of the bodies of one or more entire organisms of the same species, from any kingdom."@en ;
+  rdfs:label "Whole organism specimen "@en ;
+  skos:broader spt:biologicalspecimen ;
+  skos:inScheme spt:specimenttypevocabulary ;
+  skos:prefLabel "Whole organism specimen "@en ;
+.
+<https://orcid.org/0000-0001-6041-5302>
+  rdf:type owl:NamedIndividual ;
+  rdfs:comment "e-mail: mailto:smrTucson@gmail.com " ;
+  rdfs:comment "orchid-id: https://orcid.org/0000-0001-6041-5302" ;
+  rdfs:label "Dr. Stephen M. Richard" ;
+.
