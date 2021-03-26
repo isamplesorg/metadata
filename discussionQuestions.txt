@@ -1,0 +1,27 @@
+Samples question
+
+1)
+should the sample registration record have a different identifier than the sample.
+i.e. use dct:identifier for the IGSN or other sample URI; 
+use sdo:about as explicit statement that the record is about a physical thing with ID
+name the sample metadata record PhysicalSampleMetadata instead of PhysicalSample
+
+2)
+representation of parent-child links
+isam:parentSample property in isam:PhysicalSample
+sosa:isResultOf/sosa:featureOfInterest  link through the target of the sampling event for the child
+Sampling Relation with relationship type encapsulating the derivationprocess (split, subset...)
+
+3)
+scoped name pattern for Type properties
+
+4)
+how to deal with status
+-- scoped name, only one
+-- event with date, e.g. registered, lost, embargo until, made public, consumed/destroyed, moved to new location, metadata update.  Could have sequence of events.
+
+5)
+what is mandatory on samplingEvent?
+
+6)
+are boreholes or other sampling features in scope?
