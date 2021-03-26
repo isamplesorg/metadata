@@ -30,7 +30,7 @@ mat:anthropogenicmetal
 .
 mat:dispersedmedia
   rdf:type skos:Concept ;
-  rdfs:comment "A material that consists of two media that do not mix. More specifically, it contains discrete elements of one medium which are dispersed in a continuous second medium. The two media can be of very different nature. In particular, they can be a gas, a liquid or a solid. (https://en.wikipedia.org/wiki/Dispersed_media). No direct ENVO equivalent.  Examples: aerosol ENVO_00010505, foam ENVO_00005738, emulsion ENVO_00010506, colloidal suspension ENVO_01001560, scum(?)ENVO:00003930, permafrost? clathrate?"@en ;
+  rdfs:comment "A material that consists of two or more media that do not mix. More specifically, it contains discrete elements of one medium which are dispersed in a continuous second medium. The media can be of very different nature. In particular, they can be a gas, a liquid or a solid. (https://en.wikipedia.org/wiki/Dispersed_media). No direct ENVO equivalent.  Examples: aerosol ENVO_00010505, foam ENVO_00005738, emulsion ENVO_00010506, colloidal suspension ENVO_01001560, scum(?)ENVO:00003930, permafrost? clathrate?"@en ;
   rdfs:label "Dispersed media "@en ;
   skos:broader mat:material ;
   skos:inScheme mat:materialsvocabulary ;
@@ -158,7 +158,7 @@ mat:sediment
 .
 mat:soil
   rdf:type skos:Concept ;
-  rdfs:comment "mixed mineral and organic matter modified by interaction between earth material, biosphere, and atmosphere. Soil is an environmental material which is primarily composed of minerals, varying proportions of sand, silt, and clay, organic material such as humus, gases, liquids, and a broad range of resident micro- and macroorganisms. (https://en.wikipedia.org/wiki/Soil) Soil consists of horizons near the Earth's surface that, in contrast to the underlying parent material, have been altered by the interactions of climate, relief, and living organisms over time. (http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054280) (http://purl.obolibrary.org/obo/ENVO_00001998)"@en ;
+  rdfs:comment "Mixed granular mineral and organic matter modified by interaction between earth material, biosphere, and atmosphere, consisting mostly of varying proportions of sand, silt, and clay, organic material such as humus, gases, liquids, and a broad range of resident micro- and macroorganisms. (https://en.wikipedia.org/wiki/Soil) Soil consists of horizons near the Earth's surface that, in contrast to the underlying parent material, have been altered by the interactions of climate, relief, and living organisms over time. (http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054280) (http://purl.obolibrary.org/obo/ENVO_00001998)"@en ;
   rdfs:label "Soil "@en ;
   rdfs:seeAlso <http://purl.obolibrary.org/obo/ENVO_00001998> ;
   rdfs:seeAlso <http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054280> ;
