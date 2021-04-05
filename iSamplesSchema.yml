@@ -1,0 +1,128 @@
+id: http://resource.isamples.org/schema/ontology
+name: physicalSample
+types:
+  date:
+    base: str
+    uri: xsd:date
+  string:
+    base: str
+    uri: xsd:string
+    
+
+prefixes:
+  isam:  http://resource.isamples.org/schema/
+  dct: http://purl.org/dc/terms/
+  mat: http://resource.isamples.org/vocabulary/material/
+  pur: http://resource.isamples.org/vocabulary/samplepurpose/
+  sf: http://resource.isamples.org/vocabulary/sampledFeature/
+  skos: http://www.w3.org/2004/02/skos/core#
+  spt: http://resource.isamples.org/vocabulary/specimentype/  
+classes:
+  Agent :
+    description: generic representation for a person or organization that is the active party in some responsibility
+    slots:
+      - alternate identifiers
+      - name
+      - email
+    slot_usage:
+      name :
+        required: true
+
+  Date:
+    description: object to specify a date and the 'type', which indicates the kind of event associated with the date.
+    slots:
+      - date
+      - dateType
+
+  Identifier:
+    description: object to specify an identifier string bound to a resource, and the authority that assigned and maintains the identifier binding and resolution.
+    slots:
+      - authority
+      - code
+      
+  MeasureValue:
+    description: simple object to represent measured values with units and uncertainty; could generalize uncertainty to something like 'measure quality'. The 'value' can be a single value, or a preferred value if a range (minValue, maxValue) is reported.
+    slots:
+     - value
+     - uncertainty
+     - units
+     - minValue
+     - maxValue
+
+  Organization :
+    description: an organization, with contact information. ideally organizations would be referenced by identifire in a  registry, but name should be include for presentation purposes.
+    subclass_of: Agent
+    slots:
+      - url
+      
+  Person :
+    description: A person, with contact information and affiliation
+    subclass_of: Agent
+    slots:
+      - first name
+      - last name
+      - positioName
+      - affiliation
+      
+  Responsibility:
+    description:
+    slots:
+      - label
+      - role
+      - agent
+    slot_usage:
+      agent :
+        required: true
+      role:
+        required: true
+
+  ScopedName:
+    description: binds a label with an identifier and authority for the labeled concept
+    slots:
+      - label
+      - role
+      - authority
+   
+  Action:
+    description: object that records some action taken that effects the provenance of a sample; 
+    slots:
+      - date
+      - action
+      - notes
+  Curation :
+    description: representation of processes for preservation of sample, responsible agent, repository location, etc.
+    slots:
+    
+  Initiative :
+    description:
+    slots:
+    
+  PhysicalSample :
+    description: This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.
+    slots:
+     - alternate identifiers
+     - label
+     - description
+
+  Procedure :
+    description:
+    slots:
+
+  SampleCollection :
+    description:
+    slots:
+
+  SampleRelation :
+    description:
+    slots:
+
+  SamplingEvent :
+    description:
+    slots:
+
+  SamplingLocation :
+    description:
+    slots:
+     - locationMethod
+     
+slots:
