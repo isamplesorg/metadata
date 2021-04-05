@@ -55,7 +55,7 @@ isam:Action
 .
 isam:Curation
   rdf:type owl:Class ;
-  rdfs:comment "" ;
+  rdfs:comment "representation of processes for preservation of sample, responsible agent, repository location, etc." ;
   rdfs:label "Curation "@en ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
