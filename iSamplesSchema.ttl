@@ -1,7 +1,7 @@
 # baseURI: http://resource.isamples.org/schema/ontology
 # imports: http://purl.org/dc/terms/
 # imports: http://resource.isamples.org/vocabulary/material/ontology
-# imports: http://resource.isamples.org/vocabulary/sampledFeature/ontology
+# imports: http://resource.isamples.org/vocabulary/sampledfeature/ontology
 # imports: http://resource.isamples.org/vocabulary/samplepurpose/ontology
 # imports: http://resource.isamples.org/vocabulary/specimentype/ontology
 # imports: http://www.w3.org/ns/sosa/
@@ -14,7 +14,7 @@
 @prefix pur: <http://resource.isamples.org/vocabulary/samplepurpose/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sf: <http://resource.isamples.org/vocabulary/sampledFeature/> .
+@prefix sf: <http://resource.isamples.org/vocabulary/sampledfeature/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix spt: <http://resource.isamples.org/vocabulary/specimentype/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -126,7 +126,7 @@ isam:PhysicalSample
               skos:Concept
               [
                 rdf:type owl:Restriction ;
-                owl:hasValue sf:vocabulary ;
+                owl:hasValue <http://resource.isamples.org/vocabulary/sampledFeature/sampledfeatuevocabulary> ;
                 owl:onProperty skos:inScheme ;
               ]
             ) ;
@@ -191,7 +191,7 @@ isam:PhysicalSample
 .
 isam:Procedure
   rdf:type owl:Class ;
-  rdfs:comment "" ;
+  rdfs:comment "A workflow that takes a samplingFeature as input and has a samplingFeature as output. Use to represent field sampling procedures and lab procedures for preparations that are the input to analytical processes (e.g. chemical analysis, mass spec)"@en ;
   rdfs:label "Procedure "@en ;
   rdfs:subClassOf owl:Thing ;
   skos:prefLabel "Procedure "@en ;
@@ -289,7 +289,7 @@ isam:hasInitiative
 .
 isam:hasMaterialCategory
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "" ;
+  rdfs:comment "Property to specify the kind of substance that constitutes a physical sample.  A sample might have multiple material constituents."@en ;
   rdfs:label "Sample "@en ;
   skos:prefLabel "Sample "@en ;
 .
