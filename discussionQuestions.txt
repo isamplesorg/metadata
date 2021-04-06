@@ -25,3 +25,16 @@ what is mandatory on samplingEvent?
 
 6)
 are boreholes or other sampling features in scope?
+
+7)
+what kind of specimen is a 'peel' or 'cast'.  Example I could find suggests it is obtained by putting latex or something on a surface, and peeling it off to obtain a cast impression of the surface.
+
+8)
+'pharmaceutical specimen' -- what? organic material? 
+
+9) 
+egg-- whole organism?, material-- the shell is not organic material. Eggs in collection must either be preserved in some fluid, or 'Blown eggshell'.
+
+10)
+SEM stub-- like a microscope slide but prepared for Scanning Electron Microscope
+need specimen type for 'mounted processed specimen'
