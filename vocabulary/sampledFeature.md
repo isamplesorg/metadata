@@ -1,4 +1,6 @@
 # Sampled feature
+
+See [decision tree](https://github.com/isamplesorg/metadata/blob/main/vocabulary/SampledFeatureDecisionTree.pdf) (simplified somewhat from this intitial version) and [OWL (rdf/turtle) draft](https://github.com/isamplesorg/metadata/blob/main/vocabulary/iSample-SampledFeature.ttl)
 								
 **Any** Specimen type is not specific to a kind of sampled feature
 **Existing specimen** specimen is derived by processing of a parent specimen
