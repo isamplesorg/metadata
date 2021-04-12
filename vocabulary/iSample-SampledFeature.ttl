@@ -13,7 +13,7 @@ sf:animalorganism
   rdf:type skos:Concept ;
   rdfs:label "animal organism"@en ;
   skos:broader sf:biologicalorganism ;
-  skos:definition "specimen samples a living animal organism" ;
+  skos:definition "specimen samples a non-fossilized animal organism"@en ;
   skos:inScheme sf:sampledfeatuevocabulary ;
   skos:prefLabel "animal organism"@en ;
 .
@@ -78,6 +78,13 @@ sf:existingspecimen
   skos:inScheme sf:sampledfeatuevocabulary ;
   skos:prefLabel "Existing specimen"@en ;
 .
+sf:experimentproduct
+  rdf:type skos:Concept ;
+  rdfs:label "Experiment produt"@en ;
+  skos:broader sf:anysampledfeature ;
+  skos:definition "Sampled feature was produced in a laboratory."@en ;
+  skos:prefLabel "Experiment product"@en ;
+.
 sf:extraterrestrialenvironment
   rdf:type skos:Concept ;
   rdfs:label "extraterrestrial environment "@en ;
@@ -85,14 +92,6 @@ sf:extraterrestrialenvironment
   skos:definition "specimen samples environment outside of solid earth, hydrosphere, or atmosphere."@en ;
   skos:inScheme sf:sampledfeatuevocabulary ;
   skos:prefLabel "extraterrestrial environment "@en ;
-.
-sf:freshwaterbody
-  rdf:type skos:Concept ;
-  rdfs:label "terrestrial water body"@en ;
-  skos:broader sf:waterbody ;
-  skos:definition "specimen samples terrestrial hydrosphere-- lake, other standing water, or a flowing water body (river, stream..) Include saline water in terrestrial evaporite environments."@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
-  skos:prefLabel "terrestrial water body"@en ;
 .
 sf:humanoccupationsite
   rdf:type skos:Concept ;
@@ -145,7 +144,7 @@ sf:microbialorganism
   rdf:type skos:Concept ;
   rdfs:label "microbial organism"@en ;
   skos:broader sf:biologicalorganism ;
-  skos:definition "specimen samples a living microorganism"@en ;
+  skos:definition "specimen samples a non-fossilized microbial organism.  Include Archaea, Bacteria, Fungi , Protists, Chromista"@en ;
   skos:inScheme sf:sampledfeatuevocabulary ;
   skos:prefLabel "microbial organism"@en ;
 .
@@ -231,6 +230,14 @@ sf:subsurfacefluidreservoir
   skos:definition "Specimen samples fluid that resides in fractures or intergranular porosity in the solid earth."@en ;
   skos:inScheme sf:sampledfeatuevocabulary ;
   skos:prefLabel "Subsurface fluid reservoir"@en ;
+.
+sf:terrestrialwaterbody
+  rdf:type skos:Concept ;
+  rdfs:label "Terrestrial water body"@en ;
+  skos:broader sf:waterbody ;
+  skos:definition "specimen samples terrestrial hydrosphere-- lake, other standing water, or a flowing water body (river, stream..) Include saline water in terrestrial evaporite environments."@en ;
+  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:prefLabel "terrestrial water body"@en ;
 .
 sf:waterbody
   rdf:type skos:Concept ;
