@@ -82,7 +82,7 @@ mat:material
 .
 mat:materialsvocabulary
   rdf:type skos:ConceptScheme ;
-  rdfs:comment "" ;
+  rdfs:comment "High level vocabulary to specify the kind of material that constitutes a physical sample"@en ;
   rdfs:label "iSamples Materials Vocabulary "@en ;
   skos:prefLabel "iSamples Materials Vocabulary "@en ;
 .
