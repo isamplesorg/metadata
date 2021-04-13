@@ -250,6 +250,7 @@ isam:ScopedName
   rdfs:subClassOf owl:Thing ;
   skos:prefLabel "Scoped Name "@en ;
 .
+
 isam:date
   rdf:type owl:ObjectProperty ;
   rdfs:comment "" ;

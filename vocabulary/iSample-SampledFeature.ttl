@@ -14,7 +14,7 @@ sf:animalorganism
   rdfs:label "animal organism"@en ;
   skos:broader sf:biologicalorganism ;
   skos:definition "specimen samples a non-fossilized animal organism"@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "animal organism"@en ;
 .
 sf:animalproduct
@@ -22,20 +22,21 @@ sf:animalproduct
   rdfs:label "animal product"@en ;
   skos:broader sf:anysampledfeature ;
   skos:definition "Sampled feature is the product of an animal other than human being, e.g. bird nest, egg, cocoon, fecal matter, dung ball."@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "animal product"@en ;
 .
 sf:anysampledfeature
   rdf:type skos:Concept ;
   rdfs:label "any sampled feature "@en ;
   skos:prefLabel "any sampled feature "@en ;
-  skos:topConceptOf sf:sampledfeatuevocabulary ;
+  skos:topConceptOf sf:sampledfeaturevocabulary ;
 .
 sf:atmosphere
   rdf:type skos:Concept ;
   rdfs:label "atmosphere"@en ;
   skos:broader sf:earthenvironment ;
   skos:definition "specimen samples the earth atmosphere"@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "atmosphere"@en ;
 .
 sf:biologicalorganism
@@ -43,7 +44,7 @@ sf:biologicalorganism
   rdfs:label "Biological organism"@en ;
   skos:broader sf:anysampledfeature ;
   skos:definition "specimen samples a living organism"@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Biological organism"@en ;
 .
 sf:building
@@ -51,7 +52,7 @@ sf:building
   rdfs:label "Building"@en ;
   skos:broader sf:humanoccupationsite ;
   skos:definition "specimen samples materials or objects related to human structures"@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Building"@en ;
 .
 sf:earthenvironment
@@ -59,7 +60,7 @@ sf:earthenvironment
   rdfs:label "Earth environment"@en ;
   skos:broader sf:anysampledfeature ;
   skos:definition "specimen samples the natural earth environment"@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Earth environment"@en ;
 .
 sf:earthsurface
@@ -67,7 +68,7 @@ sf:earthsurface
   rdfs:label "Earth Surface"@en ;
   skos:broader sf:earthenvironment ;
   skos:definition "Specimen samples the interface between solid earth, hydrosphere, or atmosphere" ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Earth Surface"@en ;
 .
 sf:existingspecimen
@@ -75,7 +76,7 @@ sf:existingspecimen
   rdfs:label "Existing specimen"@en ;
   skos:broader sf:anysampledfeature ;
   skos:definition "Specimen is derived by processing of a parent specimen. This is a subjective determination; use if the derived specimen is used to characterize some aspect of the parent specimen, not the entire original sampled feature."@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Existing specimen"@en ;
 .
 sf:experimentproduct
@@ -83,6 +84,7 @@ sf:experimentproduct
   rdfs:label "Experiment produt"@en ;
   skos:broader sf:anysampledfeature ;
   skos:definition "Sampled feature was produced in a laboratory."@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Experiment product"@en ;
 .
 sf:extraterrestrialenvironment
@@ -90,7 +92,7 @@ sf:extraterrestrialenvironment
   rdfs:label "extraterrestrial environment "@en ;
   skos:broader sf:anysampledfeature ;
   skos:definition "specimen samples environment outside of solid earth, hydrosphere, or atmosphere."@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "extraterrestrial environment "@en ;
 .
 sf:humanoccupationsite
@@ -98,14 +100,14 @@ sf:humanoccupationsite
   rdfs:label "Human occupation site "@en ;
   skos:broader sf:anysampledfeature ;
   skos:definition "specimen samples materials or objects produced by human activity"@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Human occupation site "@en ;
 .
 sf:labenvironment
   rdf:type skos:Concept ;
   rdfs:label "lab environment"@en ;
   skos:definition "specimen samples the environment in a laboratory" ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "lab environment"@en ;
 .
 sf:laboratoryenvironment
@@ -113,7 +115,7 @@ sf:laboratoryenvironment
   rdfs:label "Laboratory environment"@en ;
   skos:broader sf:anysampledfeature ;
   skos:definition "specimen samples environment in a laboratory; e.g. lab blank measurements."@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Laboratory environment "@en ;
 .
 sf:lakeriverstreambottom
@@ -121,7 +123,7 @@ sf:lakeriverstreambottom
   rdfs:label "Lake, River, or Stream bed"@en ;
   skos:broader sf:earthsurface ;
   skos:definition "Specimen samples the solid earth  interface with a lake or flowing water body"@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Lake, River, or Stream bed"@en ;
 .
 sf:marinewaterbody
@@ -129,7 +131,7 @@ sf:marinewaterbody
   rdfs:label "Marine environment"@en ;
   skos:broader sf:waterbody ;
   skos:definition "specimen samples marine hydrosphere"@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Marine environment"@en ;
 .
 sf:marinewaterbodybottom
@@ -137,7 +139,7 @@ sf:marinewaterbodybottom
   rdfs:label "marine water body bottom"@en ;
   skos:broader sf:earthsurface ;
   skos:definition "Specimen samples the solid earth  interface with marine or brackish water body"@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "marine water body bottom"@en ;
 .
 sf:microbialorganism
@@ -145,7 +147,7 @@ sf:microbialorganism
   rdfs:label "microbial organism"@en ;
   skos:broader sf:biologicalorganism ;
   skos:definition "specimen samples a non-fossilized microbial organism.  Include Archaea, Bacteria, Fungi , Protists, Chromista"@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "microbial organism"@en ;
 .
 sf:mineralspecies
@@ -153,7 +155,7 @@ sf:mineralspecies
   rdfs:label "mineral species"@en ;
   skos:broader sf:solidearth ;
   skos:definition "Specimen samples a particular mineral species"@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "mineral species"@en ;
 .
 sf:ontology
@@ -170,7 +172,7 @@ sf:plantorganism
   rdfs:label "plant organism"@en ;
   skos:broader sf:biologicalorganism ;
   skos:definition "specimen samples a living plant organism"@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "plant organism"@en ;
 .
 sf:regolithlayer
@@ -178,7 +180,7 @@ sf:regolithlayer
   rdfs:label "Regolith or Soil Horizon"@en ;
   skos:broader sf:solidearth ;
   skos:definition "Specimen samples material formed at the interface between the solid earth and atmosphere, but not at the surface. Soil, regolith"@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Regolith or Soil Horizon"@en ;
 .
 sf:rockbody
@@ -186,27 +188,28 @@ sf:rockbody
   rdfs:label "Rock Body"@en ;
   skos:broader sf:solidearth ;
   skos:definition "Specimen samples a rock body within the solid earth"@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Rock Body"@en ;
 .
 sf:rocksample
   rdf:type skos:Concept ;
   rdfs:label "Rock sample"@en ;
   skos:definition "specimen is derived by processing of a solid rock object parent specimen" ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Rock sample"@en ;
 .
-sf:sampledfeatuevocabulary
+sf:sampledfeaturevocabulary
   rdf:type skos:ConceptScheme ;
-  rdfs:label "Sampled Feature vocabulary"@en ;
-  skos:prefLabel "Sampled Feature vocabulary"@en ;
+  rdfs:label "Sampled Feature Type vocabulary"@en ;
+  skos:definition "Categories to specify the broad context that a sample is intended to represent."@en ;
+  skos:prefLabel "Sampled Feature Type vocabulary"@en ;
 .
 sf:solidearth
   rdf:type skos:Concept ;
   rdfs:label "Solid Earth"@en ;
   skos:broader sf:earthenvironment ;
   skos:definition "Specimen samples the solid earth"@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Solid Earth"@en ;
 .
 sf:stephen_richard
@@ -220,7 +223,7 @@ sf:subaerialearthsurface
   rdfs:label "Subaerial Surface Environment"@en ;
   skos:broader sf:earthsurface ;
   skos:definition "Specimen samples the  interface between solid Earth and atmosphere"@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Subaerial Surface Environment"@en ;
 .
 sf:subsurfacefluidreservoir
@@ -228,7 +231,7 @@ sf:subsurfacefluidreservoir
   rdfs:label "Subsurface fluid reservoir"@en ;
   skos:broader sf:earthenvironment ;
   skos:definition "Specimen samples fluid that resides in fractures or intergranular porosity in the solid earth."@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Subsurface fluid reservoir"@en ;
 .
 sf:terrestrialwaterbody
@@ -236,7 +239,7 @@ sf:terrestrialwaterbody
   rdfs:label "Terrestrial water body"@en ;
   skos:broader sf:waterbody ;
   skos:definition "specimen samples terrestrial hydrosphere-- lake, other standing water, or a flowing water body (river, stream..) Include saline water in terrestrial evaporite environments."@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "terrestrial water body"@en ;
 .
 sf:waterbody
@@ -244,7 +247,7 @@ sf:waterbody
   rdfs:label "Water body"@en ;
   skos:broader sf:earthenvironment ;
   skos:definition "specimen samples the hydrosphere"@en ;
-  skos:inScheme sf:sampledfeatuevocabulary ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Water body"@en ;
 .
 <https://orcid.org/0000-0001-6041-5302>

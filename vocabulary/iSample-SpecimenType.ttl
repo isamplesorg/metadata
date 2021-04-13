@@ -10,18 +10,27 @@
 @prefix spt: <http://resource.isamples.org/vocabulary/specimentype/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-spt:aggregation
+spt:anthropogenicaggregation
   rdf:type skos:Concept ;
-  rdfs:comment "Sample consists of a bunch of material fragments, not related to the same object (e.g. not a bunch of broken pot sherds that might be reassembled), but taken together representative of the sampled feature. Examples: loose soil, sediment, crushed rock,  particulate, including (non-biological) filtrates and residues. The sample requires some kind of container to keep it together. Cores of loosely consolidated material are considered 'piece of solid material' because the internal parts have spatial relationships (e.g. upper part, lower part)."@en ;
-  rdfs:label "Aggregation specimen "@en ;
+  rdfs:label "Anthropogenic aggregation"@en ;
+  skos:broader spt:anyaggregation ;
+  skos:definition "Aggregation consists of fragments of material produced by human activity,  not described individually, and generally not all originating from the same object.  Includes pottery in an excavation unit [that] gets an aggregate description, or Production waste, production raw-materials, or other residues (broken bits of plaster from an destroyed wall)."@en ;
+  skos:inScheme spt:specimenttypevocabulary ;
+  skos:prefLabel "Anthropogenic aggregation"@en ;
+.
+spt:anyaggregation
+  rdf:type skos:Concept ;
+  rdfs:comment "Sample consists of a bunch of material fragments, not related to the same object (e.g. not a bunch of broken pot sherds that might be reassembled), but taken together representative of the sampled feature. Examples: loose soil, sediment, crushed rock,  particulate, bunches of unrelated pot sherd, human production waste, filtrates and residues. The sample requires some kind of container to keep it together. Cores of loosely consolidated material are considered 'piece of solid material' because the internal parts have spatial relationships (e.g. upper part, lower part)."@en ;
+  rdfs:label "Any aggregation specimen"@en ;
   skos:broader spt:physicalspecimen ;
-  skos:prefLabel "Aggregation specimen "@en ;
+  skos:inScheme spt:specimenttypevocabulary ;
+  skos:prefLabel "Any aggregation specimen"@en ;
 .
 spt:artifact
   rdf:type skos:Concept ;
   rdfs:comment "An object made (manufactured, shaped, modified) by a human being, or precursor hominid. Include a set of pieces belonging originally to a single object and treated as a single specimen."@en ;
   rdfs:label "Artifact "@en ;
-  skos:broader spt:piecesolidmaterial ;
+  skos:broader spt:solidobject ;
   skos:inScheme spt:specimenttypevocabulary ;
   skos:prefLabel "Artifact "@en ;
 .
@@ -35,16 +44,16 @@ spt:biologicalspecimen
 .
 spt:biomeaggregation
   rdf:type skos:Concept ;
-  rdfs:comment "Specimen is an aggregation of whole or fragmentary parts of multiple organisms representative of some site."@en ;
+  rdfs:comment "Specimen is an aggregation of whole or fragmentary parts of multiple organisms, microscopic or megascopic, representative of some site."@en ;
   rdfs:label "Biome aggregation specimen "@en ;
-  skos:broader spt:aggregation ;
+  skos:broader spt:anyaggregation ;
   skos:broader spt:biologicalspecimen ;
   skos:inScheme spt:specimenttypevocabulary ;
   skos:prefLabel "Biome aggregation specimen "@en ;
 .
 spt:containerfluid
   rdf:type skos:Concept ;
-  rdfs:comment "Liquid, gas, or mixed dominantly fluid phases in a container.  Includes colloids, foams, gels, suspensions. The sampled feature is the fluid substance; fluid samples collected to analyze the contained biome should be considered *Biome Aggregation*"@en ;
+  rdfs:comment "Liquid, gas, or mixed dominantly fluid phases in a container. Might include minor solid particles. Container typically human made, but also includes natural fluid container, e.g. fluid inclusion in a mineral grain.  Includes colloids, foams, gels, suspensions. The sampled feature is the fluid substance; fluid samples collected to analyze the contained biome should be considered *Biome Aggregation*"@en ;
   rdfs:label "Container with fluid "@en ;
   skos:broader spt:physicalspecimen ;
   skos:inScheme spt:specimenttypevocabulary ;
@@ -52,11 +61,18 @@ spt:containerfluid
 .
 spt:fossil
   rdf:type skos:Concept ;
-  rdfs:comment "Specimen is fossilized remains of one or more organism preserved in rock; includes whole body, body parts (usually bone or shell), and trace fossils."@en ;
+  rdfs:comment "Specimen is fossilized remains of one or more organism preserved in rock; includes whole body, body parts (usually bone or shell), and trace fossils. An organism or organism part becomes a fossil when it has undergone some fossilization process. This generally entails physical and chemical changes akin to diagenesis in a sedimentary rock."@en ;
   rdfs:label "Fossil "@en ;
-  skos:broader spt:piecesolidmaterial ;
+  skos:broader spt:solidobject ;
   skos:inScheme spt:specimenttypevocabulary ;
   skos:prefLabel "Fossil "@en ;
+.
+spt:genericaggregation
+  rdf:type skos:Concept ;
+  rdfs:label "Aggregation"@en ;
+  skos:broader spt:anyaggregation ;
+  skos:definition "An aggregate specimen that is not biogenic or anthropogenic.  Examples: loose soil, sediment, crushed rock,  inorganic particulate filtrate, ash residue."@en ;
+  skos:prefLabel "Aggregation"@en ;
 .
 spt:ontology
   rdf:type owl:Ontology ;
@@ -72,7 +88,6 @@ spt:organismpart
   rdfs:comment "Part of an organism, e.g. a tissue sample, plant leaf, flower, bird feather, bone, shell or other hard body part (not fossilized).  Does not necessarily imply existance of parent sample. Not fossilized; generally includes organism parts native to deposits of Holocene to Recent age."@en ;
   rdfs:label "Organism part "@en ;
   skos:broader spt:biologicalspecimen ;
-  skos:broader spt:specimenpart ;
   skos:inScheme spt:specimenttypevocabulary ;
   skos:prefLabel "Organism part "@en ;
 .
@@ -85,19 +100,19 @@ spt:physicalspecimen
 .
 spt:piecesolidmaterial
   rdf:type skos:Concept ;
-  rdfs:comment "Single piece of material not one of the other types, e.g. rock specimen, mineral specimen, core. Ice and permafrost are considered solid materials. Includes set of pieces belonging originally to a single object and treated as a single specimen."@en ;
+  rdfs:comment "Single piece of material not one of the other types, e.g. rock specimen, mineral specimen, core. Ice and permafrost are considered solid materials."@en ;
   rdfs:label "Piece of Solid Material "@en ;
-  skos:broader spt:physicalspecimen ;
+  skos:broader spt:solidobject ;
   skos:inScheme spt:specimenttypevocabulary ;
   skos:prefLabel "Piece of Solid Material "@en ;
 .
-spt:specimenpart
+spt:solidobject
   rdf:type skos:Concept ;
-  rdfs:comment "" ;
-  rdfs:label "Specimen part "@en ;
+  rdfs:label "Solid object"@en ;
   skos:broader spt:physicalspecimen ;
+  skos:definition "Superclass for specimens that are individual solid objects, not biological. Includes set of pieces belonging originally to a single object and treated as a single specimen."@en ;
   skos:inScheme spt:specimenttypevocabulary ;
-  skos:prefLabel "Specimen part "@en ;
+  skos:prefLabel "Solid object"@en ;
 .
 spt:specimenttypevocabulary
   rdf:type skos:ConceptScheme ;
