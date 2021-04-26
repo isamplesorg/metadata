@@ -10,31 +10,46 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-mat:anthropogenicmaterial
-  rdf:type skos:Concept ;
-  rdfs:comment "Material produced by human activity. Organic products of agricultural activity are both anthropogenic and organic. Examples: ceramics, concrete, slag, (anthropogenic) glass, mine tailing, plaster, waste. (http://purl.obolibrary.org/obo/ENVO_0010001)"@en ;
-  rdfs:label "Anthropogenic material "@en ;
-  rdfs:seeAlso <http://purl.obolibrary.org/obo/ENVO_0010001> ;
-  skos:broader mat:material ;
-  skos:inScheme mat:materialsvocabulary ;
-  skos:prefLabel "Anthropogenic material "@en ;
-.
 mat:anthropogenicmetal
   rdf:type skos:Concept ;
-  rdfs:comment "Metallic material that has been produced or used by humans; subclass of anthropogenic material. Samples of naturally occuring metallic material (e.g. native copper, gold nuggets) should be considered mineral material. Metallic material is material that when polished or fractured, shows a lustrous appearance, and conducts electricity and heat relatively well. Metals are typically malleable (they can be hammered into thin sheets) or ductile (can be drawn into wires). The boundaries between metals, nonmetals, and metalloids fluctuate slightly due to a lack of universally accepted definitions of the categories involved. (https://en.wikipedia.org/wiki/Metal). c.f. http://purl.obolibrary.org/obo/ENVO_01001069"@en ;
+  rdfs:comment "Specimen is dominantly composed of metal that has been produced or used by humans; subclass of anthropogenic material. Samples of naturally occuring metallic material (e.g. native copper, gold nuggets) should be considered mineral material. Metallic material is material that when polished or fractured, shows a lustrous appearance, and conducts electricity and heat relatively well. Metals are typically malleable (they can be hammered into thin sheets) or ductile (can be drawn into wires). The boundaries between metals, nonmetals, and metalloids fluctuate slightly due to a lack of universally accepted definitions of the categories involved. (https://en.wikipedia.org/wiki/Metal). c.f. http://purl.obolibrary.org/obo/ENVO_01001069"@en ;
   rdfs:label "Anthropogenic metal material "@en ;
   rdfs:seeAlso <http://purl.obolibrary.org/obo/ENVO_01001069> ;
-  skos:broader mat:anthropogenicmaterial ;
+  skos:broader mat:anyanthropogenicmaterial ;
   skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "Anthropogenic metal material "@en ;
 .
+mat:anyanthropogenicmaterial
+  rdf:type skos:Concept ;
+  rdfs:comment "Material produced by human activity."@en ;
+  rdfs:label "Anthropogenic material "@en ;
+  skos:broader mat:material ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_0010001> ;
+  skos:prefLabel "Anthropogenic material "@en ;
+.
+mat:biogenicnonorganicmaterial
+  rdf:type skos:Concept ;
+  rdfs:comment "Material produced by an organism but not composed of 'very large molecules of biological origin.' E.g. bone, tooth, shell, coral skeleton,"@en ;
+  rdfs:label "Biogenic non-organic material"@en ;
+  skos:broader mat:material ;
+  skos:inScheme mat:materialsvocabulary ;
+  skos:prefLabel "Biogenic non-organic material"@en ;
+.
 mat:dispersedmedia
   rdf:type skos:Concept ;
-  rdfs:comment "A material that consists of two or more media that do not mix. More specifically, it contains discrete elements of one medium which are dispersed in a continuous second medium. The media can be of very different nature. In particular, they can be a gas, a liquid or a solid. (https://en.wikipedia.org/wiki/Dispersed_media). No direct ENVO equivalent.  Examples: aerosol ENVO_00010505, foam ENVO_00005738, emulsion ENVO_00010506, colloidal suspension ENVO_01001560, scum(?)ENVO:00003930, permafrost? clathrate?"@en ;
+  rdfs:comment "A material contains discrete elements of one medium that are dispersed in a continuous fluid medium.  The dispersed component can be a gas, a liquid or a solid (based on https://en.wikipedia.org/wiki/Dispersed_media). Does not include mixtures of granular material like soil, sediment, particulate, or solids that would be considered a rock. E.g. aerosol ENVO_00010505, foam ENVO_00005738, emulsion ENVO_00010506, colloidal suspension ENVO_01001560, scum(?)ENVO:00003930, clathrate?"@en ;
   rdfs:label "Dispersed media "@en ;
   skos:broader mat:material ;
   skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "Dispersed media "@en ;
+.
+mat:earthmaterial
+  rdf:type skos:Concept ;
+  rdfs:comment "undifferentiated, soil, sediment, rock, or natural particulates." ;
+  rdfs:label "Natural Solid Material "@en ;
+  skos:broader mat:material ;
+  skos:inScheme mat:materialsvocabulary ;
+  skos:prefLabel "Natural Solid Material "@en ;
 .
 mat:fluid
   rdf:type skos:Concept ;
@@ -53,15 +68,6 @@ mat:gas
   skos:broader mat:fluid ;
   skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "Gaseous material "@en ;
-.
-mat:hydrocarbonmaterial
-  rdf:type skos:Concept ;
-  rdfs:comment "Examples: kerogen, natural gas, biogas, methane ice, petroleum, gasoline, fuel oil, asphalt. To distinguish from biological material need clear criteria on when a 'very large molecule of biological origin' becomes a hydrocarbon chain. (http://purl.obolibrary.org/obo/ENVO_2000045, but no definition in ENVO)" ;
-  rdfs:label "Hydrocarbon material "@en ;
-  rdfs:seeAlso <http://purl.obolibrary.org/obo/ENVO_2000045> ;
-  skos:broader mat:material ;
-  skos:inScheme mat:materialsvocabulary ;
-  skos:prefLabel "Hydrocarbon material "@en ;
 .
 mat:liquidwater
   rdf:type skos:Concept ;
@@ -88,20 +94,19 @@ mat:materialsvocabulary
 .
 mat:mineral
   rdf:type skos:Concept ;
-  rdfs:comment "'A mineral is an element or chemical compound that is normally crystalline and that has been formed as a result of geological processes.' (Nickel, Ernest H. (1995), The definition of a mineral, The Canadian Mineralogist. 33 (3): 689–90). Include mineraloids. ... A material primarily composed of some substance that is naturally occurring, solid and stable at room temperature, representable by a chemical formula, usually abiogenic, and that has an ordered atomic structure. (http://purl.obolibrary.org/obo/ENVO_01000256). Comment: the identity of a mineral species is defined by a crystal structure and a chemical composition that might include various specific elemental substitutions in that structure. Mineraloid: A naturally occurring mineral-like substance that does not demonstrate crystallinity. Mineraloids possess chemical compositions that vary beyond the generally accepted ranges for specific minerals. Examples: obsidian, Opal. (https://en.wikipedia.org/wiki/Mineraloid)"@en ;
+  rdfs:comment "Material consists of a single mineral or mineraloid phase. .  'A mineral is an element or chemical compound that is normally crystalline and that has been formed as a result of geological processes.' (Nickel, Ernest H. (1995), The definition of a mineral, The Canadian Mineralogist. 33 (3): 689–90). Include mineraloids. ... A material primarily composed of some substance that is naturally occurring, solid and stable at room temperature, representable by a chemical formula, usually abiogenic, and that has an ordered atomic structure. (http://purl.obolibrary.org/obo/ENVO_01000256). Comment: the identity of a mineral species is defined by a crystal structure and a chemical composition that might include various specific elemental substitutions in that structure. Mineraloid: A naturally occurring mineral-like substance that does not demonstrate crystallinity. Mineraloids possess chemical compositions that vary beyond the generally accepted ranges for specific minerals. Examples: obsidian, Opal. (https://en.wikipedia.org/wiki/Mineraloid)"@en ;
   rdfs:label "Mineral "@en ;
   rdfs:seeAlso <http://purl.obolibrary.org/obo/ENVO_01000256> ;
-  skos:broader mat:naturalsolid ;
+  skos:broader mat:earthmaterial ;
   skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "Mineral "@en ;
 .
-mat:naturalsolid
+mat:mixedsoilsedimentrock
   rdf:type skos:Concept ;
-  rdfs:comment "" ;
-  rdfs:label "Natural Solid Material "@en ;
-  skos:broader mat:material ;
-  skos:inScheme mat:materialsvocabulary ;
-  skos:prefLabel "Natural Solid Material "@en ;
+  rdfs:comment "Material is mixed aggregation of fragments of undifferentiated soil, sediment or  rock origin. e.g. cuttings from some boreholes (rock fragments and caved soil or sediment), sea floor dredge haul (mixed sediment and rock)"@en ;
+  rdfs:label "Mixed soil, sediment or rock"@en ;
+  skos:broader mat:earthmaterial ;
+  skos:prefLabel "Mixed soil, sediment or rock"@en ;
 .
 mat:ontology
   rdf:type owl:Ontology ;
@@ -121,6 +126,14 @@ mat:organicmaterial
   skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "Organic material "@en ;
 .
+mat:otheranthropogenicmaterial
+  rdf:type skos:Concept ;
+  rdfs:comment "Non-metallic material produced by human activity. Organic products of agricultural activity are both anthropogenic and organic. Include lab preparations like XRF pellet and rock powders. Examples: ceramics, concrete, slag, (anthropogenic) glass, mine tailing, plaster, waste. (http://purl.obolibrary.org/obo/ENVO_0010001)"@en ;
+  rdfs:label "Other anthropogenic material"@en ;
+  skos:broader mat:anyanthropogenicmaterial ;
+  skos:inScheme mat:materialsvocabulary ;
+  skos:prefLabel "Other anthropogenic material"@en ;
+.
 mat:otherliquid
   rdf:type skos:Concept ;
   rdfs:comment "liquids that do not fit other category. E.g. alcohol."@en ;
@@ -131,19 +144,19 @@ mat:otherliquid
 .
 mat:particulate
   rdf:type skos:Concept ;
-  rdfs:comment "Material consists of microscopic particulate material derived by precipitation, filtering, or settling from suspension in a fluid. particulates, e.g. filtrate from water, deposition from atmosphere, astro material particles. Might include mineral, organic, or biological material. ENVO definition (ENVO_01000060) has \"composed of microscopic portions of solid or liquid material suspended in another environmental material.\", refine here to define as the solid particles, distinct from a material in which they are suspended. A material that includes solid or liquid particles suspended in another material would be a dispersed_media in this scheme, not defined in ENVO."@en ;
+  rdfs:comment "Material consists of microscopic particulate material derived by precipitation, filtering, or settling from suspension in a fluid, e.g. filtrate from water, deposition from atmosphere, astro material particles. Might include mineral, organic, or biological material. ENVO definition (ENVO_01000060) has \"composed of microscopic portions of solid or liquid material suspended in another environmental material.\", refine here to define as the solid particles, distinct from a material in which they are suspended. A material that includes solid or liquid particles suspended in another material would be a dispersed_media in this scheme, not defined in ENVO. Human manufactured particulates (e.g. rock powder) should be categorized as 'anthropogenic material'"@en ;
   rdfs:label "Particulate "@en ;
-  skos:broader mat:naturalsolid ;
+  skos:broader mat:earthmaterial ;
   skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "Particulate "@en ;
 .
 mat:rock
   rdf:type skos:Concept ;
-  rdfs:comment "Consolidated aggregate of particles (grains) of rock, mineral (including native elements), mineraloid, or solid organic material. Includes mineral aggregates such as granite, shale, marble; natural glass such as obsidian; organic material formed by geologic processes such a coal; and extraterrestrial material in meteorites. (based on http://resource.geosciml.org/classifier/cgi/lithology/rock, same as http://purl.obolibrary.org/obo/ENVO_00001995)"@en ;
+  rdfs:comment "Consolidated aggregate of particles (grains) of rock, mineral (including native elements), mineraloid, or solid organic material. Includes mineral aggregates such as granite, shale, marble; natural glass such as obsidian; organic material formed by geologic processes such a coal;  extraterrestrial material in meteorites; and  crushed rock fragments like drill cuttings from rock.  (based on http://resource.geosciml.org/classifier/cgi/lithology/rock, same as http://purl.obolibrary.org/obo/ENVO_00001995)"@en ;
   rdfs:label "Rock "@en ;
   rdfs:seeAlso <http://purl.obolibrary.org/obo/ENVO_00001995> ;
   rdfs:seeAlso <http://resource.geosciml.org/classifier/cgi/lithology/rock> ;
-  skos:broader mat:naturalsolid ;
+  skos:broader mat:earthmaterial ;
   skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "Rock "@en ;
 .
@@ -153,7 +166,7 @@ mat:sediment
   rdfs:label "Sediment "@en ;
   rdfs:seeAlso <http://purl.obolibrary.org/obo/ENVO_00002007> ;
   rdfs:seeAlso <http://resource.geosciml.org/classifier/cgi/lithology/sediment> ;
-  skos:broader mat:naturalsolid ;
+  skos:broader mat:earthmaterial ;
   skos:prefLabel "Sediment "@en ;
 .
 mat:soil
@@ -162,7 +175,7 @@ mat:soil
   rdfs:label "Soil "@en ;
   rdfs:seeAlso <http://purl.obolibrary.org/obo/ENVO_00001998> ;
   rdfs:seeAlso <http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054280> ;
-  skos:broader mat:naturalsolid ;
+  skos:broader mat:earthmaterial ;
   skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "Soil "@en ;
 .

@@ -1,4 +1,6 @@
 # baseURI: http://resource.isamples.org/vocabulary/sampledfeature/ontology
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
 # imports: http://www.w3.org/2004/02/skos/core
 
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -9,24 +11,16 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-sf:animalorganism
+sf:anthropogenicenvironment
   rdf:type skos:Concept ;
-  rdfs:label "animal organism"@en ;
-  skos:broader sf:biologicalorganism ;
-  skos:definition "specimen samples a non-fossilized animal organism"@en ;
-  skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "animal organism"@en ;
-.
-sf:animalproduct
-  rdf:type skos:Concept ;
-  rdfs:label "animal product"@en ;
+  rdfs:comment "Sampled feature is produced by or related to human activity"@en ;
+  rdfs:label "Anthropogenic environment"@en ;
   skos:broader sf:anysampledfeature ;
-  skos:definition "Sampled feature is the product of an animal other than human being, e.g. bird nest, egg, cocoon, fecal matter, dung ball."@en ;
-  skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "animal product"@en ;
+  skos:prefLabel "Anthropogenic environment"@en ;
 .
 sf:anysampledfeature
   rdf:type skos:Concept ;
+  rdfs:comment "Top concept in sampled feature type vocabulary."@en ;
   rdfs:label "any sampled feature "@en ;
   skos:prefLabel "any sampled feature "@en ;
   skos:topConceptOf sf:sampledfeaturevocabulary ;
@@ -39,18 +33,20 @@ sf:atmosphere
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "atmosphere"@en ;
 .
-sf:biologicalorganism
+sf:biologicalenvironment
   rdf:type skos:Concept ;
-  rdfs:label "Biological organism"@en ;
+  rdfs:label "Biological environment"@en ;
   skos:broader sf:anysampledfeature ;
-  skos:definition "specimen samples a living organism"@en ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_00000428> ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_01001110> ;
+  skos:definition "Specimen samples an Earth environment defined by the organisms present, their ecological relationships, and the physical conditions."@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "Biological organism"@en ;
+  skos:prefLabel "Biological environment"@en ;
 .
 sf:building
   rdf:type skos:Concept ;
   rdfs:label "Building"@en ;
-  skos:broader sf:humanoccupationsite ;
+  skos:broader sf:anthropogenicenvironment ;
   skos:definition "specimen samples materials or objects related to human structures"@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Building"@en ;
@@ -67,25 +63,17 @@ sf:earthsurface
   rdf:type skos:Concept ;
   rdfs:label "Earth Surface"@en ;
   skos:broader sf:earthenvironment ;
-  skos:definition "Specimen samples the interface between solid earth, hydrosphere, or atmosphere" ;
+  skos:definition "Specimen samples the interface between solid earth, hydrosphere, or atmosphere. Includes samples representing things collected on the surface, or in the uppermost part of the material below the surface. Not including recently deposited sediment that has not been modified by interaction with the surface environment."@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Earth Surface"@en ;
 .
-sf:existingspecimen
+sf:experimentsetting
   rdf:type skos:Concept ;
-  rdfs:label "Existing specimen"@en ;
-  skos:broader sf:anysampledfeature ;
-  skos:definition "Specimen is derived by processing of a parent specimen. This is a subjective determination; use if the derived specimen is used to characterize some aspect of the parent specimen, not the entire original sampled feature."@en ;
+  rdfs:label "Experiment setting"@en ;
+  skos:broader sf:anthropogenicenvironment ;
+  skos:definition "Sampled feature is the expermental set up that produced the sample."@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "Existing specimen"@en ;
-.
-sf:experimentproduct
-  rdf:type skos:Concept ;
-  rdfs:label "Experiment produt"@en ;
-  skos:broader sf:anysampledfeature ;
-  skos:definition "Sampled feature was produced in a laboratory."@en ;
-  skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "Experiment product"@en ;
+  skos:prefLabel "Experiment setting"@en ;
 .
 sf:extraterrestrialenvironment
   rdf:type skos:Concept ;
@@ -98,8 +86,8 @@ sf:extraterrestrialenvironment
 sf:humanoccupationsite
   rdf:type skos:Concept ;
   rdfs:label "Human occupation site "@en ;
-  skos:broader sf:anysampledfeature ;
-  skos:definition "specimen samples materials or objects produced by human activity"@en ;
+  skos:broader sf:anthropogenicenvironment ;
+  skos:definition "specimen samples materials or objects produced by human activity not confined to a building"@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Human occupation site "@en ;
 .
@@ -113,7 +101,7 @@ sf:labenvironment
 sf:laboratoryenvironment
   rdf:type skos:Concept ;
   rdfs:label "Laboratory environment"@en ;
-  skos:broader sf:anysampledfeature ;
+  skos:broader sf:anthropogenicenvironment ;
   skos:definition "specimen samples environment in a laboratory; e.g. lab blank measurements."@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Laboratory environment "@en ;
@@ -125,6 +113,17 @@ sf:lakeriverstreambottom
   skos:definition "Specimen samples the solid earth  interface with a lake or flowing water body"@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Lake, River, or Stream bed"@en ;
+.
+sf:marineenvironment
+  rdf:type skos:Concept ;
+  rdfs:label "Marine biome"@en ;
+  skos:broader sf:biologicalenvironment ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_00000447> ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_01000321> ;
+  skos:definition "Sampled feature is an Earth enviornment associated with the oceans of the Earth, including the overlying, linked atmosphere. Corresponds to ENVO 'Sea water Environment'."@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Marine biome"@en ;
+  skos:relatedMatch <http://purl.obolibrary.org/obo/ENVO_01000048> ;
 .
 sf:marinewaterbody
   rdf:type skos:Concept ;
@@ -138,25 +137,9 @@ sf:marinewaterbodybottom
   rdf:type skos:Concept ;
   rdfs:label "marine water body bottom"@en ;
   skos:broader sf:earthsurface ;
-  skos:definition "Specimen samples the solid earth  interface with marine or brackish water body"@en ;
+  skos:definition "Specimen samples the solid earth  interface with marine or brackish water body. Includes benthic boundary layer:  the bottom layer of water and the uppermost layer of sediment directly influenced by the overlying water"@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "marine water body bottom"@en ;
-.
-sf:microbialorganism
-  rdf:type skos:Concept ;
-  rdfs:label "microbial organism"@en ;
-  skos:broader sf:biologicalorganism ;
-  skos:definition "specimen samples a non-fossilized microbial organism.  Include Archaea, Bacteria, Fungi , Protists, Chromista"@en ;
-  skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "microbial organism"@en ;
-.
-sf:mineralspecies
-  rdf:type skos:Concept ;
-  rdfs:label "mineral species"@en ;
-  skos:broader sf:solidearth ;
-  skos:definition "Specimen samples a particular mineral species"@en ;
-  skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "mineral species"@en ;
 .
 sf:ontology
   rdf:type owl:Ontology ;
@@ -164,24 +147,18 @@ sf:ontology
   dct:creator <https://orcid.org/0000-0001-6041-5302> ;
   dct:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
   dct:modified "2021-03-17"^^xsd:date ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports dct: ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionInfo "0.1" ;
 .
-sf:plantorganism
+sf:regolithsedimentsoil
   rdf:type skos:Concept ;
-  rdfs:label "plant organism"@en ;
-  skos:broader sf:biologicalorganism ;
-  skos:definition "specimen samples a living plant organism"@en ;
-  skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "plant organism"@en ;
-.
-sf:regolithlayer
-  rdf:type skos:Concept ;
-  rdfs:label "Regolith or Soil Horizon"@en ;
+  rdfs:label "Regolith, sediment or soil horizon"@en ;
   skos:broader sf:solidearth ;
-  skos:definition "Specimen samples material formed at the interface between the solid earth and atmosphere, but not at the surface. Soil, regolith"@en ;
+  skos:definition "Specimen samples material formed at the interface between the solid earth and atmosphere, but not at the surface. Soil, regolith, non-consolidated sediment. Boundary between 'Sediment' and 'Rock Body' can be gradational/fuzzy"@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "Regolith or Soil Horizon"@en ;
+  skos:prefLabel "Regolith, sediment or soil horizon"@en ;
 .
 sf:rockbody
   rdf:type skos:Concept ;
@@ -218,13 +195,38 @@ sf:stephen_richard
   rdfs:comment "orchid-id: https://orcid.org/0000-0001-6041-5302" ;
   rdfs:label "Dr. Stephen M. Richard" ;
 .
-sf:subaerialearthsurface
+sf:subaerialsurfaceenvironment
   rdf:type skos:Concept ;
+  rdfs:comment "Specimen samples the  interface between solid Earth and atmosphere.  Sample is collected on the surface, or immediately below surface (zone of bioturbation). Include soil ‘O’ horizon and ‘biomantle’. Soil horizons below surface, or sediment in active deposition (no soil development) is considered part of solid Earth."@en ;
   rdfs:label "Subaerial Surface Environment"@en ;
   skos:broader sf:earthsurface ;
-  skos:definition "Specimen samples the  interface between solid Earth and atmosphere"@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Subaerial Surface Environment"@en ;
+.
+sf:subaerialterrestrialenvironment
+  rdf:type skos:Concept ;
+  rdfs:label "Subaerial terrestrial environment"@en ;
+  skos:broader sf:biologicalenvironment ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_01001790> ;
+  skos:definition "Sampled feature is an Earth environment associated with land masses (including overlying ice) directly interacting with the atmosphere; includes linked atmosphere above the land mass."@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:narrowMatch <http://purl.obolibrary.org/obo/ENVO_01001780> ;
+  skos:narrowMatch <http://purl.obolibrary.org/obo/ENVO_01001836> ;
+  skos:narrowMatch <http://purl.obolibrary.org/obo/ENVO_01001837> ;
+  skos:narrowMatch <http://purl.obolibrary.org/obo/ENVO_01001838> ;
+  skos:prefLabel "Subaerial terrestrial environment"@en ;
+.
+sf:subaqueousterrestrialenvironment
+  rdf:type skos:Concept ;
+  dct:source "https://en.wikipedia.org/wiki/Biome" ;
+  rdfs:label "Subaqueous terrestrial enviornment"@en ;
+  skos:broader sf:biologicalenvironment ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_01000306> ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_01001789> ;
+  skos:definition "Sampled feature is an Earth environment associated with water bodies on land masses; includes fresh and saline water bodies, streams, rivers, lakes. Corresponds to inland aquatic Ecosystems of Goodall (1974) \"Inland Aquatic Ecosystems: River and Stream Ecosystems; Lakes and Reservoirs\", and to 'freshwater biome' of ENVO"@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Subaqueous terrestrial environment"@en ;
+  skos:related <http://purl.obolibrary.org/obo/ENVO_00000873> ;
 .
 sf:subsurfacefluidreservoir
   rdf:type skos:Concept ;
