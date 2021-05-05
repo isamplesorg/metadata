@@ -1,5 +1,7 @@
-id: http://resource.isamples.org/schema/ontology
+id: http://resource.isamples.org/schema
 name: physicalSample
+title: Schema for documenting physical samples 
+version: 20210430
 types:
   date:
     base: str
@@ -17,112 +19,200 @@ prefixes:
   sf: http://resource.isamples.org/vocabulary/sampledFeature/
   skos: http://www.w3.org/2004/02/skos/core#
   spt: http://resource.isamples.org/vocabulary/specimentype/  
+  w3cpos: http://www.w3.org/2003/01/geo/wgs84_pos#
 classes:
-  Agent :
-    description: generic representation for a person or organization that is the active party in some responsibility
-    slots:
-      - alternate identifiers
-      - name
-      - email
-    slot_usage:
-      name :
-        required: true
 
   Date:
     description: object to specify a date and the 'type', which indicates the kind of event associated with the date.
     slots:
-      - date
-      - dateType
+      - dct:date
+      - isam:dateType
 
-  Identifier:
-    description: object to specify an identifier string bound to a resource, and the authority that assigned and maintains the identifier binding and resolution.
-    slots:
-      - authority
-      - code
-      
+    
   MeasureValue:
     description: simple object to represent measured values with units and uncertainty; could generalize uncertainty to something like 'measure quality'. The 'value' can be a single value, or a preferred value if a range (minValue, maxValue) is reported.
     slots:
-     - value
-     - uncertainty
-     - units
-     - minValue
-     - maxValue
+     - qudt:value
+     - isam:uncertainty
+     - qudt:unit
+     - qudt:lowerBound
+     - qudt:upperBound
 
   Organization :
     description: an organization, with contact information. ideally organizations would be referenced by identifire in a  registry, but name should be include for presentation purposes.
-    subclass_of: Agent
     slots:
-      - url
-      
+      - sdo:email
+      - sdo:name
+      - sdo:url
+      - sdo:identifier
+    slot_usage:
+      sdo:name:
+        required: true
+        
   Person :
     description: A person, with contact information and affiliation
     subclass_of: Agent
     slots:
-      - first name
-      - last name
-      - positioName
-      - affiliation
+      - sdo:name
+      - sdo:email
+      - sdo:JobTitle
+      - sdo:affiliation
+      - sdo:identifier
+    slot_usage:
+      sdo:name:
+        required: true
       
   Responsibility:
     description:
     slots:
-      - label
-      - role
-      - agent
+      - rdfs:label
+      - isam:roleType
+      - isam:agent
     slot_usage:
-      agent :
+      isam:agent :
         required: true
-      role:
+      isam:roleType:
         required: true
 
   ScopedName:
     description: binds a label with an identifier and authority for the labeled concept
     slots:
-      - label
-      - role
-      - authority
+      - rdfs:label
+      - isam:identifier
+      - dct:source
    
-  Action:
-    description: object that records some action taken that effects the provenance of a sample; 
+  Event:
+    description: object that records some action taken at some time; 
     slots:
-      - date
-      - action
-      - notes
+      - isam:date
+      - isam:action
+      - dct:description
+      - rdfs:label
+    slot_usage:
+      isam:date :
+        required: true
+      rdfs:label :
+        required: true
+              
   Curation :
     description: representation of processes for preservation of sample, responsible agent, repository location, etc.
     slots:
-    
+      - dct:accessRights
+      - isam:responsibility
+      - isam:events
+      - rdfs:label
+      - isam:curationLocation
+          
   Initiative :
     description:
     slots:
-    
+      - isam:dates
+      - dct:description
+      - rdfs:label
+      - isam:initiativeType
+      
+          
   PhysicalSample :
     description: This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.
     slots:
-     - alternate identifiers
-     - label
-     - description
+      - isam:registrant
+      - isam:represents
+      - rdfs:label
+      - dct:description
+      - sosa:isResultOf
+      - isam:samplingPurpose
+      - isam:hasContextCategory
+      - isam:hasMaterialCategory
+      - isam:hasSpecimenCategory
+      - isam:events
+      - isam:curation
+      - isam:status
+      - sdo:isPartOf
+      - sdo:keywords
+      - sdo:additionalProperty
+      - isam:informalClassification
+      - isam:hasCategory
+      - isam:altLabel
+      - isam:relatedResource
 
   Procedure :
     description:
     slots:
+     - rdfs:label
+     - dct:description
 
   SampleCollection :
     description:
     slots:
+     - rdfs:label
+     - dct:description
+     - isam:collectionPurpose
+     - isam:curation
 
-  SampleRelation :
+  Link :
     description:
     slots:
+      - dct:source
+      - isam:target
+      - isam:relationshipType
+      
 
   SamplingEvent :
     description:
     slots:
-
-  SamplingLocation :
+      - rdfs:label
+      - dct:description
+      - sosa:hasFeatureOfinterest
+      - isam:hasInitiative
+      - isam:responsibility
+      - isam:resultTime
+      - isam:samplingSite
+      - sosa:usedProcedure
+     
+  SamplingSite :
     description:
     slots:
-     - locationMethod
+      - rdfs:label
+      - dct:description
+      - dct:accessRights
+      - isam:location
+      - isam:placeName
+      - isam:otherSamplingLocation
+      - isam:siteType     
+      
+
+  GeospatialDDCoordLocation :
+    description:
+    slots:
+      - isam:locationMethod
+      - isam:elevation
+      - w3cpos:lat
+      - w3cpos:long
+      - isam:positionUncertainty
+     
+
+  GeospatialLocation :
+    description:
+    slots:
+      - isam:locationMethod
+      - isam:elevation
+      - isam:coordinate1
+      - isam:coordinate2
+      - isam:positionUncertainty
+      - isam:spatialReferenceSystem
+
+  LinearReferenceLocation :
+    description: location specified by position relative to origin defined along an arbitrary linear path, e.g. mile posts along a highway, or depth interval in a borehole, or pressure interval in an atmospheric sonde.
+    slots:
+      - isam:locationMethod
+      - isam:positionUncertainty
+      - isam:elevation
+      - isam:minCoordinate
+      - isam:maxCoordinate
+      - isam:measureUnits
+      - isam:spatialReferenceSystem
+      - isam:referenceGeometryName
+      - isam:referenceGeometryShape
      
 slots:
+ 
