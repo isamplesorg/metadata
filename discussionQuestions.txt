@@ -38,3 +38,16 @@ egg-- whole organism?, material-- the shell is not organic material. Eggs in col
 10)
 SEM stub-- like a microscope slide but prepared for Scanning Electron Microscope
 need specimen type for 'mounted processed specimen'
+
+
+
+Material type problems:
+cuttings, dredge haul -- aggregate-- might include soil, sediment, rock.  
+core-- could be rock or sediment
+melt inclusion?
+rock powder
+synthetic rock or mineral material-- particulate, rock or mineral
+loss on ignition ash.  4 thought it was organic
+biogenic mineral material-- shell, coral, bone?, teeth. Not organic (according to definition), not rock....
+Dispersed media definition needs clarification
+polished thin section, xrf bead, thin section, synthetic powders-- distinguish modern artifact from historic artifact???
