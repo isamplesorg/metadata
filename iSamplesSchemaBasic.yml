@@ -1,0 +1,196 @@
+id: http://resource.isamples.org/schema
+name: physicalSample
+title: Schema for documenting physical samples 
+version: 20210430
+types:
+  date:
+    base: str
+    uri: xsd:date
+  string:
+    base: str
+    uri: xsd:string
+  decimal:
+    base: Decimal
+    uri: xsd:decimal
+
+enums:
+  materialtype:
+    description: categories for kinds of material that constitute the sample 
+    permissible_values:
+      anyanthropogenicmaterial:
+        text: anyanthropogenicmaterial
+      anthropogenicmetal:
+        text: anthropogenicmetal
+      otheranthropogenicmaterial:
+        text: otheranthropogenicmaterial
+ 
+
+prefixes:
+  sdo: http://resource.isamples.org/schema/
+  dct: http://purl.org/dc/terms/
+  mat: http://resource.isamples.org/vocabulary/material/
+  pur: http://resource.isamples.org/vocabulary/samplepurpose/
+  sf: http://resource.isamples.org/vocabulary/sampledFeature/
+  skos: http://www.w3.org/2004/02/skos/core#
+  spt: http://resource.isamples.org/vocabulary/specimentype/  
+  w3cpos: http://www.w3.org/2003/01/geo/wgs84_pos#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+classes:
+  PhysicalSampleRecord :
+    description: This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.
+    slots:
+      - sampleidentifier
+      - label
+      - description
+      - samplingPurpose
+      - registrant
+      - keywords
+      - informalClassification
+      - hasContextCategory
+      - hasMaterialCategory
+      - hasSpecimenCategory
+      - producedBy
+    slot_usage:
+      label :
+        required: true
+      sampleidentifier :
+        required: true
+
+  SamplingSite :
+    description:
+    slots:
+      - label
+      - description
+      - location
+      - placeName
+
+  SamplingEvent :
+    description:
+    slots:
+      - label
+      - description
+      - hasFeatureOfInterest
+      - responsibility
+      - resultTime
+      - samplingSite
+     
+  GeospatialDDCoordLocation :
+    description:
+    slots:
+      - elevation
+      - latitude
+      - longitude
+        
+
+slots:
+  label:
+    range: string
+    description: a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.
+    close_mappings: rdfs:label
+
+  description:
+    range: string
+    description: free text description of the subject of a triple.
+    close_mappings: dct:description
+
+  informalClassification:
+    range: string
+    domain: PhysicalSampleRecord
+    description: free text classification terms, not from a controlled vocabulary; generally terms applied by collector
+    multivalued: true
+    
+  registrant:
+    range: string
+    domain: PhysicalSampleRecord
+    description: identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.
+ 
+  sampleidentifier:
+    range: string
+    domain: PhysicalSampleRecord
+    description: URI that identifies the physical sample described by this record
+    close_mappings: sdo:identifier
+    
+  samplingPurpose:
+    range: string
+    domain: PhysicalSampleRecord
+    description: term to specify why a sample was collection.
+
+  keywords:
+    range: string
+    domain: PhysicalSampleRecord
+    description: free text categorization of sample to support discovery
+    close_mappings: sdo:keywords
+    multivalued: true
+    
+  hasContextCategory:
+    range: string
+    domain: PhysicalSampleRecord
+    description: top level context, based on the kind of feature sampled.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.
+    multivalued: true
+ 
+  hasMaterialCategory:
+    range: materialtype
+    domain: PhysicalSampleRecord
+    description: specify the kind of material that constitutes the sample
+    multivalued: true
+ 
+  hasSpecimenCategory:
+    range: string
+    domain: PhysicalSampleRecord
+    description: specify the kind of object that the specimen is
+    multivalued: true
+ 
+  producedBy:
+    range: SamplingEvent
+    domain: PhysicalSampleRecord
+    description: object that documents the sampling event--who, where, when the specimen was obtained
+     
+  location:
+    range: GeospatialDDCoordLocation
+    domain: SamplingSite
+    description: geopatial location of site; required default is WGS84 latitude, longitude in decimal degrees. Elevation as a string with number, unit of measure, and datum. 
+    
+  placeName:
+    range: string
+    domain: SamplingSite
+    description: one or more names by which the sampling site is known.
+    multivalued: true
+    
+  hasFeatureOfInterest:
+    range: string
+    domain: SamplingEvent
+    description: what does the sample represent.
+    
+  responsibility:
+    range: string
+    domain: SamplingEvent
+    description: String with person name and affiliation, or organization name, and their role relative to the parent element.
+    multivalued: true
+
+  resultTime:
+    range: date
+    domain: SamplingEvent
+    description: Date on which the sample was collected.
+    
+  samplingSite:
+    range: SamplingSite
+    domain: SamplingEvent
+    description: object that identifies the place where the sample was collected
+    
+  elevation:
+    range: string
+    domain: GeospatialDDCoordLocation
+    description: should be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level.
+    
+  latitude:
+    range: decimal
+    domain: GeospatialDDCoordLocation
+    description: angular coordinate measured positive north from the equator.
+    
+  longitude:
+    range: decimal
+    domain: GeospatialDDCoordLocation
+    description: angular coordinate measured positive eastward from the prime meridian.
+    

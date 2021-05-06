@@ -12,28 +12,28 @@ types:
     
 
 prefixes:
-  isam:  http://resource.isamples.org/schema/
-  dct: http://purl.org/dc/terms/
+    http://resource.isamples.org/schema/
+   http://purl.org/dc/terms/
   mat: http://resource.isamples.org/vocabulary/material/
   pur: http://resource.isamples.org/vocabulary/samplepurpose/
   sf: http://resource.isamples.org/vocabulary/sampledFeature/
   skos: http://www.w3.org/2004/02/skos/core#
   spt: http://resource.isamples.org/vocabulary/specimentype/  
-  w3cpos: http://www.w3.org/2003/01/geo/wgs84_pos#
+   http://www.w3.org/2003/01/geo/wgs84_pos#
 classes:
 
   Date:
     description: object to specify a date and the 'type', which indicates the kind of event associated with the date.
     slots:
-      - dct:date
-      - isam:dateType
+      - date
+      - dateType
 
     
   MeasureValue:
     description: simple object to represent measured values with units and uncertainty; could generalize uncertainty to something like 'measure quality'. The 'value' can be a single value, or a preferred value if a range (minValue, maxValue) is reported.
     slots:
      - qudt:value
-     - isam:uncertainty
+     - uncertainty
      - qudt:unit
      - qudt:lowerBound
      - qudt:upperBound
@@ -65,154 +65,153 @@ classes:
   Responsibility:
     description:
     slots:
-      - rdfs:label
-      - isam:roleType
-      - isam:agent
+      - label
+      - roleType
+      - agent
     slot_usage:
-      isam:agent :
+      agent :
         required: true
-      isam:roleType:
+      roleType:
         required: true
 
   ScopedName:
     description: binds a label with an identifier and authority for the labeled concept
     slots:
-      - rdfs:label
-      - isam:identifier
-      - dct:source
+      - label
+      - identifier
+      - source
    
   Event:
     description: object that records some action taken at some time; 
     slots:
-      - isam:date
-      - isam:action
-      - dct:description
-      - rdfs:label
+      - date
+      - action
+      - description
+      - label
     slot_usage:
-      isam:date :
+      date :
         required: true
-      rdfs:label :
+      label :
         required: true
               
   Curation :
     description: representation of processes for preservation of sample, responsible agent, repository location, etc.
     slots:
-      - dct:accessRights
-      - isam:responsibility
-      - isam:events
-      - rdfs:label
-      - isam:curationLocation
+      - accessRights
+      - responsibility
+      - events
+      - label
+      - curationLocation
           
   Initiative :
     description:
     slots:
-      - isam:dates
-      - dct:description
-      - rdfs:label
-      - isam:initiativeType
+      - dates
+      - description
+      - label
+      - initiativeType
       
           
   PhysicalSample :
     description: This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.
     slots:
-      - isam:registrant
-      - isam:represents
-      - rdfs:label
-      - dct:description
+      - registrant
+      - represents
+      - label
+      - description
       - sosa:isResultOf
-      - isam:samplingPurpose
-      - isam:hasContextCategory
-      - isam:hasMaterialCategory
-      - isam:hasSpecimenCategory
-      - isam:events
-      - isam:curation
-      - isam:status
+      - samplingPurpose
+      - hasContextCategory
+      - hasMaterialCategory
+      - hasSpecimenCategory
+      - events
+      - curation
+      - status
       - sdo:isPartOf
       - sdo:keywords
       - sdo:additionalProperty
-      - isam:informalClassification
-      - isam:hasCategory
-      - isam:altLabel
-      - isam:relatedResource
+      - informalClassification
+      - hasCategory
+      - altLabel
+      - relatedResource
 
   Procedure :
     description:
     slots:
-     - rdfs:label
-     - dct:description
+     - label
+     - description
 
   SampleCollection :
     description:
     slots:
-     - rdfs:label
-     - dct:description
-     - isam:collectionPurpose
-     - isam:curation
-
+     - label
+     - description
+     - collectionPurpose
+     - curation
   Link :
     description:
     slots:
-      - dct:source
-      - isam:target
-      - isam:relationshipType
+      - source
+      - target
+      - relationshipType
       
 
   SamplingEvent :
     description:
     slots:
-      - rdfs:label
-      - dct:description
+      - label
+      - description
       - sosa:hasFeatureOfinterest
-      - isam:hasInitiative
-      - isam:responsibility
-      - isam:resultTime
-      - isam:samplingSite
+      - hasInitiative
+      - responsibility
+      - resultTime
+      - samplingSite
       - sosa:usedProcedure
      
   SamplingSite :
     description:
     slots:
-      - rdfs:label
-      - dct:description
-      - dct:accessRights
-      - isam:location
-      - isam:placeName
-      - isam:otherSamplingLocation
-      - isam:siteType     
+      - label
+      - description
+      - accessRights
+      - location
+      - placeName
+      - otherSamplingLocation
+      - siteType     
       
 
   GeospatialDDCoordLocation :
     description:
     slots:
-      - isam:locationMethod
-      - isam:elevation
-      - w3cpos:lat
-      - w3cpos:long
-      - isam:positionUncertainty
+      - locationMethod
+      - elevation
+      - latitude
+      - longitude
+      - positionUncertainty
      
 
   GeospatialLocation :
     description:
     slots:
-      - isam:locationMethod
-      - isam:elevation
-      - isam:coordinate1
-      - isam:coordinate2
-      - isam:positionUncertainty
-      - isam:spatialReferenceSystem
+      - locationMethod
+      - elevation
+      - coordinate1
+      - coordinate2
+      - positionUncertainty
+      - spatialReferenceSystem
 
   LinearReferenceLocation :
     description: location specified by position relative to origin defined along an arbitrary linear path, e.g. mile posts along a highway, or depth interval in a borehole, or pressure interval in an atmospheric sonde.
     slots:
-      - isam:locationMethod
-      - isam:positionUncertainty
-      - isam:elevation
-      - isam:minCoordinate
-      - isam:maxCoordinate
-      - isam:measureUnits
-      - isam:spatialReferenceSystem
-      - isam:referenceGeometryName
-      - isam:referenceGeometryShape
+      - locationMethod
+      - positionUncertainty
+      - elevation
+      - minCoordinate
+      - maxCoordinate
+      - measureUnits
+      - spatialReferenceSystem
+      - referenceGeometryName
+      - referenceGeometryShape
      
 slots:
  
