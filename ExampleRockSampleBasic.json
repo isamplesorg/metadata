@@ -1,0 +1,38 @@
+{
+    "$schema": "iSamplesSchemaBasicSMR.json",
+    "label": "smr2007-02-07 Blue Tank Granite",
+    "sampleidentifier": "https://igsn.org/smr2096856",
+    "description": "Sample of Blue Tank Granite collected in SW Harquahala Mountains; medium-grained biotite granitoid with distictive 1 mm honey-colored sphene crystals. Approx 15 by 15 by 15 cm.",
+    "hasContextCategory": [ "Rock Body" ],
+    "hasMaterialCategory": ["Rock"],
+    "hasSpecimenCategory": ["Other solid object"],
+    "keywords": [
+        "granitoid",
+        "Mesoproterozoic",
+        "Harquahala Thrust Plate"
+    ],
+    "producedBy": {
+        "label": "Sampling event",
+        "description": "Field geologic sample taken from outcrop",
+        "hasFeatureOfInterest": "Blue Tank Granite",
+        "responsibility": ["Stephen M. Richard, geo@email.com"],
+        "resultTime": "2007-02-07",
+        "samplingSite": {
+            "description": "outcrop in wash bottom",
+            "label": "outcrop",
+            "location": {
+                "elevation": "705 m above MSL",
+                "latitude": 33.741,
+                "longitude": -113.364
+            },
+            "placeName": [
+                "Blue Tank Wash",
+                "Harquahala Mountains",
+                "Arizona",
+                "La Paz County"
+            ]
+        }
+    },
+    "registrant": "Joe Samplecurator, joe@somewhere.net",
+    "samplingPurpose": "representative lithology"
+}
