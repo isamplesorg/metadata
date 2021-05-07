@@ -93,12 +93,12 @@ isam:MeasureValue
   rdfs:subClassOf owl:Thing ;
   skos:prefLabel "Measure Value "@en ;
 .
-isam:PhysicalSample
+isam:PhysicalSampleRecord
   rdf:type rdfs:Class ;
   rdf:type owl:Class ;
-  rdfs:comment "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object."@en ;
+  rdfs:comment "This is a digital representation of a physical sample. The sampleIdnetifier property provides the identifier for the described physical object.."@en ;
   rdfs:label "Physical Sample"@en ;
-  rdfs:subClassOf <http://www.w3.org/ns/sosa/Sample> ;
+  rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -126,7 +126,7 @@ isam:PhysicalSample
               skos:Concept
               [
                 rdf:type owl:Restriction ;
-                owl:hasValue <http://resource.isamples.org/vocabulary/sampledFeature/sampledfeatuevocabulary> ;
+                owl:hasValue sf:sampledfeatuevocabulary ;
                 owl:onProperty skos:inScheme ;
               ]
             ) ;
@@ -164,6 +164,11 @@ isam:PhysicalSample
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
+      owl:onProperty isam:producedBy ;
+      owl:someValuesFrom isam:SamplingEvent ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
       owl:onProperty isam:registrant ;
       owl:someValuesFrom isam:Responsibility ;
     ] ;
@@ -184,8 +189,8 @@ isam:PhysicalSample
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
-      owl:onProperty <http://www.w3.org/ns/sosa/isResultOf> ;
-      owl:someValuesFrom isam:SamplingEvent ;
+      owl:onProperty <http://www.w3.org/ns/sosa/hasResult> ;
+      owl:someValuesFrom <http://www.w3.org/ns/sosa/Sample> ;
     ] ;
   skos:prefLabel "Physical Sample"@en ;
 .
@@ -205,7 +210,7 @@ isam:Responsibility
 .
 isam:SampleCollection
   rdf:type owl:Class ;
-  rdfs:comment "Representation of a contingent grouping of samples based on some purpose" ;
+  rdfs:comment "Representation of a contingent grouping of samples based on some purpose"@en ;
   rdfs:label "Sample Collection "@en ;
   rdfs:subClassOf owl:Thing ;
   skos:prefLabel "Sample Collection "@en ;
@@ -221,11 +226,22 @@ isam:SamplingEvent
   rdf:type owl:Class ;
   rdfs:comment "" ;
   rdfs:label "Sampling Event "@en ;
-  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf <http://www.w3.org/ns/sosa/Sampling> ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:onProperty <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
-      owl:someValuesFrom isam:ScopedName ;
+      owl:someValuesFrom [
+          rdf:type owl:Class ;
+          owl:unionOf (
+              isam:ScopedName
+              <http://www.w3.org/ns/sosa/Sample>
+            ) ;
+        ] ;
+    ] ;
+  rdfs:subClassOf [
+      rdf:type owl:Restriction ;
+      owl:onProperty <http://www.w3.org/ns/sosa/hasResult> ;
+      owl:someValuesFrom <http://www.w3.org/ns/sosa/Sample> ;
     ] ;
   skos:prefLabel "Sampling Event "@en ;
 .
@@ -250,7 +266,6 @@ isam:ScopedName
   rdfs:subClassOf owl:Thing ;
   skos:prefLabel "Scoped Name "@en ;
 .
-
 isam:date
   rdf:type owl:ObjectProperty ;
   rdfs:comment "" ;
@@ -362,9 +377,9 @@ isam:organization
 isam:parentSample
   rdf:type owl:ObjectProperty ;
   rdfs:comment "Link from a physical sample to the sample from which it was derived by some process. The derivation process can be described in the isam:SamplingEvent for the child sample; this is a short cut for the property chain sosa:isResultOf/sosa:hasFeatureOfInterest"@en ;
-  rdfs:domain isam:PhysicalSample ;
+  rdfs:domain isam:PhysicalSampleRecord ;
   rdfs:label "parent sample "@en ;
-  rdfs:range isam:PhysicalSample ;
+  rdfs:range isam:PhysicalSampleRecord ;
   skos:prefLabel "parent sample "@en ;
 .
 isam:person
@@ -379,10 +394,15 @@ isam:placeName
   rdfs:label "placeName "@en ;
   skos:prefLabel "placeName "@en ;
 .
+isam:producedBy
+  rdf:type rdf:Property ;
+  rdfs:label " produced by "@en ;
+  skos:prefLabel "Relation linking a physical sample record to the sampling event that produced the sample."@en ;
+.
 isam:registrant
   rdf:type owl:ObjectProperty ;
   rdfs:comment "Specification of the agent that registered the sample"@en ;
-  rdfs:domain isam:PhysicalSample ;
+  rdfs:domain isam:PhysicalSampleRecord ;
   rdfs:label "registrant "@en ;
   rdfs:range isam:Responsibility ;
   skos:prefLabel "registrant "@en ;
@@ -434,7 +454,7 @@ isam:samplingPurpose
 isam:samplingSite
   rdf:type owl:ObjectProperty ;
   rdfs:comment "" ;
-  rdfs:domain isam:PhysicalSample ;
+  rdfs:domain isam:SamplingEvent ;
   rdfs:label "sampling site "@en ;
   rdfs:range isam:SamplingSite ;
   skos:prefLabel "sampling site "@en ;
@@ -444,6 +464,15 @@ isam:siteType
   rdfs:comment "" ;
   rdfs:label "site type "@en ;
   skos:prefLabel "site type "@en ;
+.
+spt:organismpart
+  skos:broader spt:piecesolidmaterial ;
+.
+spt:organismproduct
+  skos:broader spt:piecesolidmaterial ;
+.
+spt:wholeorganism
+  skos:broader spt:piecesolidmaterial ;
 .
 <http://www.w3.org/ns/sosa/hasFeatureOfInterest>
   rdfs:range isam:ScopedName ;
