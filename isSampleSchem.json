@@ -55,7 +55,8 @@
             "uncertainty",
             "units",
             "minValue",
-            "maxValue"
+            "maxValue",
+            "determinationMethod"
          ]
       },
       "Organization": {
@@ -179,6 +180,10 @@
       "description": {
          "range": "string",
          "description": "free text description of the subject"
+      },
+      "determinationMethod": {
+         "range": "string",
+         "description": "free text description of method to obtain a measured value"
       },
       "source": {
          "range": "string",

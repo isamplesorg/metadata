@@ -1,0 +1,34 @@
+Join the Dots and the Collections Digitisation Dashboard use the list below as a draft. There isn't a consensus around definitions and e.g. object type vs preservation method.
+
+preservationMethod list at the moment from CDD:
+
+Artefacts: climate controlled conditions
+Artefacts: non climate controlled conditions
+Cores
+Cryopreserved/frozen -80C
+Cryopreserved DNA/RNA
+Cut/polished gemstones
+Dried
+Dried - assembled
+Dried - not assembled
+Dried and pinned
+Fluid preserved
+Fluids
+Fossils preserved in amber, natural resin
+Hazardous material/objects
+Macrofossils (dry preserved)
+Macrofossils (fluid preserved)
+Macro-objects
+Mesofossils (dry preserved)
+Mesofossils (fluid preserved)
+Microfossils (dry preserved)
+Microfossils (fluid preserved)
+Micro-objects
+Microscopic slides
+Other
+Other geo/biodiversity
+Oversized fossils
+Oversized objects
+Pressed and dried
+Spore print
+Unspecified

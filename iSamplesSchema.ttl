@@ -465,11 +465,32 @@ isam:siteType
   rdfs:label "site type "@en ;
   skos:prefLabel "site type "@en ;
 .
+mat:anyanthropogenicmaterial
+  skos:inScheme mat:materialsvocabulary ;
+.
+mat:mixedsoilsedimentrock
+  skos:inScheme mat:materialsvocabulary ;
+.
+mat:sediment
+  skos:inScheme mat:materialsvocabulary ;
+.
+sf:anthropogenicenvironment
+  skos:inScheme sf:sampledfeaturevocabulary ;
+.
+spt:anyaggregation
+  skos:inScheme spt:specimenttypevocabulary ;
+.
+spt:genericaggregation
+  skos:inScheme spt:specimenttypevocabulary ;
+.
 spt:organismpart
   skos:broader spt:piecesolidmaterial ;
 .
 spt:organismproduct
   skos:broader spt:piecesolidmaterial ;
+.
+spt:researchproduct
+  skos:inScheme spt:specimenttypevocabulary ;
 .
 spt:wholeorganism
   skos:broader spt:piecesolidmaterial ;

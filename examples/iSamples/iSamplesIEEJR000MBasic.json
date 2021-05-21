@@ -1,0 +1,29 @@
+{
+    "$schema": "../iSamplesSchemaBasicSMR.json",
+    "label": "16ER6F3",
+    "sampleidentifier": "igsn:IEEJR000M",
+    "description": "Not Provided",
+    "hasContextCategory": ["Rock Body"],
+    "hasMaterialCategory": ["Rock"],
+    "hasSpecimenCategory": ["Other solid object"],
+    "keywords": ["Metamorphic>Meta-Carbonate", "Marble"],
+    "producedBy": {
+        "label": "collection event",
+        "description": "Manual>Hammer",
+        "hasFeatureOfInterest": "Metamorphic aureole",
+        "responsibility": ["Jade Star Lackey,,collector","Evan Ramos,,Sample Owner"],
+        "resultTime": "2021-01-19 04:32:44",
+        "samplingSite": {
+            "description": "Not Provided",
+            "label": "Not Provided",
+            "location": {
+                "elevation": "",
+                "latitude": 36.4617,
+                "longitude": -118.5839
+            },
+            "placeName": ["Mineral King","Sequoia National Forest","California","Tulare","Silver City"]
+        }
+    },
+    "registrant": "Sam Kodama",
+    "samplingPurpose": ""
+}

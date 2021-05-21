@@ -1,0 +1,425 @@
+{
+   "id": "http://resource.isamples.org/schema/ontology",
+   "name": "physicalSample",
+   "types": {
+      "date": {
+         "base": "str",
+         "uri": "xsd:date"
+      },
+      "string": {
+         "base": "str",
+         "uri": "xsd:string"
+      }
+   },
+   "prefixes": {
+      "isam": "http://resource.isamples.org/schema/",
+      "dct": "http://purl.org/dc/terms/",
+      "mat": "http://resource.isamples.org/vocabulary/material/",
+      "pur": "http://resource.isamples.org/vocabulary/samplepurpose/",
+      "sf": "http://resource.isamples.org/vocabulary/sampledFeature/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "spt": "http://resource.isamples.org/vocabulary/specimentype/"
+   },
+   "classes": {
+      "Agent": {
+         "description": "generic representation for a person or organization that is the active party in some responsibility",
+         "slots": [
+            "alternate identifiers",
+            "name",
+            "email"
+         ],
+         "slot_usage": {
+            "name": {
+               "required": true
+            }
+         }
+      },
+      "Date": {
+         "description": "object to specify a date and the 'type', which indicates the kind of event associated with the date.",
+         "slots": [
+            "date",
+            "dateType"
+         ]
+      },
+      "Identifier": {
+         "description": "object to specify an identifier string bound to a resource, and the authority that assigned and maintains the identifier binding and resolution.",
+         "slots": [
+            "authority",
+            "code"
+         ]
+      },
+      "MeasureValue": {
+         "description": "simple object to represent measured values with units and uncertainty; could generalize uncertainty to something like 'measure quality'. The 'value' can be a single value, or a preferred value if a range (minValue, maxValue) is reported.",
+         "slots": [
+            "value",
+            "uncertainty",
+            "units",
+            "minValue",
+            "maxValue"
+         ]
+      },
+      "Organization": {
+         "description": "an organization, with contact information. ideally organizations would be referenced by identifire in a  registry, but name should be include for presentation purposes.",
+         "subclass_of": "Agent",
+         "slots": [
+            "url"
+         ]
+      },
+      "Person": {
+         "description": "A person, with contact information and affiliation",
+         "subclass_of": "Agent",
+         "slots": [
+            "first name",
+            "last name",
+            "positioName",
+            "affiliation"
+         ]
+      },
+      "Responsibility": {
+         "description": null,
+         "slots": [
+            "label",
+            "role",
+            "agent"
+         ],
+         "slot_usage": {
+            "agent": {
+               "required": true
+            },
+            "role": {
+               "required": true
+            }
+         }
+      },
+      "ScopedName": {
+         "description": "binds a label with an identifier and authority for the labeled concept",
+         "slots": [
+            "label",
+            "role",
+            "authority"
+         ]
+      },
+      "Action": {
+         "description": "object that records some action taken that effects the provenance of a sample;",
+         "slots": [
+            "date",
+            "action",
+            "notes"
+         ]
+      },
+      "Curation": {
+         "description": "representation of processes for preservation of sample, responsible agent, repository location, etc.",
+         "slots": null
+      },
+      "Initiative": {
+         "description": null,
+         "slots": null
+      },
+      "PhysicalSample": {
+         "description": "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.",
+         "slots": [
+            "alternate identifiers",
+            "label",
+            "description"
+         ]
+      },
+      "Procedure": {
+         "description": null,
+         "slots": null
+      },
+      "SampleCollection": {
+         "description": null,
+         "slots": null
+      },
+      "SampleRelation": {
+         "description": null,
+         "slots": null
+      },
+      "SamplingEvent": {
+         "description": null,
+         "slots": null
+      },
+      "SamplingLocation": {
+         "description": null,
+         "slots": [
+            "locationMethod"
+         ]
+      }
+   },
+   "slots": {
+      "accessRights": {
+         "range": "dct:RightsStatement",
+         "domain": "Curation, SamplingSite",
+         "description": "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights. Recommended practice is to refer to a rights statement with a URI. If this is not possible or feasible, a literal value (name, label, or short text) may be provided."
+      },
+      "action": "property linking an Action object to a scoped name categorizing what was done\nrange: ScopedName\ndomain: Action",
+      "altID": {
+         "range": "Identifier",
+         "description": "property value specifies an alternate identifier for the subject resource."
+      },
+      "asWKT": {
+         "range": "string",
+         "domain": "SamplingLocation",
+         "description": "serialization of a location using an OGC well known text string."
+      },
+      "authority": {
+         "description": "specifies the agent responsible for stewardship of a term or identifier.",
+         "domain": "Identifier, ScopedName",
+         "range": "Responsibility"
+      },
+      "code": {
+         "domain": "Identifier",
+         "range": "string"
+      },
+      "date": {
+         "range": "date or dateTime",
+         "domain": "Date",
+         "description": "ISO8601 date string"
+      },
+      "description": {
+         "range": "string",
+         "description": "free text description of the subject"
+      },
+      "source": {
+         "range": "string",
+         "domain": "SampleRelation, ScopedName",
+         "description": "use for sourcing scoped names and sample relationships, URI for a publication, or string reference to a source authority"
+      },
+      "hasSerialization": {
+         "range": "string",
+         "domain": "SiteSpecificLocation",
+         "description": "link from a location to a string that represents the location according to some formal syntax"
+      },
+      "agent": {
+         "range": "Organization,  Person",
+         "domain": "Responsibility",
+         "description": "the person(s) or organization(s) that fill a responsibility role",
+         "multivalued": true
+      },
+      "collectionPurpose": {
+         "range": "string",
+         "domain": "SampleCollection",
+         "description": "Term specifying reason that collection was defined. generate controlled vocabulary later"
+      },
+      "dateType": {
+         "range": "ScopedName",
+         "domain": "Date",
+         "description": "need vocabulary, include 'startDate', 'endDate',"
+      },
+      "elevation": {
+         "range": "MeasureValue",
+         "domain": "SamplingLocation, GeospatialLocation,",
+         "description": "For a location, specification of the vertical distance from the datum specified for the spatial reference systeml. SRS definition should also specify if positive values are above or below the datum."
+      },
+      "events": {
+         "range": "Event",
+         "domain": "PhysicalSample",
+         "description": "property links a sample to events in its provenance, mandatory event is collection event."
+      },
+      "hasBasis": {
+         "range": "http://www.opengis.net/rdf#Curve",
+         "domain": "LinearReferenceLocation",
+         "description": "basis for linear reference system must be some kind of OGC curve. A Curve is a one-dimensional geometric object usually stored as a sequence of points, with the subtype of Curve specifying the form of the interpolation between points. (OGC 99-049, https://portal.opengeospatial.org/files/?artifact_id=829)"
+      },
+      "hasContextCategory": {
+         "range": "SampledFeatureType",
+         "domain": "PhysicalSample",
+         "description": "top level context, based on the kind of feature sampled.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property."
+      },
+      "hasInitiative": {
+         "range": "Initiative",
+         "domain": "SamplingEvent",
+         "description": "identify the project, field campaign, cruise, expediton during which the samplingEvent occurred"
+      },
+      "hasMaterialCategory": {
+         "range": "MaterialType",
+         "domain": "PhysicalSample",
+         "description": "top level specification of the kind of material that constitutes the physical sample; detailed material categorization is done through the hasCategory/sdo:PropertyValue pattern"
+      },
+      "hasMaxCoordinate": {
+         "range": "MeasuredValue",
+         "domain": "LinearReferenceLocation",
+         "description": "coordinate with maximum numeric value in linear reference system"
+      },
+      "hasMinCoordinate": {
+         "range": "MeasuredValue",
+         "domain": "LinearReferenceLocation",
+         "description": "coordinate with minimum numeric value in linear reference system"
+      },
+      "hasSpecimenCategory": {
+         "range": "SpecimenType",
+         "domain": "PhysicalSample",
+         "description": "top level categorization of kind of specimen. More specific classifications use hasCategory/sdo:PropertyValue pattern\nhasSRS:"
+      },
+      "identifier": {
+         "range": "Identifier",
+         "domain": null,
+         "description": "base on ISO19115-1  MD_Identifier, with a 'code' string that is the actual identifier string, and a link to the authority that controls the identifier via a responsibility object."
+      },
+      "locationMethod": {
+         "range": "string",
+         "domain": "SampleLocation, GeospatialLocation, LinearReferenceLocation, SiteSpecificLocation",
+         "description": "URI that dereferences to a registered procedure would be best practice"
+      },
+      "parentSample": {
+         "range": "PhysicalSample",
+         "domain": "PhysicalSample",
+         "description": "link from a sample to another sample that it is derived from. The parent sample is the FeatureOfInterest for the samplingEvent associated with the child."
+      },
+      "placeName": {
+         "range": "ScopedName",
+         "domain": "SamplingSite",
+         "description": null
+      },
+      "registrant": {
+         "range": "Responsibility",
+         "domain": "PhysicalSample",
+         "description": null
+      },
+      "relationshipType": {
+         "range": "ScopedName",
+         "domain": "SampleRelation",
+         "description": null
+      },
+      "relationSource": {
+         "range": "PhysicalSample",
+         "domain": "SampleRelation",
+         "description": null
+      },
+      "relationTarget": {
+         "range": "PhysicalSample",
+         "domain": "SampleRelation",
+         "description": null
+      },
+      "responsibility": {
+         "range": "Responsibility",
+         "domain": "SamplingEvent, Curation, Initiative",
+         "description": null
+      },
+      "resultTime": {
+         "range": "Date",
+         "domain": "SamplingEvent",
+         "description": "sosa:resultTime is a datatype property, can't have Date object (date with date type) as range"
+      },
+      "roleType": {
+         "range": "ScopedName",
+         "domain": "Responsibility",
+         "description": "term specifying the relationship between and agent and some resource in a Responsibility object."
+      },
+      "samplingPurpose": {
+         "range": "ScopedName",
+         "domain": "PhysicalSample",
+         "description": null
+      },
+      "samplingSite": {
+         "range": "SamplingSite",
+         "domain": "PhysicalSample",
+         "description": null
+      },
+      "siteType": {
+         "range": "ScopedName",
+         "domain": "SamplingSite",
+         "description": null
+      },
+      "uncertainty": {
+         "range": "xsd:decimal",
+         "domain": "MeasuredValue",
+         "description": null
+      },
+      "unit": {
+         "range": "qudt:Unit",
+         "domain": "MeasuredValue",
+         "description": null
+      },
+      "value": {
+         "range": "xsd:decimal",
+         "domain": "MeasuredValue",
+         "description": null
+      },
+      "comment": {
+         "range": "string",
+         "domain": null,
+         "description": null
+      },
+      "label": {
+         "range": "string",
+         "domain": null,
+         "description": null
+      },
+      "additionalProperty": {
+         "range": "sdo:PropertyValue",
+         "domain": null,
+         "description": "Principle application is on PhysicalSample, but could be used on other entities; use to associate with other non-categorical properties."
+      },
+      "affiliation": {
+         "range": "sdo:Organization",
+         "domain": "sdo:Person",
+         "description": "use to associate a person with a sponsoring or employing organization (could be time-stamped)"
+      },
+      "alternateName": {
+         "range": "string",
+         "domain": "PhysicalSample",
+         "description": null
+      },
+      "category": {
+         "range": "sdo:PropertyValue",
+         "domain": "PhysicalSample",
+         "description": "use specifically for sample classification categories from registered vocabularies with URI or the category (use for sdo:propertyID)."
+      },
+      "email": {
+         "range": "string",
+         "domain": "sdo:Person, sdo:Organization",
+         "description": "could apply regex validation for proper mailto: link"
+      },
+      "hasPart": {
+         "range": "PhysicalSample",
+         "domain": "SampleCollection",
+         "description": "link from collection to sample that is member of collection"
+      },
+      "isPartOf": {
+         "range": "Collection",
+         "domain": "PhysicalSample",
+         "description": "bind sample to one or more collections, inverse of sdo:hasPart on Collection"
+      },
+      "jobTitle": {
+         "range": "string",
+         "domain": "sdo:Person",
+         "description": "a person associated with a responsibility might be identified only by a jobTitle for better long-term stability.  Ideally associated e-mail would be related to the jobTitle (position),not the person in that role at a given time"
+      },
+      "keywords": {
+         "range": "string",
+         "domain": "PhysicalSample",
+         "description": "free text categorization of sample to support discovery"
+      },
+      "location": {
+         "range": "SamplingLocation or subclass",
+         "domain": "SamplingSite",
+         "description": "A sampling site must have exactly one SamplingLocation with a longitude-latitude WKT CRS84 point to support cross domain search; other subclasses of SamplingLocation can also be associated with a site to assert location in other spatial reference systems, either for greater precision, or using other map projection schemes preferred by some community"
+      },
+      "name": {
+         "range": "string",
+         "domain": "sdo:Organiztion, sdo:Person",
+         "description": "use in parallel with rdfs:label for consistency with schema.org"
+      },
+      "url": {
+         "range": "xsd:anyURI",
+         "domain": "sco:Organization",
+         "description": "url for organization home page"
+      },
+      "hasFeatureOfinterest": {
+         "range": "ScopedName",
+         "domain": "SamplingEvent",
+         "description": "specify the particular feature of interest that is the target of a sampling event; should be consistent with sampledFeature for any result samples."
+      },
+      "isResultOf": {
+         "range": "SamplingEvent",
+         "domain": "PhysicalSample",
+         "description": null
+      },
+      "usedProcedure": {
+         "range": "Procedure",
+         "domain": "SamplingEvent",
+         "description": null
+      }
+   }
+}

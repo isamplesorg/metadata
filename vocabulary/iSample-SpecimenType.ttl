@@ -23,16 +23,15 @@ spt:anyaggregation
   rdfs:comment "Sample consists of a bunch of material fragments, not related to the same object (e.g. not a bunch of broken pot sherds that might be reassembled), but taken together representative of the sampled feature. Examples: loose soil, sediment, crushed rock,  particulate, bunches of unrelated pot sherd, human production waste, filtrates and residues. The sample requires some kind of container to keep it together. Cores of loosely consolidated material are considered 'piece of solid material' because the internal parts have spatial relationships (e.g. upper part, lower part)."@en ;
   rdfs:label "Any aggregation specimen"@en ;
   skos:broader spt:physicalspecimen ;
-  skos:inScheme spt:specimenttypevocabulary ;
   skos:prefLabel "Any aggregation specimen"@en ;
 .
 spt:anysolidobject
   rdf:type skos:Concept ;
-  rdfs:label "Solid object"@en ;
+  rdfs:label "Any solid object"@en ;
   skos:broader spt:physicalspecimen ;
   skos:definition "Superclass for specimens that are individual solid objects, not biological. Includes set of pieces belonging originally to a single object and treated as a single specimen."@en ;
   skos:inScheme spt:specimenttypevocabulary ;
-  skos:prefLabel "Solid object"@en ;
+  skos:prefLabel "Any solid object"@en ;
 .
 spt:artifact
   rdf:type skos:Concept ;
@@ -45,10 +44,10 @@ spt:artifact
 spt:biologicalspecimen
   rdf:type skos:Concept ;
   rdfs:comment "Specimen for which the sampled feature is one or more living organisms from a particular biome context, megascopic or microscopic"@en ;
-  rdfs:label "Biological specimen"@en ;
+  rdfs:label "Any biological specimen"@en ;
   skos:broader spt:physicalspecimen ;
   skos:inScheme spt:specimenttypevocabulary ;
-  skos:prefLabel "Biological specimen"@en ;
+  skos:prefLabel "Any biological specimen"@en ;
 .
 spt:biomeaggregation
   rdf:type skos:Concept ;
@@ -102,10 +101,10 @@ spt:organismpart
 spt:organismproduct
   rdf:type skos:Concept ;
   rdfs:comment "Specimen is a thing produced by some organism, generally not composed of organic material or including biological tissue, e.g. Shell, antler, egg shell, coral skeleton (organic tissue not included), fecal matter, cocoon, web.  Consider internal parts not composed of organic material (e.g. teeth, bone) and hard body parts that are not shed (hoof, horn, tusk) to be organism parts."@en ;
-  rdfs:label "organism product"@en ;
+  rdfs:label "Organism product"@en ;
   skos:broader spt:biologicalspecimen ;
   skos:inScheme spt:specimenttypevocabulary ;
-  skos:prefLabel "organism product"@en ;
+  skos:prefLabel "Organism product"@en ;
 .
 spt:physicalspecimen
   rdf:type skos:Concept ;

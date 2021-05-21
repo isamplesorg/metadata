@@ -6,6 +6,14 @@
     "additionalProperties": false,
     "description": "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.",
     "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "identifier for the JSON schema for validation purposes"
+        },
+        "@id": {
+            "type": "string",
+            "description": "URI that identifies this sample description record (not the physical sample itself"
+        },
         "label": {
             "type": "string",
             "description": "string that will identify the sample for human users"
@@ -23,42 +31,81 @@
             "items": {
                 "type": "string",
                 "enum": [
+                    "Atmosphere",
                     "Biological environment",
                     "Building",
-                    "Earth Surface",
                     "Earth environment",
+                    "Earth Surface",
                     "Experiment setting",
+                    "Extraterrestrial environment ",
                     "Human occupation site ",
+                    "Lab environment",
                     "Laboratory environment",
                     "Lake, River, or Stream bed",
                     "Marine biome",
                     "Marine environment",
+                    "Marine water body bottom",
                     "Regolith, sediment or soil horizon",
                     "Rock Body",
                     "Rock sample",
                     "Solid Earth",
                     "Subaerial Surface Environment",
                     "Subaerial terrestrial environment",
-                    "Subaqueous terrestrial enviornment",
+                    "Subaqueous terrestrial environment",
                     "Subsurface fluid reservoir",
                     "Terrestrial water body",
-                    "Water body",
-                    "atmosphere",
-                    "extraterrestrial environment ",
-                    "lab environment",
-                    "marine water body bottom"
+                    "Water body"
                 ]
             },
             "type": "array"
         },
         "hasMaterialCategory": {
             "description": "specify the kind of material that constitutes the sample",
-            "items": {"type": "string"},
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Anthropogenic material",
+                    "Anthropogenic metal material",
+                    "Biogenic non-organic material",
+                    "Dispersed media",
+                    "Fluid material",
+                    "Gaseous material",
+                    "Liquid water",
+                    "Mineral",
+                    "Mixed soil, sediment or rock",
+                    "Natural Solid Material",
+                    "Non-aqueous liquid material",
+                    "Organic material",
+                    "Other anthropogenic material",
+                    "Particulate",
+                    "Rock",
+                    "Sediment",
+                    "Soil"
+                ]
+            },
             "type": "array"
         },
         "hasSpecimenCategory": {
             "description": "specify the kind of object that the specimen is",
-            "items": {"type": "string"},
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Aggregation",
+                    "Anthropogenic aggregation",
+                    "Any aggregation specimen",
+                    "Any biological specimen",
+                    "Any solid object",
+                    "Artifact",
+                    "Biome aggregation specimen",
+                    "Container with fluid",
+                    "Fossil",
+                    "Organism part",
+                    "Organism product",
+                    "Other solid object",
+                    "Research product",
+                    "Whole organism specimen"
+                ]
+            },
             "type": "array"
         },
         "keywords": {
@@ -80,6 +127,8 @@
         }
     },
     "required": [
+        "@schema",
+        "@id",
         "sampleidentifier",
         "label"
     ],

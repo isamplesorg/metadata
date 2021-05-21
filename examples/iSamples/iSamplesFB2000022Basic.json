@@ -1,0 +1,30 @@
+{
+    "@schema": "../iSamplesSchemaBasicSMR.json",
+    "@id":"",
+    "label": "",
+    "sampleidentifier": "",
+    "description": "",
+    "hasContextCategory": [""],
+    "hasMaterialCategory": [""],
+    "hasSpecimenCategory": [""],
+    "keywords": [""],
+    "producedBy": {
+        "label": "",
+        "description": "",
+        "hasFeatureOfInterest": "",
+        "responsibility": [""],
+        "resultTime": "",
+        "samplingSite": {
+            "description": "",
+            "label": "",
+            "location": {
+                "elevation": "",
+                "latitude": 0,
+                "longitude": 0
+            },
+            "placeName": [""]
+        }
+    },
+    "registrant": "",
+    "samplingPurpose": ""
+}
