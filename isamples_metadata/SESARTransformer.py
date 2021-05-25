@@ -6,73 +6,72 @@ from isamples_metadata.Transformer import Transformer
 class SESARTransformer(Transformer):
     """Concrete transformer class for going from a SESAR record to an iSamples record"""
 
-
-    def transform(self, source_record: typing.Dict) -> typing.Dict:
-        transformed_record = super(SESARTransformer, self).transform(source_record)
+    def transform(self) -> typing.Dict:
+        transformed_record = super(SESARTransformer, self).transform()
         return transformed_record
 
-    def _source_record_description(self, source_record: typing.Dict) -> typing.Dict:
-        return source_record['description']
+    def _source_record_description(self) -> typing.Dict:
+        return self.source_record['description']
 
-    def _supplement_metadata(self, source_record: typing.Dict) -> typing.Dict:
-        description = self._source_record_description(source_record)
+    def _supplement_metadata(self) -> typing.Dict:
+        description = self._source_record_description()
         if description is not None:
-            return self._source_record_description(source_record)['supplementMetadata']
+            return self._source_record_description()['supplementMetadata']
         return None
-    
-    def _logger(self):
+
+    @staticmethod
+    def _logger():
         return logging.getLogger('isamples_metadata.SESARTransformer')
 
-    def sample_identifier_scheme(self, source_record: typing.Dict) -> typing.AnyStr:
+    def sample_identifier_scheme(self) -> typing.AnyStr:
         return 'igsn'
 
-    def sample_identifier_value(self, source_record: typing.Dict) -> typing.AnyStr:
-        return source_record['igsn']
+    def sample_identifier_value(self) -> typing.AnyStr:
+        return self.source_record['igsn']
 
-    def sample_label(self, source_record: typing.Dict) -> typing.AnyStr:
-        return self._source_record_description(source_record)['sampleName']
+    def sample_label(self) -> typing.AnyStr:
+        return self._source_record_description()['sampleName']
 
-    def sample_description(self, source_record: typing.Dict) -> typing.AnyStr:
+    def sample_description(self) -> typing.AnyStr:
         # TODO: implement
         return ""
 
-    def has_context_categories(self, source_record: typing.Dict) -> typing.List:
+    def has_context_categories(self) -> typing.List:
         return ['Subsurface fluid reservoir']
 
-    def has_material_categories(self, source_record: typing.Dict) -> typing.List:
+    def has_material_categories(self) -> typing.List:
         return ['Gaseous material']
 
-    def has_specimen_categories(self, source_record: typing.Dict) -> typing.List:
+    def has_specimen_categories(self) -> typing.List:
         return ['Container with fluid']
 
-    def keywords(self, source_record: typing.Dict) -> typing.List:
-        return [self._source_record_description(source_record)['sampleType']]
+    def keywords(self) -> typing.List:
+        return [self._source_record_description()['sampleType']]
 
-    def _contributor_name_with_role(self, source_record: typing.Dict, role_name: typing.AnyStr):
+    def _contributor_name_with_role(self, role_name: typing.AnyStr):
         contributor_name = ""
-        contributors = self._source_record_description(source_record)['contributors']
+        contributors = self._source_record_description()['contributors']
         if contributors is not None and len(contributors) > 0:
-            role_lambda = lambda contributor_dict: contributor_dict['roleName'] == role_name
-            contributors_with_role = list(filter(role_lambda, contributors))
+            contributors_with_role = list(filter(lambda contributor_dict: contributor_dict['roleName'] == role_name, contributors))
             if len(contributors_with_role) > 0:
                 contributor_name = contributors_with_role[0]['contributor'][0]['name']
         return contributor_name
 
-    def sample_registrant(self, source_record: typing.Dict) -> typing.AnyStr:
-        return self._contributor_name_with_role(source_record, 'Sample Registrant')
+    def sample_registrant(self) -> typing.AnyStr:
+        return self._contributor_name_with_role('Sample Registrant')
 
-    def sample_sampling_purpose(self, source_record: typing.Dict) -> typing.AnyStr:
+    def sample_sampling_purpose(self) -> typing.AnyStr:
         # TODO: implement
         return ""
 
-    def produced_by_label(self, source_record: typing.Dict) -> typing.AnyStr:
-        return self._source_record_description(source_record)['collectionMethod']
+    def produced_by_label(self) -> typing.AnyStr:
+        return self._source_record_description()['collectionMethod']
 
-    def produced_by_description(self, source_record: typing.Dict) -> typing.AnyStr:
+    def produced_by_description(self) -> typing.AnyStr:
         description_str = ''
-        description_dict = self._source_record_description(source_record)
+        description_dict = self._source_record_description()
         if description_dict is not None:
-            supplement_metadata = self._supplement_metadata(source_record)
+            supplement_metadata = self._supplement_metadata()
             if supplement_metadata is not None:
                 if 'cruiseFieldPrgrm' in supplement_metadata:
                     description_str += 'cruiseFieldPrgrm:{0}. '.format(supplement_metadata['cruiseFieldPrgrm'])
@@ -91,42 +90,42 @@ class SESARTransformer(Transformer):
                     description_str += 'navigation type:{0}'.format(supplement_metadata['navigationType'])
         return description_str
 
-    def produced_by_feature_of_interest(self, source_record: typing.Dict) -> typing.AnyStr:
-        supplement_metadata = self._supplement_metadata(source_record)
+    def produced_by_feature_of_interest(self) -> typing.AnyStr:
+        supplement_metadata = self._supplement_metadata()
         if supplement_metadata is not None and 'primaryLocationType' in supplement_metadata:
             return supplement_metadata['primaryLocationType']
         return ""
 
-    def produced_by_responsibilities(self, source_record: typing.Dict) -> typing.List:
+    def produced_by_responsibilities(self) -> typing.List:
         responsibilities = list()
-        description_dict = self._source_record_description(source_record)
+        description_dict = self._source_record_description()
         collector = description_dict['collector']
         if collector is not None:
             responsibilities.append('{},,Collector'.format(collector))
 
-        owner = self._contributor_name_with_role(source_record, 'Sample Owner')
+        owner = self._contributor_name_with_role('Sample Owner')
         if len(owner) > 0:
             responsibilities.append('{},,Sample Owner'.format(owner))
 
         return responsibilities
 
-    def produced_by_result_time(self, source_record: typing.Dict) -> typing.AnyStr:
-        return self._source_record_description(source_record)['collectionStartDate']
+    def produced_by_result_time(self) -> typing.AnyStr:
+        return self._source_record_description()['collectionStartDate']
 
-    def sampling_site_description(self, source_record: typing.Dict) -> typing.AnyStr:
-        description_dict = self._source_record_description(source_record)
+    def sampling_site_description(self) -> typing.AnyStr:
+        description_dict = self._source_record_description()
         if description_dict is not None:
-            supplement_metadata = self._supplement_metadata(source_record)
+            supplement_metadata = self._supplement_metadata()
             if supplement_metadata is not None and 'locationDescription' in supplement_metadata:
                 return supplement_metadata['locationDescription']
         return ""
 
-    def sampling_site_label(self, source_record: typing.Dict) -> typing.AnyStr:
+    def sampling_site_label(self) -> typing.AnyStr:
         # TODO: implement
         return ""
 
-    def sampling_site_elevation(self, source_record: typing.Dict) -> typing.AnyStr:
-        supplement_metadata = self._supplement_metadata(source_record)
+    def sampling_site_elevation(self) -> typing.AnyStr:
+        supplement_metadata = self._supplement_metadata()
         if supplement_metadata is not None and 'elevation' in supplement_metadata:
             elevation_value = supplement_metadata['elevation']
             elevation_unit = supplement_metadata['elevationUnit']
@@ -142,20 +141,19 @@ class SESARTransformer(Transformer):
             return elevation_str
         return ""
 
-    def _geo_location_float_value(self, source_record: typing.Dict, key_name: typing.AnyStr):
-        geo_location = self._source_record_description(source_record)['geoLocation']
+    def _geo_location_float_value(self, key_name: typing.AnyStr):
+        geo_location = self._source_record_description()['geoLocation']
         if geo_location is not None:
             string_val = geo_location['geo'][0][key_name]
             if string_val is not None:
                 return float(string_val)
         return 0.0
 
-    def sampling_site_latitude(self, source_record: typing.Dict) -> typing.SupportsFloat:
-        return self._geo_location_float_value(source_record, 'latitude')
+    def sampling_site_latitude(self) -> typing.SupportsFloat:
+        return self._geo_location_float_value('latitude')
 
-    def sampling_site_longitude(self, source_record: typing.Dict) -> typing.SupportsFloat:
-        return self._geo_location_float_value(source_record, 'longitude')
+    def sampling_site_longitude(self) -> typing.SupportsFloat:
+        return self._geo_location_float_value('longitude')
 
-    def sampling_site_place_names(self, source_record: typing.Dict) -> typing.List:
-        return [self._supplement_metadata(source_record)['primaryLocationName']]
-
+    def sampling_site_place_names(self) -> typing.List:
+        return [self._supplement_metadata()['primaryLocationName']]
