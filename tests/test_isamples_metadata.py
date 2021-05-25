@@ -1,21 +1,20 @@
-import pytest
 import json
-import isamples_metadata
-from isamples_metadata import __version__
+
+import pytest
+
 from isamples_metadata.SESARTransformer import SESARTransformer
 
+SESAR_test_values = [
+    ('../examples/SESAR/raw/EOI00002Hjson-ld.json', '../examples/SESAR/test/iSamplesEOI00002HBasic.json'),
+    ('../examples/SESAR/raw/IEEJR000Mjson-ld.json', '../examples/SESAR/test/iSamplesIEEJR000MBasic.json')
+]
 
-def test_version():
-    assert __version__ == '0.1.0'
-    print("Test passed")
-
-def test_dicts_equal():
-
-    with open('../examples/SESAR/raw/EOI00002Hjson-ld.json') as SESAR_source_file:
+@pytest.mark.parametrize("SESAR_source_path,iSamples_path", SESAR_test_values)
+def test_dicts_equal(SESAR_source_path, iSamples_path):
+    with open(SESAR_source_path) as SESAR_source_file:
         SESAR_record = json.load(SESAR_source_file)
         transformer = SESARTransformer(SESAR_record)
         transformed_to_iSamples_record = transformer.transform()
-        with open('../examples/SESAR/test/iSamplesEOI00002HBasic.json') as iSamples_file:
+        with open(iSamples_path) as iSamples_file:
             iSamples_record = json.load(iSamples_file)
             assert iSamples_record == transformed_to_iSamples_record
-    print("Done running.")
