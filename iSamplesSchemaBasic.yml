@@ -96,6 +96,9 @@ slots:
     range: string
     description: cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.
 
+  curation:
+    range: Curation
+
   curationLocation:
     range: string
     description: information about where and how the sample is currently stored
