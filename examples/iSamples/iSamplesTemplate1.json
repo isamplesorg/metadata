@@ -1,12 +1,13 @@
 {
     "@schema": "../iSamplesSchemaBasicSMR.json",
-    "@id":"",
+    "@id": "",
     "label": "",
     "sampleidentifier": "",
     "description": "",
     "hasContextCategory": [""],
     "hasMaterialCategory": [""],
     "hasSpecimenCategory": [""],
+    "informalClassification": [""],
     "keywords": [""],
     "producedBy": {
         "label": "",
@@ -26,5 +27,10 @@
         }
     },
     "registrant": "",
-    "samplingPurpose": ""
+    "samplingPurpose": "",
+    "curation": {
+        "accessConstraints": "",
+        "curationLocation": "",
+        "responsibility": ""
+    }
 }
