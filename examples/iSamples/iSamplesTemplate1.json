@@ -32,5 +32,11 @@
         "accessConstraints": "",
         "curationLocation": "",
         "responsibility": ""
+    },
+    "relatedResource": {
+        "label":"",
+        "description":"",
+        "target":"",
+        "relationship":""
     }
 }

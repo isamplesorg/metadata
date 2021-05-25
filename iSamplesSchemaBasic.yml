@@ -53,6 +53,7 @@ classes:
       - hasSpecimenCategory
       - producedBy
       - curation
+      - relatedResource
     slot_usage:
       label :
         required: true
@@ -91,10 +92,32 @@ classes:
       - curationLocation
       - responsibility
 
+  SampleRelation: 
+    description:
+    slots:
+      - label
+      - description
+      - relationship
+      - target
+
 slots:
+
+  relatedResource:
+    range: SampleRelation
+    description: link to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource.
+
+  relationship:
+    range: string
+    description: term to identify realationship between host sample and the sample relation target. Should be controlled vocabulary (ScopedName). for now start with string, 'derivedFrom'.
+
+  target:
+    range: string
+    description: identifier for the target resource in the relationship. Start with string, should be Identifier object. 
+
   accessConstraints:
     range: string
     description: cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.
+    multivalued: true
 
   curation:
     range: Curation
@@ -102,8 +125,7 @@ slots:
   curationLocation:
     range: string
     description: information about where and how the sample is currently stored
-    
-    
+
   label:
     range: string
     description: a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.
