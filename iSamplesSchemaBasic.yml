@@ -18,11 +18,11 @@ enums:
     description: categories for kinds of material that constitute the sample 
     permissible_values:
       anyanthropogenicmaterial:
-        text: anyanthropogenicmaterial
+        description: any anthropogenic material
       anthropogenicmetal:
-        text: anthropogenicmetal
+        description :  metal produced by human activity
       otheranthropogenicmaterial:
-        text: otheranthropogenicmaterial
+        description: other anthropogenic material
  
 
 prefixes:
@@ -52,6 +52,7 @@ classes:
       - hasMaterialCategory
       - hasSpecimenCategory
       - producedBy
+      - curation
     slot_usage:
       label :
         required: true
@@ -82,9 +83,24 @@ classes:
       - elevation
       - latitude
       - longitude
-        
+  
+  Curation :
+    description: object contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.
+    slots:
+      - accessConstraints
+      - curationLocation
+      - responsibility
 
 slots:
+  accessConstraints:
+    range: string
+    description: cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.
+
+  curationLocation:
+    range: string
+    description: information about where and how the sample is currently stored
+    
+    
   label:
     range: string
     description: a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.
@@ -165,7 +181,6 @@ slots:
     
   responsibility:
     range: string
-    domain: SamplingEvent
     description: String with person name and affiliation, or organization name, and their role relative to the parent element.
     multivalued: true
 
@@ -188,9 +203,8 @@ slots:
     range: decimal
     domain: GeospatialDDCoordLocation
     description: angular coordinate measured positive north from the equator.
-    
+
   longitude:
     range: decimal
     domain: GeospatialDDCoordLocation
     description: angular coordinate measured positive eastward from the prime meridian.
-    
