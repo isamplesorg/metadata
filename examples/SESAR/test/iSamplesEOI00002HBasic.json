@@ -12,7 +12,7 @@
         "label": "Sampler:Fluid:GTHFS",
         "description": "cruiseFieldPrgrm:TN300. launchPlatformName:Jason II. Sampler:Fluid:GTHFS. HFS gastight. Red-center-9. T=250C. launch type:ROV, navigation type:USBL",
         "hasFeatureOfInterest": "volcano",
-        "responsibility": ["Evans Leigh,,Collector","Andra Bobbitt,,Sample Owner"],
+        "responsibility": ["Evans_Leigh,,Collector","Andra Bobbitt,,Sample Owner"],
         "resultTime": "2013-09-14 01:30:00",
         "samplingSite": {
             "description": "Trevi:Jason Tmax=257.9 C. In the direct flow at this small anhydrite mound (anhydrite knocked over).",
