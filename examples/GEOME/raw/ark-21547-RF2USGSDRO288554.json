@@ -1,1 +1,45 @@
-{"parent":{"bcid":"ark:/21547/Bxa2246e9beb6ed6eaa7ed6d852cdc90c418","entity":"Event","country":"Cuba","eventID":"246e9beb6ed6eaa7ed6d852cdc90c418","locality":"Cuba","projectId":"85","yearCollected":"2011","expeditionCode":"CarBee-P03","monthCollected":"6"},"record":{"bcid":"ark:/21547/RF2USGSDRO288554","class":"Insecta","genus":"Hoplisoides","order":"Hymenoptera","entity":"Sample","family":"Crabronidae","phylum":"Arthropoda","eventID":"246e9beb6ed6eaa7ed6d852cdc90c418","kingdom":"Animalia","projectId":"85","catalogNumber":"USGSDRO288554","expeditionCode":"CarBee-P03","scientificName":"Hoplisoides jibacoa","institutionCode":"USNM","specificEpithet":"jibacoa","materialSampleID":"USGSDRO288554","voucherCatalogNumber":"USGSDRO288554"},"children":[{"bcid":"ark:/21547/Bxb2USGSDRO288554.1","entity":"Tissue","tissueID":"USGSDRO288554.1","projectId":"85","tissueWell":"D02","tissuePlate":"CarBee-P03","expeditionCode":"CarBee-P03","materialSampleID":"USGSDRO288554"}],"projectId":85}
+{
+    "parent": {
+        "bcid": "ark:/21547/Bxa2246e9beb6ed6eaa7ed6d852cdc90c418",
+        "entity": "Event",
+        "country": "Cuba",
+        "eventID": "246e9beb6ed6eaa7ed6d852cdc90c418",
+        "locality": "Cuba",
+        "projectId": "85",
+        "yearCollected": "2011",
+        "expeditionCode": "CarBee-P03",
+        "monthCollected": "6"
+    },
+    "record": {
+        "bcid": "ark:/21547/RF2USGSDRO288554",
+        "class": "Insecta",
+        "genus": "Hoplisoides",
+        "order": "Hymenoptera",
+        "entity": "Sample",
+        "family": "Crabronidae",
+        "phylum": "Arthropoda",
+        "eventID": "246e9beb6ed6eaa7ed6d852cdc90c418",
+        "kingdom": "Animalia",
+        "projectId": "85",
+        "catalogNumber": "USGSDRO288554",
+        "expeditionCode": "CarBee-P03",
+        "scientificName": "Hoplisoides jibacoa",
+        "institutionCode": "USNM",
+        "specificEpithet": "jibacoa",
+        "materialSampleID": "USGSDRO288554",
+        "voucherCatalogNumber": "USGSDRO288554"
+    },
+    "children": [
+        {
+            "bcid": "ark:/21547/Bxb2USGSDRO288554.1",
+            "entity": "Tissue",
+            "tissueID": "USGSDRO288554.1",
+            "projectId": "85",
+            "tissueWell": "D02",
+            "tissuePlate": "CarBee-P03",
+            "expeditionCode": "CarBee-P03",
+            "materialSampleID": "USGSDRO288554"
+        }
+    ],
+    "projectId": 85
+}

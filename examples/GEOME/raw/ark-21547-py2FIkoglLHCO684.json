@@ -1,1 +1,40 @@
-{"parent":{"bcid":"ark:/21547/BSH2303f9bbfa4c5aaba7a225ab3ebb0bbb4","entity":"Event","country":"Sri Lanka","eventID":"303f9bbfa4c5aaba7a225ab3ebb0bbb4","locality":"Koggala lagoon","projectId":"1","yearCollected":"2009","expeditionCode":"Penind_COI_SP","decimalLatitude":"5.9859","decimalLongitude":"80.3384","principalInvestigator":"Snaebjorn Palsson"},"record":{"bcid":"ark:/21547/py2FIkoglLHCO684","genus":"Penaeus","entity":"Sample","phylum":"Arthropoda","eventID":"303f9bbfa4c5aaba7a225ab3ebb0bbb4","wormsID":"210375","projectId":"1","expeditionCode":"Penind_COI_SP","associatedMedia":"Doi:10.1051/alr/2010027","specificEpithet":"indicus","materialSampleID":"FIkoglLHCO684","identificationRemarks":"Morphology"},"children":[{"bcid":"ark:/21547/BSI2FIkoglLHCO684","entity":"Tissue","tissueID":"FIkoglLHCO684","projectId":"1","expeditionCode":"Penind_COI_SP","materialSampleID":"FIkoglLHCO684"}],"projectId":1}
+{
+    "parent": {
+        "bcid": "ark:/21547/BSH2303f9bbfa4c5aaba7a225ab3ebb0bbb4",
+        "entity": "Event",
+        "country": "Sri Lanka",
+        "eventID": "303f9bbfa4c5aaba7a225ab3ebb0bbb4",
+        "locality": "Koggala lagoon",
+        "projectId": "1",
+        "yearCollected": "2009",
+        "expeditionCode": "Penind_COI_SP",
+        "decimalLatitude": "5.9859",
+        "decimalLongitude": "80.3384",
+        "principalInvestigator": "Snaebjorn Palsson"
+    },
+    "record": {
+        "bcid": "ark:/21547/py2FIkoglLHCO684",
+        "genus": "Penaeus",
+        "entity": "Sample",
+        "phylum": "Arthropoda",
+        "eventID": "303f9bbfa4c5aaba7a225ab3ebb0bbb4",
+        "wormsID": "210375",
+        "projectId": "1",
+        "expeditionCode": "Penind_COI_SP",
+        "associatedMedia": "Doi:10.1051/alr/2010027",
+        "specificEpithet": "indicus",
+        "materialSampleID": "FIkoglLHCO684",
+        "identificationRemarks": "Morphology"
+    },
+    "children": [
+        {
+            "bcid": "ark:/21547/BSI2FIkoglLHCO684",
+            "entity": "Tissue",
+            "tissueID": "FIkoglLHCO684",
+            "projectId": "1",
+            "expeditionCode": "Penind_COI_SP",
+            "materialSampleID": "FIkoglLHCO684"
+        }
+    ],
+    "projectId": 1
+}

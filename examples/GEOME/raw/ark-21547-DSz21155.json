@@ -1,1 +1,48 @@
-{"parent":{"bcid":"ark:/21547/DSy24b04ab0d53fd1bdd4222eeba41a67f8d","entity":"Event","country":"USA","eventID":"4b04ab0d53fd1bdd4222eeba41a67f8d","locality":"California","projectId":"244","dayCollected":"9","collectorList":"Vance Vredenburg","stateProvince":"California","yearCollected":"1905","expeditionCode":"newts","monthCollected":"6","decimalLatitude":"37.974972","decimalLongitude":"-119.909103","principalInvestigator":"Vance Vredenburg","minimumElevationInMeters":"368.9","coordinateUncertaintyInMeters":"30"},"record":{"bcid":"ark:/21547/DSz21155","genus":"Taricha","entity":"Sample","eventID":"4b04ab0d53fd1bdd4222eeba41a67f8d","projectId":"244","basisOfRecord":"PreservedSpecimen","expeditionCode":"newts","specificEpithet":"sierrae","materialSampleID":"1155"},"children":[{"bcid":"ark:/21547/DTA2be2d77de4d1bf6bff314878636742c31","fatal":"false","entity":"Diagnostics","projectId":"244","sampleType":"swabbing","diagnosticID":"be2d77de4d1bf6bff314878636742c31","diseaseTested":"Bd","expeditionCode":"newts","diseaseDetected":"false","materialSampleID":"1155","quantityDetected":"0"}],"projectId":244}
+{
+    "parent": {
+        "bcid": "ark:/21547/DSy24b04ab0d53fd1bdd4222eeba41a67f8d",
+        "entity": "Event",
+        "country": "USA",
+        "eventID": "4b04ab0d53fd1bdd4222eeba41a67f8d",
+        "locality": "California",
+        "projectId": "244",
+        "dayCollected": "9",
+        "collectorList": "Vance Vredenburg",
+        "stateProvince": "California",
+        "yearCollected": "1905",
+        "expeditionCode": "newts",
+        "monthCollected": "6",
+        "decimalLatitude": "37.974972",
+        "decimalLongitude": "-119.909103",
+        "principalInvestigator": "Vance Vredenburg",
+        "minimumElevationInMeters": "368.9",
+        "coordinateUncertaintyInMeters": "30"
+    },
+    "record": {
+        "bcid": "ark:/21547/DSz21155",
+        "genus": "Taricha",
+        "entity": "Sample",
+        "eventID": "4b04ab0d53fd1bdd4222eeba41a67f8d",
+        "projectId": "244",
+        "basisOfRecord": "PreservedSpecimen",
+        "expeditionCode": "newts",
+        "specificEpithet": "sierrae",
+        "materialSampleID": "1155"
+    },
+    "children": [
+        {
+            "bcid": "ark:/21547/DTA2be2d77de4d1bf6bff314878636742c31",
+            "fatal": "false",
+            "entity": "Diagnostics",
+            "projectId": "244",
+            "sampleType": "swabbing",
+            "diagnosticID": "be2d77de4d1bf6bff314878636742c31",
+            "diseaseTested": "Bd",
+            "expeditionCode": "newts",
+            "diseaseDetected": "false",
+            "materialSampleID": "1155",
+            "quantityDetected": "0"
+        }
+    ],
+    "projectId": 244
+}
