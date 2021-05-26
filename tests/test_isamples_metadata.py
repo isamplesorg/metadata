@@ -17,4 +17,4 @@ def test_dicts_equal(SESAR_source_path, iSamples_path):
         transformed_to_iSamples_record = transformer.transform()
         with open(iSamples_path) as iSamples_file:
             iSamples_record = json.load(iSamples_file)
-            assert iSamples_record == transformed_to_iSamples_record
+            assert transformed_to_iSamples_record == iSamples_record

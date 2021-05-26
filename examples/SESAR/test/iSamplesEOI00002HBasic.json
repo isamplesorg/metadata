@@ -3,7 +3,7 @@
     "@id": "https://data.isamples.org/digitalsample/igsn/EOI00002H",
     "label": "J730-GTHFS-16",
     "sampleidentifier": "igsn:EOI00002H",
-    "description": "",
+    "description": "Not Provided",
     "hasContextCategory": ["Subsurface fluid reservoir"],
     "hasMaterialCategory": ["Gaseous material"],
     "hasSpecimenCategory": ["Container with fluid"],
@@ -16,7 +16,7 @@
         "resultTime": "2013-09-14 01:30:00",
         "samplingSite": {
             "description": "Trevi:Jason Tmax=257.9 C. In the direct flow at this small anhydrite mound (anhydrite knocked over).",
-            "label": "",
+            "label": "Not Provided",
             "location": {
                 "elevation": "-1520.0 m",
                 "latitude": 45.9463,
