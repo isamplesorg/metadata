@@ -5,7 +5,8 @@ import typing
 class Transformer(ABC):
     """Abstract base class for various iSamples provider transformers"""
 
-    
+    NOT_PROVIDED = 'Not Provided'
+
     def __init__(self, source_record: typing.Dict):
         self.source_record = source_record
 

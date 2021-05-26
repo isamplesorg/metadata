@@ -34,7 +34,7 @@ class SESARTransformer(Transformer):
 
     def sample_description(self) -> typing.AnyStr:
         # TODO: implement
-        return ""
+        return Transformer.NOT_PROVIDED
 
     def has_context_categories(self) -> typing.List:
         return ['Subsurface fluid reservoir']
@@ -68,33 +68,39 @@ class SESARTransformer(Transformer):
         return self._source_record_description()['collectionMethod']
 
     def produced_by_description(self) -> typing.AnyStr:
-        description_str = ''
+        description_components = list()
         description_dict = self._source_record_description()
         if description_dict is not None:
             supplement_metadata = self._supplement_metadata()
             if supplement_metadata is not None:
                 if 'cruiseFieldPrgrm' in supplement_metadata:
-                    description_str += 'cruiseFieldPrgrm:{0}. '.format(supplement_metadata['cruiseFieldPrgrm'])
+                    description_components.append('cruiseFieldPrgrm:{0}'.format(supplement_metadata['cruiseFieldPrgrm']))
                 if 'launchPlatformName' in supplement_metadata:
-                    description_str += 'launchPlatformName:{0}. '.format(supplement_metadata['launchPlatformName'])
+                    description_components.append('launchPlatformName:{0}'.format(supplement_metadata['launchPlatformName']))
 
             if 'collectionMethod' in description_dict:
-                description_str += '{0}. '.format(description_dict['collectionMethod'])
+                description_components.append(description_dict['collectionMethod'])
             if 'description' in description_dict:
-                description_str += '{0}. '.format(description_dict['description'])
+                description_components.append(description_dict['description'])
 
             if supplement_metadata is not None:
+                launch_type_str = ''
                 if 'launchTypeName' in supplement_metadata:
-                    description_str += 'launch type:{0}, '.format(supplement_metadata['launchTypeName'])
+                    launch_type_str += 'launch type:{0}, '.format(supplement_metadata['launchTypeName'])
                 if 'navigationType' in supplement_metadata:
-                    description_str += 'navigation type:{0}'.format(supplement_metadata['navigationType'])
-        return description_str
+                    launch_type_str += 'navigation type:{0}'.format(supplement_metadata['navigationType'])
+                if len(launch_type_str) > 0:
+                    description_components.append(launch_type_str)
+
+            return ". ".join(description_components)
+
+        return Transformer.NOT_PROVIDED
 
     def produced_by_feature_of_interest(self) -> typing.AnyStr:
         supplement_metadata = self._supplement_metadata()
         if supplement_metadata is not None and 'primaryLocationType' in supplement_metadata:
             return supplement_metadata['primaryLocationType']
-        return ""
+        return Transformer.NOT_PROVIDED
 
     def produced_by_responsibilities(self) -> typing.List:
         responsibilities = list()
@@ -110,7 +116,14 @@ class SESARTransformer(Transformer):
         return responsibilities
 
     def produced_by_result_time(self) -> typing.AnyStr:
-        return self._source_record_description()['collectionStartDate']
+        result_time = Transformer.NOT_PROVIDED
+        description = self._source_record_description()
+        if 'collectionStartDate' in description:
+            result_time = description['collectionStartDate']
+        elif 'log' in description:
+            # try reading it out of the log
+            result_time = description['log'][0]['timestamp']
+        return result_time
 
     def sampling_site_description(self) -> typing.AnyStr:
         description_dict = self._source_record_description()
@@ -118,11 +131,11 @@ class SESARTransformer(Transformer):
             supplement_metadata = self._supplement_metadata()
             if supplement_metadata is not None and 'locationDescription' in supplement_metadata:
                 return supplement_metadata['locationDescription']
-        return ""
+        return Transformer.NOT_PROVIDED
 
     def sampling_site_label(self) -> typing.AnyStr:
         # TODO: implement
-        return ""
+        return Transformer.NOT_PROVIDED
 
     def sampling_site_elevation(self) -> typing.AnyStr:
         supplement_metadata = self._supplement_metadata()
@@ -139,7 +152,7 @@ class SESARTransformer(Transformer):
             if len(elevation_unit_abbreviation) > 0:
                 elevation_str += ' ' + elevation_unit_abbreviation
             return elevation_str
-        return ""
+        return Transformer.NOT_PROVIDED
 
     def _geo_location_float_value(self, key_name: typing.AnyStr):
         geo_location = self._source_record_description()['geoLocation']
@@ -156,4 +169,15 @@ class SESARTransformer(Transformer):
         return self._geo_location_float_value('longitude')
 
     def sampling_site_place_names(self) -> typing.List:
-        return [self._supplement_metadata()['primaryLocationName']]
+        place_names = list()
+        supplement_metadata = self._supplement_metadata()
+        if 'primaryLocationName' in supplement_metadata:
+            primary_location_name = supplement_metadata['primaryLocationName']
+            place_names.extend(primary_location_name.split('; '))
+        if 'province' in supplement_metadata:
+            place_names.append(supplement_metadata['province'])
+        if 'county' in supplement_metadata:
+            place_names.append(supplement_metadata['county'])
+        if 'city' in supplement_metadata:
+            place_names.append(supplement_metadata['city'])
+        return place_names
