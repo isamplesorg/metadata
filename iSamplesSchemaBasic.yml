@@ -41,6 +41,8 @@ classes:
   PhysicalSampleRecord :
     description: This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.
     slots:
+      - id
+      - schema
       - sampleidentifier
       - label
       - description
@@ -101,7 +103,15 @@ classes:
       - target
 
 slots:
-
+  id: 
+    range: string
+    description: identifier for this document
+    
+  schema:
+    range: string
+    description: identifier for the JSON schema for validating this document
+    
+    
   relatedResource:
     range: SampleRelation
     description: link to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource.

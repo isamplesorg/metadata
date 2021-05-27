@@ -1,5 +1,5 @@
 {
-    "$id": "http://resource.isamples.org/schema",
+    "$id": "http://resource.isamples.org/schema/0.2",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "PhysicalSampleRecord",
     "type": "object",
@@ -124,6 +124,16 @@
         "samplingPurpose": {
             "description": "term to specify why a sample was collection.",
             "type": "string"
+        },
+        "curation": {"$ref": "#/definitions/Curation"},
+        "informalClassification": {
+            "description": "free text classification terms, not from a controlled vocabulary; generally terms applied by collector",
+            "items": {"type": "string"},
+            "type": "array"
+        },
+        "relatedResource": {
+            "$ref": "#/definitions/SampleRelation",
+            "description": "link to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource."
         }
     },
     "required": [
@@ -219,6 +229,54 @@
             },
             "required": ["label"],
             "title": "SamplingSite",
+            "type": "object"
+        },
+        "SampleRelation": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "description": {
+                    "description": "free text description of the subject of a triple.",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                },
+                "relationship": {
+                    "description": "term to identify realationship between host sample and the sample relation target. Should be controlled vocabulary (ScopedName). for now start with string, 'derivedFrom'.",
+                    "type": "string"
+                },
+                "target": {
+                    "description": "identifier for the target resource in the relationship. Start with string, should be Identifier object.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "SampleRelation",
+            "type": "object"
+        },
+        "Curation": {
+            "additionalProperties": false,
+            "description": "object contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.",
+            "properties": {
+                "accessConstraints": {
+                    "description": "cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.",
+                    "items": {"type": "string"},
+                    "type": "array"
+                },
+                "curationLocation": {
+                    "description": "information about where and how the sample is currently stored",
+                    "type": "string"
+                },
+                "responsibility": {
+                    "description": "String with person name and affiliation, or organization name, and their role relative to the parent element.",
+                    "items": {"type": "string"},
+                    "type": "array"
+                }
+            },
+            "required": [],
+            "title": "Curation",
             "type": "object"
         }
     }
