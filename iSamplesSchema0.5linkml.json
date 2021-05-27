@@ -1,0 +1,598 @@
+{
+    "$id": "http://resource.isamples.org/0.5/schema",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "PhysicalSampleRecord",
+    "type": "object",
+    "description": "This schema describes a data object that is a digital representation of a physical sample that provides  descriptive properties for any iSamples physical sample.",
+    "properties": {
+        "id": {
+            "description": "identifier for the metadata record",
+            "type": "string"
+        },
+        "schema": {
+            "description": "identifier for the version of the iSamples JSON schema used for this doc",
+            "type": "string"
+        },
+        "sampleIdentifier": {
+            "description": "URI that identifies the physical sample described by this record; typically an IGSN or ARK",
+            "type": "string"
+        },
+        "label": {
+            "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset. This will typically be a sample identiifer or label assigned by the original collector",
+            "type": "string"
+        },
+        "description": {
+            "description": "free text description of the subject of a triple.",
+            "type": "string"
+        },
+        "samplingPurposes": {
+            "description": "term to specify why a sample was collection.",
+            "items": {"$ref": "#/definitions/ScopedName"},
+            "type": "array"
+        },
+        "informalClassifications": {
+            "description": "free text classification terms, not from a controlled vocabulary; generally terms applied by collector",
+            "items": {"type": "string"},
+            "type": "array"
+        },
+        "keywords": {
+            "description": "free text categorization of sample to support discovery",
+            "items": {"type": "string"},
+            "type": "array"
+        },
+        "producedBy": {
+            "$ref": "#/definitions/SamplingEvent",
+            "description": "binding from a physical sample to description of its original sampling event. For splits or sub samples, the sampling event is the procedure used to obtain the child sample."
+        },
+        "curation": {
+            "$ref": "#/definitions/Curation",
+            "description": "record of activities in preservation, storage and contact information for current location. For a collection, include information about where the collection is and who manages it"
+        },
+        "registrant": {
+            "$ref": "#/definitions/Responsibility",
+            "description": "identification of the agent that registered the sample, with contact information"
+        },
+        "status": {
+            "$ref": "#/definitions/ScopedName",
+            "description": "property to indicate status of sample, e.g. destroyed, under embargo, accessible, lost\u2026"
+        },
+        "altIdentifiers": {
+            "description": "base on ISO19115-1  MD_Identifier, with a 'code' string that is the actual identifier string, and a link to the authority that controls the identifier via a responsibility object.",
+            "items": {"$ref": "#/definitions/ScopedName"},
+            "type": "array"
+        },
+        "altNames": {
+            "description": "Other sample name(s) (identifiers) that have been used in the past, or by other stakeholders",
+            "items": {"$ref": "#/definitions/ScopedName"},
+            "type": "array"
+        },
+        "additionalProperties": {
+            "description": "Use to associate sample with other non-categorical properties.",
+            "items": {"$ref": "#/definitions/PropertyValue"},
+            "type": "array"
+        },
+        "hasCategories": {
+            "description": "use specifically for sample classification categories from registered vocabularies with URI or the category (use for sdo-propertyID).",
+            "items": {"$ref": "#/definitions/ScopedName"},
+            "type": "array"
+        },
+        "hasContextCategories": {
+            "description": "top level context, based on the kind of feature sampled.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.",
+            "items": {"type": "string"},
+            "type": "array"
+        },
+        "hasMaterialCategories": {
+            "description": "top level specification of the kind of material that constitutes the physical sample; detailed material categorization is done through the hasCategory/sdo-PropertyValue pattern",
+            "items": {"type": "string"},
+            "type": "array"
+        },
+        "hasSpecimenCategories": {
+            "description": "top level categorization of kind of specimen. More specific classifications use isam hasCategory/sdo-PropertyValue pattern",
+            "items": {"type": "string"},
+            "type": "array"
+        },
+        "relatedResources": {
+            "description": "link to another resource, with a relationship type",
+            "items": {"$ref": "#/definitions/Link"},
+            "type": "array"
+        }
+    },
+    "required": [],
+        "definitions": {
+        "Curation": {
+            "additionalProperties": false,
+            "description": "representation of processes for preservation of sample, responsible agent, repository location, etc.",
+            "properties": {
+                "accessConstraints": {
+                    "description": "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights. Recommended practice is to refer to a rights statement with a URI. If this is not possible or feasible, a literal value (name, label, or short text) may be provided.",
+                    "items": {"type": "string"},
+                    "type": "array"
+                },
+                "curationLocation": {
+                    "description": "text specifying where the sample or sample collection is located, e.g. physical address,  location within a building, or a tissue plate and well identifier.",
+                    "type": "string"
+                },
+                "events": {
+                    "description": "record of actions that effect the subject of this property",
+                    "items": {"$ref": "#/definitions/Event"},
+                    "type": "array"
+                },
+                "label": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                },
+                "responsibilities": {
+                    "description": "binds an event, curation or initiative with an agent  that is associated in some way (the responsibility role)",
+                    "items": {"$ref": "#/definitions/Responsibility"},
+                    "type": "array"
+                }
+            },
+            "required": [],
+            "title": "Curation",
+            "type": "object"
+        },
+        "Event": {
+            "additionalProperties": false,
+            "description": "object that records an action taken at some time;",
+            "properties": {
+                "action": {
+                    "$ref": "#/definitions/ScopedName",
+                    "description": "specification of what was done using a term from a vocabulary"
+                },
+                "dateValue": {"type": "number"},
+                "description": {
+                    "description": "free text description of the subject of a triple.",
+                    "type": "string"
+                },
+                "label": {"type": "string"}
+            },
+            "required": [
+                "label",
+                "dateValue"
+            ],
+            "title": "Event",
+            "type": "object"
+        },
+        "GeospatialDDCoordLocation": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "elevation": {
+                    "$ref": "#/definitions/MeasureValue",
+                    "description": "For a location, specification of the vertical distance from the datum specified for the spatial reference system. SRS definition should also specify if positive values are above or below the datum."
+                },
+                "latitude": {
+                    "description": "wgs84 decimal degree latitude coordinate",
+                    "type": "number"
+                },
+                "locationMethod": {
+                    "description": "URI that dereferences to a registered procedure would be best practice",
+                    "type": "string"
+                },
+                "longitude": {
+                    "description": "wgs84 decimal degree easting longitude coordinate",
+                    "type": "number"
+                },
+                "positionUncertainty": {
+                    "$ref": "#/definitions/MeasureValue",
+                    "description": "numeric value to quantify location uncertainty."
+                }
+            },
+            "required": [],
+            "title": "GeospatialDDCoordLocation",
+            "type": "object"
+        },
+        "GeospatialLocation": {
+            "additionalProperties": false,
+            "description": "point location in an arbitrary spatial reference system. UTM is common example, but might be a local coordinate grid systems set up at a research site or mine.  Future-- add WKTposition to specify locations with more complex geometry (e.g. line, polygon, multipoint).",
+            "properties": {
+                "coordinate1": {"type": "number"},
+                "coordinate2": {"type": "number"},
+                "elevation": {
+                    "$ref": "#/definitions/MeasureValue",
+                    "description": "For a location, specification of the vertical distance from the datum specified for the spatial reference system. SRS definition should also specify if positive values are above or below the datum."
+                },
+                "locationMethod": {
+                    "description": "URI that dereferences to a registered procedure would be best practice",
+                    "type": "string"
+                },
+                "positionUncertainty": {
+                    "$ref": "#/definitions/MeasureValue",
+                    "description": "numeric value to quantify location uncertainty."
+                },
+                "spatialReferenceSystem": {"$ref": "#/definitions/ScopedName"}
+            },
+            "required": [
+                "coordinate1",
+                "coordinate2",
+                "spatialReferenceSystem"
+            ],
+            "title": "GeospatialLocation",
+            "type": "object"
+        },
+        "Initiative": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "description": {
+                    "description": "free text description of the subject of a triple.",
+                    "type": "string"
+                },
+                "events": {
+                    "description": "record of actions that effect the subject of this property",
+                    "items": {"$ref": "#/definitions/Event"},
+                    "type": "array"
+                },
+                "initiativeType": {
+                    "$ref": "#/definitions/ScopedName",
+                    "description": "specify kind of initiative"
+                },
+                "label": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                },
+                "responsibilities": {
+                    "description": "binds an event, curation or initiative with an agent  that is associated in some way (the responsibility role)",
+                    "items": {"$ref": "#/definitions/Responsibility"},
+                    "type": "array"
+                }
+            },
+            "required": [],
+            "title": "Initiative",
+            "type": "object"
+        },
+        "LinearReferenceLocation": {
+            "additionalProperties": false,
+            "description": "location specified by position relative to origin defined along an arbitrary linear path, e.g. mile posts along a highway, or depth interval in a borehole, or pressure interval in an atmospheric sonde.",
+            "properties": {
+                "elevation": {
+                    "$ref": "#/definitions/MeasureValue",
+                    "description": "For a location, specification of the vertical distance from the datum specified for the spatial reference system. SRS definition should also specify if positive values are above or below the datum."
+                },
+                "locationMethod": {
+                    "description": "URI that dereferences to a registered procedure would be best practice",
+                    "type": "string"
+                },
+                "maxCoordinate": {
+                    "description": "coordinate with maximum numeric value in linear reference system",
+                    "type": "number"
+                },
+                "measureUnits": {
+                    "$ref": "#/definitions/ScopedName",
+                    "description": "should be determined by SRS, include as explicit property for convienence"
+                },
+                "minCoordinate": {
+                    "description": "coordinate with minimum numeric value in linear reference system",
+                    "type": "number"
+                },
+                "positionUncertainty": {
+                    "$ref": "#/definitions/MeasureValue",
+                    "description": "numeric value to quantify location uncertainty."
+                },
+                "referenceGeometryName": {
+                    "$ref": "#/definitions/ScopedName",
+                    "description": "name of the reference geometry, ideally with identifier, e.g. a borehole name and ID. basis for linear reference system must be some kind of OGC curve. A Curve is a one-dimensional geometric object usually stored as a sequence of points, with the subtype of Curve specifying the form of the interpolation between points. (OGC 99-049, https //portal.opengeospatial.org/files/?artifact_id=829)"
+                },
+                "referenceGeometryShape": {
+                    "description": "A geoJSON object that represents the geometry of the reference system (e.g. borehole, ship track, traverse); must include SRS for representation of the shape. See http //www.opengis.net/rdf#Curve for information about geoJSON",
+                    "type": "string"
+                },
+                "spatialReferenceSystem": {
+                    "$ref": "#/definitions/ScopedName",
+                    "description": "name and identifier. ideally any spatial reference system should be registered somewhere and have a URI; use that if available. For site specific schemes  a local name might have to do"
+                }
+            },
+            "required": [],
+            "title": "LinearReferenceLocation",
+            "type": "object"
+        },
+        "Link": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "description": {
+                    "description": "free text description of the subject of a triple.",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                },
+                "relationshipType": {
+                    "$ref": "#/definitions/ScopedName",
+                    "description": "term to specify the semantics of the connection between source (subject) and target (object)"
+                },
+                "source": {
+                    "description": "use for sourcing scoped names and sample relationships.",
+                    "type": "string"
+                },
+                "target": {
+                    "$ref": "#/definitions/ScopedName",
+                    "description": "scoped name that identifies the target of a relationship"
+                }
+            },
+            "required": [],
+            "title": "Link",
+            "type": "object"
+        },
+        "MeasureValue": {
+            "additionalProperties": false,
+            "description": "simple object to represent measured values with units and uncertainty; could generalize uncertainty to something like 'measure quality'. The 'value' can be a single value, or a preferred value if a range (minValue, maxValue) is reported.",
+            "properties": {
+                "lowerBound": {
+                    "description": "for value range; if MeasureValue/value is null, this must be populated",
+                    "type": "number"
+                },
+                "numericValue": {
+                    "description": "the numeric result reported in a measured value",
+                    "type": "number"
+                },
+                "uncertainty": {
+                    "description": "an error bound parameter on a measured value. Additional measured value properties can be added to specify the particular statistical or qualitative method used to estimate uncertainty.",
+                    "type": "number"
+                },
+                "unitOfMeasure": {
+                    "description": "specification of units of measure applicable to a measured value. Range value should be qudt-Unit URI",
+                    "type": "string"
+                },
+                "upperBound": {
+                    "description": "for value range; if MeasureValue/value is null, this must be populated",
+                    "type": "number"
+                }
+            },
+            "required": [],
+            "title": "MeasureValue",
+            "type": "object"
+        },
+        "Organization": {
+            "additionalProperties": false,
+            "description": "an organization, with contact information. ideally organizations would be referenced by identifire in a  registry, but name should be include for presentation purposes.",
+            "properties": {
+                "email": {
+                    "description": "could apply regex validation for proper mailto link",
+                    "type": "string"
+                },
+                "identifiers": {
+                    "description": "identifer for the subject entity, use for person, organization, scoped name",
+                    "items": {"type": "string"},
+                    "type": "array"
+                },
+                "name": {"type": "string"},
+                "url": {
+                    "description": "url for organization home page",
+                    "type": "string"
+                }
+            },
+            "required": ["name"],
+            "title": "Organization",
+            "type": "object"
+        },
+        "Person": {
+            "additionalProperties": false,
+            "description": "A person, with contact information and affiliation",
+            "properties": {
+                "affiliations": {
+                    "description": "use to associate a person with a sponsoring or employing organization (could be time-stamped)",
+                    "items": {"$ref": "#/definitions/Organization"},
+                    "type": "array"
+                },
+                "email": {
+                    "description": "could apply regex validation for proper mailto link",
+                    "type": "string"
+                },
+                "identifiers": {
+                    "description": "identifer for the subject entity, use for person, organization, scoped name",
+                    "items": {"type": "string"},
+                    "type": "array"
+                },
+                "jobTitle": {
+                    "description": "a person associated with a responsibility might be identified only by a jobTitle for better long-term stability.  Ideally associated e-mail would be related to the jobTitle (position),not the person in that role at a given time",
+                    "type": "string"
+                },
+                "name": {"type": "string"}
+            },
+            "required": ["name"],
+            "title": "Person",
+            "type": "object"
+        },
+        "Procedure": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "description": {
+                    "description": "free text description of the subject of a triple.",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "Procedure",
+            "type": "object"
+        },
+        "PropertyValue": {
+            "additionalProperties": false,
+            "description": "soft type structure to represent other properties for model extensions",
+            "properties": {
+                "categoryValue": {
+                    "$ref": "#/definitions/ScopedName",
+                    "description": "PropertyValue observation result is a category (term from a vocabulary)."
+                },
+                "description": {
+                    "description": "free text description of the subject of a triple.",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                },
+                "measureValue": {
+                    "$ref": "#/definitions/MeasureValue",
+                    "description": "property observation result that is a measured value"
+                },
+                "property": {
+                    "$ref": "#/definitions/ScopedName",
+                    "description": "identifier for a soft-type property value"
+                }
+            },
+            "required": [],
+            "title": "PropertyValue",
+            "type": "object"
+        },
+        "Responsibility": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "agent": {"type": "string"},
+                "label": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                },
+                "roleType": {"$ref": "#/definitions/ScopedName"}
+            },
+            "required": [
+                "roleType",
+                "agent"
+            ],
+            "title": "Responsibility",
+            "type": "object"
+        },
+        "SampleCollection": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "collectionPurposes": {
+                    "description": "generate controlled vocabulary later",
+                    "items": {"$ref": "#/definitions/ScopedName"},
+                    "type": "array"
+                },
+                "curation": {
+                    "$ref": "#/definitions/Curation",
+                    "description": "record of activities in preservation, storage and contact information for current location. For a collection, include information about where the collection is and who manages it"
+                },
+                "description": {
+                    "description": "free text description of the subject of a triple.",
+                    "type": "string"
+                },
+                "hasParts": {
+                    "description": "link from collection to sample that is member of collection, linked with sampleIdentifier, not PhysicalSampleRecord.id",
+                    "items": {"$ref": "#/definitions/ScopedName"},
+                    "type": "array"
+                },
+                "label": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "SampleCollection",
+            "type": "object"
+        },
+        "SamplingEvent": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "description": {
+                    "description": "free text description of the subject of a triple.",
+                    "type": "string"
+                },
+                "hasFeaturesOfInterest": {
+                    "description": "specify the particular feature of interest that is the target of a sampling event; should be consistent with sampledFeature for any result samples. Might be a domain feature or another sample (or both!)",
+                    "items": {"$ref": "#/definitions/ScopedName"},
+                    "type": "array"
+                },
+                "hasInitiative": {
+                    "$ref": "#/definitions/Initiative",
+                    "description": "identify the project, field campaign, cruise, expediton during which the samplingEvent occurred"
+                },
+                "label": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                },
+                "responsibilities": {
+                    "description": "binds an event, curation or initiative with an agent  that is associated in some way (the responsibility role)",
+                    "items": {"$ref": "#/definitions/Responsibility"},
+                    "type": "array"
+                },
+                "resultTime": {
+                    "description": "data and optional time when the sample was collected",
+                    "type": "number"
+                },
+                "samplingSite": {
+                    "$ref": "#/definitions/SamplingSite",
+                    "description": "binds a physical sample to the site (sampling feature) where it was collected. The site location might be specified by one or more sampleLocation objects,"
+                },
+                "usedProcedure": {
+                    "$ref": "#/definitions/Procedure",
+                    "description": "binding from sampling event to a description of the procedure used to obtain the sample."
+                }
+            },
+            "required": [],
+            "title": "SamplingEvent",
+            "type": "object"
+        },
+        "SamplingSite": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "accessConstraints": {
+                    "description": "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights. Recommended practice is to refer to a rights statement with a URI. If this is not possible or feasible, a literal value (name, label, or short text) may be provided.",
+                    "items": {"type": "string"},
+                    "type": "array"
+                },
+                "description": {
+                    "description": "free text description of the subject of a triple.",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                },
+                "locationDD": {
+                    "$ref": "#/definitions/GeospatialDDCoordLocation",
+                    "description": "A sampling site must have exactly one SamplingLocation with a longitude-latitude WKT CRS84 point to support cross domain search;"
+                },
+                "otherLocations": {
+                    "description": "other subclasses of SamplingLocation can also be associated with a site to assert location in other spatial reference systems, either for greater precision, or using other map projection schemes preferred by some community",
+                    "items": {"type": "string"},
+                    "type": "array"
+                },
+                "placeName": {
+                    "$ref": "#/definitions/ScopedName",
+                    "description": "A place name with a reference to the source gazetteer that defines the name"
+                },
+                "siteType": {
+                    "$ref": "#/definitions/ScopedName",
+                    "description": "categorization of the kind of site"
+                }
+            },
+            "required": [],
+            "title": "SamplingSite",
+            "type": "object"
+        },
+        "ScopedName": {
+            "additionalProperties": false,
+            "description": "binds a label with an identifier and authority for the labeled concept",
+            "properties": {
+                "identifiers": {
+                    "description": "identifer for the subject entity, use for person, organization, scoped name",
+                    "items": {"type": "string"},
+                    "type": "array"
+                },
+                "label": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                },
+                "source": {
+                    "description": "use for sourcing scoped names and sample relationships.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "ScopedName",
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,591 @@
+id: http://resource.isamples.org/0.5/schema
+name: physicalSample
+title: Schema for documenting physical samples 
+version: 20210430
+types:
+  date:
+    base: str
+    uri: xsd:date
+  string:
+    base: str
+    uri: xsd:string
+  decimal:
+    base: float
+    uri: xsd:decimal
+
+enums:
+  materialtype:
+    description: categories for kinds of material that constitute the sample 
+    permissible_values:
+      anyanthropogenicmaterial:
+        description: any anthropogenic material
+      anthropogenicmetal:
+        description :  metal produced by human activity
+      otheranthropogenicmaterial:
+        description: other anthropogenic material
+     
+
+prefixes:
+  sdo: http://resource.isamples.org/schema/
+  dct: http://purl.org/dc/terms/
+  mat: http://resource.isamples.org/vocabulary/material/
+  pur: http://resource.isamples.org/vocabulary/samplepurpose/
+  sf: http://resource.isamples.org/vocabulary/sampledFeature/
+  spt: http://resource.isamples.org/vocabulary/specimentype/  
+  skos: http://www.w3.org/2004/02/skos/core#
+  w3cpos: http://www.w3.org/2003/01/geo/wgs84_pos#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  datacite4: https://schema.datacite.org/meta/kernel-4.4#
+  sosa: http://www.w3.org/ns/sosa/
+  qudt: http://qudt.org/2.0/schema/qudt
+  
+classes:
+
+  Curation :
+    description: representation of processes for preservation of sample, responsible agent, repository location, etc.
+    slots:
+      - accessConstraints
+      - responsibilities
+      - events
+      - label
+      - curationLocation
+          
+  GeospatialDDCoordLocation :
+    description:
+    slots:
+      - locationMethod
+      - elevation
+      - latitude
+      - longitude
+      - positionUncertainty
+
+  GeospatialLocation :
+    description: point location in an arbitrary spatial reference system. UTM is common example, but might be a local coordinate grid systems set up at a research site or mine.  Future-- add WKTposition to specify locations with more complex geometry (e.g. line, polygon, multipoint).
+    slots:
+      - locationMethod
+      - elevation
+      - coordinate1
+      - coordinate2
+      - positionUncertainty
+      - spatialReferenceSystem
+    slot_usage:
+      coordinate1 :
+        required : true
+      coordinate2 :
+        required : true
+      spatialReferenceSystem :
+        required : true  
+
+  Event:
+    description: object that records an action taken at some time; 
+    slots:
+      - label
+      - dateValue
+      - action
+      - description
+    slot_usage:
+      dateValue :
+        required: true
+      label :
+        required: true
+              
+  Initiative :
+    description:
+    slots:
+      - events
+      - description
+      - label
+      - initiativeType
+      - responsibilities
+  
+  MeasureValue:
+    description: simple object to represent measured values with units and uncertainty; could generalize uncertainty to something like 'measure quality'. The 'value' can be a single value, or a preferred value if a range (minValue, maxValue) is reported.
+    slots:
+     - numericValue
+     - uncertainty
+     - unitOfMeasure
+     - lowerBound
+     - upperBound
+
+  LinearReferenceLocation :
+    description: location specified by position relative to origin defined along an arbitrary linear path, e.g. mile posts along a highway, or depth interval in a borehole, or pressure interval in an atmospheric sonde.
+    slots:
+      - locationMethod
+      - positionUncertainty
+      - elevation
+      - minCoordinate
+      - maxCoordinate
+      - measureUnits
+      - spatialReferenceSystem
+      - referenceGeometryName
+      - referenceGeometryShape
+     
+
+  Link :
+    description:
+    slots:
+      - label
+      - description
+      - target
+      - relationshipType
+      - source
+
+  Organization :
+    description: an organization, with contact information. ideally organizations would be referenced by identifire in a  registry, but name should be include for presentation purposes.
+    slots:
+      - email
+      - name
+      - url
+      - identifiers
+    slot_usage:
+      name:
+        required: true
+        
+  Person :
+    description: A person, with contact information and affiliation
+    subclass_of: Agent
+    slots:
+      - name
+      - email
+      - jobTitle
+      - affiliations
+      - identifiers
+    slot_usage:
+      name:
+        required: true
+      
+  PhysicalSampleRecord :
+    description: This is a data object that is a digital representation of a physical sample. It provides  descriptive properties for any iSamples physical sample. IGSN is recommended. Must be a URI that can be dereferenced on the web.
+    slots:
+      - id
+      - schema
+      - additionalProperties
+      - altIdentifiers
+      - altNames
+      - curation
+      - description
+      - hasCategories
+      - hasContextCategories
+      - hasMaterialCategories
+      - hasSpecimenCategories
+      - informalClassifications
+      - keywords
+      - label
+      - producedBy
+      - registrant
+      - relatedResources
+      - sampleIdentifier
+      - samplingPurposes
+      - status
+
+  Procedure :
+    description:
+    slots:
+     - label
+     - description
+
+  PropertyValue :
+    description : soft type structure to represent other properties for model extensions
+    slots:
+     - label
+     - description
+     - property
+     - measureValue
+     - categoryValue
+
+
+  Responsibility:
+    description:
+    slots:
+      - label
+      - roleType
+      - agent
+    slot_usage:
+      agent :
+        required: true
+      roleType:
+        required: true
+
+  ScopedName:
+    description: binds a label with one or more identifiers and authority for the labeled concept
+    slots:
+      - label
+      - identifiers
+      - source
+   
+  SampleCollection :
+    description:
+    slots:
+     - label
+     - description
+     - collectionPurposes
+     - curation
+     - hasParts
+
+  SamplingEvent :
+    description:
+    slots:
+      - label
+      - description
+      - hasFeaturesOfInterest
+      - hasInitiative
+      - responsibilities
+      - resultTime
+      - samplingSite
+      - usedProcedure
+     
+  SamplingSite :
+    description:
+    slots:
+      - label
+      - description
+      - accessConstraints
+      - locationDD
+      - placeName
+      - otherLocations
+      - siteType     
+
+
+slots:
+
+  id:
+    range: string
+    domain: PhysicalSampleRecord
+    description: identifier for the metadata record
+  schema:
+    range: string
+    domain: PhysicalSampleRecord
+    description: identifier for the version of the iSamples JSON schema used for this doc
+  accessConstraints:
+    range: string
+    # domain: Curation, SamplingSite
+    description: Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights, legal, and cultural issues. Recommended practice is to refer to a rights statement with a URI. If this is not possible or feasible, a literal value (name, label, or short text) may be provided.
+    close_mappings: 
+      - dct:accessRights
+      - datacite4:rights  
+    multivalued: true
+  action:
+    range: ScopedName
+    domain: Event
+    description: specification of what was done using a term from a vocabulary
+  additionalProperties:
+    range: PropertyValue
+    domain: PhysicalSampleRecord
+    description: Use to associate sample with other non-categorical properties.
+    close_mappings: sdo:additionalProperty
+    multivalued: true
+  affiliations:
+    range: Organization
+    domain: Person
+    description: use to associate a person with a sponsoring or employing organization (could be time-stamped)
+    close_mappings: sdo:affiliation
+    multivalued: true
+  agent:
+    # range: Organization,   Person
+    domain: Responsibility
+    description: the person(s) or organization(s) that fill a responsibility role
+  altIdentifiers:
+    range: ScopedName
+    domain: PhysicalSampleRecord
+    description: base on ISO19115-1  MD_Identifier, with a 'code' string that is the actual identifier string, and a link to the authority that controls the identifier via a responsibility object.
+    multivalued: true
+  altNames:
+    range: ScopedName
+    domain: PhysicalSampleRecord
+    description: Other sample name(s) (identifiers) that have been used in the past, or by other stakeholders
+    multivalued: true
+  categoryValue:
+    range: ScopedName
+    domain: PropertyValue
+    description: PropertyValue observation result is a category (term from a vocabulary).
+  collectionPurposes:
+    range: ScopedName
+    domain: SampleCollection
+    description: generate controlled vocabulary later
+    multivalued: true
+  coordinate1:
+    range: decimal
+    domain: GeospatialLocation
+    description: for geospatial location in arbitrary SRS, first coordinate in an coordinate pair. Meaning is defined by the SRS. Example-- in UTM, this would be the Easting.
+  coordinate2:
+    range: decimal
+    domain: GeospatialLocation
+    description: for geospatial location in arbitrary SRS, second coordinate in an coordinate pair. Meaning is defined by the SRS. Example-- in UTM, this would be the northing.
+  curation:
+    range: Curation
+    # domain: SampleCollection,  PhysicalSampleRecord
+    description: record of activities in preservation, storage and contact information for current location. For a collection, include information about where the collection is and who manages it
+  curationLocation:
+    range: string
+    domain: Curation
+    description: text specifying where the sample or sample collection is located, e.g. physical address,  location within a building, or a tissue plate and well identifier.
+  dateValue:
+    range: decimal
+    # domain: Date, Event
+    description: simple ISO8601 date or dateTime string. 
+    close_mappings: 
+      - dct:date
+      - datacite4:date
+  description:
+    range: string
+    # domain: PhysicalSampleRecord, Initiative, SamplingSite
+    description: free text description of the subject of a triple.
+    close_mappings: 
+      - dct:description
+      - datacite4:description[descriptionType = TechnicalInfo]
+  determinationMethod:
+    range: string
+    domain: MeasureValue
+    description: free text description of method to obtain a measured value
+  elevation:
+    range: MeasureValue
+    # domain: GeospatialLocation,  SiteSpecificLocation, GeospatialDDCoordLocation
+    description: For a location, specification of the vertical distance from the datum specified for the spatial reference system. SRS definition should also specify if positive values are above or below the datum.
+  email:
+    range: string
+    # domain: Person, Organization
+    description: could apply regex validation for proper mailto link
+    close_mappings: sdo:email
+  events:
+    range: Event
+    # domain: Curation, Initiative
+    description: record of actions that effect the subject of this property
+    multivalued: true
+  hasCategories:
+    range: ScopedName
+    domain: PhysicalSampleRecord
+    description: use specifically for sample classification categories from registered vocabularies with URI or the category (use for sdo-propertyID).
+    multivalued: true
+  hasContextCategories:
+    range: string
+    domain: PhysicalSampleRecord
+    description: top level context, based on the kind of feature sampled.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.
+    multivalued: true
+  hasContexts:
+    range: ScopedName
+    domain: PhysicalSampleRecord
+    description: use to link sample to other terms to specify the context of the sample
+    multivalued: true
+  hasFeaturesOfInterest:
+    range: ScopedName
+    domain: SamplingEvent
+    description: specify the particular feature of interest that is the target of a sampling event; should be consistent with sampledFeature for any result samples. Might be a domain feature or another sample (or both!)
+    close_mappings: sosa:hasFeatureOfinterest
+    multivalued: true
+  hasInitiative:
+    range: Initiative
+    domain: SamplingEvent
+    description: identify the project, field campaign, cruise, expediton during which the samplingEvent occurred
+  hasMaterialCategories:
+    range: materialtype
+    domain: PhysicalSampleRecord
+    description: top level specification of the kind of material that constitutes the physical sample; detailed material categorization is done through the hasCategory/sdo-PropertyValue pattern
+    multivalued: true
+  hasParts:
+    range: ScopedName
+    domain: SampleCollection
+    description: link from collection to sample that is member of collection, linked with sampleIdentifier, not PhysicalSampleRecord.id
+    close_mappings: sdo:hasPart
+    multivalued: true
+  hasSpecimenCategories:
+    range: string
+    domain: PhysicalSampleRecord
+    description: top level categorization of kind of specimen. More specific classifications use isam hasCategory/sdo-PropertyValue pattern
+    multivalued: true
+  identifiers:
+    range: string
+    # domain: Person, Organization, ScopedName
+    description: identifer for the subject entity, use for person, organization, scoped name
+    close_mappings: sdo:identifier
+    multivalued: true
+  informalClassifications:
+    range: string
+    domain: PhysicalSampleRecord
+    description: free text classification terms, not from a controlled vocabulary; generally terms applied by collector
+    multivalued: true
+  initiativeType:
+    range: ScopedName
+    domain: Initiative
+    description: specify kind of initiative
+  jobTitle:
+    range: string
+    domain: Person
+    description: a person associated with a responsibility might be identified only by a jobTitle for better long-term stability.  Ideally associated e-mail would be related to the jobTitle (position),not the person in that role at a given time
+    close_mappings: sdo:jobTitle
+  keywords:
+    range: string
+    domain: PhysicalSampleRecord
+    description: free text categorization of sample to support discovery
+    close_mappings: sdo:keywords
+    multivalued: true
+  label:
+    range: string
+    # domain: 
+    description: a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.
+    close_mappings: rdfs:label
+  latitude:
+    range: decimal
+    domain: GeospatialDDCoordLocation
+    description: wgs84 decimal degree latitude coordinate
+    close_mappings: w3cpos:lat
+  locationDD:
+    range: GeospatialDDCoordLocation
+    domain: SamplingSite
+    description: A sampling site must have exactly one SamplingLocation with a longitude-latitude WKT CRS84 point to support cross domain search; 
+  locationMethod:
+    range: string
+    # domain:  GeospatialLocation, LinearReferenceLocation, SiteSpecificLocation, GeospatialDDCoordLocation
+    description: URI that dereferences to a registered procedure would be best practice
+  longitude:
+    range: decimal
+    domain: GeospatialDDCoordLocation
+    description: wgs84 decimal degree easting longitude coordinate
+    close_mappings: w3cpos:long
+  lowerBound:
+    range: decimal
+    domain: MeasureValue
+    description: for value range; if MeasureValue/value is null, this must be populated
+    close_mappings: qudt:lowerBound
+  maxCoordinate:
+    range: decimal
+    domain: LinearReferenceLocation
+    description: coordinate with maximum numeric value in linear reference system
+  measureUnits:
+    range: ScopedName
+    domain: LinearReferenceLocation
+    description: should be determined by SRS, include as explicit property for convienence
+  measureValue:
+    range: MeasureValue
+    domain: PropertyValue
+    description: property observation result that is a measured value
+  minCoordinate:
+    range: decimal
+    domain: LinearReferenceLocation
+    description: coordinate with minimum numeric value in linear reference system
+  name:
+    range: string
+    # domain: Organization, Person
+    description: use in parallel with rdfs:label for consistency with schema.org 
+    close_mappings: sdo:name
+  numericValue:
+    range: decimal
+    domain: MeasureValue
+    description: the numeric result reported in a measured value
+    close_mappings: qudt:value
+  otherLocations:
+    # range: SamplingLocation
+    domain: SamplingSite
+    description: other subclasses of SamplingLocation can also be associated with a site to assert location in other spatial reference systems, either for greater precision, or using other map projection schemes preferred by some community
+    multivalued: true
+  placeName:
+    range: ScopedName
+    domain: SamplingSite
+    description: A place name with a reference to the source gazetteer that defines the name
+  positionUncertainty:
+    range: MeasureValue
+    # domain: GeospatialLocation, LinearReferenceLocation,  GeospatialDDCoordLocation
+    description: numeric value to quantify location uncertainty.
+  producedBy:
+    range: SamplingEvent
+    domain: PhysicalSampleRecord
+    description: binding from a physical sample to description of its original sampling event. For splits or sub samples, the sampling event is the procedure used to obtain the child sample.
+    close_mappings: sosa:isResultOf
+  property:
+    range: ScopedName
+    domain: PropertyValue
+    description: identifier for a soft-type property value
+  referenceGeometryName:
+    range: ScopedName
+    domain: LinearReferenceLocation
+    description: name of the reference geometry, ideally with identifier, e.g. a borehole name and ID. basis for linear reference system must be some kind of OGC curve. A Curve is a one-dimensional geometric object usually stored as a sequence of points, with the subtype of Curve specifying the form of the interpolation between points. (OGC 99-049, https //portal.opengeospatial.org/files/?artifact_id=829)
+  referenceGeometryShape:
+    range: string
+    domain: LinearReferenceLocation
+    description: A geoJSON object that represents the geometry of the reference system (e.g. borehole, ship track, traverse); must include SRS for representation of the shape. See http //www.opengis.net/rdf#Curve for information about geoJSON
+  registrant:
+    range: Responsibility
+    domain: PhysicalSampleRecord
+    description: identification of the agent that registered the sample, with contact information
+  relatedResources:
+    range: Link
+    domain: PhysicalSampleRecord
+    description: link to another resource, with a relationship type
+    multivalued: true
+  relationshipType:
+    range: ScopedName
+    domain: Link
+    description: term to specify the semantics of the connection between source (subject) and target (object)
+  responsibilities:
+    range: Responsibility
+    # domain: SamplingEvent, Curation, Initiative
+    description: binds an event, curation or initiative with an agent  that is associated in some way (the responsibility role)
+    close_mappings: sosa:madeBySampler
+    multivalued: true
+  resultTime:
+    range: decimal
+    domain: SamplingEvent
+    description: data and optional time when the sample was collected
+  roleType:
+    range: ScopedName
+    domain: Responsibility
+    description: specify the relationship between an agent and a resource in a responsibility object.
+  sampleIdentifier:
+    range: string
+    domain: PhysicalSampleRecord
+    description: URI that identifies the physical sample described by this record; typically an IGSN or ARK
+    close_mappings: sdo:identifier
+  samplingPurposes:
+    range: ScopedName
+    domain: PhysicalSampleRecord
+    description: term to specify why a sample was collection.
+    multivalued: true
+  samplingSite:
+    range: SamplingSite
+    domain: SamplingEvent
+    description: binds a physical sample to the site (sampling feature) where it was collected. The site location might be specified by one or more sampleLocation objects,  
+  siteType:
+    range: ScopedName
+    domain: SamplingSite
+    description: categorization of the kind of site
+  source:
+    range: string
+    # domain: ScopedName, Link
+    description: use for sourcing scoped names and sample relationships.
+    close_mappings: dct:source
+  spatialReferenceSystem:
+    range: ScopedName
+    # domain: GeospatialLocation, LinearReferenceLocation, SiteSpecificLocation
+    description: name and identifier. ideally any spatial reference system should be registered somewhere and have a URI; use that if available. For site specific schemes  a local name might have to do
+  status:
+    range: ScopedName
+    domain: PhysicalSampleRecord
+    description: property to indicate status of sample, e.g. destroyed, under embargo, accessible, lost…
+  target:
+    range: ScopedName
+    domain: Link
+    description: scoped name that identifies the target of a relationship
+  uncertainty:
+    range: decimal
+    domain: MeasureValue
+    description: an error bound parameter on a measured value. Additional measured value properties can be added to specify the particular statistical or qualitative method used to estimate uncertainty.
+  unitOfMeasure:
+    range: string
+    domain: MeasureValue
+    description: specification of units of measure applicable to a measured value. Range value should be qudt-Unit URI
+    close_mappings: qudt:unit
+  upperBound:
+    range: decimal
+    domain: MeasureValue
+    description: for value range; if MeasureValue/value is null, this must be populated
+    close_mappings: qudt:upperBound
+  url:
+    range: string
+    domain: Organization
+    description: url for organization home page
+    close_mappings: sdo:url
+  usedProcedure:
+    range: Procedure
+    domain: SamplingEvent
+    description: binding from sampling event to a description of the procedure used to obtain the sample. 
+    close_mappings: sosa:usedProcedure
