@@ -82,6 +82,10 @@
                },
                "type": "array"
             },
+            "id": {
+               "description": "identifier for this document",
+               "type": "string"
+            },
             "informalClassification": {
                "description": "free text classification terms, not from a controlled vocabulary; generally terms applied by collector",
                "items": {
@@ -116,6 +120,10 @@
             },
             "samplingPurpose": {
                "description": "term to specify why a sample was collection.",
+               "type": "string"
+            },
+            "schema": {
+               "description": "identifier for the JSON schema for validating this document",
                "type": "string"
             }
          },

@@ -6,11 +6,11 @@
     "additionalProperties": false,
     "description": "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.",
     "properties": {
-        "$schema": {
+        "schema": {
             "type": "string",
             "description": "identifier for the JSON schema for validation purposes"
         },
-        "@id": {
+        "id": {
             "type": "string",
             "description": "URI that identifies this sample description record (not the physical sample itself"
         },
@@ -137,8 +137,8 @@
         }
     },
     "required": [
-        "@schema",
-        "@id",
+        "schema",
+        "id",
         "sampleidentifier",
         "label"
     ],
@@ -172,7 +172,6 @@
             ]
         },
         "SamplingEvent": {
-            "additionalProperties": false,
             "description": "",
             "properties": {
                 "label": {
@@ -206,7 +205,6 @@
             "type": "object"
         },
         "SamplingSite": {
-            "additionalProperties": false,
             "description": "documentation of the site where the sample was collected, wtih place name(s) and a geospatial location",
             "properties": {
                 "description": {
@@ -232,7 +230,6 @@
             "type": "object"
         },
         "SampleRelation": {
-            "additionalProperties": false,
             "description": "",
             "properties": {
                 "description": {
@@ -257,7 +254,6 @@
             "type": "object"
         },
         "Curation": {
-            "additionalProperties": false,
             "description": "object contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.",
             "properties": {
                 "accessConstraints": {

@@ -1,0 +1,386 @@
+id: http://resource.isamples.org/schema
+name: physicalSample
+title: Schema for documenting physical samples 
+version: 20210430
+types:
+  date:
+    base: str
+    uri: xsd:date
+  string:
+    base: str
+    uri: xsd:string
+    
+
+prefixes:
+  http://resource.isamples.org/schema/
+  http://purl.org/dc/terms/
+  mat: http://resource.isamples.org/vocabulary/material/
+  pur: http://resource.isamples.org/vocabulary/samplepurpose/
+  sf: http://resource.isamples.org/vocabulary/sampledFeature/
+  skos: http://www.w3.org/2004/02/skos/core#
+  spt: http://resource.isamples.org/vocabulary/specimentype/  
+  http://www.w3.org/2003/01/geo/wgs84_pos#
+  
+classes:
+
+  Date:
+    description: object to specify a date and the 'type', which indicates the kind of event associated with the date.
+    slots:
+      - dateValue
+      - dateType
+    
+  Curation :
+    description: representation of processes for preservation of sample, responsible agent, repository location, etc.
+    slots:
+      - accessConstraints
+      - responsibility
+      - events
+      - label
+      - curationLocation
+          
+  GeospatialDDCoordLocation :
+    description:
+    slots:
+      - locationMethod
+      - elevation
+      - latitude
+      - longitude
+      - positionUncertainty
+
+  GeospatialLocation :
+    description: point location in an arbitrary spatial reference system. UTM is common example, but might be a local coordinate grid systems set up at a research site or mine.  Future-- add WKTposition to specify locations with more complex geometry (e.g. line, polygon, multipoint).
+    slots:
+      - locationMethod
+      - elevation
+      - coordinate1
+      - coordinate2
+      - positionUncertainty
+      - spatialReferenceSystem
+    slot_usage:
+      coordinate1 :
+        required : true
+      coordinate2 :
+        required : true
+      spatialReferenceSystem :
+        required : true  
+
+  Event:
+    description: object that records an action taken at some time; 
+    slots:
+      - label
+      - dateValue
+      - action
+      - description
+    slot_usage:
+      dateValue :
+        required: true
+      label :
+        required: true
+              
+  Initiative :
+    description:
+    slots:
+      - events
+      - description
+      - label
+      - initiativeType   
+  
+  MeasureValue:
+    description: simple object to represent measured values with units and uncertainty; could generalize uncertainty to something like 'measure quality'. The 'value' can be a single value, or a preferred value if a range (minValue, maxValue) is reported.
+    slots:
+     - qudt:value
+     - uncertainty
+     - qudt:unit
+     - qudt:lowerBound
+     - qudt:upperBound
+
+  LinearReferenceLocation :
+    description: location specified by position relative to origin defined along an arbitrary linear path, e.g. mile posts along a highway, or depth interval in a borehole, or pressure interval in an atmospheric sonde.
+    slots:
+      - locationMethod
+      - positionUncertainty
+      - elevation
+      - minCoordinate
+      - maxCoordinate
+      - measureUnits
+      - spatialReferenceSystem
+      - referenceGeometryName
+      - referenceGeometryShape
+     
+
+  Link :
+    description:
+    slots:
+      - label
+      - description
+      - target
+      - relationshipType
+      - source
+
+  Organization :
+    description: an organization, with contact information. ideally organizations would be referenced by identifire in a  registry, but name should be include for presentation purposes.
+    slots:
+      - email
+      - name
+      - url
+      - identifier
+    slot_usage:
+      sdo:name:
+        required: true
+        
+  Person :
+    description: A person, with contact information and affiliation
+    subclass_of: Agent
+    slots:
+      - name
+      - email
+      - jobTitle
+      - affiliation
+      - identifier
+    slot_usage:
+      name:
+        required: true
+      
+  PhysicalSample :
+    description: This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.
+    slots:
+      - @id
+      - @schema
+      - additionalProperty
+      - altID
+      - altName
+      - curation
+      - description
+      - events
+      - hasCategory
+      - hasContextCategory
+      - hasMaterialCategory
+      - hasSpecimenCategory
+      - informalClassification
+      - keywords
+      - label
+      - producedBy
+      - registrant
+      - relatedResource
+      - represents
+      - sampleIdentifier
+      - samplingPurpose
+      - status
+
+  Procedure :
+    description:
+    slots:
+     - label
+     - description
+
+  PropertyValue :
+    description : soft type structure to represent other properties for model extensions
+    slots:
+     - label
+     - description
+     - property
+     - measureValue
+     - categoryValue
+
+
+  Responsibility:
+    description:
+    slots:
+      - label
+      - roleType
+      - agent
+    slot_usage:
+      agent :
+        required: true
+      roleType:
+        required: true
+
+  ScopedName:
+    description: binds a label with an identifier and authority for the labeled concept
+    slots:
+      - label
+      - identifier
+      - source
+   
+  SampleCollection :
+    description:
+    slots:
+     - label
+     - description
+     - collectionPurpose
+     - curation
+     - hasPart
+  SamplingEvent :
+    description:
+    slots:
+      - label
+      - description
+      - sosa:hasFeatureOfinterest
+      - hasInitiative
+      - responsibility
+      - resultTime
+      - samplingSite
+      - sosa:usedProcedure
+     
+  SamplingSite :
+    description:
+    slots:
+      - label
+      - description
+      - accessConstraints
+      - locationDD
+      - placeName
+      - otherLocation
+      - siteType     
+
+
+slots:
+
+  @id
+    range: string
+    description: identifier for this document
+    
+  @schema
+    range: string
+    description: identifier for the JSON schema for validating this document
+ 
+  accessConstraints:
+    range: string
+    description: cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.
+    multivalued: true
+
+  curation:
+    range: Curation
+    description: information about preservation of sample, its current disposition, and access constraints or conditions.
+
+  curationLocation:
+    range: string
+    description: information about where and how the sample is currently stored
+
+  description:
+    range: string
+    description: free text description of the subject of a triple.
+    close_mappings: dct:description
+    
+  elevation:
+    range: string
+    domain: GeospatialDDCoordLocation
+    description: should be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level.
+    
+  hasContextCategory:
+    range: string
+    domain: PhysicalSampleRecord
+    description: top level context, based on the kind of feature sampled.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.
+    multivalued: true
+ 
+  hasFeatureOfInterest:
+    range: string
+    domain: SamplingEvent
+    description: what does the sample represent.
+
+  hasMaterialCategory:
+    range: materialtype
+    domain: PhysicalSampleRecord
+    description: specify the kind of material that constitutes the sample
+    multivalued: true
+ 
+  hasSpecimenCategory:
+    range: string
+    domain: PhysicalSampleRecord
+    description: specify the kind of object that the specimen is
+    multivalued: true
+ 
+  informalClassification:
+    range: string
+    domain: PhysicalSampleRecord
+    description: free text classification terms, not from a controlled vocabulary; generally terms applied by collector
+    multivalued: true
+  
+  keywords:
+    range: string
+    domain: PhysicalSampleRecord
+    description: free text categorization of sample to support discovery
+    close_mappings: sdo:keywords
+    multivalued: true
+    
+  label:
+    range: string
+    description: a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.
+    close_mappings: rdfs:label
+
+  latitude:
+    range: decimal
+    domain: GeospatialDDCoordLocation
+    description: angular coordinate measured positive north from the equator.
+
+  location:
+    range: GeospatialDDCoordLocation
+    domain: SamplingSite
+    description: geopatial location of site; required default is WGS84 latitude, longitude in decimal degrees. Elevation as a string with number, unit of measure, and datum. 
+
+  longitude:
+    range: decimal
+    domain: GeospatialDDCoordLocation
+    description: angular coordinate measured positive eastward from the prime meridian.
+
+  placeName:
+    range: string
+    domain: SamplingSite
+    description: one or more names by which the sampling site is known.
+    multivalued: true
+
+  producedBy:
+    range: SamplingEvent
+    domain: PhysicalSampleRecord
+    description: object that documents the sampling event--who, where, when the specimen was obtained
+     
+  responsibility:
+    range: string
+    description: String with person name and affiliation, or organization name, and their role relative to the parent element.
+    multivalued: true
+
+  registrant:
+    range: string
+    domain: PhysicalSampleRecord
+    description: identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.
+
+  relatedResources:
+    range: Link
+    description: link to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource.
+
+  relationship:
+    range: string
+    description: term to identify realationship between host sample and the sample relation target. Should be controlled vocabulary (ScopedName). for now start with string, 'derivedFrom'.
+
+  resultTime:
+    range: dateValue
+    domain: SamplingEvent
+    description: Date (and optionally, time) on which the sample was collected.
+    
+  sampleIdentifier:
+    range: string
+    domain: PhysicalSampleRecord
+    description: URI that identifies the physical sample described by this record
+    close_mappings: sdo:identifier
+    
+  samplingPurpose:
+    range: string
+    domain: PhysicalSampleRecord
+    description: term to specify why a sample was collection.
+
+  samplingSite:
+    range: SamplingSite
+    domain: SamplingEvent
+    description: object that identifies the place where the sample was collected
+
+  target:
+    range: string
+    description: identifier for the target resource in the relationship. Start with string, should be Identifier object. 
+ 
+ 
+
+
+    
+    
+   
+
