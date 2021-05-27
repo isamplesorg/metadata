@@ -1,5 +1,5 @@
 {
-    "@schema": "../iSamplesSchemaBasicSMR.json",
+    "@schema": "http://resource.isamples.org/schema/0.2",
     "@id": "",
     "label": "",
     "sampleidentifier": "",
@@ -33,10 +33,10 @@
         "curationLocation": "",
         "responsibility": ""
     },
-    "relatedResource": {
+    "relatedResource": [ {
         "label":"",
         "description":"",
         "target":"",
-        "relationship":""
-    }
+        "relationshipType":""
+    } ]
 }
