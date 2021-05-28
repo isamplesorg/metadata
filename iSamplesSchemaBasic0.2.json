@@ -3,12 +3,12 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "PhysicalSampleRecord",
     "type": "object",
-    "additionalProperties": false,
-    "description": "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.",
+    "description": "This is a data object that is a digital representation of a physical sample",
     "properties": {
         "schema": {
             "type": "string",
-            "description": "identifier for the JSON schema for validation purposes"
+            "description": "identifier for the JSON schema for validation purposes",
+            "const": "http://resource.isamples.org/schema/0.2"
         },
         "id": {
             "type": "string",
@@ -16,14 +16,14 @@
         },
         "label": {
             "type": "string",
-            "description": "string that will identify the sample for human users"
+            "description": "string that will identify the sample for human users; typically an identifier assigned by teh original collector; other names can be included in the alternateNames array property."
         },
-        "sampleidentifier": {
+        "sampleIdentifier": {
             "type": "string",
-            "description": "unique identifier for the physical object, ideally a URI that is physically attached to the specimen object"
+            "description": "unique identifier for the physical object, ideally a URI that is physically attached to the specimen object, typically an IGSN or ARK with current iSamplePartners."
         },
         "description": {
-            "description": "free text description of the physical sample. Include as much detail as will be useful for users to find the sample and understand its context.",
+            "description": "free text description of the physical sample, and any related information. Include as much detail as will be useful for users to find the sample and understand its context.",
             "type": "string"
         },
         "hasContextCategory": {
@@ -146,7 +146,6 @@
         "GeospatialDDCoordLocation": {
             "title": "GeospatialDDCoordLocation",
             "type": "object",
-            "additionalProperties": true,
             "description": "specification of WGS84 decimal degree location of sampling location; could be sample point location, or the centroid of a sampling area",
             "properties": {
                 "elevation": {
@@ -172,7 +171,7 @@
             ]
         },
         "SamplingEvent": {
-            "description": "",
+            "description": "object that documents the sampling event--who, where, when the specimen was obtained",
             "properties": {
                 "label": {
                     "description": "a human intelligible string used to uniquely identify the sampling event.",
@@ -230,7 +229,7 @@
             "type": "object"
         },
         "SampleRelation": {
-            "description": "",
+            "description": "semantic link to other samples or related resources.",
             "properties": {
                 "description": {
                     "description": "free text description of the subject of a triple.",
@@ -240,8 +239,8 @@
                     "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
                     "type": "string"
                 },
-                "relationship": {
-                    "description": "term to identify realationship between host sample and the sample relation target. Should be controlled vocabulary (ScopedName). for now start with string, 'derivedFrom'.",
+                "relationshipType": {
+                    "description": "term to identify realationship between host sample and the sample relation target. Should be controlled vocabulary (ScopedName). For now start with string, 'derivedFrom'.",
                     "type": "string"
                 },
                 "target": {
@@ -249,13 +248,20 @@
                     "type": "string"
                 }
             },
-            "required": [],
+            "required": [
+                "relationshipType",
+                "target"
+            ],
             "title": "SampleRelation",
             "type": "object"
         },
         "Curation": {
-            "description": "object contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.",
+            "description": "object contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample. Use to represent chain of custody; new Curation object created when location changes; updates to accessConstraints or responsibilities should be noted as events.",
             "properties": {
+                "label": {
+                    "description": "a human intelligible string used to identify the curation event.",
+                    "type": "string"
+                },
                 "accessConstraints": {
                     "description": "cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.",
                     "items": {"type": "string"},
@@ -271,7 +277,7 @@
                     "type": "array"
                 }
             },
-            "required": [],
+            "required": ["label"],
             "title": "Curation",
             "type": "object"
         }
