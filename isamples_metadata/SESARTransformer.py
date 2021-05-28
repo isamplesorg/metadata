@@ -17,7 +17,7 @@ class SESARTransformer(Transformer):
         description = self._source_record_description()
         if description is not None:
             return self._source_record_description()['supplementMetadata']
-        return None
+        return {}
 
     @staticmethod
     def _logger():
@@ -52,7 +52,8 @@ class SESARTransformer(Transformer):
         contributor_name = ""
         contributors = self._source_record_description()['contributors']
         if contributors is not None and len(contributors) > 0:
-            contributors_with_role = list(filter(lambda contributor_dict: contributor_dict['roleName'] == role_name, contributors))
+            contributors_with_role = list(
+                filter(lambda contributor_dict: contributor_dict['roleName'] == role_name, contributors))
             if len(contributors_with_role) > 0:
                 contributor_name = contributors_with_role[0]['contributor'][0]['name']
         return contributor_name
@@ -74,9 +75,11 @@ class SESARTransformer(Transformer):
             supplement_metadata = self._supplement_metadata()
             if supplement_metadata is not None:
                 if 'cruiseFieldPrgrm' in supplement_metadata:
-                    description_components.append('cruiseFieldPrgrm:{0}'.format(supplement_metadata['cruiseFieldPrgrm']))
+                    description_components.append(
+                        'cruiseFieldPrgrm:{0}'.format(supplement_metadata['cruiseFieldPrgrm']))
                 if 'launchPlatformName' in supplement_metadata:
-                    description_components.append('launchPlatformName:{0}'.format(supplement_metadata['launchPlatformName']))
+                    description_components.append(
+                        'launchPlatformName:{0}'.format(supplement_metadata['launchPlatformName']))
 
             if 'collectionMethod' in description_dict:
                 description_components.append(description_dict['collectionMethod'])

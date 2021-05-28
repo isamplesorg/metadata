@@ -20,9 +20,11 @@ class Transformer(ABC):
             The provider record transformed into an iSamples record
         """
         transformed_record = {'$schema': '../iSamplesSchemaBasicSMR.json',
-                              '@id': 'https://data.isamples.org/digitalsample/{0}/{1}'.format(self.sample_identifier_scheme(), self.sample_identifier_value()),
+                              '@id': 'https://data.isamples.org/digitalsample/{0}/{1}'.format(
+                                  self.sample_identifier_scheme(), self.sample_identifier_value()),
                               'label': self.sample_label(),
-                              'sampleidentifier': '{0}:{1}'.format(self.sample_identifier_scheme(), self.sample_identifier_value()),
+                              'sampleidentifier': '{0}:{1}'.format(self.sample_identifier_scheme(),
+                                                                   self.sample_identifier_value()),
                               'description': self.sample_description(),
                               'hasContextCategory': self.has_context_categories(),
                               'hasMaterialCategory': self.has_material_categories(),
