@@ -5,7 +5,7 @@ import typing
 class Transformer(ABC):
     """Abstract base class for various iSamples provider transformers"""
 
-    NOT_PROVIDED = 'Not Provided'
+    NOT_PROVIDED = "Not Provided"
 
     def __init__(self, source_record: typing.Dict):
         self.source_record = source_record
@@ -19,37 +19,40 @@ class Transformer(ABC):
         Return value:
             The provider record transformed into an iSamples record
         """
-        transformed_record = {'$schema': '../iSamplesSchemaBasicSMR.json',
-                              '@id': 'https://data.isamples.org/digitalsample/{0}/{1}'.format(
-                                  self.sample_identifier_scheme(), self.sample_identifier_value()),
-                              'label': self.sample_label(),
-                              'sampleidentifier': '{0}:{1}'.format(self.sample_identifier_scheme(),
-                                                                   self.sample_identifier_value()),
-                              'description': self.sample_description(),
-                              'hasContextCategory': self.has_context_categories(),
-                              'hasMaterialCategory': self.has_material_categories(),
-                              'hasSpecimenCategory': self.has_specimen_categories(),
-                              'keywords': self.keywords(),
-                              'producedBy': {
-                                  'label': self.produced_by_label(),
-                                  'description': self.produced_by_description(),
-                                  'hasFeatureOfInterest': self.produced_by_feature_of_interest(),
-                                  'responsibility': self.produced_by_responsibilities(),
-                                  'resultTime': self.produced_by_result_time(),
-                                  'samplingSite': {
-                                      'description': self.sampling_site_description(),
-                                      'label': self.sampling_site_label(),
-                                      'location': {
-                                          'elevation': self.sampling_site_elevation(),
-                                          'latitude': self.sampling_site_latitude(),
-                                          'longitude': self.sampling_site_longitude()
-                                      },
-                                      'placeName': self.sampling_site_place_names()
-                                  }
-                              },
-                              'registrant': self.sample_registrant(),
-                              'samplingPurpose': self.sample_sampling_purpose()
-                              }
+        transformed_record = {
+            "$schema": "../iSamplesSchemaBasicSMR.json",
+            "@id": "https://data.isamples.org/digitalsample/{0}/{1}".format(
+                self.sample_identifier_scheme(), self.sample_identifier_value()
+            ),
+            "label": self.sample_label(),
+            "sampleidentifier": "{0}:{1}".format(
+                self.sample_identifier_scheme(), self.sample_identifier_value()
+            ),
+            "description": self.sample_description(),
+            "hasContextCategory": self.has_context_categories(),
+            "hasMaterialCategory": self.has_material_categories(),
+            "hasSpecimenCategory": self.has_specimen_categories(),
+            "keywords": self.keywords(),
+            "producedBy": {
+                "label": self.produced_by_label(),
+                "description": self.produced_by_description(),
+                "hasFeatureOfInterest": self.produced_by_feature_of_interest(),
+                "responsibility": self.produced_by_responsibilities(),
+                "resultTime": self.produced_by_result_time(),
+                "samplingSite": {
+                    "description": self.sampling_site_description(),
+                    "label": self.sampling_site_label(),
+                    "location": {
+                        "elevation": self.sampling_site_elevation(),
+                        "latitude": self.sampling_site_latitude(),
+                        "longitude": self.sampling_site_longitude(),
+                    },
+                    "placeName": self.sampling_site_place_names(),
+                },
+            },
+            "registrant": self.sample_registrant(),
+            "samplingPurpose": self.sample_sampling_purpose(),
+        }
         return transformed_record
 
     @abstractmethod
