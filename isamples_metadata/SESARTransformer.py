@@ -191,9 +191,13 @@ class SESARTransformer(Transformer):
         if "geoLocation" in self._source_record_description():
             geo_location = self._source_record_description()["geoLocation"]
             if geo_location is not None:
-                string_val = geo_location["geo"][0][key_name]
-                if string_val is not None:
-                    return float(string_val)
+                first_geo = geo_location["geo"][0]
+                # Ignore things that aren't lat/long for now, e.g.
+                # https://github.com/isamplesorg/metadata/issues/20
+                if key_name in first_geo:
+                    string_val = first_geo[key_name]
+                    if string_val is not None:
+                        return float(string_val)
         return 0.0
 
     def sampling_site_latitude(self) -> typing.SupportsFloat:
