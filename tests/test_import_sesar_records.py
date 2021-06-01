@@ -20,8 +20,8 @@ def test_local_records():
             continue
         full_path = os.path.join(dir, file)
         with open(full_path) as source_file:
-            source_record = json.load(source_file)
             try:
+                source_record = json.load(source_file)
                 transformer = SESARTransformer(source_record)
                 transformed_to_isamples_record = transformer.transform()
                 with open(

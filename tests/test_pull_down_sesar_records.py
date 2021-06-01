@@ -27,17 +27,23 @@ def get_record(s, id):
 def test_pull_down_records():
     with requests.Session() as s:
         # pull down a random sampling of 100 records somewhere between 0 and total_records - 100
-        response = requests.get(url.format("0", "1"))
+        response = s.get(url.format("0", "1"))
         json = response.json()
         total_records = json["total_records"]
         offset = random.randint(0, total_records - BATCH_SIZE)
-        response = requests.get(url.format(offset, "100"))
+        url_to_check = url.format(offset, BATCH_SIZE)
+        print("Pulling data down from url " + url_to_check)
+        response = s.get(url_to_check)
         json = response.json()
         data = json["data"]
 
-        with concurrent.futures.ThreadPoolExecutor(
-                max_workers=DEFAULT_THREAD_COUNT
-        ) as executor:
-            futures = []
-            for record in data:
-                futures.append(executor.submit(get_record, s, record["id"]))
+        for record in data:
+            get_record(s, record["id"])
+
+    # Some of the data wasn't getting written to disk with this approach:
+    # with concurrent.futures.ThreadPoolExecutor(
+    #         max_workers=DEFAULT_THREAD_COUNT
+    # ) as executor:
+    #     futures = []
+    #     for record in data:
+    #         futures.append(executor.submit(get_record, record["id"]))
