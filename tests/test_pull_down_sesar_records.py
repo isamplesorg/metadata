@@ -1,3 +1,4 @@
+import concurrent
 import random
 import json
 import requests
@@ -7,6 +8,7 @@ dir = "/Users/mandeld/iSamples/tmprecords/{0}.json"
 url = "https://mars.cyverse.org/thing/?offset={0}&limit={1}&status=200&authority=SESAR"
 thing_url = "https://mars.cyverse.org/thing/{0}?full=false"
 BATCH_SIZE = 100
+DEFAULT_THREAD_COUNT = 10
 
 
 def pytest_report_header(config):
@@ -14,6 +16,7 @@ def pytest_report_header(config):
 
 
 def get_record(s, id):
+    print("Fetching record with id " + id)
     response = s.get(thing_url.format(id))
     json_response = response.json()
     with open(dir.format(id), "w") as outfile:
@@ -31,5 +34,10 @@ def test_pull_down_records():
         response = requests.get(url.format(offset, "100"))
         json = response.json()
         data = json["data"]
-        records = [get_record(s, record["id"]) for record in data]
-    print("\n\nRecords are " % records)
+
+        with concurrent.futures.ThreadPoolExecutor(
+                max_workers=DEFAULT_THREAD_COUNT
+        ) as executor:
+            futures = []
+            for record in data:
+                futures.append(executor.submit(get_record, s, record["id"]))
