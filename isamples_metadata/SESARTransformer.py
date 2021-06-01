@@ -37,15 +37,19 @@ class SESARTransformer(Transformer):
         return Transformer.NOT_PROVIDED
 
     def has_context_categories(self) -> typing.List:
-        return ["Subsurface fluid reservoir"]
+        # TODO: implement
+        return []
 
     def has_material_categories(self) -> typing.List:
-        return ["Gaseous material"]
+        # TODO: implement
+        return []
 
     def has_specimen_categories(self) -> typing.List:
-        return ["Container with fluid"]
+        # TODO: implement
+        return []
 
     def keywords(self) -> typing.List:
+        # TODO: implement
         return [self._source_record_description()["sampleType"]]
 
     def _contributor_name_with_role(self, role_name: typing.AnyStr):
@@ -70,7 +74,10 @@ class SESARTransformer(Transformer):
         return ""
 
     def produced_by_label(self) -> typing.AnyStr:
-        return self._source_record_description()["collectionMethod"]
+        if "collectionMethod" in self._source_record_description():
+            return self._source_record_description()["collectionMethod"]
+        else:
+            return Transformer.NOT_PROVIDED
 
     def produced_by_description(self) -> typing.AnyStr:
         description_components = list()
@@ -125,9 +132,10 @@ class SESARTransformer(Transformer):
     def produced_by_responsibilities(self) -> typing.List:
         responsibilities = list()
         description_dict = self._source_record_description()
-        collector = description_dict["collector"]
-        if collector is not None:
-            responsibilities.append("{},,Collector".format(collector))
+        if "collector" in description_dict:
+            collector = description_dict["collector"]
+            if collector is not None:
+                responsibilities.append("{},,Collector".format(collector))
 
         owner = self._contributor_name_with_role("Sample Owner")
         if len(owner) > 0:
@@ -180,11 +188,12 @@ class SESARTransformer(Transformer):
         return Transformer.NOT_PROVIDED
 
     def _geo_location_float_value(self, key_name: typing.AnyStr):
-        geo_location = self._source_record_description()["geoLocation"]
-        if geo_location is not None:
-            string_val = geo_location["geo"][0][key_name]
-            if string_val is not None:
-                return float(string_val)
+        if "geoLocation" in self._source_record_description():
+            geo_location = self._source_record_description()["geoLocation"]
+            if geo_location is not None:
+                string_val = geo_location["geo"][0][key_name]
+                if string_val is not None:
+                    return float(string_val)
         return 0.0
 
     def sampling_site_latitude(self) -> typing.SupportsFloat:
