@@ -1,10 +1,5 @@
 Samples question
 
-1)
-should the sample registration record have a different identifier than the sample.
-i.e. use dct:identifier for the IGSN or other sample URI; 
-use sdo:about as explicit statement that the record is about a physical thing with ID
-name the sample metadata record PhysicalSampleMetadata instead of PhysicalSample
 
 2)
 representation of parent-child links

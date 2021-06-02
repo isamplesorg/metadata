@@ -1,0 +1,698 @@
+{
+    "$schema": "https://json-schema.org/draft-04/schema#",
+    "id": "http://datacite.org/schema/kernel-4#",
+    "type": "object",
+    "properties": {
+        "resource": {
+            "type": "object",
+            "required": [
+                "identifier",
+                "creators",
+                "titles",
+                "publisher",
+                "publicationYear",
+                "resourceType"
+            ],
+            "properties": {
+                "identifier": {"type": "string"},
+                "creators": {"$ref": "#/definitions/resource.creators"},
+                "titles": {"$ref": "#/definitions/resource.titles"},
+                "publisher": {"$ref": "#/definitions/resource.publisher"},
+                "publicationYear": {"type": "string"},
+                "resourceType": {"$ref": "#/definitions/resource.resourceType"},
+                "subjects": {"$ref": "#/definitions/resource.subjects"},
+                "contributors": {"$ref": "#/definitions/resource.contributors"},
+                "dates": {"$ref": "#/definitions/resource.dates"},
+                "language": {"type": "string"},
+                "alternateIdentifiers": {"$ref": "#/definitions/resource.alternateIdentifiers"},
+                "relatedIdentifiers": {"$ref": "#/definitions/resource.relatedIdentifiers"},
+                "sizes": {"$ref": "#/definitions/resource.sizes"},
+                "formats": {"$ref": "#/definitions/resource.formats"},
+                "version": {"type": "string"},
+                "rightsList": {"$ref": "#/definitions/resource.rightsList"},
+                "descriptions": {"$ref": "#/definitions/resource.descriptions"},
+                "geoLocations": {"$ref": "#/definitions/resource.geoLocations"},
+                "fundingReferences": {"$ref": "#/definitions/resource.fundingReferences"},
+                "relatedItems": {"$ref": "#/definitions/resource.relatedItems"}
+            }
+        }
+    },
+    "definitions": {
+        "resource.identifierType": {
+            "type": "string",
+            "enum": ["DOI"]
+        },
+        "resource.creators": {
+            "type": "array",
+            "required": ["creator"],
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": ["creatorName"],
+                "properties": {
+                    "creator": {
+                        "type": "object",
+                        "properties": {
+                            "creatorName": {"$ref": "#/definitions/resource.name"},
+                            "givenName": {"type": "string"},
+                            "familyName": {"type": "string"},
+                            "nameIdentifier": {
+                                "type": "array",
+                                "items": {"type": "string"},
+                                "minItems": 0
+                            },
+                            "affiliation": {
+                                "type": "array",
+                                "items": {"type": "string"},
+                                "minItems": 0
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "resource.titles": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": ["title"],
+                "properties": {
+                    "title": {"type": "string"},
+                    "titleType": {"$ref": "#/definitions/titleType"}
+                }
+            }
+        },
+        "resource.publisher": {"type": "string"},
+        "resource.resourceType": {
+            "type": "object",
+            "required": ["resourceTypeGeneral"],
+            "properties": {
+                "resourceType": {"type": "string"},
+                "resourceTypeGeneral": {"$ref": "#/definitions/resourceTypeGeneralEnum"}
+            }
+        },
+        "resource.subjects": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": ["subject"],
+                "properties": {
+                    "subject": {"type": "string"},
+                    "subjectScheme": {"type": "string"},
+                    "schemeURI": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "valueURI": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "classificationCode": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "lang": {"type": "string"}
+                }
+            },
+            "minItems": 0
+        },
+        "resource.contributor": {
+            "type": "object",
+            "required": [
+                "contributorName",
+                "contributorType"
+            ],
+            "properties": {
+                "contributorName": {"$ref": "#/definitions/resource.name"},
+                "givenName": {"type": "string"},
+                "familyName": {"type": "string"},
+                "nameIdentifiers": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/nameIdentifier"},
+                    "minItems": 0
+                },
+                "affiliations": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/affiliation"},
+                    "minItems": 0
+                },
+                "contributorType": {"$ref": "#/definitions/contributorType"}
+            }
+        },
+        "resource.contributors": {
+            "type": "object",
+            "properties": {
+                "contributor": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/resource.contributor"},
+                    "minItems": 0
+                }
+            }
+        },
+        "resource.dates": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "date": {"type": "string"},
+                    "dateType": {
+                        "type": "string",
+                        "enum": [
+                            "Accepted",
+                            "Available",
+                            "Collected",
+                            "Copyrighted",
+                            "Created",
+                            "Issued",
+                            "Other",
+                            "Submitted",
+                            "Updated",
+                            "Valid",
+                            "Withdrawn"
+                        ]
+                    },
+                    "dateInformation": {"type": "string"}
+                }
+            }
+        },
+        "resource.alternateIdentifiers": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": ["alternateIdentifierType"],
+                "properties": {
+                    "alternateIdentifier": {"type": "string"},
+                    "alternateIdentifierType": {"type": "string"}
+                }
+            }
+        },
+        "resource.relatedIdentifier": {
+            "type": "object",
+            "required": [
+                "relatedIdentifierType",
+                "relationType"
+            ],
+            "properties": {
+                "relatedIdentifier": {"type": "string"},
+                "resourceTypeGeneral": {"$ref": "#/definitions/resourceTypeGeneralEnum"},
+                "relatedIdentifierType": {"$ref": "#/definitions/relatedIdentifierType"},
+                "relationType": {"$ref": "#/definitions/relationType"},
+                "relatedMetadataScheme": {"type": "string"},
+                "schemeURI": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "schemeType": {"type": "string"}
+            }
+        },
+        "resource.relatedIdentifiers": {
+            "type": "array",
+            "minItems": 0,
+            "items": {"$ref": "#/definitions/resource.relatedIdentifier"}
+        },
+        "resource.sizes": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "size": {"type": "string"}
+                }
+            }
+        },
+        "resource.formats": {
+            "type": "array",
+            "minItems": 0,
+            "items": {"type": "string"}
+        },
+        "resource.rightsList": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "rights": {"type": "string"},
+                    "rightsURI": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "rightsIdentifier": {"type": "string"},
+                    "rightsIdentifierScheme": {"type": "string"},
+                    "schemeURI": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "lang": {"type": "string"}
+                }
+            }
+        },
+        "resource.descriptions": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "required": ["descriptionType"],
+                "properties": {
+                    "description": {"type": "string"},
+                    "descriptionType": {"$ref": "#/definitions/descriptionType"},
+                    "lang": {"type": "string"}
+                }
+            }
+        },
+        "point": {
+            "type": "object",
+            "required": [
+                "pointLongitude",
+                "pointLatitude"
+            ],
+            "properties": {
+                "pointLongitude": {"type": "number"},
+                "pointLatitude": {"type": "number"}
+            }
+        },
+        "box": {
+            "type": "object",
+            "required": [
+                "westBoundLongitude",
+                "eastBoundLongitude",
+                "southBoundLatitude",
+                "northBoundLatitude"
+            ],
+            "properties": {
+                "westBoundLongitude": {"type": "number"},
+                "eastBoundLongitude": {"type": "number"},
+                "southBoundLatitude": {"type": "number"},
+                "northBoundLatitude": {"type": "number"}
+            }
+        },
+        "geoLocationPolygon": {
+            "type": "object",
+            "required": ["polygonPoint"],
+            "properties": {
+                "inPolygonPoint": {"$ref": "#/definitions/point"},
+                "polygonPoint": {
+                    "type": "array",
+                    "minItems": 4,
+                    "items": {"$ref": "#/definitions/point"}
+                }
+            }
+        },
+        "resource.geoLocations": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "anyOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "geoLocationPlace": {"type": "string"}
+                        }
+                    },
+                    {"$ref": "#/definitions/point"},
+                    {"$ref": "#/definitions/box"},
+                    {"$ref": "#/definitions/geoLocationPolygon"}
+                ]
+            }
+        },
+        "resource.fundingReference": {
+            "type": "object",
+            "required": ["funderName"],
+            "properties": {
+                "funderName": {"type": "string"},
+                "funderIdentifier": {
+                    "type": "object",
+                    "required": ["funderIdentifierType"],
+                    "properties": {
+                        "identifier": {"type": "string"},
+                        "funderIdentifierType": {"$ref": "#/definitions/funderIdentifierType"},
+                        "schemeURI": {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    }
+                },
+                "awardIdentifier": {
+                    "type": "object",
+                    "properties": {
+                        "awardNumber": {"type": "string"},
+                        "awardURI": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "awardTitle": {"type": "string"}
+                    }
+                }
+            }
+        },
+        "resource.fundingReferences": {
+            "type": "array",
+            "minItems": 0,
+            "items": {"$ref": "#/definitions/resource.fundingReference"}
+        },
+        "relatedItem.relatedItemIdentifier": {
+            "type": "object",
+            "properties": {
+                "relatedItemIdentifier": {"type": "string"},
+                "relatedItemIdentifierType": {"$ref": "#/definitions/relatedIdentifierType"},
+                "relatedMetadataScheme": {"type": "string"},
+                "schemeURI": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "schemeType": {"type": "string"}
+            }
+        },
+        "relatedItem.creator": {
+            "type": "object",
+            "required": ["creatorName"],
+            "properties": {
+                "creatorName": {"$ref": "#/definitions/resource.name"},
+                "givenName": {"type": "string"},
+                "familyName": {"type": "string"}
+            }
+        },
+        "relatedItem.creators": {
+            "type": "object",
+            "properties": {
+                "creator": {
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/relatedItem.creator"},
+                    "minItems": 0
+                }
+            }
+        },
+        "relatedItem.titles": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "title": {"type": "string"},
+                    "titleType": {"$ref": "#/definitions/titleType"},
+                    "lang": {"type": "string"}
+                }
+            }
+        },
+        "relatedItem.contributor": {
+            "type": "object",
+            "required": [
+                "contributorName",
+                "contributorType"
+            ],
+            "properties": {
+                "contributorName": {"$ref": "#/definitions/resource.name"},
+                "givenName": {"type": "string"},
+                "familyName": {"type": "string"},
+                "contributorType": {"$ref": "#/definitions/contributorType"}
+            }
+        },
+        "relatedItem.contributors": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "contributor": {"$ref": "#/definitions/relatedItem.contributor"}
+                }
+            }
+        },
+        "relatedItem": {
+            "type": "object",
+            "required": [
+                "relatedItemType",
+                "relationType"
+            ],
+            "properties": {
+                "relatedItemIdentifier": {"$ref": "#/definitions/relatedItem.relatedItemIdentifier"},
+                "creators": {"$ref": "#/definitions/relatedItem.creators"},
+                "titles": {"$ref": "#/definitions/relatedItem.titles"},
+                "publicationYear": {"type": "string"},
+                "volume": {"type": "string"},
+                "issue": {"type": "string"},
+                "number": {
+                    "type": "object",
+                    "properties": {
+                        "number": {"type": "string"},
+                        "numberType": {"$ref": "#/definitions/numberType"}
+                    }
+                },
+                "firstPage": {"type": "string"},
+                "lastPage": {"type": "string"},
+                "publisher": {"type": "string"},
+                "edition": {"type": "string"},
+                "contributors": {"$ref": "#/definitions/relatedItem.contributors"},
+                "relatedItemType": {"$ref": "#/definitions/resource.resourceType"},
+                "relationType": {"$ref": "#/definitions/relationType"}
+            }
+        },
+        "resource.relatedItems": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "relatedItem": {"$ref": "#/definitions/relatedItem"}
+                }
+            }
+        },
+        "affiliation": {
+            "type": "object",
+            "properties": {
+                "affiliation": {"type": "string"},
+                "affiliationIdentifier": {"type": "string"},
+                "affiliationIdentifierScheme": {"type": "string"},
+                "schemeURI": {
+                    "type": "string",
+                    "format": "uri"
+                }
+            }
+        },
+        "nameIdentifier": {
+            "type": "object",
+            "required": ["nameIdentifierScheme"],
+            "properties": {
+                "Value": {"type": "string"},
+                "nameIdentifierScheme": {"type": "string"},
+                "schemeURI": {
+                    "type": "string",
+                    "format": "uri"
+                }
+            }
+        },
+        "nameType": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "Organizational",
+                        "Personal"
+                    ]
+                }
+            ]
+        },
+        "titleType": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "AlternativeTitle",
+                        "Subtitle",
+                        "TranslatedTitle",
+                        "Other"
+                    ]
+                }
+            ]
+        },
+        "resourceTypeGeneralEnum": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "Audiovisual",
+                        "Book",
+                        "BookChapter",
+                        "Collection",
+                        "ComputationalNotebook",
+                        "ConferencePaper",
+                        "ConferenceProceeding",
+                        "DataPaper",
+                        "Dataset",
+                        "Dissertation",
+                        "Event",
+                        "Image",
+                        "InteractiveResource",
+                        "Journal",
+                        "JournalArticle",
+                        "Model",
+                        "OutputManagementPlan",
+                        "PeerReview",
+                        "PhysicalObject",
+                        "Preprint",
+                        "Report",
+                        "Service",
+                        "Software",
+                        "Sound",
+                        "Standard",
+                        "Text",
+                        "Workflow",
+                        "Other"
+                    ]
+                }
+            ]
+        },
+        "contributorType": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "ContactPerson",
+                        "DataCollector",
+                        "DataCurator",
+                        "DataManager",
+                        "Distributor",
+                        "Editor",
+                        "HostingInstitution",
+                        "Other",
+                        "Producer",
+                        "ProjectLeader",
+                        "ProjectManager",
+                        "ProjectMember",
+                        "RegistrationAgency",
+                        "RegistrationAuthority",
+                        "RelatedPerson",
+                        "ResearchGroup",
+                        "RightsHolder",
+                        "Researcher",
+                        "Sponsor",
+                        "Supervisor",
+                        "WorkPackageLeader"
+                    ]
+                }
+            ]
+        },
+        "relatedIdentifierType": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "ARK",
+                        "arXiv",
+                        "bibcode",
+                        "DOI",
+                        "EAN13",
+                        "EISSN",
+                        "Handle",
+                        "IGSN",
+                        "ISBN",
+                        "ISSN",
+                        "ISTC",
+                        "LISSN",
+                        "LSID",
+                        "PMID",
+                        "PURL",
+                        "UPC",
+                        "URL",
+                        "URN",
+                        "w3id"
+                    ]
+                }
+            ]
+        },
+        "relationType": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "IsCitedBy",
+                        "Cites",
+                        "IsSupplementTo",
+                        "IsSupplementedBy",
+                        "IsContinuedBy",
+                        "Continues",
+                        "IsNewVersionOf",
+                        "IsPreviousVersionOf",
+                        "IsPartOf",
+                        "HasPart",
+                        "IsPublishedIn",
+                        "IsReferencedBy",
+                        "References",
+                        "IsDocumentedBy",
+                        "Documents",
+                        "IsCompiledBy",
+                        "Compiles",
+                        "IsVariantFormOf",
+                        "IsOriginalFormOf",
+                        "IsIdenticalTo",
+                        "HasMetadata",
+                        "IsMetadataFor",
+                        "Reviews",
+                        "IsReviewedBy",
+                        "IsDerivedFrom",
+                        "IsSourceOf",
+                        "Describes",
+                        "IsDescribedBy",
+                        "HasVersion",
+                        "IsVersionOf",
+                        "Requires",
+                        "IsRequiredBy",
+                        "Obsoletes",
+                        "IsObsoletedBy"
+                    ]
+                }
+            ]
+        },
+        "descriptionType": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "Abstract",
+                        "Methods",
+                        "SeriesInformation",
+                        "TableOfContents",
+                        "TechnicalInfo",
+                        "Other"
+                    ]
+                }
+            ]
+        },
+        "funderIdentifierType": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "ISNI",
+                        "GRID",
+                        "ROR",
+                        "Crossref Funder ID",
+                        "Other"
+                    ]
+                }
+            ]
+        },
+        "numberType": {
+            "allOf": [
+                {"type": "string"},
+                {
+                    "enum": [
+                        "Article",
+                        "Chapter",
+                        "Report",
+                        "Other"
+                    ]
+                }
+            ]
+        },
+        "resource.name": {
+            "type": "object",
+            "properties": {
+                "name": {"type": "string"},
+                "nameType": {"$ref": "#/definitions/nameType"},
+                "lang": {"type": "string"}
+            }
+        }
+    }
+}

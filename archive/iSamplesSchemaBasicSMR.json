@@ -1,0 +1,225 @@
+{
+    "$id": "http://resource.isamples.org/schema/0.2",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "PhysicalSampleRecord",
+    "type": "object",
+    "additionalProperties": false,
+    "description": "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.",
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "identifier for the JSON schema for validation purposes"
+        },
+        "@id": {
+            "type": "string",
+            "description": "URI that identifies this sample description record (not the physical sample itself"
+        },
+        "label": {
+            "type": "string",
+            "description": "string that will identify the sample for human users"
+        },
+        "sampleidentifier": {
+            "type": "string",
+            "description": "unique identifier for the physical object, ideally a URI that is physically attached to the specimen object"
+        },
+        "description": {
+            "description": "free text description of the physical sample. Include as much detail as will be useful for users to find the sample and understand its context.",
+            "type": "string"
+        },
+        "hasContextCategory": {
+            "description": "top level context, based on the kind of feature sampled, from the SampledFeature vocabulary.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Atmosphere",
+                    "Biological environment",
+                    "Building",
+                    "Earth environment",
+                    "Earth Surface",
+                    "Experiment setting",
+                    "Extraterrestrial environment ",
+                    "Human occupation site ",
+                    "Lab environment",
+                    "Laboratory environment",
+                    "Lake, River, or Stream bed",
+                    "Marine biome",
+                    "Marine environment",
+                    "Marine water body bottom",
+                    "Regolith, sediment or soil horizon",
+                    "Rock Body",
+                    "Rock sample",
+                    "Solid Earth",
+                    "Subaerial Surface Environment",
+                    "Subaerial terrestrial environment",
+                    "Subaqueous terrestrial environment",
+                    "Subsurface fluid reservoir",
+                    "Terrestrial water body",
+                    "Water body"
+                ]
+            },
+            "type": "array"
+        },
+        "hasMaterialCategory": {
+            "description": "specify the kind of material that constitutes the sample",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Anthropogenic material",
+                    "Anthropogenic metal material",
+                    "Biogenic non-organic material",
+                    "Dispersed media",
+                    "Fluid material",
+                    "Gaseous material",
+                    "Liquid water",
+                    "Mineral",
+                    "Mixed soil, sediment or rock",
+                    "Natural Solid Material",
+                    "Non-aqueous liquid material",
+                    "Organic material",
+                    "Other anthropogenic material",
+                    "Particulate",
+                    "Rock",
+                    "Sediment",
+                    "Soil"
+                ]
+            },
+            "type": "array"
+        },
+        "hasSpecimenCategory": {
+            "description": "specify the kind of object that the specimen is",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Aggregation",
+                    "Anthropogenic aggregation",
+                    "Any aggregation specimen",
+                    "Any biological specimen",
+                    "Any solid object",
+                    "Artifact",
+                    "Biome aggregation specimen",
+                    "Container with fluid",
+                    "Fossil",
+                    "Organism part",
+                    "Organism product",
+                    "Other solid object",
+                    "Research product",
+                    "Whole organism specimen"
+                ]
+            },
+            "type": "array"
+        },
+        "keywords": {
+            "description": "free text categorization of sample to support discovery",
+            "items": {"type": "string"},
+            "type": "array"
+        },
+        "producedBy": {
+            "$ref": "#/definitions/SamplingEvent",
+            "description": "object that documents the sampling event--who, where, when the specimen was obtained"
+        },
+        "registrant": {
+            "description": "identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.",
+            "type": "string"
+        },
+        "samplingPurpose": {
+            "description": "term to specify why a sample was collection.",
+            "type": "string"
+        }
+    },
+    "required": [
+        "@schema",
+        "@id",
+        "sampleidentifier",
+        "label"
+    ],
+    "definitions": {
+        "GeospatialDDCoordLocation": {
+            "title": "GeospatialDDCoordLocation",
+            "type": "object",
+            "additionalProperties": true,
+            "description": "specification of WGS84 decimal degree location of sampling location; could be sample point location, or the centroid of a sampling area",
+            "properties": {
+                "elevation": {
+                    "description": "should be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level.",
+                    "type": "string"
+                },
+                "latitude": {
+                    "description": "angular coordinate measured positive north from the equator.",
+                    "type": "number",
+                    "minimum": -90,
+                    "maximum": 90
+                },
+                "longitude": {
+                    "description": "angular coordinate measured positive eastward from the prime meridian.",
+                    "type": "number",
+                    "minimum": -360,
+                    "maximum": 360
+                }
+            },
+            "required": [
+                "latitude",
+                "longitude"
+            ]
+        },
+        "SamplingEvent": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "label": {
+                    "description": "a human intelligible string used to uniquely identify the sampling event.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "free text description of the sampling event",
+                    "type": "string"
+                },
+                "hasFeatureOfInterest": {
+                    "description": "what does the sample represent.",
+                    "type": "string"
+                },
+                "responsibility": {
+                    "description": "String with person name and affiliation, or organization name, and their role relative to the parent element.",
+                    "items": {"type": "string"},
+                    "type": "array"
+                },
+                "resultTime": {
+                    "description": "Date on which the sample was collected.",
+                    "type": "string"
+                },
+                "samplingSite": {
+                    "$ref": "#/definitions/SamplingSite",
+                    "description": "object that identifies the place where the sample was collected"
+                }
+            },
+            "required": ["label"],
+            "title": "SamplingEvent",
+            "type": "object"
+        },
+        "SamplingSite": {
+            "additionalProperties": false,
+            "description": "documentation of the site where the sample was collected, wtih place name(s) and a geospatial location",
+            "properties": {
+                "description": {
+                    "description": "free text description of the subject of a triple.",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                },
+                "location": {
+                    "$ref": "#/definitions/GeospatialDDCoordLocation",
+                    "description": "geopatial location of site; required default is WGS84 latitude, longitude in decimal degrees. Elevation as a string with number, unit of measure, and datum."
+                },
+                "placeName": {
+                    "description": "one or more names by which the sampling site is known.",
+                    "items": {"type": "string"},
+                    "type": "array"
+                }
+            },
+            "required": ["label"],
+            "title": "SamplingSite",
+            "type": "object"
+        }
+    }
+}
