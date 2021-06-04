@@ -1,6 +1,6 @@
 {
     "@schema": "http://resource.isamples.org/schema/0.2",
-    "@id": "",
+    "@id": "metadata:   ",
     "label": "",
     "sampleidentifier": "",
     "description": "",
@@ -29,6 +29,8 @@
     "registrant": "",
     "samplingPurpose": "",
     "curation": {
+        "label":"",
+        "description":"",
         "accessConstraints": "",
         "curationLocation": "",
         "responsibility": ""
