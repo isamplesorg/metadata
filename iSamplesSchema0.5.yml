@@ -69,6 +69,7 @@ classes:
           - coordinate2
           - positionUncertainty
           - spatialReferenceSystem
+          - wktgeom
         slot_usage:
             coordinate1:
                 required: true
@@ -183,6 +184,7 @@ classes:
           - relatedResources
           - altIdentifiers
           - altNames
+          - events
         slot_usage:
             label:
                 required: true
@@ -366,7 +368,7 @@ slots:
         description: could apply regex validation for proper mailto link
         close_mappings: sdo:email
     events:
-        range: Event # domain: Curation, Initiative
+        range: Event # domain: Curation, Initiative, PhysicalSampleRecord
         description: record of actions that effect the subject of this property
         multivalued: true
     hasCategories:
@@ -648,3 +650,6 @@ slots:
         description: binding from sampling event to a description of the procedure
             used to obtain the sample.
         close_mappings: sosa:usedProcedure
+    wktgeom:
+        description : Well Known Text encoding of more complex geometry; the included coordinate point should be a centroid of this geometry.  Include SRS specification in WKT string, eg. use extended WKT (https://github.com/postgis/postgis/blob/2.1.0/doc/ZMSgeoms.txt)
+        range : string

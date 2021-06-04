@@ -46,7 +46,7 @@
         },
         "curation": {
             "$ref": "#/definitions/Curation",
-            "description": "record of activities in preservation, storage and contact information for current location. For a collection, include information about where the collection is and who manages it"
+            "description": "record of activities in preservation, storage and contact information for current location. For a collection, include information about where the collection is and who manages it.  Information about maintenance of the physical sample record should be in PhysicalSampleRecord/events"
         },
         "registrant": {
             "$ref": "#/definitions/Responsibility",
@@ -91,6 +91,11 @@
             "items": {"type": "string"},
             "type": "array"
         },
+        "events": {
+            "description": "record of actions that effect the physical sample record, e.g. registration, metadata updates, publication date (when the record will be/was made public)",
+            "items": {"$ref": "#/definitions/Event"},
+            "type": "array"
+        },
         "relatedResources": {
             "description": "link to another resource, with a relationship type",
             "items": {"$ref": "#/definitions/Link"},
@@ -98,7 +103,7 @@
         }
     },
     "required": [],
-        "definitions": {
+    "definitions": {
         "Curation": {
             "additionalProperties": false,
             "description": "representation of processes for preservation of sample, responsible agent, repository location, etc.",
@@ -200,7 +205,11 @@
                     "$ref": "#/definitions/MeasureValue",
                     "description": "numeric value to quantify location uncertainty."
                 },
-                "spatialReferenceSystem": {"$ref": "#/definitions/ScopedName"}
+                "spatialReferenceSystem": {"$ref": "#/definitions/ScopedName"},
+                "wktgeom": {
+                    "type": "string",
+                    "description": " Well Known Text encoding of more complex geometry; the included coordinate point should be a centroid of this geometry.  Include SRS specification in WKT string, eg. use extended WKT (https://github.com/postgis/postgis/blob/2.1.0/doc/ZMSgeoms.txt)"
+                }
             },
             "required": [
                 "coordinate1",
@@ -396,8 +405,7 @@
             "type": "object"
         },
         "Procedure": {
-            "additionalProperties": false,
-            "description": "",
+            "description": "description of a process",
             "properties": {
                 "description": {
                     "description": "free text description of the subject of a triple.",
@@ -443,9 +451,14 @@
         },
         "Responsibility": {
             "additionalProperties": false,
-            "description": "",
+            "description": "To validate against anyOf, the given data must be valid against any (one or more) of the given subschemas; agent must be at least one of Person or Organization",
             "properties": {
-                "agent": {"type": "string"},
+                "agent": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/Person"},
+                        {"$ref": "#/definitions/Organization"}
+                    ]
+                },
                 "label": {
                     "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
                     "type": "string"
@@ -491,7 +504,6 @@
             "type": "object"
         },
         "SamplingEvent": {
-            "additionalProperties": false,
             "description": "",
             "properties": {
                 "description": {
