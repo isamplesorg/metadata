@@ -262,6 +262,10 @@
                     "description": "a human intelligible string used to identify the curation event.",
                     "type": "string"
                 },
+                "description":{
+                    "description": "free text information about curation. Include narrative of curation events here untill Events get added to the model",
+                    "type": "string"
+                },
                 "accessConstraints": {
                     "description": "cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.",
                     "items": {"type": "string"},
