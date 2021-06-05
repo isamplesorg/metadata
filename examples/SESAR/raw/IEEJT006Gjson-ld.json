@@ -1,1 +1,185 @@
-{"@context":"https://raw.githubusercontent.com/IGSN/igsn-json/master/schema.igsn.org/json/registration/v0.1/context.jsonld","@id":"https://data.geosamples.org/sample/igsn/IEEJT006G","igsn":"IEEJT006G","registrant":{"name":"IEDA","identifiers":{"kind":"uri","id":"https://www.geosamples.org"}},"description":{"sampleName":"VC-18-FT-12","sampleType":"Individual Sample>Specimen","collector":"Miquela Ingalls/Elizabeth Trower","collectionStartDate":"2018-06-06","contributors":[{"contributor":[{"@type":"Person","name":"Elizabeth Trower","givenName":"Elizabeth","familyName":"Trower"}],"@type":"Role","roleName":"Sample Owner"},{"contributor":[{"@type":"Person","name":"Elizabeth Trower","givenName":"Elizabeth","familyName":"Trower"}],"@type":"Role","roleName":"Sample Registrant"},{"contributor":[{"@type":"Person"}],"@type":"Role","roleName":"Sample Archive Contact"}],"geoLocation":{"geo":[{"@type":"GeoCoordinates","latitude":"40.7735","longitude":"-108.6518"}],"@type":"Place"},"material":"Sedimentary>Carbonate>Rock","collectionMethod":"Manual>Hammer","supplementMetadata":{"sampleId":4552452,"depthMin":23.69,"depthScale":"meters from base of section","externalSampleId":"VC-18-FT-12","fieldName":"ooid grainstone","locality":"Vermillion Creek Section, Sand Wash Basin, Green River Formation","province":"Colorado","country":"United States","childIGSN":[],"siblingIGSN":["IEEJT0070","IEEJT006Z","IEEJT006V","IEEJT006U","IEEJT006S","IEEJT006O","IEEJT006F","IEEJT006E","IEEJT006D","IEEJT006A","IEEJT0067","IEEJT0065","IEEJT005Q","IEEJT005P","IEEJT005O","IEEJT005N","IEEJT0059","IEEJT0053","IEEJT0052","IEEJT0051","IEEJT0075","IEEJT0074","IEEJT0073","IEEJT0072","IEEJT0071","IEEJT006Y","IEEJT006X","IEEJT006W","IEEJT006T","IEEJT006R","IEEJT006Q","IEEJT006P","IEEJT006N","IEEJT006M","IEEJT006L","IEEJT006K","IEEJT006J","IEEJT006I","IEEJT006H","IEEJT006C","IEEJT006B","IEEJT0069","IEEJT0068","IEEJT0066","IEEJT0064","IEEJT0063","IEEJT0062","IEEJT0061","IEEJT0060","IEEJT005Z","IEEJT005Y","IEEJT005X","IEEJT005W","IEEJT005V","IEEJT005U","IEEJT005T","IEEJT005S","IEEJT005R","IEEJT005M","IEEJT005L","IEEJT005K","IEEJT005J","IEEJT005I","IEEJT005H","IEEJT005G","IEEJT005F","IEEJT005E","IEEJT005D","IEEJT005C","IEEJT005B","IEEJT005A","IEEJT0058","IEEJT0057","IEEJT0056","IEEJT0055","IEEJT0054"],"otherName":[],"document":[],"publicationUrl":[]},"log":[{"type":"registered","timestamp":"2020-11-10 11:55:05"},{"type":"published","timestamp":"2020-11-10 11:55:05"},{"type":"lastUpdated","timestamp":"2020-11-10 11:55:05"}],"collectorDetail":"University of Colorado, Boulder, CO; Lizzy.Trower@colorado.edu","publisher":{"contactPoint":{"@type":"ContactPoint","name":"Information Desk","contactType":"Customer Service","email":"info@geosamples.org","url":"https://www.geosamples.org/contact/"},"@type":"Organization","name":"EarthChem","@id":"https://www.geosamples.org","url":"https://www.geosamples.org"},"parentIdentifier":"IEEJT0050","igsnPrefix":"IEEJT"}}
+{
+    "@context": "https://raw.githubusercontent.com/IGSN/igsn-json/master/schema.igsn.org/json/registration/v0.1/context.jsonld",
+    "@id": "https://data.geosamples.org/sample/igsn/IEEJT006G",
+    "igsn": "IEEJT006G",
+    "registrant": {
+        "name": "IEDA",
+        "identifiers": {
+            "kind": "uri",
+            "id": "https://www.geosamples.org"
+        }
+    },
+    "description": {
+        "sampleName": "VC-18-FT-12",
+        "sampleType": "Individual Sample>Specimen",
+        "collector": "Miquela Ingalls/Elizabeth Trower",
+        "collectionStartDate": "2018-06-06",
+        "contributors": [
+            {
+                "contributor": [
+                    {
+                        "@type": "Person",
+                        "name": "Elizabeth Trower",
+                        "givenName": "Elizabeth",
+                        "familyName": "Trower"
+                    }
+                ],
+                "@type": "Role",
+                "roleName": "Sample Owner"
+            },
+            {
+                "contributor": [
+                    {
+                        "@type": "Person",
+                        "name": "Elizabeth Trower",
+                        "givenName": "Elizabeth",
+                        "familyName": "Trower"
+                    }
+                ],
+                "@type": "Role",
+                "roleName": "Sample Registrant"
+            },
+            {
+                "contributor": [
+                    {"@type": "Person"}
+                ],
+                "@type": "Role",
+                "roleName": "Sample Archive Contact"
+            }
+        ],
+        "geoLocation": {
+            "geo": [
+                {
+                    "@type": "GeoCoordinates",
+                    "latitude": "40.7735",
+                    "longitude": "-108.6518"
+                }
+            ],
+            "@type": "Place"
+        },
+        "material": "Sedimentary>Carbonate>Rock",
+        "collectionMethod": "Manual>Hammer",
+        "supplementMetadata": {
+            "sampleId": 4552452,
+            "depthMin": 23.69,
+            "depthScale": "meters from base of section",
+            "externalSampleId": "VC-18-FT-12",
+            "fieldName": "ooid grainstone",
+            "locality": "Vermillion Creek Section, Sand Wash Basin, Green River Formation",
+            "province": "Colorado",
+            "country": "United States",
+            "childIGSN": [],
+            "siblingIGSN": [
+                "IEEJT0070",
+                "IEEJT006Z",
+                "IEEJT006V",
+                "IEEJT006U",
+                "IEEJT006S",
+                "IEEJT006O",
+                "IEEJT006F",
+                "IEEJT006E",
+                "IEEJT006D",
+                "IEEJT006A",
+                "IEEJT0067",
+                "IEEJT0065",
+                "IEEJT005Q",
+                "IEEJT005P",
+                "IEEJT005O",
+                "IEEJT005N",
+                "IEEJT0059",
+                "IEEJT0053",
+                "IEEJT0052",
+                "IEEJT0051",
+                "IEEJT0075",
+                "IEEJT0074",
+                "IEEJT0073",
+                "IEEJT0072",
+                "IEEJT0071",
+                "IEEJT006Y",
+                "IEEJT006X",
+                "IEEJT006W",
+                "IEEJT006T",
+                "IEEJT006R",
+                "IEEJT006Q",
+                "IEEJT006P",
+                "IEEJT006N",
+                "IEEJT006M",
+                "IEEJT006L",
+                "IEEJT006K",
+                "IEEJT006J",
+                "IEEJT006I",
+                "IEEJT006H",
+                "IEEJT006C",
+                "IEEJT006B",
+                "IEEJT0069",
+                "IEEJT0068",
+                "IEEJT0066",
+                "IEEJT0064",
+                "IEEJT0063",
+                "IEEJT0062",
+                "IEEJT0061",
+                "IEEJT0060",
+                "IEEJT005Z",
+                "IEEJT005Y",
+                "IEEJT005X",
+                "IEEJT005W",
+                "IEEJT005V",
+                "IEEJT005U",
+                "IEEJT005T",
+                "IEEJT005S",
+                "IEEJT005R",
+                "IEEJT005M",
+                "IEEJT005L",
+                "IEEJT005K",
+                "IEEJT005J",
+                "IEEJT005I",
+                "IEEJT005H",
+                "IEEJT005G",
+                "IEEJT005F",
+                "IEEJT005E",
+                "IEEJT005D",
+                "IEEJT005C",
+                "IEEJT005B",
+                "IEEJT005A",
+                "IEEJT0058",
+                "IEEJT0057",
+                "IEEJT0056",
+                "IEEJT0055",
+                "IEEJT0054"
+            ],
+            "otherName": [],
+            "document": [],
+            "publicationUrl": []
+        },
+        "log": [
+            {
+                "type": "registered",
+                "timestamp": "2020-11-10 11:55:05"
+            },
+            {
+                "type": "published",
+                "timestamp": "2020-11-10 11:55:05"
+            },
+            {
+                "type": "lastUpdated",
+                "timestamp": "2020-11-10 11:55:05"
+            }
+        ],
+        "collectorDetail": "University of Colorado, Boulder, CO; Lizzy.Trower@colorado.edu",
+        "publisher": {
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "name": "Information Desk",
+                "contactType": "Customer Service",
+                "email": "info@geosamples.org",
+                "url": "https://www.geosamples.org/contact/"
+            },
+            "@type": "Organization",
+            "name": "EarthChem",
+            "@id": "https://www.geosamples.org",
+            "url": "https://www.geosamples.org"
+        },
+        "parentIdentifier": "IEEJT0050",
+        "igsnPrefix": "IEEJT"
+    }
+}
