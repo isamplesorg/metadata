@@ -13,9 +13,9 @@ class _ControlledVocabularyCategory(Enum):
 class ContextCategory(_ControlledVocabularyCategory):
     """Top level context, based on the kind of feature sampled, from the SampledFeature vocabulary.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property."""
 
-    ATMOSPHERE = "Atmosphere"
-    BIOLOGICAL_ENVIRONMENT = "Biological environment"
-    BUILDING = "Building"
+    ATMOSPHERE = ("Atmosphere",)
+    BIOLOGICAL_ENVIRONMENT = ("Biological environment",)
+    BUILDING = ("Building",)
     EARTH_ENVIRONMENT = ("Earth environment",)
     EARTH_SURFACE = ("Earth Surface",)
     EXPERIMENT_SETTING = ("Experiment setting",)
