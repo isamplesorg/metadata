@@ -1,6 +1,11 @@
 import typing
 import logging
-from isamples_metadata.Transformer import Transformer
+from isamples_metadata.Transformer import (
+    Transformer,
+    SpecimenCategory,
+    MaterialCategory,
+    ContextCategory,
+)
 
 
 class SESARTransformer(Transformer):
@@ -36,17 +41,80 @@ class SESARTransformer(Transformer):
         # TODO: implement
         return Transformer.NOT_PROVIDED
 
-    def has_context_categories(self) -> typing.List:
+    def has_context_categories(self) -> typing.List[ContextCategory]:
+        # From Steve: hasContextCategory (SampledFeatureType) This one’s more complicated, here’s a start at the logic:
+        # is it an Ocean Drilling Program sample (assume its core from the ocean floor) or is the material rock or a subtype of rock or is the sampleType ‘Core’; hasContextCategory is RockBody
+        # is material type coral, (ideally verify that its from a living coral species—check field name and geologic age): hasContextCategory is MarineBiome
+        # Is platform type a submersible (e.g. Alvin)?  If Material type is rock or gas hasContextCategory is ‘Marine water body bottom’
+        # primaryLocationType is good, but only populated in 268,454 records;
         # TODO: implement
-        return []
+        return [ContextCategory.ATMOSPHERE, ContextCategory.BUILDING]
 
-    def has_material_categories(self) -> typing.List:
+    def has_material_categories(self) -> typing.List[MaterialCategory]:
         # TODO: implement
-        return []
+        # From Steve:  map from material key in the JSON-LD
+        """
+        "Macrobiology>Biology",177431
+        "Rock",126427
+        "Igneous>Rock",101473
+        "Sediment",70638
+        "Sedimentary>Rock",32598
+        "Liquid>aqueous",25079
+        "Metamorphic>Rock",24406
+        "Ore>Rock",22190
+        "Other",16935
+        "Quartz>Mineral",14313
+        "Coral>Mineral",523
+        "Sedimentary>Siliciclastic>Sediment",358
+        "Igneous>Other",355
+        """
+        return [MaterialCategory.FLUID_MATERIAL]
 
-    def has_specimen_categories(self) -> typing.List:
+    def has_specimen_categories(self) -> typing.List[SpecimenCategory]:
         # TODO: implement
-        return []
+        # From Steve: I think we can get by mapping from sampleType key in JSON-LD
+        """
+        "Individual Sample",525322
+        "Core Section Half",380004
+        "Core Sub-Piece",204683
+        "Core Section",192862
+        "Individual Sample>Specimen",181444
+        "Core",108543
+        "Cuttings",70104
+        "Hole",25714
+        "Core Piece",21283
+        "Dredge",17787
+        "Core Half Round",11020
+        "Grab",8234
+        "Individual Sample>Powder",7922
+        "Other",5981
+        "Individual Sample>Liquid",5799
+        "Site",4550
+        "Terrestrial Section",4201
+        "Rock Powder",2230
+        "Individual Sample>Thin Section",1960
+        "Individual Sample>Mechanical Fraction",1134
+        "Oriented Core",1131
+        "Experimental Specimen",484
+        "Individual Sample>Culture",350
+        "Core Quarter Round",348
+        "CTD",270
+        "Core Whole Round",259
+        ,253
+        "Individual Sample>Cylinder",244
+        "Trawl",230
+        "Individual Sample>Chemical Fraction",181
+        "Individual Sample>Slab",78
+        "Individual Sample>Smear",47
+        "Individual Sample>Bead",39
+        "Individual Sample>Cube",20
+        "Experimental Specimen>Other",10
+        "Individual Sample>Toothpick",5
+        "Individual Sample>Gas",4
+        "Individual Sample>U-Channel",1
+        """
+
+        return [SpecimenCategory.OTHER_SOLID_OBJECT]
 
     def keywords(self) -> typing.List:
         # TODO: implement

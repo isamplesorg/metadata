@@ -1,5 +1,83 @@
 from abc import ABC, abstractmethod
 import typing
+from enum import Enum, auto
+
+
+class _ControlledVocabularyCategory(Enum):
+    """Enum subclass for controlled vocbularies -- __repr__ overridden to print the quoted value"""
+
+    def __repr__(self):
+        return "'%s'" % (self.value)
+
+
+class ContextCategory(_ControlledVocabularyCategory):
+    """Top level context, based on the kind of feature sampled, from the SampledFeature vocabulary.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property."""
+
+    ATMOSPHERE = "Atmosphere"
+    BIOLOGICAL_ENVIRONMENT = "Biological environment"
+    BUILDING = "Building"
+    EARTH_ENVIRONMENT = ("Earth environment",)
+    EARTH_SURFACE = ("Earth Surface",)
+    EXPERIMENT_SETTING = ("Experiment setting",)
+    EXTRATERRESTRIAL_ENVIRONMENT = ("Extraterrestrial environment",)
+    HUMAN_OCCUPATION_SITE = ("Human occupation site",)
+    LAB_ENVIRONMENT = ("Lab environment",)
+    LABORATORY_ENVIRONMENT = ("Laboratory environment",)
+    LAKE_RIVER_STREAM_BED = ("Lake, River, or Stream bed",)
+    MARINE_BIOME = ("Marine biome",)
+    MARINE_ENVIRONMENT = ("Marine environment",)
+    MARINE_WATER_BODY_BOTTOM = ("Marine water body bottom",)
+    REGOLITH_SEDIMENT_SOIL_HORIZON = ("Regolith, sediment or soil horizon",)
+    ROCK_BODY = ("Rock Body",)
+    ROCK_SAMPLE = ("Rock sample",)
+    SOLID_EARTH = ("Solid Earth",)
+    SUBAERIAL_SURFACE_ENVIRONMENT = ("Subaerial Surface Environment",)
+    SUBAERIAL_TERRESTRIAL_ENVIRONMENT = ("Subaerial terrestrial environment",)
+    SUBAQUEOUS_TERRESTRIAL_ENVIRONMENT = ("Subaqueous terrestrial environment",)
+    SUBSURFACE_FLUID_RESERVOIR = ("Subsurface fluid reservoir",)
+    TERRESTRIAL_WATER_BODY = ("Terrestrial water body",)
+    WATER_BODY = "Water body"
+
+
+class MaterialCategory(_ControlledVocabularyCategory):
+    """The kind of material that constitutes the sample"""
+
+    ANTHROPOGENIC_MATERIAL = ("Anthropogenic material",)
+    ANTHROPOGENIC_METAL_MATERIAL = ("Anthropogenic metal material",)
+    BIOGENIC_NON_ORGANIC_MATERIAL = ("Biogenic non-organic material",)
+    DISPERSED_MEDIA = ("Dispersed media",)
+    FLUID_MATERIAL = ("Fluid material",)
+    GASEOUS_MATERIAL = ("Gaseous material",)
+    LIQUID_WATER = ("Liquid water",)
+    MINERAL = ("Mineral",)
+    MIXED_SOIL_SEDIMENT_ROCK = ("Mixed soil, sediment or rock",)
+    NATURAL_SOLID_MATERIAL = ("Natural Solid Material",)
+    NON_AQUEOUS_LIQUID_MATERIAL = ("Non-aqueous liquid material",)
+    ORGANIC_MATERIAL = ("Organic material",)
+    OTHER_ANTHROPOGENIC_MATERIAL = ("Other anthropogenic material",)
+    PATRICULATE = ("Particulate",)
+    ROCK = ("Rock",)
+    SEDIMENT = ("Sediment",)
+    SOIL = "Soil"
+
+
+class SpecimenCategory(_ControlledVocabularyCategory):
+    """The kind of object that the specimen is"""
+
+    AGGREGATION = ("Aggregation",)
+    ANTHROPOGENIC_AGGREGATION = ("Anthropogenic aggregation",)
+    ANY_AGGREGATION_SPECIMEN = ("Any aggregation specimen",)
+    ANY_BIOLOGICAL_SPECIMEN = ("Any biological specimen",)
+    ANY_SOLID_OBJECT = ("Any solid object",)
+    ARTIFACT = ("Artifact",)
+    BIOME_AGGREGATION_SPECIMEN = ("Biome aggregation specimen",)
+    CONTAINER_WITH_FLUID = ("Container with fluid",)
+    FOSSIL = ("Fossil",)
+    ORGANISM_PART = ("Organism part",)
+    ORGANISM_PRODUCT = ("Organism product",)
+    OTHER_SOLID_OBJECT = ("Other solid object",)
+    RESEARCH_PRODUCT = ("Research product",)
+    WHOLE_ORGANISM_SPECIMEN = "Whole organism specimen"
 
 
 class Transformer(ABC):
@@ -86,17 +164,17 @@ class Transformer(ABC):
         pass
 
     @abstractmethod
-    def has_context_categories(self) -> typing.List:
+    def has_context_categories(self) -> typing.List[ContextCategory]:
         """Map from the source record into an iSamples context category"""
         pass
 
     @abstractmethod
-    def has_material_categories(self) -> typing.List:
+    def has_material_categories(self) -> typing.List[MaterialCategory]:
         """Map from the source record into an iSamples material category"""
         pass
 
     @abstractmethod
-    def has_specimen_categories(self) -> typing.List:
+    def has_specimen_categories(self) -> typing.List[SpecimenCategory]:
         """Map from the source record into an iSamples specimen category"""
         pass
 
