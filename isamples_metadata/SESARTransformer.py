@@ -153,10 +153,22 @@ class SpecimenCategoryMetaMapper(AbstractCategoryMetaMapper):
 class ContextCategoryMetaMapper(AbstractCategoryMetaMapper):
     _endsWithRockMapper = StringEndsWithCategoryMapper("Rock", "Earth interior")
     _endsWithMineralMapper = StringEndsWithCategoryMapper("Mineral", "Earth interior")
+    _equalsGasMapper = StringEqualityCategoryMapper(
+        ["Gas"], "Subsurface fluid reservoir"
+    )
+    # This one is actually incorrect as written, we need to use the combo of material and primaryLocationType
+    _equalsSoilMapper = StringEqualityCategoryMapper(
+        ["Soil"], "Subaerial surface environment"
+    )
 
     @classmethod
     def categoriesMappers(cls) -> typing.List[AbstractCategoryMapper]:
-        return [cls._endsWithRockMapper, cls._endsWithMineralMapper]
+        return [
+            cls._endsWithRockMapper,
+            cls._endsWithMineralMapper,
+            cls._equalsGasMapper,
+            cls._equalsSoilMapper,
+        ]
 
 
 class SESARTransformer(Transformer):
