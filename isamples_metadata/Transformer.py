@@ -163,14 +163,21 @@ class Transformer(ABC):
 
 class AbstractCategoryMapper(ABC):
     @abstractmethod
-    def matches(self, potentialMatch: typing.AnyStr) -> bool:
+    def matches(
+        self,
+        potentialMatch: typing.AnyStr,
+        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
+    ) -> bool:
         """Whether a particular String input matches this category mapper"""
         pass
 
     def appendIfMatched(
-        self, potentialMatch: typing.AnyStr, categoriesList: typing.List[typing.AnyStr]
+        self,
+        potentialMatch: typing.AnyStr,
+        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
+        categoriesList: typing.List[typing.AnyStr] = [],
     ):
-        if self.matches(potentialMatch):
+        if self.matches(potentialMatch, auxiliaryMatch):
             categoriesList.append(self._destination)
 
 
@@ -178,11 +185,17 @@ class AbstractCategoryMetaMapper(ABC):
     _categoriesMappers = []
 
     @classmethod
-    def categories(cls, sourceCategory: typing.AnyStr):
+    def categories(
+        cls,
+        sourceCategory: typing.AnyStr,
+        auxiliarySourceCategory: typing.Optional[typing.AnyStr] = None,
+    ):
         categories = []
         if sourceCategory is not None:
             for mapper in cls._categoriesMappers:
-                mapper.appendIfMatched(sourceCategory, categories)
+                mapper.appendIfMatched(
+                    sourceCategory, auxiliarySourceCategory, categories
+                )
         if len(categories) == 0:
             categories.append(Transformer.NOT_PROVIDED)
         return categories
@@ -204,7 +217,11 @@ class StringEqualityCategoryMapper(AbstractCategoryMapper):
         self._categories = categories
         self._destination = destinationCategory
 
-    def matches(self, potentialMatch: typing.AnyStr) -> bool:
+    def matches(
+        self,
+        potentialMatch: typing.AnyStr,
+        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
+    ) -> bool:
         return potentialMatch.lower().strip() in self._categories
 
 
@@ -213,5 +230,9 @@ class StringEndsWithCategoryMapper(AbstractCategoryMapper):
         self._endsWith = endsWith.lower().strip()
         self._destination = destinationCategory
 
-    def matches(self, potentialMatch: typing.AnyStr) -> bool:
+    def matches(
+        self,
+        potentialMatch: typing.AnyStr,
+        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
+    ) -> bool:
         return potentialMatch.lower().strip().endswith(self._endsWith)

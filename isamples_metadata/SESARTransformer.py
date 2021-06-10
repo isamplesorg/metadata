@@ -105,7 +105,6 @@ class SpecimenCategoryMetaMapper(AbstractCategoryMetaMapper):
         ],
         "Other solid object",
     )
-
     _containersWithFluidMapper = StringEqualityCategoryMapper(
         [
             "CTD",
@@ -114,15 +113,12 @@ class SpecimenCategoryMetaMapper(AbstractCategoryMetaMapper):
         ],
         "Liquid or gas sample",
     )
-
     _experimentalProductsMapper = StringEqualityCategoryMapper(
         ["Experimental Specimen"], "Experiment product"
     )
-
     _biomeAggregationsMapper = StringEqualityCategoryMapper(
         ["Trawl"], "Biome aggregation"
     )
-
     _analyticalPreparationsMapper = StringEqualityCategoryMapper(
         [
             "Individual Sample>Bead",
@@ -138,7 +134,6 @@ class SpecimenCategoryMetaMapper(AbstractCategoryMetaMapper):
         ],
         "Analytical preparation",
     )
-
     _aggregationsMapper = StringEqualityCategoryMapper(
         ["Cuttings", "Dredge"], "Aggregation"
     )
@@ -153,6 +148,15 @@ class SpecimenCategoryMetaMapper(AbstractCategoryMetaMapper):
             cls._analyticalPreparationsMapper,
             cls._aggregationsMapper,
         ]
+
+
+class ContextCategoryMetaMapper(AbstractCategoryMetaMapper):
+    _endsWithRockMapper = StringEndsWithCategoryMapper("Rock", "Earth interior")
+    _endsWithMineralMapper = StringEndsWithCategoryMapper("Mineral", "Earth interior")
+
+    @classmethod
+    def categoriesMappers(cls) -> typing.List[AbstractCategoryMapper]:
+        return [cls._endsWithRockMapper, cls._endsWithMineralMapper]
 
 
 class SESARTransformer(Transformer):
@@ -170,6 +174,18 @@ class SESARTransformer(Transformer):
         if description is not None:
             return self._source_record_description()["supplementMetadata"]
         return {}
+
+    def _primaryLocationType(self) -> typing.AnyStr:
+        supplement_metadata = self._supplement_metadata()
+        if (
+            supplement_metadata is not None
+            and "primaryLocationType" in supplement_metadata
+        ):
+            return supplement_metadata["primaryLocationType"]
+        return None
+
+    def _materialType(self) -> typing.AnyStr:
+        return self._source_record_description()["material"]
 
     @staticmethod
     def _logger():
@@ -189,16 +205,12 @@ class SESARTransformer(Transformer):
         return Transformer.NOT_PROVIDED
 
     def has_context_categories(self) -> typing.List[typing.AnyStr]:
-        # From Steve: hasContextCategory (SampledFeatureType) This one’s more complicated, here’s a start at the logic:
-        # is it an Ocean Drilling Program sample (assume its core from the ocean floor) or is the material rock or a subtype of rock or is the sampleType ‘Core’; hasContextCategory is RockBody
-        # is material type coral, (ideally verify that its from a living coral species—check field name and geologic age): hasContextCategory is MarineBiome
-        # Is platform type a submersible (e.g. Alvin)?  If Material type is rock or gas hasContextCategory is ‘Marine water body bottom’
-        # primaryLocationType is good, but only populated in 268,454 records;
-        # TODO: implement
-        return []
+        materialType = self._materialType()
+        primaryLocationType = self._primaryLocationType()
+        return ContextCategoryMetaMapper.categories(materialType)
 
     def has_material_categories(self) -> typing.List[typing.AnyStr]:
-        material = self._source_record_description()["material"]
+        material = self._materialType()
         return MaterialCategoryMetaMapper.categories(material)
 
     def has_specimen_categories(self) -> typing.List[typing.AnyStr]:
@@ -278,12 +290,9 @@ class SESARTransformer(Transformer):
         return Transformer.NOT_PROVIDED
 
     def produced_by_feature_of_interest(self) -> typing.AnyStr:
-        supplement_metadata = self._supplement_metadata()
-        if (
-            supplement_metadata is not None
-            and "primaryLocationType" in supplement_metadata
-        ):
-            return supplement_metadata["primaryLocationType"]
+        primaryLocationType = self._primaryLocationType()
+        if primaryLocationType is not None:
+            return primaryLocationType
         return Transformer.NOT_PROVIDED
 
     def produced_by_responsibilities(self) -> typing.List:
