@@ -159,7 +159,7 @@ class ContextCategoryMetaMapper(AbstractCategoryMetaMapper):
     )
     # This one is actually incorrect as written, we need to use the combo of material and primaryLocationType
     _endsWithSoilMapper = StringEndsWithCategoryMapper(
-        ["Soil"], "Subaerial surface environment"
+        "Soil", "Subaerial surface environment"
     )
     _soilFloodplainMapper = StringPairedCategoryMapper(
         "Microbiology>Soil", "floodplain", "Subaerial terrestrial biome"
