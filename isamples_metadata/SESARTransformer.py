@@ -168,7 +168,24 @@ class ContextCategoryMetaMapper(AbstractCategoryMetaMapper):
         # Order matters here, the generic one needs to be last
         [_soilFloodplainMapper, _endsWithSoilMapper]
     )
-
+    _seaSedimentMapper = StringPairedCategoryMapper(
+        "Sediment", "sea", "Marine water body bottom"
+    )
+    _lakeSedimentMapper = StringPairedCategoryMapper(
+        "Sediment", "lake", "Lake, river or stream bottom"
+    )
+    _sedimentMapper = StringOrderedCategoryMapper(
+        [_seaSedimentMapper, _lakeSedimentMapper]
+    )
+    _lakeMapper = StringPairedCategoryMapper("", "lake", "Terrestrial water body")
+    _mountainLiquidMapper = StringPairedCategoryMapper("Liquid>aqueous", "Mountain", "Terrestrial water body")
+    _seaMapper = StringPairedCategoryMapper("Liquid>aqueous", "Sea", "Marine water body")
+    _ventBiologyMapper = StringPairedCategoryMapper("Biology", "Vent", "Marine biome")
+    _ventLiquidMapper = StringPairedCategoryMapper("Liquid>aqueous", "Vent", "Subsurface fluid reservoir")
+    _floodplainAquiferMapper = StringPairedCategoryMapper("Liquid>aqueous", "floodplain\, aquifer", "Subsurface fluid reservoir")
+    _creekBankMapper = StringPairedCategoryMapper("Sedimentary>GlacialAndOrPaleosol>Rock", "Creek bank", "Subaerial surface environment")
+    # Note that this represents the combos down to row 109 of https://docs.google.com/spreadsheets/d/1QitBRkWH6YySZnNO-uR7D2rTaQ826WPT_xow9lPdJDM/edit#gid=1251732948
+    # Need to continue on from there…
 
     @classmethod
     def categoriesMappers(cls) -> typing.List[AbstractCategoryMapper]:
@@ -177,6 +194,14 @@ class ContextCategoryMetaMapper(AbstractCategoryMetaMapper):
             cls._endsWithMineralMapper,
             cls._equalsGasMapper,
             cls._soilMapper,
+            cls._sedimentMapper,
+            cls._lakeMapper,
+            cls._mountainLiquidMapper,
+            cls._seaMapper,
+            cls._ventBiologyMapper,
+            cls._ventLiquidMapper,
+            cls._floodplainAquiferMapper,
+            cls._creekBankMapper
         ]
 
 
