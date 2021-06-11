@@ -180,6 +180,14 @@ class AbstractCategoryMapper(ABC):
         if self.matches(potentialMatch, auxiliaryMatch):
             categoriesList.append(self._destination)
 
+    @property
+    def destination(self):
+        return self._destination
+
+    @destination.setter
+    def destination(self, destination):
+        self._destination = destination
+
 
 class AbstractCategoryMetaMapper(ABC):
     _categoriesMappers = []
@@ -209,6 +217,8 @@ class AbstractCategoryMetaMapper(ABC):
 
 
 class StringEqualityCategoryMapper(AbstractCategoryMapper):
+    """A mapper that matches iff the potentialMatch exactly matches one of the list of predefined categories"""
+
     def __init__(
         self, categories: typing.List[typing.AnyStr], destinationCategory: typing.AnyStr
     ):
@@ -226,6 +236,8 @@ class StringEqualityCategoryMapper(AbstractCategoryMapper):
 
 
 class StringEndsWithCategoryMapper(AbstractCategoryMapper):
+    """A mapper that matches if the potentialMatch ends with the specified string"""
+
     def __init__(self, endsWith: typing.AnyStr, destinationCategory: typing.AnyStr):
         self._endsWith = endsWith.lower().strip()
         self._destination = destinationCategory
@@ -236,3 +248,46 @@ class StringEndsWithCategoryMapper(AbstractCategoryMapper):
         auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
     ) -> bool:
         return potentialMatch.lower().strip().endswith(self._endsWith)
+
+
+class StringOrderedCategoryMapper(AbstractCategoryMapper):
+    """A mapper that runs through a list of mappers and chooses the first one that matches"""
+
+    def __init__(self, submappers: typing.List[AbstractCategoryMapper]):
+        self._submappers = submappers
+
+    def matches(
+        self,
+        potentialMatch: typing.AnyStr,
+        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
+    ) -> bool:
+        for mapper in self._submappers:
+            if mapper.matches(potentialMatch, auxiliaryMatch):
+                # Note that this isn't thread-safe -- we expect one of these objects per thread
+                self.destination = mapper.destination
+                return True
+        return False
+
+
+class StringPairedCategoryMapper(AbstractCategoryMapper):
+    """A mapper that matches iff the potentialMatch matches both the primaryMatch and secondaryMatch"""
+
+    def __init__(
+        self,
+        primaryMatch: typing.AnyStr,
+        auxiliaryMatch: typing.AnyStr,
+        destinationCategory: typing.AnyStr,
+    ):
+        self._primaryMatch = primaryMatch.lower().strip()
+        self._auxiliaryMatch = auxiliaryMatch.lower().strip()
+        self._destination = destinationCategory
+
+    def matches(
+        self,
+        potentialMatch: typing.AnyStr,
+        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
+    ) -> bool:
+        return (
+            potentialMatch.lower().strip() == self._primaryMatch
+            and auxiliaryMatch.lower().strip() == self._auxiliaryMatch
+        )

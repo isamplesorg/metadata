@@ -1,7 +1,8 @@
 import typing
 import logging
 
-from isamples_metadata.Transformer import Transformer, AbstractCategoryMapper
+from isamples_metadata.Transformer import Transformer, AbstractCategoryMapper, StringPairedCategoryMapper, \
+    StringOrderedCategoryMapper
 from isamples_metadata.Transformer import StringEqualityCategoryMapper
 from isamples_metadata.Transformer import StringEndsWithCategoryMapper
 from isamples_metadata.Transformer import AbstractCategoryMetaMapper
@@ -157,9 +158,17 @@ class ContextCategoryMetaMapper(AbstractCategoryMetaMapper):
         ["Gas"], "Subsurface fluid reservoir"
     )
     # This one is actually incorrect as written, we need to use the combo of material and primaryLocationType
-    _equalsSoilMapper = StringEqualityCategoryMapper(
+    _endsWithSoilMapper = StringEndsWithCategoryMapper(
         ["Soil"], "Subaerial surface environment"
     )
+    _soilFloodplainMapper = StringPairedCategoryMapper(
+        "Microbiology>Soil", "floodplain", "Subaerial terrestrial biome"
+    )
+    _soilMapper = StringOrderedCategoryMapper(
+        # Order matters here, the generic one needs to be last
+        [_soilFloodplainMapper, _endsWithSoilMapper]
+    )
+
 
     @classmethod
     def categoriesMappers(cls) -> typing.List[AbstractCategoryMapper]:
@@ -167,7 +176,7 @@ class ContextCategoryMetaMapper(AbstractCategoryMetaMapper):
             cls._endsWithRockMapper,
             cls._endsWithMineralMapper,
             cls._equalsGasMapper,
-            cls._equalsSoilMapper,
+            cls._soilMapper,
         ]
 
 
@@ -219,7 +228,7 @@ class SESARTransformer(Transformer):
     def has_context_categories(self) -> typing.List[typing.AnyStr]:
         materialType = self._materialType()
         primaryLocationType = self._primaryLocationType()
-        return ContextCategoryMetaMapper.categories(materialType)
+        return ContextCategoryMetaMapper.categories(materialType, primaryLocationType)
 
     def has_material_categories(self) -> typing.List[typing.AnyStr]:
         material = self._materialType()
