@@ -86,17 +86,17 @@ class Transformer(ABC):
         pass
 
     @abstractmethod
-    def has_context_categories(self) -> typing.List:
+    def has_context_categories(self) -> typing.List[typing.AnyStr]:
         """Map from the source record into an iSamples context category"""
         pass
 
     @abstractmethod
-    def has_material_categories(self) -> typing.List:
+    def has_material_categories(self) -> typing.List[typing.AnyStr]:
         """Map from the source record into an iSamples material category"""
         pass
 
     @abstractmethod
-    def has_specimen_categories(self) -> typing.List:
+    def has_specimen_categories(self) -> typing.List[typing.AnyStr]:
         """Map from the source record into an iSamples specimen category"""
         pass
 
@@ -159,3 +159,135 @@ class Transformer(ABC):
     def sampling_site_place_names(self) -> typing.List:
         """The sampling site longitude"""
         pass
+
+
+class AbstractCategoryMapper(ABC):
+    @abstractmethod
+    def matches(
+        self,
+        potentialMatch: typing.AnyStr,
+        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
+    ) -> bool:
+        """Whether a particular String input matches this category mapper"""
+        pass
+
+    def appendIfMatched(
+        self,
+        potentialMatch: typing.AnyStr,
+        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
+        categoriesList: typing.List[typing.AnyStr] = [],
+    ):
+        if self.matches(potentialMatch, auxiliaryMatch):
+            categoriesList.append(self._destination)
+
+    @property
+    def destination(self):
+        return self._destination
+
+    @destination.setter
+    def destination(self, destination):
+        self._destination = destination
+
+
+class AbstractCategoryMetaMapper(ABC):
+    _categoriesMappers = []
+
+    @classmethod
+    def categories(
+        cls,
+        sourceCategory: typing.AnyStr,
+        auxiliarySourceCategory: typing.Optional[typing.AnyStr] = None,
+    ):
+        categories = []
+        if sourceCategory is not None:
+            for mapper in cls._categoriesMappers:
+                mapper.appendIfMatched(
+                    sourceCategory, auxiliarySourceCategory, categories
+                )
+        if len(categories) == 0:
+            categories.append(Transformer.NOT_PROVIDED)
+        return categories
+
+    @classmethod
+    def categoriesMappers(cls) -> typing.List[AbstractCategoryMapper]:
+        return []
+
+    def __init_subclass__(cls, **kwargs):
+        cls._categoriesMappers = cls.categoriesMappers()
+
+
+class StringEqualityCategoryMapper(AbstractCategoryMapper):
+    """A mapper that matches iff the potentialMatch exactly matches one of the list of predefined categories"""
+
+    def __init__(
+        self, categories: typing.List[typing.AnyStr], destinationCategory: typing.AnyStr
+    ):
+        categories = [keyword.lower() for keyword in categories]
+        categories = [keyword.strip() for keyword in categories]
+        self._categories = categories
+        self._destination = destinationCategory
+
+    def matches(
+        self,
+        potentialMatch: typing.AnyStr,
+        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
+    ) -> bool:
+        return potentialMatch.lower().strip() in self._categories
+
+
+class StringEndsWithCategoryMapper(AbstractCategoryMapper):
+    """A mapper that matches if the potentialMatch ends with the specified string"""
+
+    def __init__(self, endsWith: typing.AnyStr, destinationCategory: typing.AnyStr):
+        self._endsWith = endsWith.lower().strip()
+        self._destination = destinationCategory
+
+    def matches(
+        self,
+        potentialMatch: typing.AnyStr,
+        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
+    ) -> bool:
+        return potentialMatch.lower().strip().endswith(self._endsWith)
+
+
+class StringOrderedCategoryMapper(AbstractCategoryMapper):
+    """A mapper that runs through a list of mappers and chooses the first one that matches"""
+
+    def __init__(self, submappers: typing.List[AbstractCategoryMapper]):
+        self._submappers = submappers
+
+    def matches(
+        self,
+        potentialMatch: typing.AnyStr,
+        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
+    ) -> bool:
+        for mapper in self._submappers:
+            if mapper.matches(potentialMatch, auxiliaryMatch):
+                # Note that this isn't thread-safe -- we expect one of these objects per thread
+                self.destination = mapper.destination
+                return True
+        return False
+
+
+class StringPairedCategoryMapper(AbstractCategoryMapper):
+    """A mapper that matches iff the potentialMatch matches both the primaryMatch and secondaryMatch"""
+
+    def __init__(
+        self,
+        primaryMatch: typing.AnyStr,
+        auxiliaryMatch: typing.AnyStr,
+        destinationCategory: typing.AnyStr,
+    ):
+        self._primaryMatch = primaryMatch.lower().strip()
+        self._auxiliaryMatch = auxiliaryMatch.lower().strip()
+        self._destination = destinationCategory
+
+    def matches(
+        self,
+        potentialMatch: typing.AnyStr,
+        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
+    ) -> bool:
+        return (
+            potentialMatch.lower().strip() == self._primaryMatch
+            and auxiliaryMatch.lower().strip() == self._auxiliaryMatch
+        )

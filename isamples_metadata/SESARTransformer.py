@@ -1,6 +1,208 @@
 import typing
 import logging
-from isamples_metadata.Transformer import Transformer
+
+from isamples_metadata.Transformer import Transformer, AbstractCategoryMapper, StringPairedCategoryMapper, \
+    StringOrderedCategoryMapper
+from isamples_metadata.Transformer import StringEqualityCategoryMapper
+from isamples_metadata.Transformer import StringEndsWithCategoryMapper
+from isamples_metadata.Transformer import AbstractCategoryMetaMapper
+
+
+class MaterialCategoryMetaMapper(AbstractCategoryMetaMapper):
+    _endsWithRockMapper = StringEndsWithCategoryMapper("Rock", "Rock")
+    _endsWithMineralMapper = StringEndsWithCategoryMapper("Mineral", "Mineral")
+    _endsWithAqueousMapper = StringEndsWithCategoryMapper("aqueous", "Water")
+    _endsWithSedimentMapper = StringEndsWithCategoryMapper("Sediment", "Sediment")
+    _endsWithSoilMapper = StringEndsWithCategoryMapper("Soil", "Soil")
+    _endsWithParticulateMapper = StringEndsWithCategoryMapper(
+        "Particulate", "Particulate"
+    )
+    _endsWithBiologyMapper = StringEndsWithCategoryMapper("Biology", "Organic material")
+    _endsWithSyntheticMapper = StringEndsWithCategoryMapper(
+        "Synthetic", "Anthropogenic material"
+    )
+    _equalsRockMapper = StringEqualityCategoryMapper(
+        [
+            "Glass>Other",
+            "Igneous>Other",
+            "Igneous>Volcanic>Felsic>NotApplicable",
+            "Igneous>Volcanic>Other",
+            "Metamorphic>Other",
+            "Sedimentary>Other",
+            "Xenolithic>Other",
+        ],
+        "Rock",
+    )
+    _equalsSedimentMapper = StringEqualityCategoryMapper(["Tephra"], "Sediment")
+    _equalsOrganicMaterialMapper = StringEqualityCategoryMapper(
+        ["Siderite>Mineral", "Macrobiology>Other", "Organic Material"],
+        "Organic material",
+    )
+    _equalsNonAqueousLiquidMaterialMapper = StringEqualityCategoryMapper(
+        ["Liquid>organic"], "Non-aqueous liquid material"
+    )
+    _equalsMineralMapper = StringEqualityCategoryMapper(
+        [
+            "Ore>Other",
+            "FeldsparGroup>Other",
+            "Epidote>Other",
+            "Enstatite>Other",
+            "Betpakdalite>Other",
+            "Aurichalcite>Other",
+            "Augite>Other",
+            "Aragonite>Biology",
+            "AmphiboleGroup>Other",
+            "Actinolite>Other",
+        ],
+        "Mineral",
+    )
+    _equalsIceMapper = StringEqualityCategoryMapper(["Ice"], "Ice")
+    _equalsGasMapper = StringEqualityCategoryMapper(["Gas"], "Gaseous material")
+    _equalsBiogenicMapper = StringEqualityCategoryMapper(
+        ["Macrobiology>Coral>Biology", "Coral>Biology"], "Biogenic non-organic material"
+    )
+
+    @classmethod
+    def categoriesMappers(cls) -> typing.List[AbstractCategoryMapper]:
+        return [
+            cls._endsWithRockMapper,
+            cls._endsWithMineralMapper,
+            cls._endsWithAqueousMapper,
+            cls._endsWithSedimentMapper,
+            cls._endsWithSoilMapper,
+            cls._endsWithParticulateMapper,
+            cls._endsWithBiologyMapper,
+            cls._endsWithSyntheticMapper,
+            cls._equalsRockMapper,
+            cls._equalsSedimentMapper,
+            cls._equalsIceMapper,
+            cls._equalsOrganicMaterialMapper,
+            cls._equalsNonAqueousLiquidMaterialMapper,
+            cls._equalsMineralMapper,
+            cls._equalsIceMapper,
+            cls._equalsGasMapper,
+            cls._equalsBiogenicMapper,
+        ]
+
+
+class SpecimenCategoryMetaMapper(AbstractCategoryMetaMapper):
+    _otherSolidObjectsMapper = StringEqualityCategoryMapper(
+        [
+            "Core",
+            "Core Half Round",
+            "Core Piece",
+            "Core Quarter Round",
+            "Core Section",
+            "Core Section Half",
+            "Core Sub-Piece",
+            "Core Whole Round",
+            "Grab",
+            "Individual Sample",
+            "Individual Sample>Cube",
+            "Individual Sample>Cylinder",
+            "Individual Sample>Slab",
+            "Individual Sample>Specimen",
+            "Oriented Core",
+        ],
+        "Other solid object",
+    )
+    _containersWithFluidMapper = StringEqualityCategoryMapper(
+        [
+            "CTD",
+            "Individual Sample>Gas",
+            "Individual Sample>Liquid",
+        ],
+        "Liquid or gas sample",
+    )
+    _experimentalProductsMapper = StringEqualityCategoryMapper(
+        ["Experimental Specimen"], "Experiment product"
+    )
+    _biomeAggregationsMapper = StringEqualityCategoryMapper(
+        ["Trawl"], "Biome aggregation"
+    )
+    _analyticalPreparationsMapper = StringEqualityCategoryMapper(
+        [
+            "Individual Sample>Bead",
+            "Individual Sample>Chemical Fraction",
+            "Individual Sample>Culture",
+            "Individual Sample>Mechanical Fraction",
+            "Individual Sample>Powder",
+            "Individual Sample>Smear",
+            "Individual Sample>Thin Section",
+            "Individual Sample>Toothpick",
+            "Individual Sample>U-Channel",
+            "Rock Powder",
+        ],
+        "Analytical preparation",
+    )
+    _aggregationsMapper = StringEqualityCategoryMapper(
+        ["Cuttings", "Dredge"], "Aggregation"
+    )
+
+    @classmethod
+    def categoriesMappers(cls) -> typing.List[AbstractCategoryMapper]:
+        return [
+            cls._otherSolidObjectsMapper,
+            cls._containersWithFluidMapper,
+            cls._experimentalProductsMapper,
+            cls._biomeAggregationsMapper,
+            cls._analyticalPreparationsMapper,
+            cls._aggregationsMapper,
+        ]
+
+
+class ContextCategoryMetaMapper(AbstractCategoryMetaMapper):
+    _endsWithRockMapper = StringEndsWithCategoryMapper("Rock", "Earth interior")
+    _endsWithMineralMapper = StringEndsWithCategoryMapper("Mineral", "Earth interior")
+    _equalsGasMapper = StringEqualityCategoryMapper(
+        ["Gas"], "Subsurface fluid reservoir"
+    )
+    # This one is actually incorrect as written, we need to use the combo of material and primaryLocationType
+    _endsWithSoilMapper = StringEndsWithCategoryMapper(
+        "Soil", "Subaerial surface environment"
+    )
+    _soilFloodplainMapper = StringPairedCategoryMapper(
+        "Microbiology>Soil", "floodplain", "Subaerial terrestrial biome"
+    )
+    _soilMapper = StringOrderedCategoryMapper(
+        # Order matters here, the generic one needs to be last
+        [_soilFloodplainMapper, _endsWithSoilMapper]
+    )
+    _seaSedimentMapper = StringPairedCategoryMapper(
+        "Sediment", "sea", "Marine water body bottom"
+    )
+    _lakeSedimentMapper = StringPairedCategoryMapper(
+        "Sediment", "lake", "Lake, river or stream bottom"
+    )
+    _sedimentMapper = StringOrderedCategoryMapper(
+        [_seaSedimentMapper, _lakeSedimentMapper]
+    )
+    _lakeMapper = StringPairedCategoryMapper("", "lake", "Terrestrial water body")
+    _mountainLiquidMapper = StringPairedCategoryMapper("Liquid>aqueous", "Mountain", "Terrestrial water body")
+    _seaMapper = StringPairedCategoryMapper("Liquid>aqueous", "Sea", "Marine water body")
+    _ventBiologyMapper = StringPairedCategoryMapper("Biology", "Vent", "Marine biome")
+    _ventLiquidMapper = StringPairedCategoryMapper("Liquid>aqueous", "Vent", "Subsurface fluid reservoir")
+    _floodplainAquiferMapper = StringPairedCategoryMapper("Liquid>aqueous", "floodplain\, aquifer", "Subsurface fluid reservoir")
+    _creekBankMapper = StringPairedCategoryMapper("Sedimentary>GlacialAndOrPaleosol>Rock", "Creek bank", "Subaerial surface environment")
+    # Note that this represents the combos down to row 109 of https://docs.google.com/spreadsheets/d/1QitBRkWH6YySZnNO-uR7D2rTaQ826WPT_xow9lPdJDM/edit#gid=1251732948
+    # Need to continue on from there…
+
+    @classmethod
+    def categoriesMappers(cls) -> typing.List[AbstractCategoryMapper]:
+        return [
+            cls._endsWithRockMapper,
+            cls._endsWithMineralMapper,
+            cls._equalsGasMapper,
+            cls._soilMapper,
+            cls._sedimentMapper,
+            cls._lakeMapper,
+            cls._mountainLiquidMapper,
+            cls._seaMapper,
+            cls._ventBiologyMapper,
+            cls._ventLiquidMapper,
+            cls._floodplainAquiferMapper,
+            cls._creekBankMapper
+        ]
 
 
 class SESARTransformer(Transformer):
@@ -19,6 +221,18 @@ class SESARTransformer(Transformer):
             return self._source_record_description()["supplementMetadata"]
         return {}
 
+    def _primaryLocationType(self) -> typing.AnyStr:
+        supplement_metadata = self._supplement_metadata()
+        if (
+            supplement_metadata is not None
+            and "primaryLocationType" in supplement_metadata
+        ):
+            return supplement_metadata["primaryLocationType"]
+        return None
+
+    def _materialType(self) -> typing.AnyStr:
+        return self._source_record_description()["material"]
+
     @staticmethod
     def _logger():
         return logging.getLogger("isamples_metadata.SESARTransformer")
@@ -36,17 +250,18 @@ class SESARTransformer(Transformer):
         # TODO: implement
         return Transformer.NOT_PROVIDED
 
-    def has_context_categories(self) -> typing.List:
-        # TODO: implement
-        return []
+    def has_context_categories(self) -> typing.List[typing.AnyStr]:
+        materialType = self._materialType()
+        primaryLocationType = self._primaryLocationType()
+        return ContextCategoryMetaMapper.categories(materialType, primaryLocationType)
 
-    def has_material_categories(self) -> typing.List:
-        # TODO: implement
-        return []
+    def has_material_categories(self) -> typing.List[typing.AnyStr]:
+        material = self._materialType()
+        return MaterialCategoryMetaMapper.categories(material)
 
-    def has_specimen_categories(self) -> typing.List:
-        # TODO: implement
-        return []
+    def has_specimen_categories(self) -> typing.List[typing.AnyStr]:
+        sampleType = self._source_record_description()["sampleType"]
+        return SpecimenCategoryMetaMapper.categories(sampleType)
 
     def keywords(self) -> typing.List:
         # TODO: implement
@@ -121,12 +336,9 @@ class SESARTransformer(Transformer):
         return Transformer.NOT_PROVIDED
 
     def produced_by_feature_of_interest(self) -> typing.AnyStr:
-        supplement_metadata = self._supplement_metadata()
-        if (
-            supplement_metadata is not None
-            and "primaryLocationType" in supplement_metadata
-        ):
-            return supplement_metadata["primaryLocationType"]
+        primaryLocationType = self._primaryLocationType()
+        if primaryLocationType is not None:
+            return primaryLocationType
         return Transformer.NOT_PROVIDED
 
     def produced_by_responsibilities(self) -> typing.List:
