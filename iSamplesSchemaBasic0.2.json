@@ -3,7 +3,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "PhysicalSampleRecord",
     "type": "object",
-    "description": "This is a data object that is a digital representation of a physical sample",
+    "description": "PhysicalSampleRecord is a data object that is a digital representation of a physical sample. This schema is a simplified version of our target final scheme (see iSamplesSchema0.5linkml.json for current target schema 2021-06-15). It will be used for intitial mapping from target collections to the iSamples search prototype.  Properties have simple literal datatypes to keep things simple for initial testing. 2021-06-15 update enums for basic sample categorization.",
     "properties": {
         "schema": {
             "type": "string",
@@ -31,30 +31,23 @@
             "items": {
                 "type": "string",
                 "enum": [
+                    "Active human occupation site",
                     "Atmosphere",
-                    "Biological environment",
-                    "Building",
-                    "Earth environment",
-                    "Earth Surface",
+                    "Earth interior",
                     "Experiment setting",
-                    "Extraterrestrial environment ",
-                    "Human occupation site ",
-                    "Lab environment",
+                    "Extraterrestrial environment",
+                    "Glacier environment",
+                    "Historic human occupation site",
                     "Laboratory environment",
-                    "Lake, River, or Stream bed",
+                    "Lake, river or stream bottom",
                     "Marine biome",
-                    "Marine environment",
+                    "Marine water body",
                     "Marine water body bottom",
-                    "Regolith, sediment or soil horizon",
-                    "Rock Body",
-                    "Rock sample",
-                    "Solid Earth",
-                    "Subaerial Surface Environment",
-                    "Subaerial terrestrial environment",
-                    "Subaqueous terrestrial environment",
+                    "Subaerial surface environment",
+                    "Subaerial terrestrial biome",
+                    "Subaqueous terrestrial biome",
                     "Subsurface fluid reservoir",
-                    "Terrestrial water body",
-                    "Water body"
+                    "Terrestrial water body"
                 ]
             },
             "type": "array"
@@ -65,18 +58,16 @@
                 "type": "string",
                 "enum": [
                     "Anthropogenic material",
-                    "Anthropogenic metal material",
-                    "Biogenic non-organic material",
+                    "Anthropogenic metal",
+                    "Biogenic material",
                     "Dispersed media",
-                    "Fluid material",
                     "Gaseous material",
+                    "Ice",
                     "Liquid water",
                     "Mineral",
-                    "Mixed soil, sediment or rock",
-                    "Natural Solid Material",
+                    "Mixed soil, sediment, rock",
                     "Non-aqueous liquid material",
                     "Organic material",
-                    "Other anthropogenic material",
                     "Particulate",
                     "Rock",
                     "Sediment",
@@ -91,19 +82,17 @@
                 "type": "string",
                 "enum": [
                     "Aggregation",
+                    "Analytical preparation",
                     "Anthropogenic aggregation",
-                    "Any aggregation specimen",
-                    "Any biological specimen",
-                    "Any solid object",
                     "Artifact",
-                    "Biome aggregation specimen",
-                    "Container with fluid",
+                    "Biome aggregation",
+                    "Experiment product",
                     "Fossil",
+                    "Liquid or gas sample",
                     "Organism part",
                     "Organism product",
                     "Other solid object",
-                    "Research product",
-                    "Whole organism specimen"
+                    "Whole organism"
                 ]
             },
             "type": "array"
@@ -262,7 +251,7 @@
                     "description": "a human intelligible string used to identify the curation event.",
                     "type": "string"
                 },
-                "description":{
+                "description": {
                     "description": "free text information about curation. Include narrative of curation events here untill Events get added to the model",
                     "type": "string"
                 },
