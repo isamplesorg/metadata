@@ -13,7 +13,7 @@
         "@id":"ark:/21547/Cas2INDO_2016_SEU_1B",
         "label": "INDO_2016_SEU_1B",
         "description": "expeditionCode: INDO_PIRE | samplingProtocol: ARMS | taxonomy team: MINV | projectId: 80",
-        "hasFeatureOfInterest": "",
+        "hasFeatureOfInterest": "coral reef",
         "responsibility": ["Aji Wahyu Anggoro","Andrianus Sembiring"],
         "resultTime": "2016-08-09",
         "samplingSite": {

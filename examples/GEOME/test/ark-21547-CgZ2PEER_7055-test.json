@@ -4,9 +4,9 @@
     "label": "Polychaeta PEER_7055",
     "sampleidentifier": "http://n2t.net/ark:/21547/R2INDO119289",
     "description": "",
-    "hasContextCategory": [""],
-    "hasMaterialCategory": [""],
-    "hasSpecimenCategory": [""],
+    "hasContextCategory": ["Marine biome"],
+    "hasMaterialCategory": ["Biogenic material"],
+    "hasSpecimenCategory": ["Organism product"],
     "informalClassification": [""],
     "keywords": ["Lombok", "Indonesia","West Nusa Tenggara","Annelida"],
     "producedBy": {
