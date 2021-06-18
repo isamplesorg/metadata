@@ -288,6 +288,7 @@ class StringPairedCategoryMapper(AbstractCategoryMapper):
         auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
     ) -> bool:
         return (
-            potentialMatch.lower().strip() == self._primaryMatch
+            potentialMatch is not None and auxiliaryMatch is not None
+            and potentialMatch.lower().strip() == self._primaryMatch
             and auxiliaryMatch.lower().strip() == self._auxiliaryMatch
         )

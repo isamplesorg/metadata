@@ -231,7 +231,9 @@ class SESARTransformer(Transformer):
         return None
 
     def _materialType(self) -> typing.AnyStr:
-        return self._source_record_description()["material"]
+        if "material" in self._source_record_description():
+            return self._source_record_description()["material"]
+        return None
 
     @staticmethod
     def _logger():
@@ -384,7 +386,10 @@ class SESARTransformer(Transformer):
         supplement_metadata = self._supplement_metadata()
         if supplement_metadata is not None and "elevation" in supplement_metadata:
             elevation_value = supplement_metadata["elevation"]
-            elevation_unit = supplement_metadata["elevationUnit"]
+            if "elevationUnit" in supplement_metadata:
+                elevation_unit = supplement_metadata["elevationUnit"]
+            else:
+                elevation_unit = None
             elevation_unit_abbreviation = ""
             if elevation_unit is not None:
                 if elevation_unit == "meters":
