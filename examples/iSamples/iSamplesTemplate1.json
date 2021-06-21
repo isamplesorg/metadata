@@ -2,7 +2,7 @@
     "@schema":  "../../iSamplesSchemaBasic0.2.json",
     "@id": "metadata:   ",
     "label": "",
-    "sampleidentifier": "",
+    "sampleIdentifier": "",
     "description": "",
     "hasContextCategory": [""],
     "hasMaterialCategory": [""],
