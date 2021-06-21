@@ -4,7 +4,7 @@
     "@schema":  "../../iSamplesSchemaBasic0.2.json",
     "@id": "concatenate 'metadata/' prefix with ark from child/bcid, e.g. metadata/21547/Cat2INDO106431.1]",
     "label": "child/tissueID",
-    "sampleidentifier": "child/bcid",
+    "sampleIdentifier": "child/bcid",
     "description": "key value pairs from any content in the child record that isn't otherwise used.",
     "hasContextCategory": ["same as parent"],
     "hasMaterialCategory": ["'Organic material' unless record/entity, record/basisOfRecord, or record/collectionCode indicate otherwise"],
