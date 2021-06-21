@@ -1,6 +1,6 @@
 {
-    "@schema": "http://resource.isamples.org/schema/0.2",
-    "@id": "metadata:ark:/21547/CgZ2PEER_7055",
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata:21547/CgZ2PEER_7055",
     "label": "Polychaeta PEER_7055",
     "sampleidentifier": "http://n2t.net/ark:/21547/R2INDO119289",
     "description": "",

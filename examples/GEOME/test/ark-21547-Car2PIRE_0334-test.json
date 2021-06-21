@@ -1,6 +1,6 @@
 {
-    "@schema": "../iSamplesSchemaBasicSMR.json",
-    "@id": "metadata:ark:/21547/Car2PIRE_0334",
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/21547/Car2PIRE_0334",
     "label": "PIRE_0334",
     "sampleidentifier": "ark:/21547/Car2PIRE_0334",
     "description": "",
