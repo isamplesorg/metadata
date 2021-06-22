@@ -1,0 +1,43 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/21547/Caz2ES25_H02",
+    "label": "Epitoniidae ES25_H02",
+    "sampleIdentifier": "ark:/21547/Caz2ES25_H02",
+    "description": "",
+    "hasContextCategory": ["Marine Biome"],
+    "hasMaterialCategory": ["Organic Material"],
+    "hasSpecimenCategory": ["Whole Organism"],
+    "informalClassification": ["Epitoniidae"],
+    "keywords": ["Coral Sea", "Vanuatu", "Esperitu Santo", "Mollusca", "SLAB", "Epitoniidae", "Strong"],
+    "producedBy": {
+        "@id": "ark:/21547/CbA2FR2",
+        "label": "FR2 STRONG_LEGACY",
+        "description": "projectId: 81",
+        "hasFeatureOfInterest": "coral reef",
+        "responsibility": ["EE Strong", "MINV", "Daniel Mulcahy"],
+        "resultTime": "2006-9-11",
+        "samplingSite": {
+            "description": "horizontalDatum: unknown",
+            "label": "Vanuatu",
+            "location": {
+                "elevation": "",
+                "latitude": 0,
+                "longitude": 0
+            },
+            "placeName": ["Coral Sea", "Vanuatu", "Esperitu Santo"]
+        }
+    },
+    "registrant": "Daniel Mulcahy",
+    "samplingPurpose": "genomic analysis",
+    "curation": {
+        "accessConstraints": "",
+        "curationLocation": "",
+        "responsibility": "Smithsonian"
+    },
+    "relatedResource": {
+        "label": "Tissue",
+        "description": "",
+        "target": "ark:/21547/CbB2SLAB79149.1",
+        "relationship": "tissue extract"
+    }
+}
