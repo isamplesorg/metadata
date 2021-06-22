@@ -384,10 +384,14 @@ class SESARTransformer(Transformer):
         supplement_metadata = self._supplement_metadata()
         if supplement_metadata is not None and "elevation" in supplement_metadata:
             elevation_value = supplement_metadata["elevation"]
-            elevation_unit = supplement_metadata["elevationUnit"]
+            elevation_unit = supplement_metadata["elevationUnit"].lower().strip()
             elevation_unit_abbreviation = ""
             if elevation_unit is not None:
-                if elevation_unit == "meters":
+                if elevation_unit == "feet":
+                    # target elevation for core metadata will always be meters, so convert here
+                    elevation_value = elevation_value / Transformer.FEET_PER_METER
+                    elevation_unit_abbreviation = "m"
+                elif elevation_unit == "meters":
                     elevation_unit_abbreviation = "m"
                 else:
                     self._logger().error(

@@ -7,6 +7,8 @@ class Transformer(ABC):
 
     NOT_PROVIDED = "Not Provided"
 
+    FEET_PER_METER = 3.28084
+
     def __init__(self, source_record: typing.Dict):
         self.source_record = source_record
 
