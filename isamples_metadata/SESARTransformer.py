@@ -380,23 +380,31 @@ class SESARTransformer(Transformer):
         # TODO: implement
         return Transformer.NOT_PROVIDED
 
+    def elevation_str(self, elevation_value: typing.AnyStr, elevation_unit: typing.AnyStr) -> typing.AnyStr:
+        elevation_unit_abbreviation = ""
+        if elevation_unit is not None:
+            elevation_unit = elevation_unit.lower().strip()
+            if elevation_unit == "feet":
+                # target elevation for core metadata will always be meters, so convert here
+                elevation_value = elevation_value / Transformer.FEET_PER_METER
+                elevation_unit_abbreviation = "m"
+            elif elevation_unit == "meters":
+                elevation_unit_abbreviation = "m"
+            else:
+                self._logger().error(
+                    "Received elevation in unexpected unit: ", elevation_unit
+                )
+        elevation_str = str(elevation_value)
+        if len(elevation_unit_abbreviation) > 0:
+            elevation_str += " " + elevation_unit_abbreviation
+        return elevation_str
+
     def sampling_site_elevation(self) -> typing.AnyStr:
         supplement_metadata = self._supplement_metadata()
         if supplement_metadata is not None and "elevation" in supplement_metadata:
             elevation_value = supplement_metadata["elevation"]
             elevation_unit = supplement_metadata["elevationUnit"]
-            elevation_unit_abbreviation = ""
-            if elevation_unit is not None:
-                if elevation_unit == "meters":
-                    elevation_unit_abbreviation = "m"
-                else:
-                    self._logger().error(
-                        "Received elevation in unexpected unit: ", elevation_unit
-                    )
-            elevation_str = str(elevation_value)
-            if len(elevation_unit_abbreviation) > 0:
-                elevation_str += " " + elevation_unit_abbreviation
-            return elevation_str
+            return self.elevation_str(elevation_value, elevation_unit)
         return Transformer.NOT_PROVIDED
 
     def _geo_location_float_value(self, key_name: typing.AnyStr):
