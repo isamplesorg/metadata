@@ -231,7 +231,7 @@ class SESARTransformer(Transformer):
         return None
 
     def _materialType(self) -> typing.AnyStr:
-        return self._source_record_description()["material"]
+        return self._source_record_description().get("material", None)
 
     @staticmethod
     def _logger():
