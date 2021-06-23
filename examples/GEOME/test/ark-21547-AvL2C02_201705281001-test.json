@@ -10,15 +10,15 @@
     "informalClassification": ["Demospongiae", "Aplysina fistularis"],
     "keywords": ["Cuba", "Porifera"],
     "producedBy": {
-        "@id":"ark:/21547/CHk238e4e09d98ddb31008c63b0e546fd062",
-        "label": "38e4e09d98ddb31008c63b0e546fd062, Event",
-        "description": "HBOI_CubaPor_P01, projectId: 85",
+        "@id": "ark:/21547/CHk238e4e09d98ddb31008c63b0e546fd062",
+        "label": "38e4e09d98ddb31008c63b0e546fd062, HBOI_CubaPor_P01",
+        "description": "projectId: 85",
         "hasFeatureOfInterest": "coral reef",
         "responsibility": [""],
         "resultTime": "Unknown",
         "samplingSite": {
-            "description": "expeditionCode: HBOI_CubaPor_P01",
-            "label": "Cuba, 38e4e09d98ddb31008c63b0e546fd062",
+            "description": "",
+            "label": "Cuba",
             "location": {
                 "elevation": "",
                 "latitude": "",
@@ -35,9 +35,9 @@
         "responsibility": "HBOI"
     },
     "relatedResource": {
-        "label":"Tissue",
-        "description":"",
-        "target":"ark:/21547/CHl2C02_201705281001",
-        "relationship":"tissue extract"
+        "label": "Tissue",
+        "description": "",
+        "target": "ark:/21547/CHl2C02_201705281001",
+        "relationship": "tissue extract"
     }
 }
