@@ -3,49 +3,40 @@
 See [decision tree](https://github.com/isamplesorg/metadata/blob/main/vocabulary/SampledFeatureDecisionTree.pdf) (simplified somewhat from this intitial version) and [OWL (rdf/turtle) draft](https://github.com/isamplesorg/metadata/blob/main/vocabulary/iSample-SampledFeature.ttl)
 								
 **Any** Specimen type is not specific to a kind of sampled feature
-**Existing specimen** specimen is derived by processing of a parent specimen
- - **Solid specimen** specimen is derived by processing of a solid object parent specimen
-   - **Rock sample** specimen is derived by processing of a solid rock object parent specimen
-   - **aggregation specimen** specimen is derived by processing of an aggregation material parent specimen
-   - **fluid specimen** specimen is derived by processing of a fluid (liquid or gas) material parent specimen
-     - **liquid specimen** specimen is derived by processing of a liquid  parent specimen
-     - **gas specimen** specimen is derived by processing of a gaseous  parent specimen
+**Biological environment** specimen samples an ecosystem, focused on the biological organisms in that system
+ - **Marine Biome** Sampled feature is the biological system within or directly interacting with a marine water body.
+ - **Subaqueous terrrestrial biome** Sampled feature is the biological system on or adjacent to the Earth surface exposed to a non-marine water body			
+ - **Subaerial terrestrial biome** Sampled feature is the biological system on or adjacent to the Earth surface exposed to the atmosphere 	
 
-**Earth environment** specimen samples the natural earth environment
- - **atmosphere** specimen samples the earth atmosphere
- - **Earth Surface** Specimen samples the interface between solid earth, hydrosphere, or atmosphere
-   - **forest floor** Specimen samples a forest floor interface with the atmosphere
-   - **water body bottom** Specimen samples the solid earth  interface with the hydrosphere
-     - **River or stream bed** Specimen samples the solid earth  interface a flowing water body
-   - **water body surface** Specimen samples the  interface between hydrosphere and atmosphere
- - **Water body** specimen samples the hydrosphere
-   - **Marine environment** specimen samples marine hydrosphere
-   - **Water body bottom** Specimen samples the solid earth  interface with the hydrosphere
-   - **water body surface** Specimen samples the  interface between hydrosphere and atmosphere
-   - **terrrestrial water body** specimen samples terrestrial hydrosphere-- lake, other standing water, or a flowing water body (river, stream..)
-     - **Flowing water** specimen samples  a flowing water body (river, stream..)
-     - **Lake** specimen samples  a relatively static water body (lake)
- - **Subsurface fluid reservoir** Specimen samples fluid that resides in fractures or intergranular porosity in the solid earth.
-   - **formation liquid** Specimen samples liquid that resides in fractures or intergranular porosity in the solid earth.
-     - **aquifer** Specimen samples water that resides in fractures or intergranular porosity in the solid earth.
-   - **formation gas** Specimen samples gaseous material that resides in fractures or intergranular porosity in the solid earth.
- - **Solid Earth** Specimen samples the solid earth
-   - **Regolith layer** Specimen samples material formed at the interface between the solid earth and atmosphere, but not at the surface. Soil, regolith
-   - **Section** Specimen samples a vertical transect within the solid earth
-     - **terrestrial section** Specimen samples a vertical transect within the solid earth, not beneath a marine water body
-   - **mineral species** Specimen samples a particular mineral species
+**Extraterrestrial environment** Sample represents material that did not originate on Earth
 
-**human occupation site** specimen samples materials or objects produced by human activity
- - **Building** specimen samples materials or objects related to human structures 
+**Earth environment** specimen samples the natural earth environment. Sample is not specifically focused on biological or ecological properties of the sampled feature
 
-**lab environment** specimen samples the environment in a laboratory
+ - **Atmosphere** specimen samples the earth atmosphere
+ - **Glacier environment** Sample of ice or water from a glacier, ice sheet, ice shelf, iceberg. Does not include various environments adjacent to glacier.
 
-**Biological organism** specimen samples a living organism
- - **animal organism** specimen samples a living animal organism
- - **plant organism**			specimen samples a living plant organism
-   - **plant foliage**		specimen samples leaves from a plat organism
- - **microbial organism**			specimen samples a living microorganism
+ - **Earth Surface** Samples things at boundary between solid earth and hydrosphere or atmosphere; Includes samples representing things collected on the surface.
 
-**Extraterrestrial environment**				
+   - **Subaerial surface environment** Sample is collected on the surface (e.g. leaf litter), or immediately below surface (zone of bioturbation). Include soil profile, regolith, and ‘biomantle’
+
+   - **Lake, river or stream bottom** Active sediment from stream bed should be included in ‘Regolith, sediment or soil horizon’
+
+   - **Marine water body bottom** Things collected on the surface at the bottom of a water body, e.g. dredge haul, manganese nodules. Includes benthic zone, 
+
+  - **Water body** specimen samples the hydrosphere
+   - **Marine water body** Include brackish and hypersaline water bodies in marine borderland wetlands, estuaries, coastal sabka.
+
+   - **Terrrestrial water body** Sampled feature is river, stream, lake, salt lake; water from springs that has been resident on the Earth Surface long enough to equilibrate is considered 'terrestrial' as opposed to subsurface fluid; the distinction is subjective and not clear cut.
+   
+ - **Subsurface fluid reservoir** Feature of interest is the liquid or gas contained in a subsurface reservoir, e.g. oil, natural gas, CO2, water, including liquids or gas from hydrothermal vents or hot springs. 
+
+ - **Earth interior** Specimen samples rock, sediment, or mineral that is within the Earth, below the zone of direct interaction with the atmosphere or hydrosphere
+
+**Human occupation site** specimen samples materials or objects produced by human activity
+ - **Experimental setting**  Specimen is sample of experimental product
+ - **Lab environment** specimen samples the environment in a laboratory
+ - **Active human occupation site**  A place where humans are currently living or otherwise directly affecting the environment, e.g. farms, mines, waste disposal sites. 
+
+ - **Historic human occupation site**  A place where humans have been and left evidence of their activity; includes prehistoric sites and hominid sites.
 
 **N.A.**				
