@@ -164,23 +164,25 @@ class Transformer(ABC):
 
 
 class AbstractCategoryMapper(ABC):
+    _destination: typing.AnyStr
+
     @abstractmethod
     def matches(
         self,
-        potentialMatch: typing.AnyStr,
-        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
+        potential_match: typing.AnyStr,
+        auxiliary_match: typing.Optional[typing.AnyStr] = None,
     ) -> bool:
         """Whether a particular String input matches this category mapper"""
         pass
 
-    def appendIfMatched(
+    def append_if_matched(
         self,
-        potentialMatch: typing.AnyStr,
-        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
-        categoriesList: typing.List[typing.AnyStr] = [],
+        potential_match: typing.AnyStr,
+        auxiliary_match: typing.Optional[typing.AnyStr] = None,
+        categories_list: typing.List[typing.AnyStr] = (),
     ):
-        if self.matches(potentialMatch, auxiliaryMatch):
-            categoriesList.append(self._destination)
+        if self.matches(potential_match, auxiliary_match):
+            categories_list.append(self._destination)
 
     @property
     def destination(self):
@@ -197,59 +199,61 @@ class AbstractCategoryMetaMapper(ABC):
     @classmethod
     def categories(
         cls,
-        sourceCategory: typing.AnyStr,
-        auxiliarySourceCategory: typing.Optional[typing.AnyStr] = None,
+        source_category: typing.AnyStr,
+        auxiliary_source_category: typing.Optional[typing.AnyStr] = None,
     ):
         categories = []
-        if sourceCategory is not None:
+        if source_category is not None:
             for mapper in cls._categoriesMappers:
-                mapper.appendIfMatched(
-                    sourceCategory, auxiliarySourceCategory, categories
+                mapper.append_if_matched(
+                    source_category, auxiliary_source_category, categories
                 )
         if len(categories) == 0:
             categories.append(Transformer.NOT_PROVIDED)
         return categories
 
     @classmethod
-    def categoriesMappers(cls) -> typing.List[AbstractCategoryMapper]:
+    def categories_mappers(cls) -> typing.List[AbstractCategoryMapper]:
         return []
 
     def __init_subclass__(cls, **kwargs):
-        cls._categoriesMappers = cls.categoriesMappers()
+        cls._categoriesMappers = cls.categories_mappers()
 
 
 class StringEqualityCategoryMapper(AbstractCategoryMapper):
     """A mapper that matches iff the potentialMatch exactly matches one of the list of predefined categories"""
 
     def __init__(
-        self, categories: typing.List[typing.AnyStr], destinationCategory: typing.AnyStr
+        self,
+        categories: typing.List[typing.AnyStr],
+        destination_category: typing.AnyStr,
     ):
         categories = [keyword.lower() for keyword in categories]
         categories = [keyword.strip() for keyword in categories]
         self._categories = categories
-        self._destination = destinationCategory
+        self._destination = destination_category
 
     def matches(
         self,
-        potentialMatch: typing.AnyStr,
-        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
+        potential_match: typing.AnyStr,
+        auxiliary_match: typing.Optional[typing.AnyStr] = None,
     ) -> bool:
-        return potentialMatch.lower().strip() in self._categories
+        return potential_match.lower().strip() in self._categories
 
 
 class StringEndsWithCategoryMapper(AbstractCategoryMapper):
     """A mapper that matches if the potentialMatch ends with the specified string"""
 
-    def __init__(self, endsWith: typing.AnyStr, destinationCategory: typing.AnyStr):
-        self._endsWith = endsWith.lower().strip()
-        self._destination = destinationCategory
+    def __init__(self, ends_with: typing.AnyStr, destination_category: typing.AnyStr):
+        self._endsWith = ends_with.lower().strip()
+        self._destination = destination_category
 
     def matches(
         self,
-        potentialMatch: typing.AnyStr,
-        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
+        potential_match: typing.AnyStr,
+        auxiliary_match: typing.Optional[typing.AnyStr] = None,
     ) -> bool:
-        return potentialMatch.lower().strip().endswith(self._endsWith)
+        return potential_match.lower().strip().endswith(self._endsWith)
 
 
 class StringOrderedCategoryMapper(AbstractCategoryMapper):
@@ -260,11 +264,11 @@ class StringOrderedCategoryMapper(AbstractCategoryMapper):
 
     def matches(
         self,
-        potentialMatch: typing.AnyStr,
-        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
+        potential_match: typing.AnyStr,
+        auxiliary_match: typing.Optional[typing.AnyStr] = None,
     ) -> bool:
         for mapper in self._submappers:
-            if mapper.matches(potentialMatch, auxiliaryMatch):
+            if mapper.matches(potential_match, auxiliary_match):
                 # Note that this isn't thread-safe -- we expect one of these objects per thread
                 self.destination = mapper.destination
                 return True
@@ -276,21 +280,22 @@ class StringPairedCategoryMapper(AbstractCategoryMapper):
 
     def __init__(
         self,
-        primaryMatch: typing.AnyStr,
-        auxiliaryMatch: typing.AnyStr,
-        destinationCategory: typing.AnyStr,
+        primary_match: typing.AnyStr,
+        auxiliary_match: typing.AnyStr,
+        destination_category: typing.AnyStr,
     ):
-        self._primaryMatch = primaryMatch.lower().strip()
-        self._auxiliaryMatch = auxiliaryMatch.lower().strip()
-        self._destination = destinationCategory
+        self._primaryMatch = primary_match.lower().strip()
+        self._auxiliaryMatch = auxiliary_match.lower().strip()
+        self._destination = destination_category
 
     def matches(
         self,
-        potentialMatch: typing.AnyStr,
-        auxiliaryMatch: typing.Optional[typing.AnyStr] = None,
+        potential_match: typing.AnyStr,
+        auxiliary_match: typing.Optional[typing.AnyStr] = None,
     ) -> bool:
         return (
-            potentialMatch is not None and auxiliaryMatch is not None
-            and potentialMatch.lower().strip() == self._primaryMatch
-            and auxiliaryMatch.lower().strip() == self._auxiliaryMatch
+            potential_match is not None
+            and auxiliary_match is not None
+            and potential_match.lower().strip() == self._primaryMatch
+            and auxiliary_match.lower().strip() == self._auxiliaryMatch
         )

@@ -1,11 +1,15 @@
 import typing
 import logging
 
-from isamples_metadata.Transformer import Transformer, AbstractCategoryMapper, StringPairedCategoryMapper, \
-    StringOrderedCategoryMapper
-from isamples_metadata.Transformer import StringEqualityCategoryMapper
-from isamples_metadata.Transformer import StringEndsWithCategoryMapper
-from isamples_metadata.Transformer import AbstractCategoryMetaMapper
+from isamples_metadata.Transformer import (
+    Transformer,
+    AbstractCategoryMapper,
+    StringPairedCategoryMapper,
+    StringOrderedCategoryMapper,
+    StringEqualityCategoryMapper,
+    StringEndsWithCategoryMapper,
+    AbstractCategoryMetaMapper,
+)
 
 
 class MaterialCategoryMetaMapper(AbstractCategoryMetaMapper):
@@ -63,7 +67,7 @@ class MaterialCategoryMetaMapper(AbstractCategoryMetaMapper):
     )
 
     @classmethod
-    def categoriesMappers(cls) -> typing.List[AbstractCategoryMapper]:
+    def categories_mappers(cls) -> typing.List[AbstractCategoryMapper]:
         return [
             cls._endsWithRockMapper,
             cls._endsWithMineralMapper,
@@ -140,7 +144,7 @@ class SpecimenCategoryMetaMapper(AbstractCategoryMetaMapper):
     )
 
     @classmethod
-    def categoriesMappers(cls) -> typing.List[AbstractCategoryMapper]:
+    def categories_mappers(cls) -> typing.List[AbstractCategoryMapper]:
         return [
             cls._otherSolidObjectsMapper,
             cls._containersWithFluidMapper,
@@ -178,17 +182,30 @@ class ContextCategoryMetaMapper(AbstractCategoryMetaMapper):
         [_seaSedimentMapper, _lakeSedimentMapper]
     )
     _lakeMapper = StringPairedCategoryMapper("", "lake", "Terrestrial water body")
-    _mountainLiquidMapper = StringPairedCategoryMapper("Liquid>aqueous", "Mountain", "Terrestrial water body")
-    _seaMapper = StringPairedCategoryMapper("Liquid>aqueous", "Sea", "Marine water body")
+    _mountainLiquidMapper = StringPairedCategoryMapper(
+        "Liquid>aqueous", "Mountain", "Terrestrial water body"
+    )
+    _seaMapper = StringPairedCategoryMapper(
+        "Liquid>aqueous", "Sea", "Marine water body"
+    )
     _ventBiologyMapper = StringPairedCategoryMapper("Biology", "Vent", "Marine biome")
-    _ventLiquidMapper = StringPairedCategoryMapper("Liquid>aqueous", "Vent", "Subsurface fluid reservoir")
-    _floodplainAquiferMapper = StringPairedCategoryMapper("Liquid>aqueous", "floodplain\, aquifer", "Subsurface fluid reservoir")
-    _creekBankMapper = StringPairedCategoryMapper("Sedimentary>GlacialAndOrPaleosol>Rock", "Creek bank", "Subaerial surface environment")
-    # Note that this represents the combos down to row 109 of https://docs.google.com/spreadsheets/d/1QitBRkWH6YySZnNO-uR7D2rTaQ826WPT_xow9lPdJDM/edit#gid=1251732948
+    _ventLiquidMapper = StringPairedCategoryMapper(
+        "Liquid>aqueous", "Vent", "Subsurface fluid reservoir"
+    )
+    _floodplainAquiferMapper = StringPairedCategoryMapper(
+        "Liquid>aqueous", "floodplain\, aquifer", "Subsurface fluid reservoir"
+    )
+    _creekBankMapper = StringPairedCategoryMapper(
+        "Sedimentary>GlacialAndOrPaleosol>Rock",
+        "Creek bank",
+        "Subaerial surface environment",
+    )
+    # Note that this represents the combos down to row 109 of
+    # https://docs.google.com/spreadsheets/d/1QitBRkWH6YySZnNO-uR7D2rTaQ826WPT_xow9lPdJDM/edit#gid=1251732948
     # Need to continue on from there…
 
     @classmethod
-    def categoriesMappers(cls) -> typing.List[AbstractCategoryMapper]:
+    def categories_mappers(cls) -> typing.List[AbstractCategoryMapper]:
         return [
             cls._endsWithRockMapper,
             cls._endsWithMineralMapper,
@@ -201,7 +218,7 @@ class ContextCategoryMetaMapper(AbstractCategoryMetaMapper):
             cls._ventBiologyMapper,
             cls._ventLiquidMapper,
             cls._floodplainAquiferMapper,
-            cls._creekBankMapper
+            cls._creekBankMapper,
         ]
 
 
@@ -221,7 +238,7 @@ class SESARTransformer(Transformer):
             return self._source_record_description()["supplementMetadata"]
         return {}
 
-    def _primaryLocationType(self) -> typing.AnyStr:
+    def _primary_location_type(self) -> typing.Optional[typing.AnyStr]:
         supplement_metadata = self._supplement_metadata()
         if (
             supplement_metadata is not None
@@ -230,7 +247,7 @@ class SESARTransformer(Transformer):
             return supplement_metadata["primaryLocationType"]
         return None
 
-    def _materialType(self) -> typing.AnyStr:
+    def _material_type(self) -> typing.AnyStr:
         return self._source_record_description().get("material", None)
 
     @staticmethod
@@ -251,17 +268,19 @@ class SESARTransformer(Transformer):
         return Transformer.NOT_PROVIDED
 
     def has_context_categories(self) -> typing.List[typing.AnyStr]:
-        materialType = self._materialType()
-        primaryLocationType = self._primaryLocationType()
-        return ContextCategoryMetaMapper.categories(materialType, primaryLocationType)
+        material_type = self._material_type()
+        primary_location_type = self._primary_location_type()
+        return ContextCategoryMetaMapper.categories(
+            material_type, primary_location_type
+        )
 
     def has_material_categories(self) -> typing.List[typing.AnyStr]:
-        material = self._materialType()
+        material = self._material_type()
         return MaterialCategoryMetaMapper.categories(material)
 
     def has_specimen_categories(self) -> typing.List[typing.AnyStr]:
-        sampleType = self._source_record_description()["sampleType"]
-        return SpecimenCategoryMetaMapper.categories(sampleType)
+        sample_type = self._source_record_description()["sampleType"]
+        return SpecimenCategoryMetaMapper.categories(sample_type)
 
     def keywords(self) -> typing.List:
         # TODO: implement
@@ -336,9 +355,9 @@ class SESARTransformer(Transformer):
         return Transformer.NOT_PROVIDED
 
     def produced_by_feature_of_interest(self) -> typing.AnyStr:
-        primaryLocationType = self._primaryLocationType()
-        if primaryLocationType is not None:
-            return primaryLocationType
+        primary_location_type = self._primary_location_type()
+        if primary_location_type is not None:
+            return primary_location_type
         return Transformer.NOT_PROVIDED
 
     def produced_by_responsibilities(self) -> typing.List:
@@ -380,7 +399,9 @@ class SESARTransformer(Transformer):
         # TODO: implement
         return Transformer.NOT_PROVIDED
 
-    def elevation_str(self, elevation_value: typing.AnyStr, elevation_unit: typing.AnyStr) -> typing.AnyStr:
+    def elevation_str(
+        self, elevation_value: typing.AnyStr, elevation_unit: typing.AnyStr
+    ) -> typing.AnyStr:
         elevation_unit_abbreviation = ""
         if elevation_unit is not None:
             elevation_unit = elevation_unit.lower().strip()
