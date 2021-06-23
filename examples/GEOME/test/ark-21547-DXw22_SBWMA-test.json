@@ -11,10 +11,10 @@
     "keywords": ["USA", "aquatic", "Louisiana", "Notophthalmus", "larva", "adult"],
     "producedBy": {
         "@id": "ark:/21547/DXv2ebfe386216c0d1d47a4b3a3c8f068546",
-        "label": "ebfe386216c0d1d47a4b3a3c8f068546 USGSBsal",
-        "description": "horizontalDatum: WGS1984 | projectId: 292",
+        "label": "event ebfe386216c0d1d47a4b3a3c8f068546",
+        "description": "expeditionCode: USGSBsal;horizontalDatum: WGS1984 ; projectId: 292",
         "hasFeatureOfInterest": "",
-        "responsibility": ["'collector':J. Hardin Waddle|Daniel A. Grear|Brad M. Glorioso |Adam R. Backlin|William J. Barichivich|Adrianne B. Brand|Daniel L. Calhoun|Jillian E. Fleming|Andrew E. Dietrich|Patrick M. Kleeman|Marcella A. Cruz", "'principalInvestigator':Hardin Waddle"],
+        "responsibility": ["collector:J. Hardin Waddle", "collector:Daniel A. Grear", "collector:Brad M. Glorioso", "collector:Adam R. Backlin", "collector:William J. Barichivich", "collector:Adrianne B. Brand", "collector:Daniel L. Calhoun", "collector:Jillian E. Fleming", "collector:Andrew E. Dietrich", "collector:Patrick M. Kleeman", "collector:Marcella A. Cruz", "principalInvestigator:Hardin Waddle"],
         "resultTime": "2016-04",
         "samplingSite": {
             "description": "coordinateUncertaintyInMeters: 30",

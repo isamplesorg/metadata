@@ -10,8 +10,8 @@
     "informalClassification": [""],
     "keywords": ["USA"],
     "producedBy": {
-        "@id":"ark:/21547/Dls2e0ab8c15fe0e5c1eff8d11b2d31fe25f",
-        "label": "e0ab8c15fe0e5c1eff8d11b2d31fe25f, Elliott_Chaparral_Reserve",
+        "@id": "ark:/21547/Dls2e0ab8c15fe0e5c1eff8d11b2d31fe25f",
+        "label": "event e0ab8c15fe0e5c1eff8d11b2d31fe25f",
         "description": "expeditionCode: 2017_CALeDNA_transects | projectId: 382, ",
         "hasFeatureOfInterest": "coral reef",
         "responsibility": [""],
@@ -24,7 +24,7 @@
                 "latitude": "",
                 "longitude": ""
             },
-            "placeName": ["USA, Elliott_Chaparral_Reserve"]
+            "placeName": ["USA"]
         }
     },
     "registrant": "",
@@ -35,9 +35,9 @@
         "responsibility": ""
     },
     "relatedResource": {
-        "label":"Tissue",
-        "description":"",
-        "target":"ark:/21547/Dlu2K0147A1",
-        "relationship":"tissue extract"
+        "label": "Tissue",
+        "description": "",
+        "target": "ark:/21547/Dlu2K0147A1",
+        "relationship": "tissue extract"
     }
 }

@@ -11,10 +11,10 @@
     "keywords": ["Coral Sea", "Vanuatu", "Esperitu Santo", "Mollusca", "SLAB", "Epitoniidae", "Strong"],
     "producedBy": {
         "@id": "ark:/21547/CbA2FR2",
-        "label": "FR2 STRONG_LEGACY",
-        "description": "projectId: 81",
+        "label": "event FR2",
+        "description": "expeditionCode: STRONG_LEGACY; projectId: 81",
         "hasFeatureOfInterest": "coral reef",
-        "responsibility": ["'identifiedBy:'EE Strong;'taxonomy team:'MINV;'event registrant:'Daniel Mulcahy"],
+        "responsibility": ["identifiedBy:EE Strong", "taxonomy team:MINV", "event registrant:Daniel Mulcahy"],
         "resultTime": "2006-9-11",
         "samplingSite": {
             "description": "horizontalDatum: unknown",

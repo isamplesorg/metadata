@@ -1,33 +1,33 @@
 {
     "@schema": "../../iSamplesSchemaBasic0.2.json",
     "@id": "metadata/21547/DXw21700400292",
-    "label": "1700400292",
+    "label": "Notophthalmus viridescens 1700400292",
     "sampleidentifier": "ark:/21547/DXw21700400292",
     "description": "",
     "hasContextCategory": ["Marine Biome"],
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
-    "informalClassification": ["Notophthalmus", "viridescens"],
-    "keywords": ["USA", "Wisconsin"],
+    "informalClassification": ["Notophthalmus viridescens"],
+    "keywords": ["USA", "Wisconsin", "aquatic", "Notophthalmus", "viridescens", "adult"],
     "producedBy": {
-        "@id":"ark:/21547/DXv2ccec355d0b91781dd36db2d2134e147c",
-        "label": "Event, ccec355d0b91781dd36db2d2134e147c, Greenbush Kettle",
-        "description": "projectId: 292",
+        "@id": "ark:/21547/DXv2ccec355d0b91781dd36db2d2134e147c",
+        "label": "Event ccec355d0b91781dd36db2d2134e147c",
+        "description": "expeditionCode:  Greenbush Kettle | projectId: 292",
         "hasFeatureOfInterest": "coral reef",
-        "responsibility": ["J. Hardin Waddle|Daniel A. Grear|Brad M. Glorioso |Adam R. Backlin|William J. Barichivich|Adrianne B. Brand|Daniel L. Calhoun|Jillian E. Fleming|Andrew E. Dietrich|Patrick M. Kleeman|Marcella A. Cruz"],
+        "responsibility": ["collector:J. Hardin Waddle", "collector:Daniel A. Grear", "collector:Brad M. Glorioso", "collector:Adam R. Backlin", "collector:William J. Barichivich", "collector:Adrianne B. Brand", "collector:Daniel L. Calhoun", "collector:Jillian E. Fleming", "collector:Andrew E. Dietrich", "collector:Patrick M. Kleeman", "collector:Marcella A. Cruz", "principalInvestigator:Hardin Waddle"],
         "resultTime": "2017-05",
         "samplingSite": {
             "description": "",
-            "label": "Greenbush Kettle, ccec355d0b91781dd36db2d2134e147c",
+            "label": "Greenbush Kettle",
             "location": {
                 "elevation": "",
                 "latitude": 43.73564,
                 "longitude": -88.09731
             },
-            "placeName": ["Greenbush Kettle, USA"]
+            "placeName": ["USA", "Wisconsin"]
         }
     },
-    "registrant": "J. Hardin Waddle|Daniel A. Grear|Brad M. Glorioso |Adam R. Backlin|William J. Barichivich|Adrianne B. Brand|Daniel L. Calhoun|Jillian E. Fleming|Andrew E. Dietrich|Patrick M. Kleeman|Marcella A. Cruz",
+    "registrant": "",
     "samplingPurpose": "",
     "curation": {
         "accessConstraints": "",
@@ -35,9 +35,9 @@
         "responsibility": ""
     },
     "relatedResource": {
-        "label":"Diagnostics",
-        "description":"",
-        "target":"ark:/21547/DXx2c6d430c4c95487032b7e3dbd7b5b7e31",
-        "relationship":"diagnostic test"
+        "label": "Diagnostics",
+        "description": "",
+        "target": "ark:/21547/DXx2c6d430c4c95487032b7e3dbd7b5b7e31",
+        "relationship": "diagnostic test"
     }
 }

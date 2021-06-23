@@ -1,0 +1,5 @@
+Question and Problem:
+    1) It's hard to determine "hasFeatureofIneterest" without expertise. 
+    2) some children fields aren't mapped to the iSamples.
+    3) some fields need uniform format. 
+        e.g in the description, should we use ";" or "|" to distinguish different infomation? 

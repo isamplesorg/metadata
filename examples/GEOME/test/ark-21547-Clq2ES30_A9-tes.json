@@ -11,10 +11,10 @@
     "keywords": ["USA", "Marstonia", "Mollusca", "genus"],
     "producedBy": {
         "@id": "ark:/21547/Clr2Mill_Creek",
-        "label": "Mill_Creek IZES",
-        "description": "projectId: 81",
+        "label": "event Mill_Creek",
+        "description": "expeditionCode: IZES; projectId: 81",
         "hasFeatureOfInterest": "Organism product",
-        "responsibility": ["Makiri Sei"],
+        "responsibility": ["'event registrant:'Makiri Sei"],
         "resultTime": "2011",
         "samplingSite": {
             "description": "",

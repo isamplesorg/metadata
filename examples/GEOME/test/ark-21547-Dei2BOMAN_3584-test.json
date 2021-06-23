@@ -8,13 +8,13 @@
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
     "informalClassification": ["Polynoidae"],
-    "keywords": ["Oman", "Muscat Governorate"],
+    "keywords": ["Oman", "Muscat Governorate", "Annelida"],
     "producedBy": {
         "@id": "ark:/21547/Dej2OMAN_025",
         "label": "OMAN_025 NSF_OMAN",
         "description": "projectId: 74",
         "hasFeatureOfInterest": "Whole organism",
-        "responsibility": ["Abby Uehling"],
+        "responsibility": ["event registrant:Abby Uehling"],
         "resultTime": "2020-1",
         "samplingSite": {
             "description": "",
@@ -24,7 +24,7 @@
                 "latitude": 23.5167191,
                 "longitude": 58.7427155
             },
-            "placeName": ["Bandar Al Khiran", "Oman", "Muscat Governorate"]
+            "placeName": ["Oman", "Muscat Governorate"]
         }
     },
     "registrant": "Abby Uehling",

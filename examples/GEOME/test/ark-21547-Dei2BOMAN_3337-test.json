@@ -1,30 +1,30 @@
 {
     "@schema": "../../iSamplesSchemaBasic0.2.json",
     "@id": "metadata/21547/Dei2BOMAN_3337",
-    "label": "Amphipoda, BOMAN_3337",
+    "label": "Amphipoda BOMAN_3337",
     "sampleidentifier": "ark:/21547/Dei2BOMAN_3337",
     "description": "",
     "hasContextCategory": ["Marine Biome"],
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
-    "informalClassification": ["Abby Uehling, Amphipoda"],
-    "keywords": ["Oman", "Muscat Governorate", "Arthropoda"],
+    "informalClassification": ["Abby Uehling Amphipoda"],
+    "keywords": ["Oman", "Muscat Governorate", "Arthropoda", "Pocillopora_Acropora rubble"],
     "producedBy": {
-        "@id":"ark:/21547/Dej2OMAN_019A",
-        "label": "Event, OMAN_019A, Damanyat Islands, Clive Rock",
-        "description": "expeditionCode: NSF_OMAN, projectId: 74 ",
+        "@id": "ark:/21547/Dej2OMAN_019A",
+        "label": "event OMAN_019A",
+        "description": "expeditionCode: NSF_OMAN; projectId: 74 ",
         "hasFeatureOfInterest": "coral reef",
-        "responsibility": ["Abby Uehling"],
+        "responsibility": ["event registrant:Abby Uehling"],
         "resultTime": "2020-01",
         "samplingSite": {
             "description": "",
-            "label": "Damanyat Islands, Clive Rock, OMAN_019A",
+            "label": "Damanyat Islands, Clive Rock",
             "location": {
                 "elevation": "",
                 "latitude": 23.84814,
                 "longitude": 57.9521339
             },
-            "placeName": ["Damanyat Islands, Clive Rock, Oman"]
+            "placeName": ["Oman", "Muscat Governorate"]
         }
     },
     "registrant": "Abby Uehling",
@@ -35,9 +35,9 @@
         "responsibility": "University of Florida"
     },
     "relatedResource": {
-        "label":"",
-        "description":"",
-        "target":"",
-        "relationship":""
+        "label": "",
+        "description": "",
+        "target": "",
+        "relationship": ""
     }
 }

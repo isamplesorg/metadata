@@ -11,10 +11,10 @@
     "keywords": ["USA", "aquatic", "Kentucky", "Notophthalmus", "viridescens", "adult"],
     "producedBy": {
         "@id": "ark:/21547/DXv2c369d8cb3a3289ef04f7329c724633ee",
-        "label": "c369d8cb3a3289ef04f7329c724633ee USGSBsal",
-        "description": "horizontalDatum: WGS1984 | projectId: 292",
+        "label": "event c369d8cb3a3289ef04f7329c724633ee",
+        "description": "expeditionCode: USGSBsal| horizontalDatum: WGS1984 | projectId: 292",
         "hasFeatureOfInterest": "",
-        "responsibility": ["'collector':J. Hardin Waddle|Daniel A. Grear|Brad M. Glorioso |Adam R. Backlin|William J. Barichivich|Adrianne B. Brand|Daniel L. Calhoun|Jillian E. Fleming|Andrew E. Dietrich|Patrick M. Kleeman|Marcella A. Cruz", "'principalInvestigator':Hardin Waddle"],
+        "responsibility": ["collector:J. Hardin Waddle", "collector:Daniel A. Grear", "collector:Brad M. Glorioso", "collector:Adam R. Backlin", "collector:William J. Barichivich", "collector:Adrianne B. Brand", "collector:Daniel L. Calhoun", "collector:Jillian E. Fleming", "collector:Andrew E. Dietrich", "collector:Patrick M. Kleeman", "collector:Marcella A. Cruz", "principalInvestigator:Hardin Waddle"],
         "resultTime": "2016-05",
         "samplingSite": {
             "description": "",

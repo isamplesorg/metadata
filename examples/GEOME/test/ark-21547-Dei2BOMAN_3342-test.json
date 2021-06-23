@@ -1,43 +1,43 @@
 {
-  	"@schema": "../../iSamplesSchemaBasic0.2.json",
-  	"@id": "metadata/21547/Dei2BOMAN_3342",
-  	"label": "BOMAN_3342",
-  	"sampleidentifier": "ark:/21547/Dei2BOMAN_3342",
-  	"description": "",
-  	"hasContextCategory": ["Marine Biome"],
-  	"hasMaterialCategory": ["Organic Material"],
-  	"hasSpecimenCategory": ["Whole Organism"],
-  	"informalClassification": ["Alpheidae sp. 1"],
-  	"keywords": ["Muscat Governorate", "Arthropoda"],
-  	"producedBy": {
-  		"@id": "ark:/21547/Dej2OMAN_020A",
-  		"label": "OMAN_020A, Event",
-  		"description": "expeditionCode: NSF_OMAN | projectId: 74",
-  		"hasFeatureOfInterest": "",
-  		"responsibility": ["Abby Uehling"],
-  		"resultTime": "2020-01",
-  		"samplingSite": {
-  			"description": "",
-  			"label": "Damanyat Islands, S of June Island, OMAN_020A",
-  			"location": {
-  				"elevation": "",
-  				"latitude": 23.8361515,
-  				"longitude": 57.9767976
-  			},
-  			"placeName": ["Damanyat Islands, S of June Island"]
-		}
-	},
-	"registrant": "Abby Uehling",
-	"samplingPurpose": "genomic analysis",
-	"curation": {
-		"accessConstraints": "",
-		"curationLocation": "",
-		"responsibility": "University of Florida"
-	},
-	"relatedResource": {
-		"label": "",
-		"description": "",
-		"target": "",
-		"relationship": ""
-	}
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/21547/Dei2BOMAN_3342",
+    "label": "BOMAN_3342",
+    "sampleidentifier": "ark:/21547/Dei2BOMAN_3342",
+    "description": "",
+    "hasContextCategory": ["Marine Biome"],
+    "hasMaterialCategory": ["Organic Material"],
+    "hasSpecimenCategory": ["Whole Organism"],
+    "informalClassification": ["Alpheidae sp. 1"],
+    "keywords": ["Oman", "Muscat Governorate", "Arthropoda", "in Pocillopora and Acropora rubble"],
+    "producedBy": {
+        "@id": "ark:/21547/Dej2OMAN_020A",
+        "label": "event OMAN_020A",
+        "description": "expeditionCode: NSF_OMAN | projectId: 74",
+        "hasFeatureOfInterest": "",
+        "responsibility": ["event registrant:Abby Uehling"],
+        "resultTime": "2020-01",
+        "samplingSite": {
+            "description": "",
+            "label": "Damanyat Islands, S of June Island, OMAN_020A",
+            "location": {
+                "elevation": "",
+                "latitude": 23.8361515,
+                "longitude": 57.9767976
+            },
+            "placeName": ["Oman", "Muscat Governorate"]
+        }
+    },
+    "registrant": "Abby Uehling",
+    "samplingPurpose": "genomic analysis",
+    "curation": {
+        "accessConstraints": "",
+        "curationLocation": "",
+        "responsibility": "University of Florida"
+    },
+    "relatedResource": {
+        "label": "",
+        "description": "",
+        "target": "",
+        "relationship": ""
+    }
 }

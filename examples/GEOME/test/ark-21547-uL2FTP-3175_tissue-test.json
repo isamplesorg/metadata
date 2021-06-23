@@ -8,11 +8,11 @@
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
     "informalClassification": ["Polychaeta, Polychaeta,"],
-    "keywords": ["USA", "Annelida"],
+    "keywords": ["USA", "Annelida", "Annelida", "Polychaeta", "Animalia"],
     "producedBy": {
-        "@id":"ark:/21547/CCv2ab3edd1872f8d9cbca0ed60f53fd6905",
-        "label": "ab3edd1872f8d9cbca0ed60f53fd6905, Event, projectId: 85",
-        "description": "85, Leray14_MSN_74, ",
+        "@id": "ark:/21547/CCv2ab3edd1872f8d9cbca0ed60f53fd6905",
+        "label": "event ab3edd1872f8d9cbca0ed60f53fd6905",
+        "description": "projectId: 85; expeditionCode: Leray14_MSN_74 ",
         "hasFeatureOfInterest": "coral reef",
         "responsibility": ["Leray M, Plaisance L, Little M, Ransomme E, Ruy R"],
         "resultTime": "2013-11-21",
@@ -22,7 +22,7 @@
             "location": {
                 "elevation": "",
                 "latitude": 27.48825,
-                "longitude":-80.3151667
+                "longitude": -80.3151667
             },
             "placeName": ["Florida, Fort Pierce"]
         }
@@ -35,9 +35,9 @@
         "responsibility": "personal"
     },
     "relatedResource": {
-        "label":"Tissue",
-        "description":"",
-        "target":"ark:/21547/CCw2FTP_3175_tissue",
-        "relationship":"tissue extract"
+        "label": "Tissue",
+        "description": "",
+        "target": "ark:/21547/CCw2FTP_3175_tissue",
+        "relationship": "tissue extract"
     }
 }

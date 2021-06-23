@@ -11,8 +11,8 @@
     "keywords": ["USA", "Hawaii", "Chaetodon", "Chordata", "multicinctus"],
     "producedBy": {
         "@id": "ark:/21547/BIE2391b18d0c39141193a2379f36b77e539",
-        "label": "391b18d0c39141193a2379f36b77e539 chamul_CYB_mc",
-        "description": "projectId: 1",
+        "label": "event 391b18d0c39141193a2379f36b77e539",
+        "description": "expeditionCode:chamul_CYB_mc;projectId: 1",
         "hasFeatureOfInterest": "coral reef",
         "responsibility": ["Rob Toonen"],
         "resultTime": "2006",
