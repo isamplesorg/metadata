@@ -403,7 +403,7 @@ class SESARTransformer(Transformer):
         supplement_metadata = self._supplement_metadata()
         if supplement_metadata is not None and "elevation" in supplement_metadata:
             elevation_value = supplement_metadata["elevation"]
-            elevation_unit = supplement_metadata["elevationUnit"]
+            elevation_unit = supplement_metadata.get("elevationUnit", "meters")
             return self.elevation_str(elevation_value, elevation_unit)
         return Transformer.NOT_PROVIDED
 
