@@ -10,6 +10,13 @@
 @prefix spt: <http://resource.isamples.org/vocabulary/specimentype/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+spt:analyticalpreparation
+  rdf:type skos:Concept ;
+  rdfs:comment "e.g. thin section, XRF bead, SEM stub, rock powder. If identified separately, this should have a ‘parent’ link to the original sample"@en ;
+  rdfs:label "Analytical preparation "@en ;
+  skos:broader spt:researchproduct ;
+  skos:prefLabel "Analytical preparation  "@en ;
+.
 spt:anthropogenicaggregation
   rdf:type skos:Concept ;
   rdfs:label "Anthropogenic aggregation"@en ;
@@ -25,19 +32,11 @@ spt:anyaggregation
   skos:broader spt:physicalspecimen ;
   skos:prefLabel "Any aggregation specimen"@en ;
 .
-spt:anysolidobject
-  rdf:type skos:Concept ;
-  rdfs:label "Any solid object"@en ;
-  skos:broader spt:physicalspecimen ;
-  skos:definition "Superclass for specimens that are individual solid objects, not biological. Includes set of pieces belonging originally to a single object and treated as a single specimen."@en ;
-  skos:inScheme spt:specimenttypevocabulary ;
-  skos:prefLabel "Any solid object"@en ;
-.
 spt:artifact
   rdf:type skos:Concept ;
   rdfs:comment "An object made (manufactured, shaped, modified) by a human being, or precursor hominid. Include a set of pieces belonging originally to a single object and treated as a single specimen."@en ;
   rdfs:label "Artifact "@en ;
-  skos:broader spt:anysolidobject ;
+  skos:broader spt:physicalspecimen ;
   skos:inScheme spt:specimenttypevocabulary ;
   skos:prefLabel "Artifact "@en ;
 .
@@ -58,19 +57,18 @@ spt:biomeaggregation
   skos:inScheme spt:specimenttypevocabulary ;
   skos:prefLabel "Biome aggregation specimen "@en ;
 .
-spt:containerfluid
+spt:experimentalproduct
   rdf:type skos:Concept ;
-  rdfs:comment "Liquid, gas, or mixed dominantly fluid phases, necessarily in some kind of container to maintain identity. Might include minor solid particles. Container typically human made, but also includes natural fluid container, e.g. fluid inclusion in a mineral grain.  Includes colloids, foams, gels, suspensions. The sampled feature is the fluid substance; fluid samples collected to analyze the contained biome should be considered *Biome Aggregation*"@en ;
-  rdfs:label "Container with fluid "@en ;
-  skos:broader spt:physicalspecimen ;
-  skos:inScheme spt:specimenttypevocabulary ;
-  skos:prefLabel "Container with fluid "@en ;
+  rdfs:comment "Specimen is product of an experimental procedure (e.g. synthetic material)"@en ;
+  rdfs:label "Experiment product "@en ;
+  skos:broader spt:researchproduct ;
+  skos:prefLabel "Experiment product  "@en ;
 .
 spt:fossil
   rdf:type skos:Concept ;
   rdfs:comment "Specimen is fossilized remains of one or more organism preserved in rock; includes whole body, body parts (usually bone or shell), and trace fossils. An organism or organism part becomes a fossil when it has undergone some fossilization process. This generally entails physical and chemical changes akin to diagenesis in a sedimentary rock."@en ;
   rdfs:label "Fossil "@en ;
-  skos:broader spt:anysolidobject ;
+  skos:broader spt:physicalspecimen ;
   skos:inScheme spt:specimenttypevocabulary ;
   skos:prefLabel "Fossil "@en ;
 .
@@ -80,6 +78,14 @@ spt:genericaggregation
   skos:broader spt:anyaggregation ;
   skos:definition "An aggregate specimen that is not biogenic or anthropogenic.  Examples: borehole cuttings, loose soil or sediment (e.g. in a bag), rock chips, particulate filtrate or precipitate; rock powders."@en ;
   skos:prefLabel "Aggregation"@en ;
+.
+spt:liquidorgas
+  rdf:type skos:Concept ;
+  rdfs:comment "Liquid, gas, or mixed dominantly fluid phases, necessarily in some kind of container to maintain identity. Might include minor solid particles. Container typically human made, but also includes natural fluid container, e.g. fluid inclusion in a mineral grain.  Includes colloids, foams, gels, suspensions. The sampled feature is the fluid substance; fluid samples collected to analyze the contained biome should be considered *Biome Aggregation*"@en ;
+  rdfs:label "Liquid or gas"@en ;
+  skos:broader spt:physicalspecimen ;
+  skos:inScheme spt:specimenttypevocabulary ;
+  skos:prefLabel "Liquid or gas"@en ;
 .
 spt:ontology
   rdf:type owl:Ontology ;
@@ -106,20 +112,20 @@ spt:organismproduct
   skos:inScheme spt:specimenttypevocabulary ;
   skos:prefLabel "Organism product"@en ;
 .
+spt:othersolidobject
+  rdf:type skos:Concept ;
+  rdfs:comment "Single piece of material not one of the other types, e.g. rock specimen, mineral specimen, core. Ice and permafrost are considered solid materials."@en ;
+  rdfs:label "Other solid object"@en ;
+  skos:broader spt:physicalspecimen ;
+  skos:inScheme spt:specimenttypevocabulary ;
+  skos:prefLabel "Other solid object"@en ;
+.
 spt:physicalspecimen
   rdf:type skos:Concept ;
   rdfs:comment "top concept in specimen type hierarchy. Represents any physical specimen."@en ;
   rdfs:label "Physical specimen"@en ;
   skos:prefLabel "Physical specimen"@en ;
   skos:topConceptOf spt:specimenttypevocabulary ;
-.
-spt:piecesolidmaterial
-  rdf:type skos:Concept ;
-  rdfs:comment "Single piece of material not one of the other types, e.g. rock specimen, mineral specimen, core. Ice and permafrost are considered solid materials."@en ;
-  rdfs:label "Other solid object"@en ;
-  skos:broader spt:anysolidobject ;
-  skos:inScheme spt:specimenttypevocabulary ;
-  skos:prefLabel "Other solid object"@en ;
 .
 spt:researchproduct
   rdf:type skos:Concept ;
