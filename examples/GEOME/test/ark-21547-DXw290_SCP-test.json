@@ -1,0 +1,43 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/21547/DXw290_SCP",
+    "label": "90_SCP",
+    "sampleidentifier": "ark:/21547/DXw290_SCP",
+    "description": "",
+    "hasContextCategory": ["Marine Biome"],
+    "hasMaterialCategory": ["Organic Material"],
+    "hasSpecimenCategory": ["Whole Organism"],
+    "informalClassification": ["Notophthalmus", "viridescens"],
+    "keywords": ["Mississippi", "USA"],
+    "producedBy": {
+        "@id":"ark:/21547/DXv23ea9e35f93680ec0033de373213b8b91",
+        "label": "Event, 3ea9e35f93680ec0033de373213b8b91, Sweetwater Cemetery Ponds",
+        "description": "projectId: 292 | expeditionCode: USGSBsal",
+        "hasFeatureOfInterest": "coral reef",
+        "responsibility": ["J. Hardin Waddle|Daniel A. Grear|Brad M. Glorioso |Adam R. Backlin|William J. Barichivich|Adrianne B. Brand|Daniel L. Calhoun|Jillian E. Fleming|Andrew E. Dietrich|Patrick M. Kleeman|Marcella A. Cruz"],
+        "resultTime": "2016-05",
+        "samplingSite": {
+            "description": "",
+            "label": "Sweetwater Cemetery Ponds, 3ea9e35f93680ec0033de373213b8b91",
+            "location": {
+                "elevation": "",
+                "latitude": 31.16419,
+                "longitude": -89.04089
+            },
+            "placeName": ["USA", "Sweetwater Cemetery Ponds"]
+        }
+    },
+    "registrant": "J. Hardin Waddle|Daniel A. Grear|Brad M. Glorioso |Adam R. Backlin|William J. Barichivich|Adrianne B. Brand|Daniel L. Calhoun|Jillian E. Fleming|Andrew E. Dietrich|Patrick M. Kleeman|Marcella A. Cruz",
+    "samplingPurpose": "",
+    "curation": {
+        "accessConstraints": "",
+        "curationLocation": "",
+        "responsibility": ""
+    },
+    "relatedResource": {
+        "label":"Diagnostics",
+        "description":"",
+        "target":"ark:/21547/DXx269c206db581d917488ffd9eee3bfb53c",
+        "relationship":"diagnostic test"
+    }
+}
