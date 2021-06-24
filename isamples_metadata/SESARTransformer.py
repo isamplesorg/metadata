@@ -254,6 +254,14 @@ class SESARTransformer(Transformer):
     def _logger():
         return logging.getLogger("isamples_metadata.SESARTransformer")
 
+    def id_string(self):
+        return "https://data.isamples.org/digitalsample/{0}/{1}".format(
+            self.sample_identifier_scheme(), self.sample_identifier_value()
+        )
+
+    def sample_identifier_string(self) ->typing.AnyStr:
+        return f"{self.sample_identifier_scheme()}:{self.sample_identifier_value()}"
+
     def sample_identifier_scheme(self) -> typing.AnyStr:
         return "igsn"
 
@@ -285,6 +293,10 @@ class SESARTransformer(Transformer):
     def keywords(self) -> typing.List:
         # TODO: implement
         return [self._source_record_description()["sampleType"]]
+
+    def produced_by_id_string(self) -> typing.AnyStr:
+        # TODO: this is present for GEOME, does anything make sense for SESAR?
+        return ""
 
     def _contributor_name_with_role(self, role_name: typing.AnyStr):
         contributor_name = ""
@@ -360,7 +372,7 @@ class SESARTransformer(Transformer):
             return primary_location_type
         return Transformer.NOT_PROVIDED
 
-    def produced_by_responsibilities(self) -> typing.List:
+    def produced_by_responsibilities(self) -> typing.List[typing.AnyStr]:
         responsibilities = list()
         description_dict = self._source_record_description()
         if "collector" in description_dict:

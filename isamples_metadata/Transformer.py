@@ -22,20 +22,18 @@ class Transformer(ABC):
             The provider record transformed into an iSamples record
         """
         transformed_record = {
-            "$schema": "../iSamplesSchemaBasicSMR.json",
-            "@id": "https://data.isamples.org/digitalsample/{0}/{1}".format(
-                self.sample_identifier_scheme(), self.sample_identifier_value()
-            ),
+            "$schema": "../../iSamplesSchemaBasic0.2.json",
+            "@id": self.id_string(),
             "label": self.sample_label(),
-            "sampleidentifier": "{0}:{1}".format(
-                self.sample_identifier_scheme(), self.sample_identifier_value()
-            ),
+            "sampleidentifier": self.sample_identifier_string(),
             "description": self.sample_description(),
             "hasContextCategory": self.has_context_categories(),
             "hasMaterialCategory": self.has_material_categories(),
             "hasSpecimenCategory": self.has_specimen_categories(),
+            "informalClassification": self.informal_classification(),
             "keywords": self.keywords(),
             "producedBy": {
+                "@id": self.produced_by_id_string(),
                 "label": self.produced_by_label(),
                 "description": self.produced_by_description(),
                 "hasFeatureOfInterest": self.produced_by_feature_of_interest(),
@@ -56,6 +54,13 @@ class Transformer(ABC):
             "samplingPurpose": self.sample_sampling_purpose(),
         }
         return transformed_record
+
+    def id_string(self) -> typing.AnyStr:
+        """The value for the @id key in the iSamples record"""
+        pass
+
+    def sample_identifier_string(self) ->typing.AnyStr:
+        pass
 
     @abstractmethod
     def sample_identifier_scheme(self) -> typing.AnyStr:
@@ -102,9 +107,18 @@ class Transformer(ABC):
         """Map from the source record into an iSamples specimen category"""
         pass
 
+    def informal_classification(self) -> typing.AnyStr:
+        """An informal scientificName"""
+        pass
+
     @abstractmethod
-    def keywords(self) -> typing.List:
+    def keywords(self) -> typing.List[typing.AnyStr]:
         """The keywords for the sample in source record"""
+        pass
+
+    @abstractmethod
+    def produced_by_id_string(self) -> typing.AnyStr:
+        """The id for the producedBy dictionary, likely used for parent identifiers"""
         pass
 
     @abstractmethod
@@ -123,7 +137,7 @@ class Transformer(ABC):
         pass
 
     @abstractmethod
-    def produced_by_responsibilities(self) -> typing.List:
+    def produced_by_responsibilities(self) -> typing.List[typing.AnyStr]:
         """The responsibility list for the producedBy dictionary"""
         pass
 
