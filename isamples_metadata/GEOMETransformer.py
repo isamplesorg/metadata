@@ -8,6 +8,10 @@ from isamples_metadata.Transformer import (
 class GEOMETransformer(Transformer):
     """Concrete transformer class for going from a GEOME record to an iSamples record"""
 
+    def transform(self) -> typing.Dict:
+        transformed_record = super(GEOMETransformer, self).transform()
+        return transformed_record
+
     ARK_PREFIX = "ark:/"
 
     def _source_record_main_record(self):
@@ -153,3 +157,83 @@ class GEOMETransformer(Transformer):
                 responsibilities_pieces.append(f"event registrant:{entered_by}")
             return responsibilities_pieces
         return []
+
+    def produced_by_result_time(self) -> typing.AnyStr:
+        parent_record = self._source_record_parent_record()
+        if parent_record is not None:
+            result_time_pieces = []
+            year = parent_record.get("yearCollected")
+            if year is not None:
+                result_time_pieces.append(year)
+            month = parent_record.get("monthCollected")
+            if month is not None:
+                result_time_pieces.append(month)
+            day = parent_record.get("dayCollected")
+            if day is not None:
+                result_time_pieces.append(day)
+            return "-".join(result_time_pieces)
+        return Transformer.NOT_PROVIDED
+
+    def sampling_site_description(self) -> typing.AnyStr:
+        parent_record = self._source_record_parent_record()
+        if parent_record is not None:
+            return parent_record.get("habitat", Transformer.NOT_PROVIDED)
+        return Transformer.NOT_PROVIDED
+
+    def sampling_site_label(self) -> typing.AnyStr:
+        parent_record = self._source_record_parent_record()
+        if parent_record is not None:
+            return parent_record.get("locality", Transformer.NOT_PROVIDED)
+        return Transformer.NOT_PROVIDED
+
+    def sampling_site_elevation(self) -> typing.AnyStr:
+        # Note that this is subject to revision based on the outcome of
+        # https://github.com/isamplesorg/metadata/issues/35
+        parent_record = self._source_record_parent_record()
+        if parent_record is not None:
+            depth = parent_record.get("maximumDepthInMeters", None)
+            if depth is not None:
+                return f"${depth} m"
+        return Transformer.NOT_PROVIDED
+
+    def _geo_location_float_value(self, key: typing.AnyStr) -> typing.Optional[typing.SupportsFloat]:
+        parent_record = self._source_record_parent_record()
+        if parent_record is not None:
+            geo_location_str = parent_record.get(key)
+            if geo_location_str is not None:
+                return float(geo_location_str)
+        return None
+
+    def sampling_site_latitude(self) -> typing.SupportsFloat:
+        return self._geo_location_float_value("decimalLatitude")
+
+    def sampling_site_longitude(self) -> typing.SupportsFloat:
+        return self._geo_location_float_value("decimalLongitude")
+
+    def sampling_site_place_names(self) -> typing.List:
+        parent_record = self._source_record_parent_record()
+        if parent_record is not None:
+            place_names = []
+            if "county" in parent_record:
+                place_names.append(parent_record["county"])
+            if "locality" in parent_record:
+                place_names.append(parent_record["locality"])
+            if "stateProvince" in parent_record:
+                place_names.append(parent_record["stateProvince"])
+            if "island" in parent_record:
+                place_names.append(parent_record["island"])
+            if "islandGroup" in parent_record:
+                place_names.append(parent_record["island"])
+            if "country" in parent_record:
+                place_names.append(parent_record["country"])
+            if "continentOcean" in parent_record:
+                place_names.append(parent_record["continentOcean"])
+            return place_names
+        return []
+
+    def sample_registrant(self) -> typing.AnyStr:
+        return self.source_record.get("sampleEnteredBy", Transformer.NOT_PROVIDED)
+
+    def sample_sampling_purpose(self) -> typing.AnyStr:
+        # TODO: implement
+        return Transformer.NOT_PROVIDED
