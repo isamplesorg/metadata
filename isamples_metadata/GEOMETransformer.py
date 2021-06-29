@@ -31,10 +31,10 @@ class GEOMETransformer(Transformer):
     def sample_label(self) -> typing.AnyStr:
         main_record = self._source_record_main_record()
         label_components = []
-        scientific_name = main_record.get("scientificName", None)
+        scientific_name = main_record.get("scientificName")
         if scientific_name is not None:
             label_components.append(scientific_name)
-        sample_id = main_record.get("materialSampleID", None)
+        sample_id = main_record.get("materialSampleID")
         if sample_id is not None:
             label_components.append(sample_id)
         return " ".join(label_components)
@@ -71,7 +71,7 @@ class GEOMETransformer(Transformer):
 
     def informal_classification(self) -> typing.AnyStr:
         main_record = self._source_record_main_record()
-        informal_classification = main_record.get("scientificName", None)
+        informal_classification = main_record.get("scientificName")
         if informal_classification is None:
             pieces = []
             genus = main_record.get("genus")
@@ -110,14 +110,22 @@ class GEOMETransformer(Transformer):
         # -stateProvince, -continentOcean... (place names more general that the locality or most specific
         # rank place name) "
         keywords = self._place_names(True)
-        if "order" in self._source_record_main_record():
-            keywords.append(self._source_record_main_record()["order"])
-        if "phylum" in self._source_record_main_record():
-            keywords.append(self._source_record_main_record()["phylum"])
-        if "family" in self._source_record_main_record():
-            keywords.append(self._source_record_main_record()["family"])
-        if "class" in self._source_record_main_record():
-            keywords.append(self._source_record_main_record()["class"])
+        parent_record = self._source_record_parent_record()
+        microhabitat = parent_record.get("microHabitat")
+        if microhabitat is not None:
+            keywords.append(microhabitat)
+        order = self._source_record_main_record().get("order")
+        if order is not None:
+            keywords.append(order)
+        phylum = self._source_record_main_record().get("phylum")
+        if phylum is not None:
+            keywords.append(phylum)
+        family = self._source_record_main_record().get("family")
+        if family is not None:
+            keywords.append(family)
+        classname = self._source_record_main_record().get("class")
+        if classname is not None:
+            keywords.append(classname)
         return keywords
 
     def produced_by_id_string(self) -> typing.AnyStr:
@@ -143,12 +151,18 @@ class GEOMETransformer(Transformer):
         parent_record = self._source_record_parent_record()
         if parent_record is not None:
             description_pieces = []
+            event_remarks = parent_record.get("eventRemarks")
+            if event_remarks is not None:
+                description_pieces.append(event_remarks)
             expedition_code = parent_record.get("expeditionCode")
             if expedition_code is not None:
                 description_pieces.append(f"expeditionCode: {expedition_code}")
             sampling_protocol = parent_record.get("samplingProtocol")
             if sampling_protocol is not None:
                 description_pieces.append(f"samplingProtocol: {sampling_protocol}")
+            permit_information = parent_record.get("permitInformation")
+            if permit_information is not None:
+                description_pieces.append(f"permitInformation: {permit_information}")
             taxonomy_team = parent_record.get("taxTeam")
             if taxonomy_team is not None:
                 description_pieces.append(f"taxonomy team: {taxonomy_team}")
@@ -161,6 +175,11 @@ class GEOMETransformer(Transformer):
     def produced_by_feature_of_interest(self) -> typing.AnyStr:
         # TODO: implement
         # "[infer from specimen category, locality; need to so some unique values analysis]"
+        parent_record = self._source_record_parent_record()
+        if parent_record is not None:
+            microhabitat = parent_record.get("microhabitat")
+            if microhabitat is not None:
+                return f"microhabitat: {microhabitat}"
         return Transformer.NOT_PROVIDED
 
     def produced_by_responsibilities(self) -> typing.List[typing.AnyStr]:
@@ -217,7 +236,13 @@ class GEOMETransformer(Transformer):
     def sampling_site_description(self) -> typing.AnyStr:
         parent_record = self._source_record_parent_record()
         if parent_record is not None:
-            return parent_record.get("habitat", Transformer.NOT_PROVIDED)
+            habitat = parent_record.get("habitat")
+            if habitat is not None:
+                return habitat
+            else:
+                depth_to_bottom = parent_record.get("depthOfBottomInMeters")
+                if depth_to_bottom is not None:
+                    return f"Depth to bottom {depth_to_bottom} m"
         return Transformer.NOT_PROVIDED
 
     def sampling_site_label(self) -> typing.AnyStr:
@@ -231,7 +256,7 @@ class GEOMETransformer(Transformer):
         # https://github.com/isamplesorg/metadata/issues/35
         parent_record = self._source_record_parent_record()
         if parent_record is not None:
-            depth = parent_record.get("maximumDepthInMeters", None)
+            depth = parent_record.get("maximumDepthInMeters")
             if depth is not None:
                 return f"{depth} m"
         return Transformer.NOT_PROVIDED
@@ -268,6 +293,34 @@ class GEOMETransformer(Transformer):
         return Transformer.NOT_PROVIDED
 
     def curation_description(self) -> typing.AnyStr:
+        curation_description_pieces = []
+        main_record = self._source_record_main_record()
+        fixative = main_record.get("fixative")
+        if fixative is not None:
+            curation_description_pieces.append(f"fixative: {fixative}")
+        preservative = main_record.get("preservative")
+        if preservative is not None:
+            curation_description_pieces.append(f"preservative: {preservative}")
+        modified_by = main_record.get("modifiedBy")
+        if modified_by is not None:
+            curation_description_pieces.append(f"record modifiedBy: {modified_by}")
+        modified_reason = main_record.get("modifiedReason")
+        if modified_reason is not None:
+            curation_description_pieces.append(f"modifiedReason: {modified_reason}")
+        sample_identified_pieces = []
+        year_identified = main_record.get("yearIdentified")
+        if year_identified is not None:
+            sample_identified_pieces.append(year_identified)
+        month_identified = main_record.get("monthIdentified")
+        if month_identified is not None:
+            sample_identified_pieces.append(month_identified.zfill(2))
+        day_identified = main_record.get("dayIdentified")
+        if day_identified is not None:
+            sample_identified_pieces.append(day_identified.zfill(2))
+        if len(sample_identified_pieces) > 0:
+            curation_description_pieces.append(f"sample identified: {'-'.join(sample_identified_pieces)}")
+        if len(curation_description_pieces) > 0:
+            return "; ".join(curation_description_pieces)
         return Transformer.NOT_PROVIDED
 
     def curation_access_constraints(self) -> typing.AnyStr:
@@ -275,10 +328,10 @@ class GEOMETransformer(Transformer):
 
     def curation_location(self) -> typing.AnyStr:
         curation_pieces = []
-        tissue_well = self.source_record.get("tissue_well", None)
+        tissue_well = self.source_record.get("tissue_well")
         if tissue_well is not None:
             curation_pieces.append(f"tissueWell: {tissue_well}")
-        tissue_plate = self.source_record.get("tissue_plate", None)
+        tissue_plate = self.source_record.get("tissue_plate")
         if tissue_plate is not None:
             curation_pieces.append(f"tissuePlate: {tissue_plate}")
         if len(curation_pieces) > 0:
