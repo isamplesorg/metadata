@@ -1,0 +1,29 @@
+{
+    "@schema":  "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/28722/k2w66w62f",
+    "label": "Obj 1278000007",
+    "sampleIdentifier": "ark:/28722/k2w66w62f",
+    "description": "early bce/ce: -6700.0 | late bce/ce: -6700.0 | updated: 2021-06-27T23:41:53Z",
+    "hasContextCategory": ["Historic human occupation site"],
+    "hasMaterialCategory": ["Anthropogenic material"],
+    "hasSpecimenCategory": ["Artifacts"],
+    "informalClassification": [],
+    "keywords": ["The Eastern Korinthia Archaeological Survey", "Greece", "Corinthia", "EKAS Region", "Ayios Kosmas", "DU 1278"],
+    "producedBy": {
+        "label": "The Eastern Korinthia Archaeological Survey",
+        "description": "Datasets of an intensive pedestrian survey and regional study of the eastern Corinthia, Greece",
+        "hasFeatureOfInterest": "",
+        "responsibility": ["David K. Pettegrew", "Timothy E Gregory", "Daniel J Pullen", "Richard Rothaus", "Thomas F Tartaron"],
+        "resultTime": "2021-06-04T06:51:57Z",
+        "samplingSite": {
+            "description": "",
+            "label": "Object",
+            "location": {
+                "elevation": "",
+                "latitude": 37.90846,
+                "longitude": 22.966693
+            },
+            "placeName": ["Greece", "Corinthia", "EKAS Region", "Ayios Kosmas", "DU 1278"]
+        }
+    },
+}
