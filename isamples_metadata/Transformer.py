@@ -59,9 +59,7 @@ class Transformer(ABC):
                 "curationLocation": self.curation_location(),
                 "responsibility": self.curation_responsibility(),
             },
-            "relatedResource": [
-                self.related_resources()
-            ]
+            "relatedResource": self.related_resources()
         }
         return transformed_record
 

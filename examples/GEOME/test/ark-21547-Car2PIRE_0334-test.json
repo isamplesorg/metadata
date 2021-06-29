@@ -7,7 +7,7 @@
     "hasContextCategory": ["Marine Biome"],
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
-    "informalClassification": ["Gastropoda"],
+    "informalClassification": "Gastropoda",
     "keywords": ["Aceh", "Sumatra","Indonesia","Asia", "Mollusca"],
     "producedBy": {
         "@id":"ark:/21547/Cas2INDO_2016_SEU_1B",

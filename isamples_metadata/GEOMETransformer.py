@@ -97,7 +97,7 @@ class GEOMETransformer(Transformer):
             if "island" in parent_record:
                 place_names.append(parent_record["island"])
             if "islandGroup" in parent_record:
-                place_names.append(parent_record["island"])
+                place_names.append(parent_record["islandGroup"])
             if "country" in parent_record:
                 place_names.append(parent_record["country"])
             if "continentOcean" in parent_record:
@@ -110,14 +110,14 @@ class GEOMETransformer(Transformer):
         # -stateProvince, -continentOcean... (place names more general that the locality or most specific
         # rank place name) "
         keywords = self._place_names(True)
-        if "order" in self.source_record:
-            keywords.append(self.source_record["order"])
-        if "phylum" in self.source_record:
-            keywords.append(self.source_record["phylum"])
-        if "family" in self.source_record:
-            keywords.append(self.source_record["family"])
-        if "class" in self.source_record:
-            keywords.append(self.source_record["class"])
+        if "order" in self._source_record_main_record():
+            keywords.append(self._source_record_main_record()["order"])
+        if "phylum" in self._source_record_main_record():
+            keywords.append(self._source_record_main_record()["phylum"])
+        if "family" in self._source_record_main_record():
+            keywords.append(self._source_record_main_record()["family"])
+        if "class" in self._source_record_main_record():
+            keywords.append(self._source_record_main_record()["class"])
         return keywords
 
     def produced_by_id_string(self) -> typing.AnyStr:
@@ -130,7 +130,7 @@ class GEOMETransformer(Transformer):
         parent_record = self._source_record_parent_record()
         if parent_record is not None:
             label_pieces = []
-            event_id = parent_record.get("eventId")
+            event_id = parent_record.get("eventID")
             if event_id is not None:
                 label_pieces.append(event_id)
             expedition_code = parent_record.get("expeditionCode")
@@ -169,10 +169,16 @@ class GEOMETransformer(Transformer):
             responsibilities_pieces = []
             collector_list = parent_record.get("collectorList")
             if collector_list is not None:
-                for collector in collector_list.split(", "):
-                    responsibilities_pieces.append(f"collector:{collector}")
-                for collector in collector_list.split("|"):
-                    responsibilities_pieces.append(f"collector:{collector}")
+                # Have to do some goofy checking here because this string-delimited field can either be a singleton
+                # or have different delimiters
+                if "," in collector_list:
+                    for collector in collector_list.split(", "):
+                        responsibilities_pieces.append(f"collector:{collector}")
+                elif "|" in collector_list:
+                    for collector in collector_list.split("|"):
+                        responsibilities_pieces.append(f"collector:{collector}")
+                else:
+                    responsibilities_pieces.append(f"collector:{collector_list}")
             principal_investigator = parent_record.get("principalInvestigator")
             if principal_investigator is not None:
                 responsibilities_pieces.append(
@@ -199,9 +205,11 @@ class GEOMETransformer(Transformer):
                 result_time_pieces.append(year)
             month = parent_record.get("monthCollected")
             if month is not None:
+                month = month.zfill(2)
                 result_time_pieces.append(month)
             day = parent_record.get("dayCollected")
             if day is not None:
+                day = day.zfill(2)
                 result_time_pieces.append(day)
             return "-".join(result_time_pieces)
         return Transformer.NOT_PROVIDED
@@ -225,7 +233,7 @@ class GEOMETransformer(Transformer):
         if parent_record is not None:
             depth = parent_record.get("maximumDepthInMeters", None)
             if depth is not None:
-                return f"${depth} m"
+                return f"{depth} m"
         return Transformer.NOT_PROVIDED
 
     def _geo_location_float_value(
@@ -248,7 +256,7 @@ class GEOMETransformer(Transformer):
         return self._place_names(False)
 
     def sample_registrant(self) -> typing.AnyStr:
-        return self.source_record.get("sampleEnteredBy", Transformer.NOT_PROVIDED)
+        return self._source_record_main_record().get("sampleEnteredBy", Transformer.NOT_PROVIDED)
 
     def sample_sampling_purpose(self) -> typing.AnyStr:
         # TODO: implement
@@ -278,8 +286,8 @@ class GEOMETransformer(Transformer):
         return Transformer.NOT_PROVIDED
 
     def curation_responsibility(self) -> typing.AnyStr:
-        if "institutionCode" in self.source_record:
-            institution_code = self.source_record["institutionCode"]
+        if "institutionCode" in self._source_record_main_record():
+            institution_code = self._source_record_main_record()["institutionCode"]
             return f"curator:{institution_code}"
         return Transformer.NOT_PROVIDED
 
@@ -296,5 +304,6 @@ class GEOMETransformer(Transformer):
                     child_resource["label"] = "subsample tissue"
                     child_resource["relationship"] = "subsample"
                     child_resource["target"] = child["bcid"]
+                    related_resources.append(child_resource)
             return related_resources
         return []
