@@ -83,12 +83,42 @@ class GEOMETransformer(Transformer):
             informal_classification = " ".join(pieces)
         return informal_classification
 
+    def _place_names(self, only_general: bool):
+        parent_record = self._source_record_parent_record()
+        if parent_record is not None:
+            place_names = []
+            if not only_general:
+                if "county" in parent_record:
+                    place_names.append(parent_record["county"])
+                if "locality" in parent_record:
+                    place_names.append(parent_record["locality"])
+            if "stateProvince" in parent_record:
+                place_names.append(parent_record["stateProvince"])
+            if "island" in parent_record:
+                place_names.append(parent_record["island"])
+            if "islandGroup" in parent_record:
+                place_names.append(parent_record["island"])
+            if "country" in parent_record:
+                place_names.append(parent_record["country"])
+            if "continentOcean" in parent_record:
+                place_names.append(parent_record["continentOcean"])
+            return place_names
+        return []
+
     def keywords(self) -> typing.List[typing.AnyStr]:
-        # TODO: implement
         # "JSON array of values from record/ -order, -phylum, -family, -class, and parent/ -country, -county,
         # -stateProvince, -continentOcean... (place names more general that the locality or most specific
         # rank place name) "
-        return []
+        keywords = self._place_names(True)
+        if "order" in self.source_record:
+            keywords.append(self.source_record["order"])
+        if "phylum" in self.source_record:
+            keywords.append(self.source_record["phylum"])
+        if "family" in self.source_record:
+            keywords.append(self.source_record["family"])
+        if "class" in self.source_record:
+            keywords.append(self.source_record["class"])
+        return keywords
 
     def produced_by_id_string(self) -> typing.AnyStr:
         parent_record = self._source_record_parent_record()
@@ -145,7 +175,9 @@ class GEOMETransformer(Transformer):
                     responsibilities_pieces.append(f"collector:{collector}")
             principal_investigator = parent_record.get("principalInvestigator")
             if principal_investigator is not None:
-                responsibilities_pieces.append(f"principalInvestigator:{principal_investigator}")
+                responsibilities_pieces.append(
+                    f"principalInvestigator:{principal_investigator}"
+                )
             identified_by = parent_record.get("identifiedBy")
             if identified_by is not None:
                 responsibilities_pieces.append(f"identifiedBy:{identified_by}")
@@ -196,7 +228,9 @@ class GEOMETransformer(Transformer):
                 return f"${depth} m"
         return Transformer.NOT_PROVIDED
 
-    def _geo_location_float_value(self, key: typing.AnyStr) -> typing.Optional[typing.SupportsFloat]:
+    def _geo_location_float_value(
+        self, key: typing.AnyStr
+    ) -> typing.Optional[typing.SupportsFloat]:
         parent_record = self._source_record_parent_record()
         if parent_record is not None:
             geo_location_str = parent_record.get(key)
@@ -211,25 +245,7 @@ class GEOMETransformer(Transformer):
         return self._geo_location_float_value("decimalLongitude")
 
     def sampling_site_place_names(self) -> typing.List:
-        parent_record = self._source_record_parent_record()
-        if parent_record is not None:
-            place_names = []
-            if "county" in parent_record:
-                place_names.append(parent_record["county"])
-            if "locality" in parent_record:
-                place_names.append(parent_record["locality"])
-            if "stateProvince" in parent_record:
-                place_names.append(parent_record["stateProvince"])
-            if "island" in parent_record:
-                place_names.append(parent_record["island"])
-            if "islandGroup" in parent_record:
-                place_names.append(parent_record["island"])
-            if "country" in parent_record:
-                place_names.append(parent_record["country"])
-            if "continentOcean" in parent_record:
-                place_names.append(parent_record["continentOcean"])
-            return place_names
-        return []
+        return self._place_names(False)
 
     def sample_registrant(self) -> typing.AnyStr:
         return self.source_record.get("sampleEnteredBy", Transformer.NOT_PROVIDED)
@@ -237,3 +253,48 @@ class GEOMETransformer(Transformer):
     def sample_sampling_purpose(self) -> typing.AnyStr:
         # TODO: implement
         return Transformer.NOT_PROVIDED
+
+    # region Curation
+
+    def curation_label(self) -> typing.AnyStr:
+        return Transformer.NOT_PROVIDED
+
+    def curation_description(self) -> typing.AnyStr:
+        return Transformer.NOT_PROVIDED
+
+    def curation_access_constraints(self) -> typing.AnyStr:
+        return Transformer.NOT_PROVIDED
+
+    def curation_location(self) -> typing.AnyStr:
+        curation_pieces = []
+        tissue_well = self.source_record.get("tissue_well", None)
+        if tissue_well is not None:
+            curation_pieces.append(f"tissueWell: {tissue_well}")
+        tissue_plate = self.source_record.get("tissue_plate", None)
+        if tissue_plate is not None:
+            curation_pieces.append(f"tissuePlate: {tissue_plate}")
+        if len(curation_pieces) > 0:
+            return ", ".join(curation_pieces)
+        return Transformer.NOT_PROVIDED
+
+    def curation_responsibility(self) -> typing.AnyStr:
+        if "institutionCode" in self.source_record:
+            institution_code = self.source_record["institutionCode"]
+            return f"curator:{institution_code}"
+        return Transformer.NOT_PROVIDED
+
+    # endregion
+
+    def related_resources(self) -> typing.List[typing.Dict]:
+        if "children" in self.source_record:
+            related_resources = []
+            children = self.source_record["children"]
+            for child in children:
+                child_resource = {}
+                entity = child["entity"]
+                if entity == "Tissue":
+                    child_resource["label"] = "subsample tissue"
+                    child_resource["relationship"] = "subsample"
+                    child_resource["target"] = child["bcid"]
+            return related_resources
+        return []

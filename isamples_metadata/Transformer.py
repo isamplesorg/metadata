@@ -52,6 +52,16 @@ class Transformer(ABC):
             },
             "registrant": self.sample_registrant(),
             "samplingPurpose": self.sample_sampling_purpose(),
+            "curation": {
+                "label": self.curation_label(),
+                "description": self.curation_description(),
+                "accessConstraints": self.curation_access_constraints(),
+                "curationLocation": self.curation_location(),
+                "responsibility": self.curation_responsibility(),
+            },
+            "relatedResource": [
+                self.related_resources()
+            ]
         }
         return transformed_record
 
@@ -59,7 +69,7 @@ class Transformer(ABC):
         """The value for the @id key in the iSamples record"""
         pass
 
-    def sample_identifier_string(self) ->typing.AnyStr:
+    def sample_identifier_string(self) -> typing.AnyStr:
         pass
 
     @abstractmethod
@@ -175,6 +185,29 @@ class Transformer(ABC):
     def sampling_site_place_names(self) -> typing.List:
         """The sampling site longitude"""
         pass
+
+    # region Curation information
+
+    # For the curation fields, not all of the collections have them, so provide stubs returning the empty sentinel
+    def curation_label(self) -> typing.AnyStr:
+        return Transformer.NOT_PROVIDED
+
+    def curation_description(self) -> typing.AnyStr:
+        return Transformer.NOT_PROVIDED
+
+    def curation_access_constraints(self) -> typing.AnyStr:
+        return Transformer.NOT_PROVIDED
+
+    def curation_location(self) -> typing.AnyStr:
+        return Transformer.NOT_PROVIDED
+
+    def curation_responsibility(self) -> typing.AnyStr:
+        return Transformer.NOT_PROVIDED
+
+    # endregion
+
+    def related_resources(self) -> typing.List[typing.Dict]:
+        return []
 
 
 class AbstractCategoryMapper(ABC):
