@@ -1,0 +1,29 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/28722/k2rj4jk2p",
+    "label": "98626 (1)",
+    "sampleidentifier": "ark:/28722/k2rj4jk2p",
+    "description": "'early bce/ce': -200.0 | 'late bce/ce': 360.0 | updated: 2017-02-09T02:59:59Z",
+    "hasContextCategory": ["Historic human occupation site"],
+    "hasMaterialCategory": ["Anthropogenic material"],
+    "hasSpecimenCategory": ["Artifacts"],
+    "informalClassification": [],
+    "keywords": ["Petra Great Temple Excavations", "Jordan", "Petra Great Temple", "Lower Temenos", "Trench 98", "Locus 4", "Seq. 98626"],
+    "producedBy": {
+        "label": "Petra Great Temple Excavations",
+        "description": "Brown University Excavations at the Great Temple of Petra, Jordan",
+        "hasFeatureOfInterest": "",
+        "responsibility": ["Martha Sharp Joukowsky"],
+        "resultTime": "2007-11-11T00:00:00Z",
+        "samplingSite": {
+            "description": "",
+            "label": "Object",
+            "location": {
+                "elevation": "",
+                "latitude": 30.3287,
+                "longitude": 35.4421
+            },
+            "placeName": ["Jordan", "Petra Great Temple", "Lower Temenos", "Trench 98", "Locus 4", "Seq. 98626"]
+        }
+    }
+}

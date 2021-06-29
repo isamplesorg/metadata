@@ -1,0 +1,29 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/28722/k2r78rh73",
+    "label": "11208747",
+    "sampleidentifier": "ark:/28722/k2r78rh73",
+    "description": "'early bce/ce': 1820.0 | 'late bce/ce': 1950.0 | updated: 2021-06-27T19:55:08Z",
+    "hasContextCategory": ["Historic human occupation site"],
+    "hasMaterialCategory": ["Anthropogenic material"],
+    "hasSpecimenCategory": ["Artifacts"],
+    "informalClassification": [],
+    "keywords": ["Historic Fort Snelling", "United States", "Minnesota", "Fort Snelling", "Fort Snelling Short Barracks", "10 S :: 20 E east half"],
+    "producedBy": {
+        "label": "Historic Fort Snelling",
+        "description": "Objects from the Short Barracks of Fort Snelling, at the confluence of the Mississippi and Minnesota Rivers",
+        "hasFeatureOfInterest": "",
+        "responsibility": ["Nancy Hoffman"],
+        "resultTime": "2016-06-23T19:15:39Z",
+        "samplingSite": {
+            "description": "'Consists of': kaolin | 'Has type': pipes (smoking equipment)",
+            "label": "Object",
+            "location": {
+                "elevation": "",
+                "latitude": 44.893131,
+                "longitude": -93.181061
+            },
+            "placeName": ["United States", "Minnesota", "Fort Snelling", "Fort Snelling Short Barracks", "10 S :: 20 E east half"]
+        }
+    }
+}

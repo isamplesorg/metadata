@@ -1,0 +1,29 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/28722/k25m6n269",
+    "label": "PC 19710276",
+    "sampleidentifier": "ark:/28722/k25m6n269",
+    "description": "'early bce/ce': -700.0 | 'late bce/ce': -535.0 | updated: 2021-06-27T20:38:12Z",
+    "hasContextCategory": ["Historic human occupation site"],
+    "hasMaterialCategory": ["Anthropogenic material"],
+    "hasSpecimenCategory": ["Artifacts"],
+    "informalClassification": [],
+    "keywords": ["Murlo", "United States", "Italy", "Poggio Civitate", "Tesoro Rectangle", "Tesoro Rectangle 7", "1971, ID:283"],
+    "producedBy": {
+        "label": "Murlo",
+        "description": "Poggio Civitate Excavation Project",
+        "hasFeatureOfInterest": "",
+        "responsibility": ["Anthony Tuck"],
+        "resultTime": "2012-12-28T00:00:00Z",
+        "samplingSite": {
+            "description": "'Consists of': bronze | 'Has type': artefact | 'Temporal Coverage': Archaic (580 BCE - 482 BCE) | 'Temporal Coverage': Orientalizing (750 BCE - 582 BCE) ",
+            "label": "Object",
+            "location": {
+                "elevation": "",
+                "latitude": 43.153368,
+                "longitude": 11.401406
+            },
+            "placeName": ["Italy", "Poggio Civitate", "Tesoro Rectangle", "Tesoro Rectangle 7", "1971, ID:283"]
+        }
+    }
+}
