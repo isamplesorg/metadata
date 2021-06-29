@@ -3,3 +3,37 @@ Question and Problem:
     2) some children fields aren't mapped to the iSamples.
     3) some fields need uniform format. 
         e.g in the description, should we use ";" or "|" to distinguish different infomation? 
+    4) As for "hascontextcategory", we roughly use sampledfeature from the record to represent this field. 
+ 
+ 
+ 
+
+Ark list (14 total)
+ 
+ark:/21547/Dei2BOMAN_3342
+ 
+ark:/21547/AvL2C02_201705281001
+ 
+ark:/21547/uL2FTP_3175_tissue
+ 
+ark:/21547/Dlt2K0147A1
+ 
+ark:/21547/DXw290_SCP
+ 
+ark:/21547/DXw21700400292
+ 
+ark:/21547/Dei2BOMAN_3337
+
+ark:/21547/Caz2ES25_H02
+
+ark:/21547/Clq2ES30_A9
+
+ark:/21547/DXw216017_00089
+
+ark:/21547/DXw22_SBWMA
+
+ark:/21547/DXw2ADA_18Feb16_21
+
+ark:/21547/Dei2BOMAN_3584
+
+ark:/21547/mx2CMU_176
