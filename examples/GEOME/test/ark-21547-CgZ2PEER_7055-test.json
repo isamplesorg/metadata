@@ -7,7 +7,7 @@
     "hasContextCategory": [""],
     "hasMaterialCategory": [""],
     "hasSpecimenCategory": [""],
-    "informalClassification": "",
+    "informalClassification": [""],
     "keywords": ["Lombok", "Indonesia","West Nusa Tenggara","Annelida"],
     "producedBy": {
         "@id":"ark:/21547/Cga2INDO_224",

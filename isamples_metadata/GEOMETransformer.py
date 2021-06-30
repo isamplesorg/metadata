@@ -14,18 +14,18 @@ class GEOMETransformer(Transformer):
 
     ARK_PREFIX = "ark:/"
 
-    def _source_record_main_record(self):
+    def _source_record_main_record(self) -> typing.Dict:
         # The sub-record for the main record, as opposed to the parent or children records
         return self.source_record["record"]
 
-    def _source_record_parent_record(self):
+    def _source_record_parent_record(self) -> typing.Dict:
         # The sub-record for the parent record
         return self.source_record["parent"]
 
-    def _id_minus_prefix(self):
+    def _id_minus_prefix(self) -> typing.AnyStr:
         return self._source_record_main_record()["bcid"].removeprefix(self.ARK_PREFIX)
 
-    def id_string(self):
+    def id_string(self) -> typing.AnyStr:
         return f"metadata/{self._id_minus_prefix()}"
 
     def sample_label(self) -> typing.AnyStr:
@@ -130,21 +130,22 @@ class GEOMETransformer(Transformer):
         # ["'Whole organism'  unless record/entity, record/basisOfRecord, or record/collectionCode indicate otherwise"]
         return ["Whole organism"]
 
-    def informal_classification(self) -> typing.AnyStr:
+    def informal_classification(self) -> typing.List[typing.AnyStr]:
         main_record = self._source_record_main_record()
-        informal_classification = main_record.get("scientificName")
-        if informal_classification is None:
-            pieces = []
+        scientific_name = main_record.get("scientificName")
+        if scientific_name is None:
+            informal_classification_pieces = []
             genus = main_record.get("genus")
             if genus is not None:
-                pieces.append(genus)
+                informal_classification_pieces.append(genus)
             epithet = main_record.get("specificEpithet")
             if epithet is not None:
-                pieces.append(epithet)
-            informal_classification = " ".join(pieces)
-        return informal_classification
+                informal_classification_pieces.append(epithet)
+            return informal_classification_pieces
+        else:
+            return [scientific_name]
 
-    def _place_names(self, only_general: bool):
+    def _place_names(self, only_general: bool) -> typing.List[typing.AnyStr]:
         parent_record = self._source_record_parent_record()
         if parent_record is not None:
             place_names = []
