@@ -49,10 +49,71 @@ class GEOMETransformer(Transformer):
         return "/"
 
     def sample_description(self) -> typing.AnyStr:
-        # TODO: implement
-        # [concatenate key:value pairs from other content in record/ that is not mapped, e.g.
-        # 'voucherCatalogNumber:USNM:Fish:433156'; record/preservative, ]
-        return ""
+        description_pieces = []
+        main_record = self._source_record_main_record()
+
+        self._transform_key_to_label(
+            "minimumChronometricAgeReferenceSystem", main_record, description_pieces
+        )
+        self._transform_key_to_label(
+            "maximumChronometricAgeReferenceSystem", main_record, description_pieces
+        )
+        self._transform_key_to_label(
+            "verbatimAgeValue", main_record, description_pieces
+        )
+        self._transform_key_to_label("ageValue", main_record, description_pieces)
+        self._transform_key_to_label("basisOfRecord", main_record, description_pieces)
+        self._transform_key_to_label(
+            "dynamicProperties", main_record, description_pieces
+        )
+        self._transform_key_to_label(
+            "establishmentMeans", main_record, description_pieces
+        )
+        self._transform_key_to_label(
+            "genbankSpecimenVoucher", main_record, description_pieces
+        )
+        self._transform_key_to_label(
+            "identificationRemarks", main_record, description_pieces
+        )
+        self._transform_key_to_label(
+            "identificationVerificationStatus", main_record, description_pieces
+        )
+        self._transform_key_to_label("individualCount", main_record, description_pieces)
+        self._transform_key_to_label(
+            "morphospeciesDescription", main_record, description_pieces
+        )
+        self._transform_key_to_label(
+            "nomenclaturalCode", main_record, description_pieces
+        )
+        self._transform_key_to_label(
+            "occurrenceRemarks", main_record, description_pieces
+        )
+        self._transform_key_to_label("organismID", main_record, description_pieces)
+        self._transform_key_to_label(
+            "organismQuantity", main_record, description_pieces
+        )
+        self._transform_key_to_label(
+            "organismQuantityType", main_record, description_pieces
+        )
+        self._transform_key_to_label("organismRemarks", main_record, description_pieces)
+        self._transform_key_to_label(
+            "otherCatalogNumbers", main_record, description_pieces
+        )
+        self._transform_key_to_label(
+            "previousIdentifications", main_record, description_pieces
+        )
+        self._transform_key_to_label("taxonRemarks", main_record, description_pieces)
+        self._transform_key_to_label("typeStatus", main_record, description_pieces)
+        self._transform_key_to_label(
+            "verbatimLifeStage", main_record, description_pieces
+        )
+        self._transform_key_to_label("weight", main_record, description_pieces)
+        self._transform_key_to_label("weightUnits", main_record, description_pieces)
+        self._transform_key_to_label("lengthUnits", main_record, description_pieces)
+        self._transform_key_to_label("length", main_record, description_pieces)
+        self._transform_key_to_label("sex", main_record, description_pieces)
+
+        return " | ".join(description_pieces)
 
     def has_context_categories(self) -> typing.List[typing.AnyStr]:
         # TODO: implement
@@ -88,10 +149,10 @@ class GEOMETransformer(Transformer):
         if parent_record is not None:
             place_names = []
             if not only_general:
-                if "county" in parent_record:
-                    place_names.append(parent_record["county"])
                 if "locality" in parent_record:
                     place_names.append(parent_record["locality"])
+            if "county" in parent_record:
+                place_names.append(parent_record["county"])
             if "stateProvince" in parent_record:
                 place_names.append(parent_record["stateProvince"])
             if "island" in parent_record:
@@ -147,6 +208,19 @@ class GEOMETransformer(Transformer):
             return " ".join(label_pieces)
         return Transformer.NOT_PROVIDED
 
+    @staticmethod
+    def _transform_key_to_label(
+        key: typing.AnyStr,
+        source_dict: typing.Dict,
+        dest_list: typing.List[typing.AnyStr],
+        label: typing.AnyStr = None,
+    ):
+        if label is None:
+            label = key
+        value = source_dict.get(key)
+        if value is not None:
+            dest_list.append(f"{label}: {value}")
+
     def produced_by_description(self) -> typing.AnyStr:
         parent_record = self._source_record_parent_record()
         if parent_record is not None:
@@ -154,21 +228,19 @@ class GEOMETransformer(Transformer):
             event_remarks = parent_record.get("eventRemarks")
             if event_remarks is not None:
                 description_pieces.append(event_remarks)
-            expedition_code = parent_record.get("expeditionCode")
-            if expedition_code is not None:
-                description_pieces.append(f"expeditionCode: {expedition_code}")
-            sampling_protocol = parent_record.get("samplingProtocol")
-            if sampling_protocol is not None:
-                description_pieces.append(f"samplingProtocol: {sampling_protocol}")
-            permit_information = parent_record.get("permitInformation")
-            if permit_information is not None:
-                description_pieces.append(f"permitInformation: {permit_information}")
-            taxonomy_team = parent_record.get("taxTeam")
-            if taxonomy_team is not None:
-                description_pieces.append(f"taxonomy team: {taxonomy_team}")
-            project_id = parent_record.get("projectId")
-            if project_id is not None:
-                description_pieces.append(f"projectId: {project_id}")
+            self._transform_key_to_label(
+                "samplingProtocol", parent_record, description_pieces
+            )
+            self._transform_key_to_label(
+                "permitInformation", parent_record, description_pieces
+            )
+            self._transform_key_to_label(
+                "expeditionCode", parent_record, description_pieces
+            )
+            self._transform_key_to_label(
+                "taxTeam", parent_record, description_pieces, "taxonomy team"
+            )
+            self._transform_key_to_label("projectId", parent_record, description_pieces)
             return " | ".join(description_pieces)
         return Transformer.NOT_PROVIDED
 
@@ -192,26 +264,27 @@ class GEOMETransformer(Transformer):
                 # or have different delimiters
                 if "," in collector_list:
                     for collector in collector_list.split(", "):
-                        responsibilities_pieces.append(f"collector:{collector}")
+                        responsibilities_pieces.append(f"collector: {collector}")
                 elif "|" in collector_list:
                     for collector in collector_list.split("|"):
-                        responsibilities_pieces.append(f"collector:{collector}")
+                        responsibilities_pieces.append(f"collector: {collector}")
                 else:
-                    responsibilities_pieces.append(f"collector:{collector_list}")
-            principal_investigator = parent_record.get("principalInvestigator")
-            if principal_investigator is not None:
-                responsibilities_pieces.append(
-                    f"principalInvestigator:{principal_investigator}"
-                )
-            identified_by = parent_record.get("identifiedBy")
-            if identified_by is not None:
-                responsibilities_pieces.append(f"identifiedBy:{identified_by}")
-            tax_team = parent_record.get("taxTeam")
-            if tax_team is not None:
-                responsibilities_pieces.append(f"taxonomy team:{tax_team}")
-            entered_by = parent_record.get("eventEnteredBy")
-            if entered_by is not None:
-                responsibilities_pieces.append(f"event registrant:{entered_by}")
+                    responsibilities_pieces.append(f"collector :{collector_list}")
+            self._transform_key_to_label(
+                "principalInvestigator", parent_record, responsibilities_pieces
+            )
+            self._transform_key_to_label(
+                "identifiedBy", parent_record, responsibilities_pieces
+            )
+            self._transform_key_to_label(
+                "taxTeam", parent_record, responsibilities_pieces, "taxonomy team"
+            )
+            self._transform_key_to_label(
+                "eventEnteredBy",
+                parent_record,
+                responsibilities_pieces,
+                "event registrant",
+            )
             return responsibilities_pieces
         return []
 
@@ -224,12 +297,10 @@ class GEOMETransformer(Transformer):
                 result_time_pieces.append(year)
             month = parent_record.get("monthCollected")
             if month is not None:
-                month = month.zfill(2)
-                result_time_pieces.append(month)
+                result_time_pieces.append(month.zfill(2))
             day = parent_record.get("dayCollected")
             if day is not None:
-                day = day.zfill(2)
-                result_time_pieces.append(day)
+                result_time_pieces.append(day.zfill(2))
             return "-".join(result_time_pieces)
         return Transformer.NOT_PROVIDED
 
@@ -281,7 +352,9 @@ class GEOMETransformer(Transformer):
         return self._place_names(False)
 
     def sample_registrant(self) -> typing.AnyStr:
-        return self._source_record_main_record().get("sampleEnteredBy", Transformer.NOT_PROVIDED)
+        return self._source_record_main_record().get(
+            "sampleEnteredBy", Transformer.NOT_PROVIDED
+        )
 
     def sample_sampling_purpose(self) -> typing.AnyStr:
         # TODO: implement
@@ -295,18 +368,19 @@ class GEOMETransformer(Transformer):
     def curation_description(self) -> typing.AnyStr:
         curation_description_pieces = []
         main_record = self._source_record_main_record()
-        fixative = main_record.get("fixative")
-        if fixative is not None:
-            curation_description_pieces.append(f"fixative: {fixative}")
-        preservative = main_record.get("preservative")
-        if preservative is not None:
-            curation_description_pieces.append(f"preservative: {preservative}")
-        modified_by = main_record.get("modifiedBy")
-        if modified_by is not None:
-            curation_description_pieces.append(f"record modifiedBy: {modified_by}")
-        modified_reason = main_record.get("modifiedReason")
-        if modified_reason is not None:
-            curation_description_pieces.append(f"modifiedReason: {modified_reason}")
+        self._transform_key_to_label(
+            "fixative", main_record, curation_description_pieces
+        )
+        self._transform_key_to_label(
+            "preservative", main_record, curation_description_pieces
+        )
+        self._transform_key_to_label(
+            "modifiedBy", main_record, curation_description_pieces, "record modifiedBy"
+        )
+        self._transform_key_to_label(
+            "modifiedReason", main_record, curation_description_pieces, "modifiedReason"
+        )
+
         sample_identified_pieces = []
         year_identified = main_record.get("yearIdentified")
         if year_identified is not None:
@@ -318,7 +392,9 @@ class GEOMETransformer(Transformer):
         if day_identified is not None:
             sample_identified_pieces.append(day_identified.zfill(2))
         if len(sample_identified_pieces) > 0:
-            curation_description_pieces.append(f"sample identified: {'-'.join(sample_identified_pieces)}")
+            curation_description_pieces.append(
+                f"sample identified: {'-'.join(sample_identified_pieces)}"
+            )
         if len(curation_description_pieces) > 0:
             return "; ".join(curation_description_pieces)
         return Transformer.NOT_PROVIDED

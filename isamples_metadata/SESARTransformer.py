@@ -259,7 +259,7 @@ class SESARTransformer(Transformer):
             self.sample_identifier_scheme(), self.sample_identifier_value()
         )
 
-    def sample_identifier_string(self) ->typing.AnyStr:
+    def sample_identifier_string(self) -> typing.AnyStr:
         return f"{self.sample_identifier_scheme()}:{self.sample_identifier_value()}"
 
     def sample_identifier_scheme(self) -> typing.AnyStr:
