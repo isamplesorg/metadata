@@ -11,9 +11,13 @@ def _run_transformer(isamples_path, source_path, transformer_class):
         source_record = json.load(source_file)
         transformer = transformer_class(source_record)
         transformed_to_isamples_record = transformer.transform()
-        with open(isamples_path) as isamples_file:
-            isamples_record = json.load(isamples_file)
-            assert transformed_to_isamples_record == isamples_record
+        _assert_transformed_dictionary(isamples_path, transformed_to_isamples_record)
+
+
+def _assert_transformed_dictionary(isamples_path, transformed_to_isamples_record):
+    with open(isamples_path) as isamples_file:
+        isamples_record = json.load(isamples_file)
+        assert transformed_to_isamples_record == isamples_record
 
 
 SESAR_test_values = [
@@ -52,3 +56,21 @@ GEOME_test_values = [
 @pytest.mark.parametrize("geome_source_path,isamples_path", GEOME_test_values)
 def test_geome_dicts_equal(geome_source_path, isamples_path):
     _run_transformer(isamples_path, geome_source_path, GEOMETransformer)
+
+
+GEOME_child_test_values = [
+    (
+        "../examples/GEOME/raw/ark-21547-Car2PIRE_0334.json",
+        "../examples/GEOME/test/ark-21547-Car2PIRE_0334-child-test.json",
+    )
+]
+
+
+@pytest.mark.parametrize("geome_source_path,isamples_path", GEOME_child_test_values)
+def test_geome_child_dicts_equal(geome_source_path, isamples_path):
+    with open(geome_source_path) as source_file:
+        source_record = json.load(source_file)
+        transformer = GEOMETransformer(source_record)
+        child_transformer = transformer.child_transformers[0]
+        transformed_to_isamples_record = child_transformer.transform()
+        _assert_transformed_dictionary(isamples_path, transformed_to_isamples_record)

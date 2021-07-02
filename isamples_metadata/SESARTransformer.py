@@ -226,7 +226,7 @@ class SESARTransformer(Transformer):
     """Concrete transformer class for going from a SESAR record to an iSamples record"""
 
     def transform(self) -> typing.Dict:
-        transformed_record = super(SESARTransformer, self).transform()
+        transformed_record = super().transform()
         return transformed_record
 
     def _source_record_description(self) -> typing.Dict:

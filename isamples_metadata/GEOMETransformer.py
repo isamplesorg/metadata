@@ -4,12 +4,34 @@ from isamples_metadata.Transformer import (
     Transformer,
 )
 
+TISSUE_ENTITY = "Tissue"
+
+
+# Forward declarations appear to be the cleanest way to manage the circular dependency between these two classes
+class GEOMETransformer(Transformer):
+    pass
+
+
+class GEOMEChildTransformer(GEOMETransformer):
+    pass
+
 
 class GEOMETransformer(Transformer):
     """Concrete transformer class for going from a GEOME record to an iSamples record"""
 
+    def __init__(self, source_record: typing.Dict):
+        super().__init__(source_record)
+        self._child_transformers = []
+        children = self._get_children()
+        for child_record in children:
+            entity = child_record.get("entity")
+            if entity == TISSUE_ENTITY:
+                self._child_transformers.append(
+                    GEOMEChildTransformer(source_record, child_record)
+                )
+
     def transform(self) -> typing.Dict:
-        transformed_record = super(GEOMETransformer, self).transform()
+        transformed_record = super().transform()
         return transformed_record
 
     ARK_PREFIX = "ark:/"
@@ -404,16 +426,9 @@ class GEOMETransformer(Transformer):
         return Transformer.NOT_PROVIDED
 
     def curation_location(self) -> typing.AnyStr:
-        curation_pieces = []
-        tissue_well = self.source_record.get("tissue_well")
-        if tissue_well is not None:
-            curation_pieces.append(f"tissueWell: {tissue_well}")
-        tissue_plate = self.source_record.get("tissue_plate")
-        if tissue_plate is not None:
-            curation_pieces.append(f"tissuePlate: {tissue_plate}")
-        if len(curation_pieces) > 0:
-            return ", ".join(curation_pieces)
-        return Transformer.NOT_PROVIDED
+        return self._source_record_main_record().get(
+            "institutionCode", Transformer.NOT_PROVIDED
+        )
 
     def curation_responsibility(self) -> typing.AnyStr:
         if "institutionCode" in self._source_record_main_record():
@@ -423,17 +438,92 @@ class GEOMETransformer(Transformer):
 
     # endregion
 
-    def related_resources(self) -> typing.List[typing.Dict]:
+    def _get_children(self) -> typing.List[typing.Dict]:
+        children = []
         if "children" in self.source_record:
-            related_resources = []
             children = self.source_record["children"]
-            for child in children:
-                child_resource = {}
-                entity = child["entity"]
-                if entity == "Tissue":
-                    child_resource["label"] = "subsample tissue"
-                    child_resource["relationship"] = "subsample"
-                    child_resource["target"] = child["bcid"]
-                    related_resources.append(child_resource)
-            return related_resources
+        return children
+
+    def related_resources(self) -> typing.List[typing.Dict]:
+        related_resources = []
+        for child in self._get_children():
+            child_resource = {}
+            entity = child["entity"]
+            if entity == TISSUE_ENTITY:
+                child_resource["label"] = "subsample tissue"
+                child_resource["relationship"] = "subsample"
+                child_resource["target"] = child["bcid"]
+                related_resources.append(child_resource)
+        return related_resources
+
+    @property
+    def child_transformers(self) -> typing.List[GEOMEChildTransformer]:
+        return self._child_transformers
+
+
+class GEOMEChildTransformer(GEOMETransformer):
+    """GEOME child record subclass transformer -- uses some fields from the parent and some from the child"""
+
+    def __init__(self, source_record: typing.Dict, child_record: typing.Dict):
+        self.source_record = source_record
+        self.child_record = child_record
+
+    def _id_minus_prefix(self) -> typing.AnyStr:
+        return self.child_record["bcid"].removeprefix(self.ARK_PREFIX)
+
+    def sample_label(self) -> typing.AnyStr:
+        return self.child_record["tissueID"]
+
+    def sample_identifier_string(self) -> typing.AnyStr:
+        return self.child_record["bcid"]
+
+    def sample_description(self) -> typing.AnyStr:
+        # TODO
+        return ""
+
+    def has_specimen_categories(self) -> typing.List[typing.AnyStr]:
+        return ["Organism part"]
+
+    def produced_by_label(self) -> typing.AnyStr:
+        return f"tissue subsample from {self._source_record_main_record()['materialSampleID']}"
+
+    def produced_by_description(self) -> typing.AnyStr:
+        description_pieces = []
+        self._transform_key_to_label(
+            "tissueCatalogNumber", self.child_record, description_pieces
+        )
+        return " | ".join(description_pieces)
+
+    def produced_by_feature_of_interest(self) -> typing.AnyStr:
+        return ""
+
+    def produced_by_responsibilities(self) -> typing.List[typing.AnyStr]:
+        # TODO: who did the tissue extract, if available -- where does this live, if anywhere?
         return []
+
+    def produced_by_result_time(self) -> typing.AnyStr:
+        # TODO: time the tissue extract was done, if available -- where does this live?
+        return ""
+
+    def sample_sampling_purpose(self) -> typing.AnyStr:
+        return "genomic analysis"
+
+    def curation_location(self) -> typing.AnyStr:
+        curation_pieces = []
+        tissue_well = self.child_record.get("tissueWell")
+        if tissue_well is not None:
+            curation_pieces.append(f"tissueWell: {tissue_well}")
+        tissue_plate = self.child_record.get("tissuePlate")
+        if tissue_plate is not None:
+            curation_pieces.append(f"tissuePlate: {tissue_plate}")
+        if len(curation_pieces) > 0:
+            return ", ".join(curation_pieces)
+        return Transformer.NOT_PROVIDED
+
+    def related_resources(self) -> typing.List[typing.Dict]:
+        parent_dict = {}
+        main_record = self._source_record_main_record()
+        parent_dict["label"] = f"parent sample {main_record.get('materialSampleID')}"
+        parent_dict["target"] = main_record.get("bcid")
+        parent_dict["relationshipType"] = "derived_from"
+        return [parent_dict]
