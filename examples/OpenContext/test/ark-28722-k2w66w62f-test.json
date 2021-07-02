@@ -1,5 +1,5 @@
 {
-    "@schema":  "../../iSamplesSchemaBasic0.2.json",
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
     "@id": "metadata/28722/k2w66w62f",
     "label": "Obj 1278000007",
     "sampleIdentifier": "ark:/28722/k2w66w62f",
@@ -25,5 +25,5 @@
             },
             "placeName": ["Greece", "Corinthia", "EKAS Region", "Ayios Kosmas", "DU 1278"]
         }
-    },
+    }
 }

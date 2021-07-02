@@ -1,5 +1,5 @@
 {
-    "@schema":  "../../iSamplesSchemaBasic0.2.json",
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
     "@id": "metadata/28722/k2p84pt1m",
     "label": "8110137",
     "sampleIdentifier": "ark:/28722/k2p84pt1m",
@@ -13,7 +13,7 @@
         "label": "Early Bronze Age Numayra",
         "description": "Excavations at the Early Bronze Age Townsite in Jordan, 1977-1983",
         "hasFeatureOfInterest": "",
-        "responsibility": ["Meredith S. Chesson", "R. Thomas Schaub", "Walter E. Rast" ],
+        "responsibility": ["Meredith S. Chesson", "R. Thomas Schaub", "Walter E. Rast"],
         "resultTime": "2019-10-05T00:00:00Z",
         "samplingSite": {
             "description": "",
@@ -25,5 +25,5 @@
             },
             "placeName": ["Jordan", "Numayra", "Unit NE 4-2", "Locus 3"]
         }
-    },
+    }
 }

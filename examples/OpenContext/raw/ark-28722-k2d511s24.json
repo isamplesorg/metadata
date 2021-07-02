@@ -1,0 +1,42 @@
+{
+    "uri": "http://opencontext.org/subjects/FA9AEDFE-914A-4951-D890-DB513C67CB60",
+    "citation uri": "https://n2t.net/ark:/28722/k2d511s24",
+    "label": "PC 19711008",
+    "project label": "Murlo",
+    "project uri": "http://opencontext.org/projects/DF043419-F23B-41DA-7E4D-EE52AF22F92F",
+    "context label": "Italy/Poggio Civitate/Tesoro Rectangle/Tesoro Rectangle 8/1971, ID:286",
+    "context uri": "http://opencontext.org/subjects/F81F3432-2A5C-40E4-CE78-B40E4BE7A3F7",
+    "latitude": 43.153333,
+    "longitude": 11.401381,
+    "early bce/ce": -700.0,
+    "late bce/ce": -535.0,
+    "item category": "Glass",
+    "published": "2012-12-28T00:00:00Z",
+    "updated": "2021-06-27T20:49:18Z",
+    "Has type": [{
+        "id": "http://collection.britishmuseum.org/id/thesauri/x8875",
+        "label": "sample"
+    }],
+    "Consists of": [{
+            "id": "http://collection.britishmuseum.org/id/thesauri/x10879",
+            "label": "glass"
+        },
+        {
+            "id": "http://en.wikipedia.org/wiki/Cobalt_glass",
+            "label": "Cobalt glass"
+        }
+    ],
+    "Creator": [{
+        "id": "http://opencontext.org/persons/61D87033-881E-48B9-FF27-27337BBCDAA0",
+        "label": "Anthony Tuck"
+    }],
+    "Temporal Coverage": [{
+            "id": "http://n2t.net/ark:/99152/p06v8w4g9dz",
+            "label": "Archaic (580 BCE - 482 BCE)"
+        },
+        {
+            "id": "http://n2t.net/ark:/99152/p06v8w45852",
+            "label": "Orientalizing (750 BCE - 582 BCE)"
+        }
+    ]
+}
