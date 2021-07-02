@@ -138,7 +138,7 @@
             "description": "specification of WGS84 decimal degree location of sampling location; could be sample point location, or the centroid of a sampling area",
             "properties": {
                 "elevation": {
-                    "description": "should be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level.",
+                    "description": "should be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level, or 25 feet above local ground surface.",
                     "type": "string"
                 },
                 "latitude": {
@@ -256,7 +256,7 @@
                     "type": "string"
                 },
                 "accessConstraints": {
-                    "description": "cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.",
+                    "description": "cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample or site",
                     "items": {"type": "string"},
                     "type": "array"
                 },
