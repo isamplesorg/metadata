@@ -29,17 +29,17 @@ sf:anthropogenicenvironment
 sf:anysampledfeature
   rdf:type skos:Concept ;
   rdfs:comment "Top concept in sampled feature type vocabulary."@en ;
-  rdfs:label "any sampled feature "@en ;
-  skos:prefLabel "any sampled feature "@en ;
+  rdfs:label "Any sampled feature"@en ;
+  skos:prefLabel "Any sampled feature"@en ;
   skos:topConceptOf sf:sampledfeaturevocabulary ;
 .
 sf:atmosphere
   rdf:type skos:Concept ;
-  rdfs:label "atmosphere"@en ;
+  rdfs:label "Atmosphere"@en ;
   skos:broader sf:earthenvironment ;
   skos:definition "specimen samples the earth atmosphere"@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "atmosphere"@en ;
+  skos:prefLabel "Atmosphere"@en ;
 .
 sf:biologicalenvironment
   rdf:type skos:Concept ;
@@ -85,11 +85,11 @@ sf:experimentsetting
 .
 sf:extraterrestrialenvironment
   rdf:type skos:Concept ;
-  rdfs:label "extraterrestrial environment "@en ;
+  rdfs:label "Extraterrestrial environment"@en ;
   skos:broader sf:anysampledfeature ;
   skos:definition "specimen samples environment outside of solid earth, hydrosphere, or atmosphere."@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "extraterrestrial environment "@en ;
+  skos:prefLabel "Extraterrestrial environment"@en ;
 .
 sf:glacierenviornment
   rdf:type skos:Concept ;
@@ -98,14 +98,6 @@ sf:glacierenviornment
   skos:broader sf:earthenvironment ;
   skos:prefLabel "Glacier environment "@en ;
 .
-sf:historichumanoccupationsite
-  rdf:type skos:Concept ;
-  rdfs:label "Historic human occupation site"@en ;
-  skos:broader sf:anthropogenicenvironment ;
-  skos:definition "specimen samples a place where humans have been and left evidence of their activity. Includes prehistoric and paleo hominid sites"@en ;
-  skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "Historic human occupation site"@en ;
-.
 sf:labenvironment
   rdf:type skos:Concept ;
   rdfs:label "lab environment"@en ;
@@ -113,21 +105,21 @@ sf:labenvironment
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "lab environment"@en ;
 .
-sf:laboratoryenvironment
+sf:laboratorycuratorialenvironment
   rdf:type skos:Concept ;
-  rdfs:label "Laboratory environment"@en ;
+  rdfs:label "Laboratory or curatorial environment"@en ;
   skos:broader sf:anthropogenicenvironment ;
   skos:definition "specimen samples environment in a laboratory; e.g. lab blank measurements."@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "Laboratory environment "@en ;
+  skos:prefLabel "Laboratory or curatorial environment"@en ;
 .
 sf:lakeriverstreambottom
   rdf:type skos:Concept ;
-  rdfs:label "Lake, River, or Stream bed"@en ;
+  rdfs:label "Lake, river, or stream bed"@en ;
   skos:broader sf:earthsurface ;
   skos:definition "Specimen samples the solid earth  interface with a lake or flowing water body"@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "Lake, River, or Stream bed"@en ;
+  skos:prefLabel "Lake, river, or stream bed"@en ;
 .
 sf:marineenvironment
   rdf:type skos:Concept ;
@@ -150,11 +142,11 @@ sf:marinewaterbody
 .
 sf:marinewaterbodybottom
   rdf:type skos:Concept ;
-  rdfs:label "marine water body bottom"@en ;
+  rdfs:label "Marine water body bottom"@en ;
   skos:broader sf:earthsurface ;
   skos:definition "Specimen samples the solid earth  interface with marine or brackish water body. Includes benthic boundary layer:  the bottom layer of water and the uppermost layer of sediment directly influenced by the overlying water"@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "marine water body bottom"@en ;
+  skos:prefLabel "Marine water body bottom"@en ;
 .
 sf:ontology
   rdf:type owl:Ontology ;
@@ -165,7 +157,15 @@ sf:ontology
   owl:imports <http://purl.org/dc/elements/1.1/> ;
   owl:imports dct: ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:versionInfo "0.1" ;
+  owl:versionInfo "20210702" ;
+.
+sf:pasthumanoccupationsite
+  rdf:type skos:Concept ;
+  rdfs:label "Site of past human activities"@en ;
+  skos:broader sf:anthropogenicenvironment ;
+  skos:definition "specimen samples a place where humans have been and left evidence of their activity. Includes prehistoric and paleo hominid sites"@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Site of past human activities"@en ;
 .
 sf:rocksample
   rdf:type skos:Concept ;
@@ -189,10 +189,10 @@ sf:stephen_richard
 sf:subaerialsurfaceenvironment
   rdf:type skos:Concept ;
   rdfs:comment "Specimen samples the  interface between solid Earth and atmosphere.  Sample is collected on the surface, or immediately below surface (zone of bioturbation). Include soil ‘O’ horizon and ‘biomantle’. Soil horizons below surface, or sediment in active deposition (no soil development) is considered part of solid Earth."@en ;
-  rdfs:label "Subaerial Surface Environment"@en ;
+  rdfs:label "Subaerial surface environment"@en ;
   skos:broader sf:earthsurface ;
   skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "Subaerial Surface Environment"@en ;
+  skos:prefLabel "Subaerial surface environment"@en ;
 .
 sf:subaerialterrestrialenvironment
   rdf:type skos:Concept ;
@@ -233,7 +233,7 @@ sf:terrestrialwaterbody
   skos:broader sf:waterbody ;
   skos:definition "specimen samples terrestrial hydrosphere-- lake, other standing water, or a flowing water body (river, stream..) Include saline water in terrestrial evaporite environments."@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "terrestrial water body"@en ;
+  skos:prefLabel "Terrestrial water body"@en ;
 .
 sf:waterbody
   rdf:type skos:Concept ;
