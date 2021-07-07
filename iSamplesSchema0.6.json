@@ -1,5 +1,5 @@
 {
-    "$id": "http://resource.isamples.org/0.5/schema",
+    "$id": "http://resource.isamples.org/0.6/schema",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "PhysicalSampleRecord",
     "type": "object",
@@ -22,7 +22,7 @@
             "type": "string"
         },
         "description": {
-            "description": "free text description of the physical sample, and any related information. Include as much detail as will be useful for users to find the sample and understand its context.",
+            "description": "free text description of the subject of a triple.",
             "type": "string"
         },
         "samplingPurposes": {
@@ -67,84 +67,28 @@
             "type": "array"
         },
         "additionalProperties": {
-            "description": "Use to associate sample with other non-categorical properties, like specimen dimensions, mass, etc..",
+            "description": "Use to associate sample with other properties, like specimen dimensions, mass, etc.. PropertyValue model is based on Schema.org PropertyValue, includes categoryValue,measureValue, label, description, and property.  property has a scopedName value with label that specifies the property. ",
             "items": {"$ref": "#/definitions/PropertyValue"},
             "type": "array"
         },
-        "hasOtherCategories": {
-            "description": "use specifically for sample classification categories from registered vocabularies with URI or the category (use for sdo-propertyID). Example: temporal coverage, OpenContext will probably use Periodo, SESER will use geologic time scale.",
+        "hasDetailCategories": {
+            "description": "use specifically for sample classification in one of the Context, Material, or Specimen(object) type categories, from a more granular domain-specific vocabulary. The ScopedName/authorit with URI or the category (use for sdo-propertyID). Example: temporal coverage, OpenContext will probably use Periodo, SESER will use geologic time scale.",
             "items": {"$ref": "#/definitions/ScopedName"},
             "type": "array"
         },
         "hasContextCategories": {
-            "description": "top level context, based on the kind of feature sampled, from the SampledFeature vocabulary.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.",
-            "items": {
-                "type": "string",
-                "enum": [
-                    "Active human occupation site",
-                    "Atmosphere",
-                    "Earth interior",
-                    "Experiment setting",
-                    "Extraterrestrial environment",
-                    "Glacier environment",
-                    "Historic human occupation site",
-                    "Laboratory environment",
-                    "Lake, river or stream bottom",
-                    "Marine biome",
-                    "Marine water body",
-                    "Marine water body bottom",
-                    "Subaerial surface environment",
-                    "Subaerial terrestrial biome",
-                    "Subaqueous terrestrial biome",
-                    "Subsurface fluid reservoir",
-                    "Terrestrial water body"
-                ]
-            },
+            "description": "top level context, based on the kind of feature sampled.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.",
+            "items": {"type": "string"},
             "type": "array"
         },
         "hasMaterialCategories": {
-            "description": "specify the kind of material that constitutes the sample",
-            "items": {
-                "type": "string",
-                "enum": [
-                    "Anthropogenic material",
-                    "Anthropogenic metal",
-                    "Biogenic material",
-                    "Dispersed media",
-                    "Gaseous material",
-                    "Ice",
-                    "Liquid water",
-                    "Mineral",
-                    "Mixed soil, sediment, rock",
-                    "Non-aqueous liquid material",
-                    "Organic material",
-                    "Particulate",
-                    "Rock",
-                    "Sediment",
-                    "Soil"
-                ]
-            },
+            "description": "top level specification of the kind of material that constitutes the physical sample; detailed material categorization is done through the hasCategory/sdo-PropertyValue pattern",
+            "items": {"type": "string"},
             "type": "array"
         },
         "hasSpecimenCategories": {
-            "description": "specify the kind of object that the specimen is",
-            "items": {
-                "type": "string",
-                "enum": [
-                    "Aggregation",
-                    "Analytical preparation",
-                    "Anthropogenic aggregation",
-                    "Artifact",
-                    "Biome aggregation",
-                    "Experiment product",
-                    "Fossil",
-                    "Liquid or gas sample",
-                    "Organism part",
-                    "Organism product",
-                    "Other solid object",
-                    "Whole organism"
-                ]
-            },
+            "description": "top level categorization of kind of specimen. More specific classifications use isam hasCategory/sdo-PropertyValue pattern",
+            "items": {"type": "string"},
             "type": "array"
         },
         "events": {
@@ -217,7 +161,7 @@
             "properties": {
                 "elevation": {
                     "$ref": "#/definitions/MeasureValue",
-                    "description": "Specification of the vertical distance above (positive up) the WGS84 ellipsoid. This is the elevation that you'd get from a GPS. If other vertical reference system is used, use the GeospatialLocation element."
+                    "description": "For a location, specification of the vertical distance from the datum specified for the spatial reference system. SRS definition should also specify if positive values are above or below the datum."
                 },
                 "latitude": {
                     "description": "wgs84 decimal degree latitude coordinate",
@@ -241,7 +185,7 @@
             "type": "object"
         },
         "GeospatialLocation": {
-            "description": "point location in an arbitrary spatial reference system. UTM is common example, but might be a local coordinate grid systems set up at a research site or mine.  use wktgeom to specify locations with more complex geometry (e.g. line, polygon, multipoint) using Well Know Text (WKT) serialization of geometry, including SRS if possible.",
+            "description": "point location in an arbitrary spatial reference system. UTM is common example, but might be a local coordinate grid systems set up at a research site or mine.  Future-- add WKTposition to specify locations with more complex geometry (e.g. line, polygon, multipoint).",
             "properties": {
                 "coordinate1": {"type": "number"},
                 "coordinate2": {"type": "number"},
@@ -618,7 +562,7 @@
                     "description": "A sampling site must have exactly one SamplingLocation with a longitude-latitude WKT CRS84 point to support cross domain search;"
                 },
                 "otherLocations": {
-                    "description": "other subclasses of SamplingLocation can also be associated with a site to assert location in other spatial reference systems, either for greater precision, or using other map projection schemes preferred by some community. One of GeospatialLocation or LinearReferenceLocation ",
+                    "description": "other subclasses of SamplingLocation can also be associated with a site to assert location in other spatial reference systems, either for greater precision, or using other map projection schemes preferred by some community",
                     "items": {"type": "string"},
                     "type": "array"
                 },
