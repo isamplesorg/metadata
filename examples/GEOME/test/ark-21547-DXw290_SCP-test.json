@@ -1,0 +1,43 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/21547/DXw290_SCP",
+    "label": "Notophthalmus viridescens 90_SCP",
+    "sampleidentifier": "ark:/21547/DXw290_SCP",
+    "description": "length: 17 | lengthUnits: millimeters | basisOfRecord: LivingSpecimen",
+    "hasContextCategory": ["Marine Biome"],
+    "hasMaterialCategory": ["Organic Material"],
+    "hasSpecimenCategory": ["Whole Organism"],
+    "informalClassification": ["Notophthalmus viridescens"],
+    "keywords": ["Mississippi", "USA", "larva", "aquatic", "Notophthalmus", "viridescens", "larva"],
+    "producedBy": {
+        "@id": "ark:/21547/DXv23ea9e35f93680ec0033de373213b8b91",
+        "label": "event 3ea9e35f93680ec0033de373213b8b91",
+        "description": "projectId: 292 | expeditionCode: USGSBsal |coordinateUncertaintyInMeters: 30 | horizontalDatum: WGS1984",
+        "hasFeatureOfInterest": "coral reef",
+        "responsibility": ["collector:J. Hardin Waddle", "collector:Daniel A. Grear", "collector:Brad M. Glorioso", "collector:Adam R. Backlin", "collector:William J. Barichivich", "collector:Adrianne B. Brand", "collector:Daniel L. Calhoun", "collector:Jillian E. Fleming", "collector:Andrew E. Dietrich", "collector:Patrick M. Kleeman", "collector:Marcella A. Cruz", "principalInvestigator:Hardin Waddle"],
+        "resultTime": "2016-05",
+        "samplingSite": {
+            "description": "",
+            "label": "Sweetwater Cemetery Ponds",
+            "location": {
+                "elevation": "",
+                "latitude": 31.16419,
+                "longitude": -89.04089
+            },
+            "placeName": ["USA", "Mississippi"]
+        }
+    },
+    "registrant": "",
+    "samplingPurpose": "",
+    "curation": {
+        "accessConstraints": "",
+        "curationLocation": "",
+        "responsibility": ""
+    },
+    "relatedResource": {
+        "label": "Diagnostics",
+        "description": "",
+        "target": "ark:/21547/DXx269c206db581d917488ffd9eee3bfb53c",
+        "relationship": "diagnostic test"
+    }
+}

@@ -471,6 +471,9 @@ mat:anyanthropogenicmaterial
 mat:mixedsoilsedimentrock
   skos:inScheme mat:materialsvocabulary ;
 .
+mat:otherliquid
+  skos:broader mat:liquidwater ;
+.
 mat:sediment
   skos:inScheme mat:materialsvocabulary ;
 .
@@ -494,6 +497,9 @@ spt:researchproduct
 .
 spt:wholeorganism
   skos:broader spt:piecesolidmaterial ;
+.
+rdfs:comment
+  rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/name> ;
 .
 <http://www.w3.org/ns/sosa/hasFeatureOfInterest>
   rdfs:range isam:ScopedName ;

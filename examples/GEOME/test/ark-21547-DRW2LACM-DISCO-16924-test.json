@@ -1,5 +1,5 @@
 {
-    "@schema": "http://resource.isamples.org/schema/0.2",
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
     "@id": "",
     "label": "Clavelina huntsmani LACM:DISCO:16924",
     "sampleidentifier": "LACM:DISCO:16924",

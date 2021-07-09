@@ -1,42 +1,52 @@
 {
-    "@schema": "../iSamplesSchemaBasicSMR.json",
-    "@id": "",
-    "label": "",
-    "sampleIdentifier": "",
-    "description": "",
-    "hasContextCategory": [""],
-    "hasMaterialCategory": [""],
-    "hasSpecimenCategory": [""],
-    "informalClassification": [""],
-    "keywords": [""],
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "ark:/21547/Cgx2MGH18_1_E4",
+    "label": "Cerion coloni MGH18_1_E4",
+    "sampleIdentifier": "MGH18_1_E4",
+    "description": "subProject: CERIONIDAE; identifiedBy: Jerry Harasewych; subSubProject: Harasewych",
+    "hasContextCategory": ["Marine biome"],
+    "hasMaterialCategory": ["Organic material"],
+    "hasSpecimenCategory": ["Whole organism"],
+    "informalClassification": [
+        "Cerion",
+        "coloni"
+    ],
+    "keywords": [
+        "Bahamas",
+        "Mollusca"
+    ],
     "producedBy": {
-        "label": "",
-        "description": "",
+        "@id": "ark:/21547/Cgy2FMNH",
+        "label": "FMNH",
+        "description": "HARASEWYCH_LEGACY; projectID: 69",
         "hasFeatureOfInterest": "",
-        "responsibility": [""],
-        "resultTime": "",
+        "responsibility": [
+            "sampleEnteredBy: Makiri Sei",
+            "taxTeam: MINV"
+        ],
+        "resultTime": "2018-02",
         "samplingSite": {
             "description": "",
-            "label": "",
+            "label": "FMNH",
             "location": {
                 "elevation": "",
                 "latitude": 0,
                 "longitude": 0
             },
-            "placeName": [""]
+            "placeName": ["Bahamas"]
         }
     },
-    "registrant": "",
+    "registrant": "Makiri Sei",
     "samplingPurpose": "",
     "curation": {
         "accessConstraints": "",
-        "curationLocation": "",
+        "curationLocation": "Smithsonian",
         "responsibility": ""
     },
     "relatedResource": {
-        "label":"",
-        "description":"",
-        "target":"",
-        "relationship":""
+        "label": "tissue",
+        "description": "",
+        "target": "ark:/21547/Cgz2SLAB127022.1",
+        "relationship": "child"
     }
 }

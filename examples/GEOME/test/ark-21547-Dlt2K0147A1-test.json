@@ -1,0 +1,43 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/21547/Dlt2K0147A1",
+    "label": "K0147A1",
+    "sampleidentifier": "ark:/21547/Dlt2K0147A1",
+    "description": "",
+    "hasContextCategory": ["Marine Biome"],
+    "hasMaterialCategory": ["Organic Material"],
+    "hasSpecimenCategory": ["Whole Organism"],
+    "informalClassification": [""],
+    "keywords": ["USA"],
+    "producedBy": {
+        "@id": "ark:/21547/Dls2e0ab8c15fe0e5c1eff8d11b2d31fe25f",
+        "label": "event e0ab8c15fe0e5c1eff8d11b2d31fe25f",
+        "description": "expeditionCode: 2017_CALeDNA_transects | projectId: 382, ",
+        "hasFeatureOfInterest": "coral reef",
+        "responsibility": [""],
+        "resultTime": "2017",
+        "samplingSite": {
+            "description": "",
+            "label": "e0ab8c15fe0e5c1eff8d11b2d31fe25f",
+            "location": {
+                "elevation": "",
+                "latitude": "",
+                "longitude": ""
+            },
+            "placeName": ["USA"]
+        }
+    },
+    "registrant": "",
+    "samplingPurpose": "",
+    "curation": {
+        "accessConstraints": "",
+        "curationLocation": "",
+        "responsibility": ""
+    },
+    "relatedResource": {
+        "label": "Tissue",
+        "description": "",
+        "target": "ark:/21547/Dlu2K0147A1",
+        "relationship": "tissue extract"
+    }
+}

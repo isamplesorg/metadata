@@ -1,0 +1,43 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/21547/Car2PIRE_0334",
+    "label": "FTP_3175_tissue, Polychaeta",
+    "sampleidentifier": "ark:/21547/uL2FTP_3175_tissue",
+    "description": "voucherCatalogNumber": "personal:MattLeray:FTP_3175",
+    "hasContextCategory": ["Marine Biome"],
+    "hasMaterialCategory": ["Organic Material"],
+    "hasSpecimenCategory": ["Whole Organism"],
+    "informalClassification": ["Polychaeta, Polychaeta,"],
+    "keywords": ["USA", "Annelida", "Annelida", "Polychaeta", "Animalia"],
+    "producedBy": {
+        "@id": "ark:/21547/CCv2ab3edd1872f8d9cbca0ed60f53fd6905",
+        "label": "event ab3edd1872f8d9cbca0ed60f53fd6905",
+        "description": "projectId: 85; expeditionCode: Leray14_MSN_74 ",
+        "hasFeatureOfInterest": "coral reef",
+        "responsibility": ["Leray M, Plaisance L, Little M, Ransomme E, Ruy R"],
+        "resultTime": "2013-11-21",
+        "samplingSite": {
+            "description": "",
+            "label": "Florida, Fort Pierce, eventID: ab3edd1872f8d9cbca0ed60f53fd6905",
+            "location": {
+                "elevation": "",
+                "latitude": 27.48825,
+                "longitude": -80.3151667
+            },
+            "placeName": ["Florida, Fort Pierce"]
+        }
+    },
+    "registrant": "",
+    "samplingPurpose": "genomic analysis",
+    "curation": {
+        "accessConstraints": "",
+        "curationLocation": "",
+        "responsibility": "personal"
+    },
+    "relatedResource": {
+        "label": "Tissue",
+        "description": "",
+        "target": "ark:/21547/CCw2FTP_3175_tissue",
+        "relationship": "tissue extract"
+    }
+}

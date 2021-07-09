@@ -1,0 +1,28 @@
+{
+    "uri": "http://opencontext.org/subjects/fba17d13-1242-407e-8f62-33ca9d79221f",
+    "citation uri": "https://n2t.net/ark:/28722/k2b570022",
+    "label": "11208190",
+    "project label": "Historic Fort Snelling",
+    "project uri": "http://opencontext.org/projects/fab0532a-2953-4f13-aa97-8a9d7e992dbe",
+    "context label": "United States/Minnesota/Fort Snelling/Fort Snelling Short Barracks/Base of stairwell",
+    "context uri": "http://opencontext.org/subjects/803733ae-6e29-4370-b3c7-5761e6d64bb8",
+    "latitude": 44.893131,
+    "longitude": -93.181061,
+    "early bce/ce": 1820.0,
+    "late bce/ce": 1950.0,
+    "item category": "Object",
+    "published": "2016-06-23T19:15:39Z",
+    "updated": "2021-06-27T19:54:46Z",
+    "Consists of": [{
+        "id": "http://vocab.getty.edu/aat/300011845",
+        "label": "leather"
+    }],
+    "Creator": [{
+        "id": "http://opencontext.org/persons/c2c92a0a-4acb-40c0-822d-e20e85fa10a1",
+        "label": "Nancy Hoffman"
+    }],
+    "Has type": [{
+        "id": "http://vocab.getty.edu/aat/300117130",
+        "label": "fragments (object portions)"
+    }]
+}

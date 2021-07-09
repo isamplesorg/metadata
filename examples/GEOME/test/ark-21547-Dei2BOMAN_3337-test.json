@@ -1,0 +1,43 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/21547/Dei2BOMAN_3337",
+    "label": "Amphipoda BOMAN_3337",
+    "sampleidentifier": "ark:/21547/Dei2BOMAN_3337",
+    "description": "",
+    "hasContextCategory": ["Marine Biome"],
+    "hasMaterialCategory": ["Organic Material"],
+    "hasSpecimenCategory": ["Whole Organism"],
+    "informalClassification": ["Abby Uehling Amphipoda"],
+    "keywords": ["Oman", "Muscat Governorate", "Arthropoda", "Pocillopora_Acropora rubble"],
+    "producedBy": {
+        "@id": "ark:/21547/Dej2OMAN_019A",
+        "label": "event OMAN_019A",
+        "description": "expeditionCode: NSF_OMAN; projectId: 74 ",
+        "hasFeatureOfInterest": "coral reef",
+        "responsibility": ["event registrant:Abby Uehling"],
+        "resultTime": "2020-01",
+        "samplingSite": {
+            "description": "",
+            "label": "Damanyat Islands, Clive Rock",
+            "location": {
+                "elevation": "",
+                "latitude": 23.84814,
+                "longitude": 57.9521339
+            },
+            "placeName": ["Oman", "Muscat Governorate"]
+        }
+    },
+    "registrant": "Abby Uehling",
+    "samplingPurpose": "",
+    "curation": {
+        "accessConstraints": "",
+        "curationLocation": "",
+        "responsibility": "University of Florida"
+    },
+    "relatedResource": {
+        "label": "",
+        "description": "",
+        "target": "",
+        "relationship": ""
+    }
+}

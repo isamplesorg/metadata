@@ -22,10 +22,17 @@ mat:anthropogenicmetal
 mat:anyanthropogenicmaterial
   rdf:type skos:Concept ;
   rdfs:comment "Material produced by human activity."@en ;
-  rdfs:label "Anthropogenic material "@en ;
+  rdfs:label "Any anthropogenic material"@en ;
   skos:broader mat:material ;
   skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_0010001> ;
-  skos:prefLabel "Anthropogenic material "@en ;
+  skos:prefLabel "Any anthropogenic material"@en ;
+.
+mat:anyice
+  rdf:type skos:Concept ;
+  rdfs:comment "a solid material that is normally a liquid or gas at Standard Temperature and Pressre (STP)  that is in a solid state under the observed temperature and pressure conditions."@en ;
+  rdfs:label "Any Ice"@en ;
+  skos:broader mat:material ;
+  skos:prefLabel "Any ice"@en ;
 .
 mat:biogenicnonorganicmaterial
   rdf:type skos:Concept ;
@@ -45,11 +52,11 @@ mat:dispersedmedia
 .
 mat:earthmaterial
   rdf:type skos:Concept ;
-  rdfs:comment "undifferentiated, soil, sediment, rock, or natural particulates." ;
-  rdfs:label "Natural Solid Material "@en ;
+  rdfs:comment "Undifferentiated, soil, sediment, rock, or natural particulates. Typically (nessarily?) a granular aggregate that might inluce any of the previous constiturents. Use for Earth Material aggregates of uncertain origin"@en ;
+  rdfs:label "Natural Solid Material"@en ;
   skos:broader mat:material ;
   skos:inScheme mat:materialsvocabulary ;
-  skos:prefLabel "Natural Solid Material "@en ;
+  skos:prefLabel "Natural Solid Material"@en ;
 .
 mat:fluid
   rdf:type skos:Concept ;
@@ -129,16 +136,15 @@ mat:organicmaterial
 mat:otheranthropogenicmaterial
   rdf:type skos:Concept ;
   rdfs:comment "Non-metallic material produced by human activity. Organic products of agricultural activity are both anthropogenic and organic. Include lab preparations like XRF pellet and rock powders. Examples: ceramics, concrete, slag, (anthropogenic) glass, mine tailing, plaster, waste. (http://purl.obolibrary.org/obo/ENVO_0010001)"@en ;
-  rdfs:label "Other anthropogenic material"@en ;
+  rdfs:label "Anthropogenic material"@en ;
   skos:broader mat:anyanthropogenicmaterial ;
   skos:inScheme mat:materialsvocabulary ;
-  skos:prefLabel "Other anthropogenic material"@en ;
+  skos:prefLabel "Anthropogenic material"@en ;
 .
 mat:otherliquid
   rdf:type skos:Concept ;
   rdfs:comment "liquids that do not fit other category. E.g. alcohol."@en ;
   rdfs:label "Non-aqueous liquid material "@en ;
-  skos:broader mat:fluid ;
   skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "Non-aqueous liquid material "@en ;
 .
@@ -178,6 +184,16 @@ mat:soil
   skos:broader mat:earthmaterial ;
   skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "Soil "@en ;
+.
+mat:waterice
+  rdf:type skos:Concept ;
+  rdfs:comment "Water that is in a solid state under temperatur or pressure conditions under which it would be expected to be a liquid or gas."@en ;
+  rdfs:label "Frozen water "@en ;
+  skos:broader mat:anyice ;
+  skos:prefLabel "Frozen water "@en ;
+.
+skos:prefLabel
+  skos:prefLabel "Ice"@en ;
 .
 <https://orcid.org/0000-0001-6041-5302>
   rdf:type owl:NamedIndividual ;

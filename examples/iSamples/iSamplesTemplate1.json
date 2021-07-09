@@ -1,8 +1,8 @@
 {
-    "@schema": "http://resource.isamples.org/schema/0.2",
+    "@schema":  "../../iSamplesSchemaBasic0.2.json",
     "@id": "metadata:   ",
     "label": "",
-    "sampleidentifier": "",
+    "sampleIdentifier": "",
     "description": "",
     "hasContextCategory": [""],
     "hasMaterialCategory": [""],
@@ -10,6 +10,7 @@
     "informalClassification": [""],
     "keywords": [""],
     "producedBy": {
+        "@id":"",
         "label": "",
         "description": "",
         "hasFeatureOfInterest": "",

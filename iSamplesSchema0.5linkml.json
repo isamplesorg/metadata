@@ -3,7 +3,7 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "PhysicalSampleRecord",
     "type": "object",
-    "description": "This schema describes a data object that is a digital representation of a physical sample that provides  descriptive properties for any iSamples physical sample.",
+    "description": "This schema describes a data object that is a digital representation of a physical sample that provides descriptive properties for any iSamples physical sample. This schema defines a complete PhysicalSampleRecord. This is our aspirational design draft, not yet implemented. See iSamplesSchemaBasic0.2.json for schema used in initial testing (2021-06-14)",
     "properties": {
         "id": {
             "description": "identifier for the metadata record",
@@ -105,7 +105,6 @@
     "required": [],
     "definitions": {
         "Curation": {
-            "additionalProperties": false,
             "description": "representation of processes for preservation of sample, responsible agent, repository location, etc.",
             "properties": {
                 "accessConstraints": {
@@ -137,7 +136,6 @@
             "type": "object"
         },
         "Event": {
-            "additionalProperties": false,
             "description": "object that records an action taken at some time;",
             "properties": {
                 "action": {
@@ -159,8 +157,7 @@
             "type": "object"
         },
         "GeospatialDDCoordLocation": {
-            "additionalProperties": false,
-            "description": "",
+             "description": "",
             "properties": {
                 "elevation": {
                     "$ref": "#/definitions/MeasureValue",
@@ -188,7 +185,6 @@
             "type": "object"
         },
         "GeospatialLocation": {
-            "additionalProperties": false,
             "description": "point location in an arbitrary spatial reference system. UTM is common example, but might be a local coordinate grid systems set up at a research site or mine.  Future-- add WKTposition to specify locations with more complex geometry (e.g. line, polygon, multipoint).",
             "properties": {
                 "coordinate1": {"type": "number"},
@@ -220,15 +216,14 @@
             "type": "object"
         },
         "Initiative": {
-            "additionalProperties": false,
-            "description": "",
+            "description": "This object describes an activity that sponsors a sample collection event.",
             "properties": {
                 "description": {
                     "description": "free text description of the subject of a triple.",
                     "type": "string"
                 },
                 "events": {
-                    "description": "record of actions that effect the subject of this property",
+                    "description": "record of actions in the history of the initiative.",
                     "items": {"$ref": "#/definitions/Event"},
                     "type": "array"
                 },

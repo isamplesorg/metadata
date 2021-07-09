@@ -1,0 +1,45 @@
+{
+    "@schema":  "../../iSamplesSchemaBasic0.2.json",
+    "@id": "[concatenate 'metadata/' prefix with ark record/bcid], e.g. 'metadata/21547/eg2AB4OQ34'",
+    "label": "[concatenate record/scientificName and record/materialSampleID]",
+    "sampleIdentifier": "[record/bcid]",
+    "description": "[concatenate key:value pairs from other content in record/ that is not mapped, e.g. 'voucherCatalogNumber:USNM:Fish:433156'; record/preservative, ]",
+    "hasContextCategory": ["[infer from locality and taxon names]"],
+    "hasMaterialCategory": ["'Organic material' unless record/entity, record/basisOfRecord, or record/collectionCode indicate otherwise"],
+    "hasSpecimenCategory": ["'Whole organism'  unless record/entity, record/basisOfRecord, or record/collectionCode indicate otherwise"],
+    "informalClassification": ["record/scientificName or if that is missing, concat record/genus & record/specificEpithet"],
+    "keywords": ["JSON array of values from record/ -order, -phylum, -family, -class, and parent/ -country, -county, -stateProvince, -continentOcean... (place names more general that the locality or most specific rank place name) "],
+    "producedBy": {
+        "@id":"parent/bcid",
+        "label": "concat parent/eventId & parent/expeditionCode",
+        "description": "concat other properties as key-value pairs: parent/samplingProtocol, parent/projectID",
+        "hasFeatureOfInterest": "[infer from specimen category, locality; need to so some unique values analysis]",
+        "responsibility": ["for each {name} in parent/collectorList: 'collector:'& {name}; for each {name} in parent/principalInvestigator: 'principleInvestigator:' & {name}; for each {name} in record/identifiedBy 'identifiedBy:' & {name};  for each {name} in parent/taxteam 'taxonomy team:' & {name}' for each {name} in parent/eventEnteredBy 'event registrant:' & {name}"],
+        "resultTime": "parent/yearCollected & parent/monthCollected & parent/dayCollected",
+        "samplingSite": {
+            "description": "concatenate other stuff from parent.  Include min and max elevation if both present and not equal: 'elevation range:'& parent/maximumElevationInMeters &'-' & parent/maximumElevationInMeters. 'coordinate uncertainty:'& parent/coordinateUncertaintyInMeters.  ",
+            "label": "parent/locality",
+            "location": {
+                "elevation": "parent/maximumElevationInMeters",
+                "latitude": "[parent/decimalLatitude]",
+                "longitude": "[decimalLatitude/decimalLongitude]"
+            },
+            "placeName": ["most specific of  parent/ -country, -county, -stateProvince, -continentOcean. Need to determine what are all the possible place name fields and set up partial order. "]
+        }
+    },
+    "registrant": "record/sampleEnteredBy",
+    "samplingPurpose": "",
+    "curation": {
+        "label":"record/institutionCode [?this field should be where sample is stored/curated]",
+        "description":"",
+        "accessConstraints": "",
+        "curationLocation": "record/institutionCode [?this field should be where sample is stored/curated]",
+        "responsibility": ""
+    },
+    "relatedResource": [ {
+        "label":"child/entity",
+        "description":"",
+        "target":"child/bcid",
+        "relationshipType":"if tissue, relation is 'tissue extract'; if photo, relation is 'image of'"
+    } ]
+}
