@@ -188,6 +188,10 @@ class OpenContextTransformer(Transformer):
 
     def produced_by_responsibilities(self) -> typing.List[typing.AnyStr]:
         # TODO: maybe this should go under registrant?
+        # from ekansa:
+        # "Creator" is typically a project PI (Principle Investigator). They may or may not be the person that
+        # collected the sample. If given, a "Contributor" is the person that originally collected or first
+        # described the specimen.
         responsibilities = []
         creators = self.source_record.get("Creator")
         if creators is not None:
