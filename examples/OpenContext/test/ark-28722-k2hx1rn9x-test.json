@@ -3,7 +3,7 @@
     "@id": "metadata/28722/k2hx1rn9x",
     "label": "8110531",
     "sampleIdentifier": "ark:/28722/k2hx1rn9x",
-    "description": "early bce/ce: -2850.0 | late bce/ce: -2550.0 | updated: 2021-06-28T02:11:48Z",
+    "description": "'early bce/ce': -2850.0 | 'late bce/ce': -2550.0 | 'updated': 2021-06-28T02:11:48Z",
     "hasContextCategory": ["Site of past human activities"],
     "hasMaterialCategory": ["Anthropogenic material"],
     "hasSpecimenCategory": ["Artifact"],
@@ -11,9 +11,9 @@
     "keywords": ["Early Bronze Age Numayra", "Jordan", "Numayra", "Unit SE 9-1", "Locus 22"],
     "producedBy": {
         "label": "Early Bronze Age Numayra",
-        "description": "Excavations at the Early Bronze Age Townsite in Jordan, 1977-1983",
+        "description": "",
         "hasFeatureOfInterest": "",
-        "responsibility": ["Meredith S. Chesson", "R. Thomas Schaub", "Walter E. Rast"],
+        "responsibility": ["'Creator':Meredith S. Chesson", "'Creator':R. Thomas Schaub", "'Creator':Walter E. Rast"],
         "resultTime": "2019-10-05T00:00:00Z",
         "samplingSite": {
             "description": "",

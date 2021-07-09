@@ -3,7 +3,7 @@
     "@id": "metadata/28722/k2b570022",
     "label": "11208190",
     "sampleidentifier": "ark:/28722/k2b570022",
-    "description": "'early bce/ce': 1820.0 | 'late bce/ce': 1950.0 | updated: 2021-06-27T19:54:46Z",
+    "description": "'early bce/ce': 1820.0 | 'late bce/ce': 1950.0 | 'updated': 2021-06-27T19:54:46Z | 'Consists of': leather | 'Has type': fragments (object portions)",
     "hasContextCategory": ["Site of past human activities"],
     "hasMaterialCategory": ["Anthropogenic material"],
     "hasSpecimenCategory": ["Artifact"],
@@ -11,12 +11,12 @@
     "keywords": ["Historic Fort Snelling", "United States", "Minnesota", "Fort Snelling", "Fort Snelling Short Barracks", "Base of stairwell"],
     "producedBy": {
         "label": "Historic Fort Snelling",
-        "description": "Objects from the Short Barracks of Fort Snelling, at the confluence of the Mississippi and Minnesota Rivers",
+        "description": "",
         "hasFeatureOfInterest": "",
-        "responsibility": ["Nancy Hoffman"],
+        "responsibility": ["'Creator':Nancy Hoffman"],
         "resultTime": "2016-06-23T19:15:39Z",
         "samplingSite": {
-            "description": "'Consists of': leather | 'Has type': fragments (object portions)",
+            "description": "",
             "label": "Object",
             "location": {
                 "elevation": "",
