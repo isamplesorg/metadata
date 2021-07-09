@@ -9,6 +9,22 @@ class Transformer(ABC):
 
     FEET_PER_METER = 3.28084
 
+    DESCRIPTION_SEPARATOR = " | "
+
+    @staticmethod
+    def _transform_key_to_label(
+        key: typing.AnyStr,
+        source_dict: typing.Dict,
+        dest_list: typing.List[typing.AnyStr],
+        label: typing.AnyStr = None,
+    ):
+        if label is None:
+            label = key
+        value = source_dict.get(key)
+        if value is not None:
+            dest_list.append(f"{label}: {value}")
+
+
     def __init__(self, source_record: typing.Dict):
         self.source_record = source_record
 
@@ -63,10 +79,12 @@ class Transformer(ABC):
         }
         return transformed_record
 
+    @abstractmethod
     def id_string(self) -> typing.AnyStr:
         """The value for the @id key in the iSamples record"""
         pass
 
+    @abstractmethod
     def sample_identifier_string(self) -> typing.AnyStr:
         pass
 

@@ -135,7 +135,7 @@ class GEOMETransformer(Transformer):
         self._transform_key_to_label("length", main_record, description_pieces)
         self._transform_key_to_label("sex", main_record, description_pieces)
 
-        return " | ".join(description_pieces)
+        return Transformer.DESCRIPTION_SEPARATOR.join(description_pieces)
 
     def has_context_categories(self) -> typing.List[typing.AnyStr]:
         # TODO: implement
@@ -231,19 +231,6 @@ class GEOMETransformer(Transformer):
             return " ".join(label_pieces)
         return Transformer.NOT_PROVIDED
 
-    @staticmethod
-    def _transform_key_to_label(
-        key: typing.AnyStr,
-        source_dict: typing.Dict,
-        dest_list: typing.List[typing.AnyStr],
-        label: typing.AnyStr = None,
-    ):
-        if label is None:
-            label = key
-        value = source_dict.get(key)
-        if value is not None:
-            dest_list.append(f"{label}: {value}")
-
     def produced_by_description(self) -> typing.AnyStr:
         parent_record = self._source_record_parent_record()
         if parent_record is not None:
@@ -264,7 +251,7 @@ class GEOMETransformer(Transformer):
                 "taxTeam", parent_record, description_pieces, "taxonomy team"
             )
             self._transform_key_to_label("projectId", parent_record, description_pieces)
-            return " | ".join(description_pieces)
+            return Transformer.DESCRIPTION_SEPARATOR.join(description_pieces)
         return Transformer.NOT_PROVIDED
 
     def produced_by_feature_of_interest(self) -> typing.AnyStr:
@@ -492,7 +479,7 @@ class GEOMEChildTransformer(GEOMETransformer):
         self._transform_key_to_label(
             "tissueCatalogNumber", self.child_record, description_pieces
         )
-        return " | ".join(description_pieces)
+        return Transformer.DESCRIPTION_SEPARATOR.join(description_pieces)
 
     def produced_by_feature_of_interest(self) -> typing.AnyStr:
         return ""
