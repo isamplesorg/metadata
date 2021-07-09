@@ -41,16 +41,6 @@ sf:atmosphere
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Atmosphere"@en ;
 .
-sf:biologicalenvironment
-  rdf:type skos:Concept ;
-  rdfs:label "Biological environment"@en ;
-  skos:broader sf:anysampledfeature ;
-  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_00000428> ;
-  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_01001110> ;
-  skos:definition "Specimen samples an Earth environment not directly involved in human activity, defined by the organisms present, their ecological relationships, and the physical conditions."@en ;
-  skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "Biological environment"@en ;
-.
 sf:earthenvironment
   rdf:type skos:Concept ;
   rdfs:label "Earth environment"@en ;
@@ -78,7 +68,7 @@ sf:earthsurface
 sf:experimentsetting
   rdf:type skos:Concept ;
   rdfs:label "Experiment setting"@en ;
-  skos:broader sf:anthropogenicenvironment ;
+  skos:broader sf:activehumanoccupationsite ;
   skos:definition "Sampled feature is the expermental set up that produced the sample."@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Experiment setting"@en ;
@@ -108,7 +98,7 @@ sf:labenvironment
 sf:laboratorycuratorialenvironment
   rdf:type skos:Concept ;
   rdfs:label "Laboratory or curatorial environment"@en ;
-  skos:broader sf:anthropogenicenvironment ;
+  skos:broader sf:activehumanoccupationsite ;
   skos:definition "specimen samples environment in a laboratory; e.g. lab blank measurements."@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Laboratory or curatorial environment"@en ;
@@ -120,17 +110,6 @@ sf:lakeriverstreambottom
   skos:definition "Specimen samples the solid earth  interface with a lake or flowing water body"@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Lake, river, or stream bed"@en ;
-.
-sf:marineenvironment
-  rdf:type skos:Concept ;
-  rdfs:label "Marine biome"@en ;
-  skos:broader sf:biologicalenvironment ;
-  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_00000447> ;
-  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_01000321> ;
-  skos:definition "Sampled feature is an Earth enviornment associated with the oceans of the Earth, including the overlying, linked atmosphere. Corresponds to ENVO 'Sea water Environment'."@en ;
-  skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "Marine biome"@en ;
-  skos:relatedMatch <http://purl.obolibrary.org/obo/ENVO_01000048> ;
 .
 sf:marinewaterbody
   rdf:type skos:Concept ;
@@ -153,11 +132,12 @@ sf:ontology
   dct:created "2021-03-17"^^xsd:date ;
   dct:creator <https://orcid.org/0000-0001-6041-5302> ;
   dct:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
-  dct:modified "2021-03-17"^^xsd:date ;
+  dct:modified "2021-07-09"^^xsd:date ;
   owl:imports <http://purl.org/dc/elements/1.1/> ;
   owl:imports dct: ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:versionInfo "20210702" ;
+  owl:versionInfo "20210703" ;
+  skos:historyNote "Remove Marine biome, Subaerial terrestrial environment, Subaqueous terrestrial environment per github issue https://github.com/isamplesorg/metadata/issues/41. Make Experiment setting and Laboratory or curatorial environemtn  subclasses of Active human occupation site."@en ;
 .
 sf:pasthumanoccupationsite
   rdf:type skos:Concept ;
@@ -193,31 +173,6 @@ sf:subaerialsurfaceenvironment
   skos:broader sf:earthsurface ;
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Subaerial surface environment"@en ;
-.
-sf:subaerialterrestrialenvironment
-  rdf:type skos:Concept ;
-  rdfs:label "Subaerial terrestrial environment"@en ;
-  skos:broader sf:biologicalenvironment ;
-  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_01001790> ;
-  skos:definition "Sampled feature is an Earth environment associated with land masses directly interacting with the atmosphere; includes linked atmosphere adjacent to a land mass."@en ;
-  skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:narrowMatch <http://purl.obolibrary.org/obo/ENVO_01001780> ;
-  skos:narrowMatch <http://purl.obolibrary.org/obo/ENVO_01001836> ;
-  skos:narrowMatch <http://purl.obolibrary.org/obo/ENVO_01001837> ;
-  skos:narrowMatch <http://purl.obolibrary.org/obo/ENVO_01001838> ;
-  skos:prefLabel "Subaerial terrestrial environment"@en ;
-.
-sf:subaqueousterrestrialenvironment
-  rdf:type skos:Concept ;
-  dct:source "https://en.wikipedia.org/wiki/Biome" ;
-  rdfs:label "Subaqueous terrestrial enviornment"@en ;
-  skos:broader sf:biologicalenvironment ;
-  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_01000306> ;
-  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_01001789> ;
-  skos:definition "Sampled feature is an Earth environment associated with water bodies on land masses; includes fresh and saline water bodies, streams, rivers, lakes. Corresponds to inland aquatic Ecosystems of Goodall (1974) \"Inland Aquatic Ecosystems: River and Stream Ecosystems; Lakes and Reservoirs\", and to 'freshwater biome' of ENVO"@en ;
-  skos:inScheme sf:sampledfeaturevocabulary ;
-  skos:prefLabel "Subaqueous terrestrial environment"@en ;
-  skos:related <http://purl.obolibrary.org/obo/ENVO_00000873> ;
 .
 sf:subsurfacefluidreservoir
   rdf:type skos:Concept ;
