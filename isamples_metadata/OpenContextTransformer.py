@@ -2,10 +2,104 @@ import typing
 
 from isamples_metadata.Transformer import (
     Transformer,
+    AbstractCategoryMetaMapper,
+    StringEqualityCategoryMapper,
+    AbstractCategoryMapper,
 )
 
-class OpenContextTransformer(Transformer):
 
+class MaterialCategoryMetaMapper(AbstractCategoryMetaMapper):
+    _anthropogenicMaterialMapper = StringEqualityCategoryMapper(
+        [
+            "Architectural Element",
+            "Bulk Ceramic",
+            "Glass",
+            "Object",
+            "Pottery",
+            "Sample",
+            "Sample, Collection, or Aggregation",
+            "Sculpture",
+            "Stela",
+        ],
+        "Anthropogenic material",
+    )
+
+    _anthropogenicMetalMapper = StringEqualityCategoryMapper(
+        [
+            "Coin",
+        ],
+        "Anthropogenic metal",
+    )
+
+    _biogenicMapper = StringEqualityCategoryMapper(
+        ["Animal Bone", "Human Bone", "Non Diagnostic Bone", "Shell"],
+        "Biogenic non organic material",
+    )
+
+    _organicMapper = StringEqualityCategoryMapper(
+        [
+            "Biological subject, Ecofact",
+            "Plant remains",
+        ],
+        "Organic material",
+    )
+
+    _rockMapper = StringEqualityCategoryMapper(["Groundstone"], "Rock")
+
+    @classmethod
+    def categories_mappers(cls) -> typing.List[AbstractCategoryMapper]:
+        return [
+            cls._anthropogenicMaterialMapper,
+            cls._anthropogenicMetalMapper,
+            cls._biogenicMapper,
+            cls._organicMapper,
+            cls._rockMapper,
+        ]
+
+
+class SpecimenCategoryMetaMapper(AbstractCategoryMetaMapper):
+    _organismPartMapper = StringEqualityCategoryMapper(
+        [
+            "Animal Bone",
+            "Human Bone",
+            "Non Diagnostic Bone",
+        ],
+        "Organism part",
+    )
+    _anthropogenicAggregationMapper = StringEqualityCategoryMapper(
+        ["Architectural Element", "Basket", "Bulk Ceramic", "Lot"],
+        "Anthropogenic aggregation",
+    )
+    _biomeAggregationMapper = StringEqualityCategoryMapper(
+        ["Biological subject, Ecofact", "Plant remains"], "Biome aggregation"
+    )
+    _artifactMapper = StringEqualityCategoryMapper(
+        ["Coin", "Glass", "Groundstone", "Object", "Pottery", "Sculpture", "Stela"],
+        "Artifact",
+    )
+    _otherSolidObjectMapper = StringEqualityCategoryMapper(
+        ["Sample", "Sample, Collection, or Aggregation"], "Other solid object"
+    )
+    _organismProductMapper = StringEqualityCategoryMapper(
+        [
+            "Shell",
+        ],
+        "Organism product",
+    )
+
+    @classmethod
+    def categories_mappers(cls) -> typing.List[AbstractCategoryMapper]:
+        return [
+            cls._organismPartMapper,
+            cls._anthropogenicAggregationMapper,
+            cls._biomeAggregationMapper,
+            cls._artifactMapper,
+            cls._otherSolidObjectMapper,
+            cls._organismProductMapper,
+        ]
+
+
+class OpenContextTransformer(Transformer):
     N2T_PREFIX = "https://n2t.net/"
     N2T_ARK_PREFIX = f"{N2T_PREFIX}ark:/"
 
@@ -41,16 +135,16 @@ class OpenContextTransformer(Transformer):
         self._transform_key_to_label(
             "late bce/ce", self.source_record, description_pieces
         )
-        self._transform_key_to_label(
-            "updated", self.source_record, description_pieces
-        )
-        self._transform_key_to_label(
-            "updated", self.source_record, description_pieces
-        )
+        self._transform_key_to_label("updated", self.source_record, description_pieces)
+        self._transform_key_to_label("updated", self.source_record, description_pieces)
         for consistsOfDict in self.source_record.get("Consists of", []):
-            self._transform_key_to_label("label", consistsOfDict, description_pieces, "Consists of")
+            self._transform_key_to_label(
+                "label", consistsOfDict, description_pieces, "Consists of"
+            )
         for hasTypeDict in self.source_record.get("Has type", []):
-            self._transform_key_to_label("label", hasTypeDict, description_pieces, "Has type")
+            self._transform_key_to_label(
+                "label", hasTypeDict, description_pieces, "Has type"
+            )
         return Transformer.DESCRIPTION_SEPARATOR.join(description_pieces)
 
     def sample_registrant(self) -> typing.AnyStr:
@@ -60,13 +154,15 @@ class OpenContextTransformer(Transformer):
         pass
 
     def has_context_categories(self) -> typing.List[typing.AnyStr]:
-        pass
+        return ["Site of past human activities"]
 
     def has_material_categories(self) -> typing.List[typing.AnyStr]:
-        pass
+        item_category = self.source_record.get("item category")
+        return MaterialCategoryMetaMapper.categories(item_category)
 
     def has_specimen_categories(self) -> typing.List[typing.AnyStr]:
-        pass
+        item_category = self.source_record.get("item category")
+        return SpecimenCategoryMetaMapper.categories(item_category)
 
     def _context_label_pieces(self) -> typing.List[typing.AnyStr]:
         context_label = self.source_record.get("context label")

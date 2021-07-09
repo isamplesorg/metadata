@@ -76,6 +76,7 @@ def test_geome_child_dicts_equal(geome_source_path, isamples_path):
         transformed_to_isamples_record = child_transformer.transform()
         _assert_transformed_dictionary(isamples_path, transformed_to_isamples_record)
 
+
 OPENCONTEXT_test_values = [
     (
         "../examples/OpenContext/raw/ark-28722-k2b570022.json",
@@ -83,6 +84,9 @@ OPENCONTEXT_test_values = [
     )
 ]
 
-@pytest.mark.parametrize("open_context_source_path,isamples_path", OPENCONTEXT_test_values)
+
+@pytest.mark.parametrize(
+    "open_context_source_path,isamples_path", OPENCONTEXT_test_values
+)
 def test_open_context_dicts_equal(open_context_source_path, isamples_path):
     _run_transformer(isamples_path, open_context_source_path, OpenContextTransformer)

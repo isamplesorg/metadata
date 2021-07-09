@@ -24,7 +24,6 @@ class Transformer(ABC):
         if value is not None:
             dest_list.append(f"{label}: {value}")
 
-
     def __init__(self, source_record: typing.Dict):
         self.source_record = source_record
 
@@ -75,7 +74,7 @@ class Transformer(ABC):
                 "curationLocation": self.curation_location(),
                 "responsibility": self.curation_responsibility(),
             },
-            "relatedResource": self.related_resources()
+            "relatedResource": self.related_resources(),
         }
         return transformed_record
 
