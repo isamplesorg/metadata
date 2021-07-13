@@ -153,7 +153,7 @@
             "type": "array"
         },
         "relatedResources": {
-            "description": "link to another resource, with a relationship type",
+            "description": "link to another resource, with a relationship type.  Use to relate to parent sample among many other possibilities)",
             "items": {"$ref": "#/definitions/Link"},
             "type": "array"
         }
@@ -562,25 +562,25 @@
                     "type": "string"
                 },
                 "hasFeaturesOfInterest": {
-                    "description": "specify the particular feature of interest that is the target of a sampling event; should be consistent with sampledFeature for any result samples. Might be a domain feature or another sample (or both!)",
+                    "description": "specify the particular feature of interest that is the target of a sampling event; should be consistent with sampledFeature for any result samples. Might be a domain feature or another sample (or both!). Note that for a subsample, the feature of interest could be considered the parent sample, but for search efficiency, its a good idea to include the ultimate feature of interest as well (i.e. what the ultimate parent sample was collected to represent.",
                     "items": {"$ref": "#/definitions/ScopedName"},
                     "type": "array"
                 },
                 "hasInitiative": {
                     "$ref": "#/definitions/Initiative",
-                    "description": "identify the project, field campaign, cruise, expediton during which the samplingEvent occurred"
+                    "description": "identify the project, field campaign, cruise, expediton during which the samplingEvent occurred. An initiative will likely be associated with many sampling events, so a separate registry of 'initiatives' will be useful."
                 },
                 "label": {
                     "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
                     "type": "string"
                 },
                 "responsibilities": {
-                    "description": "binds an event, curation or initiative with an agent  that is associated in some way (the responsibility role)",
+                    "description": "binds the sampling event with an agent  that is associated in some way (the responsibility role)",
                     "items": {"$ref": "#/definitions/Responsibility"},
                     "type": "array"
                 },
                 "resultTime": {
-                    "description": "data and optional time when the sample was collected",
+                    "description": "date and optional time when the sample was collected",
                     "type": "number"
                 },
                 "samplingSite": {

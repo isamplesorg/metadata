@@ -142,7 +142,11 @@
                     "$ref": "#/definitions/ScopedName",
                     "description": "specification of what was done using a term from a vocabulary"
                 },
-                "dateValue": {"type": "number"},
+                "dateValue": {
+                    "description":"this requires a date and time stamp. use 12:00:00Z as time stamp if no time is reported. ",
+                    "type": "string",
+                    "format": "date-time"
+                },
                 "description": {
                     "description": "free text description of the subject of a triple.",
                     "type": "string"
@@ -157,7 +161,7 @@
             "type": "object"
         },
         "GeospatialDDCoordLocation": {
-             "description": "",
+            "description": "",
             "properties": {
                 "elevation": {
                     "$ref": "#/definitions/MeasureValue",
@@ -241,7 +245,7 @@
                     "type": "array"
                 }
             },
-            "required": [],
+            "required": ["initiativeType", "label"],
             "title": "Initiative",
             "type": "object"
         },
@@ -440,7 +444,7 @@
                     "description": "identifier for a soft-type property value"
                 }
             },
-            "required": [],
+            "required": ["property","label"],
             "title": "PropertyValue",
             "type": "object"
         },
@@ -524,8 +528,17 @@
                     "type": "array"
                 },
                 "resultTime": {
-                    "description": "data and optional time when the sample was collected",
-                    "type": "number"
+                    "description": "data and optional time when the sample was collected. Allow either a date with time, or just a date",
+                    "anyOf": [
+                        {
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    ]
                 },
                 "samplingSite": {
                     "$ref": "#/definitions/SamplingSite",
@@ -596,7 +609,10 @@
                     "type": "string"
                 }
             },
-            "required": ["label","source"],
+            "required": [
+                "label",
+                "source"
+            ],
             "title": "ScopedName",
             "type": "object"
         }
