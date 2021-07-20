@@ -1,0 +1,26 @@
+Date: Multiple dates might be of interest. need Date object that specifies a DateTime (ISO 8601) and a 'DateType' that specifies what happened on that date (c.f. ISO19115).   This would correspond to PROV actions, with a time stamp for each action (e.g. collection, acession, public release, subsampling, lending)  Its apparent that many of these actions will not be relevant to research publications
+
+Responsibilities:  the array of agents important to understanding a sample is different from those related to a publication. If DataCite wants to expand their scope, having a 'responsibleParty' or 'responsibility' (yes, that's from ISO19115, again) that binds an agent (person or organization) with a role relative to some action.  Hard typing roles is not scalable.
+
+Use of this DateType (or action type) and responsibility/role 'soft-type' approach would allow application of the metadata scheme for various resources using a profile approach.  Profiles for publications, samples, software, instruments...etc would specify the vocabularies important for resources in their scope. 
+
+For describing samples, the 'context' is a key property-- what was the sample collected to represent. 
+As far as context, the first order question is where was the sample collected. This might be multi-layered;  suggested minimum requirement would be a simple WGS84 point location. This might be an actual sample location point, or the centroid of something like a mine or archaeologic excavation site. More detailed location information within an extended site would have to be accomodated with locations relative to local spatial reference systems in a detailed location property [detailed location probably too granular for DataCite level documentation?]. Locations might need to be 'spoofed' to protect them from abuse. There might be legal or cultural considerations important to know about accessing the collection location.
+
+Thematically, the context conceptual space will be different for different kinds of samples. In geology one would want to know things like geologic unit, geologic age, tectonic setting, rock type... For Archaeology things like historical period, culture, site name, function, material. For GBIF  things like taxon, when was the sample collected (time of year, relative to organism life cycle...), age (from birth) of the organism, biological environment, host organisms...  In materials science context would include information about experimental conditions. 
+
+A soft-type approach seems appropriate to handle these various context descriptions. Something like 'additionalProperty' in schema.org. A metadata element that includes a 'propertyID' and a value for that property (minimally).  Profiles would specify the required and recommended properties for resource descriptions under that profile. An rdf implementation would allow communities to add other properties they consider important; these might evolve into new profiles. 
+
+Another key information element for samples is 'curation'. How has the sample been preserved, is it accessible to view, is it accessible to sub sample, who do I contact for access, what are the legal or cultural restrictions on access to or usage of the sample.
+
+Summary recommendations:
+Add 'Event' property that specifies a Date when something happened and a 'DateType' to indicate what happened
+Add 'Responsibility' to specify an agent (person, role, organization) and role of the agent relative to the container element
+Add additionalProperty with minimally propertyID and value. Values should allow controlled vocabulary (enumeration), free text, or measured values (numeric with UOM, uncertainty, range)
+Develop spec for DataCite profiles that would specify vocabularies for DateType, responsibility/role, and additionalPropertit/PropertyID, as well as required/recommended dates, roles, and properties. Profile approach would require that metadata records have a 'conformsTo' property to specify the profile they are based on. 
+Need curation/preservation information.
+
+Suggestions: 
+add an element to assign an identifier for the metadata record distinct from the described resource identifier, allowing statements/annotation to be associated with the metadata distinct from the sample. 
+Metadata records should include an update date to indicate the DateTime of most recent update to metadata content.
+Keywords should be scoped to a vocabulary, allowing separation of theme, location, instrument type etc. keywords. 
