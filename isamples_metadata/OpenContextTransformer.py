@@ -153,6 +153,13 @@ class OpenContextTransformer(Transformer):
                 description_pieces,
                 "Has anatomical identification",
             )
+        for temporal_coverage_dict in self.source_record.get("Temporal Coverage", []):
+            self._transform_key_to_label(
+                "label",
+                temporal_coverage_dict,
+                description_pieces,
+                "Temporal coverage",
+            )
         return Transformer.DESCRIPTION_SEPARATOR.join(description_pieces)
 
     def sample_registrant(self) -> typing.AnyStr:
@@ -195,7 +202,6 @@ class OpenContextTransformer(Transformer):
         return Transformer.NOT_PROVIDED
 
     def produced_by_responsibilities(self) -> typing.List[typing.AnyStr]:
-        # TODO: maybe this should go under registrant?
         # from ekansa:
         # "Creator" is typically a project PI (Principle Investigator). They may or may not be the person that
         # collected the sample. If given, a "Contributor" is the person that originally collected or first
@@ -204,7 +210,11 @@ class OpenContextTransformer(Transformer):
         creators = self.source_record.get("Creator")
         if creators is not None:
             for creator in creators:
-                responsibilities.append(f"collector: {creator.get('label')}")
+                responsibilities.append(f"creator: {creator.get('label')}")
+        contributors = self.source_record.get("Contributor")
+        if contributors is not None:
+            for contributor in contributors:
+                responsibilities.append(f"collector: {contributor.get('label')}")
         return responsibilities
 
     def produced_by_result_time(self) -> typing.AnyStr:
