@@ -4,6 +4,7 @@ import pytest
 
 from isamples_metadata.SESARTransformer import SESARTransformer
 from isamples_metadata.GEOMETransformer import GEOMETransformer
+from isamples_metadata.OpenContextTransformer import OpenContextTransformer
 
 
 def _run_transformer(isamples_path, source_path, transformer_class):
@@ -74,3 +75,22 @@ def test_geome_child_dicts_equal(geome_source_path, isamples_path):
         child_transformer = transformer.child_transformers[0]
         transformed_to_isamples_record = child_transformer.transform()
         _assert_transformed_dictionary(isamples_path, transformed_to_isamples_record)
+
+
+OPENCONTEXT_test_values = [
+    (
+        "../examples/OpenContext/raw/ark-28722-k2b570022.json",
+        "../examples/OpenContext/test/ark-28722-k2b570022-test.json",
+    ),
+    (
+        "../examples/OpenContext/raw/ark-28722-k2m61xj9b.json",
+        "../examples/OpenContext/test/ark-28722-k2m61xj9b-test.json"
+    )
+]
+
+
+@pytest.mark.parametrize(
+    "open_context_source_path,isamples_path", OPENCONTEXT_test_values
+)
+def test_open_context_dicts_equal(open_context_source_path, isamples_path):
+    _run_transformer(isamples_path, open_context_source_path, OpenContextTransformer)
