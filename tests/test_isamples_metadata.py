@@ -81,6 +81,10 @@ OPENCONTEXT_test_values = [
     (
         "../examples/OpenContext/raw/ark-28722-k2b570022.json",
         "../examples/OpenContext/test/ark-28722-k2b570022-test.json",
+    ),
+    (
+        "../examples/OpenContext/raw/ark-28722-k2m61xj9b.json",
+        "../examples/OpenContext/test/ark-28722-k2m61xj9b-test.json"
     )
 ]
 

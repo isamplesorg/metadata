@@ -132,6 +132,7 @@ class Transformer(ABC):
         """Map from the source record into an iSamples specimen category"""
         pass
 
+    @abstractmethod
     def informal_classification(self) -> typing.List[typing.AnyStr]:
         """An informal scientificName"""
         pass

@@ -136,14 +136,22 @@ class OpenContextTransformer(Transformer):
             "late bce/ce", self.source_record, description_pieces
         )
         self._transform_key_to_label("updated", self.source_record, description_pieces)
-        self._transform_key_to_label("updated", self.source_record, description_pieces)
-        for consistsOfDict in self.source_record.get("Consists of", []):
+        for consists_of_dict in self.source_record.get("Consists of", []):
             self._transform_key_to_label(
-                "label", consistsOfDict, description_pieces, "Consists of"
+                "label", consists_of_dict, description_pieces, "Consists of"
             )
-        for hasTypeDict in self.source_record.get("Has type", []):
+        for has_type_dict in self.source_record.get("Has type", []):
             self._transform_key_to_label(
-                "label", hasTypeDict, description_pieces, "Has type"
+                "label", has_type_dict, description_pieces, "Has type"
+            )
+        for has_anatomical_dict in self.source_record.get(
+            "Has anatomical identification", []
+        ):
+            self._transform_key_to_label(
+                "label",
+                has_anatomical_dict,
+                description_pieces,
+                "Has anatomical identification",
             )
         return Transformer.DESCRIPTION_SEPARATOR.join(description_pieces)
 
@@ -219,3 +227,9 @@ class OpenContextTransformer(Transformer):
 
     def sampling_site_place_names(self) -> typing.List:
         return self._context_label_pieces()
+
+    def informal_classification(self) -> typing.List[typing.AnyStr]:
+        classifications = []
+        for consists_of_dict in self.source_record.get("Has taxonomic identifier", []):
+            classifications.append(consists_of_dict.get("label"))
+        return classifications
