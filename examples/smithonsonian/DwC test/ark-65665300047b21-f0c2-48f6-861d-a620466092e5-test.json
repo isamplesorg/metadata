@@ -1,0 +1,37 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/65665/300047b21-f0c2-48f6-861d-a620466092e5",
+    "label": "AK0WG26",
+    "sampleidentifier": "ark:/65665/300047b21-f0c2-48f6-861d-a620466092e5",
+    "description": "occurrenceRemarks: Order: 4508; Box Number: MBARI_0056; Box Position: F/8; MBARI Note: SIO Box 26",
+    "hasContextCategory": ["Marine Water Body"],
+    "hasMaterialCategory": ["Organic Material"],
+    "hasSpecimenCategory": ["Whole Organism"],
+    "informalClassification": [""],
+    "keywords": ["North Pacific Ocean", "United States", "California", "Animalia", "Mollusca", "Bivalvia", "Vesicomyidae"],
+    "producedBy": {
+        "@id": "",
+        "label": "",
+        "description": "",
+        "hasFeatureOfInterest": "",
+        "responsibility": "recordedBy: Lutz et al.",
+        "resultTime": "1990-09-30",
+        "samplingSite": {
+            "description": "",
+            "label": "Monterey",
+            "location": {
+                "elevation": "maximumDepthInMeters: 3402",
+                "latitude": 36.3867,
+                "longitude": -122.897
+            },
+            "placeName": ["Tadjourah", "Djibouti", "Monterey Canyon"]
+        }
+    },
+    "registrant": "",
+    "samplingPurpose": "",
+    "curation": {
+        "accessConstraints": "",
+        "curationLocation": "",
+        "responsibility": "USNM"
+    }
+}

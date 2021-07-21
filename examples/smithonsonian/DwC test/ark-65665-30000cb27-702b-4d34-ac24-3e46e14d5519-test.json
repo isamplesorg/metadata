@@ -1,0 +1,37 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/65665/30000cb27-702b-4d34-ac24-3e46e14d5519",
+    "label": "Epinephelus merra AG5NS72",
+    "sampleidentifier": "ark:/65665/30000cb27-702b-4d34-ac24-3e46e14d5519",
+    "description": "basisOfRecord : MaterialSample | occurrenceRemarks: Specimen voucher located at Museum National d'Histoire Naturelle, Paris.",
+    "hasContextCategory": ["Marine water body"],
+    "hasMaterialCategory": ["Organic Material"],
+    "hasSpecimenCategory": ["Whole Organism"],
+    "informalClassification": ["Epinephelus merra"],
+    "keywords": ["French Polynesia", "Moorea", "Pacific", "Animalia", "Chordata", "Actinopterygii", "Perciformes", "Actiniaria", "Serranidae", "Epinephelus", "merra"],
+    "producedBy": {
+        "@id": "",
+        "label": "",
+        "description": "",
+        "hasFeatureOfInterest": "",
+        "responsibility": ["'recordsBy':R. Causse", "'recordsBy': J. Grignon", "'recordsBy': D. Lecchini", "'recordsBy': V. Messmer", "'recordsBy': S. Planes", "'recordsBy': J. Williams", "'recordsBy': R. Galzin"],
+        "resultTime": "2006-3-12",
+        "samplingSite": {
+            "description": "",
+            "label": "Moorea, Club Med.",
+            "location": {
+                "elevation": 1.7,
+                "latitude": -17.5027,
+                "longitude": -149.925
+            },
+            "placeName": ["Moorea, Club Med.", "United States", "French Polynesia", "Moorea", "Pacific"]
+        }
+    },
+    "registrant": "",
+    "samplingPurpose": "",
+    "curation": {
+        "accessConstraints": "",
+        "curationLocation": "",
+        "responsibility": "USNM http://grbio.org/cool/142r-0w94"
+    }
+}

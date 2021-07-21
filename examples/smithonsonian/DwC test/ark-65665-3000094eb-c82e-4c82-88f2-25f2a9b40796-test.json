@@ -1,0 +1,37 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/65665/3000094eb-c82e-4c82-88f2-25f2a9b40796",
+    "label": "Anthopleura elegantissima AC7BN99",
+    "sampleidentifier": "ark:/65665/3000094eb-c82e-4c82-88f2-25f2a9b40796",
+    "description": "basisOfRecord : MaterialSample",
+    "hasContextCategory": ["Marine water body bottom"],
+    "hasMaterialCategory": ["Organic Material"],
+    "hasSpecimenCategory": ["Whole Organism"],
+    "informalClassification": ["Anthopleura elegantissima"],
+    "keywords": ["United States", "California", "San Luis Obispo County", "North Pacific Ocean", "Animalia", "Cnidaria", "Anthozoa", "Actiniaria", "Actiniidae", "Anthopleura", "elegantissima"],
+    "producedBy": {
+        "@id": "",
+        "label": "",
+        "description": "",
+        "hasFeatureOfInterest": "",
+        "responsibility": ["'recordsBy':J. Burnaford", "'recordsBy': L. Gilbane", "'identifiedBy':Bell, C."],
+        "resultTime": "2016-11-17",
+        "samplingSite": {
+            "description": "",
+            "label": "MARINe Site, Montana del Oro State Park",
+            "location": {
+                "elevation": "",
+                "latitude": 35.2897,
+                "longitude": -120.883
+            },
+            "placeName": ["MARINe Site, Montana del Oro State Park", "United States", "California", "San Luis Obispo County", "North Pacific Ocean"]
+        }
+    },
+    "registrant": "",
+    "samplingPurpose": "",
+    "curation": {
+        "accessConstraints": "",
+        "curationLocation": "",
+        "responsibility": "USNM http://grbio.org/cool/142r-0w94"
+    }
+}

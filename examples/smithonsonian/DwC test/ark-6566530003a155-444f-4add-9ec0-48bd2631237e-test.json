@@ -1,0 +1,37 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/65665/30003a155-444f-4add-9ec0-48bd2631237e",
+    "label": "AL7NG46",
+    "sampleidentifier": "ark:/65665/30003a155-444f-4add-9ec0-48bd2631237e",
+    "description": "",
+    "hasContextCategory": ["Marine Water Body"],
+    "hasMaterialCategory": ["Organic Material"],
+    "hasSpecimenCategory": ["Whole Organism"],
+    "informalClassification": ["Schultzea beta"],
+    "keywords": ["Atlantic", "Caribbean Sea", "Caracas Bay", "Leeward Antilles", "Curacao Curacao", "Animalia", "Chordata", "Actinopterygii", "Perciformes", "Serranidae", "Schultzea"],
+    "producedBy": {
+        "@id": "",
+        "label": "",
+        "description": "",
+        "hasFeatureOfInterest": "",
+        "responsibility": "recordedBy: C. Baldwin, C. Castillo, D. Robertson, L. Weigt",
+        "resultTime": "2011-05-21",
+        "samplingSite": {
+            "description": "",
+            "label": "Curacao, Caracas Bay, east of dive shop.",
+            "location": {
+                "elevation": "maximumDepthInMeters: 21",
+                "latitude": 12.0663,
+                "longitude": -68.8597
+            },
+            "placeName": ["Curacao", "Leeward Antilles", "Curacao, Caracas Bay, east of dive shop."]
+        }
+    },
+    "registrant": "",
+    "samplingPurpose": "",
+    "curation": {
+        "accessConstraints": "",
+        "curationLocation": "",
+        "responsibility": "USNM"
+    }
+}

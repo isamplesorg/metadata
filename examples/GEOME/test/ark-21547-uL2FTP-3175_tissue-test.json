@@ -3,7 +3,7 @@
     "@id": "metadata/21547/Car2PIRE_0334",
     "label": "FTP_3175_tissue, Polychaeta",
     "sampleidentifier": "ark:/21547/uL2FTP_3175_tissue",
-    "description": "voucherCatalogNumber": "personal:MattLeray:FTP_3175",
+    "description": "voucherCatalogNumber: personal:MattLeray:FTP_3175",
     "hasContextCategory": ["Marine Biome"],
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
