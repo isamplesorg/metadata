@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "isamples_metadata"
-version = "0.2.1"
+version = "0.2.2"
 description = ""
 authors = ["Danny Mandel <danny.mandel@gmail.com>"]
 
