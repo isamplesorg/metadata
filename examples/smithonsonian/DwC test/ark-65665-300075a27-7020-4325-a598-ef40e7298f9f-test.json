@@ -3,7 +3,7 @@
     "@id": "metadata/65665/300075a27-7020-4325-a598-ef40e7298f9f",
     "label": "AK8EV38",
     "sampleidentifier": "ark:/65665/300075a27-7020-4325-a598-ef40e7298f9f",
-    "description": "basisOfRecord : MaterialSample | fieldNumber: AL-2370 | catalogNumber: 1565936.14804212 | recordNumber： A2370-C5",
+    "description": "basisOfRecord : MaterialSample | fieldNumber: AL-2370 | catalogNumber: 1565936.14804212 | recordNumber： A2370-C5 | occurrenceRemarks: Order: 10091; Box Number: MBARI_0125: Box Position: F/2; MBARI Note: SIO Box 95",
     "hasContextCategory": ["Marine water body bottom"],
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
@@ -24,7 +24,7 @@
                 "latitude": 9.795,
                 "longitude": -104.282
             },
-            "placeName": ["North Pacific Ocean"]
+            "placeName": ["East Pacific Rise at 9Â°North", "North Pacific Ocean"]
         }
     },
     "registrant": "",

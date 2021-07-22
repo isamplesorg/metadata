@@ -1,14 +1,14 @@
 {
     "@schema": "../../iSamplesSchemaBasic0.2.json",
     "@id": "metadata/65665/3000745d7-3acf-4023-8de0-30a94e187672",
-    "label": "AO2MG29",
+    "label": "Procordulia smithii AO2MG29",
     "sampleidentifier": "ark:/65665/3000745d7-3acf-4023-8de0-30a94e187672",
-    "description": "basisOfRecord : MaterialSample | catalogNumber: USNMENT1640286.1.16106752 | sex: Female",
+    "description": "basisOfRecord : MaterialSample | catalogNumber: USNMENT1640286.1.16106752 | sex: Female | occurrenceRemarks: One leg removed for genetic sampling while on loan to GUELPH.",
     "hasContextCategory": ["Subaerial surface environment"],
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
-    "informalClassification": [""],
-    "keywords": ["New Zealand", "Southland", "[Not Stated]", "South Island", "Animalia", "Arthropoda", "Insecta", "Odonata", "Anisoptera", "Corduliidae", "Corduliinae"],
+    "informalClassification": ["Procordulia smithii"],
+    "keywords": ["New Zealand", "Southland", "South Island", "Animalia", "Arthropoda", "Insecta", "Corduliidae", "Procordulia", "smithii", "Adult"],
     "producedBy": {
         "@id": "",
         "label": "",
@@ -24,7 +24,7 @@
                 "latitude": -46.26,
                 "longitude": 167.91
             },
-            "placeName": ["Southland", "Cascade Stream", "Cascade Road", "13 air km NW Riverton", "New Zealand", "Southland", "[Not Stated]", "South Island"]
+            "placeName": ["Southland, Cascade Stream, Cascade Road, 13 air km NW Riverton", "New Zealand", "Southland", "South Island"]
         }
     },
     "registrant": "",
