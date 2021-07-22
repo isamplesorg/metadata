@@ -1,0 +1,37 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/65665/3000768ed-fc68-446b-aa6d-f8bd437c796a",
+    "label": "AE0OW35",
+    "sampleidentifier": "ark:/65665/3000768ed-fc68-446b-aa6d-f8bd437c796a",
+    "description": "basisOfRecord : MaterialSample | catalogNumber: 12758488 | recordNumber： 2403",
+    "hasContextCategory": ["Subaerial surface environment"],
+    "hasMaterialCategory": ["Organic Material"],
+    "hasSpecimenCategory": ["Whole Organism"],
+    "informalClassification": [""],
+    "keywords": ["Asia-Temperate", "China", "Yunnan", "Deqin Xian", "Plantae", "Dicotyledonae", "Ericales", "Ericaceae"],
+    "producedBy": {
+        "@id": "",
+        "label": "",
+        "description": "",
+        "hasFeatureOfInterest": "",
+        "responsibility": ["'recordedBy': Tibet-MacArthur, J. Wen, Z. Nie, L. Xie, Y. Niu, G. Li, F. Yang, S. Lutz & J. Van De Veire"],
+        "resultTime": "2009-06-17",
+        "samplingSite": {
+            "description": "",
+            "label": "Baima Shan",
+            "location": {
+                "elevation": "minimumElevationInMeters: 4350",
+                "latitude": 28.3419,
+                "longitude": 99.0661
+            },
+            "placeName": ["Baima Shan", "China","Yunnan",	"Deqin Xian"]
+        }
+    },
+    "registrant": "",
+    "samplingPurpose": "",
+    "curation": {
+        "accessConstraints": "",
+        "curationLocation": "",
+        "responsibility": "US http://grbio.org/cool/142r-0w94"
+    }
+}

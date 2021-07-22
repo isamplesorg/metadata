@@ -1,0 +1,37 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/65665/3000745d7-3acf-4023-8de0-30a94e187672",
+    "label": "AO2MG29",
+    "sampleidentifier": "ark:/65665/3000745d7-3acf-4023-8de0-30a94e187672",
+    "description": "basisOfRecord : MaterialSample | catalogNumber: USNMENT1640286.1.16106752 | sex: Female",
+    "hasContextCategory": ["Subaerial surface environment"],
+    "hasMaterialCategory": ["Organic Material"],
+    "hasSpecimenCategory": ["Whole Organism"],
+    "informalClassification": [""],
+    "keywords": ["New Zealand", "Southland", "[Not Stated]", "South Island", "Animalia", "Arthropoda", "Insecta", "Odonata", "Anisoptera", "Corduliidae", "Corduliinae"],
+    "producedBy": {
+        "@id": "",
+        "label": "",
+        "description": "",
+        "hasFeatureOfInterest": "",
+        "responsibility": ["'recordedBy': O. Flint", "'identifiedBy':Flint, O. S."],
+        "resultTime": "2004-01-15",
+        "samplingSite": {
+            "description": "",
+            "label": "Southland, Cascade Stream, Cascade Road, 13 air km NW Riverton",
+            "location": {
+                "elevation": "maximumElevationInMeters: 73.0",
+                "latitude": -46.26,
+                "longitude": 167.91
+            },
+            "placeName": ["Southland", "Cascade Stream", "Cascade Road", "13 air km NW Riverton", "New Zealand", "Southland", "[Not Stated]", "South Island"]
+        }
+    },
+    "registrant": "",
+    "samplingPurpose": "",
+    "curation": {
+        "accessConstraints": "",
+        "curationLocation": "",
+        "responsibility": "USNM http://grbio.org/cool/142r-0w94"
+    }
+}

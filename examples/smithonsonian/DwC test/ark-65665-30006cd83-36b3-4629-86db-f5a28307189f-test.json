@@ -1,0 +1,37 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/65665/30006cd83-36b3-4629-86db-f5a28307189f",
+    "label": "AL2IC84",
+    "sampleidentifier": "ark:/65665/30006cd83-36b3-4629-86db-f5a28307189f",
+    "description": "basisOfRecord : MaterialSample | fieldNumber: MBARI/T548 | catalogNumber: 1566725.14807199 | recordNumber： T548-A9-TW19 ",
+    "hasContextCategory": ["Marine water body bottom"],
+    "hasMaterialCategory": ["Organic Material"],
+    "hasSpecimenCategory": ["Whole Organism"],
+    "informalClassification": [""],
+    "keywords": ["North Pacific Ocean", "Gulf of California", "Mexico", "Animalia", "Annelida", "Polychaeta", "Sedentaria", "Canalipalpata", "Sabellida", "Siboglinidae"],
+    "producedBy": {
+        "@id": "",
+        "label": "",
+        "description": "locationID: T548",
+        "hasFeatureOfInterest": "",
+        "responsibility": ["'recordedBy': R. Vrijenhoek"],
+        "resultTime": "2003-04-05",
+        "samplingSite": {
+            "description": "",
+            "label": "T548",
+            "location": {
+                "elevation": "maximumDepthInMeters: 1785.34",
+                "latitude": 27.5772,
+                "longitude": -111.45
+            },
+            "placeName": ["T548", "North Pacific Ocean", "Gulf of California", "Mexico"]
+        }
+    },
+    "registrant": "",
+    "samplingPurpose": "",
+    "curation": {
+        "accessConstraints": "",
+        "curationLocation": "",
+        "responsibility": "USNM http://grbio.org/cool/142r-0w94"
+    }
+}
