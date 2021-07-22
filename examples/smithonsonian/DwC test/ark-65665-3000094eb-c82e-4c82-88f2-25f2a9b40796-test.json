@@ -3,7 +3,7 @@
     "@id": "metadata/65665/3000094eb-c82e-4c82-88f2-25f2a9b40796",
     "label": "Anthopleura elegantissima AC7BN99",
     "sampleidentifier": "ark:/65665/3000094eb-c82e-4c82-88f2-25f2a9b40796",
-    "description": "basisOfRecord : MaterialSample",
+    "description": "basisOfRecord : MaterialSample | catalogNumber： 1445124.13347881 | fieldNumber：BOEM-MARINE-HAZ/111716 ",
     "hasContextCategory": ["Marine water body bottom"],
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
@@ -12,7 +12,7 @@
     "producedBy": {
         "@id": "",
         "label": "",
-        "description": "",
+        "description": "verbatimEventDate：Afternoon low tide 3 - pm | locationID：HAZ",
         "hasFeatureOfInterest": "",
         "responsibility": ["'recordsBy':J. Burnaford", "'recordsBy': L. Gilbane", "'identifiedBy':Bell, C."],
         "resultTime": "2016-11-17",

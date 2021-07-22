@@ -3,7 +3,7 @@
     "@id": "metadata/65665/300008335-8d74-4c3f-873c-a9d8b4b3d6a8",
     "label": "Bathymodiolus sp. AJ9VQ03",
     "sampleidentifier": "ark:/65665/300008335-8d74-4c3f-873c-a9d8b4b3d6a8",
-    "description": "basisOfRecord : MaterialSample | occurrenceRemarks: Order: 2885; Box Number: MBARI_0036; Box Position: F/5; MBARI Note: SIO Box 6 Sinatra",
+    "description": "basisOfRecord : MaterialSample | occurrenceRemarks: Order: 2885; Box Number: MBARI_0036; Box Position: F/5; MBARI Note: SIO Box 6 Sinatra | catalogNumber：1464106.14693703 | recordNumber：A3120-(B3-5) | fieldNumber：AL-3120  ",
     "hasContextCategory": ["Marine water body bottom"],
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
@@ -20,7 +20,7 @@
             "description": "",
             "label": "MID-ATLANTIC RIDGE - Lucky Strike",
             "location": {
-                "elevation": 1733.0,
+                "elevation": "maximumDepthInMeters: 1733.0",
                 "latitude": 37.2938,
                 "longitude": -32.2755
             },

@@ -1,20 +1,20 @@
 {
     "@schema": "../../iSamplesSchemaBasic0.2.json",
     "@id": "metadata/65665/30003a155-444f-4add-9ec0-48bd2631237e",
-    "label": "AL7NG46",
+    "label": "Schultzea beta AL7NG46",
     "sampleidentifier": "ark:/65665/30003a155-444f-4add-9ec0-48bd2631237e",
-    "description": "",
+    "description": "basisOfRecord : MaterialSample | catalogNumber：406026.14643823 | recordNumber：CUR11026 | fieldNumber：CUR11-04",
     "hasContextCategory": ["Marine Water Body"],
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
     "informalClassification": ["Schultzea beta"],
-    "keywords": ["Atlantic", "Caribbean Sea", "Caracas Bay", "Leeward Antilles", "Curacao Curacao", "Animalia", "Chordata", "Actinopterygii", "Perciformes", "Serranidae", "Schultzea"],
+    "keywords": ["Atlantic", "Caribbean Sea", "Caracas Bay", "Leeward Antilles", "Curacao", "Animalia", "Chordata", "Actinopterygii", "Perciformes", "Percoidei", "Serranidae", "Schultzea", "beta"],
     "producedBy": {
         "@id": "",
         "label": "",
-        "description": "",
+        "description": "georeferenceProtocol：GPS",
         "hasFeatureOfInterest": "",
-        "responsibility": "recordedBy: C. Baldwin, C. Castillo, D. Robertson, L. Weigt",
+        "responsibility": ["'recordedBy': C. Baldwin", "'recordedBy':C. Castillo", "'recordedBy':D. Robertson", "'recordedBy':L. Weigt"],
         "resultTime": "2011-05-21",
         "samplingSite": {
             "description": "",
@@ -24,7 +24,7 @@
                 "latitude": 12.0663,
                 "longitude": -68.8597
             },
-            "placeName": ["Curacao", "Leeward Antilles", "Curacao, Caracas Bay, east of dive shop."]
+            "placeName": ["Curacao, Caracas Bay, east of dive shop.", "Atlantic", "Caribbean Sea", "Caracas Bay", "Leeward Antilles", "Curacao"]
         }
     },
     "registrant": "",
@@ -32,6 +32,6 @@
     "curation": {
         "accessConstraints": "",
         "curationLocation": "",
-        "responsibility": "USNM"
+        "responsibility": "USNM http://grbio.org/cool/142r-0w94"
     }
 }

@@ -1,0 +1,37 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/65665/300037033-1c48-460e-bc43-ce7fb3780a69",
+    "label": "Tripterygiidae AG0IO49",
+    "sampleidentifier": "ark:/65665/300037033-1c48-460e-bc43-ce7fb3780a69",
+    "description": "basisOfRecord : MaterialSample | fieldNumber: FP3 010710 | catalogNumber: 449669.15150503 | recordNumber： FLMOO 1239 | sex: male",
+    "hasContextCategory": ["Subaerial surface environment"],
+    "hasMaterialCategory": ["Organic Material"],
+    "hasSpecimenCategory": ["Whole Organism"],
+    "informalClassification": ["Tripterygiidae"],
+    "keywords": ["Pacific", "Moorea", "French Polynesia", "Animalia", "Chordata", "Actinopterygii", "Perciformes", "Tripterygiidae"],
+    "producedBy": {
+        "@id": "",
+        "label": "",
+        "description": "locationID: 7414",
+        "hasFeatureOfInterest": "",
+        "responsibility": ["'recordedBy': F. Lerouvreur", "'recordedBy': B. Espiau "],
+        "resultTime": "2010-07-01",
+        "samplingSite": {
+            "description": "",
+            "label": "South tip of Moorea",
+            "location": {
+                "elevation": "",
+                "latitude": -17.613,
+                "longitude": -149.822
+            },
+            "placeName": ["South tip of Moorea", "Pacific", "Moorea", "French Polynesia"]
+        }
+    },
+    "registrant": "",
+    "samplingPurpose": "",
+    "curation": {
+        "accessConstraints": "",
+        "curationLocation": "",
+        "responsibility": "USNM http://grbio.org/cool/142r-0w94"
+    }
+}

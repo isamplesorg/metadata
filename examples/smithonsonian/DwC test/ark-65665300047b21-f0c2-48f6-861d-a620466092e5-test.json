@@ -3,7 +3,7 @@
     "@id": "metadata/65665/300047b21-f0c2-48f6-861d-a620466092e5",
     "label": "AK0WG26",
     "sampleidentifier": "ark:/65665/300047b21-f0c2-48f6-861d-a620466092e5",
-    "description": "occurrenceRemarks: Order: 4508; Box Number: MBARI_0056; Box Position: F/8; MBARI Note: SIO Box 26",
+    "description": "basisOfRecord : MaterialSample | occurrenceRemarks: Order: 4508; Box Number: MBARI_0056; Box Position: F/8; MBARI Note: SIO Box 26 | catalogNumber： 1464314.14697588 | recordNumber： A2287-(C22,30,33,35,38,43,47,48,51) | fieldNumber: AL-2287",
     "hasContextCategory": ["Marine Water Body"],
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
@@ -14,11 +14,11 @@
         "label": "",
         "description": "",
         "hasFeatureOfInterest": "",
-        "responsibility": "recordedBy: Lutz et al.",
+        "responsibility": ["'recordedBy': Lutz et al."],
         "resultTime": "1990-09-30",
         "samplingSite": {
             "description": "",
-            "label": "Monterey",
+            "label": "Monterey Canyon",
             "location": {
                 "elevation": "maximumDepthInMeters: 3402",
                 "latitude": 36.3867,
@@ -32,6 +32,6 @@
     "curation": {
         "accessConstraints": "",
         "curationLocation": "",
-        "responsibility": "USNM"
+        "responsibility": "USNM http://grbio.org/cool/142r-0w94"
     }
 }

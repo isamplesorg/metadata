@@ -1,0 +1,37 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata/65665/30000d403-f44f-498c-b7e3-ca1df52a2391",
+    "label": "AF2AT49",
+    "sampleidentifier": "ark:/65665/30000d403-f44f-498c-b7e3-ca1df52a2391",
+    "description": "basisOfRecord : MaterialSample | catalogNumber: 1452351.13337038 | recordNumber: XMOO_0121 | fieldNumber: MBIO/080605_minv_006",
+    "hasContextCategory": ["Marine Water Body bottom"],
+    "hasMaterialCategory": ["Organic Material"],
+    "hasSpecimenCategory": ["Whole Organism"],
+    "informalClassification": "",
+    "keywords": ["South Pacific Ocean", "Society Islands", "Moorea", "French Polynesia", "Animalia", "Mollusca", "Gastropoda"],
+    "producedBy": {
+        "@id": "",
+        "label": "",
+        "description": "verbatimEventDate: 950 | locationID: 080605_minv_006 | geodeticDatum: WGS1984 | georeferenceRemarks: Max error (m): 4",
+        "hasFeatureOfInterest": "",
+        "responsibility": ["'recordedBy': C. Meyer", "'recordedBy':L. Weigt", "'identifiedBy': Driskell, Amy C.", "'identifiedBy': Smithsonian Institution - National Museum of Natural History (UNITED STATES)"],
+        "resultTime": "2008-06-05",
+        "samplingSite": {
+            "description": "",
+            "label": "Society Islands, Moorea, Forereef between MPA Pole and Sheraton",
+            "location": {
+                "elevation": "maximumDepthInMeters: 1",
+                "latitude": -17.4757,
+                "longitude": -149.836
+            },
+            "placeName": ["Society Islands, Moorea, Forereef between MPA Pole and Sheraton", "South Pacific Ocean", "Society Islands", "Moorea", "French Polynesia"]
+        }
+    },
+    "registrant": "",
+    "samplingPurpose": "",
+    "curation": {
+        "accessConstraints": "",
+        "curationLocation": "",
+        "responsibility": "USNM http://grbio.org/cool/142r-0w94"
+    }
+}
