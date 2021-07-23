@@ -3,18 +3,18 @@
     "@id": "metadata/65665/3000768ed-fc68-446b-aa6d-f8bd437c796a",
     "label": "Rhododendron hippophaeoides AE0OW35",
     "sampleidentifier": "ark:/65665/3000768ed-fc68-446b-aa6d-f8bd437c796a",
-    "description": "basisOfRecord : MaterialSample | catalogNumber: 12758488 | recordNumber： 2403",
+    "description": "basisOfRecord : MaterialSample | type : PhysicalObject | catalogNumber: 12758488 | recordNumber： 2403 | individualCount: 1 | disposition: in collection | startDayOfYear: 168 | endDayOfYear: 168",
     "hasContextCategory": ["Subaerial surface environment"],
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
     "informalClassification": ["Rhododendron hippophaeoides"],
-    "keywords": ["Asia-Temperate", "China", "Yunnan", "Deqin Xian", "Plantae", "Dicotyledonae", "Ericales", "Ericaceae", "Rhododendron", "hippophaeoides"],
+    "keywords": ["Asia-Temperate", "Botany", "China", "Yunnan", "Deqin Xian", "Plantae", "Dicotyledonae", "Ericales", "Ericaceae", "Rhododendron", "hippophaeoides"],
     "producedBy": {
         "@id": "",
         "label": "",
-        "description": "",
+        "description": "verbatimEventDate: 17 Jun 2009",
         "hasFeatureOfInterest": "",
-        "responsibility": ["'recordedBy': Tibet-MacArthur", "'recordedBy':J. Wen", "'recordedBy':Z. Nie", "'recordedBy':L. Xie", "'recordedBy':Y. Niu", "'recordedBy':G. Li", "'recordedBy':F. Yang", "'recordedBy':S. Lutz", "'recordedBy':J. Van De Veire"],
+        "responsibility": ["'recordedBy': Tibet-MacArthur", "'recordedBy': J. Wen", "'recordedBy': Z. Nie", "'recordedBy': L. Xie", "'recordedBy': Y. Niu", "'recordedBy': G. Li", "'recordedBy': F. Yang", "'recordedBy': S. Lutz", "'recordedBy': J. Van De Veire", "'scientificNameAuthorship':Balf. f.", "'scientificNameAuthorship':W.W. Sm."],
         "resultTime": "2009-06-17",
         "samplingSite": {
             "description": "",
@@ -24,7 +24,7 @@
                 "latitude": 28.3419,
                 "longitude": 99.0661
             },
-            "placeName": ["Baima Shan", "China", "Yunnan", "Deqin Xian", "Asia-Temperate"]
+            "placeName": ["Baima Shan", "Asia-Temperate", "China", "Yunnan", "Deqin Xian"]
         }
     },
     "registrant": "",

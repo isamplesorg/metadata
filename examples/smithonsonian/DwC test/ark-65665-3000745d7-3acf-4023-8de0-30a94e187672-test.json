@@ -3,24 +3,24 @@
     "@id": "metadata/65665/3000745d7-3acf-4023-8de0-30a94e187672",
     "label": "Procordulia smithii AO2MG29",
     "sampleidentifier": "ark:/65665/3000745d7-3acf-4023-8de0-30a94e187672",
-    "description": "basisOfRecord : MaterialSample | catalogNumber: USNMENT1640286.1.16106752 | sex: Female | occurrenceRemarks: One leg removed for genetic sampling while on loan to GUELPH.",
+    "description": "basisOfRecord : MaterialSample | type : PhysicalObject |catalogNumber: USNMENT1640286.1.16106752 | sex: Female | occurrenceRemarks: One leg removed for genetic sampling while on loan to GUELPH. | individualCount: 1 | preparations: Frozen | disposition: in collection | associatedSequences: MN344956 | startDayOfYear: 15 | endDayOfYear: 15",
     "hasContextCategory": ["Subaerial surface environment"],
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
     "informalClassification": ["Procordulia smithii"],
-    "keywords": ["New Zealand", "Southland", "South Island", "Animalia", "Arthropoda", "Insecta", "Corduliidae", "Procordulia", "smithii", "Adult"],
+    "keywords": ["Entomology", "New Zealand", "Southland", "Adult", "South Island", "Animalia", "Arthropoda", "Insecta", "Odonata", "Corduliidae", "Procordulia", "smithii"],
     "producedBy": {
         "@id": "",
         "label": "",
         "description": "",
         "hasFeatureOfInterest": "",
-        "responsibility": ["'recordedBy': O. Flint", "'identifiedBy':Flint, O. S."],
+        "responsibility": ["'recordedBy': O. Flint", "'identifiedBy': Flint, O. S.", "'scientificNameAuthorship': White"],
         "resultTime": "2004-01-15",
         "samplingSite": {
             "description": "",
             "label": "Southland, Cascade Stream, Cascade Road, 13 air km NW Riverton",
             "location": {
-                "elevation": "maximumElevationInMeters: 73.0",
+                "elevation": "maximumElevationInMeters: 73.0 | minimumElevationInMeters: 73.0",
                 "latitude": -46.26,
                 "longitude": 167.91
             },

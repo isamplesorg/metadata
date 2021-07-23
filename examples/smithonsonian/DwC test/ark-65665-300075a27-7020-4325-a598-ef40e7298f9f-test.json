@@ -3,12 +3,12 @@
     "@id": "metadata/65665/300075a27-7020-4325-a598-ef40e7298f9f",
     "label": "AK8EV38",
     "sampleidentifier": "ark:/65665/300075a27-7020-4325-a598-ef40e7298f9f",
-    "description": "basisOfRecord : MaterialSample | fieldNumber: AL-2370 | catalogNumber: 1565936.14804212 | recordNumber： A2370-C5 | occurrenceRemarks: Order: 10091; Box Number: MBARI_0125: Box Position: F/2; MBARI Note: SIO Box 95",
+    "description": "basisOfRecord : MaterialSample | type : PhysicalObject | fieldNumber: AL-2370 | catalogNumber: 1565936.14804212 | recordNumber： A2370-C5 | occurrenceRemarks: Order: 10091; Box Number: MBARI_0125: Box Position: F/2; MBARI Note: SIO Box 95 | individualCount: 1 | disposition: in collection | startDayOfYear: 111 | endDayOfYear: 111",
     "hasContextCategory": ["Marine water body bottom"],
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
     "informalClassification": [""],
-    "keywords": ["North Pacific Ocean", "Animalia", "Mollusca", "Bivalvia", "Vesicomyidae"],
+    "keywords": ["North Pacific Ocean", " Invertebrate Zoology", "Animalia", "Mollusca", "Bivalvia", "Vesicomyidae"],
     "producedBy": {
         "@id": "",
         "label": "",
@@ -17,14 +17,14 @@
         "responsibility": ["'recordedBy': R. Haymon et al."],
         "resultTime": "1991-04-21",
         "samplingSite": {
-            "description": "",
-            "label": "East Pacific Rise at 9Â°North",
+            "description": "verbatimLatitude: 9 47 42 N | verbatimLongitude: 104 16 54 W",
+            "label": "East Pacific Rise at 9°North",
             "location": {
                 "elevation": "minimumDepthInMeters: 2525",
                 "latitude": 9.795,
                 "longitude": -104.282
             },
-            "placeName": ["East Pacific Rise at 9Â°North", "North Pacific Ocean"]
+            "placeName": ["East Pacific Rise at 9°North", "North Pacific Ocean"]
         }
     },
     "registrant": "",

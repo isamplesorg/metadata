@@ -3,28 +3,28 @@
     "@id": "metadata/65665/30004d383-9b25-4cfd-840d-a720361ec77e",
     "label": "AF6EY68",
     "sampleidentifier": "ark:/65665/30004d383-9b25-4cfd-840d-a720361ec77e",
-    "description": "basisOfRecord : MaterialSample | fieldNumber: MBIO/BIZ-064 | catalogNumber: 1428583.12896321 | recordNumber： BMOO-07287 | sex: male",
+    "description": "type: PhysicalObject | basisOfRecord : MaterialSample | individualCount: 1 | disposition: in collection | startDayOfYear: 302 | endDayOfYear: 302 | fieldNumber: MBIO/BIZ-064 | catalogNumber: 1428583.12896321 | recordNumber： BMOO-07287 | sex: male",
     "hasContextCategory": ["Subaerial surface environment"],
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
     "informalClassification": [""],
-    "keywords": ["on shell of Calcinus nitidus", "South Pacific Ocean", "Society Islands", "Moorea", "French Polynesia", "Animalia", "Cnidaria", "Hydrozoa", "Anthoathecatae", "Hydractiniidae"],
+    "keywords": ["Invertebrate Zoology", "on shell of Calcinus nitidus", "South Pacific Ocean", "Society Islands", "Moorea", "French Polynesia", "Animalia", "Cnidaria", "Hydrozoa", "Anthoathecatae", "Hydractiniidae"],
     "producedBy": {
         "@id": "",
         "label": "",
-        "description": "locationID: BIZ-064",
+        "description": "",
         "hasFeatureOfInterest": "",
-        "responsibility": ["'recordedBy': S. McPherson", "'recordedBy': K. Hendrickson ", "'identifiedBy':Anker, Arthur"],
+        "responsibility": ["'recordedBy': S. McPherson", "'recordedBy': K. Hendrickson ", "'identifiedBy': Anker", "'identifiedBy': Arthur"],
         "resultTime": "2009-10-29",
         "samplingSite": {
-            "description": "",
+            "description": "locationID: BIZ-064 | verbatimLatitude: -17.47568 | verbatimLongitude: -149.83762",
             "label": "Society Islands, Moorea, West of Cook's Bay pass, toward Hilton",
             "location": {
                 "elevation": "maximumDepthInMeters: 15.0",
                 "latitude": -17.4757,
                 "longitude": -149.838
             },
-            "placeName": ["Society Islands, Moorea, West of Cook's Bay pass, toward Hilton", "on shell of Calcinus nitidus", "South Pacific Ocean", "Society Islands", "Moorea", "French Polynesia"]
+            "placeName": ["Society Islands, Moorea, West of Cook's Bay pass, toward Hilton", "South Pacific Ocean", "Society Islands", "Moorea", "French Polynesia"]
         }
     },
     "registrant": "",
