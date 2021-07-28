@@ -293,6 +293,23 @@ class AbstractCategoryMetaMapper(ABC):
         cls._categoriesMappers = cls.categories_mappers()
 
 
+class StringConstantCategoryMapper(AbstractCategoryMapper):
+    """A mapper that always matches.  Use this as the end of the road."""
+
+    def __init__(
+        self,
+        destination_category: typing.AnyStr,
+    ):
+        self._destination = destination_category
+
+    def matches(
+        self,
+        potential_match: typing.AnyStr,
+        auxiliary_match: typing.Optional[typing.AnyStr] = None,
+    ) -> bool:
+        return True
+
+
 class StringEqualityCategoryMapper(AbstractCategoryMapper):
     """A mapper that matches iff the potentialMatch exactly matches one of the list of predefined categories"""
 

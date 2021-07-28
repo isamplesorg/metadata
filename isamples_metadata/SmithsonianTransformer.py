@@ -1,7 +1,53 @@
 import typing
 import re
 
-from isamples_metadata.Transformer import Transformer
+from isamples_metadata.Transformer import (
+    Transformer,
+    AbstractCategoryMetaMapper,
+    StringEqualityCategoryMapper,
+    AbstractCategoryMapper, StringConstantCategoryMapper,
+)
+
+
+class SpecimenCategoryMetaMapper(AbstractCategoryMetaMapper):
+    # Leaving this here for documentation purposes, but given the state of the mapping we
+    # end up defaulting things to this anyway, so we don't actually end up using this.
+    _organism_part_mapper = StringEqualityCategoryMapper(
+        [
+            "Tissue & parts; leaf; Silica Gel",
+            "Tissue & Parts; Other (see Verbatim); trophosome",
+            "Tissue & Parts; Other (see Verbatim); plume",
+            "Tissue & Parts; Hair",
+            "DNA, RNA, Proteins; Whole genomic DNA",
+            "DNA, RNA, Proteins; Unknown DNA, RNA, or Protein"
+        ],
+        "Organism part",
+    )
+
+    _biome_aggregation_mapper = StringEqualityCategoryMapper(
+        [
+            "Tissue & Parts; Mixed tissue sample; MH",
+            "Environmental Sample; Host-Associated; Small Intestine RNA",
+        ],
+        "Biome aggregation",
+    )
+
+    _whole_organism_mapper = StringEqualityCategoryMapper(
+        [
+            "Tissue & Parts; Egg; Multiple eggs",
+        ],
+        "Whole organism",
+    )
+
+    _default_organism_part_mapper = StringConstantCategoryMapper("Organism part")
+
+    @classmethod
+    def categories_mappers(cls) -> typing.List[AbstractCategoryMapper]:
+        return [
+            cls._biome_aggregation_mapper,
+            cls._whole_organism_mapper,
+            cls._default_organism_part_mapper,
+        ]
 
 
 class SmithsonianTransformer(Transformer):
@@ -75,10 +121,15 @@ class SmithsonianTransformer(Transformer):
         return []
 
     def has_material_categories(self) -> typing.List[typing.AnyStr]:
-        return []
+        material_sample_type = self.source_record.get("materialSampleType")
+        if material_sample_type == "Environmental sample":
+            return ["Biogenic non organic material"]
+        else:
+            return ["Organic material"]
 
     def has_specimen_categories(self) -> typing.List[typing.AnyStr]:
-        return []
+        preparation_type = self.source_record.get("preparationType")
+        return SpecimenCategoryMetaMapper.categories(preparation_type)
 
     def informal_classification(self) -> typing.List[typing.AnyStr]:
         return [self.source_record.get("scientificName")]

@@ -106,7 +106,7 @@ def test_open_context_dicts_equal(open_context_source_path, isamples_path):
 def _get_record_with_id(record_id: typing.AnyStr) -> typing.Dict:
     raw_csv = "../examples/smithonsonian/DwC raw/DwC_occurrence_10.csv"
     with open(raw_csv, newline="") as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter=",")
+        csv_reader = csv.reader(csv_file, delimiter="\t")
         column_headers = []
         i = 0
         for i, current_values in enumerate(csv_reader):
@@ -131,7 +131,8 @@ SMITHSONIAN_test_values = [
     "../examples/smithonsonian/DwC test/ark-65665-30000cb27-702b-4d34-ac24-3e46e14d5519-test.json",
     "../examples/smithonsonian/DwC test/ark-65665-30000d403-f44f-498c-b7e3-ca1df52a2391-test.json",
     "../examples/smithonsonian/DwC test/ark-65665-30002e5e4-91a3-4343-9519-2aab489dfbfd-test.json",
-    "../examples/smithonsonian/DwC test/ark-65665-30003a155-444f-4add-9ec0-48bd2631237e-test.json"
+    "../examples/smithonsonian/DwC test/ark-65665-30003a155-444f-4add-9ec0-48bd2631237e-test.json",
+    "../examples/smithonsonian/DwC test/ark-65665-30004d383-9b25-4cfd-840d-a720361ec77e-test.json"
 ]
 
 @pytest.mark.parametrize(
