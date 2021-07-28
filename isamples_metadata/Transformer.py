@@ -11,6 +11,14 @@ class Transformer(ABC):
 
     DESCRIPTION_SEPARATOR = " | "
 
+    N2T_PREFIX = "https://n2t.net/"
+
+    N2T_ARK_PREFIX = f"{N2T_PREFIX}ark:/"
+
+    N2T_NO_HTTPS_PREFIX = "http://n2t.net/"
+
+    N2T_ARK_NO_HTTPS_PREFIX = f"{N2T_NO_HTTPS_PREFIX}ark:/"
+
     @staticmethod
     def _transform_key_to_label(
         key: typing.AnyStr,
@@ -21,13 +29,25 @@ class Transformer(ABC):
         if label is None:
             label = key
         value = source_dict.get(key)
-        if value is not None:
+        if value is not None and len(value) > 0:
             dest_list.append(f"{label}: {value}")
+
+    @staticmethod
+    def _formatted_date(
+        year: typing.AnyStr, month: typing.AnyStr, day: typing.AnyStr
+    ) -> typing.AnyStr:
+        result_time_pieces = []
+        if len(year) > 0:
+            result_time_pieces.append(year)
+        if len(month) > 0:
+            result_time_pieces.append(month.zfill(2))
+        if len(day) > 0:
+            result_time_pieces.append(day.zfill(2))
+        return "-".join(result_time_pieces)
 
     def __init__(self, source_record: typing.Dict):
         self.source_record = source_record
 
-    @abstractmethod
     def transform(self) -> typing.Dict:
         """Do the actual work of transforming a provider record into an iSamples record.
 
@@ -85,16 +105,6 @@ class Transformer(ABC):
 
     @abstractmethod
     def sample_identifier_string(self) -> typing.AnyStr:
-        pass
-
-    @abstractmethod
-    def sample_identifier_scheme(self) -> typing.AnyStr:
-        """The identifier scheme for the sample in source_record"""
-        pass
-
-    @abstractmethod
-    def sample_identifier_value(self) -> typing.AnyStr:
-        """An identifier value for the sample in source_record, this doesn't include the identifier scheme"""
         pass
 
     @abstractmethod

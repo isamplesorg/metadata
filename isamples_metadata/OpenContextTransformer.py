@@ -100,29 +100,16 @@ class SpecimenCategoryMetaMapper(AbstractCategoryMetaMapper):
 
 
 class OpenContextTransformer(Transformer):
-    N2T_PREFIX = "https://n2t.net/"
-    N2T_ARK_PREFIX = f"{N2T_PREFIX}ark:/"
-
-    def transform(self) -> typing.Dict:
-        transformed_record = super().transform()
-        return transformed_record
 
     def _citation_uri(self) -> typing.AnyStr:
         return self.source_record.get("citation uri")
 
     def id_string(self) -> typing.AnyStr:
         citation_uri = self._citation_uri()
-        return f"metadata/{citation_uri.removeprefix(self.N2T_ARK_PREFIX)}"
-
-    def sample_identifier_scheme(self) -> typing.AnyStr:
-        pass
+        return f"metadata/{citation_uri.removeprefix(Transformer.N2T_ARK_PREFIX)}"
 
     def sample_identifier_string(self) -> typing.AnyStr:
-        return self._citation_uri().removeprefix(self.N2T_PREFIX)
-
-    def sample_identifier_value(self) -> typing.AnyStr:
-        # TODO is this even used?
-        return self._citation_uri().removeprefix(self.N2T_PREFIX)
+        return self._citation_uri().removeprefix(Transformer.N2T_PREFIX)
 
     def sample_label(self) -> typing.AnyStr:
         return self.source_record.get("label", Transformer.NOT_PROVIDED)

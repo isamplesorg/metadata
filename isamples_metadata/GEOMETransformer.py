@@ -30,10 +30,6 @@ class GEOMETransformer(Transformer):
                     GEOMEChildTransformer(source_record, child_record)
                 )
 
-    def transform(self) -> typing.Dict:
-        transformed_record = super().transform()
-        return transformed_record
-
     ARK_PREFIX = "ark:/"
 
     def _source_record_main_record(self) -> typing.Dict:
@@ -63,12 +59,6 @@ class GEOMETransformer(Transformer):
 
     def sample_identifier_string(self) -> typing.AnyStr:
         return self._source_record_main_record()["bcid"]
-
-    def sample_identifier_scheme(self) -> typing.AnyStr:
-        return "ark"
-
-    def sample_identifier_value(self) -> typing.AnyStr:
-        return "/"
 
     def sample_description(self) -> typing.AnyStr:
         description_pieces = []
@@ -301,17 +291,11 @@ class GEOMETransformer(Transformer):
     def produced_by_result_time(self) -> typing.AnyStr:
         parent_record = self._source_record_parent_record()
         if parent_record is not None:
-            result_time_pieces = []
-            year = parent_record.get("yearCollected")
-            if year is not None:
-                result_time_pieces.append(year)
-            month = parent_record.get("monthCollected")
-            if month is not None:
-                result_time_pieces.append(month.zfill(2))
-            day = parent_record.get("dayCollected")
-            if day is not None:
-                result_time_pieces.append(day.zfill(2))
-            return "-".join(result_time_pieces)
+            return self._formatted_date(
+                parent_record.get("yearCollected"),
+                parent_record.get("monthCollected"),
+                parent_record.get("dayCollected"),
+            )
         return Transformer.NOT_PROVIDED
 
     def sampling_site_description(self) -> typing.AnyStr:

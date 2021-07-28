@@ -225,10 +225,6 @@ class ContextCategoryMetaMapper(AbstractCategoryMetaMapper):
 class SESARTransformer(Transformer):
     """Concrete transformer class for going from a SESAR record to an iSamples record"""
 
-    def transform(self) -> typing.Dict:
-        transformed_record = super().transform()
-        return transformed_record
-
     def _source_record_description(self) -> typing.Dict:
         return self.source_record["description"]
 
@@ -472,3 +468,7 @@ class SESARTransformer(Transformer):
         if "city" in supplement_metadata:
             place_names.append(supplement_metadata["city"])
         return place_names
+
+    def informal_classification(self) -> typing.List[typing.AnyStr]:
+        """Not currently used for SESAR"""
+        return Transformer.NOT_PROVIDED
