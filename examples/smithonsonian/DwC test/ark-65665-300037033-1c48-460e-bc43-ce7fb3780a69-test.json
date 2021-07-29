@@ -4,7 +4,7 @@
     "label": "Tripterygiidae AG0IO49",
     "sampleidentifier": "ark:/65665/300037033-1c48-460e-bc43-ce7fb3780a69",
     "description": "basisOfRecord : MaterialSample | fieldNumber: FP3 010710 | catalogNumber: 449669.15150503 | recordNumber： FLMOO 1239 | type: PhysicalObject | individualCount: 1 | disposition: in collection | startDayOfYear: 182 | endDayOfYear: 182",
-    "hasContextCategory": ["Subaerial surface environment"],
+    "hasContextCategory": ["Marine water body"],
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
     "informalClassification": ["Tripterygiidae"],
