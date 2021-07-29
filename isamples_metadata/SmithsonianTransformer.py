@@ -1,6 +1,7 @@
 import typing
 import re
 
+from isamples_metadata import isamplesfasttext
 from isamples_metadata.Transformer import (
     Transformer,
     AbstractCategoryMetaMapper,
@@ -118,7 +119,15 @@ class SmithsonianTransformer(Transformer):
         return Transformer.DESCRIPTION_SEPARATOR.join(description_pieces)
 
     def has_context_categories(self) -> typing.List[typing.AnyStr]:
-        return []
+        categories = isamplesfasttext.predict_sampled_feature([
+            self.source_record.get("collectionCode"),
+            self.source_record.get("habitat"),
+            self.source_record.get("higherGeography"),
+            self.source_record.get("locality"),
+            self.source_record.get("higherClassification"),
+            ]
+        )
+        return [categories]
 
     def has_material_categories(self) -> typing.List[typing.AnyStr]:
         material_sample_type = self.source_record.get("materialSampleType")
