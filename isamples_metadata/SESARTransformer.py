@@ -472,3 +472,7 @@ class SESARTransformer(Transformer):
         if "city" in supplement_metadata:
             place_names.append(supplement_metadata["city"])
         return place_names
+
+    def informal_classification(self) -> typing.List[typing.AnyStr]:
+         """Not currently used for SESAR"""
+         return Transformer.NOT_PROVIDED
