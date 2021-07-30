@@ -4,7 +4,7 @@
     "label": "AK0WG26",
     "sampleidentifier": "ark:/65665/300047b21-f0c2-48f6-861d-a620466092e5",
     "description": "basisOfRecord : MaterialSample | type : PhysicalObject | occurrenceRemarks: Order: 4508; Box Number: MBARI_0056; Box Position: F/8; MBARI Note: SIO Box 26 | catalogNumber： 1464314.14697588 | recordNumber： A2287-(C22,30,33,35,38,43,47,48,51) | fieldNumber: AL-2287 | individualCount: 1 | disposition: in collection | startDayOfYear: 273 | endDayOfYear: 273",
-    "hasContextCategory": ["Marine Water Body"],
+    "hasContextCategory": ["Marine water body bottom"],
     "hasMaterialCategory": ["Organic Material"],
     "hasSpecimenCategory": ["Whole Organism"],
     "informalClassification": [""],
