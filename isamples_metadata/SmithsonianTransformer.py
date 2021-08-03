@@ -236,11 +236,18 @@ class SmithsonianTransformer(Transformer):
         )
         return " | ".join(elevation_pieces)
 
+    @staticmethod
+    def _float_or_none(string_val: typing.AnyStr) -> typing.Optional[typing.SupportsFloat]:
+        if len(string_val) > 0:
+            return float(string_val)
+        else:
+            return None
+
     def sampling_site_latitude(self) -> typing.SupportsFloat:
-        return float(self.source_record.get("decimalLatitude"))
+        return self._float_or_none(self.source_record.get("decimalLatitude"))
 
     def sampling_site_longitude(self) -> typing.SupportsFloat:
-        return float(self.source_record.get("decimalLongitude"))
+        return self._float_or_none(self.source_record.get("decimalLongitude"))
 
     def sampling_site_place_names(self) -> typing.List:
         place_names = []
