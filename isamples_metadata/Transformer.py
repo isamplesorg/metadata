@@ -29,7 +29,7 @@ class Transformer(ABC):
         if label is None:
             label = key
         value = source_dict.get(key)
-        if value is not None and len(value) > 0:
+        if value is not None and len(str(value)) > 0:
             dest_list.append(f"{label}: {value}")
 
     @staticmethod
