@@ -37,11 +37,11 @@ class Transformer(ABC):
         year: typing.AnyStr, month: typing.AnyStr, day: typing.AnyStr
     ) -> typing.AnyStr:
         result_time_pieces = []
-        if len(year) > 0:
+        if year is not None and len(year) > 0:
             result_time_pieces.append(year)
-        if len(month) > 0:
+        if month is not None and len(month) > 0:
             result_time_pieces.append(month.zfill(2))
-        if len(day) > 0:
+        if day is not None and len(day) > 0:
             result_time_pieces.append(day.zfill(2))
         return "-".join(result_time_pieces)
 
