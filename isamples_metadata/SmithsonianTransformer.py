@@ -243,10 +243,10 @@ class SmithsonianTransformer(Transformer):
         else:
             return None
 
-    def sampling_site_latitude(self) -> typing.SupportsFloat:
+    def sampling_site_latitude(self) -> typing.Optional[typing.SupportsFloat]:
         return self._float_or_none(self.source_record.get("decimalLatitude"))
 
-    def sampling_site_longitude(self) -> typing.SupportsFloat:
+    def sampling_site_longitude(self) -> typing.Optional[typing.SupportsFloat]:
         return self._float_or_none(self.source_record.get("decimalLongitude"))
 
     def sampling_site_place_names(self) -> typing.List:
