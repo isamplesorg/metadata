@@ -230,3 +230,6 @@ class OpenContextTransformer(Transformer):
         for consists_of_dict in self.source_record.get("Has taxonomic identifier", []):
             classifications.append(consists_of_dict.get("label"))
         return classifications
+
+    def last_updated_time(self) -> typing.Optional[typing.AnyStr]:
+        return self.source_record.get("updated", None)
