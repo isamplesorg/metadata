@@ -436,7 +436,7 @@ class SESARTransformer(Transformer):
             return self.elevation_str(elevation_value, elevation_unit)
         return Transformer.NOT_PROVIDED
 
-    def _geo_location_float_value(self, key_name: typing.AnyStr):
+    def _geo_location_float_value(self, key_name: typing.AnyStr) -> typing.Optional[typing.SupportsFloat]:
         if "geoLocation" in self._source_record_description():
             geo_location = self._source_record_description()["geoLocation"]
             if geo_location is not None:
@@ -447,12 +447,12 @@ class SESARTransformer(Transformer):
                     string_val = first_geo[key_name]
                     if string_val is not None:
                         return float(string_val)
-        return 0.0
+        return None
 
-    def sampling_site_latitude(self) -> typing.SupportsFloat:
+    def sampling_site_latitude(self) -> typing.Optional[typing.SupportsFloat]:
         return self._geo_location_float_value("latitude")
 
-    def sampling_site_longitude(self) -> typing.SupportsFloat:
+    def sampling_site_longitude(self) -> typing.Optional[typing.SupportsFloat]:
         return self._geo_location_float_value("longitude")
 
     def sampling_site_place_names(self) -> typing.List:

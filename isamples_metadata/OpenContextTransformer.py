@@ -216,10 +216,10 @@ class OpenContextTransformer(Transformer):
     def sampling_site_elevation(self) -> typing.AnyStr:
         Transformer.NOT_PROVIDED
 
-    def sampling_site_latitude(self) -> typing.SupportsFloat:
+    def sampling_site_latitude(self) -> typing.Optional[typing.SupportsFloat]:
         return self.source_record.get("latitude", None)
 
-    def sampling_site_longitude(self) -> typing.SupportsFloat:
+    def sampling_site_longitude(self) -> typing.Optional[typing.SupportsFloat]:
         return self.source_record.get("longitude", None)
 
     def sampling_site_place_names(self) -> typing.List:

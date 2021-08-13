@@ -336,10 +336,10 @@ class GEOMETransformer(Transformer):
                 return float(geo_location_str)
         return None
 
-    def sampling_site_latitude(self) -> typing.SupportsFloat:
+    def sampling_site_latitude(self) -> typing.Optional[typing.SupportsFloat]:
         return self._geo_location_float_value("decimalLatitude")
 
-    def sampling_site_longitude(self) -> typing.SupportsFloat:
+    def sampling_site_longitude(self) -> typing.Optional[typing.SupportsFloat]:
         return self._geo_location_float_value("decimalLongitude")
 
     def sampling_site_place_names(self) -> typing.List:

@@ -198,12 +198,12 @@ class Transformer(ABC):
         pass
 
     @abstractmethod
-    def sampling_site_latitude(self) -> typing.SupportsFloat:
+    def sampling_site_latitude(self) -> typing.Optional[typing.SupportsFloat]:
         """The sampling site latitude"""
         pass
 
     @abstractmethod
-    def sampling_site_longitude(self) -> typing.SupportsFloat:
+    def sampling_site_longitude(self) -> typing.Optional[typing.SupportsFloat]:
         """The sampling site longitude"""
         pass
 
