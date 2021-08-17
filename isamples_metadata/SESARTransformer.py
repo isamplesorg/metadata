@@ -472,3 +472,13 @@ class SESARTransformer(Transformer):
     def informal_classification(self) -> typing.List[typing.AnyStr]:
          """Not currently used for SESAR"""
          return Transformer.NOT_PROVIDED
+
+    def last_updated_time(self) -> typing.Optional[typing.AnyStr]:
+        # Loop through the log and find the "lastUpdated" record
+        description = self._source_record_description()
+        log = description.get("log")
+        if log is not None:
+            for record in log:
+                if "lastUpdated" == record.get("type"):
+                    return record["timestamp"]
+        return None

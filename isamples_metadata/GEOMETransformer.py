@@ -498,3 +498,7 @@ class GEOMEChildTransformer(GEOMETransformer):
         parent_dict["target"] = main_record.get("bcid")
         parent_dict["relationshipType"] = "derived_from"
         return [parent_dict]
+
+    def last_updated_time(self) -> typing.Optional[typing.AnyStr]:
+        # This doesn't appear to be available in GEOME
+        return None

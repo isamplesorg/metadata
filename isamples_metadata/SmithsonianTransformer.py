@@ -282,3 +282,7 @@ class SmithsonianTransformer(Transformer):
 
     def curation_responsibility(self) -> typing.AnyStr:
         return f"{self.source_record.get('institutionCode')} {self.source_record.get('institutionID')}"
+
+    def last_updated_time(self) -> typing.Optional[typing.AnyStr]:
+        # This doesn't appear to be available in the Smithsonian DwC
+        return None

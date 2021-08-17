@@ -10,11 +10,13 @@ from isamples_metadata.OpenContextTransformer import OpenContextTransformer
 from isamples_metadata.SmithsonianTransformer import SmithsonianTransformer
 
 
-def _run_transformer(isamples_path, source_path, transformer_class):
+def _run_transformer(isamples_path, source_path, transformer_class, last_updated_time_str = None):
     with open(source_path) as source_file:
         source_record = json.load(source_file)
         transformer = transformer_class(source_record)
         transformed_to_isamples_record = transformer.transform()
+        if last_updated_time_str is not None:
+            assert transformer.last_updated_time() == last_updated_time_str
         _assert_transformed_dictionary(isamples_path, transformed_to_isamples_record)
 
 
@@ -28,17 +30,19 @@ SESAR_test_values = [
     (
         "../examples/SESAR/raw/EOI00002Hjson-ld.json",
         "../examples/SESAR/test/iSamplesEOI00002HBasic.json",
+        "2014-02-18 09:32:01"
     ),
     (
         "../examples/SESAR/raw/IEEJR000Mjson-ld.json",
         "../examples/SESAR/test/iSamplesIEEJR000MBasic.json",
+        "2021-01-19 04:32:44"
     ),
 ]
 
 
-@pytest.mark.parametrize("sesar_source_path,isamples_path", SESAR_test_values)
-def test_dicts_equal(sesar_source_path, isamples_path):
-    _run_transformer(isamples_path, sesar_source_path, SESARTransformer)
+@pytest.mark.parametrize("sesar_source_path,isamples_path,timestamp", SESAR_test_values)
+def test_dicts_equal(sesar_source_path, isamples_path, timestamp):
+    _run_transformer(isamples_path, sesar_source_path, SESARTransformer, timestamp)
 
 
 GEOME_test_values = [
@@ -84,23 +88,26 @@ OPENCONTEXT_test_values = [
     (
         "../examples/OpenContext/raw/ark-28722-k2b570022.json",
         "../examples/OpenContext/test/ark-28722-k2b570022-test.json",
+        "2021-06-27T19:54:46Z",
     ),
     (
         "../examples/OpenContext/raw/ark-28722-k2m61xj9b.json",
-        "../examples/OpenContext/test/ark-28722-k2m61xj9b-test.json"
+        "../examples/OpenContext/test/ark-28722-k2m61xj9b-test.json",
+        "2021-06-27T21:34:12Z",
     ),
     (
         "../examples/OpenContext/raw/ark-28722-k2qj7np9g.json",
-        "../examples/OpenContext/test/ark-28722-k2m61xj9b-test.json"
+        "../examples/OpenContext/test/ark-28722-k2m61xj9b-test.json",
+        "2021-01-27T03:57:23Z",
     )
 ]
 
 
 @pytest.mark.parametrize(
-    "open_context_source_path,isamples_path", OPENCONTEXT_test_values
+    "open_context_source_path,isamples_path,timestamp", OPENCONTEXT_test_values
 )
-def test_open_context_dicts_equal(open_context_source_path, isamples_path):
-    _run_transformer(isamples_path, open_context_source_path, OpenContextTransformer)
+def test_open_context_dicts_equal(open_context_source_path, isamples_path, timestamp):
+    _run_transformer(isamples_path, open_context_source_path, OpenContextTransformer, timestamp)
 
 
 def _get_record_with_id(record_id: typing.AnyStr) -> typing.Dict:

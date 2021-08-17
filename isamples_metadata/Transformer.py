@@ -235,6 +235,11 @@ class Transformer(ABC):
     def related_resources(self) -> typing.List[typing.Dict]:
         return []
 
+    @abstractmethod
+    def last_updated_time(self) -> typing.Optional[typing.AnyStr]:
+        """Return the time the record was last modified in the source collection"""
+        pass
+
 
 class AbstractCategoryMapper(ABC):
     _destination: typing.AnyStr
