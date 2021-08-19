@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 import typing
-
+import urllib.parse
 
 class Transformer(ABC):
     """Abstract base class for various iSamples provider transformers"""
@@ -58,7 +58,7 @@ class Transformer(ABC):
         """
         transformed_record = {
             "$schema": "../../iSamplesSchemaBasic0.2.json",
-            "@id": self.id_string(),
+            "@id": self._encoded_id_string(),
             "label": self.sample_label(),
             "sampleidentifier": self.sample_identifier_string(),
             "description": self.sample_description(),
@@ -68,7 +68,7 @@ class Transformer(ABC):
             "informalClassification": self.informal_classification(),
             "keywords": self.keywords(),
             "producedBy": {
-                "@id": self.produced_by_id_string(),
+                "@id": self._encoded_produced_by_id_string(),
                 "label": self.produced_by_label(),
                 "description": self.produced_by_description(),
                 "hasFeatureOfInterest": self.produced_by_feature_of_interest(),
@@ -97,6 +97,18 @@ class Transformer(ABC):
             "relatedResource": self.related_resources(),
         }
         return transformed_record
+
+    def _encoded_id_string(self) -> typing.AnyStr:
+        return self._quoted_string(self.id_string())
+
+    def _encoded_produced_by_id_string(self) -> typing.AnyStr:
+        return self._quoted_string(self.produced_by_id_string())
+
+    @staticmethod
+    def _quoted_string(string) -> typing.Optional[typing.AnyStr]:
+        if string is not None and len(string) > 0:
+            return urllib.parse.quote(string)
+        return string
 
     @abstractmethod
     def id_string(self) -> typing.AnyStr:
