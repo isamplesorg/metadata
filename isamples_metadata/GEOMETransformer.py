@@ -431,6 +431,10 @@ class GEOMETransformer(Transformer):
     def child_transformers(self) -> typing.List[GEOMEChildTransformer]:
         return self._child_transformers
 
+    def last_updated_time(self) -> typing.Optional[typing.AnyStr]:
+        # This isn't available from GEOME
+        return None
+
 
 class GEOMEChildTransformer(GEOMETransformer):
     """GEOME child record subclass transformer -- uses some fields from the parent and some from the child"""

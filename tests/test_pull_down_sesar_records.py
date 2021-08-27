@@ -3,6 +3,7 @@ import random
 import json
 import requests
 import requests.sessions
+import pytest
 
 dir = "/Users/mandeld/iSamples/tmprecords/{0}.json"
 url = "https://mars.cyverse.org/thing/?offset={0}&limit={1}&status=200&authority=SESAR"
@@ -24,6 +25,7 @@ def get_record(s, id):
     return json_response
 
 
+@pytest.mark.skip(reason="This is a one-off script not intended to be run as part of a CI process")
 def test_pull_down_records():
     with requests.Session() as s:
         # pull down a random sampling of 100 records somewhere between 0 and total_records - 100

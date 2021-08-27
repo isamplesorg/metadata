@@ -1,6 +1,7 @@
 import json
 import os
 import sys
+import pytest
 
 from isamples_metadata.SESARTransformer import SESARTransformer
 
@@ -10,6 +11,7 @@ ISAMPLES_FILE_PREFIX = "iSamples_"
 dir = "/Users/mandeld/iSamples/tmprecords/"
 
 
+@pytest.mark.skip(reason="This is a one-off script not intended to be run as part of a CI process")
 def test_local_records():
     for file in os.listdir(dir):
         if file.startswith(ISAMPLES_FILE_PREFIX):

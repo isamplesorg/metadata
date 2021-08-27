@@ -1,0 +1,36 @@
+{
+  "uri": "http://opencontext.org/subjects/08218014-fa73-4fad-8e8c-45d41bb39891",
+  "label": "Object 68",
+  "Creator": [
+    {
+      "id": "http://opencontext.org/persons/14e62343-3801-40b4-9f34-1354e18aa8f4",
+      "label": "Justin Walsh"
+    },
+    {
+      "id": "http://opencontext.org/persons/b2ed6953-ce71-43e6-ab82-7ce13e208d38",
+      "label": "Alice Gorman"
+    },
+    {
+      "id": "http://opencontext.org/persons/4f079b0f-8bf2-419a-a27f-4c2557b7ee3a",
+      "label": "Wendy Salmond"
+    }
+  ],
+  "updated": "2021-01-27T03:57:23Z",
+  "Has type": [
+    {
+      "id": "http://vocab.getty.edu/aat/300391047",
+      "label": "color patches (military patches)"
+    }
+  ],
+  "latitude": false,
+  "longitude": false,
+  "published": "2021-01-27T02:47:12Z",
+  "context uri": "http://opencontext.org/subjects/a2ec568f-2483-4c98-901b-3f7dfbe5f34b",
+  "late bce/ce": false,
+  "project uri": "http://opencontext.org/projects/e682f907-6e4a-44cc-8a5f-3e2c73001673",
+  "citation uri": "https://n2t.net/ark:/28722/k2ks6xw6t",
+  "early bce/ce": false,
+  "context label": "International Space Station/Zvezda Service Module",
+  "item category": "Object",
+  "project label": "Archaeology of the International Space Station"
+}
