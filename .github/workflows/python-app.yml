@@ -39,6 +39,8 @@
      - name: Install dependencies
        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
        run: poetry install --no-interaction --no-root
+     - name: Install 
+       run: poetry install --no-interaction
      # In theory this could move to poetry?  
      # - name: Install flake
      #   run: |
