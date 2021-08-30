@@ -66,10 +66,11 @@ spt:experimentalproduct
 .
 spt:fossil
   rdf:type skos:Concept ;
-  rdfs:comment "Specimen is fossilized remains of one or more organism preserved in rock; includes whole body, body parts (usually bone or shell), and trace fossils. An organism or organism part becomes a fossil when it has undergone some fossilization process. This generally entails physical and chemical changes akin to diagenesis in a sedimentary rock."@en ;
+  rdfs:comment "Specimen is the remains of one or more organisms preserved in rock; includes whole body, body parts (usually bone or shell), and trace fossils. An organism or organism part becomes a fossil when it has undergone some fossilization process that generally entails physical and chemical changes akin to diagenesis in a sedimentary rock. Trace fossils are manifestations of biologic activity preserved in a rock body (typically sedimentary), without included preserved body parts."@en ;
   rdfs:label "Fossil "@en ;
   skos:broader spt:physicalspecimen ;
   skos:inScheme spt:specimenttypevocabulary ;
+  skos:note "There are many processes that lead to fossilization, including permineralization, casts and molds, authigenic mineralization, replacement and recrystallization, adpression, carbonization, and bioimmuration (https://en.wikipedia.org/wiki/Fossil)."@en ;
   skos:prefLabel "Fossil "@en ;
 .
 spt:genericaggregation
