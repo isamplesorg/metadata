@@ -115,6 +115,13 @@ mat:mixedsoilsedimentrock
   skos:broader mat:earthmaterial ;
   skos:prefLabel "Mixed soil, sediment or rock"@en ;
 .
+mat:nonaqueousliquid
+  rdf:type skos:Concept ;
+  rdfs:comment "Liquid composed dominantly of material other than water"@en ;
+  rdfs:label "Non-aqueous liquid material "@en ;
+  skos:broader mat:fluid ;
+  skos:prefLabel "Non-aqueous liquid material "@en ;
+.
 mat:ontology
   rdf:type owl:Ontology ;
   dct:created "2021-03-24"^^xsd:date ;

@@ -22,7 +22,7 @@
             "type": "string"
         },
         "description": {
-            "description": "free text description of the subject of a triple.",
+            "description": "free text description of the physical sample, and any related information. Include as much detail as will be useful for users to find the sample and understand its context.",
             "type": "string"
         },
         "samplingPurposes": {
@@ -77,18 +77,74 @@
             "type": "array"
         },
         "hasContextCategories": {
-            "description": "top level context, based on the kind of feature sampled.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.",
-            "items": {"type": "string"},
+            "description": "top level context, based on the kind of feature sampled, from the SampledFeature vocabulary.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Active human occupation site",
+                    "Atmosphere",
+                    "Earth interior",
+                    "Experiment setting",
+                    "Extraterrestrial environment",
+                    "Glacier environment",
+                    "Historic human occupation site",
+                    "Laboratory environment",
+                    "Lake, river or stream bottom",
+                    "Marine biome",
+                    "Marine water body",
+                    "Marine water body bottom",
+                    "Subaerial surface environment",
+                    "Subaerial terrestrial biome",
+                    "Subaqueous terrestrial biome",
+                    "Subsurface fluid reservoir",
+                    "Terrestrial water body"
+                ]
+            },
             "type": "array"
         },
         "hasMaterialCategories": {
-            "description": "top level specification of the kind of material that constitutes the physical sample; detailed material categorization is done through the hasCategory/sdo-PropertyValue pattern",
-            "items": {"type": "string"},
+            "description": "specify the kind of material that constitutes the sample",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Anthropogenic material",
+                    "Anthropogenic metal",
+                    "Biogenic material",
+                    "Dispersed media",
+                    "Gaseous material",
+                    "Ice",
+                    "Liquid water",
+                    "Mineral",
+                    "Mixed soil, sediment, rock",
+                    "Non-aqueous liquid material",
+                    "Organic material",
+                    "Particulate",
+                    "Rock",
+                    "Sediment",
+                    "Soil"
+                ]
+            },
             "type": "array"
         },
         "hasSpecimenCategories": {
-            "description": "top level categorization of kind of specimen. More specific classifications use isam hasCategory/sdo-PropertyValue pattern",
-            "items": {"type": "string"},
+            "description": "specify the kind of object that the specimen is",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Aggregation",
+                    "Analytical preparation",
+                    "Anthropogenic aggregation",
+                    "Artifact",
+                    "Biome aggregation",
+                    "Experiment product",
+                    "Fossil",
+                    "Liquid or gas sample",
+                    "Organism part",
+                    "Organism product",
+                    "Other solid object",
+                    "Whole organism"
+                ]
+            },
             "type": "array"
         },
         "events": {
@@ -161,7 +217,7 @@
             "properties": {
                 "elevation": {
                     "$ref": "#/definitions/MeasureValue",
-                    "description": "For a location, specification of the vertical distance from the datum specified for the spatial reference system. SRS definition should also specify if positive values are above or below the datum."
+                    "description": "Specification of the vertical distance above (positive up) the WGS84 ellipsoid. This is the elevation that you'd get from a GPS. If other vertical reference system is used, use the GeospatialLocation element."
                 },
                 "latitude": {
                     "description": "wgs84 decimal degree latitude coordinate",
@@ -185,7 +241,7 @@
             "type": "object"
         },
         "GeospatialLocation": {
-            "description": "point location in an arbitrary spatial reference system. UTM is common example, but might be a local coordinate grid systems set up at a research site or mine.  Future-- add WKTposition to specify locations with more complex geometry (e.g. line, polygon, multipoint).",
+            "description": "point location in an arbitrary spatial reference system. UTM is common example, but might be a local coordinate grid systems set up at a research site or mine.  use wktgeom to specify locations with more complex geometry (e.g. line, polygon, multipoint) using Well Know Text (WKT) serialization of geometry, including SRS if possible.",
             "properties": {
                 "coordinate1": {"type": "number"},
                 "coordinate2": {"type": "number"},
@@ -562,7 +618,7 @@
                     "description": "A sampling site must have exactly one SamplingLocation with a longitude-latitude WKT CRS84 point to support cross domain search;"
                 },
                 "otherLocations": {
-                    "description": "other subclasses of SamplingLocation can also be associated with a site to assert location in other spatial reference systems, either for greater precision, or using other map projection schemes preferred by some community",
+                    "description": "other subclasses of SamplingLocation can also be associated with a site to assert location in other spatial reference systems, either for greater precision, or using other map projection schemes preferred by some community. One of GeospatialLocation or LinearReferenceLocation ",
                     "items": {"type": "string"},
                     "type": "array"
                 },
