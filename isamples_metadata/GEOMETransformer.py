@@ -435,7 +435,10 @@ class GEOMETransformer(Transformer):
         return self._child_transformers
 
     def last_updated_time(self) -> typing.Optional[typing.AnyStr]:
-        return self._last_updated_time.strftime(JSON_TIME_FORMAT)
+        if self._last_updated_time is not None:
+            return self._last_updated_time.strftime(JSON_TIME_FORMAT)
+        else:
+            return None
 
 
 class GEOMEChildTransformer(GEOMETransformer):
