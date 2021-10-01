@@ -1,3 +1,4 @@
+import datetime
 import typing
 
 from isamples_metadata.Transformer import (
@@ -5,6 +6,7 @@ from isamples_metadata.Transformer import (
 )
 
 TISSUE_ENTITY = "Tissue"
+JSON_TIME_FORMAT = "%Y-%m-%dT%H:%M:%S%z"
 
 
 # Forward declarations appear to be the cleanest way to manage the circular dependency between these two classes
@@ -19,15 +21,16 @@ class GEOMEChildTransformer(GEOMETransformer):
 class GEOMETransformer(Transformer):
     """Concrete transformer class for going from a GEOME record to an iSamples record"""
 
-    def __init__(self, source_record: typing.Dict):
+    def __init__(self, source_record: typing.Dict, last_updated_time: datetime.datetime):
         super().__init__(source_record)
         self._child_transformers = []
+        self._last_updated_time = last_updated_time
         children = self._get_children()
         for child_record in children:
             entity = child_record.get("entity")
             if entity == TISSUE_ENTITY:
                 self._child_transformers.append(
-                    GEOMEChildTransformer(source_record, child_record)
+                    GEOMEChildTransformer(source_record, child_record, last_updated_time)
                 )
 
     ARK_PREFIX = "ark:/"
@@ -432,16 +435,17 @@ class GEOMETransformer(Transformer):
         return self._child_transformers
 
     def last_updated_time(self) -> typing.Optional[typing.AnyStr]:
-        # This isn't available from GEOME
-        return None
+        return self._last_updated_time.strftime(JSON_TIME_FORMAT)
 
 
 class GEOMEChildTransformer(GEOMETransformer):
     """GEOME child record subclass transformer -- uses some fields from the parent and some from the child"""
 
-    def __init__(self, source_record: typing.Dict, child_record: typing.Dict):
+    def __init__(self, source_record: typing.Dict, child_record: typing.Dict, last_updated_time: datetime.datetime):
         self.source_record = source_record
         self.child_record = child_record
+        self._last_updated_time = last_updated_time
+
 
     def _id_minus_prefix(self) -> typing.AnyStr:
         return self.child_record["bcid"].removeprefix(self.ARK_PREFIX)
@@ -502,7 +506,3 @@ class GEOMEChildTransformer(GEOMETransformer):
         parent_dict["target"] = main_record.get("bcid")
         parent_dict["relationshipType"] = "derived_from"
         return [parent_dict]
-
-    def last_updated_time(self) -> typing.Optional[typing.AnyStr]:
-        # This doesn't appear to be available in GEOME
-        return None
