@@ -1,4 +1,5 @@
 import datetime
+import logging
 import typing
 
 from isamples_metadata.Transformer import (
@@ -21,7 +22,9 @@ class GEOMEChildTransformer(GEOMETransformer):
 class GEOMETransformer(Transformer):
     """Concrete transformer class for going from a GEOME record to an iSamples record"""
 
-    def __init__(self, source_record: typing.Dict, last_updated_time: datetime.datetime):
+    def __init__(
+        self, source_record: typing.Dict, last_updated_time: datetime.datetime
+    ):
         super().__init__(source_record)
         self._child_transformers = []
         self._last_updated_time = last_updated_time
@@ -30,7 +33,9 @@ class GEOMETransformer(Transformer):
             entity = child_record.get("entity")
             if entity == TISSUE_ENTITY:
                 self._child_transformers.append(
-                    GEOMEChildTransformer(source_record, child_record, last_updated_time)
+                    GEOMEChildTransformer(
+                        source_record, child_record, last_updated_time
+                    )
                 )
 
     ARK_PREFIX = "ark:/"
@@ -444,11 +449,15 @@ class GEOMETransformer(Transformer):
 class GEOMEChildTransformer(GEOMETransformer):
     """GEOME child record subclass transformer -- uses some fields from the parent and some from the child"""
 
-    def __init__(self, source_record: typing.Dict, child_record: typing.Dict, last_updated_time: datetime.datetime):
+    def __init__(
+        self,
+        source_record: typing.Dict,
+        child_record: typing.Dict,
+        last_updated_time: datetime.datetime,
+    ):
         self.source_record = source_record
         self.child_record = child_record
         self._last_updated_time = last_updated_time
-
 
     def _id_minus_prefix(self) -> typing.AnyStr:
         return self.child_record["bcid"].removeprefix(self.ARK_PREFIX)
@@ -509,3 +518,26 @@ class GEOMEChildTransformer(GEOMETransformer):
         parent_dict["target"] = main_record.get("bcid")
         parent_dict["relationshipType"] = "derived_from"
         return [parent_dict]
+
+
+# Function to iterate through the identifiers and instantiate the proper GEOME Transformer based on the identifier used for lookup
+def geome_transformer_for_identifier(
+    identifier: str, source_record: typing.Dict
+) -> GEOMETransformer:
+    # Two possibilities:
+    # (1) It's the sample, so instantiate the main one
+    # (2) It's one of the children, so grab the child transformer
+    transformer = GEOMETransformer(source_record, None)
+    # Sample identifier string for GEOM is the ARK
+    if identifier == transformer.sample_identifier_string():
+        return transformer
+    else:
+        for child_transformer in transformer.child_transformers:
+            if identifier == child_transformer.sample_identifier_string():
+                return child_transformer
+    logging.error(
+        "Unable to find transformer for identifier %s in GEOME record %s",
+        identifier,
+        str(source_record),
+    )
+    return None

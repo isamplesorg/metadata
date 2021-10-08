@@ -5,8 +5,9 @@ import pytest
 import typing
 import re
 
+import isamples_metadata.GEOMETransformer
 from isamples_metadata.SESARTransformer import SESARTransformer
-from isamples_metadata.GEOMETransformer import GEOMETransformer
+from isamples_metadata.GEOMETransformer import GEOMETransformer, GEOMEChildTransformer
 from isamples_metadata.OpenContextTransformer import OpenContextTransformer
 from isamples_metadata.SmithsonianTransformer import SmithsonianTransformer
 
@@ -101,6 +102,25 @@ def test_geome_child_dicts_equal(geome_source_path, isamples_path, last_mod: dat
         transformed_to_isamples_record = child_transformer.transform()
         _assert_transformed_dictionary(isamples_path, transformed_to_isamples_record)
         assert last_mod_str == child_transformer.last_updated_time()
+
+
+# test the special logic in GEOME to grab the proper transformer
+def test_geome_transformer_for_identifier():
+    test_file_path = "../examples/GEOME/raw/ark-21547-Car2PIRE_0334.json"
+    with open(test_file_path) as source_file:
+        source_record = json.load(source_file)
+        transformer = (
+            isamples_metadata.GEOMETransformer.geome_transformer_for_identifier(
+                "ark:/21547/Car2PIRE_0334", source_record
+            )
+        )
+        assert type(transformer) == GEOMETransformer
+        child_transformer = (
+            isamples_metadata.GEOMETransformer.geome_transformer_for_identifier(
+                "ark:/21547/Cat2INDO106431.1", source_record
+            )
+        )
+        assert type(child_transformer) == GEOMEChildTransformer
 
 
 OPENCONTEXT_test_values = [
