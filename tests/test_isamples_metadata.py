@@ -1,3 +1,4 @@
+import datetime
 import json
 import csv
 import pytest
@@ -13,10 +14,11 @@ from isamples_metadata.SmithsonianTransformer import SmithsonianTransformer
 # Otherwise, we'll assert that the transformer ran and had an id in the dictionary
 ASSERT_ON_OUTPUT = False
 
-def _run_transformer(isamples_path, source_path, transformer_class, last_updated_time_str = None):
+def _run_transformer(isamples_path, source_path, transformer_class, transformer = None, last_updated_time_str = None):
     with open(source_path) as source_file:
         source_record = json.load(source_file)
-        transformer = transformer_class(source_record)
+        if transformer is None:
+            transformer = transformer_class(source_record)
         transformed_to_isamples_record = transformer.transform()
         if last_updated_time_str is not None:
             assert transformer.last_updated_time() == last_updated_time_str
@@ -47,46 +49,58 @@ SESAR_test_values = [
 
 @pytest.mark.parametrize("sesar_source_path,isamples_path,timestamp", SESAR_test_values)
 def test_dicts_equal(sesar_source_path, isamples_path, timestamp):
-    _run_transformer(isamples_path, sesar_source_path, SESARTransformer, timestamp)
+    _run_transformer(isamples_path, sesar_source_path, SESARTransformer, None, timestamp)
 
 
 GEOME_test_values = [
     (
         "../examples/GEOME/raw/ark-21547-Car2PIRE_0334.json",
         "../examples/GEOME/test/ark-21547-Car2PIRE_0334-test.json",
+        datetime.datetime(year=1978, month=11, day=22, hour=12, minute=34),
+        "1978-11-22T12:34:00"
     ),
     (
         "../examples/GEOME/raw/ark-21547-CgZ2PEER_7055.json",
         "../examples/GEOME/test/ark-21547-CgZ2PEER_7055-test.json",
+        datetime.datetime(year=1978, month=11, day=22, hour=12, minute=34),
+        "1978-11-22T12:34:00"
     ),
     (
         "../examples/GEOME/raw/ark-21547-DRW2LACM-DISCO-16924.json",
         "../examples/GEOME/test/ark-21547-DRW2LACM-DISCO-16924-test.json",
+        datetime.datetime(year=1978, month=11, day=22, hour=12, minute=34),
+        "1978-11-22T12:34:00"
     ),
 ]
 
 
-@pytest.mark.parametrize("geome_source_path,isamples_path", GEOME_test_values)
-def test_geome_dicts_equal(geome_source_path, isamples_path):
-    _run_transformer(isamples_path, geome_source_path, GEOMETransformer)
+@pytest.mark.parametrize("geome_source_path,isamples_path,last_mod,last_mod_str", GEOME_test_values)
+def test_geome_dicts_equal(geome_source_path, isamples_path, last_mod: datetime.datetime, last_mod_str: str):
+    with open(geome_source_path) as source_file:
+        source_record = json.load(source_file)
+        transformer = GEOMETransformer(source_record, last_mod)
+        _run_transformer(isamples_path, geome_source_path, None, transformer, last_mod_str)
 
 
 GEOME_child_test_values = [
     (
         "../examples/GEOME/raw/ark-21547-Car2PIRE_0334.json",
         "../examples/GEOME/test/ark-21547-Car2PIRE_0334-child-test.json",
+        datetime.datetime(year=1978, month=11, day=22, hour=12, minute=34),
+        "1978-11-22T12:34:00"
     )
 ]
 
 
-@pytest.mark.parametrize("geome_source_path,isamples_path", GEOME_child_test_values)
-def test_geome_child_dicts_equal(geome_source_path, isamples_path):
+@pytest.mark.parametrize("geome_source_path,isamples_path,last_mod,last_mod_str", GEOME_child_test_values)
+def test_geome_child_dicts_equal(geome_source_path, isamples_path, last_mod: datetime.datetime, last_mod_str: str):
     with open(geome_source_path) as source_file:
         source_record = json.load(source_file)
-        transformer = GEOMETransformer(source_record)
+        transformer = GEOMETransformer(source_record, last_mod)
         child_transformer = transformer.child_transformers[0]
         transformed_to_isamples_record = child_transformer.transform()
         _assert_transformed_dictionary(isamples_path, transformed_to_isamples_record)
+        assert last_mod_str == child_transformer.last_updated_time()
 
 
 OPENCONTEXT_test_values = [
@@ -112,7 +126,7 @@ OPENCONTEXT_test_values = [
     "open_context_source_path,isamples_path,timestamp", OPENCONTEXT_test_values
 )
 def test_open_context_dicts_equal(open_context_source_path, isamples_path, timestamp):
-    _run_transformer(isamples_path, open_context_source_path, OpenContextTransformer, timestamp)
+    _run_transformer(isamples_path, open_context_source_path, OpenContextTransformer, None, timestamp)
 
 
 def _get_record_with_id(record_id: typing.AnyStr) -> typing.Dict:
