@@ -208,10 +208,10 @@ class OpenContextTransformer(Transformer):
         return self.source_record.get("published", Transformer.NOT_PROVIDED)
 
     def sampling_site_description(self) -> typing.AnyStr:
-        Transformer.NOT_PROVIDED
+        return Transformer.NOT_PROVIDED
 
     def sampling_site_label(self) -> typing.AnyStr:
-        Transformer.NOT_PROVIDED
+        return self.source_record.get("context label", Transformer.NOT_PROVIDED)
 
     def sampling_site_elevation(self) -> typing.AnyStr:
         Transformer.NOT_PROVIDED
