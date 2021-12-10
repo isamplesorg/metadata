@@ -19,11 +19,7 @@ default_prefix: isam
 classes:
     PhysicalSampleRecord:
         description: This is a data object that is a digital representation of a physical
-            sample, and thus shares the same identifier as the physical object. It
-            provides  descriptive properties for any iSamples physical sample, URI
-            for the metadata record is same as URI for physical sample-- digital object
-            is considered twin of physical object, a representation. IGSN is recommended.
-            Must be a URI that can be dereferenced on the web.
+            sample. It provides descriptive properties for any iSamples physical sample.
         slots:
           - id
           - sampleidentifier
@@ -141,6 +137,8 @@ slots:
             view, borrow, or subsample a sample or visit a sampling site.
     curation:
         range: Curation
+        description: information about any post-collection processing of the sample, and 
+            about its current location and stewadship.
     curationLocation:
         range: string
         description: information about where the sample is currently stored
@@ -263,7 +261,6 @@ enums:
         permissible_values:
             Anthropogenic material:
             Anthropogenic metal:
-            Biogenic non organic material:
             Biogenic non-organic material:
             Gaseous material:
             Ice:
