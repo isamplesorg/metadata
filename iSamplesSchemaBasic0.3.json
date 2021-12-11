@@ -2,10 +2,10 @@
     "$id": "http://resource.isamples.org/schema/0.3",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "PhysicalSampleRecord",
-    "description": "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web. 2021-12-09 SMR, change sampleidentifier to sampleIdentifier for consistency with data and camelCasing pattern of other properties.",
+    "description": "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web. ",
     "type": "object",
     "required": [
-        "sampleIdentifier",
+        "sampleidentifier",
         "label"
     ],
     "additionalProperties": true,
@@ -61,7 +61,7 @@
             "items": {"$ref": "#/definitions/SampleRelation"},
             "type": "array"
         },
-        "sampleIdentifier": {
+        "sampleidentifier": {
             "description": "URI that identifies the physical sample described by this record",
             "type": "string"
         },
@@ -155,7 +155,6 @@
             "enum": [
                 "Anthropogenic material",
                 "Anthropogenic metal",
-                "Biogenic non organic material",
                 "Biogenic non-organic material",
                 "Gaseous material",
                 "Ice",
