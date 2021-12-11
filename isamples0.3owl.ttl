@@ -13,6 +13,9 @@
 @base <http://resource.isamples.org/schema-owl/0.3> .
 
 <http://resource.isamples.org/schema-owl/0.3> rdf:type owl:Ontology ;
+                                               owl:imports <http://resource.isamples.org/vocabulary/material/ontology> ,
+                                                           <http://resource.isamples.org/vocabulary/sampledfeature/ontology> ,
+                                                           <http://resource.isamples.org/vocabulary/specimentype/ontology> ;
                                                dct:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
                                                pav:version "20211022" ;
                                                rdfs:label "physicalSample" ;
@@ -87,19 +90,19 @@ isam:curation rdf:type owl:ObjectProperty ;
 ###  http://resource.isamples.org/schema/hasContextCategory
 isam:hasContextCategory rdf:type owl:ObjectProperty ;
                         rdfs:domain isam:PhysicalSampleRecord ;
-                        rdfs:range isam:contextcategory .
+                        rdfs:range skos:Concept .
 
 
 ###  http://resource.isamples.org/schema/hasMaterialCategory
 isam:hasMaterialCategory rdf:type owl:ObjectProperty ;
                          rdfs:domain isam:PhysicalSampleRecord ;
-                         rdfs:range isam:materialtype .
+                         rdfs:range skos:Concept .
 
 
 ###  http://resource.isamples.org/schema/hasSpecimenCategory
 isam:hasSpecimenCategory rdf:type owl:ObjectProperty ;
                          rdfs:domain isam:PhysicalSampleRecord ;
-                         rdfs:range isam:specimencategory .
+                         rdfs:range skos:Concept .
 
 
 ###  http://resource.isamples.org/schema/location
@@ -261,15 +264,36 @@ isam:GeospatialDDCoordLocation rdf:type owl:Class .
 isam:PhysicalSampleRecord rdf:type owl:Class ;
                           rdfs:subClassOf [ rdf:type owl:Restriction ;
                                             owl:onProperty isam:hasContextCategory ;
-                                            owl:allValuesFrom isam:contextcategory
+                                            owl:allValuesFrom [ owl:intersectionOf ( skos:Concept
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty skos:inScheme ;
+                                                                                       owl:hasValue <http://resource.isamples.org/vocabulary/sampledfeature/sampledfeaturevocabulary>
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ]
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty isam:hasMaterialCategory ;
-                                            owl:allValuesFrom isam:materialtype
+                                            owl:allValuesFrom [ owl:intersectionOf ( skos:Concept
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty skos:inScheme ;
+                                                                                       owl:hasValue <http://resource.isamples.org/vocabulary/material/materialsvocabulary>
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ]
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty isam:hasSpecimenCategory ;
-                                            owl:allValuesFrom isam:specimencategory
+                                            owl:allValuesFrom [ owl:intersectionOf ( skos:Concept
+                                                                                     [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty skos:inScheme ;
+                                                                                       owl:hasValue <http://resource.isamples.org/vocabulary/specimentype/specimenttypevocabulary>
+                                                                                     ]
+                                                                                   ) ;
+                                                                rdf:type owl:Class
+                                                              ]
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty isam:relatedResource ;
