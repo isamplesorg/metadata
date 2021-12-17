@@ -1,0 +1,370 @@
+@prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix isam: <http://resource.isamples.org/schema/> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+isam:0.3 a owl:Ontology ;
+    rdfs:label "physicalSample" ;
+    IAO:0000700 isam:Curation,
+        isam:GeospatialDDCoordLocation,
+        isam:PhysicalSampleRecord,
+        isam:SampleRelation,
+        isam:SamplingEvent,
+        isam:SamplingSite ;
+    dct:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
+    pav:version "20211022" ;
+    skos:definition "Schema for documenting physical samples" ;
+    linkml:generation_date "2021-12-12T09:27:53" ;
+    linkml:metamodel_version "1.7.0" ;
+    linkml:source_file "iSamplesSchemaBasic0.3.yml" ;
+    linkml:source_file_date "2021-12-10T14:46:10" ;
+    linkml:source_file_size 12324 .
+
+linkml:SubsetDefinition a owl:Class ;
+    rdfs:label "subset_definition" ;
+    skos:definition "the name and description of a subset" .
+
+linkml:TypeDefinition a owl:Class ;
+    rdfs:label "type_definition" ;
+    skos:definition "A data type definition." .
+
+isam:accessConstraints a owl:DatatypeProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "accessConstraints" ;
+    rdfs:range xsd:string ;
+    skos:definition "cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site." .
+
+isam:curation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "curation" ;
+    rdfs:range isam:Curation ;
+    skos:definition "information about any post-collection processing of the sample, and about its current location and stewadship." .
+
+isam:curationLocation a owl:DatatypeProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "curationLocation" ;
+    rdfs:range xsd:string ;
+    skos:definition "information about where the sample is currently stored" .
+
+isam:elevation a owl:DatatypeProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "elevation" ;
+    rdfs:domain isam:GeospatialDDCoordLocation ;
+    rdfs:range xsd:string ;
+    skos:definition "should be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level." .
+
+isam:hasContextCategory a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hasContextCategory" ;
+    rdfs:domain isam:PhysicalSampleRecord ;
+    rdfs:range <http://UNKNOWN.org/contextcategory> ;
+    skos:definition "top level context, based on the kind of feature sampled.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property." .
+
+isam:hasFeatureOfInterest a owl:DatatypeProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hasFeatureOfInterest" ;
+    rdfs:domain isam:SamplingEvent ;
+    rdfs:range xsd:string ;
+    skos:definition "what does the sample represent." .
+
+isam:hasMaterialCategory a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hasMaterialCategory" ;
+    rdfs:domain isam:PhysicalSampleRecord ;
+    rdfs:range <http://UNKNOWN.org/materialtype> ;
+    skos:definition "specify the kind of material that constitutes the sample" .
+
+isam:hasSpecimenCategory a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hasSpecimenCategory" ;
+    rdfs:domain isam:PhysicalSampleRecord ;
+    rdfs:range <http://UNKNOWN.org/specimencategory> ;
+    skos:definition "specify the kind of object that the specimen is" .
+
+isam:informalClassification a owl:DatatypeProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "informalClassification" ;
+    rdfs:domain isam:PhysicalSampleRecord ;
+    rdfs:range xsd:string ;
+    skos:definition "free text classification terms, not from a controlled vocabulary; generally terms applied by collector" .
+
+isam:keywords a owl:DatatypeProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "keywords" ;
+    rdfs:domain isam:PhysicalSampleRecord ;
+    rdfs:range xsd:string ;
+    skos:definition "free text categorization of sample to support discovery" .
+
+isam:latitude a owl:DatatypeProperty,
+        linkml:SlotDefinition .
+
+isam:location a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "location" ;
+    rdfs:domain isam:SamplingSite ;
+    rdfs:range isam:GeospatialDDCoordLocation ;
+    skos:definition "geopatial location of site; required default is WGS84 latitude, longitude in decimal degrees. Elevation as a string with number, unit of measure, and datum." .
+
+isam:longitude a owl:DatatypeProperty,
+        linkml:SlotDefinition .
+
+isam:placeName a owl:DatatypeProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "placeName" ;
+    rdfs:domain isam:SamplingSite ;
+    rdfs:range xsd:string ;
+    skos:definition "one or more names by which the sampling site is known." .
+
+isam:producedBy a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "producedBy" ;
+    rdfs:domain isam:PhysicalSampleRecord ;
+    rdfs:range isam:SamplingEvent ;
+    skos:definition "object that documents the sampling event--who, where, when the specimen was obtained" .
+
+isam:registrant a owl:DatatypeProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "registrant" ;
+    rdfs:domain isam:PhysicalSampleRecord ;
+    rdfs:range xsd:string ;
+    skos:definition "identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information." .
+
+isam:relatedResource a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "relatedResource" ;
+    rdfs:range isam:SampleRelation ;
+    skos:definition "link to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource." .
+
+isam:relationship a owl:DatatypeProperty,
+        linkml:SlotDefinition .
+
+isam:resultTime a owl:DatatypeProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "resultTime" ;
+    rdfs:domain isam:SamplingEvent ;
+    rdfs:range xsd:date ;
+    skos:definition "Date on which the sample was collected." .
+
+isam:sampleidentifier a owl:DatatypeProperty,
+        linkml:SlotDefinition .
+
+isam:samplingPurpose a owl:DatatypeProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samplingPurpose" ;
+    rdfs:domain isam:PhysicalSampleRecord ;
+    rdfs:range xsd:string ;
+    skos:definition "term to specify why a sample was collection." .
+
+isam:samplingSite a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samplingSite" ;
+    rdfs:domain isam:SamplingEvent ;
+    rdfs:range isam:SamplingSite ;
+    skos:definition "object that identifies the place where the sample was collected" .
+
+isam:target a owl:DatatypeProperty,
+        linkml:SlotDefinition .
+
+isam:id a owl:DatatypeProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "id" ;
+    rdfs:range xsd:string ;
+    skos:definition "identifier for the JSON object. JSON-LD context should map this to @id" .
+
+isam:responsibility a owl:DatatypeProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "responsibility" ;
+    rdfs:range xsd:string ;
+    skos:definition "String with person name and affiliation, or organization name, and their role relative to the parent element." .
+
+isam:Curation a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Curation" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:accessConstraints ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty isam:responsibility ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:label ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:curationLocation ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:description ] ;
+    skos:definition "object contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample." .
+
+isam:SampleRelation a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SampleRelation" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:description ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:relationship ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:label ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:target ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "Object specifying relationships to other samples, (particularly between subsamples and parent samples), or beteen samples and other related information, e.g. publications using data from the sample or providing background information to understand the sample." .
+
+isam:GeospatialDDCoordLocation a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "GeospatialDDCoordLocation" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:elevation ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:decimal ;
+            owl:onProperty isam:longitude ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:decimal ;
+            owl:onProperty isam:latitude ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "Coordinate location specified using decimal degrees in WGS84 spatial reference system. Standard location specification is necessary for interoperability." .
+
+isam:SamplingSite a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SamplingSite" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:label ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:GeospatialDDCoordLocation ;
+            owl:onProperty isam:location ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty isam:placeName ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:description ] ;
+    skos:definition "Object providing location information for the site at which the sample was collected; this might be a place name, or a coordinate location in a global (e.g. WGS 84) or local (e.g. relative to a borehole or local excavation grid) reference system." .
+
+isam:description a owl:DatatypeProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "description" ;
+    rdfs:range xsd:string ;
+    skos:definition "free text description of the subject of a triple." .
+
+isam:label a owl:DatatypeProperty,
+        linkml:SlotDefinition .
+
+isam:SamplingEvent a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SamplingEvent" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty isam:responsibility ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:hasFeatureOfInterest ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:description ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:SamplingSite ;
+            owl:onProperty isam:samplingSite ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:date ;
+            owl:onProperty isam:resultTime ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:label ;
+            owl:qualifiedCardinality 1 ] ;
+    skos:definition "Object that describes the sample collection event, provides linkage to feature of interest, collection location and procedure, and the responsible parties, including people and projects supportign the collection activity." .
+
+linkml:ClassDefinition a owl:Class ;
+    rdfs:label "class_definition" ;
+    skos:definition "the definition of a class or interface" .
+
+isam:PhysicalSampleRecord a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "PhysicalSampleRecord" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://UNKNOWN.org/specimencategory> ;
+            owl:onProperty isam:hasSpecimenCategory ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:samplingPurpose ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://UNKNOWN.org/contextcategory> ;
+            owl:onProperty isam:hasContextCategory ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty isam:informalClassification ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:sampleidentifier ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:SamplingEvent ;
+            owl:onProperty isam:producedBy ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:Curation ;
+            owl:onProperty isam:curation ],
+        [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:label ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom isam:SampleRelation ;
+            owl:onProperty isam:relatedResource ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty isam:keywords ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://UNKNOWN.org/materialtype> ;
+            owl:onProperty isam:hasMaterialCategory ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty isam:registrant ] ;
+    skos:definition "This is a data object that is a digital representation of a physical sample. It provides descriptive properties for any iSamples physical sample." .
+
+linkml:SlotDefinition a owl:Class ;
+    rdfs:label "slot_definition" ;
+    skos:definition "the definition of a property or a slot" .
+
