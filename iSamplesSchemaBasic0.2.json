@@ -5,11 +5,7 @@
     "type": "object",
     "description": "PhysicalSampleRecord is a data object that is a digital representation of a physical sample. This schema is a simplified version of our target final scheme (see iSamplesSchema0.5linkml.json for current target schema 2021-06-15). It will be used for intitial mapping from target collections to the iSamples search prototype.  Properties have simple literal datatypes to keep things simple for initial testing. 2021-06-15 update enums for basic sample categorization.",
     "properties": {
-        "schema": {
-            "type": "string",
-            "description": "identifier for the JSON schema for validation purposes",
-            "const": "http://resource.isamples.org/schema/0.2"
-        },
+
         "id": {
             "type": "string",
             "description": "URI that identifies this sample description record (not the physical sample itself"
@@ -47,7 +43,8 @@
                     "Subaerial terrestrial biome",
                     "Subaqueous terrestrial biome",
                     "Subsurface fluid reservoir",
-                    "Terrestrial water body"
+                    "Terrestrial water body",
+                    "Not Provided"
                 ]
             },
             "type": "array"
@@ -71,7 +68,8 @@
                     "Particulate",
                     "Rock",
                     "Sediment",
-                    "Soil"
+                    "Soil",
+                    "Not Provided"
                 ]
             },
             "type": "array"
@@ -92,7 +90,8 @@
                     "Organism part",
                     "Organism product",
                     "Other solid object",
-                    "Whole organism"
+                    "Whole organism",
+                    "Not Provided"
                 ]
             },
             "type": "array"
@@ -121,12 +120,13 @@
             "type": "array"
         },
         "relatedResource": {
-            "$ref": "#/definitions/SampleRelation",
+            "type":"array",
+            "items": {"$ref":"#/definitions/SampleRelation"},
+            
             "description": "link to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource."
         }
     },
     "required": [
-        "schema",
         "id",
         "sampleidentifier",
         "label"

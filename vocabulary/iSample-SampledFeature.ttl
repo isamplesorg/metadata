@@ -25,6 +25,7 @@ sf:anthropogenicenvironment
   rdfs:label "Anthropogenic environment"@en ;
   skos:broader sf:anysampledfeature ;
   skos:prefLabel "Anthropogenic environment"@en ;
+    skos:inScheme sf:sampledfeaturevocabulary ;
 .
 sf:anysampledfeature
   rdf:type skos:Concept ;
@@ -87,6 +88,7 @@ sf:glacierenviornment
   rdfs:label "Glacier environment "@en ;
   skos:broader sf:earthenvironment ;
   skos:prefLabel "Glacier environment "@en ;
+    skos:inScheme sf:sampledfeaturevocabulary ;
 .
 sf:labenvironment
   rdf:type skos:Concept ;
@@ -132,12 +134,13 @@ sf:ontology
   dct:created "2021-03-17"^^xsd:date ;
   dct:creator <https://orcid.org/0000-0001-6041-5302> ;
   dct:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
-  dct:modified "2021-07-09"^^xsd:date ;
+  dct:modified "2021-12-10"^^xsd:date ;
   owl:imports <http://purl.org/dc/elements/1.1/> ;
   owl:imports dct: ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionInfo "20210703" ;
   skos:historyNote "Remove Marine biome, Subaerial terrestrial environment, Subaqueous terrestrial environment per github issue https://github.com/isamplesorg/metadata/issues/41. Make Experiment setting and Laboratory or curatorial environemtn  subclasses of Active human occupation site."@en ;
+  skos:historyNote "2021-12-10 SMR add missing skos:inScheme statements"@en;
 .
 sf:pasthumanoccupationsite
   rdf:type skos:Concept ;
