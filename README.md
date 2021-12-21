@@ -10,7 +10,6 @@ Collation of metadata examples and notes for the project
 
 # linkML (Current version 1.1.13)
 This branch implments how to use linkML to generate various output and operations for iSamples.
->>>>>>> linkML
 
 ## iSamples YAML schema to JSON schema
 We could use the following command to convert iSamples YAML schema to JSON schema.
