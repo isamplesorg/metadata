@@ -191,8 +191,8 @@ The iSamples Metadata Docker container is based on the Docker container from the
 First you'll build the image:
 `docker build -t isamples_linkml .`
 
-Then running it will open a bash shell:
-`docker run -a stdin -a stdout -i -t isamples_linkml`
+Then, running it will open a bash shell opened to `/work`, which is the Docker container volume representing the iSamples metadata repository:
+``docker run -a stdin -a stdout -i -t -v `pwd`:/work isamples_linkml``
 
 Then use the following commands to generate LinkML:
 * Command 1
