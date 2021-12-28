@@ -76,7 +76,7 @@ The command will save the result in the jsonld file. After we have the converted
    }
 </pre>
 </details>
-This is an example of modified JSON-LD context. We need to define `"@vocab":"http://resource.isamples.org/schema/"` firstly. Then, for each enumeartion, we use `@type` to declare enumeration type.
+This is an example of modified JSON-LD context. For each enumeartion, we use `@type` to declare enumeration type.
 
 ## Validating schema and instance file
 Before we valideting all instance files, we need to add modified JSON-LD context to the front of instances properties. 
