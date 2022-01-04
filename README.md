@@ -12,6 +12,7 @@ Collation of metadata examples and notes for the project
 This branch implments how to use linkML to generate various output and operations for iSamples.
 
 ## Current workflow (01/01/2022)
+![workflow](https://github.com/isamplesorg/metadata/blob/docker/linkmlExperiment/linkML%201-1-2022%20workflow.png)
 
 
 ## iSamples YAML schema to JSON schema
