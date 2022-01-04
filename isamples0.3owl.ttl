@@ -1,4 +1,13 @@
-@prefix : <http://resource.isamples.org/schema-owl/0.3#> .
+
+# baseURI: http://resource.isamples.org/schema/ontology
+# imports: http://resource.isamples.org/vocabulary/material/ontology
+# imports: http://resource.isamples.org/vocabulary/sampledfeature/ontology
+# imports: http://resource.isamples.org/vocabulary/specimentype/ontology
+
+
+
+
+@prefix : <http://resource.isamples.org/schema/> .
 @prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -10,23 +19,23 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix linkml: <https://w3id.org/linkml/> .
-@base <http://resource.isamples.org/schema-owl/0.3> .
 
-<http://resource.isamples.org/schema-owl/0.3> rdf:type owl:Ontology ;
-                                               owl:imports <http://resource.isamples.org/vocabulary/material/ontology> ,
-                                                           <http://resource.isamples.org/vocabulary/sampledfeature/ontology> ,
-                                                           <http://resource.isamples.org/vocabulary/specimentype/ontology> ;
-                                               dct:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-                                               dct:modified "2021-12-10"^^xsd:date ;
-                                               pav:version "20211022" ;
-                                               rdfs:label "physicalSample" ;
-                                               skos:definition "Schema for documenting physical samples" ;
-                                               skos:historyNote "2021-12-10 SMR generate from LinkML gen-owl v1.1.13, with abundant manual editing: fix up mapping enums to skos vocabularies with appropriate property restrictions"@en ;
-                                               linkml:generation_date "2021-12-09T18:54:40" ;
-                                               linkml:metamodel_version "1.7.0" ;
-                                               linkml:source_file "iSamplesSchemaBasic0.3.yml" ;
-                                               linkml:source_file_date "2021-12-09T18:33:00" ;
-                                               linkml:source_file_size 12324 .
+
+<http://resource.isamples.org/schema/ontology> rdf:type owl:Ontology ;
+                                                        owl:imports <http://resource.isamples.org/vocabulary/material/ontology> ,
+                                                                    <http://resource.isamples.org/vocabulary/sampledfeature/ontology> ,
+                                                                    <http://resource.isamples.org/vocabulary/specimentype/ontology> ;
+                                                        dct:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
+                                                        dct:modified "2022-01-04" ;
+                                                        pav:version 20220104 ;
+                                                        rdfs:label "iSamples Physical Sample Description"@en ;
+                                                        skos:definition "Schema for documenting physical samples" ;
+                                                        skos:historyNote "2021-12-10 SMR generate from LinkML gen-owl v1.1.13, with abundant manual editing: fix up mapping enums to skos vocabularies with appropriate property restrictions. 2022-01-04 add 'ontology' at end of ontology URI. OWL verstion 0.3"@en ;
+                                                        linkml:generation_date "2021-12-09T18:54:40" ;
+                                                        linkml:metamodel_version "1.7.0" ;
+                                                        linkml:source_file "iSamplesSchemaBasic0.3.yml" ;
+                                                        linkml:source_file_date "2021-12-09T18:33:00" ;
+                                                        linkml:source_file_size 12324 .
 
 #################################################################
 #    Annotation properties
@@ -38,14 +47,6 @@ dct:license rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/pav/version
 pav:version rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/2002/07/owl#maxQualifiedCardinality
-owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/2002/07/owl#qualifiedCardinality
-owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#definition
@@ -70,6 +71,14 @@ linkml:source_file_date rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/linkml/source_file_size
 linkml:source_file_size rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
 
 
 #################################################################
@@ -349,6 +358,9 @@ isam:SamplingSite rdf:type owl:Class ;
                                     owl:onProperty isam:description ;
                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                   ] .
+
+
+
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
