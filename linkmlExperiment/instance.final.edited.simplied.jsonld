@@ -1,0 +1,22 @@
+
+{
+   "@context": {
+      "@vocab": "http://resource.isamples.org/schema/",
+     
+      "hasMaterialCategory": {
+         "@type": "@vocab",
+         "@context":{
+             "@vocab": "http://my.terms.org/materialtype#"
+          }
+      }
+
+   },
+   
+ 
+  "hasMaterialCategory": [ "Organic_material"]
+  
+  ############# value can't have spaces for ttl, use _. 
+
+}
+
+
