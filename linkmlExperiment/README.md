@@ -1,7 +1,7 @@
 This folder contains files related to an experiment with linkML (https://github.com/linkml/)
 
 
-steps.pptx documented the process of the experiment. 
+steps.pptx documents the process of the experiment. 
 
 
 Slide 1 shows an overview of the data flow of the iSamples project as of Jan 1, 2022. The experiment is about the shaded part.
