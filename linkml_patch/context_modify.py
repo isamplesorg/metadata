@@ -6,6 +6,10 @@ import json
 
 
 def main(argv):
+    if not len(argv):
+        print("Please add schema file path")
+        sys.exit(1)
+
     try:
         file = open(argv[0], 'r')
         json_object = json.load(file)
