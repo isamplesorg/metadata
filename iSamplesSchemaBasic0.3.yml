@@ -259,7 +259,12 @@ enums:
     materialtype:
         description: categories for kinds of material that constitute the sample
         permissible_values:
-            Anthropogenic material:
+            anthropogenicmaterial:
+                description: Non-metallic material produced by human activity. Organic products of agricultural activity are both anthropogenic and organic. Include lab preparations like XRF pellet and rock powders. Examples- ceramics, concrete, slag, (anthropogenic) glass, mine tailing, plaster, waste.
+                meaning: mat:anthropogenicmaterial
+                notes: Anthropogenic_material
+                from_schema: http://resource.isamples.org/vocabulary/material/materialsvocabulary
+                see_also: http://purl.obolibrary.org/obo/ENVO_0010001
             Anthropogenic metal:
             Biogenic non-organic material:
             Gaseous material:
