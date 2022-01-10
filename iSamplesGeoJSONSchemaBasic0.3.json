@@ -1,0 +1,500 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://geojson.org/schema/Feature.json",
+    "title": "GeoJSON Feature",
+    "description": "This JSON schema assembled from geoJSON spec for Feature (https://github.com/geojson/schema), updates to sync with OGC API-features part 1. bbox property has been kept on the feature (OGC removes), but removed from the geometry type definitions; links property has been added on GeoJSON feature from OGC API to implement sample relations. SMR 2022-01-08",
+    "type": "object",
+    "required": [
+        "type",
+        "properties",
+        "geometry"
+    ],
+    "properties": {
+        "type": {
+            "type": "string",
+            "enum": ["Feature"]
+        },
+        "id": {
+            "description": "iSamples convention is that this is the identifier for the JSON object, and restricts value to be a string. JSON-LD context should map this to @id",
+            "type": "string"
+        },
+        "properties": {
+            "$ref":"#/definitions/PhysicalSampleRecord"
+        },
+        "geometry": {
+            "description": "location of feature specified in a geographic coordinate reference system. iSamples convention for point locations is that coordinates are ordered longitude, latitude and (optionally) elevation, reported in decimal degrees using WGS84, with elevation in meters, measured positive up from mean sea level. If positions need to be specified relative to a linear reference system (e.g. depth in a borehole, position in a measured section), or relative so some local coordinate framework (e.g. a grid laid out in an excavation site), these should be described in the location property, using one of the iSamples extensions",
+            "oneOf": [
+                {"type": "null"},
+                {"$ref": "#/definitions/Point-def"},
+                {"$ref": "#/definitions/LineString-def"},
+                {"$ref": "#/definitions/Polygon-def"},
+                {"$ref": "#/definitions/MultiPoint-def"},
+                {"$ref": "#/definitions/MultiLineString-def"},
+                {"$ref": "#/definitions/MultiPolygon-def"},
+                {"$ref": "#/definitions/GeometryCollection-def"}
+            ]
+        },
+        "bbox": {"$ref": "#/definitions/bbox-def"},
+        "links": {
+            "type": "array",
+            "description": "links to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource.",
+            "items": {"$ref": "#/definitions/link-def"}
+        }
+    },
+    "definitions": {
+        "Point-def": {
+            "title": "GeoJSON Point",
+            "description": "A single position; https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.2",
+            "type": "object",
+            "required": [
+                "type",
+                "coordinates"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": ["Point"]
+                },
+                "coordinates": {
+                    "type": "array",
+                    "description": "an array of numbers, ordered longitude, latitude and (optionally) elevation. iSamples convention is that locations are reported in decimal degrees using the WGS84 . The array represents a position.",
+                    "minItems": 2,
+                    "items": {"type": "number"}
+                }
+            }
+        },
+        "LineString-def": {
+            "title": "GeoJSON LineString",
+            "type": "object",
+            "required": [
+                "type",
+                "coordinates"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": ["LineString"]
+                },
+                "coordinates": {
+                    "type": "array",
+                    "minItems": 2,
+                    "items": {
+                        "type": "array",
+                        "minItems": 2,
+                        "items": {"type": "number"}
+                    }
+                }
+            }
+        },
+        "Polygon-def": {
+            "title": "GeoJSON Polygon",
+            "type": "object",
+            "required": [
+                "type",
+                "coordinates"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": ["Polygon"]
+                },
+                "coordinates": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "minItems": 4,
+                        "items": {
+                            "type": "array",
+                            "minItems": 2,
+                            "items": {"type": "number"}
+                        }
+                    }
+                }
+            }
+        },
+        "MultiPoint-def": {
+            "title": "GeoJSON MultiPoint",
+            "type": "object",
+            "required": [
+                "type",
+                "coordinates"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": ["MultiPoint"]
+                },
+                "coordinates": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "minItems": 2,
+                        "items": {"type": "number"}
+                    }
+                }
+            }
+        },
+        "MultiLineString-def": {
+            "title": "GeoJSON MultiLineString",
+            "type": "object",
+            "required": [
+                "type",
+                "coordinates"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": ["MultiLineString"]
+                },
+                "coordinates": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "minItems": 2,
+                        "items": {
+                            "type": "array",
+                            "minItems": 2,
+                            "items": {"type": "number"}
+                        }
+                    }
+                }
+            }
+        },
+        "MultiPolygon-def": {
+            "title": "GeoJSON MultiPolygon",
+            "type": "object",
+            "required": [
+                "type",
+                "coordinates"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": ["MultiPolygon"]
+                },
+                "coordinates": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "array",
+                            "minItems": 4,
+                            "items": {
+                                "type": "array",
+                                "minItems": 2,
+                                "items": {"type": "number"}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "GeometryCollection-def": {
+            "title": "GeoJSON GeometryCollection",
+            "type": "object",
+            "required": [
+                "type",
+                "geometries"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": ["GeometryCollection"]
+                },
+                "geometries": {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {"$ref": "#/definitions/Point-def"},
+                            {"$ref": "#/definitions/LineString-def"},
+                            {"$ref": "#/definitions/Polygon-def"},
+                            {"$ref": "#/definitions/MultiPoint-def"},
+                            {"$ref": "#/definitions/MultiLineString-def"},
+                            {"$ref": "#/definitions/MultiPolygon-def"}
+                        ]
+                    }
+                }
+            }
+        },
+        "bbox-def": {
+            "type": "array",
+            "description": "The value of the bbox member MUST be an array of length 2*n where n is the number of dimensions represented in the contained geometries, with all axes of the most southwesterly point followed by all axes of the more northeasterly point. Each of the two point specifications is ordered longitude, latitude and (optionally) elevation. https://datatracker.ietf.org/doc/html/rfc7946#section-5",
+            "minItems": 4,
+            "items": {"type": "number"}
+        },
+        "link-def": {
+            "title": "Link",
+            "type": "object",
+            "required": ["href"],
+            "properties": {
+                "href": {
+                    "type": "string",
+                    "example": "http://data.example.com/buildings/123"
+                },
+                "rel": {
+                    "type": "string",
+                    "example": "alternate"
+                },
+                "type": {
+                    "type": "string",
+                    "example": "application/geo+json"
+                },
+                "hreflang": {
+                    "type": "string",
+                    "example": "en"
+                },
+                "title": {
+                    "type": "string",
+                    "example": "Trierer Strasse 70, 53115 Bonn"
+                },
+                "length": {"type": "integer"}
+            }
+        },
+        "PhysicalSampleRecord": {
+            "title": "iSamples Sample Description",
+            "description": "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web. ",
+            "type": "object",
+            "required": [
+                "sampleidentifier",
+                "label"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "curation": {"$ref": "#/definitions/Curation"},
+                "description": {
+                    "description": "free text description of the subject of a triple.",
+                    "type": "string"
+                },
+                "hasContextCategory": {
+                    "description": "top level context, based on the kind of feature sampled.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.",
+                    "items": {"$ref": "#/definitions/Contextcategory"},
+                    "type": "array"
+                },
+                "hasMaterialCategory": {
+                    "description": "specify the kind of material that constitutes the sample",
+                    "items": {"$ref": "#/definitions/Materialtype"},
+                    "type": "array"
+                },
+                "hasSpecimenCategory": {
+                    "description": "specify the kind of object that the specimen is",
+                    "items": {"$ref": "#/definitions/Specimencategory"},
+                    "type": "array"
+                },
+                "informalClassification": {
+                    "description": "free text classification terms, not from a controlled vocabulary; generally terms applied by collector",
+                    "items": {"type": "string"},
+                    "type": "array"
+                },
+                "keywords": {
+                    "description": "free text categorization of sample to support discovery",
+                    "items": {"type": "string"},
+                    "type": "array"
+                },
+                "label": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                },
+                "producedBy": {
+                    "description": "object that documents the sampling event--who, where, when the specimen was obtained",
+                    "$ref": "#/definitions/SamplingEvent"
+                },
+                "registrant": {
+                    "description": "identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.",
+                    "type": "string"
+                },
+                "sampleidentifier": {
+                    "description": "URI that identifies the physical sample described by this record",
+                    "type": "string"
+                },
+                "samplingPurpose": {
+                    "description": "term to specify why a sample was collection.",
+                    "type": "string"
+                }
+            }
+        },
+        "Contextcategory": {
+            "description": "top level context, based on the kind of feature sampled, from the SampledFeature vocabulary.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.",
+            "enum": [
+                "Active human occupation site",
+                "Atmosphere",
+                "Earth interior",
+                "Experiment setting",
+                "Extraterrestrial environment",
+                "Glacier environment",
+                "Site of past human activities",
+                "Laboratory environment",
+                "Lake, river or stream bottom",
+                "Marine biome",
+                "Marine water body",
+                "Marine water body bottom",
+                "Subaerial surface environment",
+                "Subaerial terrestrial biome",
+                "Subaqueous terrestrial biome",
+                "Subsurface fluid reservoir",
+                "Terrestrial water body",
+                "Not Provided"
+            ],
+            "title": "Contextcategory",
+            "type": "string"
+        },
+        "Curation": {
+            "additionalProperties": true,
+            "description": "object contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.",
+            "properties": {
+                "accessConstraints": {
+                    "description": "cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.",
+                    "type": "string"
+                },
+                "curationLocation": {
+                    "description": "information about where the sample is currently stored",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "free text description of the subject of a triple.",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                },
+                "responsibility": {
+                    "description": "String with person name and affiliation, or organization name, and their role relative to the parent element.",
+                    "items": {"type": "string"},
+                    "type": "array"
+                }
+            },
+            "required": [],
+            "title": "Curation",
+            "type": "object"
+        },
+        "GeospatialDDCoordLocation": {
+            "additionalProperties": true,
+            "description": "Coordinate location specified using decimal degrees in WGS84 spatial reference system. Standard location specification is necessary for interoperability.",
+            "properties": {
+                "elevation": {
+                    "description": "should be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level.",
+                    "type": "string"
+                },
+                "latitude": {
+                    "description": "angular coordinate measured positive north from the equator.",
+                    "type": "number"
+                },
+                "longitude": {
+                    "description": "angular coordinate measured positive eastward from the prime meridian.",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "latitude",
+                "longitude"
+            ],
+            "title": "GeospatialDDCoordLocation",
+            "type": "object"
+        },
+        "Materialtype": {
+            "description": "categories for kinds of material that constitute the sample",
+            "enum": [
+                "Anthropogenic material",
+                "Anthropogenic metal",
+                "Biogenic non-organic material",
+                "Gaseous material",
+                "Ice",
+                "Mineral",
+                "Non-aqueous liquid material",
+                "Not Provided",
+                "Organic material",
+                "Particulate",
+                "Rock",
+                "Sediment",
+                "Soil",
+                "Water"
+            ],
+            "title": "Materialtype",
+            "type": "string"
+        },
+        "SamplingEvent": {
+            "additionalProperties": true,
+            "description": "Object that describes the sample collection event, provides linkage to feature of interest, collection location and procedure, and the responsible parties, including people and projects supportign the collection activity.",
+            "properties": {
+                "description": {
+                    "description": "free text description of the subject of a triple.",
+                    "type": "string"
+                },
+                "hasFeatureOfInterest": {
+                    "description": "what does the sample represent.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "identifier for the sampling event JSON object. JSON-LD context should map this to @id",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                },
+                "responsibility": {
+                    "description": "String with person name and affiliation, or organization name, and their role relative to the parent element.",
+                    "items": {"type": "string"},
+                    "type": "array"
+                },
+                "resultTime": {
+                    "description": "Date on which the sample was collected.",
+                    "type": "string"
+                },
+                "samplingSite": {
+                    "$ref": "#/definitions/SamplingSite",
+                    "description": "object that identifies the place where the sample was collected"
+                }
+            },
+            "required": ["label"],
+            "title": "SamplingEvent",
+            "type": "object"
+        },
+        "SamplingSite": {
+            "additionalProperties": true,
+            "description": "Object providing location information for the site at which the sample was collected; this might be a place name, or a coordinate location in a global (e.g. WGS 84) or local (e.g. relative to a borehole or local excavation grid) reference system.",
+            "properties": {
+                "description": {
+                    "description": "free text description of the subject of a triple.",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                },
+                "location": {
+                    "type": "object",
+                    "description": "geopatial location of site, specified in reference system other than WGS84, with elevation in meters above mean sea level"
+                },
+                "placeName": {
+                    "description": "one or more names by which the sampling site is known.",
+                    "items": {"type": "string"},
+                    "type": "array"
+                }
+            },
+            "required": ["label"],
+            "title": "SamplingSite",
+            "type": "object"
+        },
+        "Specimencategory": {
+            "description": "specify the kind of object that the specimen is",
+            "enum": [
+                "Aggregation",
+                "Analytical preparation",
+                "Anthropogenic aggregation",
+                "Artifact",
+                "Biome aggregation",
+                "Experiment product",
+                "Fossil",
+                "Liquid or gas sample",
+                "Organism part",
+                "Organism product",
+                "Other solid object",
+                "Whole organism",
+                "Not Provided"
+            ],
+            "title": "Specimencategory",
+            "type": "string"
+        }
+    }
+}
