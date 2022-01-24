@@ -47,3 +47,8 @@ Test the correctness of Car2PIRE_0334.edited.json at https://json-ld.org/playgro
 }
 ```
 
+**The two files with 'relations' in their names are the yaml schema and json schema with relations added**
+
+The link to the relation diagram based on Steve's spreadsheet is https://drive.google.com/file/d/1_5sz_KKMJHxUuwkKpcTIOW86XaNrqatq/view?usp=sharing
+
+Currently relations are treated as enums, this may have negative effective when sharing data as linked data. 
