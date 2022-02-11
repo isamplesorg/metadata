@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://geojson.org/schema/Feature.json",
-    "title": "GeoJSON Feature",
+    "$id": "https://geojson.org/schema/isample",
+    "title": "iSample as GeoJSON Feature",
     "description": "This JSON schema assembled from geoJSON spec for Feature (https://github.com/geojson/schema), updates to sync with OGC API-features part 1. bbox property has been kept on the feature (OGC removes), but removed from the geometry type definitions; links property has been added on GeoJSON feature from OGC API to implement sample relations. SMR 2022-01-08",
     "type": "object",
     "required": [
@@ -14,7 +14,7 @@
             "type": "string",
             "enum": ["Feature"]
         },
-        "id": {
+        "@id": {
             "description": "iSamples convention is that this is the identifier for the JSON object, and restricts value to be a string. JSON-LD context should map this to @id",
             "type": "string"
         },
@@ -27,11 +27,7 @@
                 {"type": "null"},
                 {"$ref": "#/definitions/Point-def"},
                 {"$ref": "#/definitions/LineString-def"},
-                {"$ref": "#/definitions/Polygon-def"},
-                {"$ref": "#/definitions/MultiPoint-def"},
-                {"$ref": "#/definitions/MultiLineString-def"},
-                {"$ref": "#/definitions/MultiPolygon-def"},
-                {"$ref": "#/definitions/GeometryCollection-def"}
+                {"$ref": "#/definitions/Polygon-def"}
             ]
         },
         "bbox": {"$ref": "#/definitions/bbox-def"},
@@ -225,6 +221,7 @@
         "link-def": {
             "title": "Link",
             "type": "object",
+            "description":"this link object is from http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_link_relations, which is based on http://tools.ietf.org/rfc/rfc8288.txt, with some tweaking to better need iSamples requirements. [tbd]",
             "required": ["href"],
             "properties": {
                 "href": {
