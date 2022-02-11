@@ -1,0 +1,373 @@
+id: http://resource.isamples.org/schema/0.3
+name: PhysicalSampleRecord
+description: Schema for documenting physical samples
+license: https://creativecommons.org/publicdomain/zero/1.0/
+version: 20211022
+prefixes:
+    isam: http://resource.isamples.org/schema/
+    dct: http://purl.org/dc/terms/
+    mat: http://w3id.org/isamples/vocabulary/material/
+    pur: http://w3id.org/isamples/vocabulary/samplepurpose/
+    sf: http://w3id.org/isamples/vocabulary/sampledFeature/
+    skos: http://www.w3.org/2004/02/skos/core#
+    spt: http://w3id.org/isamples/vocabulary/specimentype/
+    w3cpos: http://www.w3.org/2003/01/geo/wgs84_pos#
+    rdfs: http://www.w3.org/2000/01/rdf-schema#
+    xsd: http://www.w3.org/2001/XMLSchema#
+    linkml: https://w3id.org/linkml/
+default_prefix: isam
+imports:
+  - linkml:types
+
+classes:
+    PhysicalSampleRecord:
+        description: This is a data object that is a digital representation of a physical
+            sample. It provides descriptive properties for any iSamples physical sample.
+        slots:
+          - id
+          - type
+          - '$schema'
+          - sampleidentifier
+          - label
+          - description
+          - samplingPurpose
+          - registrant
+          - keywords
+          - informalClassification
+          - hasContextCategory
+          - hasMaterialCategory
+          - hasSpecimenCategory
+          - producedBy
+          - curation
+          - relatedResource
+        slot_usage:
+            label:
+                required: true
+            sampleidentifier:
+                required: true
+            '$schema':
+                required: true
+    SamplingSite:
+        description: Object providing location information for the site at which the sample was
+                     collected; this might be a place name, or a coordinate location in a global
+                     (e.g. WGS 84) or local (e.g. relative to a borehole or local excavation grid)
+                     reference system.
+        slots:
+          - type
+          - label
+          - description
+          - location
+          - placeName
+        slot_usage:
+            label:
+                required: true          
+    SamplingEvent:
+        description: Object that describes the sample collection event, provides linkage
+            to feature of interest, collection location and procedure, and the 
+            responsible parties, including people and projects supportign the collection
+            activity.
+        slots:
+          - id
+          - type
+          - label
+          - description
+          - hasFeatureOfInterest
+          - responsibility
+          - resultTime
+          - samplingSite
+        slot_usage:
+            label:
+                required: true
+                
+    GeospatialDDCoordLocation:
+        description: Coordinate location specified using decimal degrees in WGS84 spatial
+                     reference system. Standard location specification is necessary for 
+                     interoperability. 
+        slots:
+          - type
+          - elevation
+          - latitude
+          - longitude
+        slot_usage:
+            latitude:
+                required: true
+            longitude:
+                required: true
+    Curation:
+        description: object contains information about current storage of sample,
+            access to sample, and events in curation history. Curation as used here
+            starts when the sample is removed from its original context, and might
+            include various processing steps for preservation.  Processing related
+            to analysis preparation such as crushing, dissolution, evaporation, filtering
+            are considered part of the sampling method for the derived child sample.
+        slots:
+          - label
+          - type
+          - description
+          - accessConstraints
+          - curationLocation
+          - responsibility
+    SampleRelation:
+        description: Object specifying relationships to other samples, (particularly between
+                      subsamples and parent samples), or beteen samples and other related 
+                      information, e.g. publications using data from the sample or providing 
+                      background information to understand the sample.
+        slots:
+          - label
+          - type
+          - description
+          - relationship
+          - target
+        slot_usage:
+            relationship:
+                required: true
+            target:
+                required: true
+ 
+slots:
+    id:
+        identifier: true
+        range: string
+        description: identifier for the JSON object. JSON-LD context should map this to @id
+    type:
+        range: string
+        description: JSON-LD context should map this to @type  
+    '$schema':
+        range: uri
+        description: URI of the json schema. Included so '$schema' field can be used in JSON data and validated against the schema.
+    relatedResource:
+        range: SampleRelation
+        description: link to related resource with relationship property to indicate
+            nature of connection. Target should be identifier for a resource.
+        multivalued: true
+        inlined_as_list: true
+    relationship:
+        range: string
+        description: term to identify realationship between host sample and the sample
+            relation target. Should be controlled vocabulary (ScopedName). for now
+            start with string, 'derivedFrom'.
+    target:
+        range: string
+        description: identifier for the target resource in the relationship. Start
+            with string, should be Identifier object.
+    accessConstraints:
+        range: string
+        description: cultural, legal or other policy issues that bear on access to
+            view, borrow, or subsample a sample or visit a sampling site.
+    curation:
+        range: Curation
+        description: information about any post-collection processing of the sample, and 
+            about its current location and stewadship.
+        inlined_as_list: true
+    curationLocation:
+        range: string
+        description: information about where the sample is currently stored
+    label:
+        range: string
+        description: a human intelligible string used to identify a thing, i.e. the
+            name to use for the thing; should be unique in the scope of a sample collection
+            or dataset.
+        close_mappings: rdfs:label
+    description:
+        range: string
+        description: free text description of the subject of a triple.
+        close_mappings: dct:description
+    informalClassification:
+        range: string
+        domain: PhysicalSampleRecord
+        description: free text classification terms, not from a controlled vocabulary;
+            generally terms applied by collector
+        multivalued: true
+    registrant:
+        range: string
+        domain: PhysicalSampleRecord
+        description: identification of the agent that registered the sample, with
+            contact information. Should include person name and affiliation, or position
+            name and affiliation, or just organization name. e-mail address is preferred
+            contact information.
+    sampleidentifier:
+        range: string
+        domain: PhysicalSampleRecord
+        description: URI that identifies the physical sample described by this record
+        close_mappings: isam:identifier
+    samplingPurpose:
+        range: string
+        domain: PhysicalSampleRecord
+        description: term to specify why a sample was collection.
+    keywords:
+        range: string
+        domain: PhysicalSampleRecord
+        description: free text categorization of sample to support discovery
+        close_mappings: isam:keywords
+        multivalued: true
+    hasContextCategory:
+        range: contextcategory
+        domain: PhysicalSampleRecord
+        description: top level context, based on the kind of feature sampled.  Specific
+            identification of the sampled feature of interest is done through the
+            SamplingEvent/Feature of Interest property.
+        multivalued: true
+    hasMaterialCategory:
+        range: materialtype
+        domain: PhysicalSampleRecord
+        description: specify the kind of material that constitutes the sample
+        multivalued: true
+    hasSpecimenCategory:
+        range: specimencategory
+        domain: PhysicalSampleRecord
+        description: specify the kind of object that the specimen is
+        multivalued: true
+    producedBy:
+        range: SamplingEvent
+        domain: PhysicalSampleRecord
+        description: object that documents the sampling event--who, where, when the
+            specimen was obtained
+        inlined_as_list: true
+    location:
+        range: GeospatialDDCoordLocation
+        domain: SamplingSite
+        description: geopatial location of site; required default is WGS84 latitude,
+            longitude in decimal degrees. Elevation as a string with number, unit
+            of measure, and datum.
+        inlined_as_list: true
+    placeName:
+        range: string
+        domain: SamplingSite
+        description: one or more names by which the sampling site is known.
+        multivalued: true
+    hasFeatureOfInterest:
+        range: string
+        domain: SamplingEvent
+        description: what does the sample represent.
+    responsibility:
+        range: string
+        description: String with person name and affiliation, or organization name,
+            and their role relative to the parent element.
+        multivalued: true
+    resultTime:
+        range: date
+        domain: SamplingEvent
+        description: Date on which the sample was collected.
+    samplingSite:
+        range: SamplingSite
+        domain: SamplingEvent
+        description: object that identifies the place where the sample was collected
+        inlined_as_list: true
+    elevation:
+        range: string
+        domain: GeospatialDDCoordLocation
+        description: should be a number and Unit of measure, and the datum. e.g. 401
+            m above mean sea level.
+    latitude:
+        range: decimal
+        domain: GeospatialDDCoordLocation
+        description: angular coordinate measured positive north from the equator.
+    longitude:
+        range: decimal
+        domain: GeospatialDDCoordLocation
+        description: angular coordinate measured positive eastward from the prime
+            meridian.
+
+
+enums:
+    materialtype:
+        description: categories for kinds of material that constitute the sample
+        permissible_values:     
+            mat:anyanthropogenicmaterial:
+                description: Any Anthropogenic Material
+                meaning: mat:anyanthropogenicmaterial
+                from_schema: http://resource.isamples.org/vocabulary/material/
+            mat:anthropogenicmetal:
+            mat:biogenicnonorganicmaterial:
+            mat:gas:
+            mat:anyice:
+            mat:mineral:
+            mat:nonaqueousliquid:
+            Not Provided:
+            mat:organicmaterial:
+            mat:particulate:
+            mat:rock:
+            mat:sediment:
+            mat:soil:
+            mat:waterice:
+            mat:otherliquid:
+            mat:otheranthropogenicmaterial:
+            mat:mixedsoilsedimentrock:
+            mat:liquidwater:
+            mat:material:
+            mat:fluid:
+            mat:earthmaterial:
+            mat:dispersedmedia:
+            
+            
+    specimencategory:
+        description: specify the kind of object that the specimen is
+        permissible_values:
+            spt:anyaggregation:
+                description: Any Aggregation
+                meaning: spt:anyaggregation
+                from_schema: http://resource.isamples.org/vocabulary/specimentype/
+            spt:analyticalpreparation:
+            spt:researchproduct:
+            spt:anthropogenicaggregation:
+            spt:artifact:
+            spt:biologicalspecimen: 
+            spt:biomeaggregation:
+            spt:experimentproduct:
+            spt:fossil:
+            spt:genericaggregation:
+            spt:liquidorgas:
+            spt:organismpart:
+            spt:organismproduct:
+            spt:othersolidobject:
+            spt:physicalspecimen:
+            spt:wholeorganism:
+                description: Whole organism
+                meaning: spt:wholeorganism
+                from_schema: http://resource.isamples.org/vocabulary/specimentype/
+            Not Provided:
+            
+    contextcategory:
+        description: top level context, based on the kind of feature sampled, 
+                    from the SampledFeature vocabulary.  Specific identification 
+                    of the sampled feature of interest is done through the 
+                    SamplingEvent/Feature of Interest property.
+        permissible_values:
+            sf:activehumanoccupationsite:
+                description: Active human occupation site
+                meaning: sf:activehumanoccupationsite
+                from_schema: http://resource.isamples.org/vocabulary/sampledfeature/
+            sf:anthropogenicenvironment:
+            sf:anysampledfeature:
+            sf:atmosphere:
+            sf:earthenvironment:
+            sf:earthinterior:
+            sf:earthsurface:
+            sf:experimentsetting:
+            sf:extraterrestrialenvironment:
+            sf:glacierenviornment:
+            sf:pasthumanoccupationsite:
+            sf:labenvironment:
+            sf:laboratorycuratorialenvironment:
+            sf:lakeriverstreambottom:
+            sf:rocksample:
+            sf:marinewaterbody:
+            sf:marinewaterbodybottom:
+            sf:subaerialsurfaceenvironment:
+            sf:subsurfacefluidreservoir:
+            sf:terrestrialwaterbody:
+            sf:waterbody:
+            Not Provided:
+
+
+
+
+
+
+
+
+
+
+
+
+

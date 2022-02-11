@@ -1,0 +1,51 @@
+<ark:/21547/Cas2INDO_2016_SEU_1B> <http://resource.isamples.org/schema/description> "samplingProtocol: ARMS | expeditionCode: INDO_PIRE | taxonomy team: MINV | projectId: 80" .
+<ark:/21547/Cas2INDO_2016_SEU_1B> <http://resource.isamples.org/schema/hasFeatureOfInterest> "Not Provided" .
+<ark:/21547/Cas2INDO_2016_SEU_1B> <http://resource.isamples.org/schema/label> "INDO_2016_SEU_1B INDO_PIRE" .
+<ark:/21547/Cas2INDO_2016_SEU_1B> <http://resource.isamples.org/schema/responsibility> "collector: Aji Wahyu Anggoro" .
+<ark:/21547/Cas2INDO_2016_SEU_1B> <http://resource.isamples.org/schema/responsibility> "collector: Andrianus Sembiring" .
+<ark:/21547/Cas2INDO_2016_SEU_1B> <http://resource.isamples.org/schema/responsibility> "event registrant: Chris Meyer" .
+<ark:/21547/Cas2INDO_2016_SEU_1B> <http://resource.isamples.org/schema/responsibility> "taxonomy team: MINV" .
+<ark:/21547/Cas2INDO_2016_SEU_1B> <http://resource.isamples.org/schema/resultTime> "2016-08-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+<ark:/21547/Cas2INDO_2016_SEU_1B> <http://resource.isamples.org/schema/samplingSite> _:b1 .
+<ark:/21547/Cas2INDO_2016_SEU_1B> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://resource.isamples.org/schema/SamplingEvent> .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/$schema> "../../iSamplesSchemaBasic0.2.json" .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/curation> _:b0 .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/description> "" .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/hasMaterialCategory> <http://resource.isamples.org/vocabulary/materialtype/Organic_material> .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/hasSpecimenCategory> <http://resource.isamples.org/vocabulary/specimencategory/Whole_organism> .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/informalClassification> "Gastropoda" .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/keywords> "Aceh" .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/keywords> "Asia" .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/keywords> "Gastropoda" .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/keywords> "Indonesia" .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/keywords> "Mollusca" .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/keywords> "Sumatra" .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/label> "Gastropoda PIRE_0334" .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/producedBy> <ark:/21547/Cas2INDO_2016_SEU_1B> .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/registrant> "Chris Meyer" .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/relatedResource> _:b3 .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/sampleidentifier> "ark:/21547/Car2PIRE_0334" .
+<http://resource.isamples.org/schema/metadata/21547/Car2PIRE_0334> <http://resource.isamples.org/schema/samplingPurpose> "Not Provided" .
+_:b0 <http://resource.isamples.org/schema/accessConstraints> "Not Provided" .
+_:b0 <http://resource.isamples.org/schema/curationLocation> "No Voucher" .
+_:b0 <http://resource.isamples.org/schema/description> "Not Provided" .
+_:b0 <http://resource.isamples.org/schema/label> "Not Provided" .
+_:b0 <http://resource.isamples.org/schema/responsibility> "curator:No Voucher" .
+_:b0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://resource.isamples.org/schema/Curation> .
+_:b1 <http://resource.isamples.org/schema/description> "Shallow, coastal reef. Apparent exposure to current, Porites dominated. Less impacted bleaching site, high recruitment, 12 m." .
+_:b1 <http://resource.isamples.org/schema/label> "Pulau Seulako" .
+_:b1 <http://resource.isamples.org/schema/location> _:b2 .
+_:b1 <http://resource.isamples.org/schema/placeName> "Aceh" .
+_:b1 <http://resource.isamples.org/schema/placeName> "Asia" .
+_:b1 <http://resource.isamples.org/schema/placeName> "Indonesia" .
+_:b1 <http://resource.isamples.org/schema/placeName> "Pulau Seulako" .
+_:b1 <http://resource.isamples.org/schema/placeName> "Sumatra" .
+_:b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://resource.isamples.org/schema/SamplingSite> .
+_:b2 <http://resource.isamples.org/schema/elevation> "12 m" .
+_:b2 <http://resource.isamples.org/schema/latitude> "5.8943E0"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+_:b2 <http://resource.isamples.org/schema/longitude> "9.525293000000001E1"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+_:b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://resource.isamples.org/schema/GeospatialDDCoordLocation> .
+_:b3 <http://resource.isamples.org/schema/label> "subsample tissue" .
+_:b3 <http://resource.isamples.org/schema/relationship> "subsample" .
+_:b3 <http://resource.isamples.org/schema/target> "ark:/21547/Cat2INDO106431.1" .
+_:b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://resource.isamples.org/schema/SampleRelation> .
