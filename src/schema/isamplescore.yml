@@ -1,0 +1,81 @@
+id: http://resource.isamples.org/0.6/schema
+name: physicalSample
+title: Schema for documenting physical samples
+version: 20220216
+prefixes:
+    so: http://schema.org/
+    sdo: http://resource.isamples.org/schema/
+    dct: http://purl.org/dc/terms/
+    mat: http://resource.isamples.org/vocabulary/material/
+    pur: http://resource.isamples.org/vocabulary/samplepurpose/
+    sf: http://resource.isamples.org/vocabulary/sampledFeature/
+    spt: http://resource.isamples.org/vocabulary/specimentype/
+    skos: http://www.w3.org/2004/02/skos/core#
+    w3cpos: http://www.w3.org/2003/01/geo/wgs84_pos#
+    rdfs: http://www.w3.org/2000/01/rdf-schema#
+    xsd: http://www.w3.org/2001/XMLSchema#
+    datacite4: https://schema.datacite.org/meta/kernel-4.4#
+    sosa: http://www.w3.org/ns/sosa/
+    qudt: http://qudt.org/2.0/schema/qudt
+
+types:
+    string:
+        base: str
+        uri: xsd:string
+
+classes:
+  TaxonomyTerm:
+    exact_mappings:
+      - skos:Concept
+    class_uri: skos:Concept
+    slots:
+      - id
+      - label         
+      - description
+      - broader
+      - narrower
+    
+  Taxonomy:
+    class_uri: skos:Concept
+    attributes:
+      terms:
+        multivalued: true
+        range: TaxonomyTerm
+    slots:
+      - id
+      - name
+      - version
+
+  PhysicalSampleRecord:
+        description: |-
+          Provides a digital representation of a physical sample, including descriptive 
+          properties applicable to any physical sample record in the iSamples system.
+        slots:
+          - id
+          - materialType
+          - sampledFeature
+          - specimenType
+
+slots:
+  id:
+    identifier: true
+  materialType:
+    range: Taxonomy
+  sampledFeature:
+    range: Taxonomy
+  specimenType:
+    range: Taxonomy
+  name: 
+    slot_uri: so:name
+  description:
+    slot_uri: so:description
+  version:
+    range: string
+  label:
+    slot_uri: skos:preflabel
+  broader:
+    slot_uri: skos:broader
+    range: TaxonomyTerm
+  narrower:
+    slot_uri: skos:narrower
+    range: TaxonomyTerm
