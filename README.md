@@ -1,4 +1,11 @@
 # metadata
+
+Defines the core metadata model for iSamples.
+
+The isamplescore.yml file defines the iSamples core model in linkml. 
+
+
+
 Collation of metadata examples and notes for the project 
 
 - background:  contains diagrams and information about some existing models that include metadata for samples; files are organized broadly by domain.
