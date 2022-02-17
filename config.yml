@@ -1,0 +1,6 @@
+includes:
+  - markdown
+  - jsonschema
+  - jsonldcontext
+  - shacl
+directory: build
