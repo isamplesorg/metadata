@@ -1,0 +1,4 @@
+site_name: personinfo
+theme: readthedocs
+docs_dir: build/docs
+site_dir: docs
