@@ -3,4 +3,5 @@ includes:
   - jsonschema
   - jsonldcontext
   - shacl
+  - rdf
 directory: build
