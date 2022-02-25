@@ -118,6 +118,7 @@ docs/index.md: $(TARGET_DIR)/docs/index.md
 	cp -R $(MODEL_DOCS_DIR)/*.md $(TARGET_DIR)/docs
 #	# mkdocs.yml moves from the target/docs to the docs directory
 	mkdocs build
+	touch docs/.nojekyll
 
 $(TARGET_DIR)/docs/index.md: $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml tdir-docs 
 	$(RUN) gen-markdown $(GEN_OPTS) --mergeimports --notypesdir --warnonexist --dir $(TARGET_DIR)/docs $<
