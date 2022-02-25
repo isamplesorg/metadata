@@ -13,6 +13,7 @@ linkml = "^1.1.18"
 pyLODE = "<3.0"
 
 [tool.poetry.dev-dependencies]
+ipykernel = "^6.9.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

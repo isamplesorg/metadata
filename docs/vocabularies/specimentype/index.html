@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary - iSamples</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary";
+    var mkdocs_page_input_path = "vocabularies/specimentype.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> iSamples</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">physicalSample</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../CurationClass/">Class: CurationClass</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Date/">Type: date</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Decimal/">Type: decimal</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Event/">Class: Event</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Event_dateValue/">Slot: dateValue</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Event_label/">Slot: label</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../GeospatialDDCoordLocation/">Class: GeospatialDDCoordLocation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../GeospatialLocation/">Class: GeospatialLocation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../GeospatialLocation_coordinate1/">Slot: coordinate1</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../GeospatialLocation_coordinate2/">Slot: coordinate2</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../GeospatialLocation_spatialReferenceSystem/">Slot: spatialReferenceSystem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Initiative/">Class: Initiative</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../LinearReferenceLocation/">Class: LinearReferenceLocation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Link/">Class: Link</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../MeasuredValue/">Class: MeasuredValue</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Organization/">Class: Organization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Organization_name/">Slot: name</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Person/">Class: Person</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Person_name/">Slot: name</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../PhysicalSampleRecord/">Class: PhysicalSampleRecord</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../PhysicalSampleRecord_id/">Slot: id</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../PhysicalSampleRecord_label/">Slot: label</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../PhysicalSampleRecord_sampleIdentifier/">Slot: sampleIdentifier</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../PhysicalSampleRecord_schema/">Slot: schema</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Procedure/">Class: Procedure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../PropertyValue/">Class: PropertyValue</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Responsibility/">Class: Responsibility</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Responsibility_agent/">Slot: agent</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Responsibility_roleType/">Slot: roleType</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../SampleCollection/">Class: SampleCollection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../SamplingEvent/">Class: SamplingEvent</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../SamplingSiteClass/">Class: SamplingSiteClass</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../ScopedName/">Class: ScopedName</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../String/">Type: string</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../accessConstraints/">Slot: accessConstraints</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../action/">Slot: action</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../additionalProperties/">Slot: additionalProperties</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../affiliations/">Slot: affiliations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../agent/">Slot: agent</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../altIdentifiers/">Slot: altIdentifiers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../altNames/">Slot: altNames</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../categoryValue/">Slot: categoryValue</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../collectionPurposes/">Slot: collectionPurposes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coordinate1/">Slot: coordinate1</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../coordinate2/">Slot: coordinate2</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../curation/">Slot: curation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../curationLocation/">Slot: curationLocation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../dateValue/">Slot: dateValue</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../description/">Slot: description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../determinationMethod/">Slot: determinationMethod</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../elevation/">Slot: elevation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../email/">Slot: email</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../events/">Slot: events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../glossary/">iSamples Glossary</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../hasCategories/">Slot: hasCategories</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../hasContextCategories/">Slot: hasContextCategories</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../hasContexts/">Slot: hasContexts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../hasFeaturesOfInterest/">Slot: hasFeaturesOfInterest</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../hasInitiative/">Slot: hasInitiative</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../hasMaterialCategories/">Slot: hasMaterialCategories</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../hasParts/">Slot: hasParts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../hasSpecimenCategories/">Slot: hasSpecimenCategories</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../id/">Slot: id</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../identifiers/">Slot: identifiers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../informalClassifications/">Slot: informalClassifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../initiativeType/">Slot: initiativeType</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../jobTitle/">Slot: jobTitle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../keywords/">Slot: keywords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../label/">Slot: label</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../latitude/">Slot: latitude</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../locationDD/">Slot: locationDD</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../locationMethod/">Slot: locationMethod</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../longitude/">Slot: longitude</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../lowerBound/">Slot: lowerBound</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../materialtype/">Enum: materialtype</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../maxCoordinate/">Slot: maxCoordinate</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../measureUnits/">Slot: measureUnits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../measureValue/">Slot: measureValue</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../minCoordinate/">Slot: minCoordinate</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../name/">Slot: name</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../numericValue/">Slot: numericValue</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../otherLocations/">Slot: otherLocations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../placeName/">Slot: placeName</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../positionUncertainty/">Slot: positionUncertainty</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../producedBy/">Slot: producedBy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../property/">Slot: property</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../referenceGeometryName/">Slot: referenceGeometryName</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../referenceGeometryShape/">Slot: referenceGeometryShape</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../registrant/">Slot: registrant</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../relatedResources/">Slot: relatedResources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../relationshipType/">Slot: relationshipType</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../responsibilities/">Slot: responsibilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../resultTime/">Slot: resultTime</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../roleType/">Slot: roleType</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../sampleIdentifier/">Slot: sampleIdentifier</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../samplingPurposes/">Slot: samplingPurposes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../samplingSite/">Slot: samplingSite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../schema/">Slot: schema</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../siteType/">Slot: siteType</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../source/">Slot: source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../spatialReferenceSystem/">Slot: spatialReferenceSystem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../status/">Slot: status</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../target/">Slot: target</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../uncertainty/">Slot: uncertainty</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../unitOfMeasure/">Slot: unitOfMeasure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../upperBound/">Slot: upperBound</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../url/">Slot: url</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../usedProcedure/">Slot: usedProcedure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../wktgeom/">Slot: wktgeom</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Vocabularies</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../materialType/">https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../sampledfeature/">https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#physicalspecimen">Physical specimen</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#anyaggregationspecimen">Any aggregation specimen</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#anthropogenicaggregation">Anthropogenic aggregation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#biomeaggregationspecimen">Biome aggregation specimen</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#aggregation">Aggregation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#artifact">Artifact</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#anybiologicalspecimen">Any biological specimen</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#biomeaggregationspecimen_1">Biome aggregation specimen</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#organismpart">Organism part</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#organismproduct">Organism product</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#wholeorganismspecimen">Whole organism specimen</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fossil">Fossil</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#liquidorgas">Liquid or gas</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#othersolidobject">Other solid object</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#researchproduct">Research product</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#analyticalpreparation">Analytical preparation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#experimentproduct">Experiment product</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">iSamples</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Vocabularies &raquo;</li>
+        
+      
+    
+    <li>https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="httpsw3idorgisamplevocabularyspecimentype09specimentypevocabulary">https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary<a class="headerlink" href="#httpsw3idorgisamplevocabularyspecimentype09specimentypevocabulary" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="#physicalspecimen">Physical specimen</a><ul>
+<li><a href="#anyaggregationspecimen">Any aggregation specimen</a><ul>
+<li><a href="#anthropogenicaggregation">Anthropogenic aggregation</a></li>
+<li><a href="#biomeaggregationspecimen">Biome aggregation specimen</a></li>
+<li><a href="#aggregation">Aggregation</a></li>
+</ul>
+</li>
+<li><a href="#artifact">Artifact</a></li>
+<li><a href="#anybiologicalspecimen">Any biological specimen</a><ul>
+<li><a href="#biomeaggregationspecimen">Biome aggregation specimen</a></li>
+<li><a href="#organismpart">Organism part</a></li>
+<li><a href="#organismproduct">Organism product</a></li>
+<li><a href="#wholeorganismspecimen">Whole organism specimen</a></li>
+</ul>
+</li>
+<li><a href="#fossil">Fossil</a></li>
+<li><a href="#liquidorgas">Liquid or gas</a></li>
+<li><a href="#othersolidobject">Other solid object</a></li>
+<li><a href="#researchproduct">Research product</a><ul>
+<li><a href="#analyticalpreparation">Analytical preparation</a></li>
+<li><a href="#experimentproduct">Experiment product</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="physicalspecimen">Physical specimen<a class="headerlink" href="#physicalspecimen" title="Permanent link">&para;</a></h2>
+<p>Concept: <a href="https://w3id.org/isample/vocabulary/specimentype/0.9/physicalspecimen"><code>physicalspecimen</code></a></p>
+<p>top concept in specimen type hierarchy.  Represents any physical
+specimen.</p>
+<h3 id="anyaggregationspecimen">Any aggregation specimen<a class="headerlink" href="#anyaggregationspecimen" title="Permanent link">&para;</a></h3>
+<p>Concept: <a href="https://w3id.org/isample/vocabulary/specimentype/0.9/anyaggregation"><code>anyaggregation</code></a></p>
+<p>Child of:
+ <a href="#physicalspecimen"><code>physicalspecimen</code></a></p>
+<p>Sample consists of a bunch of material fragments, not related to the
+same object (e.g. not a bunch of broken pot sherds that might be
+reassembled), but taken together representative of the sampled
+feature. Examples: loose soil, sediment, crushed rock,  particulate,
+bunches of unrelated pot sherd, human production waste, filtrates and
+residues. The sample requires some kind of container to keep it
+together. Cores of loosely consolidated material are considered 'piece
+of solid material' because the internal parts have spatial
+relationships (e.g. upper part, lower part).</p>
+<h4 id="anthropogenicaggregation">Anthropogenic aggregation<a class="headerlink" href="#anthropogenicaggregation" title="Permanent link">&para;</a></h4>
+<p>Concept: <a href="https://w3id.org/isample/vocabulary/specimentype/0.9/anthropogenicaggregation"><code>anthropogenicaggregation</code></a></p>
+<p>Child of:
+ <a href="#anyaggregation"><code>anyaggregation</code></a></p>
+<h4 id="biomeaggregationspecimen">Biome aggregation specimen<a class="headerlink" href="#biomeaggregationspecimen" title="Permanent link">&para;</a></h4>
+<p>Concept: <a href="https://w3id.org/isample/vocabulary/specimentype/0.9/biomeaggregation"><code>biomeaggregation</code></a></p>
+<p>Child of:
+ <a href="#anyaggregation"><code>anyaggregation</code></a>
+ <a href="#biologicalspecimen"><code>biologicalspecimen</code></a></p>
+<p>Specimen is an aggregation of whole or fragmentary parts of multiple
+organisms, microscopic or megascopic, representative of some site.</p>
+<h4 id="aggregation">Aggregation<a class="headerlink" href="#aggregation" title="Permanent link">&para;</a></h4>
+<p>Concept: <a href="https://w3id.org/isample/vocabulary/specimentype/0.9/genericaggregation"><code>genericaggregation</code></a></p>
+<p>Child of:
+ <a href="#anyaggregation"><code>anyaggregation</code></a></p>
+<h3 id="artifact">Artifact<a class="headerlink" href="#artifact" title="Permanent link">&para;</a></h3>
+<p>Concept: <a href="https://w3id.org/isample/vocabulary/specimentype/0.9/artifact"><code>artifact</code></a></p>
+<p>Child of:
+ <a href="#physicalspecimen"><code>physicalspecimen</code></a></p>
+<p>An object made (manufactured, shaped, modified) by a human being, or
+precursor hominid. Include a set of pieces belonging originally to a
+single object and treated as a single specimen.</p>
+<h3 id="anybiologicalspecimen">Any biological specimen<a class="headerlink" href="#anybiologicalspecimen" title="Permanent link">&para;</a></h3>
+<p>Concept: <a href="https://w3id.org/isample/vocabulary/specimentype/0.9/biologicalspecimen"><code>biologicalspecimen</code></a></p>
+<p>Child of:
+ <a href="#physicalspecimen"><code>physicalspecimen</code></a></p>
+<p>Specimen for which the sampled feature is one or more living organisms
+from a particular biome context, megascopic or microscopic</p>
+<h4 id="biomeaggregationspecimen_1">Biome aggregation specimen<a class="headerlink" href="#biomeaggregationspecimen_1" title="Permanent link">&para;</a></h4>
+<p>Concept: <a href="https://w3id.org/isample/vocabulary/specimentype/0.9/biomeaggregation"><code>biomeaggregation</code></a></p>
+<p>Child of:
+ <a href="#anyaggregation"><code>anyaggregation</code></a>
+ <a href="#biologicalspecimen"><code>biologicalspecimen</code></a></p>
+<p>Specimen is an aggregation of whole or fragmentary parts of multiple
+organisms, microscopic or megascopic, representative of some site.</p>
+<h4 id="organismpart">Organism part<a class="headerlink" href="#organismpart" title="Permanent link">&para;</a></h4>
+<p>Concept: <a href="https://w3id.org/isample/vocabulary/specimentype/0.9/organismpart"><code>organismpart</code></a></p>
+<p>Child of:
+ <a href="#biologicalspecimen"><code>biologicalspecimen</code></a></p>
+<p>Part of an organism, e.g. a tissue sample, plant leaf, flower, bird
+feather. Include internal parts not composed of organic material (e.g.
+teeth, bone), and hard body parts that are not shed (hoof, horn, tusk,
+claw).  Hair is tricky, include here for now.  Does not necessarily
+imply existance of parent sample. Not fossilized; generally includes
+organism parts native to deposits of Holocene to Recent age.</p>
+<h4 id="organismproduct">Organism product<a class="headerlink" href="#organismproduct" title="Permanent link">&para;</a></h4>
+<p>Concept: <a href="https://w3id.org/isample/vocabulary/specimentype/0.9/organismproduct"><code>organismproduct</code></a></p>
+<p>Child of:
+ <a href="#biologicalspecimen"><code>biologicalspecimen</code></a></p>
+<p>Specimen is a thing produced by some organism, generally not composed
+of organic material or including biological tissue, e.g. Shell,
+antler, egg shell, coral skeleton (organic tissue not included), fecal
+matter, cocoon, web.  Consider internal parts not composed of organic
+material (e.g. teeth, bone) and hard body parts that are not shed
+(hoof, horn, tusk) to be organism parts.</p>
+<h4 id="wholeorganismspecimen">Whole organism specimen<a class="headerlink" href="#wholeorganismspecimen" title="Permanent link">&para;</a></h4>
+<p>Concept: <a href="https://w3id.org/isample/vocabulary/specimentype/0.9/wholeorganism"><code>wholeorganism</code></a></p>
+<p>Child of:
+ <a href="#biologicalspecimen"><code>biologicalspecimen</code></a></p>
+<p>Specimen consists of the bodies of one or more entire organisms of the
+same species, from any kingdom. Note that are also 'solid object’</p>
+<h3 id="fossil">Fossil<a class="headerlink" href="#fossil" title="Permanent link">&para;</a></h3>
+<p>Concept: <a href="https://w3id.org/isample/vocabulary/specimentype/0.9/fossil"><code>fossil</code></a></p>
+<p>Child of:
+ <a href="#physicalspecimen"><code>physicalspecimen</code></a></p>
+<p>Specimen is the remains of one or more organisms preserved in rock;
+includes whole body, body parts (usually bone or shell), and trace
+fossils. An organism or organism part becomes a fossil when it has
+undergone some fossilization process that generally entails physical
+and chemical changes akin to diagenesis in a sedimentary rock. Trace
+fossils are manifestations of biologic activity preserved in a rock
+body (typically sedimentary), without included preserved body parts.</p>
+<h3 id="liquidorgas">Liquid or gas<a class="headerlink" href="#liquidorgas" title="Permanent link">&para;</a></h3>
+<p>Concept: <a href="https://w3id.org/isample/vocabulary/specimentype/0.9/liquidorgas"><code>liquidorgas</code></a></p>
+<p>Child of:
+ <a href="#physicalspecimen"><code>physicalspecimen</code></a></p>
+<p>Liquid, gas, or mixed dominantly fluid phases, necessarily in some
+kind of container to maintain identity. Might include minor solid
+particles. Container typically human made, but also includes natural
+fluid container, e.g. fluid inclusion in a mineral grain.  Includes
+colloids, foams, gels, suspensions. The sampled feature is the fluid
+substance; fluid samples collected to analyze the contained biome
+should be considered <em>Biome Aggregation</em></p>
+<h3 id="othersolidobject">Other solid object<a class="headerlink" href="#othersolidobject" title="Permanent link">&para;</a></h3>
+<p>Concept: <a href="https://w3id.org/isample/vocabulary/specimentype/0.9/othersolidobject"><code>othersolidobject</code></a></p>
+<p>Child of:
+ <a href="#physicalspecimen"><code>physicalspecimen</code></a></p>
+<p>Single piece of material not one of the other types, e.g. rock
+specimen, mineral specimen, core. Ice and permafrost are considered
+solid materials.</p>
+<h3 id="researchproduct">Research product<a class="headerlink" href="#researchproduct" title="Permanent link">&para;</a></h3>
+<p>Concept: <a href="https://w3id.org/isample/vocabulary/specimentype/0.9/researchproduct"><code>researchproduct</code></a></p>
+<p>Child of:
+ <a href="#physicalspecimen"><code>physicalspecimen</code></a></p>
+<p>Specimen is a product of some research workflow, e.g. a thin section,
+an XRF pellet, a grain mount, SEM stub, synthetic rock or mineral ...
+In general there should be a link to a parent specimen from which this
+was derived.  Might be aggregation (e.g. a synthetic material powder)
+or a solid object.</p>
+<h4 id="analyticalpreparation">Analytical preparation<a class="headerlink" href="#analyticalpreparation" title="Permanent link">&para;</a></h4>
+<p>Concept: <a href="https://w3id.org/isample/vocabulary/specimentype/0.9/analyticalpreparation"><code>analyticalpreparation</code></a></p>
+<p>Child of:
+ <a href="#researchproduct"><code>researchproduct</code></a></p>
+<p>e.g. thin section, XRF bead, SEM stub, rock powder. If identified
+separately, this should have a ‘parent’ link to the original sample</p>
+<h4 id="experimentproduct">Experiment product<a class="headerlink" href="#experimentproduct" title="Permanent link">&para;</a></h4>
+<p>Concept: <a href="https://w3id.org/isample/vocabulary/specimentype/0.9/experimentalproduct"><code>experimentalproduct</code></a></p>
+<p>Child of:
+ <a href="#researchproduct"><code>researchproduct</code></a></p>
+<p>Specimen is product of an experimental procedure (e.g. synthetic
+material)</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../sampledfeature/" class="btn btn-neutral" title="https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../sampledfeature/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

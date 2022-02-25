@@ -2,7 +2,9 @@
 
 Defines the core metadata model for iSamples.
 
-The isamplescore.yml file defines the iSamples core model in linkml. 
+`src/schemas/isamplescore.yml` defines the iSamples core model in linkml. It references vocabularies contained in `src/vocabularies/` which define terms for the Material Type, Sampled Feature, and Specimen Type vocabularies.
+
+
 
 
 

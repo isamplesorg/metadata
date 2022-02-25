@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>iSamples</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "physicalSample";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> iSamples</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href=".">physicalSample</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#classes">Classes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mixins">Mixins</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#slots">Slots</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#enums">Enums</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#subsets">Subsets</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#types">Types</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#builtin">Built in</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#defined">Defined</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="CurationClass/">Class: CurationClass</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Date/">Type: date</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Decimal/">Type: decimal</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Event/">Class: Event</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Event_dateValue/">Slot: dateValue</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Event_label/">Slot: label</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="GeospatialDDCoordLocation/">Class: GeospatialDDCoordLocation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="GeospatialLocation/">Class: GeospatialLocation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="GeospatialLocation_coordinate1/">Slot: coordinate1</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="GeospatialLocation_coordinate2/">Slot: coordinate2</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="GeospatialLocation_spatialReferenceSystem/">Slot: spatialReferenceSystem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Initiative/">Class: Initiative</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="LinearReferenceLocation/">Class: LinearReferenceLocation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Link/">Class: Link</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="MeasuredValue/">Class: MeasuredValue</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Organization/">Class: Organization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Organization_name/">Slot: name</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Person/">Class: Person</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Person_name/">Slot: name</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="PhysicalSampleRecord/">Class: PhysicalSampleRecord</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="PhysicalSampleRecord_id/">Slot: id</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="PhysicalSampleRecord_label/">Slot: label</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="PhysicalSampleRecord_sampleIdentifier/">Slot: sampleIdentifier</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="PhysicalSampleRecord_schema/">Slot: schema</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Procedure/">Class: Procedure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="PropertyValue/">Class: PropertyValue</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Responsibility/">Class: Responsibility</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Responsibility_agent/">Slot: agent</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Responsibility_roleType/">Slot: roleType</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="SampleCollection/">Class: SampleCollection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="SamplingEvent/">Class: SamplingEvent</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="SamplingSiteClass/">Class: SamplingSiteClass</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="ScopedName/">Class: ScopedName</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="String/">Type: string</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="accessConstraints/">Slot: accessConstraints</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="action/">Slot: action</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="additionalProperties/">Slot: additionalProperties</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="affiliations/">Slot: affiliations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="agent/">Slot: agent</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="altIdentifiers/">Slot: altIdentifiers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="altNames/">Slot: altNames</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="categoryValue/">Slot: categoryValue</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="collectionPurposes/">Slot: collectionPurposes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="coordinate1/">Slot: coordinate1</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="coordinate2/">Slot: coordinate2</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="curation/">Slot: curation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="curationLocation/">Slot: curationLocation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="dateValue/">Slot: dateValue</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="description/">Slot: description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="determinationMethod/">Slot: determinationMethod</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="elevation/">Slot: elevation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="email/">Slot: email</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="events/">Slot: events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="glossary/">iSamples Glossary</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="hasCategories/">Slot: hasCategories</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="hasContextCategories/">Slot: hasContextCategories</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="hasContexts/">Slot: hasContexts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="hasFeaturesOfInterest/">Slot: hasFeaturesOfInterest</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="hasInitiative/">Slot: hasInitiative</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="hasMaterialCategories/">Slot: hasMaterialCategories</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="hasParts/">Slot: hasParts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="hasSpecimenCategories/">Slot: hasSpecimenCategories</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="id/">Slot: id</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="identifiers/">Slot: identifiers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="informalClassifications/">Slot: informalClassifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="initiativeType/">Slot: initiativeType</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="jobTitle/">Slot: jobTitle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="keywords/">Slot: keywords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="label/">Slot: label</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="latitude/">Slot: latitude</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="locationDD/">Slot: locationDD</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="locationMethod/">Slot: locationMethod</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="longitude/">Slot: longitude</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="lowerBound/">Slot: lowerBound</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="materialtype/">Enum: materialtype</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="maxCoordinate/">Slot: maxCoordinate</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="measureUnits/">Slot: measureUnits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="measureValue/">Slot: measureValue</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="minCoordinate/">Slot: minCoordinate</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="name/">Slot: name</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="numericValue/">Slot: numericValue</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="otherLocations/">Slot: otherLocations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="placeName/">Slot: placeName</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="positionUncertainty/">Slot: positionUncertainty</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="producedBy/">Slot: producedBy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="property/">Slot: property</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="referenceGeometryName/">Slot: referenceGeometryName</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="referenceGeometryShape/">Slot: referenceGeometryShape</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="registrant/">Slot: registrant</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="relatedResources/">Slot: relatedResources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="relationshipType/">Slot: relationshipType</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="responsibilities/">Slot: responsibilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="resultTime/">Slot: resultTime</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="roleType/">Slot: roleType</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="sampleIdentifier/">Slot: sampleIdentifier</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="samplingPurposes/">Slot: samplingPurposes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="samplingSite/">Slot: samplingSite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="schema/">Slot: schema</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="siteType/">Slot: siteType</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="source/">Slot: source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="spatialReferenceSystem/">Slot: spatialReferenceSystem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="status/">Slot: status</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="target/">Slot: target</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="uncertainty/">Slot: uncertainty</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="unitOfMeasure/">Slot: unitOfMeasure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="upperBound/">Slot: upperBound</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="url/">Slot: url</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="usedProcedure/">Slot: usedProcedure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="wktgeom/">Slot: wktgeom</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Vocabularies</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="vocabularies/materialType/">https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="vocabularies/sampledfeature/">https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="vocabularies/specimentype/">https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">iSamples</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>physicalSample</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="physicalsample">physicalSample<a class="headerlink" href="#physicalsample" title="Permanent link">&para;</a></h1>
+<p><strong>metamodel version:</strong> 1.7.0</p>
+<p><strong>version:</strong> 20210430</p>
+<h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="CurationClass/">CurationClass</a> - representation of processes for preservation of sample, responsible agent, repository location, etc.  Use to represent chain of custody; new Curation object created when location changes; updates to accessConstraints or responsibilities should be noted as events.</li>
+<li><a href="Event/">Event</a> - object that records an action taken at some time;</li>
+<li><a href="GeospatialDDCoordLocation/">GeospatialDDCoordLocation</a></li>
+<li><a href="GeospatialLocation/">GeospatialLocation</a> - point location in an arbitrary spatial reference system. UTM is common example, but might be a local coordinate grid systems set up at a research site or mine.  Future-- add WKTposition to specify locations with more complex geometry (e.g. line, polygon, multipoint).</li>
+<li><a href="Initiative/">Initiative</a> - represents a project or other activity that is the context for a sample collection event. Responsibities identify hosting organizations, funding agencies, PI's etc. Events should include project initiation and end dates.  Other events can be reported at the discression of sample respository managers. Initatives likely can be managed in a separate registry and linked from PhysicalSampleRecords</li>
+<li><a href="LinearReferenceLocation/">LinearReferenceLocation</a> - location specified by position relative to origin defined along an arbitrary linear path, e.g. mile posts along a highway, or depth interval in a borehole, or pressure interval in an atmospheric sonde.</li>
+<li><a href="Link/">Link</a></li>
+<li><a href="MeasuredValue/">MeasuredValue</a> - simple object to represent measured values with units and uncertainty; could generalize uncertainty to something like 'measure quality'. The 'value' can be a single value, or a preferred value if a range (minValue, maxValue) is reported.</li>
+<li><a href="Organization/">Organization</a> - an organization, with contact information. ideally organizations would be referenced by identifire in a  registry, but name should be include for presentation purposes.</li>
+<li><a href="Person/">Person</a> - A person, with contact information and affiliation</li>
+<li><a href="PhysicalSampleRecord/">PhysicalSampleRecord</a> - This is a data object that is a digital representation of a physical sample. It provides  descriptive properties for any iSamples physical sample. IGSN is recommended. Must be a URI that can be dereferenced on the web.</li>
+<li><a href="Procedure/">Procedure</a></li>
+<li><a href="PropertyValue/">PropertyValue</a> - soft type structure to represent other properties for model extensions</li>
+<li><a href="Responsibility/">Responsibility</a></li>
+<li><a href="SampleCollection/">SampleCollection</a></li>
+<li><a href="SamplingEvent/">SamplingEvent</a></li>
+<li><a href="SamplingSiteClass/">SamplingSiteClass</a></li>
+<li><a href="ScopedName/">ScopedName</a> - binds a label with one or more identifiers and authority for the labeled concept</li>
+</ul>
+<h3 id="mixins">Mixins<a class="headerlink" href="#mixins" title="Permanent link">&para;</a></h3>
+<h3 id="slots">Slots<a class="headerlink" href="#slots" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="accessConstraints/">accessConstraints</a> - Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights, legal, and cultural issues. Recommended practice is to refer to a rights statement with a URI. If this is not possible or feasible, a literal value (name, label, or short text) may be provided.</li>
+<li><a href="action/">action</a> - specification of what was done using a term from a vocabulary</li>
+<li><a href="additionalProperties/">additionalProperties</a> - Use to associate sample with other non-categorical properties.</li>
+<li><a href="affiliations/">affiliations</a> - use to associate a person with a sponsoring or employing organization (could be time-stamped)</li>
+<li><a href="agent/">agent</a> - the person(s) or organization(s) that fill a responsibility role<ul>
+<li><a href="Responsibility_agent/">Responsibility➞agent</a></li>
+</ul>
+</li>
+<li><a href="altIdentifiers/">altIdentifiers</a> - base on ISO19115-1  MD_Identifier, with a 'code' string that is the actual identifier string, and a link to the authority that controls the identifier via a responsibility object.</li>
+<li><a href="altNames/">altNames</a> - Other sample name(s) (identifiers) that have been used in the past, or by other stakeholders</li>
+<li><a href="categoryValue/">categoryValue</a> - PropertyValue observation result is a category (term from a vocabulary).</li>
+<li><a href="collectionPurposes/">collectionPurposes</a> - generate controlled vocabulary later</li>
+<li><a href="coordinate1/">coordinate1</a> - for geospatial location in arbitrary SRS, first coordinate in an coordinate pair. Meaning is defined by the SRS. Example-- in UTM, this would be the Easting.<ul>
+<li><a href="GeospatialLocation_coordinate1/">GeospatialLocation➞coordinate1</a></li>
+</ul>
+</li>
+<li><a href="coordinate2/">coordinate2</a> - for geospatial location in arbitrary SRS, second coordinate in an coordinate pair. Meaning is defined by the SRS. Example-- in UTM, this would be the northing.<ul>
+<li><a href="GeospatialLocation_coordinate2/">GeospatialLocation➞coordinate2</a></li>
+</ul>
+</li>
+<li><a href="curation/">curation</a> - record of activities in preservation, storage and contact information for current location. For a collection, include information about where the collection is and who manages it</li>
+<li><a href="curationLocation/">curationLocation</a> - text specifying where the sample or sample collection is located, e.g. physical address,  location within a building, or a tissue plate and well identifier.</li>
+<li><a href="dateValue/">dateValue</a> - simple ISO8601 date or dateTime string.<ul>
+<li><a href="Event_dateValue/">Event➞dateValue</a></li>
+</ul>
+</li>
+<li><a href="description/">description</a> - free text description of the subject of a triple.</li>
+<li><a href="determinationMethod/">determinationMethod</a> - free text description of method to obtain a measured value</li>
+<li><a href="elevation/">elevation</a> - For a location, specification of the vertical distance from the datum specified for the spatial reference system. SRS definition should also specify if positive values are above or below the datum.</li>
+<li><a href="email/">email</a> - could apply regex validation for proper mailto link</li>
+<li><a href="events/">events</a> - record of actions that effect the subject of this property</li>
+<li><a href="hasCategories/">hasCategories</a> - use specifically for sample classification categories from registered vocabularies with URI or the category (use for sdo-propertyID).</li>
+<li><a href="hasContextCategories/">hasContextCategories</a> - top level context, based on the kind of feature sampled.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.</li>
+<li><a href="hasContexts/">hasContexts</a> - use to link sample to other terms to specify the context of the sample</li>
+<li><a href="hasFeaturesOfInterest/">hasFeaturesOfInterest</a> - specify the particular feature of interest that is the target of a sampling event; should be consistent with sampledFeature for any result samples. Might be a domain feature or another sample (or both!)</li>
+<li><a href="hasInitiative/">hasInitiative</a> - identify the project, field campaign, cruise, expediton during which the samplingEvent occurred</li>
+<li><a href="hasMaterialCategories/">hasMaterialCategories</a> - top level specification of the kind of material that constitutes the physical sample; detailed material categorization is done through the hasCategory/sdo-PropertyValue pattern</li>
+<li><a href="hasParts/">hasParts</a> - link from collection to sample that is member of collection, linked with sampleIdentifier, not PhysicalSampleRecord.id</li>
+<li><a href="hasSpecimenCategories/">hasSpecimenCategories</a> - top level categorization of kind of specimen. More specific classifications use isam hasCategory/sdo-PropertyValue pattern</li>
+<li><a href="id/">id</a> - identifier for the metadata record<ul>
+<li><a href="PhysicalSampleRecord_id/">PhysicalSampleRecord➞id</a></li>
+</ul>
+</li>
+<li><a href="identifiers/">identifiers</a> - identifer for the subject entity, use for person, organization, scoped name</li>
+<li><a href="informalClassifications/">informalClassifications</a> - free text classification terms, not from a controlled vocabulary; generally terms applied by collector</li>
+<li><a href="initiativeType/">initiativeType</a> - specify kind of initiative</li>
+<li><a href="jobTitle/">jobTitle</a> - a person associated with a responsibility might be identified only by a jobTitle for better long-term stability.  Ideally associated e-mail would be related to the jobTitle (position),not the person in that role at a given time</li>
+<li><a href="keywords/">keywords</a> - free text categorization of sample to support discovery</li>
+<li><a href="label/">label</a> - a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.<ul>
+<li><a href="Event_label/">Event➞label</a></li>
+<li><a href="PhysicalSampleRecord_label/">PhysicalSampleRecord➞label</a></li>
+</ul>
+</li>
+<li><a href="latitude/">latitude</a> - wgs84 decimal degree latitude coordinate</li>
+<li><a href="locationDD/">locationDD</a> - A sampling site must have exactly one SamplingLocation with a longitude-latitude WKT CRS84 point to support cross domain search;</li>
+<li><a href="locationMethod/">locationMethod</a> - URI that dereferences to a registered procedure would be best practice</li>
+<li><a href="longitude/">longitude</a> - wgs84 decimal degree easting longitude coordinate</li>
+<li><a href="lowerBound/">lowerBound</a> - for value range; if MeasuredValue/value is null, this must be populated</li>
+<li><a href="maxCoordinate/">maxCoordinate</a> - coordinate with maximum numeric value in linear reference system</li>
+<li><a href="measureUnits/">measureUnits</a> - should be determined by SRS, include as explicit property for convienence</li>
+<li><a href="measureValue/">measureValue</a> - property observation result that is a measured value</li>
+<li><a href="minCoordinate/">minCoordinate</a> - coordinate with minimum numeric value in linear reference system</li>
+<li><a href="name/">name</a> - use in parallel with rdfs:label for consistency with schema.org<ul>
+<li><a href="Organization_name/">Organization➞name</a></li>
+<li><a href="Person_name/">Person➞name</a></li>
+</ul>
+</li>
+<li><a href="numericValue/">numericValue</a> - the numeric result reported in a measured value</li>
+<li><a href="otherLocations/">otherLocations</a> - other subclasses of SamplingLocation can also be associated with a site to assert location in other spatial reference systems, either for greater precision, or using other map projection schemes preferred by some community</li>
+<li><a href="placeName/">placeName</a> - A place name with a reference to the source gazetteer that defines the name</li>
+<li><a href="positionUncertainty/">positionUncertainty</a> - numeric value to quantify location uncertainty.</li>
+<li><a href="producedBy/">producedBy</a> - binding from a physical sample to description of its original sampling event. For splits or sub samples, the sampling event is the procedure used to obtain the child sample.</li>
+<li><a href="property/">property</a> - identifier for a soft-type property value</li>
+<li><a href="referenceGeometryName/">referenceGeometryName</a> - name of the reference geometry, ideally with identifier, e.g. a borehole name and ID. basis for linear reference system must be some kind of OGC curve. A Curve is a one-dimensional geometric object usually stored as a sequence of points, with the subtype of Curve specifying the form of the interpolation between points. (OGC 99-049, https //portal.opengeospatial.org/files/?artifact_id=829)</li>
+<li><a href="referenceGeometryShape/">referenceGeometryShape</a> - A geoJSON object that represents the geometry of the reference system (e.g. borehole, ship track, traverse); must include SRS for representation of the shape. See http //www.opengis.net/rdf#Curve for information about geoJSON</li>
+<li><a href="registrant/">registrant</a> - identification of the agent that registered the sample, with contact information</li>
+<li><a href="relatedResources/">relatedResources</a> - link to another resource, with a relationship type</li>
+<li><a href="relationshipType/">relationshipType</a> - term to specify the semantics of the connection between source (subject) and target (object)</li>
+<li><a href="responsibilities/">responsibilities</a> - binds an event, curation or initiative with an agent  that is associated in some way (the responsibility role)</li>
+<li><a href="resultTime/">resultTime</a> - data and optional time when the sample was collected</li>
+<li><a href="roleType/">roleType</a> - specify the relationship between an agent and a resource in a responsibility object.<ul>
+<li><a href="Responsibility_roleType/">Responsibility➞roleType</a></li>
+</ul>
+</li>
+<li><a href="sampleIdentifier/">sampleIdentifier</a> - URI that identifies the physical sample described by this record; typically an IGSN or ARK<ul>
+<li><a href="PhysicalSampleRecord_sampleIdentifier/">PhysicalSampleRecord➞sampleIdentifier</a></li>
+</ul>
+</li>
+<li><a href="samplingPurposes/">samplingPurposes</a> - term to specify why a sample was collection.</li>
+<li><a href="samplingSite/">samplingSite</a> - binds a physical sample to the site (sampling feature) where it was collected. The site location might be specified by one or more sampleLocation objects,</li>
+<li><a href="schema/">schema</a> - identifier for the version of the iSamples JSON schema used for this doc<ul>
+<li><a href="PhysicalSampleRecord_schema/">PhysicalSampleRecord➞schema</a></li>
+</ul>
+</li>
+<li><a href="siteType/">siteType</a> - categorization of the kind of site</li>
+<li><a href="source/">source</a> - use for sourcing scoped names and sample relationships.</li>
+<li><a href="spatialReferenceSystem/">spatialReferenceSystem</a> - name and identifier. ideally any spatial reference system should be registered somewhere and have a URI; use that if available. For site specific schemes  a local name might have to do<ul>
+<li><a href="GeospatialLocation_spatialReferenceSystem/">GeospatialLocation➞spatialReferenceSystem</a></li>
+</ul>
+</li>
+<li><a href="status/">status</a> - property to indicate status of sample, e.g. destroyed, under embargo, accessible, lost?</li>
+<li><a href="target/">target</a> - scoped name that identifies the target of a relationship</li>
+<li><a href="uncertainty/">uncertainty</a> - an error bound parameter on a measured value. Additional measured value properties can be added to specify the particular statistical or qualitative method used to estimate uncertainty.</li>
+<li><a href="unitOfMeasure/">unitOfMeasure</a> - specification of units of measure applicable to a measured value. Range value should be qudt-Unit URI</li>
+<li><a href="upperBound/">upperBound</a> - for value range; if MeasuredValue/value is null, this must be populated</li>
+<li><a href="url/">url</a> - url for organization home page</li>
+<li><a href="usedProcedure/">usedProcedure</a> - binding from sampling event to a description of the procedure used to obtain the sample.</li>
+<li><a href="wktgeom/">wktgeom</a> - Well Known Text encoding of more complex geometry; the included coordinate point should be a centroid of this geometry.  Include SRS specification in WKT string, eg. use extended WKT (https://github.com/postgis/postgis/blob/2.1.0/doc/ZMSgeoms.txt)</li>
+</ul>
+<h3 id="enums">Enums<a class="headerlink" href="#enums" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="materialtype/">materialtype</a> - categories for kinds of material that constitute the sample</li>
+</ul>
+<h3 id="subsets">Subsets<a class="headerlink" href="#subsets" title="Permanent link">&para;</a></h3>
+<h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
+<h4 id="builtin">Built in<a class="headerlink" href="#builtin" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>float</strong></li>
+<li><strong>str</strong></li>
+</ul>
+<h4 id="defined">Defined<a class="headerlink" href="#defined" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="Date/">Date</a>  (<strong>str</strong>) </li>
+<li><a href="Decimal/">Decimal</a>  (<strong>float</strong>) </li>
+<li><a href="String/">String</a>  (<strong>str</strong>) </li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="CurationClass/" class="btn btn-neutral float-right" title="Class: CurationClass">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="CurationClass/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.1.2
+Build Date UTC : 2022-02-25 16:00:28.233168+00:00
+-->
