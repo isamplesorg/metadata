@@ -5,3 +5,4 @@ site_dir: docs
 markdown_extensions:
   - toc:
       permalink: True
+      separator: ""
