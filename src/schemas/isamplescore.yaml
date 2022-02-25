@@ -38,7 +38,7 @@ prefixes:
     qudt: http://qudt.org/2.0/schema/qudt
 classes:
     
-    Curation:
+    CurationClass:
         description: representation of processes for preservation of sample, responsible
             agent, repository location, etc.  Use to represent chain of custody; new
             Curation object created when location changes; updates to accessConstraints
@@ -102,7 +102,7 @@ classes:
           - label
           - initiativeType
           - responsibilities
-    MeasureValue:
+    MeasuredValue:
         description: simple object to represent measured values with units and uncertainty;
             could generalize uncertainty to something like 'measure quality'. The
             'value' can be a single value, or a preferred value if a range (minValue,
@@ -244,7 +244,7 @@ classes:
           - resultTime
           - samplingSite
           - usedProcedure
-    SamplingSite:
+    SamplingSiteClass:
         description:
         slots:
           - label
@@ -266,7 +266,7 @@ slots:
         description: identifier for the version of the iSamples JSON schema used for
             this doc
     accessConstraints:
-        range: string # domain: Curation, SamplingSite
+        range: string # domain: CurationClass, SamplingSite
         description: Typically, rights information includes a statement about various
             property rights associated with the resource, including intellectual property
             rights, legal, and cultural issues. Recommended practice is to refer to
@@ -332,13 +332,13 @@ slots:
             an coordinate pair. Meaning is defined by the SRS. Example-- in UTM, this
             would be the northing.
     curation:
-        range: Curation # domain: SampleCollection,  PhysicalSampleRecord
+        range: CurationClass # domain: SampleCollection,  PhysicalSampleRecord
         description: record of activities in preservation, storage and contact information
             for current location. For a collection, include information about where
             the collection is and who manages it
     curationLocation:
         range: string
-        domain: Curation
+        domain: CurationClass
         description: text specifying where the sample or sample collection is located,
             e.g. physical address,  location within a building, or a tissue plate
             and well identifier.
@@ -356,10 +356,10 @@ slots:
           - datacite4:description[descriptionType = TechnicalInfo]
     determinationMethod:
         range: string
-        domain: MeasureValue
+        domain: MeasuredValue
         description: free text description of method to obtain a measured value
     elevation:
-        range: MeasureValue # domain: GeospatialLocation,  SiteSpecificLocation, GeospatialDDCoordLocation
+        range: MeasuredValue # domain: GeospatialLocation,  SiteSpecificLocation, GeospatialDDCoordLocation
         description: For a location, specification of the vertical distance from the
             datum specified for the spatial reference system. SRS definition should
             also specify if positive values are above or below the datum.
@@ -466,7 +466,7 @@ slots:
         close_mappings: w3cpos:lat
     locationDD:
         range: GeospatialDDCoordLocation
-        domain: SamplingSite
+        domain: SamplingSiteClass
         description: A sampling site must have exactly one SamplingLocation with a
             longitude-latitude WKT CRS84 point to support cross domain search;
     locationMethod:
@@ -480,8 +480,8 @@ slots:
         close_mappings: w3cpos:long
     lowerBound:
         range: decimal
-        domain: MeasureValue
-        description: for value range; if MeasureValue/value is null, this must be
+        domain: MeasuredValue
+        description: for value range; if MeasuredValue/value is null, this must be
             populated
         close_mappings: qudt:lowerBound
     maxCoordinate:
@@ -494,7 +494,7 @@ slots:
         description: should be determined by SRS, include as explicit property for
             convienence
     measureValue:
-        range: MeasureValue
+        range: MeasuredValue
         domain: PropertyValue
         description: property observation result that is a measured value
     minCoordinate:
@@ -507,12 +507,12 @@ slots:
         close_mappings: sdo:name
     numericValue:
         range: decimal
-        domain: MeasureValue
+        domain: MeasuredValue
         description: the numeric result reported in a measured value
         close_mappings: qudt:value
     otherLocations:
         # range: SamplingLocation
-        domain: SamplingSite
+        domain: SamplingSiteClass
         description: other subclasses of SamplingLocation can also be associated with
             a site to assert location in other spatial reference systems, either for
             greater precision, or using other map projection schemes preferred by
@@ -520,11 +520,11 @@ slots:
         multivalued: true
     placeName:
         range: ScopedName
-        domain: SamplingSite
+        domain: SamplingSiteClass
         description: A place name with a reference to the source gazetteer that defines
             the name
     positionUncertainty:
-        range: MeasureValue # domain: GeospatialLocation, LinearReferenceLocation,  GeospatialDDCoordLocation
+        range: MeasuredValue # domain: GeospatialLocation, LinearReferenceLocation,  GeospatialDDCoordLocation
         description: numeric value to quantify location uncertainty.
     producedBy:
         range: SamplingEvent
@@ -594,14 +594,14 @@ slots:
         description: term to specify why a sample was collection.
         multivalued: true
     samplingSite:
-        range: SamplingSite
+        range: SamplingSiteClass
         domain: SamplingEvent
         description: binds a physical sample to the site (sampling feature) where
             it was collected. The site location might be specified by one or more
             sampleLocation objects,
     siteType:
         range: ScopedName
-        domain: SamplingSite
+        domain: SamplingSiteClass
         description: categorization of the kind of site
     source:
         range: string # domain: ScopedName, Link
@@ -623,20 +623,20 @@ slots:
         description: scoped name that identifies the target of a relationship
     uncertainty:
         range: decimal
-        domain: MeasureValue
+        domain: MeasuredValue
         description: an error bound parameter on a measured value. Additional measured
             value properties can be added to specify the particular statistical or
             qualitative method used to estimate uncertainty.
     unitOfMeasure:
         range: string
-        domain: MeasureValue
+        domain: MeasuredValue
         description: specification of units of measure applicable to a measured value.
             Range value should be qudt-Unit URI
         close_mappings: qudt:unit
     upperBound:
         range: decimal
-        domain: MeasureValue
-        description: for value range; if MeasureValue/value is null, this must be
+        domain: MeasuredValue
+        description: for value range; if MeasuredValue/value is null, this must be
             populated
         close_mappings: qudt:upperBound
     url:
