@@ -86,7 +86,7 @@ def getObjects(g, s, p):
 def termTree(g, v, r, depth=0):
     label = getObjects(g, r, skosT("prefLabel"))
     llabel = label[0].lower().strip()
-    llabel = llabel.replace(" ","-")
+    llabel = llabel.replace(" ","")
     res = [f"{'    '*depth}- [{label[0]}](#{llabel})"]
     for term in getNarrower(g, v, r):
         res += termTree(g, v, term, depth=depth+1)
@@ -104,7 +104,14 @@ def describeTerm(g, t, depth=0, level=1):
         for label in labels[1:]:
             res.append(f"* `{label}`")
         res.append("")
-        res.append(f"({t})")
+    res.append(f"Concept: [`{t.split('/')[-1]}`]({t})")
+    broader = getObjects(g, t, skosT('broader'))
+    if len(broader) > 0:
+        res.append("")
+        res.append("Child of:")
+        for b in broader:
+            bt = b.split('/')[-1]
+            res.append(f" [`{bt}`](#{bt})")
     res.append("")
     for comment in getObjects(g, t, rdfsT('comment')):
         lines = textwrap.wrap(
