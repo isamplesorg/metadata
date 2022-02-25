@@ -8,9 +8,11 @@ SRC_DIR = src
 PKG_DIR = pkg
 TARGET_DIR = build
 SCHEMA_DIR = $(SRC_DIR)/schemas
+VOCAB_DIR = $(SRC_DIR)/vocabularies
 MODEL_DOCS_DIR = $(SRC_DIR)/docs
 SOURCE_FILES := $(shell find $(SCHEMA_DIR) -name '*.yaml')
 SCHEMA_NAMES = $(patsubst $(SCHEMA_DIR)/%.yaml, %, $(SOURCE_FILES))
+VOCAB_FILES := $(shell find $(VOCAB_DIR) -name '*.ttl')
 
 SCHEMA_NAME = isamplescore
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
@@ -110,15 +112,21 @@ tdir-%:
 # MARKDOWN DOCS
 #      Generate documentation ready for mkdocs
 # ---------------------------------------
-gen-docs: docs/index.md
+gen-docs: vocabs docs/index.md
 .PHONY: gen-docs
+
+vocabs: 
+	mkdir -p ${TARGET_DIR}/docs/vocabularies
+	python tools/vocab2md.py ${VOCAB_DIR}/materialType.ttl > $(TARGET_DIR)/docs/vocabularies/materialtype.md
+	python tools/vocab2md.py ${VOCAB_DIR}/sampledFeature.ttl > $(TARGET_DIR)/docs/vocabularies/sampledfeature.md
+	python tools/vocab2md.py ${VOCAB_DIR}/specimenType.ttl > $(TARGET_DIR)/docs/vocabularies/specimentype.md
 
 docs/index.md: $(TARGET_DIR)/docs/index.md
 	mkdir -p $(TARGET_DIR)/docs
-	cp -R $(MODEL_DOCS_DIR)/*.md $(TARGET_DIR)/docs
+	cp -R $(MODEL_DOCS_DIR)/*.md $(TARGET_DIR)/docs	
 #	# mkdocs.yml moves from the target/docs to the docs directory
 	mkdocs build
-	touch docs/.nojekyll
+	touch docs/.nojekyll	
 
 $(TARGET_DIR)/docs/index.md: $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml tdir-docs 
 	$(RUN) gen-markdown $(GEN_OPTS) --mergeimports --notypesdir --warnonexist --dir $(TARGET_DIR)/docs $<
