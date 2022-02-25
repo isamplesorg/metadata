@@ -83,29 +83,39 @@ def getObjects(g, s, p):
     return res
 
 
-def describeTerm(g, t, depth=0):
+def termTree(g, v, r, depth=0):
+    label = getObjects(g, r, skosT("prefLabel"))
+    llabel = label[0].lower().strip()
+    llabel = llabel.replace(" ","-")
+    res = [f"{'    '*depth}- [{label[0]}](#{llabel})"]
+    for term in getNarrower(g, v, r):
+        res += termTree(g, v, term, depth=depth+1)
+    return res
+
+
+def describeTerm(g, t, depth=0, level=1):
     res = []
     labels = getObjects(g, t, skosT('prefLabel'))
+    hl = f"{'#'*(depth+1)} "
     if len(labels) < 1:
-        res.append(f"`{depth*INDENT}{t}`")
+        res.append(f"{hl} `{t}`")
     else:
-        res.append(f"{depth*INDENT}**{labels[0].strip()}**")
+        res.append(f"{hl} {labels[0].strip()}")
         for label in labels[1:]:
-            res.append(f"{depth*INDENT}* `{label}`")
+            res.append(f"* `{label}`")
         res.append("")
-        res.append(f"{depth*INDENT}* {t}")
+        res.append(f"({t})")
     res.append("")
     for comment in getObjects(g, t, rdfsT('comment')):
         lines = textwrap.wrap(
                     comment, 
-                    width=70, 
-                    initial_indent=depth*INDENT,                    subsequent_indent=depth*INDENT,
+                    width=70
                     )
         res += lines
     
     return res
 
-def describeNarrowerTerms(g, v, r, depth=0):
+def describeNarrowerTerms(g, v, r, depth=0, level=[]):
     res = []
     terms = getNarrower(g, v, r)
     for term in terms:
@@ -116,14 +126,18 @@ def describeNarrowerTerms(g, v, r, depth=0):
 
 def describeVocabulary(G, V):
     res = []
+    level = [1, ]
     res.append(f"# {V}")
     res.append("")
-    depth = 0
+    depth = 1
     roots = getVocabRoot(G, V)
-    for aroot in roots:
-        res += describeTerm(G, aroot, depth=0)
+    for root in roots:
+        res += termTree(G, V, root, depth=0)
         res.append("")
-        res += describeNarrowerTerms(G, V, aroot, depth=depth+1)
+    for aroot in roots:
+        res += describeTerm(G, aroot, depth=depth, level=level)
+        res.append("")
+        res += describeNarrowerTerms(G, V, aroot, depth=depth+1, level=level)
         res.append("")
     return res
 
