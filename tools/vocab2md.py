@@ -134,7 +134,20 @@ def describeNarrowerTerms(g, v, r, depth=0, level=[]):
 def describeVocabulary(G, V):
     res = []
     level = [1, ]
-    res.append(f"# {V}")
+    title = getObjects(G, V, skosT("prefLabel"))[0]
+    res.append(f"# {title}")
+    res.append("")
+    res.append(f"[`{V}`]({V})")
+    res.append("")
+    for comment in getObjects(G, V, rdfsT("comment")):
+        res.append(comment)
+        res.append("")
+    res.append("**History**")
+    res.append("")
+    for history in getObjects(G, V, skosT("historyNote")):
+        res.append(f"* {history}")
+    res.append("")
+    res.append("**Concepts**")
     res.append("")
     depth = 1
     roots = getVocabRoot(G, V)
