@@ -9,9 +9,9 @@ on:
   #    - 'mkdocs.yml'
   #    - 'src/schema/*.yaml'
   #    - 'src/docs/*'
-
-  repository_dispatch:
-    types: trigger-build-deploy-documentation
+  #
+  #repository_dispatch:
+  #  types: trigger-build-deploy-documentation
 
   workflow_dispatch:
 
