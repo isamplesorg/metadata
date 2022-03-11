@@ -1,6 +1,4 @@
 # baseURI: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary
-# imports: http://purl.org/dc/elements/1.1/
-# imports: http://purl.org/dc/terms/
 # imports: http://www.w3.org/2004/02/skos/core
 
 @prefix : <https://w3id.org/isample/vocabulary/specimentype/0.9/> .
@@ -31,9 +29,9 @@ dct:modified
 spec:analyticalpreparation
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:comment "e.g. thin section, XRF bead, SEM stub, rock powder. If identified separately, this should have a ‘parent’ link to the original sample"@en ;
   rdfs:label "Analytical preparation"@en ;
   skos:broader spec:researchproduct ;
+  skos:definition "Specimen is a product of processing required for some observation procedure, e.g. thin section, XRF bead, SEM stub, rock powder. If identified separately, this should have a ‘parent’ link to the original sample"@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Analytical preparation"@en ;
 .
@@ -42,129 +40,138 @@ spec:anthropogenicaggregation
   rdf:type skos:Concept ;
   rdfs:label "Anthropogenic aggregation"@en ;
   skos:broader spec:anyaggregation ;
-  skos:definition "Aggregation consists of fragments of material produced by human activity,  not described individually, and generally not all originating from the same object.  Includes pottery in an excavation unit [that] gets an aggregate description, production waste, production raw-materials, or other residues (broken bits of plaster from an destroyed wall), synthetic powders."@en ;
+  skos:definition "Aggregation consists of fragments of material produced by human activity,  not described individually, and generally not all originating from the same object.  Includes pottery in an excavation unit that gets an aggregate description, production waste, production raw-materials, or other residues (broken bits of plaster from an destroyed wall), synthetic powders."@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Anthropogenic aggregation"@en ;
 .
 spec:anyaggregation
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:comment "Sample consists of a bunch of material fragments, not related to the same object (e.g. not a bunch of broken pot sherds that might be reassembled), but taken together representative of the sampled feature. Examples: loose soil, sediment, crushed rock,  particulate, bunches of unrelated pot sherd, human production waste, filtrates and residues. The sample requires some kind of container to keep it together. Cores of loosely consolidated material are considered 'piece of solid material' because the internal parts have spatial relationships (e.g. upper part, lower part)."@en ;
   rdfs:label "Any aggregation specimen"@en ;
   skos:broader spec:physicalspecimen ;
+  skos:definition "Sample consists of a bunch of material fragments, not related to the same object (e.g. not a bunch of broken pot sherds that might be reassembled), but taken together representative of the sampled feature. Examples: loose soil, sediment, crushed rock,  particulate, bunches of unrelated pot sherd, human production waste, filtrates and residues. The sample requires some kind of container to keep it together. Cores of loosely consolidated material are considered 'piece of solid material' because the internal parts have spatial relationships (e.g. upper part, lower part)."@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Any aggregation specimen"@en ;
+  skos:related <http://purl.allotrope.org/ontologies/quality#AFQ_0000306> ;
 .
 spec:artifact
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:comment "An object made (manufactured, shaped, modified) by a human being, or precursor hominid. Include a set of pieces belonging originally to a single object and treated as a single specimen."@en ;
   rdfs:label "Artifact"@en ;
   skos:broader spec:physicalspecimen ;
+  skos:closeMatch <https://en.wikipedia.org/wiki/Artifact_(archaeology)> ;
+  skos:definition "An object made (manufactured, shaped, modified) by a human being, or precursor hominid. Include a set of pieces belonging originally to a single object and treated as a single specimen."@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Artifact"@en ;
-  skos:closeMatch <https://www.wikidata.org/wiki/Q220659>;
 .
 spec:biologicalspecimen
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:comment "Specimen for which the sampled feature is one or more living organisms from a particular biome context, megascopic or microscopic"@en ;
   rdfs:label "Any biological specimen"@en ;
   skos:broader spec:physicalspecimen ;
+  skos:definition "Specimen for which the sampled feature is one or more living organisms from a particular biome context, megascopic or microscopic"@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Any biological specimen"@en ;
 .
 spec:biomeaggregation
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:comment "Specimen is an aggregation of whole or fragmentary parts of multiple organisms, microscopic or megascopic, representative of some site."@en ;
   rdfs:label "Biome aggregation specimen"@en ;
   skos:broader spec:anyaggregation ;
   skos:broader spec:biologicalspecimen ;
+  skos:definition "Specimen is an aggregation of whole or fragmentary parts of multiple organisms, microscopic or megascopic, representative of some site."@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Biome aggregation specimen"@en ;
 .
 spec:experimentalproduct
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:comment "Specimen is product of an experimental procedure (e.g. synthetic material)"@en ;
   rdfs:label "Experiment product"@en ;
   skos:broader spec:researchproduct ;
+  skos:definition "Specimen is product of an experimental procedure (e.g. synthetic material)"@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Experiment product"@en ;
 .
 spec:fossil
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:comment "Specimen is the remains of one or more organisms preserved in rock; includes whole body, body parts (usually bone or shell), and trace fossils. An organism or organism part becomes a fossil when it has undergone some fossilization process that generally entails physical and chemical changes akin to diagenesis in a sedimentary rock. Trace fossils are manifestations of biologic activity preserved in a rock body (typically sedimentary), without included preserved body parts."@en ;
   rdfs:label "Fossil"@en ;
   skos:broader spec:physicalspecimen ;
+  skos:definition "Specimen is the remains of one or more organisms preserved in rock; includes whole body, body parts (usually bone or shell), and trace fossils. An organism or organism part becomes a fossil when it has undergone some fossilization process that generally entails physical and chemical changes akin to diagenesis in a sedimentary rock. Trace fossils are manifestations of biologic activity preserved in a rock body (typically sedimentary), without included preserved body parts."@en ;
+  skos:exactMatch <http://sweet.jpl.nasa.gov/2.3/matrRock.owl#Fossil> ;
+  skos:exactMatch <https://en.wikipedia.org/wiki/Fossil> ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:note "There are many processes that lead to fossilization, including permineralization, casts and molds, authigenic mineralization, replacement and recrystallization, adpression, carbonization, and bioimmuration (https://en.wikipedia.org/wiki/Fossil)."@en ;
   skos:prefLabel "Fossil"@en ;
-  skos:closeMatch <https://www.wikidata.org/wiki/Q40614>;
 .
 spec:genericaggregation
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
   rdfs:label "Aggregation"@en ;
   skos:broader spec:anyaggregation ;
-  skos:definition "An aggregate specimen that is not biogenic or anthropogenic.  Examples: borehole cuttings, loose soil or sediment (e.g. in a bag), rock chips, particulate filtrate or precipitate; rock powders."@en ;
+  skos:definition "An aggregate specimen that is not biogenic or composed of anthropogenic material fragments.  Examples: loose soil or sediment (e.g. in a bag), rock chips, particulate filtrate or precipitate; rock powders."@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Aggregation"@en ;
 .
 spec:liquidorgas
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:comment "Liquid, gas, or mixed dominantly fluid phases, necessarily in some kind of container to maintain identity. Might include minor solid particles. Container typically human made, but also includes natural fluid container, e.g. fluid inclusion in a mineral grain.  Includes colloids, foams, gels, suspensions. The sampled feature is the fluid substance; fluid samples collected to analyze the contained biome should be considered *Biome Aggregation*"@en ;
   rdfs:label "Liquid or gas"@en ;
   skos:broader spec:physicalspecimen ;
+  skos:closeMatch <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25278> ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_02000140> ;
+  skos:definition "Liquid, gas, or mixed dominantly fluid phases, necessarily in some kind of container to maintain identity. Might include minor solid particles. Container typically human made, but also includes natural fluid container, e.g. fluid inclusion in a mineral grain.  Includes colloids, foams, gels, suspensions. The sampled feature is the fluid substance; fluid samples collected to analyze the contained biome should be considered *Biome Aggregation*"@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Liquid or gas"@en ;
-  skos:closeMatch <https://www.wikidata.org/wiki/Q102205>;
 .
 spec:organismpart
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:comment "Part of an organism, e.g. a tissue sample, plant leaf, flower, bird feather. Include internal parts not composed of organic material (e.g. teeth, bone), and hard body parts that are not shed (hoof, horn, tusk, claw).  Hair is tricky, include here for now.  Does not necessarily imply existance of parent sample. Not fossilized; generally includes organism parts native to deposits of Holocene to Recent age."@en ;
   rdfs:label "Organism part"@en ;
   skos:broader spec:biologicalspecimen ;
+  skos:closeMatch <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C103199> ;
+  skos:closeMatch <https://www.wikidata.org/wiki/Q4936952> ;
+  skos:definition "Part of an organism, e.g. a tissue sample, plant leaf, flower, bird feather. Include internal parts not composed of organic material (e.g. teeth, bone), and hard body parts that are not shed (hoof, horn, tusk, claw).  Hair is tricky, include here for now.  Does not necessarily imply existance of parent sample. Not fossilized; generally includes organism parts native to deposits of Holocene to Recent age."@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Organism part"@en ;
-  rdfs:seeAlso <https://www.wikidata.org/wiki/Q4936952>;
 .
 spec:organismproduct
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:comment "Specimen is a thing produced by some organism, generally not composed of organic material or including biological tissue, e.g. Shell, antler, egg shell, coral skeleton (organic tissue not included), fecal matter, cocoon, web.  Consider internal parts not composed of organic material (e.g. teeth, bone) and hard body parts that are not shed (hoof, horn, tusk) to be organism parts."@en ;
   rdfs:label "Organism product"@en ;
   skos:broader spec:biologicalspecimen ;
+  skos:definition "Specimen is a thing produced by some organism, generally not composed of organic material or including biological tissue, e.g. Shell, antler, egg shell, coral skeleton (organic tissue not included), fecal matter, cocoon, web.  Consider internal parts not composed of organic material (e.g. teeth, bone) and hard body parts that are not shed (hoof, horn, tusk) to be organism parts."@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Organism product"@en ;
 .
 spec:othersolidobject
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:comment "Single piece of material not one of the other types, e.g. rock specimen, mineral specimen, core. Ice and permafrost are considered solid materials."@en ;
   rdfs:label "Other solid object"@en ;
+  skos:broadMatch <http://purl.obolibrary.org/obo/BFO_0000030> ;
+  skos:broadMatch <http://semanticscience.org/resource/SIO_000776> ;
   skos:broader spec:physicalspecimen ;
+  skos:definition "Single piece of material not one of the other types, e.g. rock specimen, mineral specimen, core. Ice and permafrost are considered solid materials."@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Other solid object"@en ;
+  skos:relatedMatch <http://purl.obolibrary.org/obo/BFO_0000030> ;
 .
 spec:physicalspecimen
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:comment "top concept in specimen type hierarchy.  Represents any physical specimen."@en ;
   rdfs:label "Physical specimen"@en ;
+  skos:closeMatch <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19157> ;
+  skos:closeMatch <https://dwc.tdwg.org/terms/#materialsample> ;
+  skos:definition "top concept in specimen type hierarchy.  Represents any physical specimen."@en ;
   skos:prefLabel "Physical specimen"@en ;
   skos:topConceptOf spec:specimentypevocabulary ;
 .
 spec:researchproduct
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:comment "Specimen is a product of some research workflow, e.g. a thin section, an XRF pellet, a grain mount, SEM stub, synthetic rock or mineral ...  In general there should be a link to a parent specimen from which this was derived.  Might be aggregation (e.g. a synthetic material powder) or a solid object."@en ;
   rdfs:label "Research product"@en ;
   skos:broader spec:physicalspecimen ;
+  skos:definition "Specimen is a product of some research workflow, e.g. a thin section, an XRF pellet, a grain mount, SEM stub, synthetic rock or mineral ...  In general there should be a link to a parent specimen from which this was derived.  Might be aggregation (e.g. a synthetic material powder) or a solid object."@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Research product"@en ;
 .
@@ -175,22 +182,21 @@ spec:specimentypevocabulary
   dct:created "2021-03-24"^^xsd:date ;
   dct:creator <https://orcid.org/0000-0001-6041-5302> ;
   dct:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
-  dct:modified "2022-01-07"^^xsd:date ;
+  dct:modified "2022-03-11"^^xsd:date ;
   rdfs:comment "Broad categories to classify any kind of physical specimen"@en ;
   rdfs:label "iSamples Specimen Type Vocabulary"@en ;
-  owl:imports <http://purl.org/dc/elements/1.1/> ;
-  owl:imports dct: ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  skos:historyNote "2021-12-10 SMR add missing skos:inScheme statements"@en ;
   skos:historyNote "2022-01-07 SMR Change base URI to https://w3id.org/isample/vocabulary/, setting up resolution using w3id. Make the conceptScheme and ontology. Add Dublin core imports."@en ;
+  skos:historyNote "2022-03-11 SMR change definitions from rdfs:comment to skos:definition. Minor fixes in definitions. Add skos matches to URIs from other vocabularies."@en ;
   skos:prefLabel "iSamples Specimen Type Vocabulary "@en ;
 .
 spec:wholeorganism
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:comment "Specimen consists of the bodies of one or more entire organisms of the same species, from any kingdom. Note that are also 'solid object’"@en ;
   rdfs:label "Whole organism specimen"@en ;
   skos:broader spec:biologicalspecimen ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/OBI_0100026> ;
+  skos:definition "Specimen consists of the bodies of one or more entire organisms of the same species, from any kingdom. Note that are also 'solid object’"@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Whole organism specimen"@en ;
 .
