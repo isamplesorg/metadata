@@ -9,8 +9,9 @@ license = "MIT"
 python = "^3.9"
 rdflib = "^6.1.1"
 click = "^8.0.4"
-linkml = "^1.1.18"
 pyLODE = "<3.0"
+mkdocs-gitbook = {git = "https://gitlab.com/lramage/mkdocs-gitbook-theme.git"}
+linkml = {path = "../linkml"}
 
 [tool.poetry.dev-dependencies]
 ipykernel = "^6.9.1"
