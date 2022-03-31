@@ -5,11 +5,12 @@ import click
 import rdflib
 
 NS = {
-    "@vocab":"https://w3id.org/isample/vocabulary/",
     "rdf":"http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
     "rdfs":"http://www.w3.org/2000/01/rdf-schema#",
     "owl":"http://www.w3.org/2002/07/owl#",
     "skos": "http://www.w3.org/2004/02/skos/core#",   
+    "obo": "http://purl.obolibrary.org/obo/",
+    "geosciml": "http://resource.geosciml.org/classifier/cgi/lithology"
 }
 
 
@@ -113,13 +114,26 @@ def describeTerm(g, t, depth=0, level=1):
             bt = b.split('/')[-1]
             res.append(f" [`{bt}`](#{bt})")
     res.append("")
+    # The textual description will be present in rdfs:comment or
+    # skos:definition. 
+    comments = []    
     for comment in getObjects(g, t, rdfsT('comment')):
+        comments.append(comment)
+    for comment in getObjects(g, t, skosT('definition')):
+        comments.append(comment)
+    for comment in comments:
         lines = textwrap.wrap(
                     comment, 
                     width=70
                     )
         res += lines
-    
+    seealsos = getObjects(g, t, rdfsT('seeAlso'))
+    if len(seealsos) > 0:
+        res.append("")
+        res.append("See Also:")
+        res.append("")
+        for seealso in seealsos:
+            res.append(f"* [{seealso.n3(g.namespace_manager)}]({seealso})")    
     return res
 
 def describeNarrowerTerms(g, v, r, depth=0, level=[]):
@@ -166,6 +180,8 @@ def describeVocabulary(G, V):
 def main(ttl):
     vgraph = rdflib.ConjunctiveGraph()
     vgraph.parse(ttl)
+    for k,v in NS.items():
+        vgraph.bind(k, v)
     vocabs = listVocabularies(vgraph)
     res = []
     for vocab in vocabs:
