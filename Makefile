@@ -5,7 +5,7 @@
 # Model documentation and schema directory
 # ----------------------------------------
 SRC_DIR = src
-PKG_DIR = pkg
+PKG_DIR = generated
 TARGET_DIR = build
 SCHEMA_DIR = $(SRC_DIR)/schemas
 VOCAB_DIR = $(SRC_DIR)/vocabularies
@@ -16,8 +16,8 @@ VOCAB_FILES := $(shell find $(VOCAB_DIR) -name '*.ttl')
 
 SCHEMA_NAME = isamplescore
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
-PKG_TGTS = jsonld_context json_schema owl model
-TGTS = docs python $(PKG_TGTS)
+PKG_TGTS = jsonld_context json json_schema
+TGTS = docs $(PKG_TGTS)
 
 # Targets by PKG_TGT
 PKG_T_GRAPHQL = $(PKG_DIR)/graphql
@@ -129,7 +129,7 @@ docs/index.md: $(TARGET_DIR)/docs/index.md
 	touch docs/.nojekyll	
 
 $(TARGET_DIR)/docs/index.md: $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml tdir-docs 
-	$(RUN) gen-markdown $(GEN_OPTS) --mergeimports --notypesdir --warnonexist --dir $(TARGET_DIR)/docs $<
+	$(RUN) gen-markdown $(GEN_OPTS) --mergeimports --notypesdir --metadata --dir $(TARGET_DIR)/docs $<
 
 # ---------------------------------------
 # YAML source
