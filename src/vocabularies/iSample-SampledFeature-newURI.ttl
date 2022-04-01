@@ -1,0 +1,264 @@
+# baseURI: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sf: <https://w3id.org/isample/vocabulary/sampledfeature/0.9/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://purl.bioontology.org/ontology/MESH/D005118>
+  rdf:type owl:NamedIndividual ;
+.
+<http://purl.jp/bio/11/meo/MEO_0000326>
+  rdf:type owl:NamedIndividual ;
+.
+<http://purl.obolibrary.org/obo/ENVO_00000063>
+  rdf:type owl:NamedIndividual ;
+.
+<http://purl.obolibrary.org/obo/ENVO_00000384>
+  rdf:type owl:NamedIndividual ;
+.
+<http://purl.obolibrary.org/obo/ENVO_00000482>
+  rdf:type owl:NamedIndividual ;
+.
+<http://purl.obolibrary.org/obo/ENVO_00001999>
+  rdf:type owl:NamedIndividual ;
+.
+<http://purl.obolibrary.org/obo/ENVO_00012408>
+  rdf:type owl:NamedIndividual ;
+.
+<http://purl.obolibrary.org/obo/ENVO_01001405>
+  rdf:type owl:NamedIndividual ;
+.
+<http://purl.obolibrary.org/obo/RBO_00000017>
+  rdf:type owl:NamedIndividual ;
+.
+dct:created
+  rdf:type owl:AnnotationProperty ;
+.
+dct:license
+  rdf:type owl:AnnotationProperty ;
+.
+dct:modified
+  rdf:type owl:AnnotationProperty ;
+.
+<https://orcid.org/0000-0001-6041-5302>
+  rdf:type owl:NamedIndividual ;
+  rdfs:comment "e-mail: mailto:smrTucson@gmail.com " ;
+  rdfs:comment "orchid-id: https://orcid.org/0000-0001-6041-5302" ;
+  rdfs:label "Dr. Stephen M. Richard" ;
+.
+sf:activehumanoccupationsite
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Active human occupation site"@en ;
+  skos:broader sf:anthropogenicenvironment ;
+  skos:definition "Specimen samples materials or objects produced by current or ongoing human activity"@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Active human occupation site"@en ;
+.
+sf:anthropogenicenvironment
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:comment "Sampled feature is produced by or related to human activity, past or present."@en ;
+  rdfs:label "Anthropogenic environment"@en ;
+  skos:broader sf:anysampledfeature ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Anthropogenic environment"@en ;
+.
+sf:anysampledfeature
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:comment "Top concept in sampled feature type vocabulary."@en ;
+  rdfs:label "Any sampled feature"@en ;
+  skos:prefLabel "Any sampled feature"@en ;
+  skos:topConceptOf sf:sampledfeaturevocabulary ;
+.
+sf:atmosphere
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Atmosphere"@en ;
+  rdfs:seeAlso <http://purl.obolibrary.org/obo/ENVO_01000267> ;
+  rdfs:seeAlso <http://purl.obolibrary.org/obo/RBO_00000018> ;
+  skos:broader sf:earthenvironment ;
+  skos:definition "Specimen samples the Earth's atmosphere"@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Atmosphere"@en ;
+.
+sf:earthenvironment
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Earth environment"@en ;
+  rdfs:seeAlso <http://purl.bioontology.org/ontology/MESH/D004777> ;
+  rdfs:seeAlso <http://semanticscience.org/resource/SIO_000955> ;
+  skos:broader sf:anysampledfeature ;
+  skos:definition "specimen samples the natural earth environment"@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Earth environment"@en ;
+.
+sf:earthinterior
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Earth interior"@en ;
+  skos:broader sf:earthenvironment ;
+  skos:definition "Specimen samples solid material within the earth (fluids in pore space in earth interior sample 'subsurface fluid reservoir'"@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Earth interior"@en ;
+.
+sf:earthsurface
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Earth Surface"@en ;
+  skos:broader sf:earthenvironment ;
+  skos:definition "Specimen samples the interface between solid earth and the hydrosphere or atmosphere. Includes samples representing things collected on the surface, or in the uppermost part of the material below the surface."@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:narrowMatch <http://purl.obolibrary.org/obo/RBO_00000017> ;
+  skos:prefLabel "Earth Surface"@en ;
+.
+sf:experimentsetting
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Experiment setting"@en ;
+  skos:broader sf:activehumanoccupationsite ;
+  skos:definition "Sampled feature is the expermental set up that produced the sample."@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Experiment setting"@en ;
+.
+sf:extraterrestrialenvironment
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Extraterrestrial environment"@en ;
+  skos:broader sf:anysampledfeature ;
+  skos:closeMatch <http://purl.bioontology.org/ontology/MESH/D005118> ;
+  skos:definition "specimen samples environment outside of solid earth, hydrosphere, or atmosphere."@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Extraterrestrial environment"@en ;
+.
+sf:glacierenvironment
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:comment "Sample of ice or water from a glacier, ice sheet, ice shelf, iceberg. Does not include various environments adjacent to glacier."@en ;
+  rdfs:label "Glacier environment "@en ;
+  skos:broader sf:earthenvironment ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Glacier environment "@en ;
+.
+sf:laboratorycuratorialenvironment
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Laboratory or curatorial environment"@en ;
+  skos:broader sf:activehumanoccupationsite ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_01001405> ;
+  skos:definition "specimen samples environment in a laboratory; e.g. lab blank measurements."@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Laboratory or curatorial environment"@en ;
+.
+sf:lakeriverstreambottom
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Lake, river, or stream bed"@en ;
+  skos:broader sf:earthsurface ;
+  skos:definition "Specimen samples the solid Earth interface with a lake or flowing water body"@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:narrowMatch <http://purl.obolibrary.org/obo/ENVO_00000384> ;
+  skos:prefLabel "Lake, river, or stream bed"@en ;
+.
+sf:marinewaterbody
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Marine environment"@en ;
+  rdfs:seeAlso <http://purl.obolibrary.org/obo/ENVO_01000686> ;
+  skos:broader sf:waterbody ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_00001999> ;
+  skos:definition "specimen samples marine hydrosphere"@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Marine environment"@en ;
+.
+sf:marinewaterbodybottom
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Marine water body bottom"@en ;
+  skos:broader sf:earthsurface ;
+  skos:definition "Specimen samples the solid Earth interface with marine or brackish water body. Includes benthic boundary layer:  the bottom layer of water and the uppermost layer of sediment directly influenced by the overlying water"@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:narrowMatch <http://purl.obolibrary.org/obo/ENVO_00000482> ;
+  skos:prefLabel "Marine water body bottom"@en ;
+.
+sf:pasthumanoccupationsite
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Site of past human activities"@en ;
+  skos:broader sf:anthropogenicenvironment ;
+  skos:definition "specimen samples a place where humans have been and left evidence of their activity. Includes prehistoric and paleo hominid sites"@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Site of past human activities"@en ;
+.
+sf:rocksample
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Rock sample"@en ;
+  skos:definition "specimen is derived by processing of a solid rock object parent specimen" ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Rock sample"@en ;
+.
+sf:sampledfeaturevocabulary
+  rdf:type owl:NamedIndividual ;
+  rdf:type owl:Ontology ;
+  rdf:type skos:ConceptScheme ;
+  dct:created "2021-03-17"^^xsd:date ;
+  dct:creator <https://orcid.org/0000-0001-6041-5302> ;
+  dct:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
+  dct:modified "2022-01-07"^^xsd:date ;
+  rdfs:label "Sampled Feature Type vocabulary"@en ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  skos:definition "Categories to specify the broad context that a sample is intended to represent."@en ;
+  skos:historyNote "2021-12-10 SMR add missing skos:inScheme statements"@en ;
+  skos:historyNote "2022-01-07 SMR change to https://w3id.org/isample/ uri base, make the ConceptScheme an ontology as well. For uploading to ESIP COR and w3id resolution redirect set up. Add some mappings to other ontologies using seeAlso, closeMatch, narrowMatch."@en ;
+  skos:historyNote "Remove Marine biome, Subaerial terrestrial environment, Subaqueous terrestrial environment per github issue https://github.com/isamplesorg/metadata/issues/41. Make Experiment setting and Laboratory or curatorial environemtn  subclasses of Active human occupation site."@en ;
+  skos:prefLabel "Sampled Feature Type vocabulary"@en ;
+.
+sf:subaerialsurfaceenvironment
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:comment "Specimen samples the  interface between solid Earth and atmosphere.  Sample is collected on the surface, or immediately below surface (zone of bioturbation). Include soil ‘O’ horizon and ‘biomantle’. Soil horizons below surface, or sediment in active deposition (no soil development) is considered part of solid Earth."@en ;
+  rdfs:label "Subaerial surface environment"@en ;
+  skos:broader sf:earthsurface ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/RBO_00000017> ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Subaerial surface environment"@en ;
+.
+sf:subsurfacefluidreservoir
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Subsurface fluid reservoir"@en ;
+  skos:broader sf:earthenvironment ;
+  skos:definition "Specimen samples fluid that resides in fractures or intergranular porosity in the solid earth."@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:narrowMatch <http://purl.jp/bio/11/meo/MEO_0000326> ;
+  skos:narrowMatch <http://purl.obolibrary.org/obo/ENVO_00012408> ;
+  skos:prefLabel "Subsurface fluid reservoir"@en ;
+.
+sf:terrestrialwaterbody
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Terrestrial water body"@en ;
+  skos:broader sf:waterbody ;
+  skos:definition "specimen samples terrestrial hydrosphere-- lake, other standing water, or a flowing water body (river, stream..) Include saline water in terrestrial evaporite environments."@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Terrestrial water body"@en ;
+.
+sf:waterbody
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Water body"@en ;
+  skos:broader sf:earthenvironment ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_00000063> ;
+  skos:definition "specimen samples the hydrosphere"@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
+  skos:prefLabel "Water body"@en ;
+.
