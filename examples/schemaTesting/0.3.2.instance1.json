@@ -1,0 +1,91 @@
+{
+    "curation": {
+        "accessConstraints": "jzcvrfWY",
+        "curationLocation": "STUjOicmbYId",
+        "description": "XxpYjgydTYKAh",
+        "label": "xxOBfsNIshcXlc",
+        "responsibility": [
+            "sSxzWuRGIjsUTb",
+            "LNQ",
+            "qCCZWhvck"
+        ]
+    },
+    "description": "vPKzYQDDl",
+    "hasContextCategory": [
+        "Glacier environment",
+        "Extraterrestrial environment",
+        "Subaerial surface environment"
+    ],
+    "hasMaterialCategory": [
+        "Biogenic non-organic material",
+        "Not Provided",
+        "Anthropogenic metal"
+    ],
+    "hasSpecimenCategory": [
+        "Artifact",
+        "Analytical preparation",
+        "Not Provided"
+    ],
+    "id": "KHRyiYLOpLexm",
+    "informalClassification": [
+        "BYFDqA",
+        "c",
+        "Dx",
+        "KMsPMdvb",
+        "ETtGDhSNdMFqrEWkjWo",
+        "OyHyWzS"
+    ],
+    "keywords": [
+        "lt",
+        "BtylVavJnDZy",
+        "DMFeU"
+    ],
+    "label": "odFaiJnLhIWjmTNWasTZ",
+    "producedBy": {
+        "description": "QCAxCWrzREfVGVorCWFm",
+        "hasFeatureOfInterest": "dQD",
+        "id": "x",
+        "label": "CEIMABpWfWiB",
+        "responsibility": [
+            "xkzVnJZbyZLBXSeXc",
+            "nEgIjQUQ",
+            "grMBoO",
+            "qz",
+            "tsSBuyH"
+        ],
+        "resultTime": "EqEB",
+        "samplingSite": {
+            "description": "rtPBuPQ",
+            "label": "CjktuLhuQInbrm",
+            "location": {
+                "elevation": "EOUCZkkifBjjiXZTqr",
+                "latitude": 41,
+                "longitude": 7
+            },
+            "placeName": ["rNf"]
+        }
+    },
+    "registrant": "UeNLPoow",
+    "relatedResource": [
+        {
+            "description": "zQFGWaZRtrKy",
+            "label": "KTENDHiiyeuBQNR",
+            "relationship": "bDrEqJlElQfcGqhVpv",
+            "target": "gnLHcVnvtKEbwnLeZuym"
+        },
+        {
+            "description": "ugJlQKwAA",
+            "label": "CULgCL",
+            "relationship": "qu",
+            "target": "wdocYwLv"
+        },
+        {
+            "description": "innV",
+            "label": "P",
+            "relationship": "oAcvtVqTGwuClob",
+            "target": "HGXurgCMOEPgSBnUj"
+        }
+    ],
+    "sampleidentifier": "rQuCuzmdvOF",
+    "samplingPurpose": "dYoBAlrnltbcib"
+}

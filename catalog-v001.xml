@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://resource.isamples.org/vocabulary/specimentype/ontology" uri="vocabulary/iSample-SpecimenType.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://resource.isamples.org/vocabulary/sampledfeature/ontology" uri="vocabulary/iSample-SampledFeature.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://resource.isamples.org/vocabulary/material/ontology" uri="vocabulary/iSample-Material.ttl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1641326968657" name="http://opencontext.org/vocabularies/oc-general" uri="vocabulary/background/OpenContextVocabularies-oc-general.owl"/>
+    </group>
+</catalog>
