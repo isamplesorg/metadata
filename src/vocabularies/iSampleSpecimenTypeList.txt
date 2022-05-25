@@ -1,0 +1,17 @@
+[label]
+Aggregation
+Analytical preparation
+Anthropogenic aggregation
+Any aggregation specimen
+Any biological specimen
+Artifact
+Biome aggregation specimen
+Experiment product
+Fossil
+Liquid or gas
+Organism part
+Organism product
+Other solid object
+Physical specimen
+Research product
+Whole organism specimen
