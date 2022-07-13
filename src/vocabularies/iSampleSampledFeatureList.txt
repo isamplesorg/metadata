@@ -1,0 +1,21 @@
+[label]
+Active human occupation site
+Anthropogenic environment
+Any sampled feature
+Atmosphere
+Earth Surface
+Earth environment
+Earth interior
+Experiment setting
+Extraterrestrial environment
+Glacier environment 
+Laboratory or curatorial environment
+Lake, river, or stream bed
+Marine environment
+Marine water body bottom
+Rock sample
+Site of past human activities
+Subaerial surface environment
+Subsurface fluid reservoir
+Terrestrial water body
+Water body
