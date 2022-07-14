@@ -1,0 +1,75 @@
+{
+  "$schema": "../../iSamplesSchemaBasic0.2.json",
+  "@id": "metadata/21547/Car2PIRE_0334",
+  "label": "Gastropoda PIRE_0334",
+  "sampleidentifier": "ark:/21547/Car2PIRE_0334",
+  "description": "",
+  "hasContextCategory": [],
+  "hasMaterialCategory": [
+    "Organic material"
+  ],
+  "hasSpecimenCategory": [
+    "Whole organism"
+  ],
+  "informalClassification": [
+    "Gastropoda"
+  ],
+  "keywords": [
+    "Aceh",
+    "Sumatra",
+    "Indonesia",
+    "Asia",
+    "Mollusca",
+    "Gastropoda"
+  ],
+  "producedBy": {
+    "@id": "ark:/21547/Cas2INDO_2016_SEU_1B",
+	"type": "SamplingEvent",
+    "label": "INDO_2016_SEU_1B INDO_PIRE",
+    "description": "samplingProtocol: ARMS | expeditionCode: INDO_PIRE | taxonomy team: MINV | projectId: 80",
+    "hasFeatureOfInterest": "Not Provided",
+    "responsibility": [
+      "collector: Aji Wahyu Anggoro",
+      "collector: Andrianus Sembiring",
+      "taxonomy team: MINV",
+      "event registrant: Chris Meyer"
+    ],
+    "resultTime": "2016-08-09",
+    "samplingSite": {
+	  "type": "SamplingSite",
+      "description": "Shallow, coastal reef. Apparent exposure to current, Porites dominated. Less impacted bleaching site, high recruitment, 12 m.",
+      "label": "Pulau Seulako",
+      "location": {
+		"type": "GeospatialDDCoordLocation",
+        "elevation": "12 m",
+        "latitude": 5.8943,
+        "longitude": 95.25293
+      },
+      "placeName": [
+        "Pulau Seulako",
+        "Aceh",
+        "Sumatra",
+        "Indonesia",
+        "Asia"
+      ]
+    }
+  },
+  "registrant": "Chris Meyer",
+  "samplingPurpose": "Not Provided",
+  "curation": {
+    "type": "Curation",
+    "label": "Not Provided",
+    "description": "Not Provided",
+    "accessConstraints": "Not Provided",
+    "curationLocation": "No Voucher",
+    "responsibility": "curator:No Voucher"
+  },
+  "relatedResource": [
+    {
+	  "type": "SampleRelation",
+      "label": "subsample tissue",
+      "relationship": "subsample",
+      "target": "ark:/21547/Cat2INDO106431.1"
+    }
+  ]
+}

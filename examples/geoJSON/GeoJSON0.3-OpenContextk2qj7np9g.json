@@ -1,0 +1,87 @@
+{
+    "@context":{
+        "geojson": "https://purl.org/geojson/vocab#",
+        "@vocab":"http://resource.isamples.org/schema/"
+    },
+    "$schema": "https://geojson.org/schema/isample",
+    "@type": "geojson:Feature",
+    "@id": "",
+    "geojson:properties": {
+        "curation": {
+            "accessConstraints": "not provided",
+            "curationLocation": "",
+            "description": "",
+            "label": "",
+            "responsibility": [""]
+        },
+        "description": "",
+        "hasContextCategory": [""],
+        "hasMaterialCategory": [""],
+        "hasSpecimenCategory": [""],
+        "informalClassification": [
+            ""
+        ],
+        "keywords": [
+            ""
+        ],
+        "label": "",
+        "producedBy": {
+            "description": "SCUBA, hand, hand dredge, rock hammer; permitInformation:CA SCP S\u2010191440006\u201019209\u2010001; L.A. Urban Ocean Expedition 2019. 66°F bottom 70°F surface, horizontal visibility 10-15 ft.; projectID:44",
+            "hasFeatureOfInterest": "microHabitat:kelp",
+            "@id": "urn:metadata:DISCO_CollectionID:21213",
+            "label": "expeditionCode:LAUOE",
+            "responsibility": [
+                "initiative:Diversity Initiative for the Southern California Ocean project of the Natural History Museum of Los Angeles County",
+                "collector:Giant Stride",
+                "collector:Kimo Morris",
+                "collector:Z. Gold",
+                "collector:Shawn Wiedrick",
+                "collector:Gustav Paulay",
+                "collector:Jessica Whelpley",
+                "collector:Amanda Bemis"
+            ],
+            "resultTime": "2019",
+            "samplingSite": {
+                "description": "",
+                "label": "San Pedro Bay, breakwater",
+                "location": {
+                    "elevation": -4.57,
+                    "latitude": 33.7345167,
+                    "longitude": -118.277367
+                },
+                "placeName": [
+                    "North Pacific Ocean",
+                    "California",
+                    "San Pedro Bay, breakwater"
+                ]
+            }
+        },
+        "registrant": "",
+        "sampleidentifier": "",
+        "samplingPurpose": ""
+    },
+    "geojson:geometry": {
+        "@type": "Point",
+        "geojson:coordinates": [
+            -118.277367,
+            33.7345167,
+            -4.57
+        ]
+    },
+    "links": [
+        {
+            "href": "",
+            "rel": "",
+            "type": "",
+            "hreflang": "",
+            "title": ""
+        },
+        {
+            "href": "",
+            "rel": "",
+            "type": "",
+            "hreflang": "",
+            "title": ""
+        }
+    ]
+}

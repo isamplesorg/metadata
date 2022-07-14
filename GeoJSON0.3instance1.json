@@ -1,0 +1,91 @@
+{
+    "type": "Feature",
+    "id": "IHxnKpGl",
+    "properties": {
+        "curation": {
+            "accessConstraints": "Olqlyatw",
+            "curationLocation": "AxDRYqpCm",
+            "description": "QlhtcniDRuhqUCQvUSrn",
+            "label": "RyWjznJAGyrFppUvQpW",
+            "responsibility": [
+                "oQigTAUbIEwSIUeWCgK",
+                "cOhkIIyqscQxiUNRShxN"
+            ]
+        },
+        "description": "nceIULKfumEQng",
+        "hasContextCategory": [
+            "Glacier environment",
+            "Active human occupation site"
+        ],
+        "hasMaterialCategory": [
+            "Mineral",
+            "Not Provided",
+            "Ice",
+            "Non-aqueous liquid material",
+            "Organic material"
+        ],
+        "hasSpecimenCategory": [
+            "Other solid object",
+            "Anthropogenic aggregation",
+            "Not Provided",
+            "Aggregation",
+            "Other solid object",
+            "Biome aggregation"
+        ],
+        "informalClassification": ["tCloAqQy"],
+        "keywords": ["My"],
+        "label": "iwIdiERqHOAwLjiIeAR",
+        "producedBy": {
+            "description": "dOY",
+            "hasFeatureOfInterest": "XAp",
+            "id": "exSvfGiuIB",
+            "label": "KjTbVXpwmKvrJyfu",
+            "responsibility": [
+                "UqbSxryAmNF",
+                "ORZWEyEoYmzAKF",
+                "Zuwh",
+                "OsDkZuIT"
+            ],
+            "resultTime": "Yf",
+            "samplingSite": {
+                "description": "JJr",
+                "label": "pBEpmIFuxUcoQja",
+                "location": {},
+                "placeName": [
+                    "wkJtnfd",
+                    "wjGAkxRpueGKdkZJPnq",
+                    "nJT",
+                    "hAphmJqxrLVIWFxw",
+                    "VRjK"
+                ]
+            }
+        },
+        "registrant": "Vhj",
+        "sampleidentifier": "dCwETlbkzh",
+        "samplingPurpose": "NzHEYBtutpWvabO"
+    },
+    "geometry": null,
+    "bbox": [
+        67,
+        57,
+        81,
+        86,
+        49,
+        22,
+        53,
+        52,
+        93,
+        97,
+        87
+    ],
+    "links": [
+        {
+            "href": "PNczaHzqrDNXcgvxOAzP",
+            "rel": "Ou",
+            "type": "vDzHLSHXGJ",
+            "hreflang": "D",
+            "title": "u",
+            "length": 21
+        }
+    ]
+}
