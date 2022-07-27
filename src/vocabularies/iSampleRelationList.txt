@@ -1,0 +1,22 @@
+[label]
+Is related to
+Composite sample
+Articulate with
+Csonjoins with
+Has part
+Is derived from
+Mechanical split
+Chemical separate
+Microanalysis point
+Physical separate
+Body part
+Mineral separate
+Particle filtrate
+Size fraction
+Density fraction
+Tissue
+Inclusion
+Rock inclusion
+Mineral inclusion
+Fluid inclusion
+Melt inclusion

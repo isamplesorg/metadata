@@ -1,0 +1,276 @@
+@prefix : <https://w3id.org/isample/vocabulary/relation/0.1/> .
+@prefix re: <https://w3id.org/isample/vocabulary/relation/0.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> .
+
+<https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> rdf:type owl:Ontology ;
+                                                                        owl:imports <http://www.w3.org/2004/02/skos/core> ;
+                                                                        dct:created "2022-07-21" ;
+                                                                        dct:creator <https://orcid.org/0000-0001-6041-5302> ;
+                                                                        dct:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
+                                                                        dct:modified "2022-07-27" ;
+                                                                        rdfs:comment "High level vocabulary to specify the kind of relation that constitutes a physical sample"@en ;
+                                                                        rdfs:label "iSamples Relations Vocabulary"@en ;
+                                                                        skos:historyNote "2022-07-27 version 0.1 add good match DOIs to alsoSee"@en ;
+                                                                        skos:prefLabel "iSamples Relations Vocabulary"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+dct:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dct:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dct:modified rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://orcid.org/0000-0001-6041-5302
+<https://orcid.org/0000-0001-6041-5302> rdf:type owl:NamedIndividual ;
+                                        rdfs:comment "e-mail: mailto:smrTucson@gmail.com " ,
+                                                     "orchid-id: https://orcid.org/0000-0001-6041-5302" ;
+                                        rdfs:label "Dr. Stephen M. Richard" .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Articulates_with
+re:Articulates_with rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:broader re:Is_related_to ;
+                    skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+                    rdfs:label "Articulates with"@en ;
+                    skos:altLabel "Articulates with"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Body_part
+re:Body_part rdf:type owl:NamedIndividual ,
+                      skos:Concept ;
+             skos:broader re:Physical_separate ;
+             skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+             rdfs:comment "subsample is a particular part of a parent sample organism, e.g. break from a bird, bone from a mammal."@en ;
+             rdfs:label "Body part"@en ;
+             skos:prefLabel "Body part"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Chemical_separate
+re:Chemical_separate rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:broader re:Is_derived_from ;
+                     skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+                     rdfs:comment "some component of parent sample is separated by chemical processing. Subsample is not representative of parent sample. e.g. uranium concentrate for isotopic analysis, DNA separate."@en ;
+                     rdfs:label "Chemical separate"@en ;
+                     rdfs:seeAlso "http://resource.geosciml.org/classifier/cgi/mining-processing-activity/chemical-treatment" ;
+                     skos:prefLabel "Chemical separate"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Composite_sample
+re:Composite_sample rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:broader re:Is_related_to ;
+                    skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+                    rdfs:comment "sample produced by mixing multiple parent samples."@en ;
+                    rdfs:label "Composite sample"@en ;
+                    skos:prefLabel "Composite sample"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Conjoins_with
+re:Conjoins_with rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 skos:broader re:Is_related_to ;
+                 skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+                 rdfs:comment "fragments fit togetherm like puzzle pieces"@en ;
+                 rdfs:label "Conjoins with"@en ;
+                 skos:prefLabel "Conjoins with"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Density_fraction
+re:Density_fraction rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:broader re:Physical_separate ;
+                    skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+                    rdfs:comment "subsample is collection of particles separated from a parent particulate aggregate based on the density of the particles."@en ;
+                    rdfs:label "Density fraction"@en ;
+                    skos:prefLabel "Density fraction"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Fluid_inclusion
+re:Fluid_inclusion rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   skos:broader re:Inclusion ;
+                   skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+                   rdfs:comment "subsample is fluid contained in open space within a mineral grain."@en ;
+                   rdfs:label "Fluid inclusion"@en ;
+                   rdfs:seeAlso "http://pid.geoscience.gov.au/def/voc/ga/sampletype/fluid_inclusion" ;
+                   skos:prefLabel "Fluid inclusion"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Has_part
+re:Has_part rdf:type owl:NamedIndividual ,
+                     skos:Concept ;
+            skos:broader re:Is_related_to ;
+            skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+            rdfs:comment "generic part relationship between a thing and smaller entity that is a constituent or component, materially or temporally of the thing."@en ;
+            rdfs:label "Has part"@en ;
+            rdfs:seeAlso "http://purl.obolibrary.org/obo/BFO_0000051" ;
+            skos:prefLabel "Has part"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Inclusion
+re:Inclusion rdf:type owl:NamedIndividual ,
+                      skos:Concept ;
+             skos:broader re:Physical_separate ;
+             skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+             rdfs:comment "subsample is an object that is completely contained within some part of the parent sample"@en ;
+             rdfs:label "Inclusion"@en ;
+             rdfs:seeAlso "http://semanticscience.org/resource/SIO_000128" ;
+             skos:prefLabel "Inclusion"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Is_derived_from
+re:Is_derived_from rdf:type owl:NamedIndividual ,
+                            skos:Concept ;
+                   skos:broader re:Has_part ;
+                   skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+                   rdfs:comment "Top level relation between a sample and derived child samples"@en ;
+                   rdfs:label "Is derived from"@en ;
+                   rdfs:seeAlso "http://purl.obolibrary.org/obo/RO_0001000" ,
+                                "http://semanticscience.org/resource/SIO_000244" ;
+                   skos:prefLabel "Is derived from"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Is_related_to
+re:Is_related_to rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 skos:topConceptOf <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+                 rdfs:comment "Top level relation for related samples"@en ;
+                 rdfs:label "Is related to"@en ;
+                 rdfs:seeAlso "http://semanticscience.org/resource/SIO_000001" ;
+                 skos:prefLabel "Is related to"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Mechanical_split
+re:Mechanical_split rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:broader re:Is_derived_from ;
+                    skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+                    rdfs:comment "subsample obtained by separating a part of sample by cutting or breaking off part, or separating part of an aggregate. The subsample is intended to be representative of the orignal sample."@en ;
+                    rdfs:label "Mechanical split"@en ;
+                    skos:prefLabel "Mechanical split"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Melt_inclusion
+re:Melt_inclusion rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:broader re:Inclusion ;
+                  skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+                  rdfs:comment "subsample is particle of glass interpreted to be representative of the melt liquid from which the containing crystal or rock crystallized."@en ;
+                  rdfs:label "Melt inclusion"@en ;
+                  rdfs:seeAlso "http://pid.geoscience.gov.au/def/voc/ga/sampletype/melt_inclusion" ;
+                  skos:prefLabel "Melt inclusion"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Microanalysis_point
+re:Microanalysis_point rdf:type owl:NamedIndividual ,
+                                skos:Concept ;
+                       skos:broader re:Is_derived_from ;
+                       skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+                       rdfs:comment "a sampling point that is within a larger sample, analyzed in situ, e.g. a microprobe point, or laser ablation spot."@en ;
+                       rdfs:label "Microanalysis point"@en ;
+                       skos:prefLabel "Microanalysis point"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Mineral_inclusion
+re:Mineral_inclusion rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:broader re:Inclusion ;
+                     skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+                     rdfs:comment "subsample is a mineral grain that is completely contained within another mineral phase."@en ;
+                     rdfs:label "Mineral inclusion"@en ;
+                     skos:prefLabel "Mineral inclusion"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Mineral_separate
+re:Mineral_separate rdf:type owl:NamedIndividual ,
+                             skos:Concept ;
+                    skos:broader re:Physical_separate ;
+                    skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+                    rdfs:comment "subsample is a collection of grains of a single mineral phase separated from a parent rock sample."@en ;
+                    rdfs:label "Mineral separate"@en ;
+                    rdfs:seeAlso "http://pid.geoscience.gov.au/def/voc/ga/sampletype/mineral_separate" ;
+                    skos:prefLabel "Mineral separate"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Particle_filtrate
+re:Particle_filtrate rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:broader re:Physical_separate ;
+                     skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+                     rdfs:comment "subsample is particulate matter separated from a fluid phase, typically by filtration"@en ;
+                     rdfs:label "Particle filtrate"@en ;
+                     rdfs:seeAlso "http://cgi.vocabs.ga.gov.au/object?uri=http%3A//resource.geosciml.org/classifier/cgi/mining-processing-activity/liquid-solid-separation" ,
+                                  "https://vocabs.ardc.edu.au/repository/api/lda/ga/sampling-method/v1-0/resource?uri=http%3A%2F%2Fpid.geoscience.gov.au%2Fdef%2Fvoc%2Fga%2Fsamplingmethod%2Ffiltration" ;
+                     skos:prefLabel "Particle filtrate"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Physical_separate
+re:Physical_separate rdf:type owl:NamedIndividual ,
+                              skos:Concept ;
+                     skos:broader re:Is_derived_from ;
+                     skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+                     rdfs:comment "subsample obtained by separating a specify part of the parent sample, for instance a particular body part of an organism, or a particular mineral phase in a rock. Subsample not representative of parent sample."@en ;
+                     rdfs:label "Physical separate"@en ;
+                     rdfs:seeAlso "http://resource.geosciml.org/classifier/cgi/mining-processing-activity/physical-treatment" ;
+                     skos:prefLabel "Physical separate"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Rock_inclusion
+re:Rock_inclusion rdf:type owl:NamedIndividual ,
+                           skos:Concept ;
+                  skos:broader re:Inclusion ;
+                  skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+                  rdfs:comment "subsample is a rock object contained in the parent sample. Could be clast in conglomerate, fragment in breccia, xenolith in igneous rock, etc."@en ;
+                  rdfs:label "Rock inclusion"@en ;
+                  skos:prefLabel "Rock inclusion"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Size_fraction
+re:Size_fraction rdf:type owl:NamedIndividual ,
+                          skos:Concept ;
+                 skos:broader re:Physical_separate ;
+                 skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+                 rdfs:comment "subsample is collection of particle separated from a parent particulate aggregate based on the size of the particles."@en ;
+                 rdfs:label "Size fraction"@en ;
+                 rdfs:seeAlso "https://vocabs.ardc.edu.au/repository/api/lda/ga/sampling-method/v1-0/resource?uri=http%3A%2F%2Fpid.geoscience.gov.au%2Fdef%2Fvoc%2Fga%2Fsamplingmethod%2Fgrainsize_separation" ;
+                 skos:prefLabel "Size fraction"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/Tissue
+re:Tissue rdf:type owl:NamedIndividual ,
+                   skos:Concept ;
+          skos:broader re:Body_part ;
+          skos:inScheme <https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> ;
+          rdfs:comment "subsample is tissue from parent sample; representative of parent sample."@en ;
+          rdfs:label "Tissue"@en ;
+          skos:prefLabel "Tissue"@en .
+
+
+###  https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary
+<https://w3id.org/isample/vocabulary/relation/0.1/relationsvocabulary> rdf:type owl:NamedIndividual ,
+                                                                                skos:ConceptScheme .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
