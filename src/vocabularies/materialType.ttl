@@ -157,6 +157,106 @@ mat:mineral
   skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "Mineral "@en ;
 .
+mat:nativeelements
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Native Elements"@en ;
+  skos:broader mat:mineral ;
+  skos:definition "Elements that occur in nature in uncombined form with a distinct mineral structure."@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/elements-metals-and-intermetallic-alloys-metalloids-and-nonmetals-carbides-silicides-nitrides-phosphides> ;
+  skos:inScheme mat:materialsvocabulary ;
+  skos:prefLabel "Native Elements"@en ;
+.
+mat:sulfidesandsulfosalts
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Sulfides and Sulfosalts"@en ;
+  skos:broader mat:mineral ;
+  skos:definition "Sulfide minerals are a class of minerals containing sulfide or disulfide as the major anion. Sulfosalt minerals are those complex sulfide minerals that follow a general formula."@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/sulfides-and-sulfosalts-sulfides-selenides-tellurides-arsenides-antimonides-bismuthides-sulfarsenites-sulfantimonites-sulfbismuthites-etc> ;
+  skos:inScheme mat:materialsvocabulary ;
+  skos:prefLabel "Sulfides and Sulfosalts"@en ;
+.
+mat:halogenides
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Halogenides"@en ;
+  skos:broader mat:mineral ;
+  skos:definition "Minerals with a dominant halide anion."@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/halides> ;
+  skos:inScheme mat:materialsvocabulary ;
+  skos:prefLabel "Halogenides"@en ;
+.
+mat:oxides
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Oxides"@en ;
+  skos:broader mat:mineral ;
+  skos:definition "Includes class oxides, hydroxides, and arsenties. Oxides are minerals in which the oxide anion is bonded to one or more metal alloys. The hydroxide-bearing minerals are typically included in the oxide class. Arsenite minerals are very rare oxygen-bearing arsenic minerals."@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/oxides-hydroxides-v56-vanadates-arsenites-antimonites-bismuthites-sulfites-selenites-tellurites-iodates > ;
+  skos:inScheme mat:materialsvocabulary ;
+  skos:prefLabel "Oxides"@en ;
+.
+mat:carbonatesandnitrates
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Carbonates and Nitrates"@en ;
+  skos:broader mat:mineral ;
+  skos:definition "Carbonate minerals are those minerals containing the carbonate ion"@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/carbonates-nitrates> ;
+  skos:inScheme mat:materialsvocabulary ;
+  skos:prefLabel "Carbonates and Nitrates"@en ;
+.
+mat:borates
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Borates"@en ;
+  skos:broader mat:mineral ;
+  skos:definition "Minerals which contain a borate anion group."@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/borates> ;
+  skos:inScheme mat:materialsvocabulary ;
+  skos:prefLabel "Borates"@en ;
+.
+mat:sulfatesselenatestellurates
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Sulfates, Selenates, Tellurates"@en ;
+  skos:broader mat:mineral ;
+  skos:definition "class of minerals that include the sulfate ion within their structure. "@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/sulfates-selenates-tellurates-chromates-molybdates-wolframates> ;
+  skos:inScheme mat:materialsvocabulary ;
+  skos:prefLabel "Sulfates, Selenates, Tellurates"@en ;
+.
+mat:phosphatesarsenatesvanadates
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Phosphates, Arsenates, Vanadates"@en ;
+  skos:broader mat:mineral ;
+  skos:definition "Phosphate minerals contain the phosphate anion along sometimes with arsenate and vanadate substitutions, and chloride, fluoride, and hydroxide anions that also fit into the crystal structure. Arsenate minerals usually refer to the naturally occurring orthoarsenates."@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/phosphates-arsenates-vanadates> ;
+  skos:inScheme mat:materialsvocabulary ;
+  skos:prefLabel "Phosphates, Arsenates, Vanadates"@en ;
+.
+mat:silicatesandgermanates
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Silicates and Germanates"@en ;
+  skos:broader mat:mineral ;
+  skos:definition "Rock-forming minerals made up of silicate groups"@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/silicates-germanates> ;
+  skos:inScheme mat:materialsvocabulary ;
+  skos:prefLabel "Silicates and Germanates"@en ;
+.
+mat:organiccompounds
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Organic Compounds"@en ;
+  skos:broader mat:mineral ;
+  skos:definition "Consisted of a salts of organic acids, hydrocarbons, and miscellaneous organic minerals."@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/organic-compounds> ;
+  skos:inScheme mat:materialsvocabulary ;
+  skos:prefLabel "Organic Compounds"@en ;
+.
 mat:mixedsoilsedimentrock
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
