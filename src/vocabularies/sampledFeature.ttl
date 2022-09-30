@@ -11,7 +11,6 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-
 dct:created
   rdf:type owl:AnnotationProperty ;
 .
@@ -176,7 +175,6 @@ sf:pasthumanoccupationsite
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Site of past human activities"@en ;
 .
-
 sf:sampledfeaturevocabulary
   rdf:type owl:NamedIndividual ;
   rdf:type owl:Ontology ;
@@ -191,9 +189,17 @@ sf:sampledfeaturevocabulary
   skos:historyNote "2021-12-10 SMR add missing skos:inScheme statements"@en ;
   skos:historyNote "2022-01-07 SMR change to https://w3id.org/isample/ uri base, make the ConceptScheme an ontology as well. For uploading to ESIP COR and w3id resolution redirect set up. Add some mappings to other ontologies using seeAlso, closeMatch, narrowMatch."@en ;
   skos:historyNote "2022-03-11 SMR change definitions from rdfs:comment to skos:definition. Minor fixes in definitions. Add skos matches to URIs from other vocabularies. Fix typo in glacierenvrionment URI (changed the URI to glacierenvironment)"@en ;
+  skos:historyNote "2022-09-07 SMR update some of the skos mappings to other vocabularies; remove references to other vocabularies as NamedIndividual. Remove rocksample class, it was not linked in hierarchy and inconsistent with design."@en ;
   skos:historyNote "Remove Marine biome, Subaerial terrestrial environment, Subaqueous terrestrial environment per github issue https://github.com/isamplesorg/metadata/issues/41. Make Experiment setting and Laboratory or curatorial environemtn  subclasses of Active human occupation site."@en ;
-  skos:historyNote "2022-09-07 SMR update some of the skos mappings to other vocabularies; remove references to other vocabularies as NamedIndividual. Remove rocksample class, it was not linked in hierarchy and inconsistent with design." @en;
   skos:prefLabel "Sampled Feature Type vocabulary"@en ;
+.
+:biologicalentity
+  rdf:type skos:Concept ;
+  rdfs:label "Biological entity"@en ;
+  skos:broader sf:anysampledfeature ;
+  skos:definition "Sampled feature is an organism. Use for samples that represent some species of organism as the proximate sampled feature for which the focus is not the environment that the organism inhabits."@en ;
+  skos:note "domain specific vocabulary extension will be useful to distinguish samples from different phyla/order/class..." ;
+  skos:prefLabel "Biological entity"@en ;
 .
 sf:subaerialsurfaceenvironment
   rdf:type owl:NamedIndividual ;
