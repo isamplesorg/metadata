@@ -47,11 +47,12 @@ spec:anthropogenicaggregation
 spec:anyaggregation
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:label "Any aggregation specimen"@en ;
+  rdfs:label "Any aggregation sample"@en ;
+  skos:altLabel "Any aggregation speciment"@en ;
   skos:broader spec:physicalspecimen ;
   skos:definition "Sample consists of a bunch of material fragments, not related to the same object (e.g. not a bunch of broken pot sherds that might be reassembled), but taken together representative of the sampled feature. Examples: loose soil, sediment, crushed rock,  particulate, bunches of unrelated pot sherd, human production waste, filtrates and residues. The sample requires some kind of container to keep it together. Cores of loosely consolidated material are considered 'piece of solid material' because the internal parts have spatial relationships (e.g. upper part, lower part)."@en ;
   skos:inScheme spec:specimentypevocabulary ;
-  skos:prefLabel "Any aggregation specimen"@en ;
+  skos:prefLabel "Any aggregation sample"@en ;
   skos:related <http://purl.allotrope.org/ontologies/quality#AFQ_0000306> ;
 .
 spec:artifact
@@ -67,21 +68,30 @@ spec:artifact
 spec:biologicalspecimen
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:label "Any biological specimen"@en ;
+  rdfs:label "Any biological sample"@en ;
+  skos:altLabel "Any biological specimen"@en ;
   skos:broader spec:physicalspecimen ;
   skos:definition "Specimen for which the sampled feature is one or more living organisms from a particular biome context, megascopic or microscopic"@en ;
   skos:inScheme spec:specimentypevocabulary ;
-  skos:prefLabel "Any biological specimen"@en ;
+  skos:prefLabel "Any biological sample"@en ;
 .
 spec:biomeaggregation
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:label "Biome aggregation specimen"@en ;
+  rdfs:label "Biome aggregation sample"@en ;
+  skos:altLabel "Biome aggregation specimen"@en ;
   skos:broader spec:anyaggregation ;
   skos:broader spec:biologicalspecimen ;
   skos:definition "Specimen is an aggregation of whole or fragmentary parts of multiple organisms, microscopic or megascopic, representative of some site."@en ;
   skos:inScheme spec:specimentypevocabulary ;
-  skos:prefLabel "Biome aggregation specimen"@en ;
+  skos:prefLabel "Biome aggregation sample"@en ;
+.
+spec:bundlebiomeaggregation
+  rdf:type skos:Concept ;
+  rdfs:label "Bundle biome aggregation"@en ;
+  skos:broader spec:biomeaggregation ;
+  skos:definition "An aggregation of whole organisms representative of some biome"@en ;
+  skos:prefLabel "Bundle biome aggregation"@en ;
 .
 spec:experimentalproduct
   rdf:type owl:NamedIndividual ;
@@ -91,6 +101,17 @@ spec:experimentalproduct
   skos:definition "Specimen is product of an experimental procedure (e.g. synthetic material)"@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Experiment product"@en ;
+.
+spec:fluidincontainer
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Fluid in container"@en ;
+  skos:broader spec:physicalspecimen ;
+  skos:closeMatch <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25278> ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_02000140> ;
+  skos:definition "Liquid, gas, or mixed dominantly fluid phases, necessarily in some kind of container to maintain identity. Might include minor solid particles. Container typically human made, but also includes natural fluid container, e.g. fluid inclusion in a mineral grain.  Includes colloids, foams, gels, suspensions. The sampled feature is the fluid substance; fluid samples collected to analyze the contained biome should be considered *Biome Aggregation*"@en ;
+  skos:inScheme spec:specimentypevocabulary ;
+  skos:prefLabel "Fluid in container"@en ;
 .
 spec:fossil
   rdf:type owl:NamedIndividual ;
@@ -112,17 +133,6 @@ spec:genericaggregation
   skos:definition "An aggregate specimen that is not biogenic or composed of anthropogenic material fragments.  Examples: loose soil or sediment (e.g. in a bag), rock chips, particulate filtrate or precipitate; rock powders."@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Aggregation"@en ;
-.
-spec:liquidorgas
-  rdf:type owl:NamedIndividual ;
-  rdf:type skos:Concept ;
-  rdfs:label "Liquid or gas"@en ;
-  skos:broader spec:physicalspecimen ;
-  skos:closeMatch <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25278> ;
-  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_02000140> ;
-  skos:definition "Liquid, gas, or mixed dominantly fluid phases, necessarily in some kind of container to maintain identity. Might include minor solid particles. Container typically human made, but also includes natural fluid container, e.g. fluid inclusion in a mineral grain.  Includes colloids, foams, gels, suspensions. The sampled feature is the fluid substance; fluid samples collected to analyze the contained biome should be considered *Biome Aggregation*"@en ;
-  skos:inScheme spec:specimentypevocabulary ;
-  skos:prefLabel "Liquid or gas"@en ;
 .
 spec:organismpart
   rdf:type owl:NamedIndividual ;
@@ -159,11 +169,12 @@ spec:othersolidobject
 spec:physicalspecimen
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:label "Physical specimen"@en ;
+  rdfs:label "Material sample"@en ;
+  skos:altLabel "Physical Specimen"@en ;
   skos:closeMatch <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19157> ;
   skos:closeMatch <https://dwc.tdwg.org/terms/#materialsample> ;
   skos:definition "top concept in specimen type hierarchy.  Represents any physical specimen."@en ;
-  skos:prefLabel "Physical specimen"@en ;
+  skos:prefLabel "Material sample"@en ;
   skos:topConceptOf spec:specimentypevocabulary ;
 .
 spec:researchproduct
@@ -174,6 +185,13 @@ spec:researchproduct
   skos:definition "Specimen is a product of some research workflow, e.g. a thin section, an XRF pellet, a grain mount, SEM stub, synthetic rock or mineral ...  In general there should be a link to a parent specimen from which this was derived.  Might be aggregation (e.g. a synthetic material powder) or a solid object."@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Research product"@en ;
+.
+spec:slurrybiomeaggregation
+  rdf:type skos:Concept ;
+  rdfs:label "Slurry biome aggregation"@en ;
+  skos:broader spec:biomeaggregation ;
+  skos:definition "a material that consists of mixed organic and inorganic material, including whole organisms and organism fragments."@en ;
+  skos:prefLabel "Slurry biome aggregation"@en ;
 .
 spec:specimentypevocabulary
   rdf:type owl:NamedIndividual ;

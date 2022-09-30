@@ -30,7 +30,7 @@ mat:RockOrSediment
   rdf:type skos:Concept ;
   rdfs:label "Rock or sediment"@en ;
   skos:broader mat:earthmaterial ;
-  skos:definition "Material is rock or sediment.  E.g. for samples from subsurface cores that are not well described, from drill holes that likely penetrate sediment near the surface an might be sampling rock at greater depth."@en ;
+  skos:definition "Material is rock or sediment.  E.g. for samples from subsurface cores that are not well described, from drill holes that likely penetrate sediment near the surface an might be sampling rock at greater depth, or sea floor dredge haul consisting of mixed sediment and rock."@en ;
   skos:prefLabel "Rock or sediment"@en ;
   skos:scopeNote "distinct from 'Mixed soil, sediment or rock' that represents samples known to have components of all these materials."@en ;
 .
@@ -172,8 +172,9 @@ mat:mixedsoilsedimentrock
   rdf:type skos:Concept ;
   rdfs:label "Mixed soil, sediment or rock"@en ;
   skos:broader mat:earthmaterial ;
-  skos:definition "Material is mixed aggregation of fragments of undifferentiated soil, sediment or  rock origin. e.g. cuttings from some boreholes (rock fragments and caved soil or sediment), sea floor dredge haul (mixed sediment and rock)"@en ;
+  skos:definition "Material is mixed aggregation of fragments of undifferentiated soil, sediment or  rock origin. e.g. cuttings from some boreholes (rock fragments and caved soil or sediment),"@en ;
   skos:inScheme mat:materialsvocabulary ;
+  skos:note "This class is for samples that are solid Earth materials but known not to be mineral or particulate samples."@en ;
   skos:prefLabel "Mixed soil, sediment or rock"@en ;
 .
 mat:nonaqueousliquid
@@ -204,7 +205,7 @@ mat:otheranthropogenicmaterial
   rdf:type skos:Concept ;
   rdfs:label "Anthropogenic material"@en ;
   skos:broader mat:anyanthropogenicmaterial ;
-  skos:definition "Non-metallic material produced by human activity. Organic products of agricultural activity are both anthropogenic and organic. Include lab preparations like XRF pellet and rock powders. Examples: ceramics, concrete, slag, (anthropogenic) glass, mine tailing, plaster, waste."@en ;
+  skos:definition "Non-metallic material produced by human activity. Organic products of agricultural activity are both anthropogenic and organic. Include lab preparations like XRF pellet and rock powders. Examples: ceramics, brick, concrete, slag, (anthropogenic) glass, mine tailing, plaster, waste."@en ;
   skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "Anthropogenic material"@en ;
   skos:relatedMatch <http://purl.obolibrary.org/obo/ENVO_0010001> ;
