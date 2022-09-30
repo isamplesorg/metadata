@@ -1,4 +1,6 @@
 # baseURI: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
 # imports: http://www.w3.org/2004/02/skos/core
 
 @prefix : <https://w3id.org/isample/vocabulary/material/0.9/> .
@@ -151,6 +153,8 @@ mat:materialsvocabulary
   dct:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
   dct:modified "2022-03-11"^^xsd:date ;
   rdfs:label "iSamples Materials Vocabulary"@en ;
+  owl:imports <http://purl.org/dc/elements/1.1/> ;
+  owl:imports dct: ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   skos:definition "High level vocabulary to specify the kind of material that constitutes a physical sample"@en ;
   skos:historyNote "2022-01-05 SMR version 0.9, change base uri to https://w3id.org/isample/vocabulary/material/0.9/ for testing with ESIP COR and w3id uri resolution"@en ;
@@ -188,6 +192,16 @@ mat:nonaqueousliquid
   skos:narrowMatch <http://purl.obolibrary.org/obo/ENVO_00002984> ;
   skos:prefLabel "Non-aqueous liquid material "@en ;
   skos:scopeNote "Fluids like blood, urine, mucus are problematic. Suggest categorizing as 'Non-aqueous liquid material' and 'Organic material'. Need example use cases."@en ;
+.
+mat:organiccompounds
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Organic Compounds"@en ;
+  skos:broader mat:material ;
+  skos:definition "Consisted of a salts of organic acids, hydrocarbons, and miscellaneous organic minerals."@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/organic-compounds> ;
+  skos:inScheme mat:materialsvocabulary ;
+  skos:prefLabel "Organic Compounds"@en ;
 .
 mat:organicmaterial
   rdf:type owl:NamedIndividual ;
