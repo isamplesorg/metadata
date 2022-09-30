@@ -193,7 +193,7 @@ sf:sampledfeaturevocabulary
   skos:historyNote "Remove Marine biome, Subaerial terrestrial environment, Subaqueous terrestrial environment per github issue https://github.com/isamplesorg/metadata/issues/41. Make Experiment setting and Laboratory or curatorial environemtn  subclasses of Active human occupation site."@en ;
   skos:prefLabel "Sampled Feature Type vocabulary"@en ;
 .
-:biologicalentity
+sf:biologicalentity
   rdf:type skos:Concept ;
   rdfs:label "Biological entity"@en ;
   skos:broader sf:anysampledfeature ;
