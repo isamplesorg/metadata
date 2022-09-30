@@ -102,6 +102,17 @@ spec:experimentalproduct
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Experiment product"@en ;
 .
+spec:fluidincontainer
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Fluid in container"@en ;
+  skos:broader spec:physicalspecimen ;
+  skos:closeMatch <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25278> ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_02000140> ;
+  skos:definition "Liquid, gas, or mixed dominantly fluid phases, necessarily in some kind of container to maintain identity. Might include minor solid particles. Container typically human made, but also includes natural fluid container, e.g. fluid inclusion in a mineral grain.  Includes colloids, foams, gels, suspensions. The sampled feature is the fluid substance; fluid samples collected to analyze the contained biome should be considered *Biome Aggregation*"@en ;
+  skos:inScheme spec:specimentypevocabulary ;
+  skos:prefLabel "Fluid in container"@en ;
+.
 spec:fossil
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
@@ -122,17 +133,6 @@ spec:genericaggregation
   skos:definition "An aggregate specimen that is not biogenic or composed of anthropogenic material fragments.  Examples: loose soil or sediment (e.g. in a bag), rock chips, particulate filtrate or precipitate; rock powders."@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Aggregation"@en ;
-.
-spec:liquidorgas
-  rdf:type owl:NamedIndividual ;
-  rdf:type skos:Concept ;
-  rdfs:label "Fluid in container"@en ;
-  skos:broader spec:physicalspecimen ;
-  skos:closeMatch <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25278> ;
-  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_02000140> ;
-  skos:definition "Liquid, gas, or mixed dominantly fluid phases, necessarily in some kind of container to maintain identity. Might include minor solid particles. Container typically human made, but also includes natural fluid container, e.g. fluid inclusion in a mineral grain.  Includes colloids, foams, gels, suspensions. The sampled feature is the fluid substance; fluid samples collected to analyze the contained biome should be considered *Biome Aggregation*"@en ;
-  skos:inScheme spec:specimentypevocabulary ;
-  skos:prefLabel "Fluid in container"@en ;
 .
 spec:organismpart
   rdf:type owl:NamedIndividual ;
@@ -169,12 +169,12 @@ spec:othersolidobject
 spec:physicalspecimen
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:label "Physical specimen"@en ;
+  rdfs:label "Material sample"@en ;
   skos:altLabel "Physical Specimen"@en ;
   skos:closeMatch <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19157> ;
   skos:closeMatch <https://dwc.tdwg.org/terms/#materialsample> ;
   skos:definition "top concept in specimen type hierarchy.  Represents any physical specimen."@en ;
-  skos:prefLabel "Material Sample"@en ;
+  skos:prefLabel "Material sample"@en ;
   skos:topConceptOf spec:specimentypevocabulary ;
 .
 spec:researchproduct
