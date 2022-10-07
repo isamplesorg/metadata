@@ -181,16 +181,6 @@ mat:nonaqueousliquid
   skos:narrowMatch <http://purl.obolibrary.org/obo/ENVO_00002984> ;
   skos:prefLabel "Non-aqueous liquid material "@en ;
 .
-mat:organiccompounds
-  rdf:type owl:NamedIndividual ;
-  rdf:type skos:Concept ;
-  rdfs:label "Organic Compounds"@en ;
-  skos:broader mat:material ;
-  skos:definition "Consisted of a salts of organic acids, hydrocarbons, and miscellaneous organic minerals."@en ;
-  skos:exactMatch <http://linked.data.gov.au/def/minerals/organic-compounds> ;
-  skos:inScheme mat:materialsvocabulary ;
-  skos:prefLabel "Organic Compounds"@en ;
-.
 mat:organicmaterial
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
@@ -241,7 +231,7 @@ mat:sediment
   skos:broader mat:earthmaterial ;
   skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_00002007> ;
   skos:closeMatch <http://resource.geosciml.org/classifier/cgi/lithology/sediment> ;
-  skos:definition "Solid granular material transported by wind, water, or gravity, not modified by interaction with biosphere or atmosphere (to differentiate from soil). Particles derived by erosion of pre-existing rock, from shell or other body parts from organisms, or precipitated chemically in the surficial environment (http://resource.geosciml.org/classifier/cgi/lithology/sediment). Sediment is not consolidated, i.e. Particulate constituents of a compound material do not adhere to each other strongly enough that the aggregate can be considered a solid material in its own right.(http://resource.geosciml.org/classifier/cgi/consolidationdegree/consolidated). Similar to http://purl.obolibrary.org/obo/ENVO_00002007"@en ;
+  skos:definition "Solid granular material transported by wind, water, or gravity, not modified by interaction with biosphere or atmosphere (to differentiate from soil). Particles derived by erosion of pre-existing rock, from shell or other body parts from organisms, or precipitated chemically in the surficial environment (http://resource.geosciml.org/classifier/cgi/lithology/sediment). Sediment is not consolidated, i.e. Particulate constituents of a compound material do not adhere to each other strongly enough that the aggregate can be considered a solid material in its own right. Note that this category includes chemical sediments that might preciptate to form a solid mass, e.g. preciptitates forming vents at submarine hot springs, or gypsum and halite deposites formed by evaporation in hypersaline lakes. (http://resource.geosciml.org/classifier/cgi/consolidationdegree/consolidated). Similar to http://purl.obolibrary.org/obo/ENVO_00002007"@en ;
   skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "Sediment "@en ;
 .
