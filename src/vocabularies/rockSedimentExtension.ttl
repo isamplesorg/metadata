@@ -1,4 +1,5 @@
 # baseURI: https://w3id.org/isample/vocabulary/rocksediment/0.9/rocksedimentvocabulary
+# imports: http://www.w3.org/2004/02/skos/core
 
 @prefix : <https://w3id.org/isample/vocabulary/rocksediment/0.9/> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -129,8 +130,16 @@ rksd:Cataclasite_Series
   dct:source "Sibson, 1977; Scholz, 1990; Snoke and Tullis, 1998; Barker, 1998 Appendix II; NADM SLTTm, 2004"@en ;
   rdfs:comment "Fault-related rock that maintained primary cohesion during deformation, with matrix comprising greater than 10 percent of rock mass; matrix is fine-grained material formed through grain size reduction by fracture as opposed to crystal plastic process that operate in mylonitic rock. Includes cataclasite, protocataclasite and ultracataclasite."@en ;
   rdfs:label "cataclasite series"@en ;
-  skos:broader rksd:fault_related_material ;
+  skos:broader rksd:Fault_Related_Material ;
   skos:closeMatch gsrm:Cataclasite_Series ;
+.
+rksd:Chemical_Sedimentary_Material
+  rdf:type skos:Concept ;
+  dct:source "SLTTs 2004"@en ;
+  rdfs:comment "Sedimentary material that consists of at least 50 percent material produced by inorganic chemical processes within the basin of deposition. Includes inorganic siliceous, carbonate, evaporite, iron-rich, and phosphatic sediment classes, as well as chemical sediments associated with submarine hot springs ('black smokers'). Note that these sediments might crystallize as a solid as they are deposited, thus similar to rock...."@en ;
+  rdfs:label "chemical sedimentary material"@en ;
+  skos:broader mat:sediment ;
+  skos:closeMatch gsrm:Chemical_Sedimentary_Material ;
 .
 rksd:Clastic_Sediment
   rdf:type skos:Concept ;
@@ -209,6 +218,14 @@ rksd:Exotic_Composition_Igneous_Rock
   rdfs:label "exotic composition igneous rock"@en ;
   skos:broader rksd:Igneous_Rock ;
   skos:closeMatch gsrm:Exotic_Composition_Igneous_Rock ;
+.
+rksd:Fault_Related_Material
+  rdf:type skos:Concept ;
+  dct:source "This vocabulary; SLTTm 2004"@en ;
+  rdfs:comment "Material formed as a result brittle faulting, composed of greater than 10 percent matrix; matrix is fine-grained material caused by tectonic grainsize reduction. Includes cohesive (cataclasite series, mylonitic rocks) and non-cohesive (breccia-gouge series) material."@en ;
+  rdfs:label "fault related material"@en ;
+  skos:broader mat:rock ;
+  skos:closeMatch gsrm:fault_related_material ;
 .
 rksd:Fine_Grained_Igneous_Rock
   rdf:type skos:Concept ;
@@ -404,6 +421,14 @@ rksd:Igneous_Rock
   skos:broader mat:rock ;
   skos:closeMatch gsrm:Igneous_Rock ;
 .
+rksd:Impact_Generated_Material
+  rdf:type skos:Concept ;
+  dct:source "Stöffler and Grieve 2007; Jackson 1997"@en ;
+  rdfs:comment "Material that contains features indicative of shock metamorphism, such as microscopic planar deformation features within grains or shatter cones, interpreted to be the result of extraterrestrial bolide impact. Includes breccias and melt rocks."@en ;
+  rdfs:label "impact generated material"@en ;
+  skos:broader mat:rock ;
+  skos:closeMatch gsrm:impact_generated_material ;
+.
 rksd:Intermediate_Composition_Igneous_Rock
   rdf:type skos:Concept ;
   dct:source "after LeMaitre et al. 2002"@en ;
@@ -476,7 +501,7 @@ rksd:Mylonitic_Rock
   dct:source "Marshak and Mitra 1988"@en ;
   rdfs:comment "Metamorphic rock characterised by a foliation resulting from tectonic grain size reduction, in which more than 10 percent of the rock volume has undergone grain size reduction. Includes protomylonite, mylonite, ultramylonite, and blastomylonite."@en ;
   rdfs:label "mylonitic rock"@en ;
-  skos:broader rksd:fault_related_material ;
+  skos:broader rksd:Fault_Related_Material ;
   skos:closeMatch gsrm:Mylonitic_Rock ;
 .
 rksd:Non_Clastic_Siliceous_Sediment
@@ -578,7 +603,6 @@ rksd:Pyroclastic_Rock
   dct:source "based on LeMaitre et al. 2002"@en ;
   rdfs:comment "Fragmental igneous rock that consists of greater than 75 percent fragments produced as a direct result of eruption or extrusion of magma from within the earth onto its surface. Includes autobreccia associated with lava flows and excludes deposits reworked by epiclastic processes."@en ;
   rdfs:label "pyroclastic rock"@en ;
-  skos:broader mat:rock ;
   skos:broader rksd:Fragmental_Igneous_Rock ;
   skos:closeMatch gsrm:Pyroclastic_Rock ;
 .
@@ -701,29 +725,13 @@ rksd:breccia_gouge_series
   dct:source "SLTTm 2004"@en ;
   rdfs:comment "Fault-related material with features such as void spaces (filled or unfilled), or unconsolidated matrix material between fragments, indicating loss of cohesion during deformation. Includes fault-related breccia and gouge."@en ;
   rdfs:label "breccia gouge series"@en ;
-  skos:broader rksd:fault_related_material ;
+  skos:broader rksd:Fault_Related_Material ;
   skos:closeMatch gsrm:breccia_gouge_series ;
-.
-rksd:fault_related_material
-  rdf:type skos:Concept ;
-  dct:source "This vocabulary; SLTTm 2004"@en ;
-  rdfs:comment "Material formed as a result brittle faulting, composed of greater than 10 percent matrix; matrix is fine-grained material caused by tectonic grainsize reduction. Includes cohesive (cataclasite series, mylonitic rocks) and non-cohesive (breccia-gouge series) material."@en ;
-  rdfs:label "fault related material"@en ;
-  skos:broader mat:rock ;
-  skos:closeMatch gsrm:fault_related_material ;
-.
-rksd:impact_generated_material
-  rdf:type skos:Concept ;
-  dct:source "Stöffler and Grieve 2007; Jackson 1997"@en ;
-  rdfs:comment "Material that contains features indicative of shock metamorphism, such as microscopic planar deformation features within grains or shatter cones, interpreted to be the result of extraterrestrial bolide impact. Includes breccias and melt rocks."@en ;
-  rdfs:label "impact generated material"@en ;
-  skos:broader mat:rock ;
-  skos:closeMatch gsrm:impact_generated_material ;
 .
 rksd:residual_material
   rdf:type skos:Concept ;
   dct:source "This vocabulary"@en ;
-  rdfs:comment "Material of composite origin resulting from weathering processes at the Earth's surface, with genesis dominated by removal of chemical constituents by aqueous leaching. Miinor clastic, chemical, or organic input may also contribute. Consolidation state is not inherent in definition, but typically material is unconsolidated or weakly consolidated."@en ;
+  rdfs:comment "Material of composite origin resulting from weathering processes at the Earth's surface, with genesis dominated by removal of chemical constituents by aqueous leaching. Minor clastic, chemical, or organic input may also contribute. Consolidation state is not inherent in definition, but typically material is unconsolidated or weakly consolidated."@en ;
   rdfs:label "residual material"@en ;
   skos:broader mat:rock ;
   skos:closeMatch gsrm:residual_material ;
@@ -737,6 +745,7 @@ rksd:rocksedimentvocabulary
   dct:source "https://w3id.org/gso/rockmaterial/ontology" ;
   rdfs:comment "Rock and sediment categories for iSamples materialType classification. Remove anthropogenic materials and classes for consolidated or non-consolidated material; remove leaf classes subjectively based on abundance of material type and number of subclasses. There are 83 'mat:rock' subclasses; these include some classes that are non-consolidated material (e.g. fault gouge) but these are not sediment and adding 'material' classes that are independent of consolidation seems like more overhead than needed. Note that a given material is likely to fit in more that one class; for example the sediment subclasses include compositional classes (e.g. carbonate, clastic) as well as grain size classes (gravel-size sediment). A calcareous ooze sample would be both 'mud-size sediment' and 'carbonate sediment'.   Change owl:class to skos:concept, and rdfs:subClassOf to skos:broader."@en ;
   rdfs:label "iSamples rock and sediment vocabulary extension"@en ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
   skos:definition "Kinds of rock material."@en ;
   skos:prefLabel "iSamples rock and sediment vocabulary extension"@en ;
 .
