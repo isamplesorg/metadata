@@ -3,8 +3,8 @@
 
 @prefix : <https://w3id.org/isample/vocabulary/mingroup/0.9/> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix ming: <https://w3id.org/isample/vocabulary/mingroup/0.9/> .
 @prefix mat: <https://w3id.org/isample/vocabulary/material/0.9/> .
+@prefix ming: <https://w3id.org/isample/vocabulary/mingroup/0.9/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -27,7 +27,42 @@ dct:modified
   rdfs:comment "orchid-id: https://orcid.org/0000-0001-6041-5302" ;
   rdfs:label "Dr. Stephen M. Richard" ;
 .
-
+ming:boratemineral
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdf:seeAlso "https://www.mindat.org/strunz.php?a=6" ;
+  rdfs:label "Mineral-Borate"@en ;
+  skos:altLabel "Nickel-Strunz class 06"@en ;
+  skos:broader mat:mineral ;
+  skos:definition "Minerals which contain a borate anion group."@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/borates> ;
+  skos:inScheme ming:mineralgroupvocabulary ;
+  skos:prefLabel "Mineral-Borate"@en ;
+.
+ming:carbonatenitratemineral
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdf:seeAlso "https://www.mindat.org/strunz.php?a=5" ;
+  rdfs:label "Mineral-Carbonate or Nitrate"@en ;
+  skos:altLabel "Nickel-Strunz class 05"@en ;
+  skos:broader mat:mineral ;
+  skos:definition "Carbonate minerals are those minerals containing the carbonate ion"@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/carbonates-nitrates> ;
+  skos:inScheme ming:mineralgroupvocabulary ;
+  skos:prefLabel "Mineral-Carbonate or Nitrate"@en ;
+.
+ming:halidemineral
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdf:seeAlso "https://www.mindat.org/strunz.php?a=3" ;
+  rdfs:label "Mineral-Halide"@en ;
+  skos:altLabel "Nickel-Strunz class 03"@en ;
+  skos:broader mat:mineral ;
+  skos:definition "Minerals with a dominant halide anion."@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/halides> ;
+  skos:inScheme ming:mineralgroupvocabulary ;
+  skos:prefLabel "Mineral-Halide"@en ;
+.
 ming:mineralgroupvocabulary
   rdf:type owl:NamedIndividual ;
   rdf:type owl:Ontology ;
@@ -36,120 +71,96 @@ ming:mineralgroupvocabulary
   dct:creator <https://orcid.org/0000-0001-6041-5302> ;
   dct:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
   dct:modified "2022-08-27"^^xsd:date ;
+  dct:source "MINERALOGICAL TABLES: by Hugo Strunz and Ernest H. Nickel. E. Schweizerbart’sche Verlagsbuchhandlung, 2002, Stuttgart, Germany (9th edition). 870 p. ISBN number 3-510-65188-X." ;
+  rdf:seeAlso "https://www.mindat.org/strunz.php" ;
+  rdf:seeAlso "https://www.webmineral.com/help/StrunzClass.shtml" ;
   rdfs:label "iSamples Mineral Group Vocabulary"@en ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  skos:definition "Vocabulary to extent the mineral material type category with the top level mineral group categories. Uses the Nickel–Strunz mineral classes, which divide minerals into ten classes according to chemical composition and crystal structure. Nickel-Strunz group 10 is not included because that material would be mat:organiccompounds. Version 10 of the classification is modified from v 9 (Strunz and Nickel,2002) by Jim Ferraiolo and others, and now extended and maintained by mindat.org. Some scope notes from linked.data.gov.au. "@en ;
+  skos:definition "Vocabulary to extend the mineral material type category with the top level mineral group categories. Uses the Nickel–Strunz mineral classes, which divide minerals into ten classes according to chemical composition and crystal structure. Nickel-Strunz group 10 is not included because that material would be mat:organiccompounds. Version 10 of the classification is modified from v 9 (Strunz and Nickel,2002) by Jim Ferraiolo and others, and now extended and maintained by mindat.org. Some scope notes from linked.data.gov.au. "@en ;
   skos:prefLabel "iSamples Mineral Group Vocabulary "@en ;
-  rdf:seeAlso "https://www.webmineral.com/help/StrunzClass.shtml";
-  rdf:seeAlso  "https://www.mindat.org/strunz.php" ;
-  dct:source "MINERALOGICAL TABLES: by Hugo Strunz and Ernest H. Nickel. E. Schweizerbart’sche Verlagsbuchhandlung, 2002, Stuttgart, Germany (9th edition). 870 p. ISBN number 3-510-65188-X."
 .
-
 ming:nativeelementmineral
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
+  rdf:seeAlso "https://www.mindat.org/strunz.php?a=1" ;
   rdfs:label "Mineral-Native Element"@en ;
+  skos:altLabel "Nickel-Strunz class 01"@en ;
   skos:broader mat:mineral ;
   skos:definition "Elements that occur in nature in uncombined form with a distinct mineral structure. Includes metals and intermetallic alloys; metalloids and nonmetals; carbides, silicides, nitrides, phosphides"@en ;
   skos:exactMatch <http://linked.data.gov.au/def/minerals/elements-metals-and-intermetallic-alloys-metalloids-and-nonmetals-carbides-silicides-nitrides-phosphides> ;
   skos:inScheme ming:mineralgroupvocabulary ;
   skos:prefLabel "Mineral-Native Element"@en ;
-  skos:altLabel "Nickel-Strunz class 01"@en ;
-  rdf:seeAlso "https://www.mindat.org/strunz.php?a=1" ;
 .
-ming:sulfidesulfosaltmineral
+ming:organicmineral
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:label "Mineral-Sulfide or Sulfosalt"@en ;
+  rdf:seeAlso "https://www.mindat.org/strunz.php?a=10" ;
+  rdfs:label "Mineral-Organic Compound"@en ;
+  skos:altLabel "Nickel-Strunz class 10"@en ;
+  skos:altLabel "Organic mineral"@en ;
   skos:broader mat:mineral ;
-  skos:definition "Sulfide minerals are a class of minerals containing sulfide or disulfide as the major anion. Sulfosalt minerals are those complex sulfide minerals with the general formula: AmBnSp; where A represents a metal such as copper, lead, silver, iron, and rarely mercury, zinc, vanadium; B usually represents semi-metal such as arsenic, antimony, bismuth, and rarely germanium, or metals like tin and rarely vanadium; and S is sulfur or rarely selenium or/and tellurium (m, n, and p are integer formula subscripts). Includes sulfides, selenides, tellurides; arsenides, antimonides, bismuthides; sulfarsenites, sulfantimonites, sulfbismuthites"@en ;
-  skos:exactMatch <http://linked.data.gov.au/def/minerals/sulfides-and-sulfosalts-sulfides-selenides-tellurides-arsenides-antimonides-bismuthides-sulfarsenites-sulfantimonites-sulfbismuthites-etc> ;
+  skos:definition "Salts of organic acids, hydrocarbons, and miscellaneous organic minerals formed as a result of geological processes. Includes hydrocarbons, formates, acetates, oxalates, benzine salts, cyanates. Chemical compounds in which one or more atoms of carbon are covalently linked to atoms of other elements, most commonly hydrogen, oxygen, or nitrogen (https://www.britannica.com/science/organic-compound)."@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/organic-compounds> ;
   skos:inScheme ming:mineralgroupvocabulary ;
-  skos:prefLabel "Mineral-Sulfide or Sulfosalt"@en ;
-  skos:altLabel "Nickel-Strunz class 02"@en ;
-  rdf:seeAlso "https://www.mindat.org/strunz.php?a=2"
-  .
-ming:halidemineral
-  rdf:type owl:NamedIndividual ;
-  rdf:type skos:Concept ;
-  rdfs:label "Mineral-Halide"@en ;
-  skos:broader mat:mineral ;
-  skos:definition "Minerals with a dominant halide anion."@en ;
-  skos:exactMatch <http://linked.data.gov.au/def/minerals/halides> ;
-  skos:inScheme ming:mineralgroupvocabulary ;
-  skos:prefLabel "Mineral-Halide"@en ;
-  skos:altLabel "Nickel-Strunz class 03"@en ;
-  rdf:seeAlso "https://www.mindat.org/strunz.php?a=3" 
+  skos:prefLabel "Mineral-Organic Compound"@en ;
 .
 ming:oxidemineral
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
+  rdf:seeAlso "https://www.mindat.org/strunz.php?a=4" ;
   rdfs:label "Mineral-Oxide"@en ;
+  skos:altLabel "Nickel-Strunz class 04"@en ;
   skos:broader mat:mineral ;
   skos:definition "Includes class oxides, hydroxides, and arsenties. Oxides are minerals in which the oxide anion is bonded to one or more metal alloys. The hydroxide-bearing minerals are typically included in the oxide class. Arsenite minerals are very rare oxygen-bearing arsenic minerals."@en ;
   skos:exactMatch <http://linked.data.gov.au/def/minerals/oxides-hydroxides-v56-vanadates-arsenites-antimonites-bismuthites-sulfites-selenites-tellurites-iodates> ;
   skos:inScheme ming:mineralgroupvocabulary ;
   skos:prefLabel "Mineral-Oxide"@en ;
-  skos:altLabel "Nickel-Strunz class 04"@en ;
-  rdf:seeAlso "https://www.mindat.org/strunz.php?a=4" 
-.
-ming:carbonatenitratemineral
-  rdf:type owl:NamedIndividual ;
-  rdf:type skos:Concept ;
-  rdfs:label "Mineral-Carbonate or Nitrate"@en ;
-  skos:broader mat:mineral ;
-  skos:definition "Carbonate minerals are those minerals containing the carbonate ion"@en ;
-  skos:exactMatch <http://linked.data.gov.au/def/minerals/carbonates-nitrates> ;
-  skos:inScheme ming:mineralgroupvocabulary ;
-  skos:prefLabel "Mineral-Carbonate or Nitrate"@en ;
-  skos:altLabel "Nickel-Strunz class 05"@en ;
-  rdf:seeAlso "https://www.mindat.org/strunz.php?a=5" 
-.
-ming:boratemineral
-  rdf:type owl:NamedIndividual ;
-  rdf:type skos:Concept ;
-  rdfs:label "Mineral-Borate"@en ;
-  skos:broader mat:mineral ;
-  skos:definition "Minerals which contain a borate anion group."@en ;
-  skos:exactMatch <http://linked.data.gov.au/def/minerals/borates> ;
-  skos:inScheme ming:mineralgroupvocabulary ;
-  skos:prefLabel "Mineral-Borate"@en ;
-  skos:altLabel "Nickel-Strunz class 06"@en ;
-  rdf:seeAlso "https://www.mindat.org/strunz.php?a=6" 
-.
-ming:sulfateselenatetelluratemineral
-  rdf:type owl:NamedIndividual ;
-  rdf:type skos:Concept ;
-  rdfs:label "Mineral-Sulfate, Selenate, or Tellurate"@en ;
-  skos:broader mat:mineral ;
-  skos:definition "class of minerals that include the sulfate ion within their structure. "@en ;
-  skos:exactMatch <http://linked.data.gov.au/def/minerals/sulfates-selenates-tellurates-chromates-molybdates-wolframates> ;
-  skos:inScheme ming:mineralgroupvocabulary ;
-  skos:prefLabel "Mineral-Sulfate, Selenate, or Tellurate"@en ;
-  skos:altLabel "Nickel-Strunz class 07"@en ;
-  rdf:seeAlso "https://www.mindat.org/strunz.php?a=7" 
 .
 ming:phosphatearsenatevanadatemineral
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
+  rdf:seeAlso "https://www.mindat.org/strunz.php?a=8" ;
   rdfs:label "Mineral-Phosphate, Arsenate, or Vanadate"@en ;
+  skos:altLabel "Nickel-Strunz class 08"@en ;
   skos:broader mat:mineral ;
   skos:definition "Phosphate minerals contain the phosphate anion along sometimes with arsenate and vanadate substitutions, and chloride, fluoride, and hydroxide anions that also fit into the crystal structure. Arsenate minerals usually refer to the naturally occurring orthoarsenates."@en ;
   skos:exactMatch <http://linked.data.gov.au/def/minerals/phosphates-arsenates-vanadates> ;
   skos:inScheme ming:mineralgroupvocabulary ;
   skos:prefLabel "Mineral-Phosphate, Arsenate, or Vanadate"@en ;
-  skos:altLabel "Nickel-Strunz class 08"@en ;
-  rdf:seeAlso "https://www.mindat.org/strunz.php?a=8" 
 .
 ming:silicategermanatemineral
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
+  rdf:seeAlso "https://www.mindat.org/strunz.php?a=9" ;
   rdfs:label "Mineral-Silicate or Germanate"@en ;
+  skos:altLabel "Nickel-Strunz class 09"@en ;
   skos:broader mat:mineral ;
   skos:definition "Rock-forming minerals made up of silicate groups"@en ;
   skos:exactMatch <http://linked.data.gov.au/def/minerals/silicates-germanates> ;
   skos:inScheme ming:mineralgroupvocabulary ;
   skos:prefLabel "Mineral-Silicate or Germanate"@en ;
-  skos:altLabel "Nickel-Strunz class 09"@en ;
-  rdf:seeAlso "https://www.mindat.org/strunz.php?a=9" 
+.
+ming:sulfateselenatetelluratemineral
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdf:seeAlso "https://www.mindat.org/strunz.php?a=7" ;
+  rdfs:label "Mineral-Sulfate, Selenate, or Tellurate"@en ;
+  skos:altLabel "Nickel-Strunz class 07"@en ;
+  skos:broader mat:mineral ;
+  skos:definition "class of minerals that include the sulfate ion within their structure. "@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/sulfates-selenates-tellurates-chromates-molybdates-wolframates> ;
+  skos:inScheme ming:mineralgroupvocabulary ;
+  skos:prefLabel "Mineral-Sulfate, Selenate, or Tellurate"@en ;
+.
+ming:sulfidesulfosaltmineral
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdf:seeAlso "https://www.mindat.org/strunz.php?a=2" ;
+  rdfs:label "Mineral-Sulfide or Sulfosalt"@en ;
+  skos:altLabel "Nickel-Strunz class 02"@en ;
+  skos:broader mat:mineral ;
+  skos:definition "Sulfide minerals are a class of minerals containing sulfide or disulfide as the major anion. Sulfosalt minerals are those complex sulfide minerals with the general formula: AmBnSp; where A represents a metal such as copper, lead, silver, iron, and rarely mercury, zinc, vanadium; B usually represents semi-metal such as arsenic, antimony, bismuth, and rarely germanium, or metals like tin and rarely vanadium; and S is sulfur or rarely selenium or/and tellurium (m, n, and p are integer formula subscripts). Includes sulfides, selenides, tellurides; arsenides, antimonides, bismuthides; sulfarsenites, sulfantimonites, sulfbismuthites"@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/sulfides-and-sulfosalts-sulfides-selenides-tellurides-arsenides-antimonides-bismuthides-sulfarsenites-sulfantimonites-sulfbismuthites-etc> ;
+  skos:inScheme ming:mineralgroupvocabulary ;
+  skos:prefLabel "Mineral-Sulfide or Sulfosalt"@en ;
 .
