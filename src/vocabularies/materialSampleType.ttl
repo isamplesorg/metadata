@@ -47,12 +47,11 @@ spec:anthropogenicaggregation
 spec:anyaggregation
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:label "Any aggregation sample"@en ;
-  skos:altLabel "Any aggregation speciment"@en ;
+  rdfs:label "Any aggregation specimen"@en ;
   skos:broader spec:physicalspecimen ;
   skos:definition "Sample consists of a bunch of material fragments, not related to the same object (e.g. not a bunch of broken pot sherds that might be reassembled), but taken together representative of the sampled feature. Examples: loose soil, sediment, crushed rock,  particulate, bunches of unrelated pot sherd, human production waste, filtrates and residues. The sample requires some kind of container to keep it together. Cores of loosely consolidated material are considered 'piece of solid material' because the internal parts have spatial relationships (e.g. upper part, lower part)."@en ;
   skos:inScheme spec:specimentypevocabulary ;
-  skos:prefLabel "Any aggregation sample"@en ;
+  skos:prefLabel "Any aggregation specimen"@en ;
   skos:related <http://purl.allotrope.org/ontologies/quality#AFQ_0000306> ;
 .
 spec:artifact
@@ -68,22 +67,23 @@ spec:artifact
 spec:biologicalspecimen
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:label "Any biological sample"@en ;
-  skos:altLabel "Any biological specimen"@en ;
+  rdfs:label "Any biological specimen"@en ;
   skos:broader spec:physicalspecimen ;
   skos:definition "Specimen for which the sampled feature is one or more living organisms from a particular biome context, megascopic or microscopic"@en ;
   skos:inScheme spec:specimentypevocabulary ;
-  skos:prefLabel "Any biological sample"@en ;
+  skos:prefLabel "Any biological specimen"@en ;
 .
 spec:biomeaggregation
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:label "Biome aggregation sample"@en ;
-  skos:altLabel "Biome aggregation specimen"@en ;
+  rdfs:label "Biome aggregation specimen"@en ;
   skos:broader spec:anyaggregation ;
   skos:broader spec:biologicalspecimen ;
   skos:definition "Specimen is an aggregation of whole or fragmentary parts of multiple organisms, microscopic or megascopic, representative of some site."@en ;
   skos:inScheme spec:specimentypevocabulary ;
+<<<<<<< Updated upstream:src/vocabularies/specimenType.ttl
+  skos:prefLabel "Biome aggregation specimen"@en ;
+=======
   skos:prefLabel "Biome aggregation sample"@en ;
 .
 spec:bundlebiomeaggregation
@@ -92,6 +92,8 @@ spec:bundlebiomeaggregation
   skos:broader spec:biomeaggregation ;
   skos:definition "An aggregation of whole organisms representative of some biome"@en ;
   skos:prefLabel "Bundle biome aggregation"@en ;
+  skos:inScheme spec:specimentypevocabulary ;
+>>>>>>> Stashed changes:src/vocabularies/materialSampleType.ttl
 .
 spec:experimentalproduct
   rdf:type owl:NamedIndividual ;
@@ -102,6 +104,8 @@ spec:experimentalproduct
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Experiment product"@en ;
 .
+<<<<<<< Updated upstream:src/vocabularies/specimenType.ttl
+=======
 spec:fluidincontainer
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
@@ -109,10 +113,11 @@ spec:fluidincontainer
   skos:broader spec:physicalspecimen ;
   skos:closeMatch <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25278> ;
   skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_02000140> ;
-  skos:definition "Liquid, gas, or mixed dominantly fluid phases, necessarily in some kind of container to maintain identity. Might include minor solid particles. Container typically human made, but also includes natural fluid container, e.g. fluid inclusion in a mineral grain.  Includes colloids, foams, gels, suspensions. The sampled feature is the fluid substance; fluid samples collected to analyze the contained biome should be considered *Biome Aggregation*"@en ;
+  skos:definition "Specimen is a container whose contents are liquid, gas, or mixed dominantly fluid phases, that is the actual sample material. Fluid might include minor solid particles. Container typically human made, but also includes natural fluid container, e.g. fluid inclusion in a mineral grain.  Includes colloids, foams, gels, suspensions. The sample is the fluid substance; fluid samples collected to analyze the contained biome should be considered 'Biome Aggregation'"@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Fluid in container"@en ;
 .
+>>>>>>> Stashed changes:src/vocabularies/materialSampleType.ttl
 spec:fossil
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
@@ -133,6 +138,17 @@ spec:genericaggregation
   skos:definition "An aggregate specimen that is not biogenic or composed of anthropogenic material fragments.  Examples: loose soil or sediment (e.g. in a bag), rock chips, particulate filtrate or precipitate; rock powders."@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Aggregation"@en ;
+.
+spec:liquidorgas
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label "Liquid or gas"@en ;
+  skos:broader spec:physicalspecimen ;
+  skos:closeMatch <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25278> ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_02000140> ;
+  skos:definition "Liquid, gas, or mixed dominantly fluid phases, necessarily in some kind of container to maintain identity. Might include minor solid particles. Container typically human made, but also includes natural fluid container, e.g. fluid inclusion in a mineral grain.  Includes colloids, foams, gels, suspensions. The sampled feature is the fluid substance; fluid samples collected to analyze the contained biome should be considered *Biome Aggregation*"@en ;
+  skos:inScheme spec:specimentypevocabulary ;
+  skos:prefLabel "Liquid or gas"@en ;
 .
 spec:organismpart
   rdf:type owl:NamedIndividual ;
@@ -169,12 +185,11 @@ spec:othersolidobject
 spec:physicalspecimen
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:label "Material sample"@en ;
-  skos:altLabel "Physical Specimen"@en ;
+  rdfs:label "Physical specimen"@en ;
   skos:closeMatch <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19157> ;
   skos:closeMatch <https://dwc.tdwg.org/terms/#materialsample> ;
   skos:definition "top concept in specimen type hierarchy.  Represents any physical specimen."@en ;
-  skos:prefLabel "Material sample"@en ;
+  skos:prefLabel "Physical specimen"@en ;
   skos:topConceptOf spec:specimentypevocabulary ;
 .
 spec:researchproduct
@@ -186,13 +201,6 @@ spec:researchproduct
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Research product"@en ;
 .
-spec:slurrybiomeaggregation
-  rdf:type skos:Concept ;
-  rdfs:label "Slurry biome aggregation"@en ;
-  skos:broader spec:biomeaggregation ;
-  skos:definition "a material that consists of mixed organic and inorganic material, including whole organisms and organism fragments."@en ;
-  skos:prefLabel "Slurry biome aggregation"@en ;
-.
 spec:specimentypevocabulary
   rdf:type owl:NamedIndividual ;
   rdf:type owl:Ontology ;
@@ -201,20 +209,22 @@ spec:specimentypevocabulary
   dct:creator <https://orcid.org/0000-0001-6041-5302> ;
   dct:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
   dct:modified "2022-03-11"^^xsd:date ;
-  rdfs:comment "Broad categories to classify any kind of physical specimen"@en ;
-  rdfs:label "iSamples Specimen Type Vocabulary"@en ;
+  rdfs:comment "Broad categories to classify any kind of physical sample"@en ;
+  rdfs:label "iSamples Material Sample Type Vocabulary"@en ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   skos:historyNote "2022-01-07 SMR Change base URI to https://w3id.org/isample/vocabulary/, setting up resolution using w3id. Make the conceptScheme and ontology. Add Dublin core imports."@en ;
   skos:historyNote "2022-03-11 SMR change definitions from rdfs:comment to skos:definition. Minor fixes in definitions. Add skos matches to URIs from other vocabularies."@en ;
-  skos:prefLabel "iSamples Specimen Type Vocabulary "@en ;
+  skos:historyNote "2022-09-30 SMR per https://github.com/isamplesorg/metadata/issues/109, change specimen to sample in vocabulary names and labels. Add 'Slurry biome aggregation' and 'Bundle biome aggregation' (github issue 110). Rename 'liquid or gas' sample type to 'fluid in container' (github issue 108)."@en ;
+  skos:editorNote "There has been considerable discussion of use of 'specimen' vs. 'sample'; the two terms are considered essentially synonyms in the iSamples context. 'Specimen' was used originally, but after discussion with reviewers, we decided to switch to 'sample'. Some URIs have 'specimen' in the identifier tokens, remaining from the initial vocabulary version."
+  skos:prefLabel "iSamples Material Sample Type Vocabulary"@en ;
 .
 spec:wholeorganism
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:label "Whole organism specimen"@en ;
+  rdfs:label "Whole organism sample"@en ;
   skos:broader spec:biologicalspecimen ;
   skos:closeMatch <http://purl.obolibrary.org/obo/OBI_0100026> ;
-  skos:definition "Specimen consists of the bodies of one or more entire organisms of the same species, from any kingdom. Note that are also 'solid object’"@en ;
+  skos:definition "Specimen consists of the bodies of one or more entire organisms of the same species, from any kingdom. Note that these are also inherently 'solid object'"@en ;
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Whole organism specimen"@en ;
 .
