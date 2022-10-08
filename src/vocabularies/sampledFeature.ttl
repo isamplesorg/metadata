@@ -146,12 +146,8 @@ sf:glacierenvironment
   skos:broader sf:earthenvironment ;
   skos:definition "Sample of ice or water from a glacier, ice sheet, ice shelf, iceberg. Does not include various environments adjacent to glacier."@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
-<<<<<<< Updated upstream
-  skos:prefLabel "Glacier environment "@en ;
-=======
   skos:narrowMatch <http://purl.obolibrary.org/obo/ENVO_00000133> ;
   skos:prefLabel "Glacier environment"@en ;
->>>>>>> Stashed changes
 .
 sf:laboratorycuratorialenvironment
   rdf:type owl:NamedIndividual ;

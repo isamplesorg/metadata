@@ -172,16 +172,12 @@ mat:mixedsoilsedimentrock
   rdf:type skos:Concept ;
   rdfs:label "Mixed soil sediment or rock"@en ;
   skos:broader mat:earthmaterial ;
-<<<<<<< Updated upstream
+
   skos:definition "Material is mixed aggregation of fragments of undifferentiated soil, sediment or  rock origin. e.g. cuttings from some boreholes (rock fragments and caved soil or sediment), sea floor dredge haul (mixed sediment and rock)"@en ;
-  skos:inScheme mat:materialsvocabulary ;
-  skos:prefLabel "Mixed soil, sediment or rock"@en ;
-=======
-  skos:definition "Material is mixed aggregation of fragments of undifferentiated soil, sediment or  rock origin. e.g. cuttings from some boreholes (rock fragments and caved soil or sediment)"@en ;
   skos:inScheme mat:materialsvocabulary ;
   skos:note "This class is for samples that are solid Earth materials but known not to be mineral or particulate samples."@en ;
   skos:prefLabel "Mixed soil sediment or rock"@en ;
->>>>>>> Stashed changes
+
 .
 mat:nonaqueousliquid
   rdf:type owl:NamedIndividual ;
@@ -192,16 +188,10 @@ mat:nonaqueousliquid
   skos:inScheme mat:materialsvocabulary ;
   skos:narrowMatch <http://purl.bioontology.org/ontology/PDQ/CDR0000446576> ;
   skos:narrowMatch <http://purl.obolibrary.org/obo/ENVO_00002984> ;
-<<<<<<< Updated upstream
-  skos:prefLabel "Non-aqueous liquid material "@en ;
-  skos:scopeNote "Fluids like blood, urine, mucus are problematic. Suggest categorizing as 'Non-aqueous liquid material' and 'Organic material'. Need example use cases."@en ;
-.
-=======
-  skos:prefLabel "Non-aqueous liquid material"@en ;
   skos:scopeNote "Fluids like blood, urine, mucus are problematic. Suggest categorizing as 'Non-aqueous liquid material' and 'Organic material' or 'Biogenic non-organic material'. Need example use cases."@en ;
 .
 
->>>>>>> Stashed changes
+
 mat:organicmaterial
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;

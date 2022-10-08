@@ -76,14 +76,11 @@ spec:biologicalspecimen
 spec:biomeaggregation
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:label "Biome aggregation specimen"@en ;
+  rdfs:label "Biome aggregation sample"@en ;
   skos:broader spec:anyaggregation ;
   skos:broader spec:biologicalspecimen ;
   skos:definition "Specimen is an aggregation of whole or fragmentary parts of multiple organisms, microscopic or megascopic, representative of some site."@en ;
   skos:inScheme spec:specimentypevocabulary ;
-<<<<<<< Updated upstream:src/vocabularies/specimenType.ttl
-  skos:prefLabel "Biome aggregation specimen"@en ;
-=======
   skos:prefLabel "Biome aggregation sample"@en ;
 .
 spec:bundlebiomeaggregation
@@ -93,7 +90,6 @@ spec:bundlebiomeaggregation
   skos:definition "An aggregation of whole organisms representative of some biome"@en ;
   skos:prefLabel "Bundle biome aggregation"@en ;
   skos:inScheme spec:specimentypevocabulary ;
->>>>>>> Stashed changes:src/vocabularies/materialSampleType.ttl
 .
 spec:experimentalproduct
   rdf:type owl:NamedIndividual ;
@@ -104,8 +100,7 @@ spec:experimentalproduct
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Experiment product"@en ;
 .
-<<<<<<< Updated upstream:src/vocabularies/specimenType.ttl
-=======
+
 spec:fluidincontainer
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
@@ -117,7 +112,7 @@ spec:fluidincontainer
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Fluid in container"@en ;
 .
->>>>>>> Stashed changes:src/vocabularies/materialSampleType.ttl
+
 spec:fossil
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
@@ -139,17 +134,7 @@ spec:genericaggregation
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Aggregation"@en ;
 .
-spec:liquidorgas
-  rdf:type owl:NamedIndividual ;
-  rdf:type skos:Concept ;
-  rdfs:label "Liquid or gas"@en ;
-  skos:broader spec:physicalspecimen ;
-  skos:closeMatch <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25278> ;
-  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_02000140> ;
-  skos:definition "Liquid, gas, or mixed dominantly fluid phases, necessarily in some kind of container to maintain identity. Might include minor solid particles. Container typically human made, but also includes natural fluid container, e.g. fluid inclusion in a mineral grain.  Includes colloids, foams, gels, suspensions. The sampled feature is the fluid substance; fluid samples collected to analyze the contained biome should be considered *Biome Aggregation*"@en ;
-  skos:inScheme spec:specimentypevocabulary ;
-  skos:prefLabel "Liquid or gas"@en ;
-.
+
 spec:organismpart
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
