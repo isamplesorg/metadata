@@ -88,8 +88,8 @@ spec:bundlebiomeaggregation
   rdfs:label "Bundle biome aggregation"@en ;
   skos:broader spec:biomeaggregation ;
   skos:definition "An aggregation of whole organisms representative of some biome"@en ;
-  skos:prefLabel "Bundle biome aggregation"@en ;
   skos:inScheme spec:specimentypevocabulary ;
+  skos:prefLabel "Bundle biome aggregation"@en ;
 .
 spec:experimentalproduct
   rdf:type owl:NamedIndividual ;
@@ -100,7 +100,6 @@ spec:experimentalproduct
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Experiment product"@en ;
 .
-
 spec:fluidincontainer
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
@@ -112,7 +111,6 @@ spec:fluidincontainer
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Fluid in container"@en ;
 .
-
 spec:fossil
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
@@ -134,7 +132,6 @@ spec:genericaggregation
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Aggregation"@en ;
 .
-
 spec:organismpart
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
@@ -197,10 +194,10 @@ spec:specimentypevocabulary
   rdfs:comment "Broad categories to classify any kind of physical sample"@en ;
   rdfs:label "iSamples Material Sample Type Vocabulary"@en ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  skos:editorNote "There has been considerable discussion of use of 'specimen' vs. 'sample'; the two terms are considered essentially synonyms in the iSamples context. 'Specimen' was used originally, but after discussion with reviewers, we decided to switch to 'sample'. Some URIs have 'specimen' in the identifier tokens, remaining from the initial vocabulary version."@en ;
   skos:historyNote "2022-01-07 SMR Change base URI to https://w3id.org/isample/vocabulary/, setting up resolution using w3id. Make the conceptScheme and ontology. Add Dublin core imports."@en ;
   skos:historyNote "2022-03-11 SMR change definitions from rdfs:comment to skos:definition. Minor fixes in definitions. Add skos matches to URIs from other vocabularies."@en ;
   skos:historyNote "2022-09-30 SMR per https://github.com/isamplesorg/metadata/issues/109, change specimen to sample in vocabulary names and labels. Add 'Slurry biome aggregation' and 'Bundle biome aggregation' (github issue 110). Rename 'liquid or gas' sample type to 'fluid in container' (github issue 108)."@en ;
-  skos:editorNote "There has been considerable discussion of use of 'specimen' vs. 'sample'; the two terms are considered essentially synonyms in the iSamples context. 'Specimen' was used originally, but after discussion with reviewers, we decided to switch to 'sample'. Some URIs have 'specimen' in the identifier tokens, remaining from the initial vocabulary version."@en ;
   skos:prefLabel "iSamples Material Sample Type Vocabulary"@en ;
 .
 spec:wholeorganism
