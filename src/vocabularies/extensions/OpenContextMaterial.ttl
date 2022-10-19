@@ -51,10 +51,10 @@ ocmat:brass
 .
 ocmat:brickclay
   rdf:type skos:Concept ;
-  rdfs:label "brick clay" ;
+  rdfs:label "Brick clay"@en ;
   skos:broader ocmat:ceramicclay ;
-  skos:definition "dried or low-fired clay-rich material used to make blocks for construction" ;
-  skos:prefLabel "brick clay" ;
+  skos:definition "dried or low-fired clay-rich material used to make blocks for construction"@en ;
+  skos:prefLabel "Brick clay"@en ;
 .
 ocmat:bronze
   rdf:type skos:Concept ;
@@ -65,10 +65,10 @@ ocmat:bronze
 .
 ocmat:ceramicclay
   rdf:type skos:Concept ;
-  rdfs:label "ceramic clay" ;
+  rdfs:label "Ceramic clay"@en ;
   skos:broader mat:otheranthropogenicmaterial ;
-  skos:definition "Any of the various hard, brittle, heat-resistant and corrosion-resistant materials made by shaping and then firing an inorganic, nonmetallic material, such as clay, at a high temperature.  Common examples are earthenware, porcelain, and brick. (https://en.wikipedia.org/wiki/Ceramic)" ;
-  skos:prefLabel "ceramic clay" ;
+  skos:definition "Any of the various hard, brittle, heat-resistant and corrosion-resistant materials made by shaping and then firing an inorganic, nonmetallic material, such as clay, at a high temperature.  Common examples are earthenware, porcelain, and brick. (https://en.wikipedia.org/wiki/Ceramic)"@en ;
+  skos:prefLabel "Ceramic clay"@en ;
 .
 ocmat:charcoal
   rdf:type skos:Concept ;
@@ -105,12 +105,14 @@ ocmat:dolomite
   skos:broader mat:rock ;
   skos:prefLabel "dolomite" ;
 .
-ocmat:faience
+ocmat:fibermaterial
   rdf:type skos:Concept ;
-  rdfs:label "faience" ;
+  rdfs:label "Fiber material"@en ;
   skos:broader mat:otheranthropogenicmaterial ;
-  skos:definition "fine white-glazed ceramic (tin oxide based glaze)" ;
-  skos:prefLabel "faience" ;
+  skos:definition "material composed of fibers twisted or woved togther. Fibers might be plant material or Anthropogenic Organic material."@en ;
+  skos:example "cloth, thread, rope, string are composed of fiber material."@en ;
+  skos:note "samples composed of fiber material might also be asserted to be composed of 'Plant fiber' or Anthropogenic organic material' if the nature of the fiber is known."@en ;
+  skos:prefLabel "Fiber material"@en ;
 .
 ocmat:flint
   rdf:type skos:Concept ;
@@ -221,10 +223,10 @@ ocmat:organicplantmaterial
 .
 ocmat:paper
   rdf:type skos:Concept ;
-  rdfs:label "paper" ;
+  rdfs:label "Paper"@en ;
   skos:broader mat:otheranthropogenicmaterial ;
   skos:definition "" ;
-  skos:prefLabel "paper" ;
+  skos:prefLabel "Paper"@en ;
 .
 ocmat:pewter
   rdf:type skos:Concept ;
@@ -240,12 +242,12 @@ ocmat:plantfiber
   skos:example "cotton, linen, yucca fiber" ;
   skos:prefLabel "Plant fiber"@en ;
 .
-ocmat:plaster
+ocmat:plasterormortar
   rdf:type skos:Concept ;
-  rdfs:label "plaster" ;
+  rdfs:label "Plaster or Mortar"@en ;
   skos:broader mat:otheranthropogenicmaterial ;
-  skos:definition "plaster or mortar" ;
-  skos:prefLabel "plaster" ;
+  skos:definition "Plaster is a pasty material that hardens on drying and is used for coating walls, ceilings, and partitions. Mortar is a similar pasty material used for cementing bricks or block together or coating walls in building construction."@en ;
+  skos:prefLabel "Plaster or Mortar"@en ;
 .
 ocmat:plastic
   rdf:type skos:Concept ;
@@ -298,10 +300,10 @@ ocmat:slate
 .
 ocmat:terracotta
   rdf:type skos:Concept ;
-  rdfs:label "terracotta" ;
+  rdfs:label "Terracotta"@en ;
   skos:broader ocmat:ceramicclay ;
-  skos:definition "clay-based unglazed or glazed, porous ceramic" ;
-  skos:prefLabel "terracotta" ;
+  skos:definition "clay-based unglazed or glazed, porous ceramic"@en ;
+  skos:prefLabel "Terracotta"@en ;
 .
 ocmat:travertine
   rdf:type skos:Concept ;
