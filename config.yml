@@ -4,4 +4,7 @@ includes:
   - jsonldcontext
   - shacl
   - rdf
-directory: build
+  - owl
+  - python
+  - csv
+directory: generated

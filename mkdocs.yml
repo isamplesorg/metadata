@@ -3,7 +3,7 @@ theme:
   name: readthedocs
   features:
     - navigation.instant
-docs_dir: build/docs
+docs_dir: generated/docs
 site_dir: docs
 markdown_extensions:
   - toc:
