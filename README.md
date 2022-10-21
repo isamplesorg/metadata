@@ -2,7 +2,7 @@
 
 Defines the core metadata model for iSamples.
 
-`src/schemas/isamplescore.yml` defines the iSamples core model in linkml. It references vocabularies contained in `src/vocabularies/` which define terms for the Material Type, Sampled Feature, and Specimen Type vocabularies.
+`src/schemas/iSamplesCoreSchema.yml` defines the iSamples core model in linkml. It references vocabularies contained in `src/vocabularies/` which define terms for the Material Type, Sampled Feature, and Specimen Type vocabularies.
 
 The following artifacts are generated from the linkml and vocabulary sources:
 
@@ -35,10 +35,16 @@ poetry install
 To generate the documentation, run:
 
 ```
-make gen-docs
+gen-project -C config.yml src/schemas/iSamplesCoreSchema.yml
 ```
 
-This will generate markdown intermediate files in the `build` folder (not committed to revision control), and then run `mkdocs` to generate HTML in the `docs` folder. The `docs` folder provides the content for `https://isamplesorg.github.io/metadata/`.
+This will generate markdown intermediate files in the `generated/docs` folder. To generate the HTML docs, run:
+
+```
+mkdocs build
+```
+
+This will generate the `docs` which content for `https://isamplesorg.github.io/metadata/`.
 
 
 ## Older notes below
