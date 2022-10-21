@@ -14,6 +14,7 @@ prefixes:
     w3cpos: http://www.w3.org/2003/01/geo/wgs84_pos#
     rdfs: http://www.w3.org/2000/01/rdf-schema#
     xsd: http://www.w3.org/2001/XMLSchema#
+    sdo: http://schema.org/
 default_prefix: isam
 
 
@@ -425,6 +426,10 @@ slots:
     "$schema":
         range: string
         description: identifier for the JSON schema for validating this document
+    authorizedBy:
+        range: string
+    compliesWith:
+        range: string
     relatedResource:
         range: SampleRelation
         description: link to related resource with relationship property to indicate
