@@ -1,0 +1,834 @@
+@prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix isam: <http://resource.isamples.org/schema/> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix mat: <https://w3id.org/isample/vocabulary/material/0.9/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <http://schema.org/> .
+@prefix sf: <https://w3id.org/isample/vocabulary/sampledfeature/0.9/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix spec: <https://w3id.org/isample/vocabulary/specimentype/0.9/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+isam:0.2.1 a owl:Ontology ;
+    rdfs:label "physicalSample" ;
+    IAO:0000700 isam:Curation,
+        isam:GeospatialDDCoordLocation,
+        isam:PhysicalSampleRecord,
+        isam:SampleRelation,
+        isam:SamplingEvent,
+        isam:SamplingSite ;
+    dct:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
+    dct:title "Schema for documenting physical samples" ;
+    pav:version "20221007" ;
+    linkml:generation_date "2022-10-21T15:13:32" ;
+    linkml:metamodel_version "1.7.0" ;
+    linkml:source_file "iSamplesCoreSchema.yml" ;
+    linkml:source_file_date "2022-10-21T13:39:39" ;
+    linkml:source_file_size 42434 .
+
+linkml:SubsetDefinition a owl:Class ;
+    rdfs:label "subset_definition" .
+
+<http://resource.isamples.org/schema/$schema> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "$schema" ;
+    rdfs:range isam:String ;
+    skos:definition "identifier for the JSON schema for validating this document" .
+
+isam:accessConstraints a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "accessConstraints" ;
+    rdfs:range isam:String ;
+    skos:definition "cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site." .
+
+isam:authorizedBy a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "authorizedBy" ;
+    rdfs:range isam:String .
+
+isam:compliesWith a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "compliesWith" ;
+    rdfs:range isam:String .
+
+isam:curation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "curation" ;
+    rdfs:range isam:Curation .
+
+isam:curationLocation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "curationLocation" ;
+    rdfs:range isam:String ;
+    skos:definition "information about where and how the sample is currently stored" .
+
+isam:elevation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "elevation" ;
+    rdfs:domain isam:GeospatialDDCoordLocation ;
+    rdfs:range isam:String ;
+    skos:definition "should be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level." .
+
+isam:hasContextCategory a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hasContextCategory" ;
+    rdfs:domain isam:PhysicalSampleRecord ;
+    rdfs:range isam:String ;
+    skos:definition "top level context, based on the kind of feature sampled.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property." .
+
+isam:hasFeatureOfInterest a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hasFeatureOfInterest" ;
+    rdfs:domain isam:SamplingEvent ;
+    rdfs:range isam:String ;
+    skos:definition "what does the sample represent." .
+
+isam:hasMaterialCategory a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hasMaterialCategory" ;
+    rdfs:domain isam:PhysicalSampleRecord ;
+    rdfs:range isam:Materialtype ;
+    skos:definition "specify the kind of material that constitutes the sample" .
+
+isam:hasSpecimenCategory a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hasSpecimenCategory" ;
+    rdfs:domain isam:PhysicalSampleRecord ;
+    rdfs:range isam:String ;
+    skos:definition "specify the kind of object that the specimen is" .
+
+isam:informalClassification a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "informalClassification" ;
+    rdfs:domain isam:PhysicalSampleRecord ;
+    rdfs:range isam:String ;
+    skos:definition "free text classification terms, not from a controlled vocabulary; generally terms applied by collector" .
+
+isam:keywords a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "keywords" ;
+    rdfs:domain isam:PhysicalSampleRecord ;
+    rdfs:range isam:String ;
+    skos:closeMatch sdo:keywords ;
+    skos:definition "free text categorization of sample to support discovery" .
+
+isam:latitude a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "latitude" ;
+    rdfs:domain isam:GeospatialDDCoordLocation ;
+    rdfs:range isam:Decimal ;
+    skos:definition "angular coordinate measured positive north from the equator." .
+
+isam:location a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "location" ;
+    rdfs:domain isam:SamplingSite ;
+    rdfs:range isam:GeospatialDDCoordLocation ;
+    skos:definition "geopatial location of site; required default is WGS84 latitude, longitude in decimal degrees. Elevation as a string with number, unit of measure, and datum." .
+
+isam:longitude a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "longitude" ;
+    rdfs:domain isam:GeospatialDDCoordLocation ;
+    rdfs:range isam:Decimal ;
+    skos:definition "angular coordinate measured positive eastward from the prime meridian." .
+
+isam:placeName a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "placeName" ;
+    rdfs:domain isam:SamplingSite ;
+    rdfs:range isam:String ;
+    skos:definition "one or more names by which the sampling site is known." .
+
+isam:producedBy a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "producedBy" ;
+    rdfs:domain isam:PhysicalSampleRecord ;
+    rdfs:range isam:SamplingEvent ;
+    skos:definition "object that documents the sampling event--who, where, when the specimen was obtained" .
+
+isam:registrant a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "registrant" ;
+    rdfs:domain isam:PhysicalSampleRecord ;
+    rdfs:range isam:String ;
+    skos:definition "identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information." .
+
+isam:relatedResource a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "relatedResource" ;
+    rdfs:range isam:SampleRelation ;
+    skos:definition "link to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource." .
+
+isam:relationship a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "relationship" ;
+    rdfs:range isam:String ;
+    skos:definition "term to identify realationship between host sample and the sample relation target. Should be controlled vocabulary (ScopedName). for now start with string, 'derivedFrom'." .
+
+isam:resultTime a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "resultTime" ;
+    rdfs:domain isam:SamplingEvent ;
+    rdfs:range isam:Date ;
+    skos:definition "Date on which the sample was collected." .
+
+isam:sampleidentifier a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sampleidentifier" ;
+    rdfs:domain isam:PhysicalSampleRecord ;
+    rdfs:range isam:String ;
+    skos:closeMatch sdo:identifier ;
+    skos:definition "URI that identifies the physical sample described by this record" .
+
+isam:samplingPurpose a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samplingPurpose" ;
+    rdfs:domain isam:PhysicalSampleRecord ;
+    rdfs:range isam:String ;
+    skos:definition "term to specify why a sample was collection." .
+
+isam:samplingSite a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "samplingSite" ;
+    rdfs:domain isam:SamplingEvent ;
+    rdfs:range isam:SamplingSite ;
+    skos:definition "object that identifies the place where the sample was collected" .
+
+isam:target a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "target" ;
+    rdfs:range isam:String ;
+    skos:definition "identifier for the target resource in the relationship. Start with string, should be Identifier object." .
+
+<http://resource.isamples.org/schema/@id> a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "@id" ;
+    rdfs:range isam:String ;
+    skos:definition "identifier for this document" .
+
+<http://resource.isamples.org/schema/Contextcategory#Not+Provided> a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Not Provided" .
+
+isam:Date a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:label "date" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:date ;
+            owl:onProperty linkml:topValue ;
+            owl:qualifiedCardinality 1 ] .
+
+<http://resource.isamples.org/schema/Materialtype#Not+Provided> a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Not Provided" .
+
+<http://resource.isamples.org/schema/Specimencategory#Not+Provided> a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Not Provided" .
+
+isam:responsibility a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "responsibility" ;
+    rdfs:range isam:String ;
+    skos:definition "String with person name and affiliation, or organization name, and their role relative to the parent element." .
+
+mat:anthropogenicmetal a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Anthropogenic metal material" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_01001069" .
+
+mat:anyanthropogenicmaterial a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Any anthropogenic material" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_0010001" .
+
+mat:anyice a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Any Ice" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_01001125" .
+
+mat:biogenicnonorganicmaterial a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Biogenic non-organic material" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/CHEBI_64389",
+        "http://purl.obolibrary.org/obo/ENVO_01001644",
+        "http://purl.obolibrary.org/obo/UBERON_0002481" .
+
+mat:dispersedmedia a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Dispersed media" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_00010506",
+        "http://purl.obolibrary.org/obo/ENVO_01001560",
+        "https://www.wikidata.org/wiki/Q181780" .
+
+mat:earthmaterial a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Natural Solid Material" ;
+    rdfs:seeAlso "http://resource.geosciml.org/classifier/cgi/lithology/compound_material",
+        "https://w3id.org/gso/geology/Solid_Geologic_Material" .
+
+mat:fluid a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Fluid material" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_02000140",
+        "https://en.wikipedia.org/wiki/Fluid" .
+
+mat:gas a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Gaseous material" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_01000797" .
+
+mat:liquidwater a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Liquid water" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_00002006" .
+
+mat:material a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Material" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_00010483",
+        "https://www.wikidata.org/wiki/Q214609" .
+
+mat:mineral a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Mineral" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_01000256" .
+
+mat:mixedsoilsedimentrock a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Mixed soil sediment or rock" .
+
+mat:nonaqueousliquid a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Non-aqueous liquid material" ;
+    rdfs:seeAlso "http://purl.bioontology.org/ontology/PDQ/CDR0000446576",
+        "http://purl.obolibrary.org/obo/ENVO_00002984" .
+
+mat:organicmaterial a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Organic material" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_01000155" .
+
+mat:otheranthropogenicmaterial a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Anthropogenic material" .
+
+mat:particulate a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Particulate" ;
+    rdfs:seeAlso "http://purl.bioontology.org/ontology/MESH/D052638",
+        "http://purl.obolibrary.org/obo/ENVO_01000060",
+        "http://purl.obolibrary.org/obo/NCIT_C1709" .
+
+mat:rock a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Rock" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_00001995",
+        "http://resource.geosciml.org/classifier/cgi/lithology/rock" .
+
+mat:rockorsediment a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Rock or sediment" .
+
+mat:sediment a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Sediment" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_00002007",
+        "http://resource.geosciml.org/classifier/cgi/lithology/sediment" .
+
+mat:soil a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Soil" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_00001998",
+        "http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054280",
+        "https://en.wikipedia.org/wiki/Soil" .
+
+mat:waterice a isam:Materialtype,
+        owl:Class ;
+    rdfs:label "Frozen water" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_01000277" .
+
+sf:activehumanoccupationsite a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Active human occupation site" .
+
+sf:anthropogenicenvironment a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Anthropogenic environment" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_01000313" .
+
+sf:anysampledfeature a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Any sampled feature" .
+
+sf:atmosphere a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Atmosphere" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_01000811",
+        "http://purl.obolibrary.org/obo/RBO_00000018" .
+
+sf:biologicalentity a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Biological entity" .
+
+sf:earthenvironment a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Earth environment" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/OMIT_0018724",
+        "http://semanticscience.org/resource/SIO_000955",
+        "https://www.wikidata.org/wiki/Q2" .
+
+sf:earthinterior a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Earth interior" .
+
+sf:earthsurface a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Earth surface" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/RBO_00000017" .
+
+sf:experimentsetting a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Experiment setting" .
+
+sf:extraterrestrialenvironment a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Extraterrestrial environment" ;
+    rdfs:seeAlso "http://purl.bioontology.org/ontology/MESH/D005118" .
+
+sf:glacierenvironment a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Glacier environment" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_00000133" .
+
+sf:laboratorycuratorialenvironment a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Laboratory or curatorial environment" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_01001405" .
+
+sf:lakeriverstreambottom a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Lake river or stream bottom" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_00000268",
+        "http://purl.obolibrary.org/obo/ENVO_00000384" .
+
+sf:marinewaterbody a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Marine environment" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_00001999",
+        "http://purl.obolibrary.org/obo/ENVO_01000686" .
+
+sf:marinewaterbodybottom a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Marine water body bottom" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_00000482" .
+
+sf:pasthumanoccupationsite a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Site of past human activities" .
+
+sf:subaerialsurfaceenvironment a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Subaerial surface environment" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/RBO_00000017" .
+
+sf:subsurfacefluidreservoir a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Subsurface fluid reservoir" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_00012408" .
+
+sf:terrestrialwaterbody a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Terrestrial water body" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_01001320" .
+
+sf:waterbody a isam:Contextcategory,
+        owl:Class ;
+    rdfs:label "Water body" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/ENVO_00000063" .
+
+spec:analyticalpreparation a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Analytical preparation" .
+
+spec:anthropogenicaggregation a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Anthropogenic aggregation" .
+
+spec:anyaggregation a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Any aggregation sample" .
+
+spec:artifact a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Artifact" ;
+    rdfs:seeAlso "https://en.wikipedia.org/wiki/Artifact_(archaeology)" .
+
+spec:biologicalspecimen a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Any biological sample" .
+
+spec:biomeaggregation a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Biome aggregation sample" .
+
+spec:bundlebiomeaggregation a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Bundle biome aggregation" .
+
+spec:experimentalproduct a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Experiment product" .
+
+spec:fluidincontainer a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Fluid in container" ;
+    rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25278",
+        "http://purl.obolibrary.org/obo/ENVO_02000140" .
+
+spec:fossil a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Fossil" ;
+    rdfs:seeAlso "http://sweet.jpl.nasa.gov/2.3/matrRock.owl#Fossil",
+        "https://en.wikipedia.org/wiki/Fossil" .
+
+spec:genericaggregation a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Aggregation" .
+
+spec:organismpart a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Organism part" ;
+    rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C103199",
+        "https://www.wikidata.org/wiki/Q4936952" .
+
+spec:organismproduct a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Organism product" .
+
+spec:othersolidobject a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Other solid object" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/BFO_0000030" .
+
+spec:physicalspecimen a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Material sample" ;
+    rdfs:seeAlso "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19157",
+        "https://dwc.tdwg.org/terms/#materialsample" .
+
+spec:researchproduct a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Research product" .
+
+spec:slurrybiomeaggregation a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Slurry biome aggregation" .
+
+spec:wholeorganism a isam:Specimencategory,
+        owl:Class ;
+    rdfs:label "Whole organism sample" ;
+    rdfs:seeAlso "http://purl.obolibrary.org/obo/OBI_0100026" .
+
+isam:Curation a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Curation" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:curationLocation ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:label ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom isam:String ;
+            owl:onProperty isam:responsibility ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom isam:String ;
+            owl:onProperty isam:accessConstraints ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:description ] ;
+    skos:definition "object contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample." .
+
+isam:SampleRelation a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SampleRelation" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:relationship ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:target ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:label ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:description ] .
+
+linkml:TypeDefinition a owl:Class ;
+    rdfs:label "type_definition" .
+
+linkml:topValue a owl:DatatypeProperty ;
+    rdfs:label "value" .
+
+isam:Decimal a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:label "decimal" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:decimal ;
+            owl:onProperty linkml:topValue ;
+            owl:qualifiedCardinality 1 ] .
+
+isam:SamplingSite a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SamplingSite" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:GeospatialDDCoordLocation ;
+            owl:onProperty isam:location ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:label ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom isam:String ;
+            owl:onProperty isam:placeName ] .
+
+isam:description a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "description" ;
+    rdfs:range isam:String ;
+    skos:closeMatch dct:description ;
+    skos:definition "free text description of the subject of a triple." .
+
+isam:label a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "label" ;
+    rdfs:range isam:String ;
+    skos:closeMatch rdfs:label ;
+    skos:definition "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset." .
+
+isam:GeospatialDDCoordLocation a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "GeospatialDDCoordLocation" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:Decimal ;
+            owl:onProperty isam:latitude ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:elevation ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:Decimal ;
+            owl:onProperty isam:longitude ] .
+
+isam:SamplingEvent a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SamplingEvent" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:description ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:hasFeatureOfInterest ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:label ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:Date ;
+            owl:onProperty isam:resultTime ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom isam:String ;
+            owl:onProperty isam:responsibility ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:SamplingSite ;
+            owl:onProperty isam:samplingSite ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty <http://resource.isamples.org/schema/@id> ] .
+
+linkml:ClassDefinition a owl:Class ;
+    rdfs:label "class_definition" .
+
+isam:PhysicalSampleRecord a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "PhysicalSampleRecord" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom isam:String ;
+            owl:onProperty isam:hasSpecimenCategory ],
+        [ a owl:Restriction ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:sampleidentifier ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:SampleRelation ;
+            owl:onProperty isam:relatedResource ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:registrant ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom isam:String ;
+            owl:onProperty isam:informalClassification ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:authorizedBy ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom isam:String ;
+            owl:onProperty isam:hasContextCategory ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom isam:Materialtype ;
+            owl:onProperty isam:hasMaterialCategory ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:samplingPurpose ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:compliesWith ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:SamplingEvent ;
+            owl:onProperty isam:producedBy ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:Curation ;
+            owl:onProperty isam:curation ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty <http://resource.isamples.org/schema/@id> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom isam:String ;
+            owl:onProperty isam:keywords ],
+        [ a owl:Restriction ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:label ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty <http://resource.isamples.org/schema/$schema> ] ;
+    skos:definition "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web." .
+
+isam:Specimencategory a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "specimencategory" ;
+    owl:unionOf ( spec:genericaggregation spec:anyaggregation spec:analyticalpreparation spec:anthropogenicaggregation spec:artifact spec:biologicalspecimen spec:biomeaggregation spec:bundlebiomeaggregation spec:experimentalproduct spec:fossil spec:fluidincontainer spec:organismpart spec:organismproduct spec:othersolidobject spec:physicalspecimen spec:researchproduct spec:slurrybiomeaggregation spec:wholeorganism <http://resource.isamples.org/schema/Specimencategory#Not+Provided> ) ;
+    linkml:permissible_values <http://resource.isamples.org/schema/Specimencategory#Not+Provided>,
+        spec:analyticalpreparation,
+        spec:anthropogenicaggregation,
+        spec:anyaggregation,
+        spec:artifact,
+        spec:biologicalspecimen,
+        spec:biomeaggregation,
+        spec:bundlebiomeaggregation,
+        spec:experimentalproduct,
+        spec:fluidincontainer,
+        spec:fossil,
+        spec:genericaggregation,
+        spec:organismpart,
+        spec:organismproduct,
+        spec:othersolidobject,
+        spec:physicalspecimen,
+        spec:researchproduct,
+        spec:slurrybiomeaggregation,
+        spec:wholeorganism .
+
+isam:Contextcategory a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "contextcategory" ;
+    owl:unionOf ( sf:activehumanoccupationsite sf:anthropogenicenvironment sf:anysampledfeature sf:biologicalentity sf:atmosphere sf:earthenvironment sf:earthinterior sf:earthsurface sf:experimentsetting sf:extraterrestrialenvironment sf:glacierenvironment sf:laboratorycuratorialenvironment sf:lakeriverstreambottom sf:marinewaterbody sf:marinewaterbodybottom sf:pasthumanoccupationsite sf:subaerialsurfaceenvironment sf:subsurfacefluidreservoir sf:terrestrialwaterbody sf:waterbody <http://resource.isamples.org/schema/Contextcategory#Not+Provided> ) ;
+    linkml:permissible_values <http://resource.isamples.org/schema/Contextcategory#Not+Provided>,
+        sf:activehumanoccupationsite,
+        sf:anthropogenicenvironment,
+        sf:anysampledfeature,
+        sf:atmosphere,
+        sf:biologicalentity,
+        sf:earthenvironment,
+        sf:earthinterior,
+        sf:earthsurface,
+        sf:experimentsetting,
+        sf:extraterrestrialenvironment,
+        sf:glacierenvironment,
+        sf:laboratorycuratorialenvironment,
+        sf:lakeriverstreambottom,
+        sf:marinewaterbody,
+        sf:marinewaterbodybottom,
+        sf:pasthumanoccupationsite,
+        sf:subaerialsurfaceenvironment,
+        sf:subsurfacefluidreservoir,
+        sf:terrestrialwaterbody,
+        sf:waterbody .
+
+isam:Materialtype a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "materialtype" ;
+    owl:unionOf ( mat:anyanthropogenicmaterial mat:otheranthropogenicmaterial mat:anthropogenicmetal mat:anyice mat:biogenicnonorganicmaterial mat:dispersedmedia mat:fluid mat:gas mat:waterice mat:liquidwater mat:material mat:mineral mat:mixedsoilsedimentrock mat:earthmaterial mat:nonaqueousliquid <http://resource.isamples.org/schema/Materialtype#Not+Provided> mat:organicmaterial mat:particulate mat:rockorsediment mat:rock mat:sediment mat:soil ) ;
+    linkml:permissible_values <http://resource.isamples.org/schema/Materialtype#Not+Provided>,
+        mat:anthropogenicmetal,
+        mat:anyanthropogenicmaterial,
+        mat:anyice,
+        mat:biogenicnonorganicmaterial,
+        mat:dispersedmedia,
+        mat:earthmaterial,
+        mat:fluid,
+        mat:gas,
+        mat:liquidwater,
+        mat:material,
+        mat:mineral,
+        mat:mixedsoilsedimentrock,
+        mat:nonaqueousliquid,
+        mat:organicmaterial,
+        mat:otheranthropogenicmaterial,
+        mat:particulate,
+        mat:rock,
+        mat:rockorsediment,
+        mat:sediment,
+        mat:soil,
+        mat:waterice .
+
+linkml:SlotDefinition a owl:Class ;
+    rdfs:label "slot_definition" .
+
+isam:String a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:label "string" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange xsd:string ;
+            owl:onProperty linkml:topValue ;
+            owl:qualifiedCardinality 1 ] .
+
+

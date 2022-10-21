@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>physicalSample - iSamples</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "physicalSample";
+    var mkdocs_page_input_path = "iSamplesCoreSchema.yml.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> iSamples</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../%24schema/">Slot: $schema</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../%40id/">Slot: @id</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../GeospatialDDCoordLocation/">Class: GeospatialDDCoordLocation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../PhysicalSampleRecord/">Class: PhysicalSampleRecord</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../PhysicalSampleRecord_label/">Slot: label</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../PhysicalSampleRecord_sampleidentifier/">Slot: sampleidentifier</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../SampleRelation/">Class: SampleRelation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../SamplingEvent/">Class: SamplingEvent</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../accessConstraints/">Slot: accessConstraints</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorizedBy/">Slot: authorizedBy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../compliesWith/">Slot: compliesWith</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contextcategory/">Enum: contextcategory</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../curation/">Class: Curation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../curationLocation/">Slot: curationLocation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../description/">Slot: description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../elevation/">Slot: elevation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hasContextCategory/">Slot: hasContextCategory</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hasFeatureOfInterest/">Slot: hasFeatureOfInterest</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hasMaterialCategory/">Slot: hasMaterialCategory</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hasSpecimenCategory/">Slot: hasSpecimenCategory</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">physicalSample</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#classes">Classes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mixins">Mixins</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#slots">Slots</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#enums">Enums</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#subsets">Subsets</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#types">Types</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#builtin">Built in</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#defined">Defined</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../informalClassification/">Slot: informalClassification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../keywords/">Slot: keywords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../label/">Slot: label</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../latitude/">Slot: latitude</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../location/">Slot: location</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../longitude/">Slot: longitude</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../materialtype/">Enum: materialtype</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../placeName/">Slot: placeName</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../producedBy/">Slot: producedBy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../registrant/">Slot: registrant</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../relatedResource/">Slot: relatedResource</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../relationship/">Slot: relationship</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responsibility/">Slot: responsibility</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../resultTime/">Slot: resultTime</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sampleidentifier/">Slot: sampleidentifier</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../samplingPurpose/">Slot: samplingPurpose</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../samplingSite/">Class: SamplingSite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../specimencategory/">Enum: specimencategory</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../target/">Slot: target</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Types</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../types/Date/">Type: date</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../types/Decimal/">Type: decimal</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../types/String/">Type: string</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">iSamples</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>physicalSample</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="physicalsample">physicalSample<a class="headerlink" href="#physicalsample" title="Permanent link">&para;</a></h1>
+<p><strong>metamodel version:</strong> 1.7.0</p>
+<p><strong>version:</strong> 20221007</p>
+<p>Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change 'id' to '@id' and 'schema' to '$schema'.  Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07</p>
+<h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="Curation.md">Curation</a> - object contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.</li>
+<li><a href="../GeospatialDDCoordLocation/">GeospatialDDCoordLocation</a></li>
+<li><a href="../PhysicalSampleRecord/">PhysicalSampleRecord</a> - This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.</li>
+<li><a href="../SampleRelation/">SampleRelation</a></li>
+<li><a href="../SamplingEvent/">SamplingEvent</a></li>
+<li><a href="SamplingSite.md">SamplingSite</a></li>
+</ul>
+<h3 id="mixins">Mixins<a class="headerlink" href="#mixins" title="Permanent link">&para;</a></h3>
+<h3 id="slots">Slots<a class="headerlink" href="#slots" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../%24schema/">$schema</a> - identifier for the JSON schema for validating this document</li>
+<li><a href="../%40id/">@id</a> - identifier for this document</li>
+<li><a href="../accessConstraints/">accessConstraints</a> - cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.</li>
+<li><a href="../authorizedBy/">authorizedBy</a></li>
+<li><a href="../compliesWith/">compliesWith</a></li>
+<li><a href="../curation/">curation</a></li>
+<li><a href="../curationLocation/">curationLocation</a> - information about where and how the sample is currently stored</li>
+<li><a href="../description/">description</a> - free text description of the subject of a triple.</li>
+<li><a href="../elevation/">elevation</a> - should be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level.</li>
+<li><a href="../hasContextCategory/">hasContextCategory</a> - top level context, based on the kind of feature sampled.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.</li>
+<li><a href="../hasFeatureOfInterest/">hasFeatureOfInterest</a> - what does the sample represent.</li>
+<li><a href="../hasMaterialCategory/">hasMaterialCategory</a> - specify the kind of material that constitutes the sample</li>
+<li><a href="../hasSpecimenCategory/">hasSpecimenCategory</a> - specify the kind of object that the specimen is</li>
+<li><a href="../informalClassification/">informalClassification</a> - free text classification terms, not from a controlled vocabulary; generally terms applied by collector</li>
+<li><a href="../keywords/">keywords</a> - free text categorization of sample to support discovery</li>
+<li><a href="../label/">label</a> - a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.<ul>
+<li><a href="../PhysicalSampleRecord_label/">PhysicalSampleRecord➞label</a></li>
+</ul>
+</li>
+<li><a href="../latitude/">latitude</a> - angular coordinate measured positive north from the equator.</li>
+<li><a href="../location/">location</a> - geopatial location of site; required default is WGS84 latitude, longitude in decimal degrees. Elevation as a string with number, unit of measure, and datum.</li>
+<li><a href="../longitude/">longitude</a> - angular coordinate measured positive eastward from the prime meridian.</li>
+<li><a href="../placeName/">placeName</a> - one or more names by which the sampling site is known.</li>
+<li><a href="../producedBy/">producedBy</a> - object that documents the sampling event--who, where, when the specimen was obtained</li>
+<li><a href="../registrant/">registrant</a> - identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.</li>
+<li><a href="../relatedResource/">relatedResource</a> - link to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource.</li>
+<li><a href="../relationship/">relationship</a> - term to identify realationship between host sample and the sample relation target. Should be controlled vocabulary (ScopedName). for now start with string, 'derivedFrom'.</li>
+<li><a href="../responsibility/">responsibility</a> - String with person name and affiliation, or organization name, and their role relative to the parent element.</li>
+<li><a href="../resultTime/">resultTime</a> - Date on which the sample was collected.</li>
+<li><a href="../sampleidentifier/">sampleidentifier</a> - URI that identifies the physical sample described by this record<ul>
+<li><a href="../PhysicalSampleRecord_sampleidentifier/">PhysicalSampleRecord➞sampleidentifier</a></li>
+</ul>
+</li>
+<li><a href="../samplingPurpose/">samplingPurpose</a> - term to specify why a sample was collection.</li>
+<li><a href="../samplingSite/">samplingSite</a> - object that identifies the place where the sample was collected</li>
+<li><a href="../target/">target</a> - identifier for the target resource in the relationship. Start with string, should be Identifier object.</li>
+</ul>
+<h3 id="enums">Enums<a class="headerlink" href="#enums" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../contextcategory/">contextcategory</a> - top level context, based on the kind of feature sampled,from the SampledFeature vocabulary.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.</li>
+<li><a href="../materialtype/">materialtype</a> - categories for kinds of material that constitute the sample</li>
+<li><a href="../specimencategory/">specimencategory</a> - specify the kind of object that the specimen is</li>
+</ul>
+<h3 id="subsets">Subsets<a class="headerlink" href="#subsets" title="Permanent link">&para;</a></h3>
+<h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
+<h4 id="builtin">Built in<a class="headerlink" href="#builtin" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Decimal</strong></li>
+<li><strong>str</strong></li>
+</ul>
+<h4 id="defined">Defined<a class="headerlink" href="#defined" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="../types/Date/">Date</a>  (<strong>str</strong>) </li>
+<li><a href="../types/Decimal/">Decimal</a>  (<strong>Decimal</strong>) </li>
+<li><a href="../types/String/">String</a>  (<strong>str</strong>) </li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../informalClassification/" class="btn btn-neutral float-right" title="Slot: informalClassification">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../hasSpecimenCategory/" class="btn btn-neutral" title="Slot: hasSpecimenCategory"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../hasSpecimenCategory/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../informalClassification/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

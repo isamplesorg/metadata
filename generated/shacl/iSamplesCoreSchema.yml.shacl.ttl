@@ -1,0 +1,199 @@
+@prefix isam: <http://resource.isamples.org/schema/> .
+@prefix mat: <https://w3id.org/isample/vocabulary/material/0.9/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+isam:PhysicalSampleRecord a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class isam:SampleRelation ;
+            sh:description "link to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 14 ;
+            sh:path isam:relatedResource ],
+        [ sh:description "free text classification terms, not from a controlled vocabulary; generally terms applied by collector" ;
+            sh:order 8 ;
+            sh:path isam:informalClassification ],
+        [ sh:description "top level context, based on the kind of feature sampled.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property." ;
+            sh:order 5 ;
+            sh:path isam:hasContextCategory ],
+        [ sh:description "free text description of the subject of a triple." ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path isam:description ],
+        [ sh:maxCount 1 ;
+            sh:order 15 ;
+            sh:path isam:authorizedBy ],
+        [ sh:description "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 2 ;
+            sh:path isam:label ],
+        [ sh:maxCount 1 ;
+            sh:order 16 ;
+            sh:path isam:compliesWith ],
+        [ sh:description "specify the kind of material that constitutes the sample" ;
+            sh:in ( mat:anyanthropogenicmaterial mat:otheranthropogenicmaterial mat:anthropogenicmetal mat:anyice mat:biogenicnonorganicmaterial mat:dispersedmedia mat:fluid mat:gas mat:waterice mat:liquidwater mat:material mat:mineral mat:mixedsoilsedimentrock mat:earthmaterial mat:nonaqueousliquid "Not Provided" mat:organicmaterial mat:particulate mat:rockorsediment mat:rock mat:sediment mat:soil ) ;
+            sh:order 6 ;
+            sh:path isam:hasMaterialCategory ],
+        [ sh:description "URI that identifies the physical sample described by this record" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 3 ;
+            sh:path isam:sampleidentifier ],
+        [ sh:description "identifier for the JSON schema for validating this document" ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <http://resource.isamples.org/schema/$schema> ],
+        [ sh:class isam:Curation ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 13 ;
+            sh:path isam:curation ],
+        [ sh:description "identifier for this document" ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path <http://resource.isamples.org/schema/@id> ],
+        [ sh:description "free text categorization of sample to support discovery" ;
+            sh:order 9 ;
+            sh:path isam:keywords ],
+        [ sh:description "specify the kind of object that the specimen is" ;
+            sh:order 7 ;
+            sh:path isam:hasSpecimenCategory ],
+        [ sh:class isam:SamplingEvent ;
+            sh:description "object that documents the sampling event--who, where, when the specimen was obtained" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 10 ;
+            sh:path isam:producedBy ],
+        [ sh:description "term to specify why a sample was collection." ;
+            sh:maxCount 1 ;
+            sh:order 12 ;
+            sh:path isam:samplingPurpose ],
+        [ sh:description "identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information." ;
+            sh:maxCount 1 ;
+            sh:order 11 ;
+            sh:path isam:registrant ] ;
+    sh:targetClass isam:PhysicalSampleRecord .
+
+isam:Curation a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "object contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "free text description of the subject of a triple." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path isam:description ],
+        [ sh:description "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path isam:label ],
+        [ sh:description "cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site." ;
+            sh:order 2 ;
+            sh:path isam:accessConstraints ],
+        [ sh:description "String with person name and affiliation, or organization name, and their role relative to the parent element." ;
+            sh:order 4 ;
+            sh:path isam:responsibility ],
+        [ sh:description "information about where and how the sample is currently stored" ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path isam:curationLocation ] ;
+    sh:targetClass isam:Curation .
+
+isam:GeospatialDDCoordLocation a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "angular coordinate measured positive north from the equator." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path isam:latitude ],
+        [ sh:description "should be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path isam:elevation ],
+        [ sh:description "angular coordinate measured positive eastward from the prime meridian." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path isam:longitude ] ;
+    sh:targetClass isam:GeospatialDDCoordLocation .
+
+isam:SampleRelation a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "identifier for the target resource in the relationship. Start with string, should be Identifier object." ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path isam:target ],
+        [ sh:description "free text description of the subject of a triple." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path isam:description ],
+        [ sh:description "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path isam:label ],
+        [ sh:description "term to identify realationship between host sample and the sample relation target. Should be controlled vocabulary (ScopedName). for now start with string, 'derivedFrom'." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path isam:relationship ] ;
+    sh:targetClass isam:SampleRelation .
+
+isam:SamplingEvent a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path isam:label ],
+        [ sh:class isam:SamplingSite ;
+            sh:description "object that identifies the place where the sample was collected" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 6 ;
+            sh:path isam:samplingSite ],
+        [ sh:description "Date on which the sample was collected." ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path isam:resultTime ],
+        [ sh:description "String with person name and affiliation, or organization name, and their role relative to the parent element." ;
+            sh:order 4 ;
+            sh:path isam:responsibility ],
+        [ sh:description "free text description of the subject of a triple." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path isam:description ],
+        [ sh:description "what does the sample represent." ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path isam:hasFeatureOfInterest ],
+        [ sh:description "identifier for this document" ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path <http://resource.isamples.org/schema/@id> ] ;
+    sh:targetClass isam:SamplingEvent .
+
+isam:SamplingSite a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:class isam:GeospatialDDCoordLocation ;
+            sh:description "geopatial location of site; required default is WGS84 latitude, longitude in decimal degrees. Elevation as a string with number, unit of measure, and datum." ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 2 ;
+            sh:path isam:location ],
+        [ sh:description "one or more names by which the sampling site is known." ;
+            sh:order 3 ;
+            sh:path isam:placeName ],
+        [ sh:description "free text description of the subject of a triple." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path isam:description ],
+        [ sh:description "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset." ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path isam:label ] ;
+    sh:targetClass isam:SamplingSite .
+
