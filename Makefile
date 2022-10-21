@@ -14,10 +14,12 @@ SOURCE_FILES := $(shell find $(SCHEMA_DIR) -name '*.yaml')
 SCHEMA_NAMES = $(patsubst $(SCHEMA_DIR)/%.yaml, %, $(SOURCE_FILES))
 VOCAB_FILES := $(shell find $(VOCAB_DIR) -name '*.ttl')
 
-SCHEMA_NAME = isamplescore
+SCHEMA_NAME = iSamplesCoreSchema
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
-PKG_TGTS = jsonld_context json json_schema python
-TGTS = docs $(PKG_TGTS)
+#PKG_TGTS = jsonld_context jsonld json_schema owl shacl python
+PKG_TGTS = json_schema
+#TGTS = docs $(PKG_TGTS)
+TGTS = $(PKG_TGTS)
 
 # Targets by PKG_TGT
 PKG_T_GRAPHQL = $(PKG_DIR)/graphql
@@ -112,7 +114,7 @@ tdir-%:
 # MARKDOWN DOCS
 #      Generate documentation ready for mkdocs
 # ---------------------------------------
-gen-docs: docs/index.md
+gen-docs: generated/markdown/index.md
 .PHONY: gen-docs
 
 vocabs: 
