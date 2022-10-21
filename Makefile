@@ -16,7 +16,7 @@ VOCAB_FILES := $(shell find $(VOCAB_DIR) -name '*.ttl')
 
 SCHEMA_NAME = isamplescore
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
-PKG_TGTS = jsonld_context json json_schema
+PKG_TGTS = jsonld_context json json_schema python
 TGTS = docs $(PKG_TGTS)
 
 # Targets by PKG_TGT
@@ -112,7 +112,7 @@ tdir-%:
 # MARKDOWN DOCS
 #      Generate documentation ready for mkdocs
 # ---------------------------------------
-gen-docs: vocabs docs/index.md
+gen-docs: docs/index.md
 .PHONY: gen-docs
 
 vocabs: 
