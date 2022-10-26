@@ -353,52 +353,49 @@ classes:
             is considered twin of physical object, a representation. IGSN is recommended.
             Must be a URI that can be dereferenced on the web.
         slots:
-          - "$schema"
-          - "@id"
-          - label
-          - sampleidentifier
-          - description
-          - hasContextCategory
-          - hasMaterialCategory
-          - hasSpecimenCategory
-          - informalClassification
-          - keywords
-          - producedBy
-          - registrant
-          - samplingPurpose
+          - authorized_by
+          - complies_with
           - curation
-          - relatedResource
-          - authorizedBy
-          - compliesWith
+          - description
+          - has_context_category
+          - has_material_category
+          - has_specimen_category
+          - informal_classification
+          - keywords
+          - label
+          - produced_by
+          - related_resource
+          - registrant
+          - sample_identifier
+          - sampling_purpose
         slot_usage:
             label:
                 required: true
-            sampleidentifier:
+            sample_identifier:
                 required: true
     SamplingSite:
         description:
         slots:
-          - label
           - description
+          - label
           - location
-          - placeName
+          - place_name
     SamplingEvent:
         description:
         slots:
-          - "@id"
-          - label
           - description
-          - hasFeatureOfInterest
+          - has_feature_of_interest
+          - label
           - responsibility
-          - resultTime
-          - samplingSite
+          - result_time
+          - sampling_site
     GeospatialDDCoordLocation:
         description:
         slots:
           - elevation
           - latitude
           - longitude
-    Curation:
+    SpecimenCuration:
         description: object contains information about current storage of sample,
             access to sample, and events in curation history. Curation as used here
             starts when the sample is removed from its original context, and might
@@ -406,146 +403,82 @@ classes:
             to analysis preparation such as crushing, dissolution, evaporation, filtering
             are considered part of the sampling method for the derived child sample.
         slots:
-          - label
+          - access_constraints
+          - curation_location
           - description
-          - accessConstraints
-          - curationLocation
+          - label
           - responsibility
     SampleRelation:
         description:
         slots:
-          - label
           - description
+          - label
           - relationship
           - target
 
 slots:
-    "@id":
-        range: string
-        description: identifier for this document
-    "$schema":
-        range: string
-        description: identifier for the JSON schema for validating this document
-    authorizedBy:
-        range: string
-    compliesWith:
-        range: string
-    relatedResource:
-        range: SampleRelation
-        description: link to related resource with relationship property to indicate
-            nature of connection. Target should be identifier for a resource.
-    relationship:
-        range: string
-        description: term to identify realationship between host sample and the sample
-            relation target. Should be controlled vocabulary (ScopedName). for now
-            start with string, 'derivedFrom'.
-    target:
-        range: string
-        description: identifier for the target resource in the relationship. Start
-            with string, should be Identifier object.
-    accessConstraints:
+    access_constraints:
         range: string
         description: cultural, legal or other policy issues that bear on access to
             view, borrow, or subsample a sample or visit a sampling site.
         multivalued: true
+    authorized_by:
+        range: string
     curation:
-        range: Curation
-    curationLocation:
+        range: SpecimenCuration
+    curation_location:
         range: string
         description: information about where and how the sample is currently stored
-    label:
+    complies_with:
         range: string
-        description: a human intelligible string used to identify a thing, i.e. the
-            name to use for the thing; should be unique in the scope of a sample collection
-            or dataset.
-        close_mappings: rdfs:label
     description:
         range: string
         description: free text description of the subject of a triple.
         close_mappings: dct:description
-    informalClassification:
+    elevation:
+        range: string
+        domain: GeospatialDDCoordLocation
+        description: should be a number and Unit of measure, and the datum. e.g. 401
+            m above mean sea level.
+    informal_classification:
         range: string
         domain: PhysicalSampleRecord
         description: free text classification terms, not from a controlled vocabulary;
             generally terms applied by collector
         multivalued: true
-    registrant:
-        range: string
-        domain: PhysicalSampleRecord
-        description: identification of the agent that registered the sample, with
-            contact information. Should include person name and affiliation, or position
-            name and affiliation, or just organization name. e-mail address is preferred
-            contact information.
-    sampleidentifier:
-        range: string
-        domain: PhysicalSampleRecord
-        description: URI that identifies the physical sample described by this record
-        close_mappings: sdo:identifier
-    samplingPurpose:
-        range: string
-        domain: PhysicalSampleRecord
-        description: term to specify why a sample was collection.
-    keywords:
-        range: string
-        domain: PhysicalSampleRecord
-        description: free text categorization of sample to support discovery
-        close_mappings: sdo:keywords
-        multivalued: true
-    hasContextCategory:
+    has_context_category:
         range: string
         domain: PhysicalSampleRecord
         description: top level context, based on the kind of feature sampled.  Specific
             identification of the sampled feature of interest is done through the
             SamplingEvent/Feature of Interest property.
         multivalued: true
-    hasMaterialCategory:
+    has_feature_of_interest:
+        range: string
+        domain: SamplingEvent
+        description: what does the sample represent.
+    has_material_category:
         range: materialtype
         domain: PhysicalSampleRecord
         description: specify the kind of material that constitutes the sample
         multivalued: true
-    hasSpecimenCategory:
+    has_specimen_category:
         range: string
         domain: PhysicalSampleRecord
         description: specify the kind of object that the specimen is
         multivalued: true
-    producedBy:
-        range: SamplingEvent
+    keywords:
+        range: string
         domain: PhysicalSampleRecord
-        description: object that documents the sampling event--who, where, when the
-            specimen was obtained
-    location:
-        range: GeospatialDDCoordLocation
-        domain: SamplingSite
-        description: geopatial location of site; required default is WGS84 latitude,
-            longitude in decimal degrees. Elevation as a string with number, unit
-            of measure, and datum.
-    placeName:
-        range: string
-        domain: SamplingSite
-        description: one or more names by which the sampling site is known.
+        description: free text categorization of sample to support discovery
+        close_mappings: sdo:keywords
         multivalued: true
-    hasFeatureOfInterest:
+    label:
         range: string
-        domain: SamplingEvent
-        description: what does the sample represent.
-    responsibility:
-        range: string
-        description: String with person name and affiliation, or organization name,
-            and their role relative to the parent element.
-        multivalued: true
-    resultTime:
-        range: date
-        domain: SamplingEvent
-        description: Date on which the sample was collected.
-    samplingSite:
-        range: SamplingSite
-        domain: SamplingEvent
-        description: object that identifies the place where the sample was collected
-    elevation:
-        range: string
-        domain: GeospatialDDCoordLocation
-        description: should be a number and Unit of measure, and the datum. e.g. 401
-            m above mean sea level.
+        description: a human intelligible string used to identify a thing, i.e. the
+            name to use for the thing; should be unique in the scope of a sample collection
+            or dataset.
+        close_mappings: rdfs:label
     latitude:
         range: decimal
         domain: GeospatialDDCoordLocation
@@ -555,3 +488,61 @@ slots:
         domain: GeospatialDDCoordLocation
         description: angular coordinate measured positive eastward from the prime
             meridian.
+    location:
+        range: GeospatialDDCoordLocation
+        domain: SamplingSite
+        description: geopatial location of site; required default is WGS84 latitude,
+            longitude in decimal degrees. Elevation as a string with number, unit
+            of measure, and datum.
+    place_name:
+        range: string
+        domain: SamplingSite
+        description: one or more names by which the sampling site is known.
+        multivalued: true
+    produced_by:
+        range: SamplingEvent
+        domain: PhysicalSampleRecord
+        description: object that documents the sampling event--who, where, when the
+            specimen was obtained
+    registrant:
+        range: string
+        domain: PhysicalSampleRecord
+        description: identification of the agent that registered the sample, with
+            contact information. Should include person name and affiliation, or position
+            name and affiliation, or just organization name. e-mail address is preferred
+            contact information.
+    related_resource:
+        range: SampleRelation
+        description: link to related resource with relationship property to indicate
+            nature of connection. Target should be identifier for a resource.
+    relationship:
+        range: string
+        description: term to identify realationship between host sample and the sample
+            relation target. Should be controlled vocabulary (ScopedName). for now
+            start with string, 'derivedFrom'.
+    sample_identifier:
+        range: string
+        domain: PhysicalSampleRecord
+        description: URI that identifies the physical sample described by this record
+        close_mappings: sdo:identifier
+    sampling_purpose:
+        range: string
+        domain: PhysicalSampleRecord
+        description: term to specify why a sample was collection.
+    target:
+        range: string
+        description: identifier for the target resource in the relationship. Start
+            with string, should be Identifier object.
+    responsibility:
+        range: string
+        description: String with person name and affiliation, or organization name,
+            and their role relative to the parent element.
+        multivalued: true
+    result_time:
+        range: date
+        domain: SamplingEvent
+        description: Date on which the sample was collected.
+    sampling_site:
+        range: SamplingSite
+        domain: SamplingEvent
+        description: object that identifies the place where the sample was collected
