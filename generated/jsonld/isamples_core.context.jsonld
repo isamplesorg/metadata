@@ -1,0 +1,49 @@
+{
+   "_comments": "Auto generated from isamples_core.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-10-26T11:43:15\n    Schema: physicalSample\n    metamodel version: 1.7.0\n    model version: 20221007\n    \n    id: http://resource.isamples.org/schema/0.2.1\n    description: Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change 'id' to '@id' and 'schema' to '$schema'.  Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "@context": {
+      "dct": "http://purl.org/dc/terms/",
+      "isam": "http://resource.isamples.org/schema/",
+      "mat": "https://w3id.org/isample/vocabulary/material/0.9/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "sdo": "http://schema.org/",
+      "sf": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "spec": "https://w3id.org/isample/vocabulary/specimentype/0.9/",
+      "w3cpos": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "@vocab": "http://resource.isamples.org/schema/",
+      "curation": {
+         "@type": "@id"
+      },
+      "has_material_category": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "latitude": {
+         "@type": "xsd:decimal"
+      },
+      "location": {
+         "@type": "@id"
+      },
+      "longitude": {
+         "@type": "xsd:decimal"
+      },
+      "produced_by": {
+         "@type": "@id"
+      },
+      "related_resource": {
+         "@type": "@id"
+      },
+      "result_time": {
+         "@type": "xsd:date"
+      },
+      "sampling_site": {
+         "@type": "@id"
+      }
+   }
+}
+
