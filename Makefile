@@ -100,7 +100,7 @@ tdir-%:
 # MARKDOWN DOCS
 #      Generate documentation ready for mkdocs
 # ---------------------------------------
-gen-docs: $(TARGET_DIR)/docs/index.md
+gen-docs: vocabs $(TARGET_DIR)/docs/index.md
 	cp -R $(MODEL_DOCS_DIR)/*.md $(TARGET_DIR)/docs
 #	# mkdocs.yaml moves from the target/docs to the docs directory
 	$(RUN) mkdocs build
@@ -108,9 +108,9 @@ gen-docs: $(TARGET_DIR)/docs/index.md
 
 vocabs: 
 	mkdir -p ${TARGET_DIR}/docs/vocabularies
-	python tools/vocab2md.py ${VOCAB_DIR}/materialType.ttl > $(TARGET_DIR)/docs/vocabularies/materialtype.md
-	python tools/vocab2md.py ${VOCAB_DIR}/sampledFeature.ttl > $(TARGET_DIR)/docs/vocabularies/sampledfeature.md
-	python tools/vocab2md.py ${VOCAB_DIR}/specimenType.ttl > $(TARGET_DIR)/docs/vocabularies/specimentype.md
+	python tools/vocab2md.py ${VOCAB_DIR}/materialtype.ttl > $(TARGET_DIR)/docs/vocabularies/materialtype.md
+	python tools/vocab2md.py ${VOCAB_DIR}/sampledfeature.ttl > $(TARGET_DIR)/docs/vocabularies/sampledfeature.md
+	python tools/vocab2md.py ${VOCAB_DIR}/specimentype.ttl > $(TARGET_DIR)/docs/vocabularies/specimentype.md
 
 $(TARGET_DIR)/docs/index.md: $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml tdir-docs
 	$(RUN) gen-markdown $(GEN_OPTS) --mergeimports --notypesdir --metadata --dir $(TARGET_DIR)/docs $<
