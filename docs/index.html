@@ -1,1272 +1,707 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.5.4">
-    
-    
-      
-        <title>iSamples Core Model Documentation</title>
-      
-    
-    
-      <link rel="stylesheet" href="assets/stylesheets/main.80dcb947.min.css">
-      
-        
-        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
-        
-      
-      
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
 
-    
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-    
-    
-    
-  </head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
-  
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#physicalsample" class="md-skip">
-          Skip to content
-        </a>
-      
+
+<title>iSamples Model</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked fullcontent">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">(Untitled)</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
     </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
-<header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="iSamples Core Model Documentation" class="md-header__button md-logo" aria-label="iSamples Core Model Documentation" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            iSamples Core Model Documentation
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
-            
-              physicalSample
-            
-          </span>
-        </div>
-      </div>
-    </div>
-    
-      <form class="md-header__option" data-md-component="palette">
-        
-          
-          
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
-          
-            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
-            </label>
-          
-        
-          
-          
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
-          
-            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
-            </label>
-          
-        
-      </form>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
-    
   </nav>
-  
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="." title="iSamples Core Model Documentation" class="md-nav__button md-logo" aria-label="iSamples Core Model Documentation" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
-
-    </a>
-    iSamples Core Model Documentation
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          physicalSample
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
-        physicalSample
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#classes" class="md-nav__link">
-    Classes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mixins" class="md-nav__link">
-    Mixins
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slots" class="md-nav__link">
-    Slots
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enums" class="md-nav__link">
-    Enums
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#subsets" class="md-nav__link">
-    Subsets
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#types" class="md-nav__link">
-    Types
-  </a>
-  
-    <nav class="md-nav" aria-label="Types">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#builtin" class="md-nav__link">
-    Built in
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#defined" class="md-nav__link">
-    Defined
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Date/" class="md-nav__link">
-        Type: date
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Decimal/" class="md-nav__link">
-        Type: decimal
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="GeospatialDDCoordLocation/" class="md-nav__link">
-        Class: GeospatialDDCoordLocation
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="PhysicalSampleRecord/" class="md-nav__link">
-        Class: PhysicalSampleRecord
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="PhysicalSampleRecord_label/" class="md-nav__link">
-        Slot: label
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="PhysicalSampleRecord_sample_identifier/" class="md-nav__link">
-        Slot: sample_identifier
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="SampleRelation/" class="md-nav__link">
-        Class: SampleRelation
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="SamplingEvent/" class="md-nav__link">
-        Class: SamplingEvent
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="SamplingSite/" class="md-nav__link">
-        Class: SamplingSite
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="SpecimenCuration/" class="md-nav__link">
-        Class: SpecimenCuration
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="String/" class="md-nav__link">
-        Type: string
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="access_constraints/" class="md-nav__link">
-        Slot: access_constraints
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="authorized_by/" class="md-nav__link">
-        Slot: authorized_by
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="complies_with/" class="md-nav__link">
-        Slot: complies_with
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="contextcategory/" class="md-nav__link">
-        Enum: contextcategory
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="curation/" class="md-nav__link">
-        Slot: curation
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="curation_location/" class="md-nav__link">
-        Slot: curation_location
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="description/" class="md-nav__link">
-        Slot: description
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="elevation/" class="md-nav__link">
-        Slot: elevation
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="glossary/" class="md-nav__link">
-        iSamples Glossary
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="has_context_category/" class="md-nav__link">
-        Slot: has_context_category
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="has_feature_of_interest/" class="md-nav__link">
-        Slot: has_feature_of_interest
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="has_material_category/" class="md-nav__link">
-        Slot: has_material_category
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="has_specimen_category/" class="md-nav__link">
-        Slot: has_specimen_category
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="informal_classification/" class="md-nav__link">
-        Slot: informal_classification
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="keywords/" class="md-nav__link">
-        Slot: keywords
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="label/" class="md-nav__link">
-        Slot: label
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="latitude/" class="md-nav__link">
-        Slot: latitude
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="location/" class="md-nav__link">
-        Slot: location
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="longitude/" class="md-nav__link">
-        Slot: longitude
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="materialtype/" class="md-nav__link">
-        Enum: materialtype
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="place_name/" class="md-nav__link">
-        Slot: place_name
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="produced_by/" class="md-nav__link">
-        Slot: produced_by
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="registrant/" class="md-nav__link">
-        Slot: registrant
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="related_resource/" class="md-nav__link">
-        Slot: related_resource
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="relationship/" class="md-nav__link">
-        Slot: relationship
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="responsibility/" class="md-nav__link">
-        Slot: responsibility
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="result_time/" class="md-nav__link">
-        Slot: result_time
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="sample_identifier/" class="md-nav__link">
-        Slot: sample_identifier
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="sampling_purpose/" class="md-nav__link">
-        Slot: sampling_purpose
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="sampling_site/" class="md-nav__link">
-        Slot: sampling_site
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="specimencategory/" class="md-nav__link">
-        Enum: specimencategory
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="target/" class="md-nav__link">
-        Slot: target
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_45" type="checkbox" id="__nav_45" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_45">
-          Vocabularies
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Vocabularies" data-md-level="1">
-        <label class="md-nav__title" for="__nav_45">
-          <span class="md-nav__icon md-icon"></span>
-          Vocabularies
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="vocabularies/materialtype/" class="md-nav__link">
-        iSamples Materials Vocabulary
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="vocabularies/sampledfeature/" class="md-nav__link">
-        Sampled Feature Type vocabulary
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="vocabularies/specimentype/" class="md-nav__link">
-        iSamples Material Sample Type Vocabulary
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#classes" class="md-nav__link">
-    Classes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mixins" class="md-nav__link">
-    Mixins
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slots" class="md-nav__link">
-    Slots
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enums" class="md-nav__link">
-    Enums
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#subsets" class="md-nav__link">
-    Subsets
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#types" class="md-nav__link">
-    Types
-  </a>
-  
-    <nav class="md-nav" aria-label="Types">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#builtin" class="md-nav__link">
-    Built in
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#defined" class="md-nav__link">
-    Defined
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-
-<h1 id="physicalsample">physicalSample<a class="headerlink" href="#physicalsample" title="Permanent link">&para;</a></h1>
-<p><strong>metamodel version:</strong> 1.7.0</p>
-<p><strong>version:</strong> 20221007</p>
-<p>Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change 'id' to '@id' and 'schema' to '$schema'.  Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07</p>
-<h3 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="GeospatialDDCoordLocation/">GeospatialDDCoordLocation</a></li>
-<li><a href="PhysicalSampleRecord/">PhysicalSampleRecord</a> - This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.</li>
-<li><a href="SampleRelation/">SampleRelation</a></li>
-<li><a href="SamplingEvent/">SamplingEvent</a></li>
-<li><a href="SamplingSite/">SamplingSite</a></li>
-<li><a href="SpecimenCuration/">SpecimenCuration</a> - object contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.</li>
-</ul>
-<h3 id="mixins">Mixins<a class="headerlink" href="#mixins" title="Permanent link">&para;</a></h3>
-<h3 id="slots">Slots<a class="headerlink" href="#slots" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="access_constraints/">access_constraints</a> - cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.</li>
-<li><a href="authorized_by/">authorized_by</a></li>
-<li><a href="complies_with/">complies_with</a></li>
-<li><a href="curation/">curation</a></li>
-<li><a href="curation_location/">curation_location</a> - information about where and how the sample is currently stored</li>
-<li><a href="description/">description</a> - free text description of the subject of a triple.</li>
-<li><a href="elevation/">elevation</a> - should be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level.</li>
-<li><a href="has_context_category/">has_context_category</a> - top level context, based on the kind of feature sampled.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.</li>
-<li><a href="has_feature_of_interest/">has_feature_of_interest</a> - what does the sample represent.</li>
-<li><a href="has_material_category/">has_material_category</a> - specify the kind of material that constitutes the sample</li>
-<li><a href="has_specimen_category/">has_specimen_category</a> - specify the kind of object that the specimen is</li>
-<li><a href="informal_classification/">informal_classification</a> - free text classification terms, not from a controlled vocabulary; generally terms applied by collector</li>
-<li><a href="keywords/">keywords</a> - free text categorization of sample to support discovery</li>
-<li><a href="label/">label</a> - a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.<ul>
-<li><a href="PhysicalSampleRecord_label/">PhysicalSampleRecord➞label</a></li>
-</ul>
-</li>
-<li><a href="latitude/">latitude</a> - angular coordinate measured positive north from the equator.</li>
-<li><a href="location/">location</a> - geopatial location of site; required default is WGS84 latitude, longitude in decimal degrees. Elevation as a string with number, unit of measure, and datum.</li>
-<li><a href="longitude/">longitude</a> - angular coordinate measured positive eastward from the prime meridian.</li>
-<li><a href="place_name/">place_name</a> - one or more names by which the sampling site is known.</li>
-<li><a href="produced_by/">produced_by</a> - object that documents the sampling event--who, where, when the specimen was obtained</li>
-<li><a href="registrant/">registrant</a> - identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.</li>
-<li><a href="related_resource/">related_resource</a> - link to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource.</li>
-<li><a href="relationship/">relationship</a> - term to identify realationship between host sample and the sample relation target. Should be controlled vocabulary (ScopedName). for now start with string, 'derivedFrom'.</li>
-<li><a href="responsibility/">responsibility</a> - String with person name and affiliation, or organization name, and their role relative to the parent element.</li>
-<li><a href="result_time/">result_time</a> - Date on which the sample was collected.</li>
-<li><a href="sample_identifier/">sample_identifier</a> - URI that identifies the physical sample described by this record<ul>
-<li><a href="PhysicalSampleRecord_sample_identifier/">PhysicalSampleRecord➞sample_identifier</a></li>
-</ul>
-</li>
-<li><a href="sampling_purpose/">sampling_purpose</a> - term to specify why a sample was collection.</li>
-<li><a href="sampling_site/">sampling_site</a> - object that identifies the place where the sample was collected</li>
-<li><a href="target/">target</a> - identifier for the target resource in the relationship. Start with string, should be Identifier object.</li>
-</ul>
-<h3 id="enums">Enums<a class="headerlink" href="#enums" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="contextcategory/">contextcategory</a> - top level context, based on the kind of feature sampled,from the SampledFeature vocabulary.  Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.</li>
-<li><a href="materialtype/">materialtype</a> - categories for kinds of material that constitute the sample</li>
-<li><a href="specimencategory/">specimencategory</a> - specify the kind of object that the specimen is</li>
-</ul>
-<h3 id="subsets">Subsets<a class="headerlink" href="#subsets" title="Permanent link">&para;</a></h3>
-<h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
-<h4 id="builtin">Built in<a class="headerlink" href="#builtin" title="Permanent link">&para;</a></h4>
-<ul>
-<li><strong>Decimal</strong></li>
-<li><strong>str</strong></li>
-</ul>
-<h4 id="defined">Defined<a class="headerlink" href="#defined" title="Permanent link">&para;</a></h4>
-<ul>
-<li><a href="Date/">Date</a>  (<strong>str</strong>) </li>
-<li><a href="Decimal/">Decimal</a>  (<strong>Decimal</strong>) </li>
-<li><a href="String/">String</a>  (<strong>str</strong>) </li>
-</ul>
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-        </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-      
-        
-        <a href="Date/" class="md-footer__link md-footer__link--next" aria-label="Next: Type: date" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Type: date
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">iSamples Model</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://hyde.cyverse.org/isamples_central/ui/" title="" class="sidebar-tool px-1"><i class="bi bi-table"></i></a>
+    <a href="https://github.com/isamplesorg" title="" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="https://isamples.slack.com/" title="" class="sidebar-tool px-1"><i class="bi bi-slack"></i></a>
+    <a href="https://twitter.com/isamplesorg" title="" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
 </div>
-      
     </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Model</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">Schema for documenting physical samples</a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Classes</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./GeospatialDDCoordLocation.html" class="sidebar-item-text sidebar-link">GeospatialDDCoordLocation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./PhysicalSampleRecord.html" class="sidebar-item-text sidebar-link">PhysicalSampleRecord</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./SampleRelation.html" class="sidebar-item-text sidebar-link">SampleRelation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./SamplingEvent.html" class="sidebar-item-text sidebar-link">SamplingEvent</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./SamplingSite.html" class="sidebar-item-text sidebar-link">SamplingSite</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./SpecimenCuration.html" class="sidebar-item-text sidebar-link">SpecimenCuration</a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Slots</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./access_constraints.html" class="sidebar-item-text sidebar-link">access_constraints</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./authorized_by.html" class="sidebar-item-text sidebar-link">authorized_by</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./complies_with.html" class="sidebar-item-text sidebar-link">complies_with</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./curation.html" class="sidebar-item-text sidebar-link">curation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./curation_location.html" class="sidebar-item-text sidebar-link">curation_location</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./description.html" class="sidebar-item-text sidebar-link">description</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./elevation.html" class="sidebar-item-text sidebar-link">elevation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./has_context_category.html" class="sidebar-item-text sidebar-link">has_context_category</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./has_feature_of_interest.html" class="sidebar-item-text sidebar-link">has_feature_of_interest</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./has_material_category.html" class="sidebar-item-text sidebar-link">has_material_category</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./has_specimen_category.html" class="sidebar-item-text sidebar-link">has_specimen_category</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./informal_classification.html" class="sidebar-item-text sidebar-link">informal_classification</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./keywords.html" class="sidebar-item-text sidebar-link">keywords</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./label.html" class="sidebar-item-text sidebar-link">label</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./latitude.html" class="sidebar-item-text sidebar-link">latitude</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./location.html" class="sidebar-item-text sidebar-link">location</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./longitude.html" class="sidebar-item-text sidebar-link">longitude</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./place_name.html" class="sidebar-item-text sidebar-link">place_name</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./produced_by.html" class="sidebar-item-text sidebar-link">produced_by</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./registrant.html" class="sidebar-item-text sidebar-link">registrant</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./related_resource.html" class="sidebar-item-text sidebar-link">related_resource</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./relationship.html" class="sidebar-item-text sidebar-link">relationship</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./responsibility.html" class="sidebar-item-text sidebar-link">responsibility</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./result_time.html" class="sidebar-item-text sidebar-link">result_time</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sample_identifier.html" class="sidebar-item-text sidebar-link">sample_identifier</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sampling_purpose.html" class="sidebar-item-text sidebar-link">sampling_purpose</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sampling_site.html" class="sidebar-item-text sidebar-link">sampling_site</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./target.html" class="sidebar-item-text sidebar-link">target</a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">Enums</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Contextcategory.html" class="sidebar-item-text sidebar-link">Contextcategory</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Materialtype.html" class="sidebar-item-text sidebar-link">Materialtype</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Specimencategory.html" class="sidebar-item-text sidebar-link">Specimencategory</a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">Types</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Date.html" class="sidebar-item-text sidebar-link">Date</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Decimal.html" class="sidebar-item-text sidebar-link">Decimal</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./String.html" class="sidebar-item-text sidebar-link">String</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="schema-for-documenting-physical-samples" class="level1">
+<h1>Schema for documenting physical samples</h1>
+<p>Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change ‘id’ to ‘<span class="citation" data-cites="id">@id</span>’ and ‘schema’ to ‘$schema’. Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07</p>
+<p>URI: http://resource.isamples.org/schema/0.2.1 Name: physicalSample</p>
+<section id="classes" class="level2">
+<h2 class="anchored" data-anchor-id="classes">Classes</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="./GeospatialDDCoordLocation.html">GeospatialDDCoordLocation</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="./PhysicalSampleRecord.html">PhysicalSampleRecord</a></td>
+<td>This is a data object that is a digital representation of a physical sample, …</td>
+</tr>
+<tr class="odd">
+<td><a href="./SampleRelation.html">SampleRelation</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="./SamplingEvent.html">SamplingEvent</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="./SamplingSite.html">SamplingSite</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="./SpecimenCuration.html">SpecimenCuration</a></td>
+<td>object contains information about current storage of sample, access to sample…</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="slots" class="level2">
+<h2 class="anchored" data-anchor-id="slots">Slots</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Slot</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="./access_constraints.html">access_constraints</a></td>
+<td>cultural, legal or other policy issues that bear on access to view, borrow, o…</td>
+</tr>
+<tr class="even">
+<td><a href="./authorized_by.html">authorized_by</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="./complies_with.html">complies_with</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="./curation.html">curation</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="./curation_location.html">curation_location</a></td>
+<td>information about where and how the sample is currently stored</td>
+</tr>
+<tr class="even">
+<td><a href="./description.html">description</a></td>
+<td>free text description of the subject of a triple</td>
+</tr>
+<tr class="odd">
+<td><a href="./elevation.html">elevation</a></td>
+<td>should be a number and Unit of measure, and the datum</td>
+</tr>
+<tr class="even">
+<td><a href="./has_context_category.html">has_context_category</a></td>
+<td>top level context, based on the kind of feature sampled</td>
+</tr>
+<tr class="odd">
+<td><a href="./has_feature_of_interest.html">has_feature_of_interest</a></td>
+<td>what does the sample represent</td>
+</tr>
+<tr class="even">
+<td><a href="./has_material_category.html">has_material_category</a></td>
+<td>specify the kind of material that constitutes the sample</td>
+</tr>
+<tr class="odd">
+<td><a href="./has_specimen_category.html">has_specimen_category</a></td>
+<td>specify the kind of object that the specimen is</td>
+</tr>
+<tr class="even">
+<td><a href="./informal_classification.html">informal_classification</a></td>
+<td>free text classification terms, not from a controlled vocabulary; generally t…</td>
+</tr>
+<tr class="odd">
+<td><a href="./keywords.html">keywords</a></td>
+<td>free text categorization of sample to support discovery</td>
+</tr>
+<tr class="even">
+<td><a href="./label.html">label</a></td>
+<td>a human intelligible string used to identify a thing, i</td>
+</tr>
+<tr class="odd">
+<td><a href="./latitude.html">latitude</a></td>
+<td>angular coordinate measured positive north from the equator</td>
+</tr>
+<tr class="even">
+<td><a href="./location.html">location</a></td>
+<td>geopatial location of site; required default is WGS84 latitude, longitude in …</td>
+</tr>
+<tr class="odd">
+<td><a href="./longitude.html">longitude</a></td>
+<td>angular coordinate measured positive eastward from the prime meridian</td>
+</tr>
+<tr class="even">
+<td><a href="./place_name.html">place_name</a></td>
+<td>one or more names by which the sampling site is known</td>
+</tr>
+<tr class="odd">
+<td><a href="./produced_by.html">produced_by</a></td>
+<td>object that documents the sampling event–who, where, when the specimen was o…</td>
+</tr>
+<tr class="even">
+<td><a href="./registrant.html">registrant</a></td>
+<td>identification of the agent that registered the sample, with contact informat…</td>
+</tr>
+<tr class="odd">
+<td><a href="./related_resource.html">related_resource</a></td>
+<td>link to related resource with relationship property to indicate nature of con…</td>
+</tr>
+<tr class="even">
+<td><a href="./relationship.html">relationship</a></td>
+<td>term to identify realationship between host sample and the sample relation ta…</td>
+</tr>
+<tr class="odd">
+<td><a href="./responsibility.html">responsibility</a></td>
+<td>String with person name and affiliation, or organization name, and their role…</td>
+</tr>
+<tr class="even">
+<td><a href="./result_time.html">result_time</a></td>
+<td>Date on which the sample was collected</td>
+</tr>
+<tr class="odd">
+<td><a href="./sample_identifier.html">sample_identifier</a></td>
+<td>URI that identifies the physical sample described by this record</td>
+</tr>
+<tr class="even">
+<td><a href="./sampling_purpose.html">sampling_purpose</a></td>
+<td>term to specify why a sample was collection</td>
+</tr>
+<tr class="odd">
+<td><a href="./sampling_site.html">sampling_site</a></td>
+<td>object that identifies the place where the sample was collected</td>
+</tr>
+<tr class="even">
+<td><a href="./target.html">target</a></td>
+<td>identifier for the target resource in the relationship</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="enumerations" class="level2">
+<h2 class="anchored" data-anchor-id="enumerations">Enumerations</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Enumeration</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="./Contextcategory.html">Contextcategory</a></td>
+<td>top level context, based on the kind of feature sampled,from the SampledFeatu…</td>
+</tr>
+<tr class="even">
+<td><a href="./Materialtype.html">Materialtype</a></td>
+<td>categories for kinds of material that constitute the sample</td>
+</tr>
+<tr class="odd">
+<td><a href="./Specimencategory.html">Specimencategory</a></td>
+<td>specify the kind of object that the specimen is</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="types" class="level2">
+<h2 class="anchored" data-anchor-id="types">Types</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="./Date.html">Date</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="./Decimal.html">Decimal</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><a href="./String.html">String</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="subsets" class="level2">
+<h2 class="anchored" data-anchor-id="subsets">Subsets</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Subset</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© Copyright 2020, iSamples Project. This material is based upon work supported by the National Science Foundation under Grant Numbers <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004839">2004839</a>, <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004562">2004562</a>, <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004642">2004642</a>, and <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004815">2004815</a>. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the <a href="https://nsf.gov/">National Science Foundation</a>.</div>   
   </div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
-    
-    
-      <script src="assets/javascripts/bundle.078830c0.min.js"></script>
-      
-    
-  </body>
-</html>
+
+
+
+</body></html>
