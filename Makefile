@@ -100,7 +100,7 @@ tdir-%:
 # MARKDOWN DOCS
 #      Generate documentation ready for mkdocs
 # ---------------------------------------
-gen-docs: vocabs $(TARGET_DIR)/docs/index.md
+gen-docs: $(TARGET_DIR)/docs/index.md vocabs
 	# static sources
 	cp -R $(MODEL_DOCS_DIR)/*.md $(TARGET_DIR)/docs
 	# quarto configuation and customizations
