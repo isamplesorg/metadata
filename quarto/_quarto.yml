@@ -34,12 +34,6 @@ website:
         href: https://isamples.slack.com/
       - icon: twitter
         href: https://twitter.com/isamplesorg
-    contents:
-      - section: "Model"
-        contents:
-          - index.qmd
-          - section: "Vocabularies"
-            contents:
-              - vocabularies/materialtype.md
-              - vocabularies/sampledfeature.md
-              - vocabularies/specimentype.md
+
+metadata-files:
+  - _model.yml

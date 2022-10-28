@@ -1,5 +1,5 @@
 # Auto generated from isamples_core.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-10-26T11:43:29
+# Generation date: 2022-10-28T08:40:36
 # Schema: physicalSample
 #
 # id: http://resource.isamples.org/schema/0.2.1

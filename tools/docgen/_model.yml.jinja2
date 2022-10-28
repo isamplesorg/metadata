@@ -1,0 +1,27 @@
+website:
+  sidebar:
+    contents:
+      - section: "Model"
+        contents:
+          - section: "Classes"
+            contents:
+              {% for c in gen.all_class_objects()|sort(attribute=sort_by) -%}
+              - {{gen.link(c,True)}}
+              {% endfor %}
+          - section: "Slots"
+            contents:
+              {% for s in gen.all_slot_objects()|sort(attribute=sort_by) -%}
+              - {{gen.link(s,True)}}
+              {% endfor %}
+          - section: "Enums"
+            contents:
+              {% for e in gen.all_enum_objects()|sort(attribute=sort_by) -%}
+              - {{gen.link(e,True)}}
+              {% endfor %}
+          - section: "Types"
+            contents:
+              {% for t in gen.all_type_objects()|sort(attribute=sort_by) -%}
+              - {{gen.link(t,True)}}
+              {% endfor %}
+          - section: "Vocabularies"
+            contents: "vocabularies/*"

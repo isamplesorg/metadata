@@ -65,6 +65,7 @@ gen: $(patsubst %,gen-%,$(TGTS))
 clean:
 	rm -rf $(TARGET_DIR)
 	rm -rf docs
+	rm -rf $(PKG_DIR)
 	#poetry install --sync
 .PHONY: clean
 
@@ -105,7 +106,7 @@ gen-docs: $(TARGET_DIR)/docs/index.md vocabs
 	cp -R $(MODEL_DOCS_DIR)/*.md $(TARGET_DIR)/docs
 	# quarto configuation and customizations
 	cp quarto/* $(TARGET_DIR)/docs
-	cat $(TARGET_DIR)/docs/_contents.yaml >> $(TARGET_DIR)/docs/_quarto.yml
+	#cat $(TARGET_DIR)/docs/_contents.yaml >> $(TARGET_DIR)/docs/_quarto.yml
 	mkdir -p docs
 	touch docs/.nojekyll
 	# output from quarto is determined by the output-dir property in _quarto.yml
@@ -118,7 +119,7 @@ vocabs:
 	python tools/vocab2md.py ${VOCAB_DIR}/specimentype.ttl > $(TARGET_DIR)/docs/vocabularies/specimentype.md
 
 $(TARGET_DIR)/docs/index.md: $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml tdir-docs
-	$(RUN) gen-doc $(GEN_OPTS) --dialect quarto --sort-by name --format quarto --mergeimports --metadata --directory $(TARGET_DIR)/docs $<
+	python tools/docgen.py $(GEN_OPTS) --dialect quarto --sort-by name --format quarto --mergeimports --metadata --directory $(TARGET_DIR)/docs $<
 
 # ---------------------------------------
 # YAML source

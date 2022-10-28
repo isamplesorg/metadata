@@ -1,13 +1,9 @@
-"""
-This is a modified version of docgen from the linkml project.
-
-Entities are placed in subfolders, e.g. class, enum, slot, type
-"""
 import logging
+import datetime
 import os
 from copy import deepcopy
 from dataclasses import dataclass, field
-from enum import Enum
+import enum
 from pathlib import Path
 from typing import (Callable, Dict, Iterable, Iterator, List, Optional, Set,
                     TextIO, Tuple, TypeVar, Union)
@@ -29,9 +25,10 @@ from linkml_runtime.utils.schemaview import SchemaView
 from linkml.utils.generator import Generator, shared_arguments
 
 
-class MarkdownDialect(Enum):
+class MarkdownDialect(enum.Enum):
     python = "python"  ## https://python-markdown.github.io/ -- used by mkdocs
     myst = "myst"  ## https://myst-parser.readthedocs.io/en/latest/ -- used by sphinx
+    quarto = "quarto"
 
 
 # In future this may become a Union statement, but for now we only have dialects for markdown
@@ -54,7 +51,7 @@ def enshorten(input):
         toks = input.split(".")
         input = toks[0]
     if len(input) > MAX_CHARS_IN_TABLE - 3:
-        input = input[0: MAX_CHARS_IN_TABLE - 3] + "..."
+        input = input[0 : MAX_CHARS_IN_TABLE - 3] + "..."
     return input
 
 
@@ -104,10 +101,12 @@ class DocGenerator(Generator):
     It will also create an index file
     """
 
+    timestamp = datetime.datetime.now(tz=datetime.timezone.utc).isoformat()
+
     # ClassVars
     generatorname = os.path.basename(__file__)
     generatorversion = "0.0.1"
-    valid_formats = ["markdown", "rst", "html", "latex"]
+    valid_formats = ["markdown", "quarto", "rst", "html", "latex"]
     uses_schemaloader = False
     requires_metamodel = False
 
@@ -129,18 +128,13 @@ class DocGenerator(Generator):
     no_types_dir: bool = field(default_factory=lambda: False)
     use_slot_uris: bool = field(default_factory=lambda: False)
 
+
     def __post_init__(self):
         self.schemaview = SchemaView(self.schema)
         dialect = self.dialect
         if dialect is not None:
-            # TODO: simplify this
             if isinstance(dialect, str):
-                if dialect == MarkdownDialect.myst.value:
-                    dialect = MarkdownDialect.myst
-                elif dialect == MarkdownDialect.python.value:
-                    dialect = MarkdownDialect.python
-                else:
-                    raise NotImplemented(f"{dialect} not supported")
+                dialect = MarkdownDialect(dialect)
             self.dialect = dialect
         super().__post_init__()
 
@@ -162,6 +156,12 @@ class DocGenerator(Generator):
             gen=self, schema=sv.schema, schemaview=sv, **template_vars
         )
         self._write(out_str, directory, "index")  ## TODO: make configurable
+        if self.dialect == DIALECT.quarto:
+            template = self._get_template("_model", suffix="yml")
+            out_str = template.render(
+                gen=self, schema=sv.schema, schemaview=sv, **template_vars
+            )
+        self._write(out_str, directory, "_model", suffix="yml")
         if self._is_single_file_format(self.format):
             logging.info(
                 f"{self.format} is a single-page format, skipping non-index elements"
@@ -222,7 +222,7 @@ class DocGenerator(Generator):
             )
             self._write(out_str, directory, n)
 
-    def _write(self, out_str: str, directory: str, name: str) -> None:
+    def _write(self, out_str: str, directory: str, name: str, suffix:str=None) -> None:
         """
         Writes a string in desired format (e.g. markdown) to the appropriate file in a directory
 
@@ -233,7 +233,9 @@ class DocGenerator(Generator):
         """
         path = Path(directory)
         path.mkdir(parents=True, exist_ok=True)
-        file_name = f"{name}.{self._file_suffix()}"
+        if suffix is None:
+            suffix = self._file_suffix()
+        file_name = f"{name}.{suffix}"
         with open(path / file_name, "w", encoding="UTF-8") as stream:
             stream.write(out_str)
 
@@ -244,6 +246,8 @@ class DocGenerator(Generator):
         Template files are assumed to be of the form TYPE.FILE_SUFFIX.jinja2
         :return:
         """
+        if self.format == "quarto":
+            return "qmd"
         if self.format == "markdown":
             return "md"
         elif self.format == "latex":
@@ -251,7 +255,7 @@ class DocGenerator(Generator):
         else:
             return self.format
 
-    def _get_template(self, element_type: str) -> Template:
+    def _get_template(self, element_type: str, suffix=None) -> Template:
         """
         Create a jinja2 template object for a given schema element type
 
@@ -268,7 +272,9 @@ class DocGenerator(Generator):
             customize_environment(env)
             return env.get_template(path)
         else:
-            base_file_name = f"{element_type}.{self._file_suffix()}.jinja2"
+            if suffix is None:
+                suffix = self._file_suffix()
+            base_file_name = f"{element_type}.{suffix}.jinja2"
             folder = None
             if self.template_directory:
                 p = Path(self.template_directory) / base_file_name
@@ -344,7 +350,7 @@ class DocGenerator(Generator):
         sc = element.from_schema
         return f"[{curie}]({uri})"
 
-    def link(self, e: Union[Definition, DefinitionName]) -> str:
+    def link(self, e: Union[Definition, DefinitionName], target_only=False) -> str:
         """
         Render an element as a hyperlink
 
@@ -358,19 +364,19 @@ class DocGenerator(Generator):
         if self._is_external(e):
             return self.uri_link(e)
         elif isinstance(e, ClassDefinition):
-            return self._markdown_link(camelcase(e.name))
+            return self._markdown_link(camelcase(e.name), target_only=target_only)
         elif isinstance(e, EnumDefinition):
-            return self._markdown_link(camelcase(e.name))
+            return self._markdown_link(camelcase(e.name), target_only=target_only)
         elif isinstance(e, SlotDefinition):
             if self.use_slot_uris:
                 curie = self.schemaview.get_uri(e)
                 if curie is not None:
-                    return self._markdown_link(n=curie.split(":")[1], name=e.name)
-            return self._markdown_link(underscore(e.name))
+                    return self._markdown_link(n=curie.split(":")[1], name=e.name, target_only=target_only)
+            return self._markdown_link(underscore(e.name), target_only=target_only)
         elif isinstance(e, TypeDefinition):
-            return self._markdown_link(camelcase(e.name))
+            return self._markdown_link(camelcase(e.name), target_only=target_only)
         elif isinstance(e, SubsetDefinition):
-            return self._markdown_link(camelcase(e.name))
+            return self._markdown_link(camelcase(e.name), target_only=target_only)
         else:
             return e.name
 
@@ -386,7 +392,7 @@ class DocGenerator(Generator):
         else:
             return False
 
-    def _markdown_link(self, n: str, name: str = None, subfolder: str = None) -> str:
+    def _markdown_link(self, n: str, name: str = None, subfolder: str = None, target_only:bool=False) -> str:
         if subfolder:
             rel_path = f"{subfolder}/{n}"
         else:
@@ -395,11 +401,12 @@ class DocGenerator(Generator):
         # if explicit name is provided use that for display name
         if name:
             n = name
-
-        return f"[{n}]({rel_path}.md)"
+        if target_only:
+            return f"{rel_path}.{self._file_suffix()}"
+        return f"[{n}]({rel_path}.{self._file_suffix()})"
 
     def inheritance_tree(
-            self, element: Definition, children: bool = True, **kwargs
+        self, element: Definition, children: bool = True, **kwargs
     ) -> str:
         """
         Show an element in the context of its is-a hierachy
@@ -423,11 +430,11 @@ class DocGenerator(Generator):
         return s
 
     def _tree(
-            self,
-            element: Definition,
-            mixins=True,
-            descriptions=False,
-            focus: DefinitionName = None,
+        self,
+        element: Definition,
+        mixins=True,
+        descriptions=False,
+        focus: DefinitionName = None,
     ) -> Tuple[str, int]:
         sv = self.schemaview
         if element.is_a:
@@ -447,15 +454,15 @@ class DocGenerator(Generator):
         return s, depth
 
     def _tree_info(
-            self,
-            element: Definition,
-            depth: int,
-            mixins=True,
-            descriptions=False,
-            focus: DefinitionName = None,
+        self,
+        element: Definition,
+        depth: int,
+        mixins=True,
+        descriptions=False,
+        focus: DefinitionName = None,
     ) -> str:
         indent = " " * depth * 4
-
+        
         if self.use_slot_uris:
             name = self.schemaview.get_element(element).name
         else:
@@ -545,7 +552,7 @@ class DocGenerator(Generator):
         the default python markdown (used by mkdocs) or MyST (used if you
         have a sphinx site)
         """
-        if self.dialect is not None and self.dialect == MarkdownDialect.myst:
+        if self.dialect is not None and (self.dialect == MarkdownDialect.myst or self.dialect == MarkdownDialect.quarto):
             return "{mermaid}"
         else:
             return "mermaid"
@@ -587,7 +594,7 @@ class DocGenerator(Generator):
             return yaml_dumper.dumps(c)
 
     def class_induced_slots(
-            self, class_name: ClassDefinitionName
+        self, class_name: ClassDefinitionName
     ) -> Iterator[SlotDefinition]:
         """
         Yields all induced slots for a class
@@ -601,6 +608,12 @@ class DocGenerator(Generator):
         _ensure_ranked(elts)
         for e in elts:
             yield e
+
+    def all_class_names(self) -> list[str]:
+        res = []
+        for c in self.all_class_objects():
+            res.append(c.name)
+        return res
 
     def all_class_objects(self) -> Iterator[ClassDefinition]:
         """
@@ -710,7 +723,7 @@ class DocGenerator(Generator):
             return False
 
     def get_direct_slots(self, cls: ClassDefinition) -> List[SlotDefinitionName]:
-        """Fetch list of all own attributes of a class, i.e.,
+        """Fetch list of all own attributes of a class, i.e., 
         all slots that belong to the domain of a class.
 
         :param cls: class for which we want to determine the attributes
@@ -719,14 +732,14 @@ class DocGenerator(Generator):
         return cls.slots + list(cls.attributes.keys())
 
     def get_indirect_slots(self, cls: ClassDefinition) -> List[SlotDefinitionName]:
-        """Fetch list of all inherited attributes of a class, i.e.,
+        """Fetch list of all inherited attributes of a class, i.e., 
         all slots that belong to the domain of a class.
 
         :param cls: class for which we want to determine the attributes
         :return: list of all own attributes of a class
         """
         sv = self.schemaview
-
+        
         slot_list = [slot.name for slot in sv.class_induced_slots(class_name=cls.name)]
 
         return list(set(slot_list).difference(self.get_direct_slots(cls)))
@@ -743,7 +756,7 @@ class DocGenerator(Generator):
         mixins = sv.class_parents(class_name=cls.name, mixins=True, is_a=False)
         for c in mixins:
             mixed_in_slots[c] = sv.class_slots(c)
-
+            
         return mixed_in_slots
 
 

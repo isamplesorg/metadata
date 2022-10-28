@@ -224,7 +224,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "exceptiongroup"
-version = "1.0.0rc9"
+version = "1.0.0"
 description = "Backport of PEP 654 (exception groups)"
 category = "main"
 optional = false
@@ -582,29 +582,28 @@ test = ["ipykernel", "pre-commit", "pytest", "pytest-cov", "pytest-timeout"]
 
 [[package]]
 name = "linkml"
-version = "0.0.0"
+version = "1.3.10"
 description = "Linked Open Data Modeling Language"
 category = "main"
 optional = false
-python-versions = "^3.7.6"
-develop = true
+python-versions = ">=3.7.6,<4.0.0"
 
 [package.dependencies]
-antlr4-python3-runtime = "<4.10,==4.*,>=4.9.0"
+antlr4-python3-runtime = ">=4.9.0,<4.10"
 click = ">=7.0"
 graphviz = ">=0.10.1"
 hbreader = "*"
 isodate = ">=0.6.0"
-jinja2 = ">= 3.1.0"
-jsonasobj2 = "==1.*,>=1.0.0,>=1.0.3"
+jinja2 = ">=3.1.0"
+jsonasobj2 = ">=1.0.3,<2.0.0"
 jsonschema = ">=3.0.1"
 linkml-dataops = "*"
-linkml-runtime = "~1.3"
+linkml-runtime = ">=1.3,<1.4"
 myst-parser = "*"
 openpyxl = "*"
 parse = "*"
 prefixcommons = ">=0.1.7"
-prefixmaps = "^0.1.3"
+prefixmaps = ">=0.1.3,<0.2.0"
 pydantic = "*"
 pyjsg = ">=0.11.6"
 pyshex = ">=0.7.20"
@@ -615,15 +614,11 @@ rdflib = ">=6.0.0"
 requests = ">=2.22"
 sphinx-click = "*"
 sqlalchemy = ">=1.4.31"
-tox = "^3.25.1"
+tox = ">=3.25.1,<4.0.0"
 watchdog = ">=0.9.0"
 
 [package.extras]
 docs = ["sphinx", "sphinx-rtd-theme"]
-
-[package.source]
-type = "directory"
-url = "../linkml"
 
 [[package]]
 name = "linkml-dataops"
@@ -1732,7 +1727,7 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "e571fa384a5fa071d0b2513c13e649dc927123b850252177c46030e5722903b1"
+content-hash = "9133465c2f290b86632fd5d36b6e4d7829c78eadb3579b35efbb6ef5de28df70"
 
 [metadata.files]
 alabaster = [
@@ -1904,8 +1899,8 @@ et-xmlfile = [
     {file = "et_xmlfile-1.1.0.tar.gz", hash = "sha256:8eb9e2bc2f8c97e37a2dc85a09ecdcdec9d8a396530a6d5a33b30b9a92da0c5c"},
 ]
 exceptiongroup = [
-    {file = "exceptiongroup-1.0.0rc9-py3-none-any.whl", hash = "sha256:2e3c3fc1538a094aab74fad52d6c33fc94de3dfee3ee01f187c0e0c72aec5337"},
-    {file = "exceptiongroup-1.0.0rc9.tar.gz", hash = "sha256:9086a4a21ef9b31c72181c77c040a074ba0889ee56a7b289ff0afb0d97655f96"},
+    {file = "exceptiongroup-1.0.0-py3-none-any.whl", hash = "sha256:2ac84b496be68464a2da60da518af3785fff8b7ec0d090a581604bc870bdee41"},
+    {file = "exceptiongroup-1.0.0.tar.gz", hash = "sha256:affbabf13fb6e98988c38d9c5650e701569fe3c1de3233cfb61c5f33774690ad"},
 ]
 executing = [
     {file = "executing-1.1.1-py2.py3-none-any.whl", hash = "sha256:236ea5f059a38781714a8bfba46a70fad3479c2f552abee3bbafadc57ed111b8"},
@@ -2075,7 +2070,10 @@ jupyter-core = [
     {file = "jupyter_core-4.11.2-py3-none-any.whl", hash = "sha256:3815e80ec5272c0c19aad087a0d2775df2852cfca8f5a17069e99c9350cecff8"},
     {file = "jupyter_core-4.11.2.tar.gz", hash = "sha256:c2909b9bc7dca75560a6c5ae78c34fd305ede31cd864da3c0d0bb2ed89aa9337"},
 ]
-linkml = []
+linkml = [
+    {file = "linkml-1.3.10-py3-none-any.whl", hash = "sha256:4e713e1957aea8e01f74f4f3e9ea3df41b7d51fd7dffe73b2b31d4dbe5a8440b"},
+    {file = "linkml-1.3.10.tar.gz", hash = "sha256:e4f3e12f80da411c7c0271999d98da5744c23724e8ad390c9ab6b5c5822edc5f"},
+]
 linkml-dataops = [
     {file = "linkml_dataops-0.1.0-py3-none-any.whl", hash = "sha256:193cf7f659e5f07946d2c2761896910d5f7151d91282543b1363801f68307f4c"},
     {file = "linkml_dataops-0.1.0.tar.gz", hash = "sha256:4550eab65e78b70dc3b9c651724a94ac2b1d1edb2fbe576465f1d6951a54ed04"},

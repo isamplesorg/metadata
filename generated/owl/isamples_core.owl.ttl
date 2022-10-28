@@ -24,7 +24,7 @@ isam:0.2.1.owl.ttl a owl:Ontology ;
     dct:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
     dct:title "Schema for documenting physical samples" ;
     pav:version "20221007" ;
-    linkml:generation_date "2022-10-26T11:43:19" ;
+    linkml:generation_date "2022-10-28T08:40:11" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "isamples_core.yaml" ;
     linkml:source_file_date "2022-10-26T11:42:58" ;
@@ -533,15 +533,15 @@ isam:SampleRelation a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass isam:String ;
-            owl:onProperty isam:target ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass isam:String ;
             owl:onProperty isam:description ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass isam:String ;
-            owl:onProperty isam:label ] .
+            owl:onProperty isam:label ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:target ] .
 
 isam:SpecimenCuration a owl:Class,
         linkml:ClassDefinition ;
@@ -552,18 +552,18 @@ isam:SpecimenCuration a owl:Class,
             owl:onProperty isam:label ],
         [ a owl:Restriction ;
             owl:allValuesFrom isam:String ;
-            owl:onProperty isam:access_constraints ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass isam:String ;
-            owl:onProperty isam:curation_location ],
+            owl:onProperty isam:responsibility ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass isam:String ;
             owl:onProperty isam:description ],
         [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:curation_location ],
+        [ a owl:Restriction ;
             owl:allValuesFrom isam:String ;
-            owl:onProperty isam:responsibility ] ;
+            owl:onProperty isam:access_constraints ] ;
     skos:definition "object contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample." .
 
 linkml:TypeDefinition a owl:Class ;
@@ -586,18 +586,18 @@ isam:SamplingSite a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass isam:String ;
-            owl:onProperty isam:description ],
+            owl:onProperty isam:label ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass isam:GeospatialDDCoordLocation ;
-            owl:onProperty isam:location ],
+            owl:onClass isam:String ;
+            owl:onProperty isam:description ],
         [ a owl:Restriction ;
             owl:allValuesFrom isam:String ;
             owl:onProperty isam:place_name ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass isam:String ;
-            owl:onProperty isam:label ] .
+            owl:onClass isam:GeospatialDDCoordLocation ;
+            owl:onProperty isam:location ] .
 
 isam:description a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -618,12 +618,12 @@ isam:GeospatialDDCoordLocation a owl:Class,
     rdfs:label "GeospatialDDCoordLocation" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass isam:String ;
-            owl:onProperty isam:elevation ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass isam:Decimal ;
             owl:onProperty isam:latitude ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:elevation ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass isam:Decimal ;
@@ -633,12 +633,9 @@ isam:SamplingEvent a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "SamplingEvent" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom isam:String ;
-            owl:onProperty isam:responsibility ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass isam:String ;
-            owl:onProperty isam:has_feature_of_interest ],
+            owl:onProperty isam:description ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass isam:Date ;
@@ -648,13 +645,16 @@ isam:SamplingEvent a owl:Class,
             owl:onClass isam:SamplingSite ;
             owl:onProperty isam:sampling_site ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass isam:String ;
-            owl:onProperty isam:label ],
+            owl:allValuesFrom isam:String ;
+            owl:onProperty isam:responsibility ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass isam:String ;
-            owl:onProperty isam:description ] .
+            owl:onProperty isam:has_feature_of_interest ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:label ] .
 
 linkml:ClassDefinition a owl:Class ;
     rdfs:label "class_definition" .
@@ -663,41 +663,43 @@ isam:PhysicalSampleRecord a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "PhysicalSampleRecord" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass isam:String ;
-            owl:onProperty isam:label ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass isam:String ;
-            owl:onProperty isam:authorized_by ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom isam:String ;
-            owl:onProperty isam:informal_classification ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom isam:String ;
-            owl:onProperty isam:has_specimen_category ],
+            owl:onProperty isam:sampling_purpose ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass isam:SamplingEvent ;
-            owl:onProperty isam:produced_by ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom isam:Materialtype ;
-            owl:onProperty isam:has_material_category ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass isam:SpecimenCuration ;
-            owl:onProperty isam:curation ],
+            owl:onClass isam:String ;
+            owl:onProperty isam:complies_with ],
         [ a owl:Restriction ;
             owl:onClass isam:String ;
             owl:onProperty isam:sample_identifier ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:label ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:allValuesFrom isam:String ;
-            owl:onProperty isam:has_context_category ],
+            owl:onProperty isam:keywords ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:SpecimenCuration ;
+            owl:onProperty isam:curation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom isam:Materialtype ;
+            owl:onProperty isam:has_material_category ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass isam:String ;
-            owl:onProperty isam:registrant ],
+            owl:onProperty isam:authorized_by ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:SamplingEvent ;
+            owl:onProperty isam:produced_by ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass isam:String ;
+            owl:onProperty isam:description ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass isam:SampleRelation ;
@@ -705,18 +707,16 @@ isam:PhysicalSampleRecord a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass isam:String ;
-            owl:onProperty isam:sampling_purpose ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass isam:String ;
-            owl:onProperty isam:description ],
+            owl:onProperty isam:registrant ],
         [ a owl:Restriction ;
             owl:allValuesFrom isam:String ;
-            owl:onProperty isam:keywords ],
+            owl:onProperty isam:has_specimen_category ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass isam:String ;
-            owl:onProperty isam:complies_with ] ;
+            owl:allValuesFrom isam:String ;
+            owl:onProperty isam:has_context_category ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom isam:String ;
+            owl:onProperty isam:informal_classification ] ;
     skos:definition "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides  descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web." .
 
 isam:Specimencategory a owl:Class,

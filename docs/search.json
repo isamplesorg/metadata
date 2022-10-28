@@ -627,7 +627,7 @@
     "href": "glossary.html",
     "title": "iSamples Model",
     "section": "",
-    "text": "Term\nDefinition\nsource\n\n\n\n\nPeel\nAcetate peels are replicas of etched surfaces embedded in sheets of cellulose acetate. These replicas are usually so detailed that the fine structure of shells and various sedimentary rocks can be easily studied under a light microscope. Because these peels can be quickly and easily produced, the procedure is now commonly used in most geologic laboratories.\nWilson and Palmer, 1988, doi: 10.1017/S2475262200005074"
+    "text": "iSamples Glossary\n\n\n\n\n\n\n\n\nTerm\nDefinition\nsource\n\n\n\n\nPeel\nAcetate peels are replicas of etched surfaces embedded in sheets of cellulose acetate. These replicas are usually so detailed that the fine structure of shells and various sedimentary rocks can be easily studied under a light microscope. Because these peels can be quickly and easily produced, the procedure is now commonly used in most geologic laboratories.\nWilson and Palmer, 1988, doi: 10.1017/S2475262200005074"
   },
   {
     "objectID": "SampleRelation.html",
@@ -814,9 +814,44 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "iSamples Model",
+    "title": "Schema for documenting physical samples",
     "section": "",
-    "text": "Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change ‘id’ to ‘@id’ and ‘schema’ to ‘$schema’. Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07\nURI: http://resource.isamples.org/schema/0.2.1 Name: physicalSample\n\n\n\n\n\nClass\nDescription\n\n\n\n\nGeospatialDDCoordLocation\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, …\n\n\nSampleRelation\n\n\n\nSamplingEvent\n\n\n\nSamplingSite\n\n\n\nSpecimenCuration\nobject contains information about current storage of sample, access to sample…\n\n\n\n\n\n\n\n\n\nSlot\nDescription\n\n\n\n\naccess_constraints\ncultural, legal or other policy issues that bear on access to view, borrow, o…\n\n\nauthorized_by\n\n\n\ncomplies_with\n\n\n\ncuration\n\n\n\ncuration_location\ninformation about where and how the sample is currently stored\n\n\ndescription\nfree text description of the subject of a triple\n\n\nelevation\nshould be a number and Unit of measure, and the datum\n\n\nhas_context_category\ntop level context, based on the kind of feature sampled\n\n\nhas_feature_of_interest\nwhat does the sample represent\n\n\nhas_material_category\nspecify the kind of material that constitutes the sample\n\n\nhas_specimen_category\nspecify the kind of object that the specimen is\n\n\ninformal_classification\nfree text classification terms, not from a controlled vocabulary; generally t…\n\n\nkeywords\nfree text categorization of sample to support discovery\n\n\nlabel\na human intelligible string used to identify a thing, i\n\n\nlatitude\nangular coordinate measured positive north from the equator\n\n\nlocation\ngeopatial location of site; required default is WGS84 latitude, longitude in …\n\n\nlongitude\nangular coordinate measured positive eastward from the prime meridian\n\n\nplace_name\none or more names by which the sampling site is known\n\n\nproduced_by\nobject that documents the sampling event–who, where, when the specimen was o…\n\n\nregistrant\nidentification of the agent that registered the sample, with contact informat…\n\n\nrelated_resource\nlink to related resource with relationship property to indicate nature of con…\n\n\nrelationship\nterm to identify realationship between host sample and the sample relation ta…\n\n\nresponsibility\nString with person name and affiliation, or organization name, and their role…\n\n\nresult_time\nDate on which the sample was collected\n\n\nsample_identifier\nURI that identifies the physical sample described by this record\n\n\nsampling_purpose\nterm to specify why a sample was collection\n\n\nsampling_site\nobject that identifies the place where the sample was collected\n\n\ntarget\nidentifier for the target resource in the relationship\n\n\n\n\n\n\n\n\n\nEnumeration\nDescription\n\n\n\n\nContextcategory\ntop level context, based on the kind of feature sampled,from the SampledFeatu…\n\n\nMaterialtype\ncategories for kinds of material that constitute the sample\n\n\nSpecimencategory\nspecify the kind of object that the specimen is\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nDate\n\n\n\nDecimal\n\n\n\nString\n\n\n\n\n\n\n\n\n\n\nSubset\nDescription"
+    "text": "Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change ‘id’ to ‘@id’ and ‘schema’ to ‘$schema’. Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07\nURI: http://resource.isamples.org/schema/0.2.1 Name: physicalSample"
+  },
+  {
+    "objectID": "index.html#classes",
+    "href": "index.html#classes",
+    "title": "Schema for documenting physical samples",
+    "section": "Classes",
+    "text": "Classes\n\n\n\nClass\nDescription\n\n\n\n\nGeospatialDDCoordLocation\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, …\n\n\nSampleRelation\n\n\n\nSamplingEvent\n\n\n\nSamplingSite\n\n\n\nSpecimenCuration\nobject contains information about current storage of sample, access to sample…"
+  },
+  {
+    "objectID": "index.html#slots",
+    "href": "index.html#slots",
+    "title": "Schema for documenting physical samples",
+    "section": "Slots",
+    "text": "Slots\n\n\n\nSlot\nDescription\n\n\n\n\naccess_constraints\ncultural, legal or other policy issues that bear on access to view, borrow, o…\n\n\nauthorized_by\n\n\n\ncomplies_with\n\n\n\ncuration\n\n\n\ncuration_location\ninformation about where and how the sample is currently stored\n\n\ndescription\nfree text description of the subject of a triple\n\n\nelevation\nshould be a number and Unit of measure, and the datum\n\n\nhas_context_category\ntop level context, based on the kind of feature sampled\n\n\nhas_feature_of_interest\nwhat does the sample represent\n\n\nhas_material_category\nspecify the kind of material that constitutes the sample\n\n\nhas_specimen_category\nspecify the kind of object that the specimen is\n\n\ninformal_classification\nfree text classification terms, not from a controlled vocabulary; generally t…\n\n\nkeywords\nfree text categorization of sample to support discovery\n\n\nlabel\na human intelligible string used to identify a thing, i\n\n\nlatitude\nangular coordinate measured positive north from the equator\n\n\nlocation\ngeopatial location of site; required default is WGS84 latitude, longitude in …\n\n\nlongitude\nangular coordinate measured positive eastward from the prime meridian\n\n\nplace_name\none or more names by which the sampling site is known\n\n\nproduced_by\nobject that documents the sampling event–who, where, when the specimen was o…\n\n\nregistrant\nidentification of the agent that registered the sample, with contact informat…\n\n\nrelated_resource\nlink to related resource with relationship property to indicate nature of con…\n\n\nrelationship\nterm to identify realationship between host sample and the sample relation ta…\n\n\nresponsibility\nString with person name and affiliation, or organization name, and their role…\n\n\nresult_time\nDate on which the sample was collected\n\n\nsample_identifier\nURI that identifies the physical sample described by this record\n\n\nsampling_purpose\nterm to specify why a sample was collection\n\n\nsampling_site\nobject that identifies the place where the sample was collected\n\n\ntarget\nidentifier for the target resource in the relationship"
+  },
+  {
+    "objectID": "index.html#enumerations",
+    "href": "index.html#enumerations",
+    "title": "Schema for documenting physical samples",
+    "section": "Enumerations",
+    "text": "Enumerations\n\n\n\nEnumeration\nDescription\n\n\n\n\nContextcategory\ntop level context, based on the kind of feature sampled,from the SampledFeatu…\n\n\nMaterialtype\ncategories for kinds of material that constitute the sample\n\n\nSpecimencategory\nspecify the kind of object that the specimen is"
+  },
+  {
+    "objectID": "index.html#types",
+    "href": "index.html#types",
+    "title": "Schema for documenting physical samples",
+    "section": "Types",
+    "text": "Types\n\n\n\nType\nDescription\n\n\n\n\nDate\n\n\n\nDecimal\n\n\n\nString"
+  },
+  {
+    "objectID": "index.html#subsets",
+    "href": "index.html#subsets",
+    "title": "Schema for documenting physical samples",
+    "section": "Subsets",
+    "text": "Subsets\n\n\n\nSubset\nDescription"
   },
   {
     "objectID": "SamplingEvent.html",
@@ -865,7 +900,7 @@
     "href": "physicalSample.html",
     "title": "iSamples Model",
     "section": "",
-    "text": "Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change ‘id’ to ‘@id’ and ‘schema’ to ‘$schema’. Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07\nURI: http://resource.isamples.org/schema/0.2.1"
+    "text": "physicalSample\nStartup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change ‘id’ to ‘@id’ and ‘schema’ to ‘$schema’. Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07\nURI: http://resource.isamples.org/schema/0.2.1"
   },
   {
     "objectID": "curation_location.html",

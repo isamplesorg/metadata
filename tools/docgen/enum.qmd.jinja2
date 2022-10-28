@@ -1,0 +1,34 @@
+---
+title: {{ gen.name(element) }}
+subtitle: "Enum: {{ gen.name(element) }}"
+date-modified: {{ gen.timestamp }}
+---
+
+{% if element.description %}
+{{ element.description }}
+{% endif %}
+
+URI: {{ gen.uri_link(element) }}
+
+{% if element.permissible_values -%}
+## Permissible Values
+
+| Value | Meaning | Description |
+| --- | --- | --- |
+{% for pv in element.permissible_values.values() -%}
+| {{pv.text}} | {{pv.meaning}} | {{pv.description|enshorten}} |
+{% endfor %}
+{% else %}
+_This is a dynamic enum_
+{% endif %}
+
+{% include "common_metadata.qmd.jinja2" %}
+
+## LinkML Source
+
+<details>
+```yaml
+{{gen.yaml(element)}}
+```
+</details>
+
