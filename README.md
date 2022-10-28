@@ -31,20 +31,13 @@ poetry install
 
 (To exit poetry shell, use `exit`).
 
+Artifacts in the `generated/` folder are produced by running `make` or `make all`. 
 
-To generate the documentation, run:
+Documentation is rendered with [Quarto]() rather than the defaults `mkdocs` or `Sphinx` (Quarto offers many additional features for including computed examples which are planned). To generate the documentation, install a version of [Quarto >= 1.2](), then run `make`, `make all` or `make gen-docs`.
 
-```
-gen-project -C config.yml src/schemas/iSamplesCoreSchema.yml
-```
+This will generate markdown intermediate files in the `build/docs` folder then invoke `quarto render` to generate the HTML docs in the `docs/` folder.
 
-This will generate markdown intermediate files in the `generated/docs` folder. To generate the HTML docs, run:
-
-```
-mkdocs build
-```
-
-This will generate the `docs` which content for `https://isamplesorg.github.io/metadata/`.
+Note that this project uses a version of the `linkml` `docgen` tool and templates modified to render markdown for `quarto`. The modified `docgen` and templates is located in the `tools/` folder.
 
 
 ## Older notes below
