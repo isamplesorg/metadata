@@ -210,3 +210,11 @@ spec:wholeorganism
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Whole organism specimen"@en ;
 .
+
+spec:slurrybiomeaggregation
+  rdf:type skos:Concept ;
+  rdfs:label "Slurry biome aggregation"@en ;
+  skos:broader spec:biomeaggregation ;
+  skos:definition "a material that consists of mixed organic and inorganic material, including whole organisms and organism fragments."@en ;
+  skos:prefLabel "Slurry biome aggregation"@en ;
+.
