@@ -230,7 +230,7 @@ sf:subaerialsurfaceenvironment
   rdfs:label "Subaerial surface environment"@en ;
   skos:broader sf:earthsurface ;
   skos:closeMatch <http://purl.obolibrary.org/obo/RBO_00000017> ;
-  skos:definition "Specimen samples the  interface between solid Earth and atmosphere.  Sample is collected on the surface, or immediately below surface (zone of bioturbation). Include soil ‘O’ horizon and ‘biomantle’. Soil horizons below surface, or sediment in active deposition (no soil development) is considered part of solid Earth."@en ;
+  skos:definition "Specimen samples the  interface between solid Earth and atmosphere.  Sample is collected on the surface, or immediately below surface (zone of bioturbation). Include soil and recently deposited subaerial sediment at the surface."@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:prefLabel "Subaerial surface environment"@en ;
 .
