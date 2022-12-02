@@ -17,7 +17,8 @@ VOCAB_FILES := $(shell find $(VOCAB_DIR) -name '*.ttl')
 SCHEMA_NAME = isamples_core
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
 PKG_TGTS = jsonld_context json_schema owl shacl
-TGTS = docs python $(PKG_TGTS)
+#TGTS = docs python $(PKG_TGTS)
+TGTS = docs
 
 # Targets by PKG_TGT
 PKG_T_GRAPHQL = $(PKG_DIR)/graphql
@@ -43,10 +44,10 @@ RUN = poetry run
 # ----------------------------------------
 # TOP LEVEL TARGETS
 # ----------------------------------------
-all: gen
+all: vocabs gen
 
 install:
-	poetry install
+	#poetry install
 
 # ---------------------------------------
 # Test runner
@@ -94,14 +95,14 @@ echo:
 	echo $(patsubst %,gen-%,$(TGTS))
 
 tdir-%:
-	rm -rf $(TARGET_DIR)/$*
+	#rm -rf $(TARGET_DIR)/$*
 	mkdir -p $(TARGET_DIR)/$*
 
 # ---------------------------------------
 # MARKDOWN DOCS
 #      Generate documentation ready for mkdocs
 # ---------------------------------------
-gen-docs: $(TARGET_DIR)/docs/index.md vocabs
+gen-docs: $(TARGET_DIR)/docs/index.md
 	# static sources
 	cp -R $(MODEL_DOCS_DIR)/*.md $(TARGET_DIR)/docs
 	# quarto configuation and customizations

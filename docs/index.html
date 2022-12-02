@@ -58,6 +58,9 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -116,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./GeospatialDDCoordLocation.html" class="sidebar-item-text sidebar-link">GeospatialDDCoordLocation</a>
+  <a href="./GeospatialCoordLocation.html" class="sidebar-item-text sidebar-link">GeospatialCoordLocation</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -297,29 +300,7 @@ ul.task-list li input[type="checkbox"] {
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">Enums</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Contextcategory.html" class="sidebar-item-text sidebar-link">Contextcategory</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Materialtype.html" class="sidebar-item-text sidebar-link">Materialtype</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Specimencategory.html" class="sidebar-item-text sidebar-link">Specimencategory</a>
-  </div>
-</li>
-      </ul>
+      <span class="sidebar-item-text sidebar-link text-start">Enums</span>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -331,17 +312,77 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Date.html" class="sidebar-item-text sidebar-link">Date</a>
+  <a href="http://www.w3.org/2001/XMLSchema#boolean" class="sidebar-item-text sidebar-link">xsd:boolean</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Decimal.html" class="sidebar-item-text sidebar-link">Decimal</a>
+  <a href="http://www.w3.org/2001/XMLSchema#date" class="sidebar-item-text sidebar-link">xsd:date</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./String.html" class="sidebar-item-text sidebar-link">String</a>
+  <a href="https://w3id.org/linkml/DateOrDatetime" class="sidebar-item-text sidebar-link">linkml:DateOrDatetime</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="http://www.w3.org/2001/XMLSchema#dateTime" class="sidebar-item-text sidebar-link">xsd:dateTime</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="http://www.w3.org/2001/XMLSchema#decimal" class="sidebar-item-text sidebar-link">xsd:decimal</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="http://www.w3.org/2001/XMLSchema#double" class="sidebar-item-text sidebar-link">xsd:double</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="http://www.w3.org/2001/XMLSchema#float" class="sidebar-item-text sidebar-link">xsd:float</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="http://www.w3.org/2001/XMLSchema#integer" class="sidebar-item-text sidebar-link">xsd:integer</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="http://www.w3.org/2001/XMLSchema#string" class="sidebar-item-text sidebar-link">xsd:string</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="shex:nonLiteral" class="sidebar-item-text sidebar-link">shex:nonLiteral</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="shex:iri" class="sidebar-item-text sidebar-link">shex:iri</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="http://www.w3.org/2001/XMLSchema#string" class="sidebar-item-text sidebar-link">xsd:string</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="http://www.w3.org/2001/XMLSchema#dateTime" class="sidebar-item-text sidebar-link">xsd:dateTime</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="http://www.w3.org/2001/XMLSchema#anyURI" class="sidebar-item-text sidebar-link">xsd:anyURI</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="http://www.w3.org/2001/XMLSchema#anyURI" class="sidebar-item-text sidebar-link">xsd:anyURI</a>
   </div>
 </li>
       </ul>
@@ -396,7 +437,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">October 28, 2022</p>
+      <p class="date-modified">December 2, 2022</p>
     </div>
   </div>
     
@@ -407,6 +448,88 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change ‘id’ to ‘<span class="citation" data-cites="id">@id</span>’ and ‘schema’ to ‘$schema’. Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07</p>
 <p>URI: http://resource.isamples.org/schema/0.2.1 Name: physicalSample</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">%%{init: {'securityLevel': 'loose', 'theme':'neutral', 'themeVariables': { 'fontSize':'14px', 'fontFamily':'Roboto Mono'}}}%%
+classDiagram
+  direction BT
+  class PhysicalSampleRecord {
+    authorized_by : string
+    complies_with : string
+    curation : SpecimenCuration
+    description : string
+    has_context_category : string[]
+    has_material_category : uriorcurie[]
+    has_specimen_category : uriorcurie[]
+    informal_classification : string[]
+    keywords : string[]
+    label : string
+    produced_by : SamplingEvent
+    registrant : string
+    related_resource : SampleRelation[]
+    sample_identifier : string
+    sampling_purpose : string
+    }
+    click PhysicalSampleRecord href "PhysicalSampleRecord.html" "Documentation"
+    SpecimenCuration --o PhysicalSampleRecord : curation
+    SamplingEvent --o PhysicalSampleRecord : produced_by
+    SampleRelation --o PhysicalSampleRecord : related_resource
+    
+  class SamplingSite {
+    description : string
+    label : string
+    location : GeospatialCoordLocation
+    place_name : string[]
+    }
+    click SamplingSite href "SamplingSite.html" "Documentation"
+    GeospatialCoordLocation --o SamplingSite : location
+    
+  class SamplingEvent {
+    description : string
+    has_feature_of_interest : string
+    label : string
+    responsibility : string[]
+    result_time : date
+    sampling_site : SamplingSite
+    }
+    click SamplingEvent href "SamplingEvent.html" "Documentation"
+    SamplingSite --o SamplingEvent : sampling_site
+    
+  class GeospatialCoordLocation {
+    elevation : string
+    latitude : decimal
+    longitude : decimal
+    }
+    click GeospatialCoordLocation href "GeospatialCoordLocation.html" "Documentation"
+    
+  class SpecimenCuration {
+    access_constraints : string[]
+    curation_location : string
+    description : string
+    label : string
+    responsibility : string[]
+    }
+    click SpecimenCuration href "SpecimenCuration.html" "Documentation"
+    
+  class SampleRelation {
+    description : string
+    label : string
+    relationship : string
+    target : string
+    }
+    click SampleRelation href "SampleRelation.html" "Documentation"
+    
+  
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
 <section id="classes" class="level2">
 <h2 class="anchored" data-anchor-id="classes">Classes</h2>
 <table class="table">
@@ -418,8 +541,8 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="./GeospatialDDCoordLocation.html">GeospatialDDCoordLocation</a></td>
-<td></td>
+<td><a href="./GeospatialCoordLocation.html">GeospatialCoordLocation</a></td>
+<td>A physical location in decimal degrees using EPSG:4326</td>
 </tr>
 <tr class="even">
 <td><a href="./PhysicalSampleRecord.html">PhysicalSampleRecord</a></td>
@@ -431,7 +554,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td><a href="./SamplingEvent.html">SamplingEvent</a></td>
-<td></td>
+<td>Information about the event resulting in the creation of the physical sample</td>
 </tr>
 <tr class="odd">
 <td><a href="./SamplingSite.html">SamplingSite</a></td>
@@ -439,7 +562,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td><a href="./SpecimenCuration.html">SpecimenCuration</a></td>
-<td>object contains information about current storage of sample, access to sample…</td>
+<td>Information about the current storage of sample, access to sample, and events…</td>
 </tr>
 </tbody>
 </table>
@@ -456,7 +579,7 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td><a href="./access_constraints.html">access_constraints</a></td>
-<td>cultural, legal or other policy issues that bear on access to view, borrow, o…</td>
+<td>Cultural, legal, or other policy issues that bear on access to view, borrow, …</td>
 </tr>
 <tr class="even">
 <td><a href="./authorized_by.html">authorized_by</a></td>
@@ -472,35 +595,35 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td><a href="./curation_location.html">curation_location</a></td>
-<td>information about where and how the sample is currently stored</td>
+<td>Information about where and how the sample is currently stored</td>
 </tr>
 <tr class="even">
 <td><a href="./description.html">description</a></td>
-<td>free text description of the subject of a triple</td>
+<td>Free text description of the subject of a triple</td>
 </tr>
 <tr class="odd">
 <td><a href="./elevation.html">elevation</a></td>
-<td>should be a number and Unit of measure, and the datum</td>
+<td>Should be a number and Unit of measure, and the datum</td>
 </tr>
 <tr class="even">
 <td><a href="./has_context_category.html">has_context_category</a></td>
-<td>top level context, based on the kind of feature sampled</td>
+<td>Top level context, based on the kind of feature sampled</td>
 </tr>
 <tr class="odd">
 <td><a href="./has_feature_of_interest.html">has_feature_of_interest</a></td>
-<td>what does the sample represent</td>
+<td>What does the sample represent</td>
 </tr>
 <tr class="even">
 <td><a href="./has_material_category.html">has_material_category</a></td>
-<td>specify the kind of material that constitutes the sample</td>
+<td>The kind of material that constitutes the sample</td>
 </tr>
 <tr class="odd">
 <td><a href="./has_specimen_category.html">has_specimen_category</a></td>
-<td>specify the kind of object that the specimen is</td>
+<td>The kind of object the specimen is</td>
 </tr>
 <tr class="even">
 <td><a href="./informal_classification.html">informal_classification</a></td>
-<td>free text classification terms, not from a controlled vocabulary; generally t…</td>
+<td>Free text classification terms, not from a controlled vocabulary; generally t…</td>
 </tr>
 <tr class="odd">
 <td><a href="./keywords.html">keywords</a></td>
@@ -571,28 +694,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="enumerations" class="level2">
 <h2 class="anchored" data-anchor-id="enumerations">Enumerations</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Enumeration</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="./Contextcategory.html">Contextcategory</a></td>
-<td>top level context, based on the kind of feature sampled,from the SampledFeatu…</td>
-</tr>
-<tr class="even">
-<td><a href="./Materialtype.html">Materialtype</a></td>
-<td>categories for kinds of material that constitute the sample</td>
-</tr>
-<tr class="odd">
-<td><a href="./Specimencategory.html">Specimencategory</a></td>
-<td>specify the kind of object that the specimen is</td>
-</tr>
-</tbody>
-</table>
+<p>No enumerations are defined.</p>
 </section>
 <section id="types" class="level2">
 <h2 class="anchored" data-anchor-id="types">Types</h2>
@@ -605,32 +707,71 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="./Date.html">Date</a></td>
-<td></td>
+<td><a href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a></td>
+<td>A binary (true or false) value</td>
 </tr>
 <tr class="even">
-<td><a href="./Decimal.html">Decimal</a></td>
-<td></td>
+<td><a href="http://www.w3.org/2001/XMLSchema#date">xsd:date</a></td>
+<td>a date (year, month and day) in an idealized calendar</td>
 </tr>
 <tr class="odd">
-<td><a href="./String.html">String</a></td>
-<td></td>
+<td><a href="https://w3id.org/linkml/DateOrDatetime">linkml:DateOrDatetime</a></td>
+<td>Either a date or a datetime</td>
+</tr>
+<tr class="even">
+<td><a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a></td>
+<td>The combination of a date and time</td>
+</tr>
+<tr class="odd">
+<td><a href="http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a></td>
+<td>A real number with arbitrary precision that conforms to the xsd:decimal speci…</td>
+</tr>
+<tr class="even">
+<td><a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a></td>
+<td>A real number that conforms to the xsd:double specification</td>
+</tr>
+<tr class="odd">
+<td><a href="http://www.w3.org/2001/XMLSchema#float">xsd:float</a></td>
+<td>A real number that conforms to the xsd:float specification</td>
+</tr>
+<tr class="even">
+<td><a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a></td>
+<td>An integer</td>
+</tr>
+<tr class="odd">
+<td><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></td>
+<td>Prefix part of CURIE</td>
+</tr>
+<tr class="even">
+<td><a href="shex:nonLiteral">shex:nonLiteral</a></td>
+<td>A URI, CURIE or BNODE that represents a node in a model</td>
+</tr>
+<tr class="odd">
+<td><a href="shex:iri">shex:iri</a></td>
+<td>A URI or CURIE that represents an object in the model</td>
+</tr>
+<tr class="even">
+<td><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></td>
+<td>A character string</td>
+</tr>
+<tr class="odd">
+<td><a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a></td>
+<td>A time object represents a (local) time of day, independent of any particular…</td>
+</tr>
+<tr class="even">
+<td><a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a></td>
+<td>a complete URI</td>
+</tr>
+<tr class="odd">
+<td><a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a></td>
+<td>a URI or a CURIE</td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="subsets" class="level2">
 <h2 class="anchored" data-anchor-id="subsets">Subsets</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Subset</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<p>No subsets are defined.</p>
 
 
 </section>

@@ -350,6 +350,12 @@ class DocGenerator(Generator):
         sc = element.from_schema
         return f"[{curie}]({uri})"
 
+    def uri_link_index(self, element:Element) -> tuple[str, str]:
+        uri = str(self.uri(element))
+        curie = str(self.uri(element, expand=False))
+        return (curie, uri)
+
+
     def link(self, e: Union[Definition, DefinitionName], target_only=False) -> str:
         """
         Render an element as a hyperlink

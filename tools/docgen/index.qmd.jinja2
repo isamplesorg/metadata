@@ -9,6 +9,8 @@ date-modified: {{ gen.timestamp }}
 URI: {{ schema.id }}
 Name: {{ schema.name }}
 
+{% include "class_overview_diagram.qmd.jinja2" %}
+
 ## Classes
 
 | Class | Description |
@@ -26,12 +28,16 @@ Name: {{ schema.name }}
 {% endfor %}
 
 ## Enumerations
-
+{% set enums = gen.all_enum_objects()|list %}
+{% if enums|length > 0 -%}
 | Enumeration | Description |
 | --- | --- |
-{% for e in gen.all_enum_objects()|sort(attribute=sort_by) -%}
+{% for e in enums|sort(attribute=sort_by) -%}
 | {{gen.link(e)}} | {{e.description|enshorten}} |
 {% endfor %}
+{% else -%}
+No enumerations are defined.
+{% endif %}
 
 ## Types
 
@@ -42,9 +48,13 @@ Name: {{ schema.name }}
 {% endfor %}
 
 ## Subsets
-
+{% set subsets = schemaview.all_subsets().values()|list %}
+{% if subsets|length > 0 %}
 | Subset | Description |
 | --- | --- |
-{% for ss in schemaview.all_subsets().values()|sort(attribute='name') -%}
+{% for ss in subsets|sort(attribute='name') -%}
 | {{gen.link(ss)}} | {{ss.description|enshorten}} |
 {% endfor %}
+{% else %}
+No subsets are defined.
+{% endif %}

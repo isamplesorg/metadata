@@ -39,14 +39,14 @@
     "href": "PhysicalSampleRecord.html",
     "title": "PhysicalSampleRecord",
     "section": "",
-    "text": "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.\nURI: isam:PhysicalSampleRecord"
+    "text": "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.\nURI: isam:PhysicalSampleRecord\ncase 4"
   },
   {
     "objectID": "PhysicalSampleRecord.html#slots",
     "href": "PhysicalSampleRecord.html#slots",
     "title": "PhysicalSampleRecord",
     "section": "Slots",
-    "text": "Slots\n\nSlots in class PhysicalSampleRecord.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\nauthorized_by\n0..1  String\nNone\ndirect\n\n\ncomplies_with\n0..1  String\nNone\ndirect\n\n\ncuration\n0..1  SpecimenCuration\nNone\ndirect\n\n\ndescription\n0..1  String\nfree text description of the subject of a triple.\ndirect\n\n\nhas_context_category\n0..*  String\ntop level context, based on the kind of feature sampled. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.\ndirect\n\n\nhas_material_category\n0..*  Materialtype\nspecify the kind of material that constitutes the sample\ndirect\n\n\nhas_specimen_category\n0..*  String\nspecify the kind of object that the specimen is\ndirect\n\n\ninformal_classification\n0..*  String\nfree text classification terms, not from a controlled vocabulary; generally terms applied by collector\ndirect\n\n\nkeywords\n0..*  String\nfree text categorization of sample to support discovery\ndirect\n\n\nlabel\n1..1  String\na human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\ndirect\n\n\nproduced_by\n0..1  SamplingEvent\nobject that documents the sampling event–who, where, when the specimen was obtained\ndirect\n\n\nrelated_resource\n0..1  SampleRelation\nlink to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource.\ndirect\n\n\nregistrant\n0..1  String\nidentification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.\ndirect\n\n\nsample_identifier\n1..1  String\nURI that identifies the physical sample described by this record\ndirect\n\n\nsampling_purpose\n0..1  String\nterm to specify why a sample was collection.\ndirect"
+    "text": "Slots\n\nSlots in class PhysicalSampleRecord.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\nauthorized_by\n0..1  xsd:string\nNone\ndirect\n\n\ncomplies_with\n0..1  xsd:string\nNone\ndirect\n\n\ncuration\n0..1  SpecimenCuration\nNone\ndirect\n\n\ndescription\n0..1  xsd:string\nFree text description of the subject of a triple.\ndirect\n\n\nhas_context_category\n0..*  xsd:string\nTop level context, based on the kind of feature sampled. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.\ndirect\n\n\nhas_material_category\n0..*  xsd:anyURI\nThe kind of material that constitutes the sample.\ndirect\n\n\nhas_specimen_category\n0..*  xsd:anyURI\nThe kind of object the specimen is.\ndirect\n\n\ninformal_classification\n0..*  xsd:string\nFree text classification terms, not from a controlled vocabulary; generally terms applied by collector.\ndirect\n\n\nkeywords\n0..*  xsd:string\nfree text categorization of sample to support discovery\ndirect\n\n\nlabel\n1..1  xsd:string\na human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\ndirect\n\n\nproduced_by\n0..1  SamplingEvent\nobject that documents the sampling event–who, where, when the specimen was obtained\ndirect\n\n\nrelated_resource\n0..*  SampleRelation\nlink to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource.\ndirect\n\n\nregistrant\n0..1  xsd:string\nidentification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.\ndirect\n\n\nsample_identifier\n1..1  xsd:string\nURI that identifies the physical sample described by this record\ndirect\n\n\nsampling_purpose\n0..1  xsd:string\nterm to specify why a sample was collection.\ndirect"
   },
   {
     "objectID": "PhysicalSampleRecord.html#usages",
@@ -74,49 +74,7 @@
     "href": "PhysicalSampleRecord.html#linkml-source",
     "title": "PhysicalSampleRecord",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\n\nDirect\n\nname: PhysicalSampleRecord\ndescription: This is a data object that is a digital representation of a physical\n  sample, and thus shares the same identifier as the physical object. It provides  descriptive\n  properties for any iSamples physical sample, URI for the metadata record is same\n  as URI for physical sample-- digital object is considered twin of physical object,\n  a representation. IGSN is recommended. Must be a URI that can be dereferenced on\n  the web.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- authorized_by\n- complies_with\n- curation\n- description\n- has_context_category\n- has_material_category\n- has_specimen_category\n- informal_classification\n- keywords\n- label\n- produced_by\n- related_resource\n- registrant\n- sample_identifier\n- sampling_purpose\nslot_usage:\n  label:\n    name: label\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    required: true\n  sample_identifier:\n    name: sample_identifier\n    domain_of:\n    - PhysicalSampleRecord\n    - PhysicalSampleRecord\n    required: true\n\n\n\nInduced\n\nname: PhysicalSampleRecord\ndescription: This is a data object that is a digital representation of a physical\n  sample, and thus shares the same identifier as the physical object. It provides  descriptive\n  properties for any iSamples physical sample, URI for the metadata record is same\n  as URI for physical sample-- digital object is considered twin of physical object,\n  a representation. IGSN is recommended. Must be a URI that can be dereferenced on\n  the web.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslot_usage:\n  label:\n    name: label\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    required: true\n  sample_identifier:\n    name: sample_identifier\n    domain_of:\n    - PhysicalSampleRecord\n    - PhysicalSampleRecord\n    required: true\nattributes:\n  authorized_by:\n    name: authorized_by\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    alias: authorized_by\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  complies_with:\n    name: complies_with\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    alias: complies_with\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  curation:\n    name: curation\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    alias: curation\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: SpecimenCuration\n  description:\n    name: description\n    description: free text description of the subject of a triple.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - dct:description\n    rank: 1000\n    alias: description\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  has_context_category:\n    name: has_context_category\n    description: top level context, based on the kind of feature sampled.  Specific\n      identification of the sampled feature of interest is done through the SamplingEvent/Feature\n      of Interest property.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    domain: PhysicalSampleRecord\n    multivalued: true\n    alias: has_context_category\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  has_material_category:\n    name: has_material_category\n    description: specify the kind of material that constitutes the sample\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    domain: PhysicalSampleRecord\n    multivalued: true\n    alias: has_material_category\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: materialtype\n  has_specimen_category:\n    name: has_specimen_category\n    description: specify the kind of object that the specimen is\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    domain: PhysicalSampleRecord\n    multivalued: true\n    alias: has_specimen_category\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  informal_classification:\n    name: informal_classification\n    description: free text classification terms, not from a controlled vocabulary;\n      generally terms applied by collector\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    domain: PhysicalSampleRecord\n    multivalued: true\n    alias: informal_classification\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  keywords:\n    name: keywords\n    description: free text categorization of sample to support discovery\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - sdo:keywords\n    rank: 1000\n    domain: PhysicalSampleRecord\n    multivalued: true\n    alias: keywords\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  label:\n    name: label\n    description: a human intelligible string used to identify a thing, i.e. the name\n      to use for the thing; should be unique in the scope of a sample collection or\n      dataset.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    alias: label\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n    required: true\n  produced_by:\n    name: produced_by\n    description: object that documents the sampling event--who, where, when the specimen\n      was obtained\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    domain: PhysicalSampleRecord\n    alias: produced_by\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: SamplingEvent\n  related_resource:\n    name: related_resource\n    description: link to related resource with relationship property to indicate nature\n      of connection. Target should be identifier for a resource.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    alias: related_resource\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: SampleRelation\n  registrant:\n    name: registrant\n    description: identification of the agent that registered the sample, with contact\n      information. Should include person name and affiliation, or position name and\n      affiliation, or just organization name. e-mail address is preferred contact\n      information.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    domain: PhysicalSampleRecord\n    alias: registrant\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  sample_identifier:\n    name: sample_identifier\n    description: URI that identifies the physical sample described by this record\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    domain: PhysicalSampleRecord\n    alias: sample_identifier\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n    required: true\n  sampling_purpose:\n    name: sampling_purpose\n    description: term to specify why a sample was collection.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    domain: PhysicalSampleRecord\n    alias: sampling_purpose\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string"
-  },
-  {
-    "objectID": "GeospatialDDCoordLocation.html",
-    "href": "GeospatialDDCoordLocation.html",
-    "title": "GeospatialDDCoordLocation",
-    "section": "",
-    "text": "URI: isam:GeospatialDDCoordLocation"
-  },
-  {
-    "objectID": "GeospatialDDCoordLocation.html#slots",
-    "href": "GeospatialDDCoordLocation.html#slots",
-    "title": "GeospatialDDCoordLocation",
-    "section": "Slots",
-    "text": "Slots\n\nSlots in class GeospatialDDCoordLocation.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\nelevation\n0..1  String\nshould be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level.\ndirect\n\n\nlatitude\n0..1  Decimal\nangular coordinate measured positive north from the equator.\ndirect\n\n\nlongitude\n0..1  Decimal\nangular coordinate measured positive eastward from the prime meridian.\ndirect"
-  },
-  {
-    "objectID": "GeospatialDDCoordLocation.html#usages",
-    "href": "GeospatialDDCoordLocation.html#usages",
-    "title": "GeospatialDDCoordLocation",
-    "section": "Usages",
-    "text": "Usages\n\n\n\nused by\nused in\ntype\nused\n\n\n\n\nSamplingSite\nlocation\nrange\nGeospatialDDCoordLocation\n\n\nGeospatialDDCoordLocation\nelevation\ndomain\nGeospatialDDCoordLocation\n\n\nGeospatialDDCoordLocation\nlatitude\ndomain\nGeospatialDDCoordLocation\n\n\nGeospatialDDCoordLocation\nlongitude\ndomain\nGeospatialDDCoordLocation"
-  },
-  {
-    "objectID": "GeospatialDDCoordLocation.html#identifier-and-mapping-information",
-    "href": "GeospatialDDCoordLocation.html#identifier-and-mapping-information",
-    "title": "GeospatialDDCoordLocation",
-    "section": "Identifier and Mapping Information",
-    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
-  },
-  {
-    "objectID": "GeospatialDDCoordLocation.html#mappings",
-    "href": "GeospatialDDCoordLocation.html#mappings",
-    "title": "GeospatialDDCoordLocation",
-    "section": "Mappings",
-    "text": "Mappings\n\n\n\nMapping Type\nMapped Value\n\n\n\n\nself\n[‘isam:GeospatialDDCoordLocation’]\n\n\nnative\n[‘isam:GeospatialDDCoordLocation’]"
-  },
-  {
-    "objectID": "GeospatialDDCoordLocation.html#linkml-source",
-    "href": "GeospatialDDCoordLocation.html#linkml-source",
-    "title": "GeospatialDDCoordLocation",
-    "section": "LinkML Source",
-    "text": "LinkML Source\n\n\nDirect\n\nname: GeospatialDDCoordLocation\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- elevation\n- latitude\n- longitude\n\n\n\nInduced\n\nname: GeospatialDDCoordLocation\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nattributes:\n  elevation:\n    name: elevation\n    description: should be a number and Unit of measure, and the datum. e.g. 401 m\n      above mean sea level.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    domain: GeospatialDDCoordLocation\n    alias: elevation\n    owner: GeospatialDDCoordLocation\n    domain_of:\n    - GeospatialDDCoordLocation\n    range: string\n  latitude:\n    name: latitude\n    description: angular coordinate measured positive north from the equator.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    domain: GeospatialDDCoordLocation\n    alias: latitude\n    owner: GeospatialDDCoordLocation\n    domain_of:\n    - GeospatialDDCoordLocation\n    range: decimal\n  longitude:\n    name: longitude\n    description: angular coordinate measured positive eastward from the prime meridian.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    domain: GeospatialDDCoordLocation\n    alias: longitude\n    owner: GeospatialDDCoordLocation\n    domain_of:\n    - GeospatialDDCoordLocation\n    range: decimal"
+    "text": "LinkML Source\n\n\nDirect\n\nname: PhysicalSampleRecord\ndescription: This is a data object that is a digital representation of a physical\n  sample, and thus shares the same identifier as the physical object. It provides\n  descriptive properties for any iSamples physical sample, URI for the metadata record\n  is same as URI for physical sample-- digital object is considered twin of physical\n  object, a representation. IGSN is recommended. Must be a URI that can be dereferenced\n  on the web.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- authorized_by\n- complies_with\n- curation\n- description\n- has_context_category\n- has_material_category\n- has_specimen_category\n- informal_classification\n- keywords\n- label\n- produced_by\n- related_resource\n- registrant\n- sample_identifier\n- sampling_purpose\nslot_usage:\n  label:\n    name: label\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    required: true\n  sample_identifier:\n    name: sample_identifier\n    domain_of:\n    - PhysicalSampleRecord\n    - PhysicalSampleRecord\n    required: true\n\n\n\nInduced\n\nname: PhysicalSampleRecord\ndescription: This is a data object that is a digital representation of a physical\n  sample, and thus shares the same identifier as the physical object. It provides\n  descriptive properties for any iSamples physical sample, URI for the metadata record\n  is same as URI for physical sample-- digital object is considered twin of physical\n  object, a representation. IGSN is recommended. Must be a URI that can be dereferenced\n  on the web.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslot_usage:\n  label:\n    name: label\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    required: true\n  sample_identifier:\n    name: sample_identifier\n    domain_of:\n    - PhysicalSampleRecord\n    - PhysicalSampleRecord\n    required: true\nattributes:\n  authorized_by:\n    name: authorized_by\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    alias: authorized_by\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  complies_with:\n    name: complies_with\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    alias: complies_with\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  curation:\n    name: curation\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    alias: curation\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: SpecimenCuration\n  description:\n    name: description\n    description: Free text description of the subject of a triple.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - dct:description\n    alias: description\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  has_context_category:\n    name: has_context_category\n    description: Top level context, based on the kind of feature sampled. Specific\n      identification of the sampled feature of interest is done through the SamplingEvent/Feature\n      of Interest property.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: PhysicalSampleRecord\n    multivalued: true\n    alias: has_context_category\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  has_material_category:\n    name: has_material_category\n    description: The kind of material that constitutes the sample.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    values_from:\n    - MaterialTypeVocabulary\n    domain: PhysicalSampleRecord\n    multivalued: true\n    alias: has_material_category\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: uriorcurie\n  has_specimen_category:\n    name: has_specimen_category\n    description: The kind of object the specimen is.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: PhysicalSampleRecord\n    multivalued: true\n    alias: has_specimen_category\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: uriorcurie\n  informal_classification:\n    name: informal_classification\n    description: Free text classification terms, not from a controlled vocabulary;\n      generally terms applied by collector.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: PhysicalSampleRecord\n    multivalued: true\n    alias: informal_classification\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  keywords:\n    name: keywords\n    description: free text categorization of sample to support discovery\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - sdo:keywords\n    domain: PhysicalSampleRecord\n    multivalued: true\n    alias: keywords\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  label:\n    name: label\n    description: a human intelligible string used to identify a thing, i.e. the name\n      to use for the thing; should be unique in the scope of a sample collection or\n      dataset.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    alias: label\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n    required: true\n  produced_by:\n    name: produced_by\n    description: object that documents the sampling event--who, where, when the specimen\n      was obtained\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: PhysicalSampleRecord\n    alias: produced_by\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: SamplingEvent\n  related_resource:\n    name: related_resource\n    description: link to related resource with relationship property to indicate nature\n      of connection. Target should be identifier for a resource.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    multivalued: true\n    alias: related_resource\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: SampleRelation\n  registrant:\n    name: registrant\n    description: identification of the agent that registered the sample, with contact\n      information. Should include person name and affiliation, or position name and\n      affiliation, or just organization name. e-mail address is preferred contact\n      information.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: PhysicalSampleRecord\n    alias: registrant\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  sample_identifier:\n    name: sample_identifier\n    description: URI that identifies the physical sample described by this record\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: PhysicalSampleRecord\n    alias: sample_identifier\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n    required: true\n  sampling_purpose:\n    name: sampling_purpose\n    description: term to specify why a sample was collection.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: PhysicalSampleRecord\n    alias: sampling_purpose\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string"
   },
   {
     "objectID": "vocabularies/sampledfeature.html",
@@ -161,39 +119,11 @@
     "text": "Physical specimen\n\nConcept: physicalspecimen\ntop concept in specimen type hierarchy. Represents any physical specimen.\n\nAny aggregation specimen\n\nConcept: anyaggregation\nChild of: physicalspecimen\nSample consists of a bunch of material fragments, not related to the same object (e.g. not a bunch of broken pot sherds that might be reassembled), but taken together representative of the sampled feature. Examples: loose soil, sediment, crushed rock, particulate, bunches of unrelated pot sherd, human production waste, filtrates and residues. The sample requires some kind of container to keep it together. Cores of loosely consolidated material are considered ‘piece of solid material’ because the internal parts have spatial relationships (e.g. upper part, lower part).\n\nAnthropogenic aggregation\n\nConcept: anthropogenicaggregation\nChild of: anyaggregation\nAggregation consists of fragments of material produced by human activity, not described individually, and generally not all originating from the same object. Includes pottery in an excavation unit that gets an aggregate description, production waste, production raw-materials, or other residues (broken bits of plaster from an destroyed wall), synthetic powders.\n\n\nBiome aggregation sample\n\nConcept: biomeaggregation\nChild of: anyaggregation biologicalspecimen\nSpecimen is an aggregation of whole or fragmentary parts of multiple organisms, microscopic or megascopic, representative of some site.\n\nBundle biome aggregation\n\nConcept: bundlebiomeaggregation\nChild of: biomeaggregation\nAn aggregation of whole organisms representative of some biome\n\n\n\nAggregation\n\nConcept: genericaggregation\nChild of: anyaggregation\nAn aggregate specimen that is not biogenic or composed of anthropogenic material fragments. Examples: loose soil or sediment (e.g. in a bag), rock chips, particulate filtrate or precipitate; rock powders.\n\n\n\nArtifact\n\nConcept: artifact\nChild of: physicalspecimen\nAn object made (manufactured, shaped, modified) by a human being, or precursor hominid. Include a set of pieces belonging originally to a single object and treated as a single specimen.\n\n\nAny biological specimen\n\nConcept: biologicalspecimen\nChild of: physicalspecimen\nSpecimen for which the sampled feature is one or more living organisms from a particular biome context, megascopic or microscopic\n\nBiome aggregation sample\n\nConcept: biomeaggregation\nChild of: anyaggregation biologicalspecimen\nSpecimen is an aggregation of whole or fragmentary parts of multiple organisms, microscopic or megascopic, representative of some site.\n\nBundle biome aggregation\n\nConcept: bundlebiomeaggregation\nChild of: biomeaggregation\nAn aggregation of whole organisms representative of some biome\n\n\n\nOrganism part\n\nConcept: organismpart\nChild of: biologicalspecimen\nPart of an organism, e.g. a tissue sample, plant leaf, flower, bird feather. Include internal parts not composed of organic material (e.g. teeth, bone), and hard body parts that are not shed (hoof, horn, tusk, claw). Hair is tricky, include here for now. Does not necessarily imply existance of parent sample. Not fossilized; generally includes organism parts native to deposits of Holocene to Recent age.\n\n\nOrganism product\n\nConcept: organismproduct\nChild of: biologicalspecimen\nSpecimen is a thing produced by some organism, generally not composed of organic material or including biological tissue, e.g. Shell, antler, egg shell, coral skeleton (organic tissue not included), fecal matter, cocoon, web. Consider internal parts not composed of organic material (e.g. teeth, bone) and hard body parts that are not shed (hoof, horn, tusk) to be organism parts.\n\n\nWhole organism specimen\n\nConcept: wholeorganism\nChild of: biologicalspecimen\nSpecimen consists of the bodies of one or more entire organisms of the same species, from any kingdom. Note that these are also inherently ‘solid object’\n\n\n\nFluid in container\n\nConcept: fluidincontainer\nChild of: physicalspecimen\nSpecimen is a container whose contents are liquid, gas, or mixed dominantly fluid phases, that is the actual sample material. Fluid might include minor solid particles. Container typically human made, but also includes natural fluid container, e.g. fluid inclusion in a mineral grain. Includes colloids, foams, gels, suspensions. The sample is the fluid substance; fluid samples collected to analyze the contained biome should be considered ‘Biome Aggregation’\n\n\nFossil\n\nConcept: fossil\nChild of: physicalspecimen\nSpecimen is the remains of one or more organisms preserved in rock; includes whole body, body parts (usually bone or shell), and trace fossils. An organism or organism part becomes a fossil when it has undergone some fossilization process that generally entails physical and chemical changes akin to diagenesis in a sedimentary rock. Trace fossils are manifestations of biologic activity preserved in a rock body (typically sedimentary), without included preserved body parts.\n\n\nOther solid object\n\nConcept: othersolidobject\nChild of: physicalspecimen\nSingle piece of material not one of the other types, e.g. rock specimen, mineral specimen, core. Ice and permafrost are considered solid materials.\n\n\nResearch product\n\nConcept: researchproduct\nChild of: physicalspecimen\nSpecimen is a product of some research workflow, e.g. a thin section, an XRF pellet, a grain mount, SEM stub, synthetic rock or mineral … In general there should be a link to a parent specimen from which this was derived. Might be aggregation (e.g. a synthetic material powder) or a solid object.\n\nAnalytical preparation\n\nConcept: analyticalpreparation\nChild of: researchproduct\nSpecimen is a product of processing required for some observation procedure, e.g. thin section, XRF bead, SEM stub, rock powder. If identified separately, this should have a ‘parent’ link to the original sample\n\n\nExperiment product\n\nConcept: experimentalproduct\nChild of: researchproduct\nSpecimen is product of an experimental procedure (e.g. synthetic material)"
   },
   {
-    "objectID": "Contextcategory.html",
-    "href": "Contextcategory.html",
-    "title": "Contextcategory",
-    "section": "",
-    "text": "top level context, based on the kind of feature sampled,from the SampledFeature vocabulary. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.\nURI: Contextcategory"
-  },
-  {
-    "objectID": "Contextcategory.html#permissible-values",
-    "href": "Contextcategory.html#permissible-values",
-    "title": "Contextcategory",
-    "section": "Permissible Values",
-    "text": "Permissible Values\n\n\n\n\n\n\n\n\nValue\nMeaning\nDescription\n\n\n\n\nActive human occupation site\nsf:activehumanoccupationsite\nSpecimen samples materials or objects produced by current or ongoing human ac…\n\n\nAnthropogenic environment\nsf:anthropogenicenvironment\nSampled feature is produced by or related to human activity past or present\n\n\nAny sampled feature\nsf:anysampledfeature\nTop concept in sampled feature type vocabulary\n\n\nBiological entity\nsf:biologicalentity\nSampled feature is an organism\n\n\nAtmosphere\nsf:atmosphere\nspecimen samples the Earth’s atmosphere\n\n\nEarth environment\nsf:earthenvironment\nspecimen samples the natural earth environment\n\n\nEarth interior\nsf:earthinterior\nSpecimen samples solid material within the earth (fluids in pore space in ear…\n\n\nEarth surface\nsf:earthsurface\nSpecimen samples the interface between solid earth and hydrosphere or atmosph…\n\n\nExperiment setting\nsf:experimentsetting\nSampled feature is the expermental set up that produced the sample\n\n\nExtraterrestrial environment\nsf:extraterrestrialenvironment\nspecimen samples environment outside of solid earth, hydrosphere, or atmosphe…\n\n\nGlacier environment\nsf:glacierenvironment\nSample of ice or water from a glacier, ice sheet, ice shelf, iceberg\n\n\nLaboratory or curatorial environment\nsf:laboratorycuratorialenvironment\nspecimen samples environment in a laboratory; e\n\n\nLake river or stream bottom\nsf:lakeriverstreambottom\nSpecimen samples the solid Earth interface with a lake or flowing water body\n\n\nMarine environment\nsf:marinewaterbody\nspecimen samples marine hydrosphere\n\n\nMarine water body bottom\nsf:marinewaterbodybottom\nSpecimen samples the solid Earth interface with marine or brackish water body\n\n\nSite of past human activities\nsf:pasthumanoccupationsite\nspecimen samples a place where humans have been and left evidence of their ac…\n\n\nSubaerial surface environment\nsf:subaerialsurfaceenvironment\nSpecimen samples the interface between solid Earth and atmosphere\n\n\nSubsurface fluid reservoir\nsf:subsurfacefluidreservoir\nSpecimen samples fluid that resides in fractures or intergranular porosity in…\n\n\nTerrestrial water body\nsf:terrestrialwaterbody\nspecimen samples terrestrial hydrosphere– lake, other standing water, or a f…\n\n\nWater body\nsf:waterbody\nspecimen samples the hydrosphere\n\n\nNot Provided\nNone\nterm to use for explicit missing values in required fields"
-  },
-  {
-    "objectID": "Contextcategory.html#identifier-and-mapping-information",
-    "href": "Contextcategory.html#identifier-and-mapping-information",
-    "title": "Contextcategory",
-    "section": "Identifier and Mapping Information",
-    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
-  },
-  {
-    "objectID": "Contextcategory.html#linkml-source",
-    "href": "Contextcategory.html#linkml-source",
-    "title": "Contextcategory",
-    "section": "LinkML Source",
-    "text": "LinkML Source\n\nname: contextcategory\ndescription: top level context, based on the kind of feature sampled,from the SampledFeature\n  vocabulary.  Specific identification of the sampled feature of interest is done\n  through the SamplingEvent/Feature of Interest property.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\npermissible_values:\n  Active human occupation site:\n    text: Active human occupation site\n    description: Specimen samples materials or objects produced by current or ongoing\n      human activity\n    meaning: sf:activehumanoccupationsite\n  Anthropogenic environment:\n    text: Anthropogenic environment\n    description: Sampled feature is produced by or related to human activity past\n      or present.\n    meaning: sf:anthropogenicenvironment\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_01000313\n  Any sampled feature:\n    text: Any sampled feature\n    description: Top concept in sampled feature type vocabulary.\n    meaning: sf:anysampledfeature\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n  Biological entity:\n    text: Biological entity\n    description: Sampled feature is an organism. Use for samples that represent some\n      species of organism as the proximate sampled feature for which the focus is\n      not the environment that the organism inhabits. Domain specific vocabulary extension\n      will be useful to distinguish samples from different phyla/order/class...\n    meaning: sf:biologicalentity\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n  Atmosphere:\n    text: Atmosphere\n    description: specimen samples the Earth's atmosphere\n    meaning: sf:atmosphere\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_01000811\n    - http://purl.obolibrary.org/obo/RBO_00000018\n  Earth environment:\n    text: Earth environment\n    description: specimen samples the natural earth environment\n    meaning: sf:earthenvironment\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n    see_also:\n    - http://semanticscience.org/resource/SIO_000955\n    - http://purl.obolibrary.org/obo/OMIT_0018724\n    - https://www.wikidata.org/wiki/Q2\n  Earth interior:\n    text: Earth interior\n    description: Specimen samples solid material within the earth (fluids in pore\n      space in earth interior sample 'subsurface fluid reservoir')\n    meaning: sf:earthinterior\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n  Earth surface:\n    text: Earth surface\n    description: Specimen samples the interface between solid earth and hydrosphere\n      or atmosphere. Includes samples representing things collected on the surface,\n      or in the uppermost part of the material below the surface. Not including recently\n      deposited sediment that has not been modified by interaction with the surface\n      environment.\n    meaning: sf:earthsurface\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/RBO_00000017\n  Experiment setting:\n    text: Experiment setting\n    description: Sampled feature is the expermental set up that produced the sample.\n    meaning: sf:experimentsetting\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n  Extraterrestrial environment:\n    text: Extraterrestrial environment\n    description: specimen samples environment outside of solid earth, hydrosphere,\n      or atmosphere.\n    meaning: sf:extraterrestrialenvironment\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n    see_also:\n    - http://purl.bioontology.org/ontology/MESH/D005118\n  Glacier environment:\n    text: Glacier environment\n    description: Sample of ice or water from a glacier, ice sheet, ice shelf, iceberg.\n      Does not include various environments adjacent to glacier.\n    meaning: sf:glacierenvironment\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_00000133\n  Laboratory or curatorial environment:\n    text: Laboratory or curatorial environment\n    description: specimen samples environment in a laboratory; e.g. lab blank measurements.\n    meaning: sf:laboratorycuratorialenvironment\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_01001405\n  Lake river or stream bottom:\n    text: Lake river or stream bottom\n    description: Specimen samples the solid Earth interface with a lake or flowing\n      water body\n    meaning: sf:lakeriverstreambottom\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_00000268\n    - http://purl.obolibrary.org/obo/ENVO_00000384\n  Marine environment:\n    text: Marine environment\n    description: specimen samples marine hydrosphere\n    meaning: sf:marinewaterbody\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_01000686\n    - http://purl.obolibrary.org/obo/ENVO_00001999\n  Marine water body bottom:\n    text: Marine water body bottom\n    description: Specimen samples the solid Earth interface with marine or brackish\n      water body. Includes benthic boundary layer--the bottom layer of water and the\n      uppermost layer of sediment directly influenced by the overlying water\n    meaning: sf:marinewaterbodybottom\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_00000482\n  Site of past human activities:\n    text: Site of past human activities\n    description: specimen samples a place where humans have been and left evidence\n      of their activity. Includes prehistoric and paleo hominid sites\n    meaning: sf:pasthumanoccupationsite\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n  Subaerial surface environment:\n    text: Subaerial surface environment\n    description: Specimen samples the  interface between solid Earth and atmosphere.  Sample\n      is collected on the surface, or immediately below surface (zone of bioturbation).\n      Include soil ‘O’ horizon and ‘biomantle’. Soil horizons below surface, or sediment\n      in active deposition (no soil development) is considered part of solid Earth.\n    meaning: sf:subaerialsurfaceenvironment\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/RBO_00000017\n  Subsurface fluid reservoir:\n    text: Subsurface fluid reservoir\n    description: Specimen samples fluid that resides in fractures or intergranular\n      porosity in the solid earth.\n    meaning: sf:subsurfacefluidreservoir\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_00012408\n  Terrestrial water body:\n    text: Terrestrial water body\n    description: specimen samples terrestrial hydrosphere-- lake, other standing water,\n      or a flowing water body (river, stream..) Include saline water in terrestrial\n      evaporite environments.\n    meaning: sf:terrestrialwaterbody\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_01001320\n  Water body:\n    text: Water body\n    description: specimen samples the hydrosphere\n    meaning: sf:waterbody\n    from_schema: https://w3id.org/isample/vocabulary/sampledfeature/0.9/sampledfeaturevocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_00000063\n  Not Provided:\n    text: Not Provided\n    description: term to use for explicit missing values in required fields. The term\n      is not part of the MaterialSampleType vocabulary."
-  },
-  {
     "objectID": "has_material_category.html",
     "href": "has_material_category.html",
     "title": "has_material_category",
     "section": "",
-    "text": "specify the kind of material that constitutes the sample\nURI: isam:has_material_category"
+    "text": "The kind of material that constitutes the sample.\nURI: isam:has_material_category"
   },
   {
     "objectID": "has_material_category.html#applicable-classes",
@@ -207,7 +137,7 @@
     "href": "has_material_category.html#properties",
     "title": "has_material_category",
     "section": "Properties",
-    "text": "Properties\n\nRange: Materialtype\nMultivalued: True"
+    "text": "Properties\n\nRange: xsd:anyURI\nMultivalued: True"
   },
   {
     "objectID": "has_material_category.html#identifier-and-mapping-information",
@@ -221,21 +151,21 @@
     "href": "has_material_category.html#linkml-source",
     "title": "has_material_category",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\nname: has_material_category\ndescription: specify the kind of material that constitutes the sample\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: PhysicalSampleRecord\nmultivalued: true\nalias: has_material_category\ndomain_of:\n- PhysicalSampleRecord\nrange: materialtype"
+    "text": "LinkML Source\n\nname: has_material_category\ndescription: The kind of material that constitutes the sample.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nvalues_from:\n- MaterialTypeVocabulary\ndomain: PhysicalSampleRecord\nmultivalued: true\nalias: has_material_category\ndomain_of:\n- PhysicalSampleRecord\nrange: uriorcurie"
   },
   {
     "objectID": "SamplingSite.html",
     "href": "SamplingSite.html",
     "title": "SamplingSite",
     "section": "",
-    "text": "URI: isam:SamplingSite"
+    "text": "URI: isam:SamplingSite\ncase 4"
   },
   {
     "objectID": "SamplingSite.html#slots",
     "href": "SamplingSite.html#slots",
     "title": "SamplingSite",
     "section": "Slots",
-    "text": "Slots\n\nSlots in class SamplingSite.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\ndescription\n0..1  String\nfree text description of the subject of a triple.\ndirect\n\n\nlabel\n0..1  String\na human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\ndirect\n\n\nlocation\n0..1  GeospatialDDCoordLocation\ngeopatial location of site; required default is WGS84 latitude, longitude in decimal degrees. Elevation as a string with number, unit of measure, and datum.\ndirect\n\n\nplace_name\n0..*  String\none or more names by which the sampling site is known.\ndirect"
+    "text": "Slots\n\nSlots in class SamplingSite.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\ndescription\n0..1  xsd:string\nFree text description of the subject of a triple.\ndirect\n\n\nlabel\n0..1  xsd:string\na human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\ndirect\n\n\nlocation\n0..1  GeospatialCoordLocation\ngeopatial location of site; required default is WGS84 latitude, longitude in decimal degrees. Elevation as a string with number, unit of measure, and datum.\ndirect\n\n\nplace_name\n0..*  xsd:string\none or more names by which the sampling site is known.\ndirect"
   },
   {
     "objectID": "SamplingSite.html#usages",
@@ -263,7 +193,7 @@
     "href": "SamplingSite.html#linkml-source",
     "title": "SamplingSite",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\n\nDirect\n\nname: SamplingSite\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- description\n- label\n- location\n- place_name\n\n\n\nInduced\n\nname: SamplingSite\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nattributes:\n  description:\n    name: description\n    description: free text description of the subject of a triple.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - dct:description\n    rank: 1000\n    alias: description\n    owner: SamplingSite\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  label:\n    name: label\n    description: a human intelligible string used to identify a thing, i.e. the name\n      to use for the thing; should be unique in the scope of a sample collection or\n      dataset.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - rdfs:label\n    rank: 1000\n    alias: label\n    owner: SamplingSite\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  location:\n    name: location\n    description: geopatial location of site; required default is WGS84 latitude, longitude\n      in decimal degrees. Elevation as a string with number, unit of measure, and\n      datum.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    domain: SamplingSite\n    alias: location\n    owner: SamplingSite\n    domain_of:\n    - SamplingSite\n    range: GeospatialDDCoordLocation\n  place_name:\n    name: place_name\n    description: one or more names by which the sampling site is known.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    domain: SamplingSite\n    multivalued: true\n    alias: place_name\n    owner: SamplingSite\n    domain_of:\n    - SamplingSite\n    range: string"
+    "text": "LinkML Source\n\n\nDirect\n\nname: SamplingSite\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- description\n- label\n- location\n- place_name\n\n\n\nInduced\n\nname: SamplingSite\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nattributes:\n  description:\n    name: description\n    description: Free text description of the subject of a triple.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - dct:description\n    alias: description\n    owner: SamplingSite\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  label:\n    name: label\n    description: a human intelligible string used to identify a thing, i.e. the name\n      to use for the thing; should be unique in the scope of a sample collection or\n      dataset.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - rdfs:label\n    alias: label\n    owner: SamplingSite\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  location:\n    name: location\n    description: geopatial location of site; required default is WGS84 latitude, longitude\n      in decimal degrees. Elevation as a string with number, unit of measure, and\n      datum.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: SamplingSite\n    alias: location\n    owner: SamplingSite\n    domain_of:\n    - SamplingSite\n    range: GeospatialCoordLocation\n  place_name:\n    name: place_name\n    description: one or more names by which the sampling site is known.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: SamplingSite\n    multivalued: true\n    alias: place_name\n    owner: SamplingSite\n    domain_of:\n    - SamplingSite\n    range: string"
   },
   {
     "objectID": "label.html",
@@ -277,14 +207,14 @@
     "href": "label.html#applicable-classes",
     "title": "label",
     "section": "Applicable Classes",
-    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.\n\n\nSamplingSite\nNone\n\n\nSamplingEvent\nNone\n\n\nSpecimenCuration\nobject contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.\n\n\nSampleRelation\nNone"
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.\n\n\nSamplingSite\nNone\n\n\nSamplingEvent\nInformation about the event resulting in the creation of the physical sample.\n\n\nSpecimenCuration\nInformation about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.\n\n\nSampleRelation\nNone"
   },
   {
     "objectID": "label.html#properties",
     "href": "label.html#properties",
     "title": "label",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: None"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
   },
   {
     "objectID": "label.html#identifier-and-mapping-information",
@@ -312,7 +242,7 @@
     "href": "sampling_site.html#applicable-classes",
     "title": "sampling_site",
     "section": "Applicable Classes",
-    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSamplingEvent\nNone"
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSamplingEvent\nInformation about the event resulting in the creation of the physical sample."
   },
   {
     "objectID": "sampling_site.html#properties",
@@ -347,14 +277,14 @@
     "href": "result_time.html#applicable-classes",
     "title": "result_time",
     "section": "Applicable Classes",
-    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSamplingEvent\nNone"
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSamplingEvent\nInformation about the event resulting in the creation of the physical sample."
   },
   {
     "objectID": "result_time.html#properties",
     "href": "result_time.html#properties",
     "title": "result_time",
     "section": "Properties",
-    "text": "Properties\n\nRange: Date\nMultivalued: None"
+    "text": "Properties\n\nRange: xsd:date\nMultivalued: None"
   },
   {
     "objectID": "result_time.html#identifier-and-mapping-information",
@@ -389,7 +319,7 @@
     "href": "place_name.html#properties",
     "title": "place_name",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: True"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: True"
   },
   {
     "objectID": "place_name.html#identifier-and-mapping-information",
@@ -424,7 +354,7 @@
     "href": "target.html#properties",
     "title": "target",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: None"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
   },
   {
     "objectID": "target.html#identifier-and-mapping-information",
@@ -459,7 +389,7 @@
     "href": "related_resource.html#properties",
     "title": "related_resource",
     "section": "Properties",
-    "text": "Properties\n\nRange: SampleRelation\nMultivalued: None"
+    "text": "Properties\n\nRange: SampleRelation\nMultivalued: True"
   },
   {
     "objectID": "related_resource.html#identifier-and-mapping-information",
@@ -473,28 +403,28 @@
     "href": "related_resource.html#linkml-source",
     "title": "related_resource",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\nname: related_resource\ndescription: link to related resource with relationship property to indicate nature\n  of connection. Target should be identifier for a resource.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nalias: related_resource\ndomain_of:\n- PhysicalSampleRecord\nrange: SampleRelation"
+    "text": "LinkML Source\n\nname: related_resource\ndescription: link to related resource with relationship property to indicate nature\n  of connection. Target should be identifier for a resource.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nmultivalued: true\nalias: related_resource\ndomain_of:\n- PhysicalSampleRecord\nrange: SampleRelation"
   },
   {
     "objectID": "access_constraints.html",
     "href": "access_constraints.html",
     "title": "access_constraints",
     "section": "",
-    "text": "cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.\nURI: isam:access_constraints"
+    "text": "Cultural, legal, or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.\nURI: isam:access_constraints"
   },
   {
     "objectID": "access_constraints.html#applicable-classes",
     "href": "access_constraints.html#applicable-classes",
     "title": "access_constraints",
     "section": "Applicable Classes",
-    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSpecimenCuration\nobject contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample."
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSpecimenCuration\nInformation about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample."
   },
   {
     "objectID": "access_constraints.html#properties",
     "href": "access_constraints.html#properties",
     "title": "access_constraints",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: True"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: True"
   },
   {
     "objectID": "access_constraints.html#identifier-and-mapping-information",
@@ -508,21 +438,21 @@
     "href": "access_constraints.html#linkml-source",
     "title": "access_constraints",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\nname: access_constraints\ndescription: cultural, legal or other policy issues that bear on access to view, borrow,\n  or subsample a sample or visit a sampling site.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nmultivalued: true\nalias: access_constraints\ndomain_of:\n- SpecimenCuration\nrange: string"
+    "text": "LinkML Source\n\nname: access_constraints\ndescription: 'Cultural, legal, or other policy issues that bear on access to view,\n  borrow, or subsample a sample or visit a sampling site.\n\n  '\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nmultivalued: true\nalias: access_constraints\ndomain_of:\n- SpecimenCuration\nrange: string"
   },
   {
     "objectID": "SpecimenCuration.html",
     "href": "SpecimenCuration.html",
     "title": "SpecimenCuration",
     "section": "",
-    "text": "object contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.\nURI: isam:SpecimenCuration"
+    "text": "Information about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.\nURI: isam:SpecimenCuration\ncase 4"
   },
   {
     "objectID": "SpecimenCuration.html#slots",
     "href": "SpecimenCuration.html#slots",
     "title": "SpecimenCuration",
     "section": "Slots",
-    "text": "Slots\n\nSlots in class SpecimenCuration.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\naccess_constraints\n0..*  String\ncultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.\ndirect\n\n\ncuration_location\n0..1  String\ninformation about where and how the sample is currently stored\ndirect\n\n\ndescription\n0..1  String\nfree text description of the subject of a triple.\ndirect\n\n\nlabel\n0..1  String\na human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\ndirect\n\n\nresponsibility\n0..*  String\nString with person name and affiliation, or organization name, and their role relative to the parent element.\ndirect"
+    "text": "Slots\n\nSlots in class SpecimenCuration.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\naccess_constraints\n0..*  xsd:string\nCultural, legal, or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.\n\n\n\ndirect\n\n\n\n\n\ncuration_location\n0..1  xsd:string\nInformation about where and how the sample is currently stored.\ndirect\n\n\ndescription\n0..1  xsd:string\nFree text description of the subject of a triple.\ndirect\n\n\nlabel\n0..1  xsd:string\na human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\ndirect\n\n\nresponsibility\n0..*  xsd:string\nString with person name and affiliation, or organization name, and their role relative to the parent element.\ndirect"
   },
   {
     "objectID": "SpecimenCuration.html#usages",
@@ -550,7 +480,7 @@
     "href": "SpecimenCuration.html#linkml-source",
     "title": "SpecimenCuration",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\n\nDirect\n\nname: SpecimenCuration\ndescription: object contains information about current storage of sample, access to\n  sample, and events in curation history. Curation as used here starts when the sample\n  is removed from its original context, and might include various processing steps\n  for preservation.  Processing related to analysis preparation such as crushing,\n  dissolution, evaporation, filtering are considered part of the sampling method for\n  the derived child sample.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- access_constraints\n- curation_location\n- description\n- label\n- responsibility\n\n\n\nInduced\n\nname: SpecimenCuration\ndescription: object contains information about current storage of sample, access to\n  sample, and events in curation history. Curation as used here starts when the sample\n  is removed from its original context, and might include various processing steps\n  for preservation.  Processing related to analysis preparation such as crushing,\n  dissolution, evaporation, filtering are considered part of the sampling method for\n  the derived child sample.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nattributes:\n  access_constraints:\n    name: access_constraints\n    description: cultural, legal or other policy issues that bear on access to view,\n      borrow, or subsample a sample or visit a sampling site.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    multivalued: true\n    alias: access_constraints\n    owner: SpecimenCuration\n    domain_of:\n    - SpecimenCuration\n    range: string\n  curation_location:\n    name: curation_location\n    description: information about where and how the sample is currently stored\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    alias: curation_location\n    owner: SpecimenCuration\n    domain_of:\n    - SpecimenCuration\n    range: string\n  description:\n    name: description\n    description: free text description of the subject of a triple.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - dct:description\n    rank: 1000\n    alias: description\n    owner: SpecimenCuration\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  label:\n    name: label\n    description: a human intelligible string used to identify a thing, i.e. the name\n      to use for the thing; should be unique in the scope of a sample collection or\n      dataset.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - rdfs:label\n    rank: 1000\n    alias: label\n    owner: SpecimenCuration\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  responsibility:\n    name: responsibility\n    description: String with person name and affiliation, or organization name, and\n      their role relative to the parent element.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    multivalued: true\n    alias: responsibility\n    owner: SpecimenCuration\n    domain_of:\n    - SamplingEvent\n    - SpecimenCuration\n    range: string"
+    "text": "LinkML Source\n\n\nDirect\n\nname: SpecimenCuration\ndescription: Information about the current storage of sample, access to sample, and\n  events in curation history. Curation as used here starts when the sample is removed\n  from its original context, and might include various processing steps for preservation.  Processing\n  related to analysis preparation such as crushing, dissolution, evaporation, filtering\n  are considered part of the sampling method for the derived child sample.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- access_constraints\n- curation_location\n- description\n- label\n- responsibility\n\n\n\nInduced\n\nname: SpecimenCuration\ndescription: Information about the current storage of sample, access to sample, and\n  events in curation history. Curation as used here starts when the sample is removed\n  from its original context, and might include various processing steps for preservation.  Processing\n  related to analysis preparation such as crushing, dissolution, evaporation, filtering\n  are considered part of the sampling method for the derived child sample.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nattributes:\n  access_constraints:\n    name: access_constraints\n    description: 'Cultural, legal, or other policy issues that bear on access to view,\n      borrow, or subsample a sample or visit a sampling site.\n\n      '\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    multivalued: true\n    alias: access_constraints\n    owner: SpecimenCuration\n    domain_of:\n    - SpecimenCuration\n    range: string\n  curation_location:\n    name: curation_location\n    description: Information about where and how the sample is currently stored.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    alias: curation_location\n    owner: SpecimenCuration\n    domain_of:\n    - SpecimenCuration\n    range: string\n  description:\n    name: description\n    description: Free text description of the subject of a triple.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - dct:description\n    alias: description\n    owner: SpecimenCuration\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  label:\n    name: label\n    description: a human intelligible string used to identify a thing, i.e. the name\n      to use for the thing; should be unique in the scope of a sample collection or\n      dataset.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - rdfs:label\n    alias: label\n    owner: SpecimenCuration\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  responsibility:\n    name: responsibility\n    description: String with person name and affiliation, or organization name, and\n      their role relative to the parent element.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    multivalued: true\n    alias: responsibility\n    owner: SpecimenCuration\n    domain_of:\n    - SamplingEvent\n    - SpecimenCuration\n    range: string"
   },
   {
     "objectID": "complies_with.html",
@@ -571,7 +501,7 @@
     "href": "complies_with.html#properties",
     "title": "complies_with",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: None"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
   },
   {
     "objectID": "complies_with.html#identifier-and-mapping-information",
@@ -592,7 +522,7 @@
     "href": "informal_classification.html",
     "title": "informal_classification",
     "section": "",
-    "text": "free text classification terms, not from a controlled vocabulary; generally terms applied by collector\nURI: isam:informal_classification"
+    "text": "Free text classification terms, not from a controlled vocabulary; generally terms applied by collector.\nURI: isam:informal_classification"
   },
   {
     "objectID": "informal_classification.html#applicable-classes",
@@ -606,7 +536,7 @@
     "href": "informal_classification.html#properties",
     "title": "informal_classification",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: True"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: True"
   },
   {
     "objectID": "informal_classification.html#identifier-and-mapping-information",
@@ -620,7 +550,7 @@
     "href": "informal_classification.html#linkml-source",
     "title": "informal_classification",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\nname: informal_classification\ndescription: free text classification terms, not from a controlled vocabulary; generally\n  terms applied by collector\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: PhysicalSampleRecord\nmultivalued: true\nalias: informal_classification\ndomain_of:\n- PhysicalSampleRecord\nrange: string"
+    "text": "LinkML Source\n\nname: informal_classification\ndescription: Free text classification terms, not from a controlled vocabulary; generally\n  terms applied by collector.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: PhysicalSampleRecord\nmultivalued: true\nalias: informal_classification\ndomain_of:\n- PhysicalSampleRecord\nrange: string"
   },
   {
     "objectID": "glossary.html",
@@ -634,14 +564,14 @@
     "href": "SampleRelation.html",
     "title": "SampleRelation",
     "section": "",
-    "text": "URI: isam:SampleRelation"
+    "text": "URI: isam:SampleRelation\ncase 4"
   },
   {
     "objectID": "SampleRelation.html#slots",
     "href": "SampleRelation.html#slots",
     "title": "SampleRelation",
     "section": "Slots",
-    "text": "Slots\n\nSlots in class SampleRelation.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\ndescription\n0..1  String\nfree text description of the subject of a triple.\ndirect\n\n\nlabel\n0..1  String\na human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\ndirect\n\n\nrelationship\n0..1  String\nterm to identify realationship between host sample and the sample relation target. Should be controlled vocabulary (ScopedName). for now start with string, ‘derivedFrom’.\ndirect\n\n\ntarget\n0..1  String\nidentifier for the target resource in the relationship. Start with string, should be Identifier object.\ndirect"
+    "text": "Slots\n\nSlots in class SampleRelation.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\ndescription\n0..1  xsd:string\nFree text description of the subject of a triple.\ndirect\n\n\nlabel\n0..1  xsd:string\na human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\ndirect\n\n\nrelationship\n0..1  xsd:string\nterm to identify realationship between host sample and the sample relation target. Should be controlled vocabulary (ScopedName). for now start with string, ‘derivedFrom’.\ndirect\n\n\ntarget\n0..1  xsd:string\nidentifier for the target resource in the relationship. Start with string, should be Identifier object.\ndirect"
   },
   {
     "objectID": "SampleRelation.html#usages",
@@ -669,7 +599,7 @@
     "href": "SampleRelation.html#linkml-source",
     "title": "SampleRelation",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\n\nDirect\n\nname: SampleRelation\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- description\n- label\n- relationship\n- target\n\n\n\nInduced\n\nname: SampleRelation\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nattributes:\n  description:\n    name: description\n    description: free text description of the subject of a triple.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - dct:description\n    rank: 1000\n    alias: description\n    owner: SampleRelation\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  label:\n    name: label\n    description: a human intelligible string used to identify a thing, i.e. the name\n      to use for the thing; should be unique in the scope of a sample collection or\n      dataset.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - rdfs:label\n    rank: 1000\n    alias: label\n    owner: SampleRelation\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  relationship:\n    name: relationship\n    description: term to identify realationship between host sample and the sample\n      relation target. Should be controlled vocabulary (ScopedName). for now start\n      with string, 'derivedFrom'.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    alias: relationship\n    owner: SampleRelation\n    domain_of:\n    - SampleRelation\n    range: string\n  target:\n    name: target\n    description: identifier for the target resource in the relationship. Start with\n      string, should be Identifier object.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    alias: target\n    owner: SampleRelation\n    domain_of:\n    - SampleRelation\n    range: string"
+    "text": "LinkML Source\n\n\nDirect\n\nname: SampleRelation\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- description\n- label\n- relationship\n- target\n\n\n\nInduced\n\nname: SampleRelation\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nattributes:\n  description:\n    name: description\n    description: Free text description of the subject of a triple.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - dct:description\n    alias: description\n    owner: SampleRelation\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  label:\n    name: label\n    description: a human intelligible string used to identify a thing, i.e. the name\n      to use for the thing; should be unique in the scope of a sample collection or\n      dataset.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - rdfs:label\n    alias: label\n    owner: SampleRelation\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  relationship:\n    name: relationship\n    description: term to identify realationship between host sample and the sample\n      relation target. Should be controlled vocabulary (ScopedName). for now start\n      with string, 'derivedFrom'.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    alias: relationship\n    owner: SampleRelation\n    domain_of:\n    - SampleRelation\n    range: string\n  target:\n    name: target\n    description: identifier for the target resource in the relationship. Start with\n      string, should be Identifier object.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    alias: target\n    owner: SampleRelation\n    domain_of:\n    - SampleRelation\n    range: string"
   },
   {
     "objectID": "keywords.html",
@@ -690,7 +620,7 @@
     "href": "keywords.html#properties",
     "title": "keywords",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: True"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: True"
   },
   {
     "objectID": "keywords.html#identifier-and-mapping-information",
@@ -718,14 +648,14 @@
     "href": "latitude.html#applicable-classes",
     "title": "latitude",
     "section": "Applicable Classes",
-    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nGeospatialDDCoordLocation\nNone"
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nGeospatialCoordLocation\nA physical location in decimal degrees using EPSG:4326. Elevation is is expressed in meters relative to the WGS84 ellipsoid."
   },
   {
     "objectID": "latitude.html#properties",
     "href": "latitude.html#properties",
     "title": "latitude",
     "section": "Properties",
-    "text": "Properties\n\nRange: Decimal\nMultivalued: None"
+    "text": "Properties\n\nRange: xsd:decimal\nMultivalued: None"
   },
   {
     "objectID": "latitude.html#identifier-and-mapping-information",
@@ -739,7 +669,7 @@
     "href": "latitude.html#linkml-source",
     "title": "latitude",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\nname: latitude\ndescription: angular coordinate measured positive north from the equator.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: GeospatialDDCoordLocation\nalias: latitude\ndomain_of:\n- GeospatialDDCoordLocation\nrange: decimal"
+    "text": "LinkML Source\n\nname: latitude\ndescription: angular coordinate measured positive north from the equator.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: GeospatialCoordLocation\nalias: latitude\ndomain_of:\n- GeospatialCoordLocation\nrange: decimal"
   },
   {
     "objectID": "sampling_purpose.html",
@@ -760,7 +690,7 @@
     "href": "sampling_purpose.html#properties",
     "title": "sampling_purpose",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: None"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
   },
   {
     "objectID": "sampling_purpose.html#identifier-and-mapping-information",
@@ -781,21 +711,21 @@
     "href": "elevation.html",
     "title": "elevation",
     "section": "",
-    "text": "should be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level.\nURI: isam:elevation"
+    "text": "Should be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level.\nURI: isam:elevation"
   },
   {
     "objectID": "elevation.html#applicable-classes",
     "href": "elevation.html#applicable-classes",
     "title": "elevation",
     "section": "Applicable Classes",
-    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nGeospatialDDCoordLocation\nNone"
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nGeospatialCoordLocation\nA physical location in decimal degrees using EPSG:4326. Elevation is is expressed in meters relative to the WGS84 ellipsoid."
   },
   {
     "objectID": "elevation.html#properties",
     "href": "elevation.html#properties",
     "title": "elevation",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: None"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
   },
   {
     "objectID": "elevation.html#identifier-and-mapping-information",
@@ -809,7 +739,7 @@
     "href": "elevation.html#linkml-source",
     "title": "elevation",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\nname: elevation\ndescription: should be a number and Unit of measure, and the datum. e.g. 401 m above\n  mean sea level.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: GeospatialDDCoordLocation\nalias: elevation\ndomain_of:\n- GeospatialDDCoordLocation\nrange: string"
+    "text": "LinkML Source\n\nname: elevation\ndescription: Should be a number and Unit of measure, and the datum. e.g. 401 m above\n  mean sea level.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: GeospatialCoordLocation\nalias: elevation\ndomain_of:\n- GeospatialCoordLocation\nrange: string"
   },
   {
     "objectID": "index.html",
@@ -823,49 +753,49 @@
     "href": "index.html#classes",
     "title": "Schema for documenting physical samples",
     "section": "Classes",
-    "text": "Classes\n\n\n\nClass\nDescription\n\n\n\n\nGeospatialDDCoordLocation\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, …\n\n\nSampleRelation\n\n\n\nSamplingEvent\n\n\n\nSamplingSite\n\n\n\nSpecimenCuration\nobject contains information about current storage of sample, access to sample…"
+    "text": "Classes\n\n\n\nClass\nDescription\n\n\n\n\nGeospatialCoordLocation\nA physical location in decimal degrees using EPSG:4326\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, …\n\n\nSampleRelation\n\n\n\nSamplingEvent\nInformation about the event resulting in the creation of the physical sample\n\n\nSamplingSite\n\n\n\nSpecimenCuration\nInformation about the current storage of sample, access to sample, and events…"
   },
   {
     "objectID": "index.html#slots",
     "href": "index.html#slots",
     "title": "Schema for documenting physical samples",
     "section": "Slots",
-    "text": "Slots\n\n\n\nSlot\nDescription\n\n\n\n\naccess_constraints\ncultural, legal or other policy issues that bear on access to view, borrow, o…\n\n\nauthorized_by\n\n\n\ncomplies_with\n\n\n\ncuration\n\n\n\ncuration_location\ninformation about where and how the sample is currently stored\n\n\ndescription\nfree text description of the subject of a triple\n\n\nelevation\nshould be a number and Unit of measure, and the datum\n\n\nhas_context_category\ntop level context, based on the kind of feature sampled\n\n\nhas_feature_of_interest\nwhat does the sample represent\n\n\nhas_material_category\nspecify the kind of material that constitutes the sample\n\n\nhas_specimen_category\nspecify the kind of object that the specimen is\n\n\ninformal_classification\nfree text classification terms, not from a controlled vocabulary; generally t…\n\n\nkeywords\nfree text categorization of sample to support discovery\n\n\nlabel\na human intelligible string used to identify a thing, i\n\n\nlatitude\nangular coordinate measured positive north from the equator\n\n\nlocation\ngeopatial location of site; required default is WGS84 latitude, longitude in …\n\n\nlongitude\nangular coordinate measured positive eastward from the prime meridian\n\n\nplace_name\none or more names by which the sampling site is known\n\n\nproduced_by\nobject that documents the sampling event–who, where, when the specimen was o…\n\n\nregistrant\nidentification of the agent that registered the sample, with contact informat…\n\n\nrelated_resource\nlink to related resource with relationship property to indicate nature of con…\n\n\nrelationship\nterm to identify realationship between host sample and the sample relation ta…\n\n\nresponsibility\nString with person name and affiliation, or organization name, and their role…\n\n\nresult_time\nDate on which the sample was collected\n\n\nsample_identifier\nURI that identifies the physical sample described by this record\n\n\nsampling_purpose\nterm to specify why a sample was collection\n\n\nsampling_site\nobject that identifies the place where the sample was collected\n\n\ntarget\nidentifier for the target resource in the relationship"
+    "text": "Slots\n\n\n\nSlot\nDescription\n\n\n\n\naccess_constraints\nCultural, legal, or other policy issues that bear on access to view, borrow, …\n\n\nauthorized_by\n\n\n\ncomplies_with\n\n\n\ncuration\n\n\n\ncuration_location\nInformation about where and how the sample is currently stored\n\n\ndescription\nFree text description of the subject of a triple\n\n\nelevation\nShould be a number and Unit of measure, and the datum\n\n\nhas_context_category\nTop level context, based on the kind of feature sampled\n\n\nhas_feature_of_interest\nWhat does the sample represent\n\n\nhas_material_category\nThe kind of material that constitutes the sample\n\n\nhas_specimen_category\nThe kind of object the specimen is\n\n\ninformal_classification\nFree text classification terms, not from a controlled vocabulary; generally t…\n\n\nkeywords\nfree text categorization of sample to support discovery\n\n\nlabel\na human intelligible string used to identify a thing, i\n\n\nlatitude\nangular coordinate measured positive north from the equator\n\n\nlocation\ngeopatial location of site; required default is WGS84 latitude, longitude in …\n\n\nlongitude\nangular coordinate measured positive eastward from the prime meridian\n\n\nplace_name\none or more names by which the sampling site is known\n\n\nproduced_by\nobject that documents the sampling event–who, where, when the specimen was o…\n\n\nregistrant\nidentification of the agent that registered the sample, with contact informat…\n\n\nrelated_resource\nlink to related resource with relationship property to indicate nature of con…\n\n\nrelationship\nterm to identify realationship between host sample and the sample relation ta…\n\n\nresponsibility\nString with person name and affiliation, or organization name, and their role…\n\n\nresult_time\nDate on which the sample was collected\n\n\nsample_identifier\nURI that identifies the physical sample described by this record\n\n\nsampling_purpose\nterm to specify why a sample was collection\n\n\nsampling_site\nobject that identifies the place where the sample was collected\n\n\ntarget\nidentifier for the target resource in the relationship"
   },
   {
     "objectID": "index.html#enumerations",
     "href": "index.html#enumerations",
     "title": "Schema for documenting physical samples",
     "section": "Enumerations",
-    "text": "Enumerations\n\n\n\nEnumeration\nDescription\n\n\n\n\nContextcategory\ntop level context, based on the kind of feature sampled,from the SampledFeatu…\n\n\nMaterialtype\ncategories for kinds of material that constitute the sample\n\n\nSpecimencategory\nspecify the kind of object that the specimen is"
+    "text": "Enumerations\nNo enumerations are defined."
   },
   {
     "objectID": "index.html#types",
     "href": "index.html#types",
     "title": "Schema for documenting physical samples",
     "section": "Types",
-    "text": "Types\n\n\n\nType\nDescription\n\n\n\n\nDate\n\n\n\nDecimal\n\n\n\nString"
+    "text": "Types\n\n\n\nType\nDescription\n\n\n\n\nxsd:boolean\nA binary (true or false) value\n\n\nxsd:date\na date (year, month and day) in an idealized calendar\n\n\nlinkml:DateOrDatetime\nEither a date or a datetime\n\n\nxsd:dateTime\nThe combination of a date and time\n\n\nxsd:decimal\nA real number with arbitrary precision that conforms to the xsd:decimal speci…\n\n\nxsd:double\nA real number that conforms to the xsd:double specification\n\n\nxsd:float\nA real number that conforms to the xsd:float specification\n\n\nxsd:integer\nAn integer\n\n\nxsd:string\nPrefix part of CURIE\n\n\nshex:nonLiteral\nA URI, CURIE or BNODE that represents a node in a model\n\n\nshex:iri\nA URI or CURIE that represents an object in the model\n\n\nxsd:string\nA character string\n\n\nxsd:dateTime\nA time object represents a (local) time of day, independent of any particular…\n\n\nxsd:anyURI\na complete URI\n\n\nxsd:anyURI\na URI or a CURIE"
   },
   {
     "objectID": "index.html#subsets",
     "href": "index.html#subsets",
     "title": "Schema for documenting physical samples",
     "section": "Subsets",
-    "text": "Subsets\n\n\n\nSubset\nDescription"
+    "text": "Subsets\nNo subsets are defined."
   },
   {
     "objectID": "SamplingEvent.html",
     "href": "SamplingEvent.html",
     "title": "SamplingEvent",
     "section": "",
-    "text": "URI: isam:SamplingEvent"
+    "text": "Information about the event resulting in the creation of the physical sample.\nURI: isam:SamplingEvent\ncase 4"
   },
   {
     "objectID": "SamplingEvent.html#slots",
     "href": "SamplingEvent.html#slots",
     "title": "SamplingEvent",
     "section": "Slots",
-    "text": "Slots\n\nSlots in class SamplingEvent.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\ndescription\n0..1  String\nfree text description of the subject of a triple.\ndirect\n\n\nhas_feature_of_interest\n0..1  String\nwhat does the sample represent.\ndirect\n\n\nlabel\n0..1  String\na human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\ndirect\n\n\nresponsibility\n0..*  String\nString with person name and affiliation, or organization name, and their role relative to the parent element.\ndirect\n\n\nresult_time\n0..1  Date\nDate on which the sample was collected.\ndirect\n\n\nsampling_site\n0..1  SamplingSite\nobject that identifies the place where the sample was collected\ndirect"
+    "text": "Slots\n\nSlots in class SamplingEvent.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\ndescription\n0..1  xsd:string\nFree text description of the subject of a triple.\ndirect\n\n\nhas_feature_of_interest\n0..1  xsd:string\nWhat does the sample represent.\ndirect\n\n\nlabel\n0..1  xsd:string\na human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\ndirect\n\n\nresponsibility\n0..*  xsd:string\nString with person name and affiliation, or organization name, and their role relative to the parent element.\ndirect\n\n\nresult_time\n0..1  xsd:date\nDate on which the sample was collected.\ndirect\n\n\nsampling_site\n0..1  SamplingSite\nobject that identifies the place where the sample was collected\ndirect"
   },
   {
     "objectID": "SamplingEvent.html#usages",
@@ -893,7 +823,14 @@
     "href": "SamplingEvent.html#linkml-source",
     "title": "SamplingEvent",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\n\nDirect\n\nname: SamplingEvent\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- description\n- has_feature_of_interest\n- label\n- responsibility\n- result_time\n- sampling_site\n\n\n\nInduced\n\nname: SamplingEvent\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nattributes:\n  description:\n    name: description\n    description: free text description of the subject of a triple.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - dct:description\n    rank: 1000\n    alias: description\n    owner: SamplingEvent\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  has_feature_of_interest:\n    name: has_feature_of_interest\n    description: what does the sample represent.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    domain: SamplingEvent\n    alias: has_feature_of_interest\n    owner: SamplingEvent\n    domain_of:\n    - SamplingEvent\n    range: string\n  label:\n    name: label\n    description: a human intelligible string used to identify a thing, i.e. the name\n      to use for the thing; should be unique in the scope of a sample collection or\n      dataset.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - rdfs:label\n    rank: 1000\n    alias: label\n    owner: SamplingEvent\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  responsibility:\n    name: responsibility\n    description: String with person name and affiliation, or organization name, and\n      their role relative to the parent element.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    multivalued: true\n    alias: responsibility\n    owner: SamplingEvent\n    domain_of:\n    - SamplingEvent\n    - SpecimenCuration\n    range: string\n  result_time:\n    name: result_time\n    description: Date on which the sample was collected.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    domain: SamplingEvent\n    alias: result_time\n    owner: SamplingEvent\n    domain_of:\n    - SamplingEvent\n    range: date\n  sampling_site:\n    name: sampling_site\n    description: object that identifies the place where the sample was collected\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    rank: 1000\n    domain: SamplingEvent\n    alias: sampling_site\n    owner: SamplingEvent\n    domain_of:\n    - SamplingEvent\n    range: SamplingSite"
+    "text": "LinkML Source\n\n\nDirect\n\nname: SamplingEvent\ndescription: Information about the event resulting in the creation of the physical\n  sample.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- description\n- has_feature_of_interest\n- label\n- responsibility\n- result_time\n- sampling_site\n\n\n\nInduced\n\nname: SamplingEvent\ndescription: Information about the event resulting in the creation of the physical\n  sample.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nattributes:\n  description:\n    name: description\n    description: Free text description of the subject of a triple.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - dct:description\n    alias: description\n    owner: SamplingEvent\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  has_feature_of_interest:\n    name: has_feature_of_interest\n    description: What does the sample represent.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: SamplingEvent\n    alias: has_feature_of_interest\n    owner: SamplingEvent\n    domain_of:\n    - SamplingEvent\n    range: string\n  label:\n    name: label\n    description: a human intelligible string used to identify a thing, i.e. the name\n      to use for the thing; should be unique in the scope of a sample collection or\n      dataset.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - rdfs:label\n    alias: label\n    owner: SamplingEvent\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  responsibility:\n    name: responsibility\n    description: String with person name and affiliation, or organization name, and\n      their role relative to the parent element.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    multivalued: true\n    alias: responsibility\n    owner: SamplingEvent\n    domain_of:\n    - SamplingEvent\n    - SpecimenCuration\n    range: string\n  result_time:\n    name: result_time\n    description: Date on which the sample was collected.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: SamplingEvent\n    alias: result_time\n    owner: SamplingEvent\n    domain_of:\n    - SamplingEvent\n    range: date\n  sampling_site:\n    name: sampling_site\n    description: object that identifies the place where the sample was collected\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: SamplingEvent\n    alias: sampling_site\n    owner: SamplingEvent\n    domain_of:\n    - SamplingEvent\n    range: SamplingSite"
+  },
+  {
+    "objectID": "types.html",
+    "href": "types.html",
+    "title": "iSamples Model",
+    "section": "",
+    "text": "types\nShared type definitions for the core LinkML mode and metamodel\nURI: https://w3id.org/linkml/types"
   },
   {
     "objectID": "physicalSample.html",
@@ -907,21 +844,21 @@
     "href": "curation_location.html",
     "title": "curation_location",
     "section": "",
-    "text": "information about where and how the sample is currently stored\nURI: isam:curation_location"
+    "text": "Information about where and how the sample is currently stored.\nURI: isam:curation_location"
   },
   {
     "objectID": "curation_location.html#applicable-classes",
     "href": "curation_location.html#applicable-classes",
     "title": "curation_location",
     "section": "Applicable Classes",
-    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSpecimenCuration\nobject contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample."
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSpecimenCuration\nInformation about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample."
   },
   {
     "objectID": "curation_location.html#properties",
     "href": "curation_location.html#properties",
     "title": "curation_location",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: None"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
   },
   {
     "objectID": "curation_location.html#identifier-and-mapping-information",
@@ -935,7 +872,7 @@
     "href": "curation_location.html#linkml-source",
     "title": "curation_location",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\nname: curation_location\ndescription: information about where and how the sample is currently stored\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nalias: curation_location\ndomain_of:\n- SpecimenCuration\nrange: string"
+    "text": "LinkML Source\n\nname: curation_location\ndescription: Information about where and how the sample is currently stored.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nalias: curation_location\ndomain_of:\n- SpecimenCuration\nrange: string"
   },
   {
     "objectID": "authorized_by.html",
@@ -956,7 +893,7 @@
     "href": "authorized_by.html#properties",
     "title": "authorized_by",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: None"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
   },
   {
     "objectID": "authorized_by.html#identifier-and-mapping-information",
@@ -973,67 +910,25 @@
     "text": "LinkML Source\n\nname: authorized_by\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nalias: authorized_by\ndomain_of:\n- PhysicalSampleRecord\nrange: string"
   },
   {
-    "objectID": "Decimal.html",
-    "href": "Decimal.html",
-    "title": "Decimal",
-    "section": "",
-    "text": "URI: xsd:decimal"
-  },
-  {
-    "objectID": "Decimal.html#identifier-and-mapping-information",
-    "href": "Decimal.html#identifier-and-mapping-information",
-    "title": "Decimal",
-    "section": "Identifier and Mapping Information",
-    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
-  },
-  {
-    "objectID": "Materialtype.html",
-    "href": "Materialtype.html",
-    "title": "Materialtype",
-    "section": "",
-    "text": "categories for kinds of material that constitute the sample\nURI: Materialtype"
-  },
-  {
-    "objectID": "Materialtype.html#permissible-values",
-    "href": "Materialtype.html#permissible-values",
-    "title": "Materialtype",
-    "section": "Permissible Values",
-    "text": "Permissible Values\n\n\n\n\n\n\n\n\nValue\nMeaning\nDescription\n\n\n\n\nAny anthropogenic material\nmat:anyanthropogenicmaterial\nMaterial produced by human activity\n\n\nAnthropogenic material\nmat:otheranthropogenicmaterial\nNon-metallic material produced by human activity\n\n\nAnthropogenic metal material\nmat:anthropogenicmetal\nSpecimen is dominantly composed of metal that has been produced or used by hu…\n\n\nAny Ice\nmat:anyice\na solid material that is normally a liquid or gas at Standard Temperature and…\n\n\nBiogenic non-organic material\nmat:biogenicnonorganicmaterial\nMaterial produced by an organism but not composed of ’very large molecules of…\n\n\nDispersed media\nmat:dispersedmedia\nA material contains discrete elements of one medium that are dispersed in a c…\n\n\nFluid material\nmat:fluid\na substance that continually deforms (flows) under an applied shear stress, o…\n\n\nGaseous material\nmat:gas\nMaterial composed of one or more chemical entities that has neither independe…\n\n\nFrozen water\nmat:waterice\nWater that is in a solid state\n\n\nLiquid water\nmat:liquidwater\nA material primarily composed of dihydrogen oxide in its liquid form; infer t…\n\n\nMaterial\nmat:material\nAny material\n\n\nMineral\nmat:mineral\nMaterial consists of a single mineral or mineraloid phase\n\n\nMixed soil sediment or rock\nmat:mixedsoilsedimentrock\nMaterial is mixed aggregation of fragments of undifferentiated soil, sediment…\n\n\nNatural Solid Material\nmat:earthmaterial\nUndifferentiated, mineral, soil, sediment, rock, or natural particulates\n\n\nNon-aqueous liquid material\nmat:nonaqueousliquid\nLiquid composed dominantly of material other than water\n\n\nNot Provided\nNone\nuse for missing values, explicit null\n\n\nOrganic material\nmat:organicmaterial\nEnvironmental material derived from living organisms and composed primarily o…\n\n\nParticulate\nmat:particulate\nMaterial consists of microscopic particulate material derived by precipitatio…\n\n\nRock or sediment\nmat:rockorsediment\nMaterial is rock or sediment\n\n\nRock\nmat:rock\nConsolidated aggregate of particles (grains) of rock, mineral (including nati…\n\n\nSediment\nmat:sediment\nSolid granular material transported by wind, water, or gravity, not modified …\n\n\nSoil\nmat:soil\nMixed granular mineral and organic matter modified by interaction between ear…"
-  },
-  {
-    "objectID": "Materialtype.html#identifier-and-mapping-information",
-    "href": "Materialtype.html#identifier-and-mapping-information",
-    "title": "Materialtype",
-    "section": "Identifier and Mapping Information",
-    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
-  },
-  {
-    "objectID": "Materialtype.html#linkml-source",
-    "href": "Materialtype.html#linkml-source",
-    "title": "Materialtype",
-    "section": "LinkML Source",
-    "text": "LinkML Source\n\nname: materialtype\ndescription: categories for kinds of material that constitute the sample\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\npermissible_values:\n  Any anthropogenic material:\n    text: Any anthropogenic material\n    description: Material produced by human activity. Intention is for materials that\n      would not be found in nature without human intervention. Thus clay would be\n      a 'Mineral' material, but fired clay in a brick or ceramic would be an 'Anthropogenic\n      material'.   Native copper would be a Mineral, but smelted copper, extracted\n      from ore that might include native copper (among other sulfide and oxide minerals)\n      would be 'Anthropogenic metal material'. This is a general class for undifferentiated\n      metal or non-metal anthropogenic material.\n    meaning: mat:anyanthropogenicmaterial\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_0010001\n  Anthropogenic material:\n    text: Anthropogenic material\n    description: Non-metallic material produced by human activity. Organic products\n      of agricultural activity are both anthropogenic and organic. Include lab preparations\n      like XRF pellet and rock powders. Examples-- ceramics, brick, concrete, slag,\n      (anthropogenic) glass, mine tailing, plaster, waste.\n    meaning: mat:otheranthropogenicmaterial\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n  Anthropogenic metal material:\n    text: Anthropogenic metal material\n    description: Specimen is dominantly composed of metal that has been produced or\n      used by humans; subclass of anthropogenic material. Samples of naturally occuring\n      metallic material (e.g. native copper, gold nuggets) should be considered mineral\n      material. Metallic material is material that when polished or fractured, shows\n      a lustrous appearance, and conducts electricity and heat relatively well. Metals\n      are typically malleable (they can be hammered into thin sheets) or ductile (can\n      be drawn into wires). The boundaries between metals, nonmetals, and metalloids\n      fluctuate slightly due to a lack of universally accepted definitions of the\n      categories involved.\n    meaning: mat:anthropogenicmetal\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_01001069\n  Any Ice:\n    text: Any Ice\n    description: a solid material that is normally a liquid or gas at Standard Temperature\n      and Pressre (STP)  that is in a solid state under the observed temperature and\n      pressure conditions. Samples of non-aqueous ice should be classified as 'Any\n      ice'. This is considered enough of an edge case that distinguishing 'ice that\n      might or might not be aqueous' from 'non-aqueous ice' does not merit adding\n      another class to the scheme.\n    meaning: mat:anyice\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_01001125\n  Biogenic non-organic material:\n    text: Biogenic non-organic material\n    description: Material produced by an organism but not composed of 'very large\n      molecules of biological origin.' E.g. bone, tooth, shell, coral skeleton\n    meaning: mat:biogenicnonorganicmaterial\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/CHEBI_64389\n    - http://purl.obolibrary.org/obo/ENVO_01001644\n    - http://purl.obolibrary.org/obo/UBERON_0002481\n  Dispersed media:\n    text: Dispersed media\n    description: A material contains discrete elements of one medium that are dispersed\n      in a continuous fluid medium.  The dispersed component can be a gas, a liquid\n      or a solid (based on https //en.wikipedia.org/wiki/Dispersed_media). Does not\n      include mixtures of granular material like soil, sediment, particulate, or solids\n      that would be considered a rock. E.g. aerosol ENVO_00010505, foam ENVO_00005738,\n      emulsion ENVO_00010506, colloidal suspension ENVO_01001560, scum(?)ENVO:00003930,\n      clathrate?\n    meaning: mat:dispersedmedia\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_00010506\n    - http://purl.obolibrary.org/obo/ENVO_01001560\n    - https://www.wikidata.org/wiki/Q181780\n  Fluid material:\n    text: Fluid material\n    description: a substance that continually deforms (flows) under an applied shear\n      stress, or external force. Fluids are a phase of matter and include liquids,\n      gases and plasmas. They are substances with zero shear modulus, or, in simpler\n      terms, substances that cannot resist any shear force applied to them.\n    meaning: mat:fluid\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_02000140\n    - https://en.wikipedia.org/wiki/Fluid\n  Gaseous material:\n    text: Gaseous material\n    description: Material composed of one or more chemical entities that has neither\n      independent shape nor volume but tends to expand indefinitely\n    meaning: mat:gas\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_01000797\n  Frozen water:\n    text: Frozen water\n    description: Water that is in a solid state.\n    meaning: mat:waterice\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_01000277\n  Liquid water:\n    text: Liquid water\n    description: A material primarily composed of dihydrogen oxide in its liquid form;\n      infer that the sample is curated in some kind of container.\n    meaning: mat:liquidwater\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_00002006\n  Material:\n    text: Material\n    description: Any material. Top Concept in iSamples Material Category scheme\n    meaning: mat:material\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_00010483\n    - https://www.wikidata.org/wiki/Q214609\n  Mineral:\n    text: Mineral\n    description: Material consists of a single mineral or mineraloid phase. 'A mineral\n      is an element or chemical compound that is normally crystalline and that has\n      been formed as a result of geological processes.' (Nickel, Ernest H. (1995),\n      The definition of a mineral, The Canadian Mineralogist. 33(3):689–90). Include\n      mineraloids. ... A material primarily composed of some substance that is naturally\n      occurring, solid and stable at room temperature, representable by a chemical\n      formula, usually abiogenic, and that has an ordered atomic structure. The identity\n      of a mineral species is defined by a crystal structure and a chemical composition\n      that might include various specific elemental substitutions in that structure.\n      Mineraloid--A naturally occurring mineral-like substance that does not demonstrate\n      crystallinity. Mineraloids (https://en.wikipedia.org/wiki/Mineraloid) possess\n      chemical compositions that vary beyond the generally accepted ranges for specific\n      minerals. Examples-obsidian, Opal.\n    meaning: mat:mineral\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_01000256\n  Mixed soil sediment or rock:\n    text: Mixed soil sediment or rock\n    description: Material is mixed aggregation of fragments of undifferentiated soil,\n      sediment or  rock origin. e.g. cuttings from some boreholes (rock fragments\n      and caved soil or sediment). This class is for samples that are solid Earth\n      materials but known not to be mineral or particulate samples. This class is\n      for samples that are solid Earth materials but known not to be mineral or particulate\n      samples.\n    meaning: mat:mixedsoilsedimentrock\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n  Natural Solid Material:\n    text: Natural Solid Material\n    description: Undifferentiated, mineral, soil, sediment, rock, or natural particulates.\n      Typically (nessarily?) a granular aggregate that might include any of the previous\n      constiturents. Use for Earth Material aggregates of uncertain origin\n    meaning: mat:earthmaterial\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - http://resource.geosciml.org/classifier/cgi/lithology/compound_material\n    - https://w3id.org/gso/geology/Solid_Geologic_Material\n  Non-aqueous liquid material:\n    text: Non-aqueous liquid material\n    description: Liquid composed dominantly of material other than water. Includes\n      liquids that do not fit in any other category. E.g. alcohol, petroleum. Fluids\n      like blood, urine, mucus are problematic. Suggest categorizing as 'Non-aqueous\n      liquid material' and 'Organic material' or 'Biogenic non-organic material'.\n    meaning: mat:nonaqueousliquid\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - http://purl.bioontology.org/ontology/PDQ/CDR0000446576\n    - http://purl.obolibrary.org/obo/ENVO_00002984\n  Not Provided:\n    text: Not Provided\n    description: use for missing values, explicit null. This is not a term from the\n      iSamples materials vocabulary, but included for software implementation.\n  Organic material:\n    text: Organic material\n    description: Environmental material derived from living organisms and composed\n      primarily of one or more very large molecules of biological origin. Examples--body\n      (animal or plant), body part, fecal matter, seeds, wood, tissue, biological\n      fluids, biological waste, algal material, biofilm, necromass, plankton.  Distinction\n      from 'Biogenic non-organic material' is fuzzy. Biogenic non-organic material\n      is intended to cover biogenic products consisting of mineral or mineraloid substance,\n      e.g. apatite (or other Ca phosphates), aragonite (or other Ca carbonate) typical\n      of shells, bone, teeth. Also note potential overlap with organic compounds that\n      occur as naturally formed minerals ('Organic mineral', in geo materials mineral\n      group extension vocabulary).\n    meaning: mat:organicmaterial\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_01000155\n  Particulate:\n    text: Particulate\n    description: Material consists of microscopic particulate material derived by\n      precipitation, filtering, or settling from suspension in a fluid, e.g. filtrate\n      from water, deposition from atmosphere, astro material particles. Might include\n      mineral, organic, or biological material. ENVO definition (ENVO_01000060) has\n      \\\"composed of microscopic portions of solid or liquid material suspended in\n      another environmental material.\\\", refine here to define as the solid particles,\n      distinct from a material in which they are suspended. A material that includes\n      solid or liquid particles suspended in another material would be a dispersed_media\n      in this scheme, not defined in ENVO. Human manufactured particulates (e.g. rock\n      powder) should be categorized as 'anthropogenic material' as well as 'Particulate'\n    meaning: mat:particulate\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - http://purl.bioontology.org/ontology/MESH/D052638\n    - http://purl.obolibrary.org/obo/NCIT_C1709\n    - http://purl.obolibrary.org/obo/ENVO_01000060\n  Rock or sediment:\n    text: Rock or sediment\n    description: Material is rock or sediment.  E.g. for samples from subsurface cores\n      that are not well described, from drill holes that likely penetrate sediment\n      near the surface an might be sampling rock at greater depth, or sea floor dredge\n      haul consisting of mixed sediment and rock. Distinct from 'Mixed soil, sediment\n      or rock' that represents samples known to have components of all these materials.\n    meaning: mat:rockorsediment\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n  Rock:\n    text: Rock\n    description: Consolidated aggregate of particles (grains) of rock, mineral (including\n      native elements), mineraloid, or solid organic material. Includes mineral aggregates\n      such as granite, shale, marble; natural glass such as obsidian; organic material\n      formed by geologic processes such a coal;  extraterrestrial material in meteorites;\n      and  crushed rock fragments like drill cuttings from rock.\n    meaning: mat:rock\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - http://resource.geosciml.org/classifier/cgi/lithology/rock\n    - http://purl.obolibrary.org/obo/ENVO_00001995\n  Sediment:\n    text: Sediment\n    description: Solid granular material transported by wind, water, or gravity, not\n      modified by interaction with biosphere or atmosphere (to differentiate from\n      soil). Particles derived by erosion of pre-existing rock, from shell or other\n      body parts from organisms, or precipitated chemically in the surficial environment\n      (http://resource.geosciml.org/classifier/cgi/lithology/sediment). Sediment is\n      not consolidated, i.e. Particulate constituents of a compound material do not\n      adhere to each other strongly enough that the aggregate can be considered a\n      solid material in its own right. NOTE that some chemical sediments crystallize\n      directly as solid material or aggregates when deposited, but are considered\n      sediment because of their origin.\n    meaning: mat:sediment\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/ENVO_00002007\n    - http://resource.geosciml.org/classifier/cgi/lithology/sediment\n  Soil:\n    text: Soil\n    description: Mixed granular mineral and organic matter modified by interaction\n      between earth material, biosphere, and atmosphere, consisting mostly of varying\n      proportions of sand, silt, and clay, organic material such as humus, gases,\n      liquids, and a broad range of resident micro- and macroorganisms. Soil consists\n      of horizons near the Earth's surface that, in contrast to the underlying parent\n      material, have been altered by the interactions of climate, relief, and living\n      organisms over time.\n    meaning: mat:soil\n    from_schema: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary\n    see_also:\n    - https://en.wikipedia.org/wiki/Soil\n    - http://purl.obolibrary.org/obo/ENVO_00001998\n    - http://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/edu/?cid=nrcs142p2_054280"
-  },
-  {
     "objectID": "has_feature_of_interest.html",
     "href": "has_feature_of_interest.html",
     "title": "has_feature_of_interest",
     "section": "",
-    "text": "what does the sample represent.\nURI: isam:has_feature_of_interest"
+    "text": "What does the sample represent.\nURI: isam:has_feature_of_interest"
   },
   {
     "objectID": "has_feature_of_interest.html#applicable-classes",
     "href": "has_feature_of_interest.html#applicable-classes",
     "title": "has_feature_of_interest",
     "section": "Applicable Classes",
-    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSamplingEvent\nNone"
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSamplingEvent\nInformation about the event resulting in the creation of the physical sample."
   },
   {
     "objectID": "has_feature_of_interest.html#properties",
     "href": "has_feature_of_interest.html#properties",
     "title": "has_feature_of_interest",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: None"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
   },
   {
     "objectID": "has_feature_of_interest.html#identifier-and-mapping-information",
@@ -1047,7 +942,7 @@
     "href": "has_feature_of_interest.html#linkml-source",
     "title": "has_feature_of_interest",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\nname: has_feature_of_interest\ndescription: what does the sample represent.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: SamplingEvent\nalias: has_feature_of_interest\ndomain_of:\n- SamplingEvent\nrange: string"
+    "text": "LinkML Source\n\nname: has_feature_of_interest\ndescription: What does the sample represent.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: SamplingEvent\nalias: has_feature_of_interest\ndomain_of:\n- SamplingEvent\nrange: string"
   },
   {
     "objectID": "longitude.html",
@@ -1061,14 +956,14 @@
     "href": "longitude.html#applicable-classes",
     "title": "longitude",
     "section": "Applicable Classes",
-    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nGeospatialDDCoordLocation\nNone"
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nGeospatialCoordLocation\nA physical location in decimal degrees using EPSG:4326. Elevation is is expressed in meters relative to the WGS84 ellipsoid."
   },
   {
     "objectID": "longitude.html#properties",
     "href": "longitude.html#properties",
     "title": "longitude",
     "section": "Properties",
-    "text": "Properties\n\nRange: Decimal\nMultivalued: None"
+    "text": "Properties\n\nRange: xsd:decimal\nMultivalued: None"
   },
   {
     "objectID": "longitude.html#identifier-and-mapping-information",
@@ -1082,56 +977,56 @@
     "href": "longitude.html#linkml-source",
     "title": "longitude",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\nname: longitude\ndescription: angular coordinate measured positive eastward from the prime meridian.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: GeospatialDDCoordLocation\nalias: longitude\ndomain_of:\n- GeospatialDDCoordLocation\nrange: decimal"
+    "text": "LinkML Source\n\nname: longitude\ndescription: angular coordinate measured positive eastward from the prime meridian.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: GeospatialCoordLocation\nalias: longitude\ndomain_of:\n- GeospatialCoordLocation\nrange: decimal"
   },
   {
-    "objectID": "Date.html",
-    "href": "Date.html",
-    "title": "Date",
+    "objectID": "GeospatialCoordLocation.html",
+    "href": "GeospatialCoordLocation.html",
+    "title": "GeospatialCoordLocation",
     "section": "",
-    "text": "URI: xsd:date"
+    "text": "A physical location in decimal degrees using EPSG:4326. Elevation is is expressed in meters relative to the WGS84 ellipsoid.\nURI: isam:GeospatialCoordLocation\ncase 4"
   },
   {
-    "objectID": "Date.html#identifier-and-mapping-information",
-    "href": "Date.html#identifier-and-mapping-information",
-    "title": "Date",
+    "objectID": "GeospatialCoordLocation.html#slots",
+    "href": "GeospatialCoordLocation.html#slots",
+    "title": "GeospatialCoordLocation",
+    "section": "Slots",
+    "text": "Slots\n\nSlots in class GeospatialCoordLocation.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\nelevation\n0..1  xsd:string\nShould be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level.\ndirect\n\n\nlatitude\n0..1  xsd:decimal\nangular coordinate measured positive north from the equator.\ndirect\n\n\nlongitude\n0..1  xsd:decimal\nangular coordinate measured positive eastward from the prime meridian.\ndirect"
+  },
+  {
+    "objectID": "GeospatialCoordLocation.html#usages",
+    "href": "GeospatialCoordLocation.html#usages",
+    "title": "GeospatialCoordLocation",
+    "section": "Usages",
+    "text": "Usages\n\n\n\nused by\nused in\ntype\nused\n\n\n\n\nSamplingSite\nlocation\nrange\nGeospatialCoordLocation\n\n\nGeospatialCoordLocation\nelevation\ndomain\nGeospatialCoordLocation\n\n\nGeospatialCoordLocation\nlatitude\ndomain\nGeospatialCoordLocation\n\n\nGeospatialCoordLocation\nlongitude\ndomain\nGeospatialCoordLocation"
+  },
+  {
+    "objectID": "GeospatialCoordLocation.html#identifier-and-mapping-information",
+    "href": "GeospatialCoordLocation.html#identifier-and-mapping-information",
+    "title": "GeospatialCoordLocation",
     "section": "Identifier and Mapping Information",
     "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
   },
   {
-    "objectID": "Specimencategory.html",
-    "href": "Specimencategory.html",
-    "title": "Specimencategory",
-    "section": "",
-    "text": "specify the kind of object that the specimen is\nURI: Specimencategory"
+    "objectID": "GeospatialCoordLocation.html#mappings",
+    "href": "GeospatialCoordLocation.html#mappings",
+    "title": "GeospatialCoordLocation",
+    "section": "Mappings",
+    "text": "Mappings\n\n\n\nMapping Type\nMapped Value\n\n\n\n\nself\n[‘isam:GeospatialCoordLocation’]\n\n\nnative\n[‘isam:GeospatialCoordLocation’]"
   },
   {
-    "objectID": "Specimencategory.html#permissible-values",
-    "href": "Specimencategory.html#permissible-values",
-    "title": "Specimencategory",
-    "section": "Permissible Values",
-    "text": "Permissible Values\n\n\n\n\n\n\n\n\nValue\nMeaning\nDescription\n\n\n\n\nAggregation\nspec:genericaggregation\nAn aggregate specimen that is not biogenic or composed of anthropogenic mater…\n\n\nAny aggregation sample\nspec:anyaggregation\nSample consists of a bunch of material fragments, not related to the same obj…\n\n\nAnalytical preparation\nspec:analyticalpreparation\nSpecimen is a product of processing required for some observation procedure, …\n\n\nAnthropogenic aggregation\nspec:anthropogenicaggregation\nAggregation consists of fragments of material produced by human activity, no…\n\n\nArtifact\nspec:artifact\nAn object made (manufactured, shaped, modified) by a human being, or precurso…\n\n\nAny biological sample\nspec:biologicalspecimen\nSpecimen that represents one or more living or once-living organisms\n\n\nBiome aggregation sample\nspec:biomeaggregation\nSpecimen is an aggregation of whole or fragmentary parts of multiple organism…\n\n\nBundle biome aggregation\nspec:bundlebiomeaggregation\nAn aggregation of whole organisms representative of some biome\n\n\nExperiment product\nspec:experimentalproduct\nSpecimen is product of an experimental procedure (e\n\n\nFossil\nspec:fossil\nSpecimen is the remains of one or more organisms preserved in rock; includes …\n\n\nFluid in container\nspec:fluidincontainer\nSpecimen is a container whose contents are liquid, gas, or mixed dominantly f…\n\n\nOrganism part\nspec:organismpart\nPart of an organism, e\n\n\nOrganism product\nspec:organismproduct\nSpecimen is a thing produced by some organism, generally not composed of orga…\n\n\nOther solid object\nspec:othersolidobject\nSingle piece of material not one of the other types, e\n\n\nMaterial sample\nspec:physicalspecimen\ntop concept in specimen type hierarchy\n\n\nResearch product\nspec:researchproduct\nSpecimen is a product of some research workflow, e\n\n\nSlurry biome aggregation\nspec:slurrybiomeaggregation\na material that consists of mixed organic and inorganic material, including w…\n\n\nWhole organism sample\nspec:wholeorganism\nSpecimen consists of the bodies of one or more entire organisms of the same s…\n\n\nNot Provided\nNone\nterm to use for explicit missing values in required fields"
-  },
-  {
-    "objectID": "Specimencategory.html#identifier-and-mapping-information",
-    "href": "Specimencategory.html#identifier-and-mapping-information",
-    "title": "Specimencategory",
-    "section": "Identifier and Mapping Information",
-    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
-  },
-  {
-    "objectID": "Specimencategory.html#linkml-source",
-    "href": "Specimencategory.html#linkml-source",
-    "title": "Specimencategory",
+    "objectID": "GeospatialCoordLocation.html#linkml-source",
+    "href": "GeospatialCoordLocation.html#linkml-source",
+    "title": "GeospatialCoordLocation",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\nname: specimencategory\ndescription: specify the kind of object that the specimen is\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\npermissible_values:\n  Aggregation:\n    text: Aggregation\n    description: An aggregate specimen that is not biogenic or composed of anthropogenic\n      material fragments.  Examples-- loose soil or sediment (e.g. in a bag), rock\n      chips, particulate filtrate or precipitate; rock powders.\n    meaning: spec:genericaggregation\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n  Any aggregation sample:\n    text: Any aggregation sample\n    description: Sample consists of a bunch of material fragments, not related to\n      the same object (e.g. not a bunch of broken pot sherds that might be reassembled),\n      but taken together representative of the sampled feature. Examples--loose soil,\n      sediment, crushed rock,  particulate, bunches of unrelated pot sherd, human\n      production waste, filtrates and residues. The sample requires some kind of container\n      to keep it together. Cores of loosely consolidated material are considered 'piece\n      of solid material' because the internal parts have spatial relationships (e.g.\n      upper part, lower part).\n    meaning: spec:anyaggregation\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n  Analytical preparation:\n    text: Analytical preparation\n    description: Specimen is a product of processing required for some observation\n      procedure, e.g. thin section, XRF bead, SEM stub, rock powder. If identified\n      separately, this should have a ‘parent’ link to the original sample\n    meaning: spec:analyticalpreparation\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n  Anthropogenic aggregation:\n    text: Anthropogenic aggregation\n    description: Aggregation consists of fragments of material produced by human activity,  not\n      described individually, and generally not all originating from the same object.  Includes\n      pottery in an excavation unit that gets an aggregate description, production\n      waste, production raw-materials, or other residues (broken bits of plaster from\n      an destroyed wall), synthetic powders.\n    meaning: spec:anthropogenicaggregation\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n  Artifact:\n    text: Artifact\n    description: An object made (manufactured, shaped, modified) by a human being,\n      or precursor hominid. Include a set of pieces belonging originally to a single\n      object and treated as a single specimen.\n    meaning: spec:artifact\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n    see_also:\n    - https://en.wikipedia.org/wiki/Artifact_(archaeology)\n  Any biological sample:\n    text: Any biological sample\n    description: Specimen that represents one or more living or once-living organisms.\n    meaning: spec:biologicalspecimen\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n  Biome aggregation sample:\n    text: Biome aggregation sample\n    description: Specimen is an aggregation of whole or fragmentary parts of multiple\n      organisms, microscopic or megascopic, representative of some site.\n    meaning: spec:biomeaggregation\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n  Bundle biome aggregation:\n    text: Bundle biome aggregation\n    description: An aggregation of whole organisms representative of some biome\n    meaning: spec:bundlebiomeaggregation\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n  Experiment product:\n    text: Experiment product\n    description: Specimen is product of an experimental procedure (e.g. synthetic\n      material)\n    meaning: spec:experimentalproduct\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n  Fossil:\n    text: Fossil\n    description: Specimen is the remains of one or more organisms preserved in rock;\n      includes whole body, body parts (usually bone or shell), and trace fossils.\n      An organism or organism part becomes a fossil when it has undergone some fossilization\n      process that generally entails physical and chemical changes akin to diagenesis\n      in a sedimentary rock. Trace fossils are manifestations of biologic activity\n      preserved in a rock body (typically sedimentary), without included preserved\n      body parts.  There are many processes that lead to fossilization, including\n      permineralization, casts and molds, authigenic mineralization, replacement and\n      recrystallization, adpression, carbonization, and bioimmuration.\n    meaning: spec:fossil\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n    see_also:\n    - http://sweet.jpl.nasa.gov/2.3/matrRock.owl#Fossil\n    - https://en.wikipedia.org/wiki/Fossil\n  Fluid in container:\n    text: Fluid in container\n    description: Specimen is a container whose contents are liquid, gas, or mixed\n      dominantly fluid phases, that is the actual sample material. Fluid might include\n      minor solid particles. Container typically human made, but also includes natural\n      fluid container, e.g. fluid inclusion in a mineral grain.  Includes colloids,\n      foams, gels, suspensions. The sample is the fluid substance; fluid samples collected\n      to analyze the contained biome should be considered 'Biome Aggregation'\n    meaning: spec:fluidincontainer\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n    see_also:\n    - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25278\n    - http://purl.obolibrary.org/obo/ENVO_02000140\n  Organism part:\n    text: Organism part\n    description: Part of an organism, e.g. a tissue sample, plant leaf, flower, bird\n      feather. Include internal parts not composed of organic material (e.g. teeth,\n      bone), and hard body parts that are not shed (hoof, horn, tusk, claw).  Hair\n      is tricky, include here for now.  Does not necessarily imply existance of parent\n      sample. Not fossilized; generally includes organism parts native to deposits\n      of Holocene to Recent age.\n    meaning: spec:organismpart\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n    see_also:\n    - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C103199\n    - https://www.wikidata.org/wiki/Q4936952\n  Organism product:\n    text: Organism product\n    description: Specimen is a thing produced by some organism, generally not composed\n      of organic material or including biological tissue, e.g. Shell, antler, egg\n      shell, coral skeleton (organic tissue not included), fecal matter, cocoon, web,\n      gut content.  Consider internal parts not composed of organic material (e.g.\n      teeth, bone) and hard body parts that are not shed (hoof, horn, tusk) to be\n      organism parts.\n    meaning: spec:organismproduct\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n  Other solid object:\n    text: Other solid object\n    description: Single piece of material not one of the other types, e.g. rock specimen,\n      mineral specimen, core. Ice and permafrost are considered solid materials.\n    meaning: spec:othersolidobject\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/BFO_0000030\n  Material sample:\n    text: Material sample\n    description: top concept in specimen type hierarchy.  Represents any physical\n      specimen.\n    meaning: spec:physicalspecimen\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n    see_also:\n    - http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19157\n    - https://dwc.tdwg.org/terms/#materialsample\n  Research product:\n    text: Research product\n    description: Specimen is a product of some research workflow, e.g. a thin section,\n      an XRF pellet, a grain mount, SEM stub, synthetic rock or mineral ...  In general\n      there should be a link to a parent specimen from which this was derived.  Might\n      be aggregation (e.g. a synthetic material powder) or a solid object.\n    meaning: spec:researchproduct\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n  Slurry biome aggregation:\n    text: Slurry biome aggregation\n    description: a material that consists of mixed organic and inorganic material,\n      including whole organisms and organism fragments.\n    meaning: spec:slurrybiomeaggregation\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n  Whole organism sample:\n    text: Whole organism sample\n    description: Specimen consists of the bodies of one or more entire organisms of\n      the same species, from any kingdom. Note that these are also inherently 'solid\n      object’\n    meaning: spec:wholeorganism\n    from_schema: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary\n    see_also:\n    - http://purl.obolibrary.org/obo/OBI_0100026\n  Not Provided:\n    text: Not Provided\n    description: term to use for explicit missing values in required fields. The term\n      is not part of the MaterialSampleType vocabulary."
+    "text": "LinkML Source\n\n\nDirect\n\nname: GeospatialCoordLocation\ndescription: A physical location in decimal degrees using EPSG:4326. Elevation is\n  is expressed in meters relative to the WGS84 ellipsoid.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- elevation\n- latitude\n- longitude\n\n\n\nInduced\n\nname: GeospatialCoordLocation\ndescription: A physical location in decimal degrees using EPSG:4326. Elevation is\n  is expressed in meters relative to the WGS84 ellipsoid.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nattributes:\n  elevation:\n    name: elevation\n    description: Should be a number and Unit of measure, and the datum. e.g. 401 m\n      above mean sea level.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: GeospatialCoordLocation\n    alias: elevation\n    owner: GeospatialCoordLocation\n    domain_of:\n    - GeospatialCoordLocation\n    range: string\n  latitude:\n    name: latitude\n    description: angular coordinate measured positive north from the equator.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: GeospatialCoordLocation\n    alias: latitude\n    owner: GeospatialCoordLocation\n    domain_of:\n    - GeospatialCoordLocation\n    range: decimal\n  longitude:\n    name: longitude\n    description: angular coordinate measured positive eastward from the prime meridian.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: GeospatialCoordLocation\n    alias: longitude\n    owner: GeospatialCoordLocation\n    domain_of:\n    - GeospatialCoordLocation\n    range: decimal"
   },
   {
     "objectID": "has_context_category.html",
     "href": "has_context_category.html",
     "title": "has_context_category",
     "section": "",
-    "text": "top level context, based on the kind of feature sampled. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.\nURI: isam:has_context_category"
+    "text": "Top level context, based on the kind of feature sampled. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.\nURI: isam:has_context_category"
   },
   {
     "objectID": "has_context_category.html#applicable-classes",
@@ -1145,7 +1040,7 @@
     "href": "has_context_category.html#properties",
     "title": "has_context_category",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: True"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: True"
   },
   {
     "objectID": "has_context_category.html#identifier-and-mapping-information",
@@ -1159,7 +1054,7 @@
     "href": "has_context_category.html#linkml-source",
     "title": "has_context_category",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\nname: has_context_category\ndescription: top level context, based on the kind of feature sampled.  Specific identification\n  of the sampled feature of interest is done through the SamplingEvent/Feature of\n  Interest property.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: PhysicalSampleRecord\nmultivalued: true\nalias: has_context_category\ndomain_of:\n- PhysicalSampleRecord\nrange: string"
+    "text": "LinkML Source\n\nname: has_context_category\ndescription: Top level context, based on the kind of feature sampled. Specific identification\n  of the sampled feature of interest is done through the SamplingEvent/Feature of\n  Interest property.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: PhysicalSampleRecord\nmultivalued: true\nalias: has_context_category\ndomain_of:\n- PhysicalSampleRecord\nrange: string"
   },
   {
     "objectID": "responsibility.html",
@@ -1173,14 +1068,14 @@
     "href": "responsibility.html#applicable-classes",
     "title": "responsibility",
     "section": "Applicable Classes",
-    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSamplingEvent\nNone\n\n\nSpecimenCuration\nobject contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample."
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSamplingEvent\nInformation about the event resulting in the creation of the physical sample.\n\n\nSpecimenCuration\nInformation about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample."
   },
   {
     "objectID": "responsibility.html#properties",
     "href": "responsibility.html#properties",
     "title": "responsibility",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: True"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: True"
   },
   {
     "objectID": "responsibility.html#identifier-and-mapping-information",
@@ -1250,7 +1145,7 @@
     "href": "registrant.html#properties",
     "title": "registrant",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: None"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
   },
   {
     "objectID": "registrant.html#identifier-and-mapping-information",
@@ -1285,7 +1180,7 @@
     "href": "sample_identifier.html#properties",
     "title": "sample_identifier",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: None"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
   },
   {
     "objectID": "sample_identifier.html#identifier-and-mapping-information",
@@ -1300,20 +1195,6 @@
     "title": "sample_identifier",
     "section": "LinkML Source",
     "text": "LinkML Source\n\nname: sample_identifier\ndescription: URI that identifies the physical sample described by this record\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nclose_mappings:\n- sdo:identifier\nrank: 1000\ndomain: PhysicalSampleRecord\nalias: sample_identifier\ndomain_of:\n- PhysicalSampleRecord\nrange: string"
-  },
-  {
-    "objectID": "String.html",
-    "href": "String.html",
-    "title": "String",
-    "section": "",
-    "text": "URI: xsd:string"
-  },
-  {
-    "objectID": "String.html#identifier-and-mapping-information",
-    "href": "String.html#identifier-and-mapping-information",
-    "title": "String",
-    "section": "Identifier and Mapping Information",
-    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
   },
   {
     "objectID": "location.html",
@@ -1334,7 +1215,7 @@
     "href": "location.html#properties",
     "title": "location",
     "section": "Properties",
-    "text": "Properties\n\nRange: GeospatialDDCoordLocation\nMultivalued: None"
+    "text": "Properties\n\nRange: GeospatialCoordLocation\nMultivalued: None"
   },
   {
     "objectID": "location.html#identifier-and-mapping-information",
@@ -1348,14 +1229,14 @@
     "href": "location.html#linkml-source",
     "title": "location",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\nname: location\ndescription: geopatial location of site; required default is WGS84 latitude, longitude\n  in decimal degrees. Elevation as a string with number, unit of measure, and datum.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: SamplingSite\nalias: location\ndomain_of:\n- SamplingSite\nrange: GeospatialDDCoordLocation"
+    "text": "LinkML Source\n\nname: location\ndescription: geopatial location of site; required default is WGS84 latitude, longitude\n  in decimal degrees. Elevation as a string with number, unit of measure, and datum.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: SamplingSite\nalias: location\ndomain_of:\n- SamplingSite\nrange: GeospatialCoordLocation"
   },
   {
     "objectID": "has_specimen_category.html",
     "href": "has_specimen_category.html",
     "title": "has_specimen_category",
     "section": "",
-    "text": "specify the kind of object that the specimen is\nURI: isam:has_specimen_category"
+    "text": "The kind of object the specimen is.\nURI: isam:has_specimen_category"
   },
   {
     "objectID": "has_specimen_category.html#applicable-classes",
@@ -1369,7 +1250,7 @@
     "href": "has_specimen_category.html#properties",
     "title": "has_specimen_category",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: True"
+    "text": "Properties\n\nRange: xsd:anyURI\nMultivalued: True"
   },
   {
     "objectID": "has_specimen_category.html#identifier-and-mapping-information",
@@ -1383,7 +1264,7 @@
     "href": "has_specimen_category.html#linkml-source",
     "title": "has_specimen_category",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\nname: has_specimen_category\ndescription: specify the kind of object that the specimen is\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: PhysicalSampleRecord\nmultivalued: true\nalias: has_specimen_category\ndomain_of:\n- PhysicalSampleRecord\nrange: string"
+    "text": "LinkML Source\n\nname: has_specimen_category\ndescription: The kind of object the specimen is.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: PhysicalSampleRecord\nmultivalued: true\nalias: has_specimen_category\ndomain_of:\n- PhysicalSampleRecord\nrange: uriorcurie"
   },
   {
     "objectID": "relationship.html",
@@ -1404,7 +1285,7 @@
     "href": "relationship.html#properties",
     "title": "relationship",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: None"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
   },
   {
     "objectID": "relationship.html#identifier-and-mapping-information",
@@ -1425,21 +1306,21 @@
     "href": "description.html",
     "title": "description",
     "section": "",
-    "text": "free text description of the subject of a triple.\nURI: isam:description"
+    "text": "Free text description of the subject of a triple.\nURI: isam:description"
   },
   {
     "objectID": "description.html#applicable-classes",
     "href": "description.html#applicable-classes",
     "title": "description",
     "section": "Applicable Classes",
-    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.\n\n\nSamplingSite\nNone\n\n\nSamplingEvent\nNone\n\n\nSpecimenCuration\nobject contains information about current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.\n\n\nSampleRelation\nNone"
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.\n\n\nSamplingSite\nNone\n\n\nSamplingEvent\nInformation about the event resulting in the creation of the physical sample.\n\n\nSpecimenCuration\nInformation about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.\n\n\nSampleRelation\nNone"
   },
   {
     "objectID": "description.html#properties",
     "href": "description.html#properties",
     "title": "description",
     "section": "Properties",
-    "text": "Properties\n\nRange: String\nMultivalued: None"
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
   },
   {
     "objectID": "description.html#identifier-and-mapping-information",
@@ -1453,6 +1334,6 @@
     "href": "description.html#linkml-source",
     "title": "description",
     "section": "LinkML Source",
-    "text": "LinkML Source\n\nname: description\ndescription: free text description of the subject of a triple.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nclose_mappings:\n- dct:description\nrank: 1000\nalias: description\ndomain_of:\n- PhysicalSampleRecord\n- SamplingSite\n- SamplingEvent\n- SpecimenCuration\n- SampleRelation\nrange: string"
+    "text": "LinkML Source\n\nname: description\ndescription: Free text description of the subject of a triple.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nclose_mappings:\n- dct:description\nrank: 1000\nalias: description\ndomain_of:\n- PhysicalSampleRecord\n- SamplingSite\n- SamplingEvent\n- SpecimenCuration\n- SampleRelation\nrange: string"
   }
 ]
