@@ -1,0 +1,10 @@
+includes:
+  - markdown
+  - jsonschema
+  - jsonldcontext
+  - shacl
+  - rdf
+  - owl
+  - python
+  - csv
+directory: generated

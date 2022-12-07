@@ -1,4 +1,48 @@
 # metadata
+
+Defines the core metadata model for iSamples.
+
+`src/schemas/iSamplesCoreSchema.yml` defines the iSamples core model in linkml. It references vocabularies contained in `src/vocabularies/` which define terms for the Material Type, Sampled Feature, and Specimen Type vocabularies.
+
+The following artifacts are generated from the linkml and vocabulary sources:
+
+* Documentation in HTML, available at https://isamplesorg.github.io/metadata/
+
+
+## Development
+
+Linkml and associated tools require a python environment, version 3.9 or newer, and uses [poetry](https://python-poetry.org/) for dependency management. Poetry can be installed with `pip install poetry`.
+
+To work on project contents and run artifact generators, first grab the source and switch to the develop branch:
+
+```
+git clone https://github.com/isamplesorg/metadata.git
+cd metadata
+checkout develop
+pull
+```
+
+Setup a virtual environment (e.g. using poetry or mkvirtualenv):
+
+```
+poetry shell
+poetry install
+```
+
+
+(To exit poetry shell, use `exit`).
+
+Artifacts in the `generated/` folder are produced by running `make` or `make all`. 
+
+Documentation is rendered with [Quarto]() rather than the defaults `mkdocs` or `Sphinx` (Quarto offers many additional features for including computed examples which are planned). To generate the documentation, install a version of [Quarto >= 1.2](), then run `make`, `make all` or `make gen-docs`.
+
+This will generate markdown intermediate files in the `build/docs` folder then invoke `quarto render` to generate the HTML docs in the `docs/` folder.
+
+Note that this project uses a version of the `linkml` `docgen` tool and templates modified to render markdown for `quarto`. The modified `docgen` and templates is located in the `tools/` folder.
+
+
+## Older notes below
+
 Collation of metadata examples and notes for the project 
 
 - background:  contains diagrams and information about some existing models that include metadata for samples; files are organized broadly by domain.

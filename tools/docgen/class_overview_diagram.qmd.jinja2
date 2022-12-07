@@ -1,0 +1,16 @@
+```{{ gen.mermaid_directive() }}
+%%{init: {'securityLevel': 'loose', 'theme':'neutral', 'themeVariables': { 'fontSize':'14px', 'fontFamily':'Roboto Mono'}}}%%
+classDiagram
+  direction BT
+  {%  for c in gen.all_class_objects() -%}
+    class {{ gen.name(c) }} {
+    {% for s in schemaview.class_induced_slots(c.name)|sort(attribute='name') -%}
+        {{gen.name(s)}} : {{ s.range }}{% if s.multivalued %}[]{% endif %}
+    {% endfor %}}
+    click {{  gen.name(c) }} href "{{ gen.name(c) }}.html" "Documentation"
+    {% for s in schemaview.class_induced_slots(c.name)|sort(attribute='name') -%}
+    {% if s.range in gen.all_class_names() -%}
+      {{ s.range }} --o {{ gen.name(c) }} : {{gen.name(s)}}
+    {%  endif %}{% endfor %}
+  {%  endfor %}
+```

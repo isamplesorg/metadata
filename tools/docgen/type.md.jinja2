@@ -1,0 +1,19 @@
+# Type: {{ gen.name(element) }}
+
+{% if element.description %}
+_{{ element.description }}_
+{% endif %}
+
+URI: {{ gen.uri_link(element) }}
+
+{{ gen.bullet(element, "base") }}
+{{ gen.bullet(element, "uri") }}
+{{ gen.bullet(element, "repr") }}
+{{ gen.bullet(element, "typeof") }}
+{{ gen.bullet(element, "pattern", backquote=True) }}
+{% if gen.number_value_range(element) %}
+* Numeric Value Range: {{gen.number_value_range(element)}}
+{% endif %}
+
+{% include "common_metadata.md.jinja2" %}
+

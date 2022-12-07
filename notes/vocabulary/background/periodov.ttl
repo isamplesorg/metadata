@@ -1,0 +1,899 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dce: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix lvont: <http://lexvo.org/ontology#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix periodo: <http://n2t.net/ark:/99152/p0v#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/ns/shacl#class
+sh:class rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#closed
+sh:closed rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#datatype
+sh:datatype rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#declare
+sh:declare rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#description
+sh:description rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#hasValue
+sh:hasValue rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#ignoredProperties
+sh:ignoredProperties rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#in
+sh:in rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#languageIn
+sh:languageIn rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#maxCount
+sh:maxCount rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#message
+sh:message rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#minCount
+sh:minCount rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#name
+sh:name rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#namespace
+sh:namespace rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#node
+sh:node rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#nodeKind
+sh:nodeKind rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#path
+sh:path rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#pattern
+sh:pattern rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#prefix
+sh:prefix rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#prefixes
+sh:prefixes rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#property
+sh:property rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#select
+sh:select rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#sparql
+sh:sparql rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#targetClass
+sh:targetClass rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#targetNode
+sh:targetNode rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#gYear
+xsd:gYear rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://n2t.net/ark:/99152/p0v#earliestYear
+periodo:earliestYear rdf:type owl:DatatypeProperty ;
+                     rdfs:domain time:DateTimeDescription ;
+                     rdfs:range xsd:gYear ;
+                     rdfs:comment "The earliest Gregorian year referred to in the description of a temporal interval."@en ;
+                     rdfs:isDefinedBy <http://n2t.net/ark:/99152/p0v> ;
+                     rdfs:label "earliest year"@en .
+
+
+###  http://n2t.net/ark:/99152/p0v#latestYear
+periodo:latestYear rdf:type owl:DatatypeProperty ;
+                   rdfs:domain time:DateTimeDescription ;
+                   rdfs:range xsd:gYear ;
+                   rdfs:comment "The latest Gregorian year referred to in the description of a temporal interval."@en ;
+                   rdfs:isDefinedBy <http://n2t.net/ark:/99152/p0v> ;
+                   rdfs:label "latest year"@en .
+
+
+###  http://n2t.net/ark:/99152/p0v#spatialCoverageDescription
+periodo:spatialCoverageDescription rdf:type owl:DatatypeProperty ;
+                                   rdfs:range xsd:string ;
+                                   rdfs:comment "Free-text description of the spatial coverage of a resource."@en ;
+                                   rdfs:isDefinedBy <http://n2t.net/ark:/99152/p0v> ;
+                                   rdfs:label "spatial coverage description"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2006/time#DateTimeDescription
+time:DateTimeDescription rdf:type owl:Class ;
+                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                           owl:onProperty periodo:earliestYear ;
+                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty periodo:latestYear ;
+                                           owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                         ] .
+
+
+###  http://www.w3.org/ns/prov#Role
+prov:Role rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/shacl#NodeShape
+sh:NodeShape rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/shacl#PropertyShape
+sh:PropertyShape rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/shacl#SPARQLConstraint
+sh:SPARQLConstraint rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://n2t.net/ark:/99152/p0v#AbstractDatasetProvenanceShape
+periodo:AbstractDatasetProvenanceShape rdf:type owl:NamedIndividual ,
+                                                sh:PropertyShape ;
+                                       sh:hasValue <http://n2t.net/ark:/99152/p0h#changes> ;
+                                       sh:maxCount 1 ;
+                                       sh:minCount 1 ;
+                                       sh:name "provenance" ;
+                                       sh:nodeKind sh:IRI ;
+                                       sh:path dcterms:provenance .
+
+
+###  http://n2t.net/ark:/99152/p0v#AbstractDatasetShape
+periodo:AbstractDatasetShape rdf:type owl:NamedIndividual ,
+                                      sh:NodeShape ;
+                             rdfs:label "Abstract dataset shape" ;
+                             sh:closed "true"^^xsd:boolean ;
+                             sh:property periodo:AbstractDatasetProvenanceShape .
+
+
+###  http://n2t.net/ark:/99152/p0v#AuthorityEditorialNoteShape
+periodo:AuthorityEditorialNoteShape rdf:type owl:NamedIndividual ,
+                                             sh:PropertyShape ;
+                                    sh:datatype xsd:string ;
+                                    sh:description "Administrative or editorial notes from PeriodO curators" ;
+                                    sh:maxCount 1 ;
+                                    sh:message "Problem with authority editorial note" ;
+                                    sh:minCount 1 ;
+                                    sh:name "editorial note" ;
+                                    sh:path skos:editorialNote .
+
+
+###  http://n2t.net/ark:/99152/p0v#AuthoritySameAsShape
+periodo:AuthoritySameAsShape rdf:type owl:NamedIndividual ,
+                                      sh:PropertyShape ;
+                             sh:description "Alternative URI for this authority" ;
+                             sh:message "Problem with authority alternative URI (sameAs)" ;
+                             sh:name "same as" ;
+                             sh:nodeKind sh:IRI ;
+                             sh:path owl:sameAs .
+
+
+###  http://n2t.net/ark:/99152/p0v#AuthorityShape
+periodo:AuthorityShape rdf:type owl:NamedIndividual ,
+                                sh:NodeShape ;
+                       rdfs:label "Period authority shape" ;
+                       sh:closed "true"^^xsd:boolean ;
+                       sh:ignoredProperties [ ] ;
+sh:pattern "^http://n2t.net/ark:/99152/p0[a-z0-9]{5}" ;
+sh:property periodo:AuthorityEditorialNoteShape ,
+            periodo:AuthoritySameAsShape ,
+            periodo:AuthoritySourceShape ;
+sh:targetClass skos:ConceptScheme .
+
+
+###  http://n2t.net/ark:/99152/p0v#AuthoritySourceShape
+periodo:AuthoritySourceShape rdf:type owl:NamedIndividual ,
+                                      sh:PropertyShape ;
+                             sh:description "Bibliographic description of the source" ;
+                             sh:maxCount 1 ;
+                             sh:message "Problem with authority source" ;
+                             sh:minCount 1 ;
+                             sh:name "source" ;
+                             sh:node periodo:SourceShape ;
+                             sh:nodeKind sh:BlankNodeOrIRI ;
+                             sh:path dcterms:source .
+
+
+###  http://n2t.net/ark:/99152/p0v#DatasetIsPrimaryTopicOfShape
+periodo:DatasetIsPrimaryTopicOfShape rdf:type owl:NamedIndividual ,
+                                              sh:PropertyShape ;
+                                     sh:description "Dataset document URI" ;
+                                     sh:maxCount 1 ;
+                                     sh:message "Problem with dataset document URI" ;
+                                     sh:minCount 1 ;
+                                     sh:name "is primary topic of" ;
+                                     sh:node periodo:DocumentShape ;
+                                     sh:nodeKind sh:IRI ;
+                                     sh:path foaf:isPrimaryTopicOf .
+
+
+###  http://n2t.net/ark:/99152/p0v#DatasetMemberShape
+periodo:DatasetMemberShape rdf:type owl:NamedIndividual ,
+                                    sh:PropertyShape ;
+                           sh:class skos:ConceptScheme ;
+                           sh:description "A period authority in this dataset" ;
+                           sh:message "Problem with dataset member" ;
+                           sh:name "member" ;
+                           sh:nodeKind sh:IRI ;
+                           sh:path rdfs:member ;
+                           sh:pattern "^http://n2t.net/ark:/99152/p0[a-z0-9]{5}" .
+
+
+###  http://n2t.net/ark:/99152/p0v#DatasetShape
+periodo:DatasetShape rdf:type owl:NamedIndividual ,
+                              sh:NodeShape ;
+                     rdfs:label "PeriodO dataset shape" ;
+                     sh:closed "true"^^xsd:boolean ;
+                     sh:property periodo:DatasetIsPrimaryTopicOfShape ,
+                                 periodo:DatasetMemberShape ,
+                                 periodo:DatasetTypeShape ;
+                     sh:targetNode <http://n2t.net/ark:/99152/p0d/#authorities> .
+
+
+###  http://n2t.net/ark:/99152/p0v#DatasetTypeShape
+periodo:DatasetTypeShape rdf:type owl:NamedIndividual ,
+                                  sh:PropertyShape ;
+                         sh:description "RDF type of this dataset" ;
+                         sh:hasValue rdf:Bag ;
+                         sh:maxCount 1 ;
+                         sh:message "Problem with dataset type" ;
+                         sh:minCount 1 ;
+                         sh:name "type" ;
+                         sh:nodeKind sh:IRI ;
+                         sh:path rdf:type .
+
+
+###  http://n2t.net/ark:/99152/p0v#DateTimeDescriptionCannotHaveBothYearAandEarliestYear
+periodo:DateTimeDescriptionCannotHaveBothYearAandEarliestYear rdf:type owl:NamedIndividual ,
+                                                                       sh:SPARQLConstraint ;
+                                                              sh:message "Cannot have both a year and an earliestYear" ;
+                                                              sh:prefixes <http://n2t.net/ark:/99152/> ;
+                                                              sh:select """
+SELECT $this ($this AS ?path) ?value
+WHERE {
+  ?interval time:hasDateTimeDescription $this .
+  ?interval skos:prefLabel ?value .
+  $this time:year ?year .
+  $this periodo:earliestYear ?earliestYear
+}
+""" .
+
+
+###  http://n2t.net/ark:/99152/p0v#DateTimeDescriptionEarliestYearMustBeLessThanLatestYear
+periodo:DateTimeDescriptionEarliestYearMustBeLessThanLatestYear rdf:type owl:NamedIndividual ,
+                                                                         sh:SPARQLConstraint ;
+                                                                sh:message "earliestYear must be less than latestYear" ;
+                                                                sh:prefixes <http://n2t.net/ark:/99152/> ;
+                                                                sh:select """
+SELECT $this ($this AS ?path) ?value
+WHERE {
+  ?interval time:hasDateTimeDescription $this .
+  ?interval skos:prefLabel ?value .
+  $this periodo:earliestYear ?earliestYear .
+  $this periodo:latestYear ?latestYear .
+  FILTER (xsd:long(?earliestYear) >= xsd:long(?latestYear))
+}
+""" .
+
+
+###  http://n2t.net/ark:/99152/p0v#DateTimeDescriptionEarliestYearShape
+periodo:DateTimeDescriptionEarliestYearShape rdf:type owl:NamedIndividual ,
+                                                      sh:PropertyShape ;
+                                             sh:description "earliest Gregorian calendar year" ;
+                                             sh:maxCount 1 ;
+                                             sh:message "At most 1 valid gYear" ;
+                                             sh:name "earliest year" ;
+                                             sh:path periodo:earliestYear ;
+                                             sh:pattern "^-?([1-9][0-9]{3,}|0[0-9]{3})$" .
+
+
+###  http://n2t.net/ark:/99152/p0v#DateTimeDescriptionLatestYearShape
+periodo:DateTimeDescriptionLatestYearShape rdf:type owl:NamedIndividual ,
+                                                    sh:PropertyShape ;
+                                           sh:description "latest Gregorian calendar year" ;
+                                           sh:maxCount 1 ;
+                                           sh:message "At most 1 valid gYear" ;
+                                           sh:name "latest year" ;
+                                           sh:path periodo:latestYear ;
+                                           sh:pattern "^-?([1-9][0-9]{3,}|0[0-9]{3})$" .
+
+
+###  http://n2t.net/ark:/99152/p0v#DateTimeDescriptionMustHaveYearOrEarliestYear
+periodo:DateTimeDescriptionMustHaveYearOrEarliestYear rdf:type owl:NamedIndividual ,
+                                                               sh:SPARQLConstraint ;
+                                                      sh:message "Must have either a year or an earliestYear" ;
+                                                      sh:prefixes <http://n2t.net/ark:/99152/> ;
+                                                      sh:select """
+SELECT $this ($this AS ?path) ?value
+WHERE {
+  ?interval time:hasDateTimeDescription $this .
+  ?interval skos:prefLabel ?value .
+  FILTER NOT EXISTS {
+    { $this time:year ?year }
+    UNION
+    { $this periodo:earliestYear ?earliestYear }
+  }
+}
+""" .
+
+
+###  http://n2t.net/ark:/99152/p0v#DateTimeDescriptionShape
+periodo:DateTimeDescriptionShape rdf:type owl:NamedIndividual ,
+                                          sh:NodeShape ;
+                                 rdfs:label "Date-time description shape" ;
+                                 sh:closed "true"^^xsd:boolean ;
+                                 sh:ignoredProperties [ ] ;
+sh:property periodo:DateTimeDescriptionEarliestYearShape ,
+            periodo:DateTimeDescriptionLatestYearShape ,
+            periodo:DateTimeDescriptionYearShape ;
+sh:sparql periodo:DateTimeDescriptionCannotHaveBothYearAandEarliestYear ,
+          periodo:DateTimeDescriptionEarliestYearMustBeLessThanLatestYear ,
+          periodo:DateTimeDescriptionMustHaveYearOrEarliestYear .
+
+
+###  http://n2t.net/ark:/99152/p0v#DateTimeDescriptionYearShape
+periodo:DateTimeDescriptionYearShape rdf:type owl:NamedIndividual ,
+                                              sh:PropertyShape ;
+                                     sh:description "Gregorian calendar year" ;
+                                     sh:maxCount 1 ;
+                                     sh:message "At most 1 valid gYear" ;
+                                     sh:name "year" ;
+                                     sh:path time:year ;
+                                     sh:pattern "^-?([1-9][0-9]{3,}|0[0-9]{3})$" .
+
+
+###  http://n2t.net/ark:/99152/p0v#DocumentInDatasetShape
+periodo:DocumentInDatasetShape rdf:type owl:NamedIndividual ,
+                                        sh:PropertyShape ;
+                               sh:hasValue <http://n2t.net/ark:/99152/p0d> ;
+                               sh:maxCount 1 ;
+                               sh:minCount 1 ;
+                               sh:name "in dataset" ;
+                               sh:node periodo:AbstractDatasetShape ;
+                               sh:nodeKind sh:IRI ;
+                               sh:path void:inDataset .
+
+
+###  http://n2t.net/ark:/99152/p0v#DocumentShape
+periodo:DocumentShape rdf:type owl:NamedIndividual ,
+                               sh:NodeShape ;
+                      rdfs:label "Dataset document shape" ;
+                      sh:closed "true"^^xsd:boolean ;
+                      sh:property periodo:DocumentInDatasetShape .
+
+
+###  http://n2t.net/ark:/99152/p0v#IntervalPreferredLabelShape
+periodo:IntervalPreferredLabelShape rdf:type owl:NamedIndividual ,
+                                             sh:PropertyShape ;
+                                    sh:datatype xsd:string ;
+                                    sh:description "Description of the interval as given in the source" ;
+                                    sh:maxCount 1 ;
+                                    sh:minCount 1 ;
+                                    sh:name "preferred label" ;
+                                    sh:path skos:prefLabel .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodAuthorityShape
+periodo:PeriodAuthorityShape rdf:type owl:NamedIndividual ,
+                                      sh:PropertyShape ;
+                             sh:class skos:ConceptScheme ;
+                             sh:description "Authority to which this period belongs" ;
+                             sh:maxCount 1 ;
+                             sh:message "Problem with period link to authority" ;
+                             sh:minCount 1 ;
+                             sh:name "authority" ;
+                             sh:nodeKind sh:IRI ;
+                             sh:path skos:inScheme ;
+                             sh:pattern "^http://n2t.net/ark:/99152/p0[a-z0-9]{5}" .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodBroaderShape
+periodo:PeriodBroaderShape rdf:type owl:NamedIndividual ,
+                                    sh:PropertyShape ;
+                           sh:description "Another period that encompasses this one" ;
+                           sh:maxCount 1 ;
+                           sh:message "Problem with period broader" ;
+                           sh:name "see broader period" ;
+                           sh:nodeKind sh:IRI ;
+                           sh:path skos:broader ;
+                           sh:pattern "^http://n2t.net/ark:/99152/p0[a-z0-9]{9}" .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodDerivedFromShape
+periodo:PeriodDerivedFromShape rdf:type owl:NamedIndividual ,
+                                        sh:PropertyShape ;
+                               sh:description "Another period from which this one was derived" ;
+                               sh:message "Problem with derived from" ;
+                               sh:name "was derived from" ;
+                               sh:nodeKind sh:IRI ;
+                               sh:path prov:wasDerivedFrom ;
+                               sh:pattern "^http://n2t.net/ark:/99152/p0[a-z0-9]{9}" .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodEditorialNoteShape
+periodo:PeriodEditorialNoteShape rdf:type owl:NamedIndividual ,
+                                          sh:PropertyShape ;
+                                 sh:datatype xsd:string ;
+                                 sh:description "Administrative or editorial notes from PeriodO curators" ;
+                                 sh:maxCount 1 ;
+                                 sh:message "Problem with period editorial note" ;
+                                 sh:name "editorial note" ;
+                                 sh:path skos:editorialNote .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodLanguageShape
+periodo:PeriodLanguageShape rdf:type owl:NamedIndividual ,
+                                     sh:PropertyShape ;
+                            sh:description "Language of the preferred label for this period" ;
+                            sh:maxCount 1 ;
+                            sh:message "Problem with period language" ;
+                            sh:minCount 1 ;
+                            sh:name "language" ;
+                            sh:nodeKind sh:IRI ;
+                            sh:path dcterms:language ;
+                            sh:pattern "^http://lexvo.org/id/iso639-[13]/[a-z]{2,3}" .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodLanguageTagShape
+periodo:PeriodLanguageTagShape rdf:type owl:NamedIndividual ,
+                                        sh:PropertyShape ;
+                               sh:datatype xsd:string ;
+                               sh:description "Language tag of the preferred label for this period" ;
+                               sh:in [ ] ;
+sh:maxCount 1 ;
+sh:message "Problem with period language tag" ;
+sh:minCount 1 ;
+sh:name "language tag" ;
+sh:path dce:language .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodLocalizedLabelShape
+periodo:PeriodLocalizedLabelShape rdf:type owl:NamedIndividual ,
+                                           sh:PropertyShape ;
+                                  sh:datatype rdf:langString ;
+                                  sh:description "Language-specific name for the period" ;
+                                  sh:languageIn [ ] ;
+sh:message "Problem with period localized label" ;
+sh:minCount 1 ;
+sh:name "localized label" ;
+sh:path skos:altLabel .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodNoteShape
+periodo:PeriodNoteShape rdf:type owl:NamedIndividual ,
+                                 sh:PropertyShape ;
+                        sh:datatype xsd:string ;
+                        sh:description "Notes about the period taken from the source" ;
+                        sh:maxCount 1 ;
+                        sh:message "Problem with period note" ;
+                        sh:name "note" ;
+                        sh:path skos:note .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodPreferredLabelShape
+periodo:PeriodPreferredLabelShape rdf:type owl:NamedIndividual ,
+                                           sh:PropertyShape ;
+                                  sh:datatype xsd:string ;
+                                  sh:description "Name of the period as given in the source" ;
+                                  sh:maxCount 1 ;
+                                  sh:message "Problem with period preferred label" ;
+                                  sh:minCount 1 ;
+                                  sh:name "preferred label" ;
+                                  sh:path skos:prefLabel .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodSameAsShape
+periodo:PeriodSameAsShape rdf:type owl:NamedIndividual ,
+                                   sh:PropertyShape ;
+                          sh:description "Alternative URI for this period" ;
+                          sh:message "Problem with period alternative URI (sameAs)" ;
+                          sh:name "same as" ;
+                          sh:nodeKind sh:IRI ;
+                          sh:path owl:sameAs .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodScriptShape
+periodo:PeriodScriptShape rdf:type owl:NamedIndividual ,
+                                   sh:PropertyShape ;
+                          sh:description "Script of the preferred label for this period" ;
+                          sh:maxCount 1 ;
+                          sh:message "Problem with period script" ;
+                          sh:name "script" ;
+                          sh:nodeKind sh:IRI ;
+                          sh:path lvont:inScript ;
+                          sh:pattern "^http://lexvo.org/id/script/[A-Z][a-z]{3}" .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodShape
+periodo:PeriodShape rdf:type owl:NamedIndividual ,
+                             sh:NodeShape ;
+                    rdfs:label "Period shape" ;
+                    sh:closed "true"^^xsd:boolean ;
+                    sh:ignoredProperties [ ] ;
+sh:pattern "^http://n2t.net/ark:/99152/p0[a-z0-9]{9}" ;
+sh:property periodo:PeriodAuthorityShape ,
+            periodo:PeriodBroaderShape ,
+            periodo:PeriodDerivedFromShape ,
+            periodo:PeriodEditorialNoteShape ,
+            periodo:PeriodLanguageShape ,
+            periodo:PeriodLanguageTagShape ,
+            periodo:PeriodLocalizedLabelShape ,
+            periodo:PeriodNoteShape ,
+            periodo:PeriodPreferredLabelShape ,
+            periodo:PeriodSameAsShape ,
+            periodo:PeriodScriptShape ,
+            periodo:PeriodSourceIsPartOfShape ,
+            periodo:PeriodSourceLocatorShape ,
+            periodo:PeriodSourceShape ,
+            periodo:PeriodSpatialCoverageDescriptionShape ,
+            periodo:PeriodSpatialCoverageShape ,
+            periodo:PeriodStartShape ,
+            periodo:PeriodStopShape ,
+            periodo:PeriodURLShape ;
+sh:targetClass skos:Concept .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodSourceIsPartOfShape
+periodo:PeriodSourceIsPartOfShape rdf:type owl:NamedIndividual ,
+                                           sh:PropertyShape ;
+                                  sh:maxCount 1 ;
+                                  sh:message "Problem with period source (is part of)" ;
+                                  sh:name "source is part of" ;
+                                  sh:nodeKind sh:IRI ;
+                                  sh:path [ ] .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodSourceLocatorShape
+periodo:PeriodSourceLocatorShape rdf:type owl:NamedIndividual ,
+                                          sh:PropertyShape ;
+                                 sh:datatype xsd:string ;
+                                 sh:maxCount 1 ;
+                                 sh:message "Problem with period source (locator)" ;
+                                 sh:name "source locator" ;
+                                 sh:path [ ] .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodSourceShape
+periodo:PeriodSourceShape rdf:type owl:NamedIndividual ,
+                                   sh:PropertyShape ;
+                          sh:description "Bibliographic information specific to this period" ;
+                          sh:maxCount 1 ;
+                          sh:message "Problem with period source" ;
+                          sh:name "source" ;
+                          sh:node periodo:SourceShape ;
+                          sh:nodeKind sh:BlankNode ;
+                          sh:path dcterms:source .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodSpatialCoverageDescriptionShape
+periodo:PeriodSpatialCoverageDescriptionShape rdf:type owl:NamedIndividual ,
+                                                       sh:PropertyShape ;
+                                              sh:datatype xsd:string ;
+                                              sh:description "Spatial extent of the period as described in the source" ;
+                                              sh:maxCount 1 ;
+                                              sh:message "Problem with period spatial coverage description" ;
+                                              sh:name "spatial coverage description" ;
+                                              sh:path periodo:spatialCoverageDescription .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodSpatialCoverageShape
+periodo:PeriodSpatialCoverageShape rdf:type owl:NamedIndividual ,
+                                            sh:PropertyShape ;
+                                   sh:description "Place (partially) within spatial extent of the period" ;
+                                   sh:message "Problem with period spatial coverage" ;
+                                   sh:minCount 1 ;
+                                   sh:name "spatial coverage" ;
+                                   sh:nodeKind sh:IRI ;
+                                   sh:path dcterms:spatial ;
+                                   sh:pattern "^http://www.wikidata.org/entity/Q[0-9]+" .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodStartShape
+periodo:PeriodStartShape rdf:type owl:NamedIndividual ,
+                                  sh:PropertyShape ;
+                         sh:description "Start interval for the period" ;
+                         sh:maxCount 1 ;
+                         sh:message "Problem with period start interval" ;
+                         sh:minCount 1 ;
+                         sh:name "start" ;
+                         sh:node periodo:StartIntervalShape ;
+                         sh:nodeKind sh:BlankNode ;
+                         sh:path time:intervalStartedBy .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodStopShape
+periodo:PeriodStopShape rdf:type owl:NamedIndividual ,
+                                 sh:PropertyShape ;
+                        sh:description "Stop interval for the period" ;
+                        sh:maxCount 1 ;
+                        sh:message "Problem with period stop interval" ;
+                        sh:minCount 1 ;
+                        sh:name "stop" ;
+                        sh:node periodo:StopIntervalShape ;
+                        sh:nodeKind sh:BlankNode ;
+                        sh:path time:intervalFinishedBy .
+
+
+###  http://n2t.net/ark:/99152/p0v#PeriodURLShape
+periodo:PeriodURLShape rdf:type owl:NamedIndividual ,
+                                sh:PropertyShape ;
+                       sh:description "Web resource with information about this period" ;
+                       sh:message "Problem with period URL" ;
+                       sh:name "url" ;
+                       sh:nodeKind sh:IRI ;
+                       sh:path foaf:page .
+
+
+###  http://n2t.net/ark:/99152/p0v#SourceAbstractShape
+periodo:SourceAbstractShape rdf:type owl:NamedIndividual ,
+                                     sh:PropertyShape ;
+                            sh:datatype xsd:string ;
+                            sh:maxCount 1 ;
+                            sh:name "abstract" ;
+                            sh:path dcterms:abstract .
+
+
+###  http://n2t.net/ark:/99152/p0v#SourceContributorShape
+periodo:SourceContributorShape rdf:type owl:NamedIndividual ,
+                                        sh:PropertyShape ;
+                               sh:name "contributor" ;
+                               sh:nodeKind sh:BlankNodeOrIRI ;
+                               sh:path dcterms:contributor .
+
+
+###  http://n2t.net/ark:/99152/p0v#SourceCreatorShape
+periodo:SourceCreatorShape rdf:type owl:NamedIndividual ,
+                                    sh:PropertyShape ;
+                           sh:name "creator" ;
+                           sh:nodeKind sh:BlankNodeOrIRI ;
+                           sh:path dcterms:creator .
+
+
+###  http://n2t.net/ark:/99152/p0v#SourceDateShape
+periodo:SourceDateShape rdf:type owl:NamedIndividual ,
+                                 sh:PropertyShape ;
+                        sh:datatype xsd:date ;
+                        sh:maxCount 1 ;
+                        sh:name "date" ;
+                        sh:path dcterms:date .
+
+
+###  http://n2t.net/ark:/99152/p0v#SourceEditorialNoteShape
+periodo:SourceEditorialNoteShape rdf:type owl:NamedIndividual ,
+                                          sh:PropertyShape ;
+                                 sh:datatype xsd:string ;
+                                 sh:description "Administrative or editorial notes from PeriodO curators" ;
+                                 sh:maxCount 1 ;
+                                 sh:name "editorial note" ;
+                                 sh:path skos:editorialNote .
+
+
+###  http://n2t.net/ark:/99152/p0v#SourceIsPartOfShape
+periodo:SourceIsPartOfShape rdf:type owl:NamedIndividual ,
+                                     sh:PropertyShape ;
+                            sh:maxCount 1 ;
+                            sh:name "is part of" ;
+                            sh:nodeKind sh:BlankNodeOrIRI ;
+                            sh:path dcterms:isPartOf .
+
+
+###  http://n2t.net/ark:/99152/p0v#SourceIssuedShape
+periodo:SourceIssuedShape rdf:type owl:NamedIndividual ,
+                                   sh:PropertyShape ;
+                          sh:datatype xsd:string ;
+                          sh:maxCount 1 ;
+                          sh:name "issued" ;
+                          sh:path dcterms:issued .
+
+
+###  http://n2t.net/ark:/99152/p0v#SourceLocatorShape
+periodo:SourceLocatorShape rdf:type owl:NamedIndividual ,
+                                    sh:PropertyShape ;
+                           sh:datatype xsd:string ;
+                           sh:maxCount 1 ;
+                           sh:name "locator" ;
+                           sh:path bibo:locator .
+
+
+###  http://n2t.net/ark:/99152/p0v#SourceSameAsShape
+periodo:SourceSameAsShape rdf:type owl:NamedIndividual ,
+                                   sh:PropertyShape ;
+                          sh:description "External URI for this source" ;
+                          sh:name "same as" ;
+                          sh:nodeKind sh:IRI ;
+                          sh:path owl:sameAs .
+
+
+###  http://n2t.net/ark:/99152/p0v#SourceShape
+periodo:SourceShape rdf:type owl:NamedIndividual ,
+                             sh:NodeShape ;
+                    rdfs:label "Source shape" ;
+                    sh:closed "true"^^xsd:boolean ;
+                    sh:ignoredProperties [ ] ;
+sh:property periodo:SourceAbstractShape ,
+            periodo:SourceContributorShape ,
+            periodo:SourceCreatorShape ,
+            periodo:SourceDateShape ,
+            periodo:SourceEditorialNoteShape ,
+            periodo:SourceIsPartOfShape ,
+            periodo:SourceIssuedShape ,
+            periodo:SourceLocatorShape ,
+            periodo:SourceSameAsShape ,
+            periodo:SourceTitleShape ,
+            periodo:SourceURLShape .
+
+
+###  http://n2t.net/ark:/99152/p0v#SourceTitleShape
+periodo:SourceTitleShape rdf:type owl:NamedIndividual ,
+                                  sh:PropertyShape ;
+                         sh:datatype xsd:string ;
+                         sh:maxCount 1 ;
+                         sh:name "title" ;
+                         sh:path dcterms:title .
+
+
+###  http://n2t.net/ark:/99152/p0v#SourceURLShape
+periodo:SourceURLShape rdf:type owl:NamedIndividual ,
+                                sh:PropertyShape ;
+                       sh:description "Web resource with information about this source" ;
+                       sh:name "url" ;
+                       sh:nodeKind sh:IRI ;
+                       sh:path foaf:page .
+
+
+###  http://n2t.net/ark:/99152/p0v#StartIntervalDateTimeDescriptionShape
+periodo:StartIntervalDateTimeDescriptionShape rdf:type owl:NamedIndividual ,
+                                                       sh:PropertyShape ;
+                                              sh:description "Bibliographic description of the source" ;
+                                              sh:maxCount 1 ;
+                                              sh:minCount 1 ;
+                                              sh:name "date-time description" ;
+                                              sh:node periodo:DateTimeDescriptionShape ;
+                                              sh:nodeKind sh:BlankNode ;
+                                              sh:path time:hasDateTimeDescription .
+
+
+###  http://n2t.net/ark:/99152/p0v#StartIntervalShape
+periodo:StartIntervalShape rdf:type owl:NamedIndividual ,
+                                    sh:NodeShape ;
+                           rdfs:label "Interval shape" ;
+                           sh:closed "true"^^xsd:boolean ;
+                           sh:ignoredProperties [ ] ;
+sh:property periodo:IntervalPreferredLabelShape ,
+            periodo:StartIntervalDateTimeDescriptionShape .
+
+
+###  http://n2t.net/ark:/99152/p0v#StopIntervalDateTimeDescriptionShape
+periodo:StopIntervalDateTimeDescriptionShape rdf:type owl:NamedIndividual ,
+                                                      sh:PropertyShape ;
+                                             sh:description "Bibliographic description of the source" ;
+                                             sh:maxCount 1 ;
+                                             sh:name "date-time description" ;
+                                             sh:node periodo:DateTimeDescriptionShape ;
+                                             sh:nodeKind sh:BlankNode ;
+                                             sh:path time:hasDateTimeDescription .
+
+
+###  http://n2t.net/ark:/99152/p0v#StopIntervalShape
+periodo:StopIntervalShape rdf:type owl:NamedIndividual ,
+                                   sh:NodeShape ;
+                          rdfs:label "Interval shape" ;
+                          sh:closed "true"^^xsd:boolean ;
+                          sh:ignoredProperties [ ] ;
+sh:property periodo:IntervalPreferredLabelShape ,
+            periodo:StopIntervalDateTimeDescriptionShape .
+
+
+###  http://n2t.net/ark:/99152/p0v#merged
+periodo:merged rdf:type owl:NamedIndividual ,
+                        prov:Role ;
+               rdfs:comment "The role played by the agent responsible for merging a patch."@en ;
+               rdfs:isDefinedBy <http://n2t.net/ark:/99152/p0v> ;
+               rdfs:label "merged"@en .
+
+
+###  http://n2t.net/ark:/99152/p0v#submitted
+periodo:submitted rdf:type owl:NamedIndividual ,
+                           prov:Role ;
+                  rdfs:comment "The role played by the agent responsible for submitting a patch."@en ;
+                  rdfs:isDefinedBy <http://n2t.net/ark:/99152/p0v> ;
+                  rdfs:label "submitted"@en .
+
+
+###  http://n2t.net/ark:/99152/p0v#updated
+periodo:updated rdf:type owl:NamedIndividual ,
+                         prov:Role ;
+                rdfs:comment "The role played by the agent responsible for updating a patch."@en ;
+                rdfs:isDefinedBy <http://n2t.net/ark:/99152/p0v> ;
+                rdfs:label "updated"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://n2t.net/ark:/99152/> sh:declare [ sh:namespace "http://n2t.net/ark:/99152/p0v#"^^xsd:anyURI ;
+                                          sh:prefix "periodo"
+                                        ] ,
+                                        [ sh:namespace "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI ;
+                                          sh:prefix "xsd"
+                                        ] ,
+                                        [ sh:namespace "http://www.w3.org/2004/02/skos/core#"^^xsd:anyURI ;
+                                          sh:prefix "skos"
+                                        ] ,
+                                        [ sh:namespace "http://www.w3.org/2006/time#"^^xsd:anyURI ;
+                                          sh:prefix "time"
+                                        ] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
