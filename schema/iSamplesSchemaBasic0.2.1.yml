@@ -362,14 +362,14 @@ classes:
             sampleidentifier:
                 required: true
     SamplingSite:
-        description:
+        description: documentation of the site where the sample was collected, wtih place name(s) and a geospatial location
         slots:
           - label
           - description
           - location
           - placeName
     SamplingEvent:
-        description:
+        description: object that documents the sampling event--who, where, when the material sample was obtained
         slots:
           - "@id"
           - label
@@ -379,7 +379,7 @@ classes:
           - resultTime
           - samplingSite
     GeospatialDDCoordLocation:
-        description:
+        description: specification of WGS84 decimal degree location of sampling location; could be sample point location, or the centroid of a sampling area
         slots:
           - elevation
           - latitude
@@ -398,7 +398,7 @@ classes:
           - curationLocation
           - responsibility
     SampleRelation:
-        description:
+        description: semantic link to other samples or related resources.
         slots:
           - label
           - description
@@ -537,3 +537,12 @@ slots:
         domain: GeospatialDDCoordLocation
         description: angular coordinate measured positive eastward from the prime
             meridian.
+    authorizedBy:
+        range: string
+        domain: PhysicalSampleRecord
+        description: 
+    compliesWith:
+        range: string
+        domain: PhysicalSampleRecord
+        description: 
+        
