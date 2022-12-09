@@ -1,0 +1,23 @@
+---
+title: {{ gen.name(element) }}
+subtitle: "Type: {{ gen.name(element) }}"
+date-modified: {{ gen.timestamp }}
+---
+
+{% if element.description %}
+{{ element.description }}
+{% endif %}
+
+URI: {{ gen.uri_link(element) }}
+
+{{ gen.bullet(element, "base") }}
+{{ gen.bullet(element, "uri") }}
+{{ gen.bullet(element, "repr") }}
+{{ gen.bullet(element, "typeof") }}
+{{ gen.bullet(element, "pattern", backquote=True) }}
+{% if gen.number_value_range(element) %}
+* Numeric Value Range: {{gen.number_value_range(element)}}
+{% endif %}
+
+{% include "common_metadata.qmd.jinja2" %}
+

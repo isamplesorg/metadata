@@ -1,0 +1,243 @@
+id: http://resource.isamples.org/schema/0.2.1
+name: physicalSample
+title: Schema for documenting physical samples
+description: Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change 'id' to '@id' and 'schema' to '$schema'.  Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07
+license: https://creativecommons.org/publicdomain/zero/1.0/
+version: 20221007
+prefixes:
+    linkml: https://w3id.org/linkml/
+    isam: http://resource.isamples.org/schema/
+    dct: http://purl.org/dc/terms/
+    mat: https://w3id.org/isample/vocabulary/material/0.9/
+    sf: https://w3id.org/isample/vocabulary/sampledfeature/0.9/
+    skos: http://www.w3.org/2004/02/skos/core#
+    spec: https://w3id.org/isample/vocabulary/specimentype/0.9/
+    w3cpos: http://www.w3.org/2003/01/geo/wgs84_pos#
+    rdfs: http://www.w3.org/2000/01/rdf-schema#
+    xsd: http://www.w3.org/2001/XMLSchema#
+    sdo: http://schema.org/
+    skos_concept: http://www.w3.org/2004/02/skos/core#Concept
+default_prefix: isam
+
+imports:
+    - linkml:types
+
+classes:
+    PhysicalSampleRecord:
+        description: This is a data object that is a digital representation of a physical
+            sample, and thus shares the same identifier as the physical object. It
+            provides descriptive properties for any iSamples physical sample, URI
+            for the metadata record is same as URI for physical sample-- digital object
+            is considered twin of physical object, a representation. IGSN is recommended.
+            Must be a URI that can be dereferenced on the web.
+        slots:
+          - authorized_by
+          - complies_with
+          - curation
+          - description
+          - has_context_category
+          - has_material_category
+          - has_specimen_category
+          - informal_classification
+          - keywords
+          - label
+          - produced_by
+          - related_resource
+          - registrant
+          - sample_identifier
+          - sampling_purpose
+        slot_usage:
+            label:
+                required: true
+            sample_identifier:
+                required: true
+
+    SamplingSite:
+        description:
+        slots:
+          - description
+          - label
+          - location
+          - place_name
+
+    SamplingEvent:
+        description: Information about the event resulting in the creation of the physical sample.
+        slots:
+          - description
+          - has_feature_of_interest
+          - label
+          - responsibility
+          - result_time
+          - sampling_site
+
+    GeospatialCoordLocation:
+        description: A physical location in decimal degrees using EPSG:4326. Elevation is
+            is expressed in meters relative to the WGS84 ellipsoid.
+        slots:
+          - elevation
+          - latitude
+          - longitude
+
+    SpecimenCuration:
+        description: Information about the current storage of sample,
+            access to sample, and events in curation history. Curation as used here
+            starts when the sample is removed from its original context, and might
+            include various processing steps for preservation.  Processing related
+            to analysis preparation such as crushing, dissolution, evaporation, filtering
+            are considered part of the sampling method for the derived child sample.
+        slots:
+          - access_constraints
+          - curation_location
+          - description
+          - label
+          - responsibility
+
+    SampleRelation:
+        description:
+        slots:
+          - description
+          - label
+          - relationship
+          - target
+
+slots:
+    access_constraints:
+        range: string
+        description: |
+          Cultural, legal, or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.
+        multivalued: true
+    authorized_by:
+        range: string
+    curation:
+        range: SpecimenCuration
+    curation_location:
+        range: string
+        description: Information about where and how the sample is currently stored.
+    complies_with:
+        range: string
+    description:
+        range: string
+        description: Free text description of the subject of a triple.
+        close_mappings: dct:description
+    elevation:
+        range: string
+        domain: GeospatialCoordLocation
+        description: Should be a number and Unit of measure, and the datum. e.g. 401
+            m above mean sea level.
+    informal_classification:
+        range: string
+        domain: PhysicalSampleRecord
+        description: Free text classification terms, not from a controlled vocabulary;
+            generally terms applied by collector.
+        multivalued: true
+    has_context_category:
+        range: string
+        domain: PhysicalSampleRecord
+        description: Top level context, based on the kind of feature sampled. Specific
+            identification of the sampled feature of interest is done through the
+            SamplingEvent/Feature of Interest property.
+        multivalued: true
+    has_feature_of_interest:
+        #range: contextcategory
+        range: string
+        domain: SamplingEvent
+        description: What does the sample represent.
+    has_material_category:
+        # We'd like to say this slot has one or more values,
+        # each being a URI that references
+        # an instance of skos:Concept
+        # with skos:inScheme = mat:materialsVocabulary
+        domain: PhysicalSampleRecord
+        range: uriorcurie
+        values_from:
+            - MaterialTypeVocabulary
+        description: The kind of material that constitutes the sample.
+        multivalued: true
+    has_specimen_category:
+        domain: PhysicalSampleRecord
+        description: The kind of object the specimen is.
+        range: uriorcurie
+        #values_from:
+        #    - SpecimenTypeVocabulary
+        multivalued: true
+    keywords:
+        range: string
+        domain: PhysicalSampleRecord
+        description: free text categorization of sample to support discovery
+        close_mappings: sdo:keywords
+        multivalued: true
+    label:
+        range: string
+        description: a human intelligible string used to identify a thing, i.e. the
+            name to use for the thing; should be unique in the scope of a sample collection
+            or dataset.
+        close_mappings: rdfs:label
+    latitude:
+        range: decimal
+        domain: GeospatialCoordLocation
+        description: angular coordinate measured positive north from the equator.
+    longitude:
+        range: decimal
+        domain: GeospatialCoordLocation
+        description: angular coordinate measured positive eastward from the prime
+            meridian.
+    location:
+        range: GeospatialCoordLocation
+        domain: SamplingSite
+        description: geopatial location of site; required default is WGS84 latitude,
+            longitude in decimal degrees. Elevation as a string with number, unit
+            of measure, and datum.
+    place_name:
+        range: string
+        domain: SamplingSite
+        description: one or more names by which the sampling site is known.
+        multivalued: true
+    produced_by:
+        range: SamplingEvent
+        domain: PhysicalSampleRecord
+        description: object that documents the sampling event--who, where, when the
+            specimen was obtained
+    registrant:
+        range: string
+        domain: PhysicalSampleRecord
+        description: identification of the agent that registered the sample, with
+            contact information. Should include person name and affiliation, or position
+            name and affiliation, or just organization name. e-mail address is preferred
+            contact information.
+    related_resource:
+        range: SampleRelation
+        multivalued: true
+        description: link to related resource with relationship property to indicate
+            nature of connection. Target should be identifier for a resource.
+    relationship:
+        range: string
+        description: term to identify realationship between host sample and the sample
+            relation target. Should be controlled vocabulary (ScopedName). for now
+            start with string, 'derivedFrom'.
+    sample_identifier:
+        range: string
+        domain: PhysicalSampleRecord
+        description: URI that identifies the physical sample described by this record
+        close_mappings: sdo:identifier
+    sampling_purpose:
+        range: string
+        domain: PhysicalSampleRecord
+        description: term to specify why a sample was collection.
+    target:
+        range: string
+        description: identifier for the target resource in the relationship. Start
+            with string, should be Identifier object.
+    responsibility:
+        range: string
+        description: String with person name and affiliation, or organization name,
+            and their role relative to the parent element.
+        multivalued: true
+    result_time:
+        range: date
+        domain: SamplingEvent
+        description: Date on which the sample was collected.
+    sampling_site:
+        range: SamplingSite
+        domain: SamplingEvent
+        description: object that identifies the place where the sample was collected
+
