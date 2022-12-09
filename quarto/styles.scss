@@ -1,0 +1,71 @@
+/* Site specific css styles used by quarto*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
+
+@import url("https://use.typekit.net/nay2ptl.css");
+
+/*-- scss:defaults --*/
+//$font-family-sans-serif: 'garamond-premier-pro-display','Cormorant Garamond', serif;
+//$font-family-sans-serif: 'Courier New', courier;
+$font-family-monospace: 'Roboto Mono', monospace;
+//$font-size-root:         16px;
+$headings-font-weight:  400 !default;
+$body-color:            #000;
+
+/*-- scss:rules --*/
+body {
+    -webkit-font-smoothing: auto;
+    text-size-adjust: 100%;
+}
+
+pre, code {
+    font-size: 0.7rem;
+    color: inherit;
+}
+
+pre code {
+    font-size: 0.7rem;
+}
+
+a {
+    color: inherit;
+    text-decoration-thickness: 0.05em;
+}
+
+.quarto-title-meta {
+    font-family: var(--bs-font-monospace);
+    font-size: 0.7rem;
+}
+
+/* these id* classes are used for display of parts of identifiers */
+.idscheme {
+    font-family: var(--bs-font-monospace);
+    background-color:#FFC0B9;
+}
+.idaan {
+    font-family: var(--bs-font-monospace);
+    background-color:#FFF6E7;
+}
+.idprefix {
+    font-family: var(--bs-font-monospace);
+    background-color:#DFE0DF;
+}
+.idvalue {
+    font-family: var(--bs-font-monospace);
+    background-color:#c0df85;
+}
+.idextra {
+    font-family: var(--bs-font-monospace);
+    background-color:#DDA15E;
+}
+
+g.classGroup text {
+    stroke: none;
+    font-family: 'trebuchet ms', verdana, arial;
+    font-family: var(--mermaid-font-family);
+    font-size: 10px;
+
+    .title {
+        font-weight: bolder;
+    }
+}

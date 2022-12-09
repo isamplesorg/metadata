@@ -2,7 +2,7 @@
 
 Defines the core metadata model for iSamples.
 
-`src/schemas/isamplescore.yml` defines the iSamples core model in linkml. It references vocabularies contained in `src/vocabularies/` which define terms for the Material Type, Sampled Feature, and Specimen Type vocabularies.
+`src/schemas/iSamplesCoreSchema.yml` defines the iSamples core model in linkml. It references vocabularies contained in `src/vocabularies/` which define terms for the Material Type, Sampled Feature, and Specimen Type vocabularies.
 
 The following artifacts are generated from the linkml and vocabulary sources:
 
@@ -29,16 +29,16 @@ poetry shell
 poetry install
 ```
 
+
 (To exit poetry shell, use `exit`).
 
+Artifacts in the `generated/` folder are produced by running `make` or `make all`. 
 
-To generate the documentation, run:
+Documentation is rendered with [Quarto]() rather than the defaults `mkdocs` or `Sphinx` (Quarto offers many additional features for including computed examples which are planned). To generate the documentation, install a version of [Quarto >= 1.2](), then run `make`, `make all` or `make gen-docs`.
 
-```
-make gen-docs
-```
+This will generate markdown intermediate files in the `build/docs` folder then invoke `quarto render` to generate the HTML docs in the `docs/` folder.
 
-This will generate markdown intermediate files in the `build` folder (not committed to revision control), and then run `mkdocs` to generate HTML in the `docs` folder. The `docs` folder provides the content for `https://isamplesorg.github.io/metadata/`.
+Note that this project uses a version of the `linkml` `docgen` tool and templates modified to render markdown for `quarto`. The modified `docgen` and templates is located in the `tools/` folder.
 
 
 ## Older notes below

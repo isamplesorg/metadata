@@ -1,0 +1,26 @@
+id: https://resource.isamples.org/vocab/material/0.3.0
+name: MaterialType
+title: Material Type vocabulary
+version: 20221127
+prefixes:
+  mat: https://w3id.org/isample/vocabulary/material/0.9/
+default_prefix: mat
+
+imports:
+  - skos
+
+classes:
+# MaterialTypeVocabulary is a skos:Vocabulary that contains
+# skos:Concepts of type MaterialTypeConcept
+  MaterialTypeVocabulary:
+    is_a: SKOSConceptScheme
+    slot_usage:
+      concepts:
+        range: MaterialTypeConcept
+
+# MaterialTypeConcept is a skos:Concept within the MaterialTypeVocabulary.
+  MaterialTypeConcept:
+    is_a: SKOSConcept
+    slot_usage:
+      inScheme:
+        range: MaterialTypeVocabulary
