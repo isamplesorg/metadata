@@ -53,7 +53,7 @@ classes:
                 required: true
 
     SamplingSite:
-        description:
+        description: documentation of the site where the sample was collected, wtih place name(s) and a geospatial location
         slots:
           - description
           - label
@@ -72,7 +72,7 @@ classes:
 
     GeospatialCoordLocation:
         description: A physical location in decimal degrees using EPSG:4326. Elevation is
-            is expressed in meters relative to the WGS84 ellipsoid.
+            is expressed in meters relative to the WGS84 ellipsoid. Could be sample point location, or the centroid of a sampling area
         slots:
           - elevation
           - latitude
@@ -93,7 +93,7 @@ classes:
           - responsibility
 
     SampleRelation:
-        description:
+        description: semantic link to other samples or related resources.
         slots:
           - description
           - label
@@ -108,6 +108,9 @@ slots:
         multivalued: true
     authorized_by:
         range: string
+        domain: PhysicalSampleRecord
+        description: a list of permits or other formal permission documents under which the sample was collected. Use to cite legal documents authorizing sample collection.
+        multivalued: true
     curation:
         range: SpecimenCuration
     curation_location:
@@ -115,6 +118,9 @@ slots:
         description: Information about where and how the sample is currently stored.
     complies_with:
         range: string
+        domain: PhysicalSampleRecord
+        description: a list of policies, recommendations, best practices (etc.) that have been followed in the collection and curation of the sample. 
+        multivalued: true
     description:
         range: string
         description: Free text description of the subject of a triple.

@@ -203,7 +203,7 @@ spec:specimentypevocabulary
 spec:wholeorganism
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:label "Whole organism sample"@en ;
+  rdfs:label "Whole organism specimen"@en ;
   skos:broader spec:biologicalspecimen ;
   skos:closeMatch <http://purl.obolibrary.org/obo/OBI_0100026> ;
   skos:definition "Specimen consists of the bodies of one or more entire organisms of the same species, from any kingdom. Note that these are also inherently 'solid object'"@en ;
