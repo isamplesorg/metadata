@@ -1,33 +1,33 @@
 {
-  "$schema": "../../iSamplesSchemaBasic0.2.json",
+  "$schema": "iSamplesSchemaBasic.json",
   "@id": "https://data.isamples.org/digitalsample/igsn/ODP02Q1IZ",
   "label": "Sample 178-1098B-1H-3 (26-27 cm.)",
-  "sampleidentifier": "IGSN:ODP02Q1IZ",
+  "sample_identifier": "IGSN:ODP02Q1IZ",
   "description": "Not Provided",
-  "hasContextCategory": [
+  "has_context_category": [
     "Not Provided"
   ],
-  "hasMaterialCategory": [
+  "has_material_category": [
     "Not Provided"
   ],
-  "hasSpecimenCategory": [
+  "has_specimen_category": [
     "Other solid object"
   ],
-  "informalClassification": "Not Provided",
+  "informal_classification": ["Not Provided"],
   "keywords": [
     "Individual Sample"
   ],
-  "producedBy": {
+  "produced_by": {
     "@id": "",
     "label": "Not Provided",
     "description": "cruiseFieldPrgrm:ODP Leg 178. Janus sample_id: 63151",
-    "hasFeatureOfInterest": "Not Provided",
+    "has_feature_of_interest": "Not Provided",
     "responsibility": [
       "Curator,,Collector",
       "Curator Integrated Ocean Drilling Program (TAMU),,Sample Owner"
     ],
-    "resultTime": "2006-08-11 12:00:00",
-    "samplingSite": {
+    "result_time": "2006-08-11",
+    "sampling_site": {
       "description": "Not Provided",
       "label": "Not Provided",
       "location": {
@@ -35,17 +35,17 @@
         "latitude": -64.8619,
         "longitude": -64.208
       },
-      "placeName": []
+      "place_name": []
     }
   },
   "registrant": "Curator Integrated Ocean Drilling Program (TAMU)",
-  "samplingPurpose": "",
+  "sampling_purpose": "",
   "curation": {
     "label": "Not Provided",
     "description": "Not Provided",
-    "accessConstraints": "Not Provided",
-    "curationLocation": "Not Provided",
-    "responsibility": "Not Provided"
+    "access_constraints": ["Not Provided"],
+    "curation_location": "Not Provided",
+    "responsibility": ["Not Provided"]
   },
-  "relatedResource": []
+  "related_resource": []
 }
