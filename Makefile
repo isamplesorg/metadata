@@ -115,12 +115,12 @@ gen-docs: $(TARGET_DIR)/docs/index.md
 
 vocabs:
 	mkdir -p ${TARGET_DIR}/docs/vocabularies
-	python tools/vocab2md.py ${VOCAB_DIR}/materialtype.ttl > $(TARGET_DIR)/docs/vocabularies/materialtype.md
-	python tools/vocab2md.py ${VOCAB_DIR}/sampledfeature.ttl > $(TARGET_DIR)/docs/vocabularies/sampledfeature.md
-	python tools/vocab2md.py ${VOCAB_DIR}/specimentype.ttl > $(TARGET_DIR)/docs/vocabularies/specimentype.md
+	poetry run python tools/vocab2md.py ${VOCAB_DIR}/materialtype.ttl > $(TARGET_DIR)/docs/vocabularies/materialtype.md
+	poetry run python tools/vocab2md.py ${VOCAB_DIR}/sampledfeature.ttl > $(TARGET_DIR)/docs/vocabularies/sampledfeature.md
+	poetry run python tools/vocab2md.py ${VOCAB_DIR}/specimentype.ttl > $(TARGET_DIR)/docs/vocabularies/specimentype.md
 
 $(TARGET_DIR)/docs/index.md: $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml tdir-docs
-	python tools/docgen.py $(GEN_OPTS) --dialect quarto --sort-by name --format quarto --mergeimports --metadata --directory $(TARGET_DIR)/docs $<
+	poetry run python tools/docgen.py $(GEN_OPTS) --dialect quarto --sort-by name --format quarto --mergeimports --metadata --directory $(TARGET_DIR)/docs $<
 
 # ---------------------------------------
 # YAML source
