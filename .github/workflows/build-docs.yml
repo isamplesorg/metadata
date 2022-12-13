@@ -44,9 +44,9 @@ jobs:
 
 
       # If cache was not loaded, install dependencies
-      - name: Install dependencies
+      - name: Install python dependencies
         # if: steps.cache-pipenv.outputs.cache-hit != 'true'
-        run: poetry install -d
+        run: poetry install
         
       # install dependencies (use pipenv instead)
       # - run: pip install --upgrade pip
