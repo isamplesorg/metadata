@@ -1,4 +1,4 @@
-name: Build and Deploy Static Mkdocs Documentation
+name: Build and publish documentation
 
 # Controls when the action will run. Triggers the workflow on pull request
 on:
@@ -54,7 +54,17 @@ jobs:
       # - run: pip install linkml
         
       # generate markdown files
-      - run: make gen-docs
+      - name: Render documentation
+        run: make gen-docs
 
       # deploy documentation (note: requires documentation is in docs dir)
       # - run: make gh-deploy
+
+      # publish to gh-pages
+      - name: Publish documentation
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+          render: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
