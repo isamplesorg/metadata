@@ -62,10 +62,7 @@ jobs:
 
       # publish to gh-pages
       - name: Publish documentation
-        uses: quarto-dev/quarto-actions/publish@v2
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          target: gh-pages
-          path: build/docs
-          render: "false"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
