@@ -32,8 +32,6 @@ website:
         href: https://github.com/isamplesorg
       - icon: slack
         href: https://isamples.slack.com/
-      - icon: twitter
-        href: https://twitter.com/isamplesorg
 
 metadata-files:
   - _model.yml
