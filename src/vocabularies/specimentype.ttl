@@ -183,6 +183,13 @@ spec:researchproduct
   skos:inScheme spec:specimentypevocabulary ;
   skos:prefLabel "Research product"@en ;
 .
+spec:slurrybiomeaggregation
+  rdf:type skos:Concept ;
+  rdfs:label "Slurry biome aggregation"@en ;
+  skos:broader spec:biomeaggregation ;
+  skos:definition "a material that consists of mixed organic and inorganic material, including whole organisms and organism fragments."@en ;
+  skos:prefLabel "Slurry biome aggregation"@en ;
+.
 spec:specimentypevocabulary
   rdf:type owl:NamedIndividual ;
   rdf:type owl:Ontology ;
@@ -203,7 +210,7 @@ spec:specimentypevocabulary
 spec:wholeorganism
   rdf:type owl:NamedIndividual ;
   rdf:type skos:Concept ;
-  rdfs:label "Whole organism sample"@en ;
+  rdfs:label "Whole organism specimen"@en ;
   skos:broader spec:biologicalspecimen ;
   skos:closeMatch <http://purl.obolibrary.org/obo/OBI_0100026> ;
   skos:definition "Specimen consists of the bodies of one or more entire organisms of the same species, from any kingdom. Note that these are also inherently 'solid object'"@en ;
