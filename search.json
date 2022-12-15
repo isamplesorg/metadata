@@ -1,0 +1,1297 @@
+[
+  {
+    "objectID": "physicalSample.html",
+    "href": "physicalSample.html",
+    "title": "iSamples Model",
+    "section": "",
+    "text": "physicalSample\nStartup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change ‘id’ to ‘@id’ and ‘schema’ to ‘$schema’. Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07\nURI: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "SpecimenCuration.html",
+    "href": "SpecimenCuration.html",
+    "title": "SpecimenCuration",
+    "section": "",
+    "text": "Information about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.\nURI: isam:SpecimenCuration\ncase 4"
+  },
+  {
+    "objectID": "SpecimenCuration.html#slots",
+    "href": "SpecimenCuration.html#slots",
+    "title": "SpecimenCuration",
+    "section": "Slots",
+    "text": "Slots\n\nSlots in class SpecimenCuration.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\naccess_constraints\n0..*  xsd:string\nCultural, legal, or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.\n\n\n\ndirect\n\n\n\n\n\ncuration_location\n0..1  xsd:string\nInformation about where and how the sample is currently stored.\ndirect\n\n\ndescription\n0..1  xsd:string\nFree text description of the subject of a triple.\ndirect\n\n\nlabel\n0..1  xsd:string\na human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\ndirect\n\n\nresponsibility\n0..*  xsd:string\nString with person name and affiliation, or organization name, and their role relative to the parent element.\ndirect"
+  },
+  {
+    "objectID": "SpecimenCuration.html#usages",
+    "href": "SpecimenCuration.html#usages",
+    "title": "SpecimenCuration",
+    "section": "Usages",
+    "text": "Usages\n\n\n\nused by\nused in\ntype\nused\n\n\n\n\nPhysicalSampleRecord\ncuration\nrange\nSpecimenCuration"
+  },
+  {
+    "objectID": "SpecimenCuration.html#identifier-and-mapping-information",
+    "href": "SpecimenCuration.html#identifier-and-mapping-information",
+    "title": "SpecimenCuration",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "SpecimenCuration.html#mappings",
+    "href": "SpecimenCuration.html#mappings",
+    "title": "SpecimenCuration",
+    "section": "Mappings",
+    "text": "Mappings\n\n\n\nMapping Type\nMapped Value\n\n\n\n\nself\n[‘isam:SpecimenCuration’]\n\n\nnative\n[‘isam:SpecimenCuration’]"
+  },
+  {
+    "objectID": "SpecimenCuration.html#linkml-source",
+    "href": "SpecimenCuration.html#linkml-source",
+    "title": "SpecimenCuration",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\n\nDirect\n\nname: SpecimenCuration\ndescription: Information about the current storage of sample, access to sample, and\n  events in curation history. Curation as used here starts when the sample is removed\n  from its original context, and might include various processing steps for preservation.  Processing\n  related to analysis preparation such as crushing, dissolution, evaporation, filtering\n  are considered part of the sampling method for the derived child sample.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- access_constraints\n- curation_location\n- description\n- label\n- responsibility\n\n\n\nInduced\n\nname: SpecimenCuration\ndescription: Information about the current storage of sample, access to sample, and\n  events in curation history. Curation as used here starts when the sample is removed\n  from its original context, and might include various processing steps for preservation.  Processing\n  related to analysis preparation such as crushing, dissolution, evaporation, filtering\n  are considered part of the sampling method for the derived child sample.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nattributes:\n  access_constraints:\n    name: access_constraints\n    description: 'Cultural, legal, or other policy issues that bear on access to view,\n      borrow, or subsample a sample or visit a sampling site.\n\n      '\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    multivalued: true\n    alias: access_constraints\n    owner: SpecimenCuration\n    domain_of:\n    - SpecimenCuration\n    range: string\n  curation_location:\n    name: curation_location\n    description: Information about where and how the sample is currently stored.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    alias: curation_location\n    owner: SpecimenCuration\n    domain_of:\n    - SpecimenCuration\n    range: string\n  description:\n    name: description\n    description: Free text description of the subject of a triple.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - dct:description\n    alias: description\n    owner: SpecimenCuration\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  label:\n    name: label\n    description: a human intelligible string used to identify a thing, i.e. the name\n      to use for the thing; should be unique in the scope of a sample collection or\n      dataset.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - rdfs:label\n    alias: label\n    owner: SpecimenCuration\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  responsibility:\n    name: responsibility\n    description: String with person name and affiliation, or organization name, and\n      their role relative to the parent element.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    multivalued: true\n    alias: responsibility\n    owner: SpecimenCuration\n    domain_of:\n    - SamplingEvent\n    - SpecimenCuration\n    range: string"
+  },
+  {
+    "objectID": "informal_classification.html",
+    "href": "informal_classification.html",
+    "title": "informal_classification",
+    "section": "",
+    "text": "Free text classification terms, not from a controlled vocabulary; generally terms applied by collector.\nURI: isam:informal_classification"
+  },
+  {
+    "objectID": "informal_classification.html#applicable-classes",
+    "href": "informal_classification.html#applicable-classes",
+    "title": "informal_classification",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web."
+  },
+  {
+    "objectID": "informal_classification.html#properties",
+    "href": "informal_classification.html#properties",
+    "title": "informal_classification",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: True"
+  },
+  {
+    "objectID": "informal_classification.html#identifier-and-mapping-information",
+    "href": "informal_classification.html#identifier-and-mapping-information",
+    "title": "informal_classification",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "informal_classification.html#linkml-source",
+    "href": "informal_classification.html#linkml-source",
+    "title": "informal_classification",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: informal_classification\ndescription: Free text classification terms, not from a controlled vocabulary; generally\n  terms applied by collector.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: PhysicalSampleRecord\nmultivalued: true\nalias: informal_classification\ndomain_of:\n- PhysicalSampleRecord\nrange: string"
+  },
+  {
+    "objectID": "keywords.html",
+    "href": "keywords.html",
+    "title": "keywords",
+    "section": "",
+    "text": "free text categorization of sample to support discovery\nURI: isam:keywords"
+  },
+  {
+    "objectID": "keywords.html#applicable-classes",
+    "href": "keywords.html#applicable-classes",
+    "title": "keywords",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web."
+  },
+  {
+    "objectID": "keywords.html#properties",
+    "href": "keywords.html#properties",
+    "title": "keywords",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: True"
+  },
+  {
+    "objectID": "keywords.html#identifier-and-mapping-information",
+    "href": "keywords.html#identifier-and-mapping-information",
+    "title": "keywords",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "keywords.html#linkml-source",
+    "href": "keywords.html#linkml-source",
+    "title": "keywords",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: keywords\ndescription: free text categorization of sample to support discovery\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nclose_mappings:\n- sdo:keywords\nrank: 1000\ndomain: PhysicalSampleRecord\nmultivalued: true\nalias: keywords\ndomain_of:\n- PhysicalSampleRecord\nrange: string"
+  },
+  {
+    "objectID": "curation.html",
+    "href": "curation.html",
+    "title": "curation",
+    "section": "",
+    "text": "URI: isam:curation"
+  },
+  {
+    "objectID": "curation.html#applicable-classes",
+    "href": "curation.html#applicable-classes",
+    "title": "curation",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web."
+  },
+  {
+    "objectID": "curation.html#properties",
+    "href": "curation.html#properties",
+    "title": "curation",
+    "section": "Properties",
+    "text": "Properties\n\nRange: SpecimenCuration\nMultivalued: None"
+  },
+  {
+    "objectID": "curation.html#identifier-and-mapping-information",
+    "href": "curation.html#identifier-and-mapping-information",
+    "title": "curation",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "curation.html#linkml-source",
+    "href": "curation.html#linkml-source",
+    "title": "curation",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: curation\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nalias: curation\ndomain_of:\n- PhysicalSampleRecord\nrange: SpecimenCuration"
+  },
+  {
+    "objectID": "label.html",
+    "href": "label.html",
+    "title": "label",
+    "section": "",
+    "text": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\nURI: isam:label"
+  },
+  {
+    "objectID": "label.html#applicable-classes",
+    "href": "label.html#applicable-classes",
+    "title": "label",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.\n\n\nSamplingSite\nNone\n\n\nSamplingEvent\nInformation about the event resulting in the creation of the physical sample.\n\n\nSpecimenCuration\nInformation about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.\n\n\nSampleRelation\nNone"
+  },
+  {
+    "objectID": "label.html#properties",
+    "href": "label.html#properties",
+    "title": "label",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
+  },
+  {
+    "objectID": "label.html#identifier-and-mapping-information",
+    "href": "label.html#identifier-and-mapping-information",
+    "title": "label",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "label.html#linkml-source",
+    "href": "label.html#linkml-source",
+    "title": "label",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: label\ndescription: a human intelligible string used to identify a thing, i.e. the name to\n  use for the thing; should be unique in the scope of a sample collection or dataset.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nclose_mappings:\n- rdfs:label\nrank: 1000\nalias: label\ndomain_of:\n- PhysicalSampleRecord\n- SamplingSite\n- SamplingEvent\n- SpecimenCuration\n- SampleRelation\nrange: string"
+  },
+  {
+    "objectID": "longitude.html",
+    "href": "longitude.html",
+    "title": "longitude",
+    "section": "",
+    "text": "angular coordinate measured positive eastward from the prime meridian.\nURI: isam:longitude"
+  },
+  {
+    "objectID": "longitude.html#applicable-classes",
+    "href": "longitude.html#applicable-classes",
+    "title": "longitude",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nGeospatialCoordLocation\nA physical location in decimal degrees using EPSG:4326. Elevation is is expressed in meters relative to the WGS84 ellipsoid."
+  },
+  {
+    "objectID": "longitude.html#properties",
+    "href": "longitude.html#properties",
+    "title": "longitude",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:decimal\nMultivalued: None"
+  },
+  {
+    "objectID": "longitude.html#identifier-and-mapping-information",
+    "href": "longitude.html#identifier-and-mapping-information",
+    "title": "longitude",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "longitude.html#linkml-source",
+    "href": "longitude.html#linkml-source",
+    "title": "longitude",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: longitude\ndescription: angular coordinate measured positive eastward from the prime meridian.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: GeospatialCoordLocation\nalias: longitude\ndomain_of:\n- GeospatialCoordLocation\nrange: decimal"
+  },
+  {
+    "objectID": "sampling_purpose.html",
+    "href": "sampling_purpose.html",
+    "title": "sampling_purpose",
+    "section": "",
+    "text": "term to specify why a sample was collection.\nURI: isam:sampling_purpose"
+  },
+  {
+    "objectID": "sampling_purpose.html#applicable-classes",
+    "href": "sampling_purpose.html#applicable-classes",
+    "title": "sampling_purpose",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web."
+  },
+  {
+    "objectID": "sampling_purpose.html#properties",
+    "href": "sampling_purpose.html#properties",
+    "title": "sampling_purpose",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
+  },
+  {
+    "objectID": "sampling_purpose.html#identifier-and-mapping-information",
+    "href": "sampling_purpose.html#identifier-and-mapping-information",
+    "title": "sampling_purpose",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "sampling_purpose.html#linkml-source",
+    "href": "sampling_purpose.html#linkml-source",
+    "title": "sampling_purpose",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: sampling_purpose\ndescription: term to specify why a sample was collection.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: PhysicalSampleRecord\nalias: sampling_purpose\ndomain_of:\n- PhysicalSampleRecord\nrange: string"
+  },
+  {
+    "objectID": "result_time.html",
+    "href": "result_time.html",
+    "title": "result_time",
+    "section": "",
+    "text": "Date on which the sample was collected.\nURI: isam:result_time"
+  },
+  {
+    "objectID": "result_time.html#applicable-classes",
+    "href": "result_time.html#applicable-classes",
+    "title": "result_time",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSamplingEvent\nInformation about the event resulting in the creation of the physical sample."
+  },
+  {
+    "objectID": "result_time.html#properties",
+    "href": "result_time.html#properties",
+    "title": "result_time",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:date\nMultivalued: None"
+  },
+  {
+    "objectID": "result_time.html#identifier-and-mapping-information",
+    "href": "result_time.html#identifier-and-mapping-information",
+    "title": "result_time",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "result_time.html#linkml-source",
+    "href": "result_time.html#linkml-source",
+    "title": "result_time",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: result_time\ndescription: Date on which the sample was collected.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: SamplingEvent\nalias: result_time\ndomain_of:\n- SamplingEvent\nrange: date"
+  },
+  {
+    "objectID": "glossary.html",
+    "href": "glossary.html",
+    "title": "iSamples Model",
+    "section": "",
+    "text": "iSamples Glossary\n\n\n\n\n\n\n\n\nTerm\nDefinition\nsource\n\n\n\n\nPeel\nAcetate peels are replicas of etched surfaces embedded in sheets of cellulose acetate. These replicas are usually so detailed that the fine structure of shells and various sedimentary rocks can be easily studied under a light microscope. Because these peels can be quickly and easily produced, the procedure is now commonly used in most geologic laboratories.\nWilson and Palmer, 1988, doi: 10.1017/S2475262200005074"
+  },
+  {
+    "objectID": "relationship.html",
+    "href": "relationship.html",
+    "title": "relationship",
+    "section": "",
+    "text": "term to identify realationship between host sample and the sample relation target. Should be controlled vocabulary (ScopedName). for now start with string, ‘derivedFrom’.\nURI: isam:relationship"
+  },
+  {
+    "objectID": "relationship.html#applicable-classes",
+    "href": "relationship.html#applicable-classes",
+    "title": "relationship",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSampleRelation\nNone"
+  },
+  {
+    "objectID": "relationship.html#properties",
+    "href": "relationship.html#properties",
+    "title": "relationship",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
+  },
+  {
+    "objectID": "relationship.html#identifier-and-mapping-information",
+    "href": "relationship.html#identifier-and-mapping-information",
+    "title": "relationship",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "relationship.html#linkml-source",
+    "href": "relationship.html#linkml-source",
+    "title": "relationship",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: relationship\ndescription: term to identify realationship between host sample and the sample relation\n  target. Should be controlled vocabulary (ScopedName). for now start with string,\n  'derivedFrom'.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nalias: relationship\ndomain_of:\n- SampleRelation\nrange: string"
+  },
+  {
+    "objectID": "place_name.html",
+    "href": "place_name.html",
+    "title": "place_name",
+    "section": "",
+    "text": "one or more names by which the sampling site is known.\nURI: isam:place_name"
+  },
+  {
+    "objectID": "place_name.html#applicable-classes",
+    "href": "place_name.html#applicable-classes",
+    "title": "place_name",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSamplingSite\nNone"
+  },
+  {
+    "objectID": "place_name.html#properties",
+    "href": "place_name.html#properties",
+    "title": "place_name",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: True"
+  },
+  {
+    "objectID": "place_name.html#identifier-and-mapping-information",
+    "href": "place_name.html#identifier-and-mapping-information",
+    "title": "place_name",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "place_name.html#linkml-source",
+    "href": "place_name.html#linkml-source",
+    "title": "place_name",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: place_name\ndescription: one or more names by which the sampling site is known.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: SamplingSite\nmultivalued: true\nalias: place_name\ndomain_of:\n- SamplingSite\nrange: string"
+  },
+  {
+    "objectID": "sampling_site.html",
+    "href": "sampling_site.html",
+    "title": "sampling_site",
+    "section": "",
+    "text": "object that identifies the place where the sample was collected\nURI: isam:sampling_site"
+  },
+  {
+    "objectID": "sampling_site.html#applicable-classes",
+    "href": "sampling_site.html#applicable-classes",
+    "title": "sampling_site",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSamplingEvent\nInformation about the event resulting in the creation of the physical sample."
+  },
+  {
+    "objectID": "sampling_site.html#properties",
+    "href": "sampling_site.html#properties",
+    "title": "sampling_site",
+    "section": "Properties",
+    "text": "Properties\n\nRange: SamplingSite\nMultivalued: None"
+  },
+  {
+    "objectID": "sampling_site.html#identifier-and-mapping-information",
+    "href": "sampling_site.html#identifier-and-mapping-information",
+    "title": "sampling_site",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "sampling_site.html#linkml-source",
+    "href": "sampling_site.html#linkml-source",
+    "title": "sampling_site",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: sampling_site\ndescription: object that identifies the place where the sample was collected\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: SamplingEvent\nalias: sampling_site\ndomain_of:\n- SamplingEvent\nrange: SamplingSite"
+  },
+  {
+    "objectID": "GeospatialCoordLocation.html",
+    "href": "GeospatialCoordLocation.html",
+    "title": "GeospatialCoordLocation",
+    "section": "",
+    "text": "A physical location in decimal degrees using EPSG:4326. Elevation is is expressed in meters relative to the WGS84 ellipsoid.\nURI: isam:GeospatialCoordLocation\ncase 4"
+  },
+  {
+    "objectID": "GeospatialCoordLocation.html#slots",
+    "href": "GeospatialCoordLocation.html#slots",
+    "title": "GeospatialCoordLocation",
+    "section": "Slots",
+    "text": "Slots\n\nSlots in class GeospatialCoordLocation.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\nelevation\n0..1  xsd:string\nShould be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level.\ndirect\n\n\nlatitude\n0..1  xsd:decimal\nangular coordinate measured positive north from the equator.\ndirect\n\n\nlongitude\n0..1  xsd:decimal\nangular coordinate measured positive eastward from the prime meridian.\ndirect"
+  },
+  {
+    "objectID": "GeospatialCoordLocation.html#usages",
+    "href": "GeospatialCoordLocation.html#usages",
+    "title": "GeospatialCoordLocation",
+    "section": "Usages",
+    "text": "Usages\n\n\n\nused by\nused in\ntype\nused\n\n\n\n\nSamplingSite\nlocation\nrange\nGeospatialCoordLocation\n\n\nGeospatialCoordLocation\nelevation\ndomain\nGeospatialCoordLocation\n\n\nGeospatialCoordLocation\nlatitude\ndomain\nGeospatialCoordLocation\n\n\nGeospatialCoordLocation\nlongitude\ndomain\nGeospatialCoordLocation"
+  },
+  {
+    "objectID": "GeospatialCoordLocation.html#identifier-and-mapping-information",
+    "href": "GeospatialCoordLocation.html#identifier-and-mapping-information",
+    "title": "GeospatialCoordLocation",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "GeospatialCoordLocation.html#mappings",
+    "href": "GeospatialCoordLocation.html#mappings",
+    "title": "GeospatialCoordLocation",
+    "section": "Mappings",
+    "text": "Mappings\n\n\n\nMapping Type\nMapped Value\n\n\n\n\nself\n[‘isam:GeospatialCoordLocation’]\n\n\nnative\n[‘isam:GeospatialCoordLocation’]"
+  },
+  {
+    "objectID": "GeospatialCoordLocation.html#linkml-source",
+    "href": "GeospatialCoordLocation.html#linkml-source",
+    "title": "GeospatialCoordLocation",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\n\nDirect\n\nname: GeospatialCoordLocation\ndescription: A physical location in decimal degrees using EPSG:4326. Elevation is\n  is expressed in meters relative to the WGS84 ellipsoid.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- elevation\n- latitude\n- longitude\n\n\n\nInduced\n\nname: GeospatialCoordLocation\ndescription: A physical location in decimal degrees using EPSG:4326. Elevation is\n  is expressed in meters relative to the WGS84 ellipsoid.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nattributes:\n  elevation:\n    name: elevation\n    description: Should be a number and Unit of measure, and the datum. e.g. 401 m\n      above mean sea level.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: GeospatialCoordLocation\n    alias: elevation\n    owner: GeospatialCoordLocation\n    domain_of:\n    - GeospatialCoordLocation\n    range: string\n  latitude:\n    name: latitude\n    description: angular coordinate measured positive north from the equator.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: GeospatialCoordLocation\n    alias: latitude\n    owner: GeospatialCoordLocation\n    domain_of:\n    - GeospatialCoordLocation\n    range: decimal\n  longitude:\n    name: longitude\n    description: angular coordinate measured positive eastward from the prime meridian.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: GeospatialCoordLocation\n    alias: longitude\n    owner: GeospatialCoordLocation\n    domain_of:\n    - GeospatialCoordLocation\n    range: decimal"
+  },
+  {
+    "objectID": "location.html",
+    "href": "location.html",
+    "title": "location",
+    "section": "",
+    "text": "geopatial location of site; required default is WGS84 latitude, longitude in decimal degrees. Elevation as a string with number, unit of measure, and datum.\nURI: isam:location"
+  },
+  {
+    "objectID": "location.html#applicable-classes",
+    "href": "location.html#applicable-classes",
+    "title": "location",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSamplingSite\nNone"
+  },
+  {
+    "objectID": "location.html#properties",
+    "href": "location.html#properties",
+    "title": "location",
+    "section": "Properties",
+    "text": "Properties\n\nRange: GeospatialCoordLocation\nMultivalued: None"
+  },
+  {
+    "objectID": "location.html#identifier-and-mapping-information",
+    "href": "location.html#identifier-and-mapping-information",
+    "title": "location",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "location.html#linkml-source",
+    "href": "location.html#linkml-source",
+    "title": "location",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: location\ndescription: geopatial location of site; required default is WGS84 latitude, longitude\n  in decimal degrees. Elevation as a string with number, unit of measure, and datum.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: SamplingSite\nalias: location\ndomain_of:\n- SamplingSite\nrange: GeospatialCoordLocation"
+  },
+  {
+    "objectID": "sample_identifier.html",
+    "href": "sample_identifier.html",
+    "title": "sample_identifier",
+    "section": "",
+    "text": "URI that identifies the physical sample described by this record\nURI: isam:sample_identifier"
+  },
+  {
+    "objectID": "sample_identifier.html#applicable-classes",
+    "href": "sample_identifier.html#applicable-classes",
+    "title": "sample_identifier",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web."
+  },
+  {
+    "objectID": "sample_identifier.html#properties",
+    "href": "sample_identifier.html#properties",
+    "title": "sample_identifier",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
+  },
+  {
+    "objectID": "sample_identifier.html#identifier-and-mapping-information",
+    "href": "sample_identifier.html#identifier-and-mapping-information",
+    "title": "sample_identifier",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "sample_identifier.html#linkml-source",
+    "href": "sample_identifier.html#linkml-source",
+    "title": "sample_identifier",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: sample_identifier\ndescription: URI that identifies the physical sample described by this record\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nclose_mappings:\n- sdo:identifier\nrank: 1000\ndomain: PhysicalSampleRecord\nalias: sample_identifier\ndomain_of:\n- PhysicalSampleRecord\nrange: string"
+  },
+  {
+    "objectID": "authorized_by.html",
+    "href": "authorized_by.html",
+    "title": "authorized_by",
+    "section": "",
+    "text": "URI: isam:authorized_by"
+  },
+  {
+    "objectID": "authorized_by.html#applicable-classes",
+    "href": "authorized_by.html#applicable-classes",
+    "title": "authorized_by",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web."
+  },
+  {
+    "objectID": "authorized_by.html#properties",
+    "href": "authorized_by.html#properties",
+    "title": "authorized_by",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
+  },
+  {
+    "objectID": "authorized_by.html#identifier-and-mapping-information",
+    "href": "authorized_by.html#identifier-and-mapping-information",
+    "title": "authorized_by",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "authorized_by.html#linkml-source",
+    "href": "authorized_by.html#linkml-source",
+    "title": "authorized_by",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: authorized_by\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nalias: authorized_by\ndomain_of:\n- PhysicalSampleRecord\nrange: string"
+  },
+  {
+    "objectID": "has_specimen_category.html",
+    "href": "has_specimen_category.html",
+    "title": "has_specimen_category",
+    "section": "",
+    "text": "The kind of object the specimen is.\nURI: isam:has_specimen_category"
+  },
+  {
+    "objectID": "has_specimen_category.html#applicable-classes",
+    "href": "has_specimen_category.html#applicable-classes",
+    "title": "has_specimen_category",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web."
+  },
+  {
+    "objectID": "has_specimen_category.html#properties",
+    "href": "has_specimen_category.html#properties",
+    "title": "has_specimen_category",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:anyURI\nMultivalued: True"
+  },
+  {
+    "objectID": "has_specimen_category.html#identifier-and-mapping-information",
+    "href": "has_specimen_category.html#identifier-and-mapping-information",
+    "title": "has_specimen_category",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "has_specimen_category.html#linkml-source",
+    "href": "has_specimen_category.html#linkml-source",
+    "title": "has_specimen_category",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: has_specimen_category\ndescription: The kind of object the specimen is.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: PhysicalSampleRecord\nmultivalued: true\nalias: has_specimen_category\ndomain_of:\n- PhysicalSampleRecord\nrange: uriorcurie"
+  },
+  {
+    "objectID": "has_context_category.html",
+    "href": "has_context_category.html",
+    "title": "has_context_category",
+    "section": "",
+    "text": "Top level context, based on the kind of feature sampled. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.\nURI: isam:has_context_category"
+  },
+  {
+    "objectID": "has_context_category.html#applicable-classes",
+    "href": "has_context_category.html#applicable-classes",
+    "title": "has_context_category",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web."
+  },
+  {
+    "objectID": "has_context_category.html#properties",
+    "href": "has_context_category.html#properties",
+    "title": "has_context_category",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: True"
+  },
+  {
+    "objectID": "has_context_category.html#identifier-and-mapping-information",
+    "href": "has_context_category.html#identifier-and-mapping-information",
+    "title": "has_context_category",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "has_context_category.html#linkml-source",
+    "href": "has_context_category.html#linkml-source",
+    "title": "has_context_category",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: has_context_category\ndescription: Top level context, based on the kind of feature sampled. Specific identification\n  of the sampled feature of interest is done through the SamplingEvent/Feature of\n  Interest property.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: PhysicalSampleRecord\nmultivalued: true\nalias: has_context_category\ndomain_of:\n- PhysicalSampleRecord\nrange: string"
+  },
+  {
+    "objectID": "SamplingSite.html",
+    "href": "SamplingSite.html",
+    "title": "SamplingSite",
+    "section": "",
+    "text": "URI: isam:SamplingSite\ncase 4"
+  },
+  {
+    "objectID": "SamplingSite.html#slots",
+    "href": "SamplingSite.html#slots",
+    "title": "SamplingSite",
+    "section": "Slots",
+    "text": "Slots\n\nSlots in class SamplingSite.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\ndescription\n0..1  xsd:string\nFree text description of the subject of a triple.\ndirect\n\n\nlabel\n0..1  xsd:string\na human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\ndirect\n\n\nlocation\n0..1  GeospatialCoordLocation\ngeopatial location of site; required default is WGS84 latitude, longitude in decimal degrees. Elevation as a string with number, unit of measure, and datum.\ndirect\n\n\nplace_name\n0..*  xsd:string\none or more names by which the sampling site is known.\ndirect"
+  },
+  {
+    "objectID": "SamplingSite.html#usages",
+    "href": "SamplingSite.html#usages",
+    "title": "SamplingSite",
+    "section": "Usages",
+    "text": "Usages\n\n\n\nused by\nused in\ntype\nused\n\n\n\n\nSamplingSite\nlocation\ndomain\nSamplingSite\n\n\nSamplingSite\nplace_name\ndomain\nSamplingSite\n\n\nSamplingEvent\nsampling_site\nrange\nSamplingSite"
+  },
+  {
+    "objectID": "SamplingSite.html#identifier-and-mapping-information",
+    "href": "SamplingSite.html#identifier-and-mapping-information",
+    "title": "SamplingSite",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "SamplingSite.html#mappings",
+    "href": "SamplingSite.html#mappings",
+    "title": "SamplingSite",
+    "section": "Mappings",
+    "text": "Mappings\n\n\n\nMapping Type\nMapped Value\n\n\n\n\nself\n[‘isam:SamplingSite’]\n\n\nnative\n[‘isam:SamplingSite’]"
+  },
+  {
+    "objectID": "SamplingSite.html#linkml-source",
+    "href": "SamplingSite.html#linkml-source",
+    "title": "SamplingSite",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\n\nDirect\n\nname: SamplingSite\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- description\n- label\n- location\n- place_name\n\n\n\nInduced\n\nname: SamplingSite\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nattributes:\n  description:\n    name: description\n    description: Free text description of the subject of a triple.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - dct:description\n    alias: description\n    owner: SamplingSite\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  label:\n    name: label\n    description: a human intelligible string used to identify a thing, i.e. the name\n      to use for the thing; should be unique in the scope of a sample collection or\n      dataset.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - rdfs:label\n    alias: label\n    owner: SamplingSite\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  location:\n    name: location\n    description: geopatial location of site; required default is WGS84 latitude, longitude\n      in decimal degrees. Elevation as a string with number, unit of measure, and\n      datum.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: SamplingSite\n    alias: location\n    owner: SamplingSite\n    domain_of:\n    - SamplingSite\n    range: GeospatialCoordLocation\n  place_name:\n    name: place_name\n    description: one or more names by which the sampling site is known.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: SamplingSite\n    multivalued: true\n    alias: place_name\n    owner: SamplingSite\n    domain_of:\n    - SamplingSite\n    range: string"
+  },
+  {
+    "objectID": "related_resource.html",
+    "href": "related_resource.html",
+    "title": "related_resource",
+    "section": "",
+    "text": "link to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource.\nURI: isam:related_resource"
+  },
+  {
+    "objectID": "related_resource.html#applicable-classes",
+    "href": "related_resource.html#applicable-classes",
+    "title": "related_resource",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web."
+  },
+  {
+    "objectID": "related_resource.html#properties",
+    "href": "related_resource.html#properties",
+    "title": "related_resource",
+    "section": "Properties",
+    "text": "Properties\n\nRange: SampleRelation\nMultivalued: True"
+  },
+  {
+    "objectID": "related_resource.html#identifier-and-mapping-information",
+    "href": "related_resource.html#identifier-and-mapping-information",
+    "title": "related_resource",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "related_resource.html#linkml-source",
+    "href": "related_resource.html#linkml-source",
+    "title": "related_resource",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: related_resource\ndescription: link to related resource with relationship property to indicate nature\n  of connection. Target should be identifier for a resource.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nmultivalued: true\nalias: related_resource\ndomain_of:\n- PhysicalSampleRecord\nrange: SampleRelation"
+  },
+  {
+    "objectID": "registrant.html",
+    "href": "registrant.html",
+    "title": "registrant",
+    "section": "",
+    "text": "identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.\nURI: isam:registrant"
+  },
+  {
+    "objectID": "registrant.html#applicable-classes",
+    "href": "registrant.html#applicable-classes",
+    "title": "registrant",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web."
+  },
+  {
+    "objectID": "registrant.html#properties",
+    "href": "registrant.html#properties",
+    "title": "registrant",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
+  },
+  {
+    "objectID": "registrant.html#identifier-and-mapping-information",
+    "href": "registrant.html#identifier-and-mapping-information",
+    "title": "registrant",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "registrant.html#linkml-source",
+    "href": "registrant.html#linkml-source",
+    "title": "registrant",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: registrant\ndescription: identification of the agent that registered the sample, with contact\n  information. Should include person name and affiliation, or position name and affiliation,\n  or just organization name. e-mail address is preferred contact information.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: PhysicalSampleRecord\nalias: registrant\ndomain_of:\n- PhysicalSampleRecord\nrange: string"
+  },
+  {
+    "objectID": "has_feature_of_interest.html",
+    "href": "has_feature_of_interest.html",
+    "title": "has_feature_of_interest",
+    "section": "",
+    "text": "What does the sample represent.\nURI: isam:has_feature_of_interest"
+  },
+  {
+    "objectID": "has_feature_of_interest.html#applicable-classes",
+    "href": "has_feature_of_interest.html#applicable-classes",
+    "title": "has_feature_of_interest",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSamplingEvent\nInformation about the event resulting in the creation of the physical sample."
+  },
+  {
+    "objectID": "has_feature_of_interest.html#properties",
+    "href": "has_feature_of_interest.html#properties",
+    "title": "has_feature_of_interest",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
+  },
+  {
+    "objectID": "has_feature_of_interest.html#identifier-and-mapping-information",
+    "href": "has_feature_of_interest.html#identifier-and-mapping-information",
+    "title": "has_feature_of_interest",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "has_feature_of_interest.html#linkml-source",
+    "href": "has_feature_of_interest.html#linkml-source",
+    "title": "has_feature_of_interest",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: has_feature_of_interest\ndescription: What does the sample represent.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: SamplingEvent\nalias: has_feature_of_interest\ndomain_of:\n- SamplingEvent\nrange: string"
+  },
+  {
+    "objectID": "elevation.html",
+    "href": "elevation.html",
+    "title": "elevation",
+    "section": "",
+    "text": "Should be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level.\nURI: isam:elevation"
+  },
+  {
+    "objectID": "elevation.html#applicable-classes",
+    "href": "elevation.html#applicable-classes",
+    "title": "elevation",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nGeospatialCoordLocation\nA physical location in decimal degrees using EPSG:4326. Elevation is is expressed in meters relative to the WGS84 ellipsoid."
+  },
+  {
+    "objectID": "elevation.html#properties",
+    "href": "elevation.html#properties",
+    "title": "elevation",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
+  },
+  {
+    "objectID": "elevation.html#identifier-and-mapping-information",
+    "href": "elevation.html#identifier-and-mapping-information",
+    "title": "elevation",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "elevation.html#linkml-source",
+    "href": "elevation.html#linkml-source",
+    "title": "elevation",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: elevation\ndescription: Should be a number and Unit of measure, and the datum. e.g. 401 m above\n  mean sea level.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: GeospatialCoordLocation\nalias: elevation\ndomain_of:\n- GeospatialCoordLocation\nrange: string"
+  },
+  {
+    "objectID": "PhysicalSampleRecord.html",
+    "href": "PhysicalSampleRecord.html",
+    "title": "PhysicalSampleRecord",
+    "section": "",
+    "text": "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.\nURI: isam:PhysicalSampleRecord\ncase 4"
+  },
+  {
+    "objectID": "PhysicalSampleRecord.html#slots",
+    "href": "PhysicalSampleRecord.html#slots",
+    "title": "PhysicalSampleRecord",
+    "section": "Slots",
+    "text": "Slots\n\nSlots in class PhysicalSampleRecord.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\nauthorized_by\n0..1  xsd:string\nNone\ndirect\n\n\ncomplies_with\n0..1  xsd:string\nNone\ndirect\n\n\ncuration\n0..1  SpecimenCuration\nNone\ndirect\n\n\ndescription\n0..1  xsd:string\nFree text description of the subject of a triple.\ndirect\n\n\nhas_context_category\n0..*  xsd:string\nTop level context, based on the kind of feature sampled. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property.\ndirect\n\n\nhas_material_category\n0..*  xsd:anyURI\nThe kind of material that constitutes the sample.\ndirect\n\n\nhas_specimen_category\n0..*  xsd:anyURI\nThe kind of object the specimen is.\ndirect\n\n\ninformal_classification\n0..*  xsd:string\nFree text classification terms, not from a controlled vocabulary; generally terms applied by collector.\ndirect\n\n\nkeywords\n0..*  xsd:string\nfree text categorization of sample to support discovery\ndirect\n\n\nlabel\n1..1  xsd:string\na human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\ndirect\n\n\nproduced_by\n0..1  SamplingEvent\nobject that documents the sampling event–who, where, when the specimen was obtained\ndirect\n\n\nrelated_resource\n0..*  SampleRelation\nlink to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource.\ndirect\n\n\nregistrant\n0..1  xsd:string\nidentification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.\ndirect\n\n\nsample_identifier\n1..1  xsd:string\nURI that identifies the physical sample described by this record\ndirect\n\n\nsampling_purpose\n0..1  xsd:string\nterm to specify why a sample was collection.\ndirect"
+  },
+  {
+    "objectID": "PhysicalSampleRecord.html#usages",
+    "href": "PhysicalSampleRecord.html#usages",
+    "title": "PhysicalSampleRecord",
+    "section": "Usages",
+    "text": "Usages\n\n\n\nused by\nused in\ntype\nused\n\n\n\n\nPhysicalSampleRecord\nhas_context_category\ndomain\nPhysicalSampleRecord\n\n\nPhysicalSampleRecord\nhas_material_category\ndomain\nPhysicalSampleRecord\n\n\nPhysicalSampleRecord\nhas_specimen_category\ndomain\nPhysicalSampleRecord\n\n\nPhysicalSampleRecord\ninformal_classification\ndomain\nPhysicalSampleRecord\n\n\nPhysicalSampleRecord\nkeywords\ndomain\nPhysicalSampleRecord\n\n\nPhysicalSampleRecord\nproduced_by\ndomain\nPhysicalSampleRecord\n\n\nPhysicalSampleRecord\nregistrant\ndomain\nPhysicalSampleRecord\n\n\nPhysicalSampleRecord\nsample_identifier\ndomain\nPhysicalSampleRecord\n\n\nPhysicalSampleRecord\nsampling_purpose\ndomain\nPhysicalSampleRecord"
+  },
+  {
+    "objectID": "PhysicalSampleRecord.html#identifier-and-mapping-information",
+    "href": "PhysicalSampleRecord.html#identifier-and-mapping-information",
+    "title": "PhysicalSampleRecord",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "PhysicalSampleRecord.html#mappings",
+    "href": "PhysicalSampleRecord.html#mappings",
+    "title": "PhysicalSampleRecord",
+    "section": "Mappings",
+    "text": "Mappings\n\n\n\nMapping Type\nMapped Value\n\n\n\n\nself\n[‘isam:PhysicalSampleRecord’]\n\n\nnative\n[‘isam:PhysicalSampleRecord’]"
+  },
+  {
+    "objectID": "PhysicalSampleRecord.html#linkml-source",
+    "href": "PhysicalSampleRecord.html#linkml-source",
+    "title": "PhysicalSampleRecord",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\n\nDirect\n\nname: PhysicalSampleRecord\ndescription: This is a data object that is a digital representation of a physical\n  sample, and thus shares the same identifier as the physical object. It provides\n  descriptive properties for any iSamples physical sample, URI for the metadata record\n  is same as URI for physical sample-- digital object is considered twin of physical\n  object, a representation. IGSN is recommended. Must be a URI that can be dereferenced\n  on the web.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- authorized_by\n- complies_with\n- curation\n- description\n- has_context_category\n- has_material_category\n- has_specimen_category\n- informal_classification\n- keywords\n- label\n- produced_by\n- related_resource\n- registrant\n- sample_identifier\n- sampling_purpose\nslot_usage:\n  label:\n    name: label\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    required: true\n  sample_identifier:\n    name: sample_identifier\n    domain_of:\n    - PhysicalSampleRecord\n    - PhysicalSampleRecord\n    required: true\n\n\n\nInduced\n\nname: PhysicalSampleRecord\ndescription: This is a data object that is a digital representation of a physical\n  sample, and thus shares the same identifier as the physical object. It provides\n  descriptive properties for any iSamples physical sample, URI for the metadata record\n  is same as URI for physical sample-- digital object is considered twin of physical\n  object, a representation. IGSN is recommended. Must be a URI that can be dereferenced\n  on the web.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslot_usage:\n  label:\n    name: label\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    required: true\n  sample_identifier:\n    name: sample_identifier\n    domain_of:\n    - PhysicalSampleRecord\n    - PhysicalSampleRecord\n    required: true\nattributes:\n  authorized_by:\n    name: authorized_by\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    alias: authorized_by\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  complies_with:\n    name: complies_with\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    alias: complies_with\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  curation:\n    name: curation\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    alias: curation\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: SpecimenCuration\n  description:\n    name: description\n    description: Free text description of the subject of a triple.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - dct:description\n    alias: description\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  has_context_category:\n    name: has_context_category\n    description: Top level context, based on the kind of feature sampled. Specific\n      identification of the sampled feature of interest is done through the SamplingEvent/Feature\n      of Interest property.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: PhysicalSampleRecord\n    multivalued: true\n    alias: has_context_category\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  has_material_category:\n    name: has_material_category\n    description: The kind of material that constitutes the sample.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    values_from:\n    - MaterialTypeVocabulary\n    domain: PhysicalSampleRecord\n    multivalued: true\n    alias: has_material_category\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: uriorcurie\n  has_specimen_category:\n    name: has_specimen_category\n    description: The kind of object the specimen is.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: PhysicalSampleRecord\n    multivalued: true\n    alias: has_specimen_category\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: uriorcurie\n  informal_classification:\n    name: informal_classification\n    description: Free text classification terms, not from a controlled vocabulary;\n      generally terms applied by collector.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: PhysicalSampleRecord\n    multivalued: true\n    alias: informal_classification\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  keywords:\n    name: keywords\n    description: free text categorization of sample to support discovery\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - sdo:keywords\n    domain: PhysicalSampleRecord\n    multivalued: true\n    alias: keywords\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  label:\n    name: label\n    description: a human intelligible string used to identify a thing, i.e. the name\n      to use for the thing; should be unique in the scope of a sample collection or\n      dataset.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    alias: label\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n    required: true\n  produced_by:\n    name: produced_by\n    description: object that documents the sampling event--who, where, when the specimen\n      was obtained\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: PhysicalSampleRecord\n    alias: produced_by\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: SamplingEvent\n  related_resource:\n    name: related_resource\n    description: link to related resource with relationship property to indicate nature\n      of connection. Target should be identifier for a resource.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    multivalued: true\n    alias: related_resource\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: SampleRelation\n  registrant:\n    name: registrant\n    description: identification of the agent that registered the sample, with contact\n      information. Should include person name and affiliation, or position name and\n      affiliation, or just organization name. e-mail address is preferred contact\n      information.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: PhysicalSampleRecord\n    alias: registrant\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n  sample_identifier:\n    name: sample_identifier\n    description: URI that identifies the physical sample described by this record\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: PhysicalSampleRecord\n    alias: sample_identifier\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string\n    required: true\n  sampling_purpose:\n    name: sampling_purpose\n    description: term to specify why a sample was collection.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: PhysicalSampleRecord\n    alias: sampling_purpose\n    owner: PhysicalSampleRecord\n    domain_of:\n    - PhysicalSampleRecord\n    range: string"
+  },
+  {
+    "objectID": "SampleRelation.html",
+    "href": "SampleRelation.html",
+    "title": "SampleRelation",
+    "section": "",
+    "text": "URI: isam:SampleRelation\ncase 4"
+  },
+  {
+    "objectID": "SampleRelation.html#slots",
+    "href": "SampleRelation.html#slots",
+    "title": "SampleRelation",
+    "section": "Slots",
+    "text": "Slots\n\nSlots in class SampleRelation.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\ndescription\n0..1  xsd:string\nFree text description of the subject of a triple.\ndirect\n\n\nlabel\n0..1  xsd:string\na human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\ndirect\n\n\nrelationship\n0..1  xsd:string\nterm to identify realationship between host sample and the sample relation target. Should be controlled vocabulary (ScopedName). for now start with string, ‘derivedFrom’.\ndirect\n\n\ntarget\n0..1  xsd:string\nidentifier for the target resource in the relationship. Start with string, should be Identifier object.\ndirect"
+  },
+  {
+    "objectID": "SampleRelation.html#usages",
+    "href": "SampleRelation.html#usages",
+    "title": "SampleRelation",
+    "section": "Usages",
+    "text": "Usages\n\n\n\nused by\nused in\ntype\nused\n\n\n\n\nPhysicalSampleRecord\nrelated_resource\nrange\nSampleRelation"
+  },
+  {
+    "objectID": "SampleRelation.html#identifier-and-mapping-information",
+    "href": "SampleRelation.html#identifier-and-mapping-information",
+    "title": "SampleRelation",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "SampleRelation.html#mappings",
+    "href": "SampleRelation.html#mappings",
+    "title": "SampleRelation",
+    "section": "Mappings",
+    "text": "Mappings\n\n\n\nMapping Type\nMapped Value\n\n\n\n\nself\n[‘isam:SampleRelation’]\n\n\nnative\n[‘isam:SampleRelation’]"
+  },
+  {
+    "objectID": "SampleRelation.html#linkml-source",
+    "href": "SampleRelation.html#linkml-source",
+    "title": "SampleRelation",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\n\nDirect\n\nname: SampleRelation\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- description\n- label\n- relationship\n- target\n\n\n\nInduced\n\nname: SampleRelation\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nattributes:\n  description:\n    name: description\n    description: Free text description of the subject of a triple.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - dct:description\n    alias: description\n    owner: SampleRelation\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  label:\n    name: label\n    description: a human intelligible string used to identify a thing, i.e. the name\n      to use for the thing; should be unique in the scope of a sample collection or\n      dataset.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - rdfs:label\n    alias: label\n    owner: SampleRelation\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  relationship:\n    name: relationship\n    description: term to identify realationship between host sample and the sample\n      relation target. Should be controlled vocabulary (ScopedName). for now start\n      with string, 'derivedFrom'.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    alias: relationship\n    owner: SampleRelation\n    domain_of:\n    - SampleRelation\n    range: string\n  target:\n    name: target\n    description: identifier for the target resource in the relationship. Start with\n      string, should be Identifier object.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    alias: target\n    owner: SampleRelation\n    domain_of:\n    - SampleRelation\n    range: string"
+  },
+  {
+    "objectID": "target.html",
+    "href": "target.html",
+    "title": "target",
+    "section": "",
+    "text": "identifier for the target resource in the relationship. Start with string, should be Identifier object.\nURI: isam:target"
+  },
+  {
+    "objectID": "target.html#applicable-classes",
+    "href": "target.html#applicable-classes",
+    "title": "target",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSampleRelation\nNone"
+  },
+  {
+    "objectID": "target.html#properties",
+    "href": "target.html#properties",
+    "title": "target",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
+  },
+  {
+    "objectID": "target.html#identifier-and-mapping-information",
+    "href": "target.html#identifier-and-mapping-information",
+    "title": "target",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "target.html#linkml-source",
+    "href": "target.html#linkml-source",
+    "title": "target",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: target\ndescription: identifier for the target resource in the relationship. Start with string,\n  should be Identifier object.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nalias: target\ndomain_of:\n- SampleRelation\nrange: string"
+  },
+  {
+    "objectID": "responsibility.html",
+    "href": "responsibility.html",
+    "title": "responsibility",
+    "section": "",
+    "text": "String with person name and affiliation, or organization name, and their role relative to the parent element.\nURI: isam:responsibility"
+  },
+  {
+    "objectID": "responsibility.html#applicable-classes",
+    "href": "responsibility.html#applicable-classes",
+    "title": "responsibility",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSamplingEvent\nInformation about the event resulting in the creation of the physical sample.\n\n\nSpecimenCuration\nInformation about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample."
+  },
+  {
+    "objectID": "responsibility.html#properties",
+    "href": "responsibility.html#properties",
+    "title": "responsibility",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: True"
+  },
+  {
+    "objectID": "responsibility.html#identifier-and-mapping-information",
+    "href": "responsibility.html#identifier-and-mapping-information",
+    "title": "responsibility",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "responsibility.html#linkml-source",
+    "href": "responsibility.html#linkml-source",
+    "title": "responsibility",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: responsibility\ndescription: String with person name and affiliation, or organization name, and their\n  role relative to the parent element.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nmultivalued: true\nalias: responsibility\ndomain_of:\n- SamplingEvent\n- SpecimenCuration\nrange: string"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Schema for documenting physical samples",
+    "section": "",
+    "text": "Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change ‘id’ to ‘@id’ and ‘schema’ to ‘$schema’. Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07\nURI: http://resource.isamples.org/schema/0.2.1 Name: physicalSample"
+  },
+  {
+    "objectID": "index.html#classes",
+    "href": "index.html#classes",
+    "title": "Schema for documenting physical samples",
+    "section": "Classes",
+    "text": "Classes\n\n\n\nClass\nDescription\n\n\n\n\nGeospatialCoordLocation\nA physical location in decimal degrees using EPSG:4326\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, …\n\n\nSampleRelation\n\n\n\nSamplingEvent\nInformation about the event resulting in the creation of the physical sample\n\n\nSamplingSite\n\n\n\nSpecimenCuration\nInformation about the current storage of sample, access to sample, and events…"
+  },
+  {
+    "objectID": "index.html#slots",
+    "href": "index.html#slots",
+    "title": "Schema for documenting physical samples",
+    "section": "Slots",
+    "text": "Slots\n\n\n\nSlot\nDescription\n\n\n\n\naccess_constraints\nCultural, legal, or other policy issues that bear on access to view, borrow, …\n\n\nauthorized_by\n\n\n\ncomplies_with\n\n\n\ncuration\n\n\n\ncuration_location\nInformation about where and how the sample is currently stored\n\n\ndescription\nFree text description of the subject of a triple\n\n\nelevation\nShould be a number and Unit of measure, and the datum\n\n\nhas_context_category\nTop level context, based on the kind of feature sampled\n\n\nhas_feature_of_interest\nWhat does the sample represent\n\n\nhas_material_category\nThe kind of material that constitutes the sample\n\n\nhas_specimen_category\nThe kind of object the specimen is\n\n\ninformal_classification\nFree text classification terms, not from a controlled vocabulary; generally t…\n\n\nkeywords\nfree text categorization of sample to support discovery\n\n\nlabel\na human intelligible string used to identify a thing, i\n\n\nlatitude\nangular coordinate measured positive north from the equator\n\n\nlocation\ngeopatial location of site; required default is WGS84 latitude, longitude in …\n\n\nlongitude\nangular coordinate measured positive eastward from the prime meridian\n\n\nplace_name\none or more names by which the sampling site is known\n\n\nproduced_by\nobject that documents the sampling event–who, where, when the specimen was o…\n\n\nregistrant\nidentification of the agent that registered the sample, with contact informat…\n\n\nrelated_resource\nlink to related resource with relationship property to indicate nature of con…\n\n\nrelationship\nterm to identify realationship between host sample and the sample relation ta…\n\n\nresponsibility\nString with person name and affiliation, or organization name, and their role…\n\n\nresult_time\nDate on which the sample was collected\n\n\nsample_identifier\nURI that identifies the physical sample described by this record\n\n\nsampling_purpose\nterm to specify why a sample was collection\n\n\nsampling_site\nobject that identifies the place where the sample was collected\n\n\ntarget\nidentifier for the target resource in the relationship"
+  },
+  {
+    "objectID": "index.html#enumerations",
+    "href": "index.html#enumerations",
+    "title": "Schema for documenting physical samples",
+    "section": "Enumerations",
+    "text": "Enumerations\nNo enumerations are defined."
+  },
+  {
+    "objectID": "index.html#types",
+    "href": "index.html#types",
+    "title": "Schema for documenting physical samples",
+    "section": "Types",
+    "text": "Types\n\n\n\nType\nDescription\n\n\n\n\nxsd:boolean\nA binary (true or false) value\n\n\nxsd:date\na date (year, month and day) in an idealized calendar\n\n\nlinkml:DateOrDatetime\nEither a date or a datetime\n\n\nxsd:dateTime\nThe combination of a date and time\n\n\nxsd:decimal\nA real number with arbitrary precision that conforms to the xsd:decimal speci…\n\n\nxsd:double\nA real number that conforms to the xsd:double specification\n\n\nxsd:float\nA real number that conforms to the xsd:float specification\n\n\nxsd:integer\nAn integer\n\n\nxsd:string\nPrefix part of CURIE\n\n\nshex:nonLiteral\nA URI, CURIE or BNODE that represents a node in a model\n\n\nshex:iri\nA URI or CURIE that represents an object in the model\n\n\nxsd:string\nA character string\n\n\nxsd:dateTime\nA time object represents a (local) time of day, independent of any particular…\n\n\nxsd:anyURI\na complete URI\n\n\nxsd:anyURI\na URI or a CURIE"
+  },
+  {
+    "objectID": "index.html#subsets",
+    "href": "index.html#subsets",
+    "title": "Schema for documenting physical samples",
+    "section": "Subsets",
+    "text": "Subsets\nNo subsets are defined."
+  },
+  {
+    "objectID": "produced_by.html",
+    "href": "produced_by.html",
+    "title": "produced_by",
+    "section": "",
+    "text": "object that documents the sampling event–who, where, when the specimen was obtained\nURI: isam:produced_by"
+  },
+  {
+    "objectID": "produced_by.html#applicable-classes",
+    "href": "produced_by.html#applicable-classes",
+    "title": "produced_by",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web."
+  },
+  {
+    "objectID": "produced_by.html#properties",
+    "href": "produced_by.html#properties",
+    "title": "produced_by",
+    "section": "Properties",
+    "text": "Properties\n\nRange: SamplingEvent\nMultivalued: None"
+  },
+  {
+    "objectID": "produced_by.html#identifier-and-mapping-information",
+    "href": "produced_by.html#identifier-and-mapping-information",
+    "title": "produced_by",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "produced_by.html#linkml-source",
+    "href": "produced_by.html#linkml-source",
+    "title": "produced_by",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: produced_by\ndescription: object that documents the sampling event--who, where, when the specimen\n  was obtained\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: PhysicalSampleRecord\nalias: produced_by\ndomain_of:\n- PhysicalSampleRecord\nrange: SamplingEvent"
+  },
+  {
+    "objectID": "access_constraints.html",
+    "href": "access_constraints.html",
+    "title": "access_constraints",
+    "section": "",
+    "text": "Cultural, legal, or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.\nURI: isam:access_constraints"
+  },
+  {
+    "objectID": "access_constraints.html#applicable-classes",
+    "href": "access_constraints.html#applicable-classes",
+    "title": "access_constraints",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSpecimenCuration\nInformation about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample."
+  },
+  {
+    "objectID": "access_constraints.html#properties",
+    "href": "access_constraints.html#properties",
+    "title": "access_constraints",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: True"
+  },
+  {
+    "objectID": "access_constraints.html#identifier-and-mapping-information",
+    "href": "access_constraints.html#identifier-and-mapping-information",
+    "title": "access_constraints",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "access_constraints.html#linkml-source",
+    "href": "access_constraints.html#linkml-source",
+    "title": "access_constraints",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: access_constraints\ndescription: 'Cultural, legal, or other policy issues that bear on access to view,\n  borrow, or subsample a sample or visit a sampling site.\n\n  '\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nmultivalued: true\nalias: access_constraints\ndomain_of:\n- SpecimenCuration\nrange: string"
+  },
+  {
+    "objectID": "SamplingEvent.html",
+    "href": "SamplingEvent.html",
+    "title": "SamplingEvent",
+    "section": "",
+    "text": "Information about the event resulting in the creation of the physical sample.\nURI: isam:SamplingEvent\ncase 4"
+  },
+  {
+    "objectID": "SamplingEvent.html#slots",
+    "href": "SamplingEvent.html#slots",
+    "title": "SamplingEvent",
+    "section": "Slots",
+    "text": "Slots\n\nSlots in class SamplingEvent.\n\n\n\n\n\n\n\n\nName\nCardinality and Range\nDescription\nInheritance\n\n\n\n\ndescription\n0..1  xsd:string\nFree text description of the subject of a triple.\ndirect\n\n\nhas_feature_of_interest\n0..1  xsd:string\nWhat does the sample represent.\ndirect\n\n\nlabel\n0..1  xsd:string\na human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\ndirect\n\n\nresponsibility\n0..*  xsd:string\nString with person name and affiliation, or organization name, and their role relative to the parent element.\ndirect\n\n\nresult_time\n0..1  xsd:date\nDate on which the sample was collected.\ndirect\n\n\nsampling_site\n0..1  SamplingSite\nobject that identifies the place where the sample was collected\ndirect"
+  },
+  {
+    "objectID": "SamplingEvent.html#usages",
+    "href": "SamplingEvent.html#usages",
+    "title": "SamplingEvent",
+    "section": "Usages",
+    "text": "Usages\n\n\n\nused by\nused in\ntype\nused\n\n\n\n\nPhysicalSampleRecord\nproduced_by\nrange\nSamplingEvent\n\n\nSamplingEvent\nhas_feature_of_interest\ndomain\nSamplingEvent\n\n\nSamplingEvent\nresult_time\ndomain\nSamplingEvent\n\n\nSamplingEvent\nsampling_site\ndomain\nSamplingEvent"
+  },
+  {
+    "objectID": "SamplingEvent.html#identifier-and-mapping-information",
+    "href": "SamplingEvent.html#identifier-and-mapping-information",
+    "title": "SamplingEvent",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "SamplingEvent.html#mappings",
+    "href": "SamplingEvent.html#mappings",
+    "title": "SamplingEvent",
+    "section": "Mappings",
+    "text": "Mappings\n\n\n\nMapping Type\nMapped Value\n\n\n\n\nself\n[‘isam:SamplingEvent’]\n\n\nnative\n[‘isam:SamplingEvent’]"
+  },
+  {
+    "objectID": "SamplingEvent.html#linkml-source",
+    "href": "SamplingEvent.html#linkml-source",
+    "title": "SamplingEvent",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\n\nDirect\n\nname: SamplingEvent\ndescription: Information about the event resulting in the creation of the physical\n  sample.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nslots:\n- description\n- has_feature_of_interest\n- label\n- responsibility\n- result_time\n- sampling_site\n\n\n\nInduced\n\nname: SamplingEvent\ndescription: Information about the event resulting in the creation of the physical\n  sample.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nattributes:\n  description:\n    name: description\n    description: Free text description of the subject of a triple.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - dct:description\n    alias: description\n    owner: SamplingEvent\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  has_feature_of_interest:\n    name: has_feature_of_interest\n    description: What does the sample represent.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: SamplingEvent\n    alias: has_feature_of_interest\n    owner: SamplingEvent\n    domain_of:\n    - SamplingEvent\n    range: string\n  label:\n    name: label\n    description: a human intelligible string used to identify a thing, i.e. the name\n      to use for the thing; should be unique in the scope of a sample collection or\n      dataset.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    close_mappings:\n    - rdfs:label\n    alias: label\n    owner: SamplingEvent\n    domain_of:\n    - PhysicalSampleRecord\n    - SamplingSite\n    - SamplingEvent\n    - SpecimenCuration\n    - SampleRelation\n    range: string\n  responsibility:\n    name: responsibility\n    description: String with person name and affiliation, or organization name, and\n      their role relative to the parent element.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    multivalued: true\n    alias: responsibility\n    owner: SamplingEvent\n    domain_of:\n    - SamplingEvent\n    - SpecimenCuration\n    range: string\n  result_time:\n    name: result_time\n    description: Date on which the sample was collected.\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: SamplingEvent\n    alias: result_time\n    owner: SamplingEvent\n    domain_of:\n    - SamplingEvent\n    range: date\n  sampling_site:\n    name: sampling_site\n    description: object that identifies the place where the sample was collected\n    from_schema: http://resource.isamples.org/schema/0.2.1\n    domain: SamplingEvent\n    alias: sampling_site\n    owner: SamplingEvent\n    domain_of:\n    - SamplingEvent\n    range: SamplingSite"
+  },
+  {
+    "objectID": "has_material_category.html",
+    "href": "has_material_category.html",
+    "title": "has_material_category",
+    "section": "",
+    "text": "The kind of material that constitutes the sample.\nURI: isam:has_material_category"
+  },
+  {
+    "objectID": "has_material_category.html#applicable-classes",
+    "href": "has_material_category.html#applicable-classes",
+    "title": "has_material_category",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web."
+  },
+  {
+    "objectID": "has_material_category.html#properties",
+    "href": "has_material_category.html#properties",
+    "title": "has_material_category",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:anyURI\nMultivalued: True"
+  },
+  {
+    "objectID": "has_material_category.html#identifier-and-mapping-information",
+    "href": "has_material_category.html#identifier-and-mapping-information",
+    "title": "has_material_category",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "has_material_category.html#linkml-source",
+    "href": "has_material_category.html#linkml-source",
+    "title": "has_material_category",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: has_material_category\ndescription: The kind of material that constitutes the sample.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nvalues_from:\n- MaterialTypeVocabulary\ndomain: PhysicalSampleRecord\nmultivalued: true\nalias: has_material_category\ndomain_of:\n- PhysicalSampleRecord\nrange: uriorcurie"
+  },
+  {
+    "objectID": "latitude.html",
+    "href": "latitude.html",
+    "title": "latitude",
+    "section": "",
+    "text": "angular coordinate measured positive north from the equator.\nURI: isam:latitude"
+  },
+  {
+    "objectID": "latitude.html#applicable-classes",
+    "href": "latitude.html#applicable-classes",
+    "title": "latitude",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nGeospatialCoordLocation\nA physical location in decimal degrees using EPSG:4326. Elevation is is expressed in meters relative to the WGS84 ellipsoid."
+  },
+  {
+    "objectID": "latitude.html#properties",
+    "href": "latitude.html#properties",
+    "title": "latitude",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:decimal\nMultivalued: None"
+  },
+  {
+    "objectID": "latitude.html#identifier-and-mapping-information",
+    "href": "latitude.html#identifier-and-mapping-information",
+    "title": "latitude",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "latitude.html#linkml-source",
+    "href": "latitude.html#linkml-source",
+    "title": "latitude",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: latitude\ndescription: angular coordinate measured positive north from the equator.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\ndomain: GeospatialCoordLocation\nalias: latitude\ndomain_of:\n- GeospatialCoordLocation\nrange: decimal"
+  },
+  {
+    "objectID": "curation_location.html",
+    "href": "curation_location.html",
+    "title": "curation_location",
+    "section": "",
+    "text": "Information about where and how the sample is currently stored.\nURI: isam:curation_location"
+  },
+  {
+    "objectID": "curation_location.html#applicable-classes",
+    "href": "curation_location.html#applicable-classes",
+    "title": "curation_location",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nSpecimenCuration\nInformation about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample."
+  },
+  {
+    "objectID": "curation_location.html#properties",
+    "href": "curation_location.html#properties",
+    "title": "curation_location",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
+  },
+  {
+    "objectID": "curation_location.html#identifier-and-mapping-information",
+    "href": "curation_location.html#identifier-and-mapping-information",
+    "title": "curation_location",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "curation_location.html#linkml-source",
+    "href": "curation_location.html#linkml-source",
+    "title": "curation_location",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: curation_location\ndescription: Information about where and how the sample is currently stored.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nalias: curation_location\ndomain_of:\n- SpecimenCuration\nrange: string"
+  },
+  {
+    "objectID": "complies_with.html",
+    "href": "complies_with.html",
+    "title": "complies_with",
+    "section": "",
+    "text": "URI: isam:complies_with"
+  },
+  {
+    "objectID": "complies_with.html#applicable-classes",
+    "href": "complies_with.html#applicable-classes",
+    "title": "complies_with",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web."
+  },
+  {
+    "objectID": "complies_with.html#properties",
+    "href": "complies_with.html#properties",
+    "title": "complies_with",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
+  },
+  {
+    "objectID": "complies_with.html#identifier-and-mapping-information",
+    "href": "complies_with.html#identifier-and-mapping-information",
+    "title": "complies_with",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "complies_with.html#linkml-source",
+    "href": "complies_with.html#linkml-source",
+    "title": "complies_with",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: complies_with\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nrank: 1000\nalias: complies_with\ndomain_of:\n- PhysicalSampleRecord\nrange: string"
+  },
+  {
+    "objectID": "description.html",
+    "href": "description.html",
+    "title": "description",
+    "section": "",
+    "text": "Free text description of the subject of a triple.\nURI: isam:description"
+  },
+  {
+    "objectID": "description.html#applicable-classes",
+    "href": "description.html#applicable-classes",
+    "title": "description",
+    "section": "Applicable Classes",
+    "text": "Applicable Classes\n\nClasses in which this slot appears.\n\n\n\n\n\n\nName\nDescription\n\n\n\n\nPhysicalSampleRecord\nThis is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.\n\n\nSamplingSite\nNone\n\n\nSamplingEvent\nInformation about the event resulting in the creation of the physical sample.\n\n\nSpecimenCuration\nInformation about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.\n\n\nSampleRelation\nNone"
+  },
+  {
+    "objectID": "description.html#properties",
+    "href": "description.html#properties",
+    "title": "description",
+    "section": "Properties",
+    "text": "Properties\n\nRange: xsd:string\nMultivalued: None"
+  },
+  {
+    "objectID": "description.html#identifier-and-mapping-information",
+    "href": "description.html#identifier-and-mapping-information",
+    "title": "description",
+    "section": "Identifier and Mapping Information",
+    "text": "Identifier and Mapping Information\n\nSchema Source\n\nfrom schema: http://resource.isamples.org/schema/0.2.1"
+  },
+  {
+    "objectID": "description.html#linkml-source",
+    "href": "description.html#linkml-source",
+    "title": "description",
+    "section": "LinkML Source",
+    "text": "LinkML Source\n\nname: description\ndescription: Free text description of the subject of a triple.\nfrom_schema: http://resource.isamples.org/schema/0.2.1\nclose_mappings:\n- dct:description\nrank: 1000\nalias: description\ndomain_of:\n- PhysicalSampleRecord\n- SamplingSite\n- SamplingEvent\n- SpecimenCuration\n- SampleRelation\nrange: string"
+  },
+  {
+    "objectID": "types.html",
+    "href": "types.html",
+    "title": "iSamples Model",
+    "section": "",
+    "text": "types\nShared type definitions for the core LinkML mode and metamodel\nURI: https://w3id.org/linkml/types"
+  }
+]
