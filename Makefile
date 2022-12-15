@@ -39,7 +39,7 @@ PKG_T_SCHEMA = $(PKG_T_MODEL)/schema
 GEN_OPTS = --log_level WARNING
 #ENV = export PIPENV_VENV_IN_PROJECT=true && export PIPENV_PIPFILE=make-venv/Pipfile && export PIPENV_IGNORE_VIRTUALENVS=1
 #RUN = $(ENV) && pipenv run
-RUN = poetry run
+RUN = python
 
 # ----------------------------------------
 # TOP LEVEL TARGETS
@@ -67,7 +67,6 @@ clean:
 	rm -rf $(TARGET_DIR)
 	rm -rf docs
 	rm -rf $(PKG_DIR)
-	#poetry install --sync
 .PHONY: clean
 
 # ---------------------------------------
@@ -115,12 +114,12 @@ gen-docs: $(TARGET_DIR)/docs/index.md
 
 vocabs:
 	mkdir -p ${TARGET_DIR}/docs/vocabularies
-	poetry run python tools/vocab2md.py ${VOCAB_DIR}/materialtype.ttl > $(TARGET_DIR)/docs/vocabularies/materialtype.md
-	poetry run python tools/vocab2md.py ${VOCAB_DIR}/sampledfeature.ttl > $(TARGET_DIR)/docs/vocabularies/sampledfeature.md
-	poetry run python tools/vocab2md.py ${VOCAB_DIR}/specimentype.ttl > $(TARGET_DIR)/docs/vocabularies/specimentype.md
+	python tools/vocab2md.py ${VOCAB_DIR}/materialtype.ttl > $(TARGET_DIR)/docs/vocabularies/materialtype.md
+	python tools/vocab2md.py ${VOCAB_DIR}/sampledfeature.ttl > $(TARGET_DIR)/docs/vocabularies/sampledfeature.md
+	python tools/vocab2md.py ${VOCAB_DIR}/specimentype.ttl > $(TARGET_DIR)/docs/vocabularies/specimentype.md
 
 $(TARGET_DIR)/docs/index.md: $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml tdir-docs
-	poetry run python tools/docgen.py $(GEN_OPTS) --dialect quarto --sort-by name --format quarto --mergeimports --metadata --directory $(TARGET_DIR)/docs $<
+	python tools/docgen.py $(GEN_OPTS) --dialect quarto --sort-by name --format quarto --mergeimports --metadata --directory $(TARGET_DIR)/docs $<
 
 # ---------------------------------------
 # YAML source
