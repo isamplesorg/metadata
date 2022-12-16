@@ -39,7 +39,7 @@ PKG_T_SCHEMA = $(PKG_T_MODEL)/schema
 GEN_OPTS = --log_level WARNING
 #ENV = export PIPENV_VENV_IN_PROJECT=true && export PIPENV_PIPFILE=make-venv/Pipfile && export PIPENV_IGNORE_VIRTUALENVS=1
 #RUN = $(ENV) && pipenv run
-RUN = poetry run
+RUN = python
 
 # ----------------------------------------
 # TOP LEVEL TARGETS
@@ -67,7 +67,6 @@ clean:
 	rm -rf $(TARGET_DIR)
 	rm -rf docs
 	rm -rf $(PKG_DIR)
-	#poetry install --sync
 .PHONY: clean
 
 # ---------------------------------------

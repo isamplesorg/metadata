@@ -20,7 +20,7 @@ website:
         [2004642](https://nsf.gov/awardsearch/showAward?AWD_ID=2004642),
         and [2004815](https://nsf.gov/awardsearch/showAward?AWD_ID=2004815).
         Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the [National Science Foundation](https://nsf.gov/).
-  repo-url: https://github.com/isamplesorg/metadata
+  repo-url: "https://github.com/isamplesorg/metadata"
   repo-actions: [edit, issue]
   sidebar:
     style: "docked"
@@ -32,8 +32,6 @@ website:
         href: https://github.com/isamplesorg
       - icon: slack
         href: https://isamples.slack.com/
-      - icon: twitter
-        href: https://twitter.com/isamplesorg
 
 metadata-files:
   - _model.yml
