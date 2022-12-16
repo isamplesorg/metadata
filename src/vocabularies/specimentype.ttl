@@ -189,7 +189,9 @@ spec:slurrybiomeaggregation
   skos:broader spec:biomeaggregation ;
   skos:definition "a material that consists of mixed organic and inorganic material, including whole organisms and organism fragments."@en ;
   skos:prefLabel "Slurry biome aggregation"@en ;
-.
+  skos:inScheme spec:specimentypevocabulary ;
+  .
+  
 spec:specimentypevocabulary
   rdf:type owl:NamedIndividual ;
   rdf:type owl:Ontology ;
