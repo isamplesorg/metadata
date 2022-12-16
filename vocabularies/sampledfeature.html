@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-12-15">
+<meta name="dcterms.date" content="2022-12-16">
 
 <title>iSamples Model - Sampled Feature Type vocabulary</title>
 <style>
@@ -88,7 +88,6 @@ ul.task-list li input[type="checkbox"] {
     <a href="https://hyde.cyverse.org/isamples_central/ui/" title="" class="sidebar-tool px-1"><i class="bi bi-table"></i></a>
     <a href="https://github.com/isamplesorg" title="" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
     <a href="https://isamples.slack.com/" title="" class="sidebar-tool px-1"><i class="bi bi-slack"></i></a>
-    <a href="https://twitter.com/isamplesorg" title="" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
 </div>
     </div>
       </div>
@@ -434,7 +433,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 15, 2022</p>
+      <p class="date">December 16, 2022</p>
     </div>
   </div>
   
@@ -450,7 +449,9 @@ ul.task-list li input[type="checkbox"] {
 <li>2021-12-10 SMR add missing skos:inScheme statements</li>
 <li>2022-01-07 SMR change to https://w3id.org/isample/ uri base, make the ConceptScheme an ontology as well. For uploading to ESIP COR and w3id resolution redirect set up. Add some mappings to other ontologies using seeAlso, closeMatch, narrowMatch.</li>
 <li>2022-03-11 SMR change definitions from rdfs:comment to skos:definition. Minor fixes in definitions. Add skos matches to URIs from other vocabularies. Fix typo in glacierenvrionment URI (changed the URI to glacierenvironment)</li>
-<li>Remove Marine biome, Subaerial terrestrial environment, Subaqueous terrestrial environment per github issue https://github.com/isamplesorg/metadata/issues/41. Make Experiment setting and Laboratory or curatorial environemtn subclasses of Active human occupation site.</li>
+<li>2022-09-07 SMR update some of the skos mappings to other vocabularies; remove references to other vocabularies as NamedIndividual. Remove rocksample class, it was not linked in hierarchy and inconsistent with design.</li>
+<li>2022-09-30 add biological entity as sampled feature, per issue https://github.com/isamplesorg/metadata/issues/107. This update was lost at some point and added back in 2022-12-01.</li>
+<li>Remove Marine biome, Subaerial terrestrial environment, Subaqueous terrestrial environment per github issue https://github.com/isamplesorg/metadata/issues/41. Make Experiment setting and Laboratory or curatorial environment subclasses of Active human occupation site.</li>
 </ul>
 <p><strong>Concepts</strong></p>
 <ul>
@@ -469,7 +470,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="#atmosphere">Atmosphere</a></li>
 <li><a href="#earthinterior">Earth interior</a></li>
-<li><a href="#earthsurface">Earth Surface</a>
+<li><a href="#earthsurface">Earth surface</a>
 <ul>
 <li><a href="#lakeriverstreambottom">Lake river or stream bottom</a></li>
 <li><a href="#marinewaterbodybottom">Marine water body bottom</a></li>
@@ -557,7 +558,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Specimen samples solid material within the earth (fluids in pore space in earth interior sample ‘subsurface fluid reservoir’</p>
 </section>
 <section id="earth-surface" class="level4">
-<h4 class="anchored" data-anchor-id="earth-surface">Earth Surface</h4>
+<h4 class="anchored" data-anchor-id="earth-surface">Earth surface</h4>
 <p><span id="earthsurface"></span></p>
 <p>Concept: <a href="https://w3id.org/isample/vocabulary/sampledfeature/0.9/earthsurface"><code>earthsurface</code></a></p>
 <p>Child of: <a href="#earthenvironment"><code>earthenvironment</code></a></p>
