@@ -53,7 +53,7 @@ classes:
                 required: true
 
     SamplingSite:
-        description:
+        description: documentation of the site where the sample was collected, wtih place name(s) and a geospatial location
         slots:
           - description
           - label
@@ -72,7 +72,7 @@ classes:
 
     GeospatialCoordLocation:
         description: A physical location in decimal degrees using EPSG:4326. Elevation is
-            is expressed in meters relative to the WGS84 ellipsoid.
+            is expressed in meters relative to the WGS84 ellipsoid. Could be sample point location, or the centroid of a sampling area
         slots:
           - elevation
           - latitude
@@ -93,7 +93,7 @@ classes:
           - responsibility
 
     SampleRelation:
-        description:
+        description: semantic link to other samples or related resources.
         slots:
           - description
           - label
@@ -108,6 +108,9 @@ slots:
         multivalued: true
     authorized_by:
         range: string
+        domain: PhysicalSampleRecord
+        description: a list of permits or other formal permission documents under which the sample was collected. Use to cite legal documents authorizing sample collection.
+        multivalued: true
     curation:
         range: SpecimenCuration
     curation_location:
@@ -115,6 +118,9 @@ slots:
         description: Information about where and how the sample is currently stored.
     complies_with:
         range: string
+        domain: PhysicalSampleRecord
+        description: a list of policies, recommendations, best practices (etc.) that have been followed in the collection and curation of the sample. 
+        multivalued: true
     description:
         range: string
         description: Free text description of the subject of a triple.
@@ -131,34 +137,37 @@ slots:
             generally terms applied by collector.
         multivalued: true
     has_context_category:
+        # range is an instance of at least one skos:Concept
+        # with skos:inScheme sf:sampledfeaturevocabulary ;
         range: string
         domain: PhysicalSampleRecord
         description: Top level context, based on the kind of feature sampled. Specific
             identification of the sampled feature of interest is done through the
-            SamplingEvent/Feature of Interest property.
+            SamplingEvent/Feature of Interest property. At least one value is an instance of 
+            skos:Concept from the iSamples sampledfeaturevocabulary; 
+            extension vocabularies can be used for more precise categorization.
         multivalued: true
     has_feature_of_interest:
-        #range: contextcategory
         range: string
         domain: SamplingEvent
         description: What does the sample represent.
     has_material_category:
-        # We'd like to say this slot has one or more values,
-        # each being a URI that references
-        # an instance of skos:Concept
+        # range is an instance of at least one skos:Concept
         # with skos:inScheme = mat:materialsVocabulary
         domain: PhysicalSampleRecord
         range: uriorcurie
-        values_from:
-            - MaterialTypeVocabulary
-        description: The kind of material that constitutes the sample.
+        description: The kind of material that constitutes the sample.  At least one value is an instance of 
+            skos:Concept from the iSamples MaterialTypeVocabulary; 
+            extension vocabularies can be used for more precise categorization.
         multivalued: true
     has_specimen_category:
+        # range is an instance at least one skos:Concept
+        # with skos:inScheme = mat:specimentypevocabulary
         domain: PhysicalSampleRecord
-        description: The kind of object the specimen is.
+        description: The kind of object the specimen is. At least one value is an instance of 
+            skos:Concept from the iSamples SpecimenTypeVocabulary; 
+            extension vocabularies can be used for more precise categorization.
         range: uriorcurie
-        #values_from:
-        #    - SpecimenTypeVocabulary
         multivalued: true
     keywords:
         range: string
