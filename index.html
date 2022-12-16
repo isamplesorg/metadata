@@ -455,8 +455,8 @@ ul.task-list li input[type="checkbox"] {
 classDiagram
   direction BT
   class PhysicalSampleRecord {
-    authorized_by : string
-    complies_with : string
+    authorized_by : string[]
+    complies_with : string[]
     curation : SpecimenCuration
     description : string
     has_context_category : string[]
@@ -549,7 +549,7 @@ classDiagram
 </tr>
 <tr class="odd">
 <td><a href="./SampleRelation.html">SampleRelation</a></td>
-<td></td>
+<td>semantic link to other samples or related resources</td>
 </tr>
 <tr class="even">
 <td><a href="./SamplingEvent.html">SamplingEvent</a></td>
@@ -557,7 +557,7 @@ classDiagram
 </tr>
 <tr class="odd">
 <td><a href="./SamplingSite.html">SamplingSite</a></td>
-<td></td>
+<td>documentation of the site where the sample was collected, wtih place name(s) …</td>
 </tr>
 <tr class="even">
 <td><a href="./SpecimenCuration.html">SpecimenCuration</a></td>
@@ -582,11 +582,11 @@ classDiagram
 </tr>
 <tr class="even">
 <td><a href="./authorized_by.html">authorized_by</a></td>
-<td></td>
+<td>a list of permits or other formal permission documents under which the sample…</td>
 </tr>
 <tr class="odd">
 <td><a href="./complies_with.html">complies_with</a></td>
-<td></td>
+<td>a list of policies, recommendations, best practices (etc</td>
 </tr>
 <tr class="even">
 <td><a href="./curation.html">curation</a></td>
