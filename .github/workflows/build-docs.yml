@@ -1,18 +1,14 @@
 name: Build and publish documentation
 
-# Controls when the action will run. Triggers the workflow on pull request
+# Docs are built with a push to main or when triggered manually.
+# Docs are placed in the gh-pages branch. 
+#
+# Note that manually triggering this action from another branch 
+# will replace the gh-pages branch
 on:
-  #push:
-  #  branches:
-  #    - main
-  #  paths:
-  #    - 'mkdocs.yml'
-  #    - 'src/schema/*.yaml'
-  #    - 'src/docs/*'
-  #
-  #repository_dispatch:
-  #  types: trigger-build-deploy-documentation
-
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
