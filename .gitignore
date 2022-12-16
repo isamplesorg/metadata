@@ -1,5 +1,7 @@
 .idea
 .DS_Store
+/.quarto
+/_site
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

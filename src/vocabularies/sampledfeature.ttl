@@ -126,7 +126,7 @@ sf:earthsurface
   skos:definition "Specimen samples the interface between solid earth and hydrosphere or atmosphere. Includes samples representing things collected on the surface, or in the uppermost part of the material below the surface. Not including recently deposited sediment that has not been modified by interaction with the surface environment."@en ;
   skos:inScheme sf:sampledfeaturevocabulary ;
   skos:narrowMatch <http://purl.obolibrary.org/obo/RBO_00000017> ;
-  skos:prefLabel "Earth Surface"@en ;
+  skos:prefLabel "Earth surface"@en ;
 .
 sf:experimentsetting
   rdf:type owl:NamedIndividual ;
@@ -223,7 +223,7 @@ sf:sampledfeaturevocabulary
   skos:historyNote "2022-01-07 SMR change to https://w3id.org/isample/ uri base, make the ConceptScheme an ontology as well. For uploading to ESIP COR and w3id resolution redirect set up. Add some mappings to other ontologies using seeAlso, closeMatch, narrowMatch."@en ;
   skos:historyNote "2022-03-11 SMR change definitions from rdfs:comment to skos:definition. Minor fixes in definitions. Add skos matches to URIs from other vocabularies. Fix typo in glacierenvrionment URI (changed the URI to glacierenvironment)"@en ;
   skos:historyNote "Remove Marine biome, Subaerial terrestrial environment, Subaqueous terrestrial environment per github issue https://github.com/isamplesorg/metadata/issues/41. Make Experiment setting and Laboratory or curatorial environemtn  subclasses of Active human occupation site."@en ;
-    skos:historyNote "2022-09-07 SMR update some of the skos mappings to other vocabularies; remove references to other vocabularies as NamedIndividual. Remove rocksample class, it was not linked in hierarchy and inconsistent with design."@en ;
+  skos:historyNote "2022-09-07 SMR update some of the skos mappings to other vocabularies; remove references to other vocabularies as NamedIndividual. Remove rocksample class, it was not linked in hierarchy and inconsistent with design."@en ;
   skos:historyNote "2022-09-30 add biological entity as sampled feature, per issue https://github.com/isamplesorg/metadata/issues/107. This update was lost at some point and added back in 2022-12-09."@en ;
   skos:prefLabel "Sampled Feature Type vocabulary"@en ;
 .

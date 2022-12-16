@@ -231,6 +231,7 @@ mat:rockorsediment
   rdfs:label "Rock or sediment"@en ;
   skos:broader mat:earthmaterial ;
   skos:definition "Material is rock or sediment.  E.g. for samples from subsurface cores that are not well described, from drill holes that likely penetrate sediment near the surface an might be sampling rock at greater depth."@en ;
+  skos:inScheme mat:materialsvocabulary ;
   skos:prefLabel "Rock or sediment"@en ;
   skos:scopeNote "distinct from 'Mixed soil, sediment or rock' that represents samples known to have components of all these materials."@en ;
 .
