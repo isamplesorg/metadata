@@ -1,9 +1,9 @@
-id: http://resource.isamples.org/schema/0.2.1
+id: http://resource.isamples.org/schema/1.0
 name: physicalSample
 title: Schema for documenting physical samples
-description: Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change 'id' to '@id' and 'schema' to '$schema'.  Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07
+description: Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change 'id' to '@id' and 'schema' to '$schema'.  Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07. SMR 2023-03-17. Move authorized_by into SamplingEvent, change keywords to list of Keyword objects with string, uri, scheme and scheme URI. Reorder elements in slot list.  Update scheme URI to 1.0. 
 license: https://creativecommons.org/publicdomain/zero/1.0/
-version: 20221007
+version: 20230317
 prefixes:
     linkml: https://w3id.org/linkml/
     isam: http://resource.isamples.org/schema/
@@ -17,6 +17,7 @@ prefixes:
     xsd: http://www.w3.org/2001/XMLSchema#
     sdo: http://schema.org/
     skos_concept: http://www.w3.org/2004/02/skos/core#Concept
+    datacite: http://datacite.org/schema/kernel-4/
 default_prefix: isam
 
 imports:
@@ -31,27 +32,35 @@ classes:
             is considered twin of physical object, a representation. IGSN is recommended.
             Must be a URI that can be dereferenced on the web.
         slots:
-          - authorized_by
-          - complies_with
-          - curation
+          - sample_identifier
+          - label
           - description
+          - produced_by
+          - sampling_purpose
           - has_context_category
           - has_material_category
           - has_specimen_category
           - informal_classification
           - keywords
-          - label
-          - produced_by
           - related_resource
+          - complies_with
+          - curation
           - registrant
-          - sample_identifier
-          - sampling_purpose
+
         slot_usage:
             label:
                 required: true
             sample_identifier:
                 required: true
 
+    Keyword:
+        description: a simple string (tag) useful for guiding discovery of the sample, or a scoped name that associates the keyword string with a scheme name,and optional scheme URI and value URI. The scoped name keywords can be used to categorize the sample using a formal vocabulary. This mechanism provides the hook to use extension vocabularies for domain specific concepts extending the context, material type and object type high-level vocabularies.
+        slots:
+          - keyword
+          - keyword_uri
+          - scheme_name
+          - scheme_uri
+          
     SamplingSite:
         description: documentation of the site where the sample was collected, wtih place name(s) and a geospatial location
         slots:
@@ -61,14 +70,15 @@ classes:
           - place_name
 
     SamplingEvent:
-        description: Information about the event resulting in the creation of the physical sample.
+        description: Information about the event resulting in the creation of the physical sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description. If any special protocols were followed in the sampling procedure, they should be documented using the PhysicalSampleRecord/complies_with property. 
         slots:
+          - label
           - description
           - has_feature_of_interest
-          - label
           - responsibility
           - result_time
           - sampling_site
+          - authorized_by
 
     GeospatialCoordLocation:
         description: A physical location in decimal degrees using EPSG:4326. Elevation is
@@ -99,6 +109,7 @@ classes:
           - label
           - relationship
           - target
+
 
 slots:
     access_constraints:
@@ -144,8 +155,7 @@ slots:
         description: Top level context, based on the kind of feature sampled. Specific
             identification of the sampled feature of interest is done through the
             SamplingEvent/Feature of Interest property. At least one value is an instance of 
-            skos:Concept from the iSamples sampledfeaturevocabulary; 
-            extension vocabularies can be used for more precise categorization.
+            skos:Concept from the iSamples sampledfeaturevocabulary.
         multivalued: true
     has_feature_of_interest:
         range: string
@@ -170,11 +180,21 @@ slots:
         range: uriorcurie
         multivalued: true
     keywords:
-        range: string
+        range: Keyword
         domain: PhysicalSampleRecord
-        description: free text categorization of sample to support discovery
-        close_mappings: sdo:keywords
+        description: free text terms or formal categories associate with sample to support discovery. As in DataCite metadata, each keyword is a separate element. Multiple keywords should NOT be included as a comma-delimited list.
+        close_mappings: sdo:keywords, datacite:subjects
         multivalued: true
+    keyword:
+        range: string
+        domain: Keyword
+        description: string label for a concept that characterizes the sample in some respect
+        multivalued: false
+    keyword_uri:
+        range: string
+        domain: Keyword
+        description: an identifier for the keyword concept
+        multivalued: false
     label:
         range: string
         description: a human intelligible string used to identify a thing, i.e. the
@@ -232,6 +252,16 @@ slots:
         range: string
         domain: PhysicalSampleRecord
         description: term to specify why a sample was collection.
+    scheme_name:
+        range: string
+        domain: Keyword
+        description: string label for the concept scheme or vocabulary within which the keyword concept is defined. The scheme name can be used to scope keyword to particular categories, e.g. 'CGI rock classification', 'GCMD keywords', 'Getty AAT'
+        multivalued: false
+    scheme_uri:
+        range: string
+        domain: Keyword
+        description: Identifier for the concept scheme or vocabulary within which the keyword concept is defined. 
+        multivalued: false
     target:
         range: string
         description: identifier for the target resource in the relationship. Start
