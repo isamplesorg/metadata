@@ -37,7 +37,7 @@
         "responsibility": ["Creator: Anthony Tuck"],
         "result_time": "2012-12-28",
         "samplingSite": {
-            "description": "Tesoro Rectangle 7",
+            "description": "Tesoro Rectangle 7, 1971, ID:286",
             "label": "Tesoro Rectangle",
             "location": {
                 "elevation": "",
@@ -48,9 +48,7 @@
                 "Italy",
                 "Murlo",
                 "Poggio Civitate",
-                "Tesoro Rectangle",
-                "Tesoro Rectangle 7",
-                "1971, ID:286"
+                "Tesoro Rectangle"         
             ]
         },
         "authorized_by": "not specified"

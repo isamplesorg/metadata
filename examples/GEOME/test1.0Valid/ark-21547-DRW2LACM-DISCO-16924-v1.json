@@ -8,6 +8,7 @@
     "has_material_category": ["Organic material"],
     "has_specimen_category": ["Whole organism"],
     "keywords": [
+
         {
             "keyword": "San Pedro Bay",
             "keyword_uri": "http://vocab.getty.edu/page/tgn/1113759",
@@ -51,6 +52,7 @@
                 "latitude": 33.7345167,
                 "longitude": -118.277367
             },
+
             "place_name": [
                 "San Pedro Bay",
                 "Los Angeles",
