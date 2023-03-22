@@ -1,0 +1,59 @@
+{
+    "@schema": "iSamplesSchemaBasic.json",
+    "@id": "metadata/28722/k2d511s24",
+    "label": "PC 19711008",
+    "sample_identifier": "ark:/28722/k2d511s24",
+    "description": "'early bce/ce': -700.0 | 'late bce/ce': -535.0 | 'updated': 2021-06-27T20:49:18Z | 'Consists of': glass | 'Consists of': Cobalt glass | 'Has type': sample | 'Temporal Coverage': Archaic (580 BCE - 482 BCE) | 'Temporal Coverage': Orientalizing (750 BCE - 582 BCE) ",
+    "has_context_category": ["Site of past human activities"],
+    "has_material_category": ["Anthropogenic material"],
+    "has_specimen_category": ["Artifact"],
+    "keywords": [
+        {"keyword": "Murlo"},
+        {"keyword": "Italy"},
+        {
+            "keyword": "Poggio Civitate",
+            "keyword_uri": "http://vocab.getty.edu/page/tgn/7594277",
+            "scheme_name": "Getty Thesaurus of Geographic Names"
+        },
+        {"keyword": "1971, ID:286"},
+        {
+            "keyword": "Cobalt glass",
+            "scheme_name": "Materials Facet: Getty Art & Architecture Thesaurus",
+            "keyword_uri":"http://vocab.getty.edu/page/aat/300212176"
+        },
+        {
+            "keyword": "Archaic",
+            "scheme_name": "Styles and Periods Facet: Getty Art & Architecture Thesaurus",
+            "keyword_uri":"http://vocab.getty.edu/page/aat/300020086"
+        },
+        {
+            "keyword": "Orientalizing",
+            "scheme_name": "Styles and Periods Facet: Getty Art & Architecture Thesaurus",
+            "keyword_uri":"http://vocab.getty.edu/page/aat/300020085"
+        }
+    ],
+    "produced_by": {
+        "label": "Murlo",
+        "description": "",
+        "has_feature_of_interest": "Poggio Civitate",
+        "responsibility": ["'Creator': Anthony Tuck"],
+        "result_time": "2012-12-28",
+        "samplingSite": {
+            "description": "Tesoro Rectangle 7",
+            "label": "Tesoro Rectangle",
+            "location": {
+                "elevation": "",
+                "latitude": 43.153333,
+                "longitude": 11.401381
+            },
+            "place_name": [
+                "Italy",
+                "Poggio Civitate",
+                "Tesoro Rectangle",
+                "Tesoro Rectangle 7",
+                "1971, ID:286"
+            ]
+        },
+        "authorized_by": "not specified"
+    }
+}

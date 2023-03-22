@@ -1,0 +1,63 @@
+{
+    "@schema": "iSamplesSchemaBasic.json",
+    "@id": "https://data.geosamples.org/sample/igsn/IEDUT103B",
+    "label": "JAM42",
+    "sample_identifier": "IGSN:IEDUT103B",
+    "description": "Macrobiology>Coral>Biology; Coring>HandHeldCorer. piece of short core",
+    "has_context_category": ["Subaerial surface environment"],
+    "has_material_category": ["Biogenic non-organic material"],
+    "has_specimen_category": ["Other solid object"],
+    "keywords": [
+        {"keyword": "coral"},
+        {
+            "keyword": "Quaternary",
+            "scheme_name": "geologic age"
+        },
+        {
+            "keyword": "Individual Sample>Cylinder",
+            "scheme_name": "SESAR: Sample Type"
+        },
+        {
+            "keyword": "MIS 5.5",
+            "scheme_name": "Marine Isotope Stage"
+        },
+        {
+            "keyword": "Falmouth Formation",
+            "scheme_name": "stratigraphic unit"
+        },
+        {
+            "keyword": "Pseudodiploria strigosa",
+            "scheme_name": "taxon: species"
+        }
+    ],
+    "produced_by": {
+        "label": "UF Jamaica 2015 Fieldwork",
+        "description": "Hand-held coring device",
+        "has_feature_of_interest": "coral reef",
+        "result_time": "2015-06-19",
+        "responsibility": [],
+        "samplingSite": {
+            "description": "Between Buccaneer Villa, Treasure Beach, and Great Bay",
+            "label": "Treasure Beach",
+            "location": {
+                "elevation": "1.626 m above MSL",
+                "latitude": 17.8845,
+                "longitude": -77.7711
+            },
+            "place_name": [
+                "Treasure Beach",
+                "Cornwall",
+                "Jamaica"
+            ]
+        }
+    },
+    "registrant": "Andrea Dutton, adutton@ufl.edu",
+    "sampling_purpose": "Paleosea-level",
+    "curation": {
+        "curation_location": "University of Florida Department of Geological Sciences",
+        "responsibility": [
+            "sample owner: Andrea Dutton, adutton@ufl.edu",
+            "metadata publisher: info@geosamples.org; url: https://www.geosamples.org/contact/"
+        ]
+    }
+}

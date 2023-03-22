@@ -1,0 +1,60 @@
+{
+    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@id": "metadata:21547-eg2AB4OQ34",
+    "label": "Cookeolus japonicus AB4OQ34",
+    "sample_identifier": "AB4OQ34",
+    "description": "voucherCatalogNumber: USNM:Fish:433156",
+    "has_context_category": ["Marine biome"],
+    "has_material_category": ["Organic material"],
+    "has_specimen_category": ["Whole organism"],
+    "keywords": [
+        {"keyword": "Chordata"},
+        {"keyword": "Priacanthidae"},
+        {
+            "keyword": "Actinopterygii",
+            "scheme_name": "taxon: class",
+            "keyword_uri": "https://www.wikidata.org/wiki/Q127282"
+        },
+        {"keyword": "fish"},
+        {
+            "keyword": "Cookeolus japonicus",
+            "scheme_name": "taxon: species",
+            "keyword_uri": "https://www.wikidata.org/wiki/Q2274174"
+        }
+    ],
+    "produced_by": {
+        "@id": "ark:/21547/CAZ22d56d67d0d9114f5eaec25e71aeb6604",
+        "label": "expeditionCode: PT_02",
+        "description": "projectId: 85",
+        "has_feature_of_interest": "",
+        "responsibility": ["collector: Northeast Fisheries Science Center (NEFSC), Woods Hole, MA"],
+        "result_time": "2006-09-07",
+        "samplingSite": {
+            "description": "",
+            "label": "",
+            "location": {
+                "elevation": "",
+                "latitude": 37.5267,
+                "longitude": -74.3667
+            },
+            "place_name": ["USA", "North Atlantic Ocean"]
+        }
+    },
+    "registrant": "",
+    "sampling_purpose": "",
+    "curation": {
+        "label": "",
+        "description": "",
+        "access_constraints": [],
+        "curation_location": "",
+        "responsibility": ["institutionCode: USNM"]
+    },
+    "relatedResource": [
+        {
+            "label": "tissue",
+            "description": "",
+            "target": "ark:/21547/CAa2AB4OQ34",
+            "relationshipType": "subsample"
+        }
+    ]
+}

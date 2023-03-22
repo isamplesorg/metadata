@@ -1,0 +1,74 @@
+{
+    "uri": "http://opencontext.org/subjects/f92c3c4b-f7cd-4cf5-aeab-30e0baad3b62",
+    "citation uri": "https://n2t.net/ark:/28722/k2m61xj9b",
+    "label": "Bone 6874",
+    "project label": "Neolithic and Bronze Age cattle data from Switzerland",
+    "project uri": "http://opencontext.org/projects/c89e6a9e-105a-4368-9e90-26940d7bf37a",
+    "context label": "Liechtenstein/Eschen-Lutzengüetle/Eschen-Lutzengüetle SR",
+    "context uri": "http://opencontext.org/subjects/f17ec2a7-2a31-4714-9ec4-c1cce4ec7ea8",
+    "latitude": 47.210228,
+    "longitude": 9.522178,
+    "early bce/ce": -4100.0,
+    "late bce/ce": -3900.0,
+    "item category": "Animal Bone",
+    "published": "2021-02-10T05:37:53Z",
+    "updated": "2021-06-27T21:34:12Z",
+    "Creator": [{
+            "id": "http://opencontext.org/persons/48b6e880-2ee2-484f-abde-7300ed134b1b",
+            "label": "Elizabeth Wright"
+        },
+        {
+            "id": "http://opencontext.org/persons/3eba07e1-8caa-4128-81d4-8ab732c84c85",
+            "label": "Margherita Schäfer"
+        },
+        {
+            "id": "http://opencontext.org/persons/219a423b-f5d1-4d2e-8ff1-4f083263c388",
+            "label": "Barbara Stopp"
+        },
+        {
+            "id": "http://opencontext.org/persons/abf469e2-5ceb-44ff-ae1e-a2a71aa6cbaf",
+            "label": "Elisabeth Marti-Grädel"
+        },
+        {
+            "id": "http://opencontext.org/persons/3d80735c-0446-4dac-b695-71ccfd22af44",
+            "label": "Francesca Ginella"
+        },
+        {
+            "id": "http://opencontext.org/persons/3adbbdbb-3b7b-4e5a-86e1-5fc0ed0ba366",
+            "label": "Manar Kerdy"
+        },
+        {
+            "id": "http://opencontext.org/persons/88f28e1e-3ae8-4fa5-9b11-20457c68c53f",
+            "label": "Miki Bopp-Ito"
+        },
+        {
+            "id": "http://opencontext.org/persons/d43d3a3f-d5af-4171-a378-8a677ca01246",
+            "label": "Sabine Deschler-Erb"
+        },
+        {
+            "id": "http://opencontext.org/persons/c5130829-606f-4b3b-a7dc-4ac6c4ae50a0",
+            "label": "Jörg Schibler"
+        }
+    ],
+    "Temporal Coverage": [{
+            "id": "http://id.loc.gov/authorities/subjects/sh85090768",
+            "label": "Neolithic"
+        },
+        {
+            "id": "http://id.loc.gov/authorities/subjects/sh85017098",
+            "label": "Bronze age--Europe"
+        },
+        {
+            "id": "http://n2t.net/ark:/99152/p0qhb66d5b9",
+            "label": "Neolithikum"
+        }
+    ],
+    "Has taxonomic identifier": [{
+        "id": "http://www.gbif.org/species/2441022",
+        "label": "Bos taurus"
+    }],
+    "Has anatomical identification": [{
+        "id": "http://purl.obolibrary.org/obo/UBERON_0013588",
+        "label": "fused metatarsal bones 3 and 4"
+    }]
+}

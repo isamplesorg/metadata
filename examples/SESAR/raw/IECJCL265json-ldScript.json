@@ -1,0 +1,145 @@
+{
+    "@context": "https://raw.githubusercontent.com/IGSN/igsn-json/master/schema.igsn.org/json/registration/v0.1/context.jsonld",
+    "@id": "https://data.geosamples.org/sample/igsn/IECJCL265",
+    "igsn": "IECJCL265",
+    "registrant": {
+        "name": "IEDA",
+        "identifiers": {
+            "kind": "uri",
+            "id": "https://www.geosamples.org"
+        }
+    },
+    "description": {
+        "sampleName": "NM_G2731-Burn_Pit2-23.8cm",
+        "sampleType": "Individual Sample",
+        "collector": "Jon Chorover",
+        "collectionStartDate": "2018-04-09 16:05:00",
+        "contributors": [
+            {
+                "contributor": [
+                    {
+                        "@type": "Person",
+                        "name": "Matej Durcik",
+                        "givenName": "Matej",
+                        "familyName": "Durcik"
+                    }
+                ],
+                "@type": "Role",
+                "roleName": "Sample Owner"
+            },
+            {
+                "contributor": [
+                    {
+                        "@type": "Person",
+                        "name": "Matej Durcik",
+                        "givenName": "Matej",
+                        "familyName": "Durcik"
+                    }
+                ],
+                "@type": "Role",
+                "roleName": "Sample Registrant"
+            },
+            {
+                "contributor": [
+                    {"@type": "Person"}
+                ],
+                "@type": "Role",
+                "roleName": "Sample Archive Contact"
+            }
+        ],
+        "geoLocation": {
+            "geo": [
+                {
+                    "@type": "GeoCoordinates",
+                    "latitude": "35.8503",
+                    "longitude": "-106.4506"
+                }
+            ],
+            "@type": "Place"
+        },
+        "material": "Liquid>aqueous",
+        "collectionMethod": "Prenart ",
+        "description": "Soil solution",
+        "supplementMetadata": {
+            "sampleId": 4552955,
+            "county": "Sandoval",
+            "cruiseFieldPrgrm": "Catalina-Jemez Critical Zone Observatory (CZO)",
+            "currentArchive": "Department of Environmental Science, University of Arizona",
+            "currentArchiveContact": "Jon Chorover",
+            "depthMin": 23.8,
+            "depthScale": "cm",
+            "easting": "369011",
+            "elevation": 2699.3,
+            "elevationUnit": "meters",
+            "externalSampleId": "NM_G2731-Burn_Pit2-23.8cm",
+            "fieldName": "2011 Burned ZOB Pedon 2",
+            "locality": "Rabbit Mountain",
+            "northing": "3968316",
+            "primaryLocationName": "Valles Caldera",
+            "primaryLocationType": "Resurgent dome",
+            "province": "New Mexico",
+            "size": "2",
+            "sizeUnit": "mL",
+            "verticalDatum": "NAVD88",
+            "zone": "13N",
+            "country": "United States",
+            "navigationType": "GPS",
+            "childIGSN": [],
+            "siblingIGSN": [
+                "IECJCL468",
+                "IECJCL455",
+                "IECJCL469",
+                "IECJCL467",
+                "IECJCL457",
+                "IECJCL456",
+                "IECJCL428",
+                "IECJCL427",
+ 
+                "IECJCJ419",
+                "IECJCJ421",
+                "IECJCJ422",
+                "IECJCJ457",
+                "IECJCJ459",
+                "IECJCJ482",
+                "IECJCJ483",
+ 
+                "IECJCK406"
+            ],
+            "otherName": [],
+            "document": [],
+            "publicationUrl": []
+        },
+        "log": [
+            {
+                "type": "registered",
+                "timestamp": "2020-11-10 03:30:53"
+            },
+            {
+                "type": "published",
+                "timestamp": "2020-11-01 12:00:00"
+            },
+            {
+                "type": "lastUpdated",
+                "timestamp": "2020-11-10 03:30:53"
+            }
+        ],
+        "collectionDatePrecision": "time",
+        "collectionMethodDescr": "Prenart Super Quartz suction cups soil water sampler",
+        "collectorDetail": "Department of Environmental Science, University of Arizona; chorover@email.arizona.edu",
+        "publisher": {
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "name": "Information Desk",
+                "contactType": "Customer Service",
+                "email": "info@geosamples.org",
+                "url": "https://www.geosamples.org/contact/"
+            },
+            "@type": "Organization",
+            "name": "EarthChem",
+            "@id": "https://www.geosamples.org",
+            "url": "https://www.geosamples.org"
+        },
+        "parentIdentifier": "IECJCG009",
+        "igsnPrefix": "IECJC"
+    }
+}

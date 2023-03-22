@@ -1,0 +1,47 @@
+{
+    "@schema": "iSamplesSchemaBasic.json",
+    "@id": "metadata/28722/k2b570022",
+    "label": "11208190",
+    "sample_identifier": "ark:/28722/k2b570022",
+    "description": "'early bce/ce': 1820.0 | 'late bce/ce': 1950.0 | 'updated': 2021-06-27T19:54:46Z | 'Consists of': leather | 'Has type': fragments (object portions)",
+    "has_context_category": ["Site of past human activities"],
+    "has_material_category": ["Anthropogenic material"],
+    "has_specimen_category": ["Artifact"],
+    "informal_classification": [],
+    "keywords": [
+        {
+            "keyword": "Historic Fort Snelling",
+            "keyword_uri": "https://www.wikidata.org/wiki/Q480993",
+            "scheme_name": "Wikidata"
+        },
+        {"keyword": "United States"},
+        {"keyword": "Minnesota"},
+        {"keyword": "Fort Snelling Short Barracks"},
+        {
+            "keyword":"leather",
+            "scheme_name":"Materials Facet: Getty Art & Architecture Thesaurus",
+            "keyword_uri":"http://vocab.getty.edu/page/aat/300011845"
+        }
+    ],
+    "produced_by": {
+        "label": "Historic Fort Snelling",
+        "description": "",
+        "has_feature_of_interest": "",
+        "responsibility": ["'Creator':Nancy Hoffman"],
+        "result_time": "2016-06-23",
+        "samplingSite": {
+            "description": "Base of stairwell",
+            "label": "Object",
+            "location": {
+                "elevation": "",
+                "latitude": 44.893131,
+                "longitude": -93.181061
+            },
+            "place_name": [
+                "United States",
+                "Minnesota",
+                "Fort Snelling Short Barracks"
+            ]
+        }
+    }
+}

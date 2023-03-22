@@ -1,0 +1,37 @@
+{
+    "uri": "http://opencontext.org/subjects/2013457A-B187-4534-0F3C-0B0D0A1EE376",
+    "citation uri": "https://n2t.net/ark:/28722/k25m6n269",
+    "label": "PC 19710276",
+    "project label": "Murlo",
+    "project uri": "http://opencontext.org/projects/DF043419-F23B-41DA-7E4D-EE52AF22F92F",
+    "context label": "Italy/Poggio Civitate/Tesoro Rectangle/Tesoro Rectangle 7/1971, ID:283",
+    "context uri": "http://opencontext.org/subjects/B91809DA-A28D-438B-F735-636D941825E1",
+    "latitude": 43.153368,
+    "longitude": 11.401406,
+    "early bce/ce": -700.0,
+    "late bce/ce": -535.0,
+    "item category": "Object",
+    "published": "2012-12-28",
+    "updated": "2021-06-27T20:38:12Z",
+    "Has type": [{
+        "id": "http://collection.britishmuseum.org/id/thesauri/x5250",
+        "label": "artefact"
+    }],
+    "Consists of": [{
+        "id": "http://collection.britishmuseum.org/id/thesauri/x10424",
+        "label": "bronze"
+    }],
+    "Creator": [{
+        "id": "http://opencontext.org/persons/61D87033-881E-48B9-FF27-27337BBCDAA0",
+        "label": "Anthony Tuck"
+    }],
+    "Temporal Coverage": [{
+            "id": "http://n2t.net/ark:/99152/p06v8w4g9dz",
+            "label": "Archaic (580 BCE - 482 BCE)"
+        },
+        {
+            "id": "http://n2t.net/ark:/99152/p06v8w45852",
+            "label": "Orientalizing (750 BCE - 582 BCE)"
+        }
+    ]
+}

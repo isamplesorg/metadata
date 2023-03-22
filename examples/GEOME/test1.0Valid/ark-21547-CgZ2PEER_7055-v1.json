@@ -1,0 +1,71 @@
+{
+    "@schema": "iSamplesSchemaBasic0.2.1.json",
+    "@id": "metadata:21547/CgZ2PEER_7055",
+    "label": "Polychaeta PEER_7055",
+    "sample_identifier": "http://n2t.net/ark:/21547/R2INDO119289",
+    "description": "",
+    "has_context_category": ["Marine biome"],
+    "has_material_category": ["Biogenic material"],
+    "has_specimen_category": ["Organism product"],
+    "informal_classification": [""],
+    "keywords": [
+        {
+            "keyword": "Lombok",
+            "scheme_name": "Getty Thesaurus of Geographic Names",
+            "keyword_uri": "http://vocab.getty.edu/page/tgn/1007904"
+        },
+        {
+            "keyword": "Gili Asahan",
+            "scheme_name": "Wikidata",
+            "keyword_uri": "https://www.wikidata.org/wiki/Q25020575"
+        },
+        {"keyword": "Indonesia"},
+        {"keyword": "West Nusa Tenggara"},
+        {"keyword": "Asia"},
+        {
+            "keyword": "Annelida",
+            "scheme_name": "Taxon: phylum"
+        },
+        {
+            "keyword": "Polychaeta",
+            "scheme_name": "Taxon: class"
+        }
+    ],
+    "complies_with": ["sampling protocol:Dead Coral Head"],
+    "produced_by": {
+        "@id": "ark:/21547/Cga2INDO_224",
+        "label": "event INDO_224",
+        "description": "sampling protocol:Dead Coral Head; projectId:78 ; expeditionCode: PEER_2016",
+        "has_feature_of_interest": "Coral Reef",
+        "responsibility": [
+            "Taxonymy team: MINV",
+            "Collector:Eka Maya Kurniasih"
+        ],
+        "result_time": "2017-06-04",
+        "samplingSite": {
+            "description": "",
+            "label": "Gili Asahan",
+            "location": {
+                "elevation": "",
+                "latitude": -8.73642,
+                "longitude": 115.88083
+            },
+            "place_name": ["Nusa Tenggara"]
+        }
+    },
+    "registrant": "Eka Maya Kurniasih",
+    "sampling_purpose": "",
+    "curation": {
+        "access_constraints": [],
+        "curation_location": "",
+        "responsibility": ["curator:Indonesian Biodiversity Research Center"]
+    },
+    "relatedResource": [
+        {
+            "label": "",
+            "description": "",
+            "target": "",
+            "relationshipType": ""
+        }
+    ]
+}

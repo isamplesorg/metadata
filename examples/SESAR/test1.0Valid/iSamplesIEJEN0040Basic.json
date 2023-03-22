@@ -1,0 +1,43 @@
+{
+    "@schema": "iSamplesSchemaBasic.json",
+    "@id": "https://data.geosamples.org/sample/igsn/IEJEN0040",
+    "label": "Goldfin ~20 m moss from 30 cm hummock",
+    "sample_identifier": "",
+    "description": "",
+    "has_context_category": ["Subaerial surface environment"],
+    "has_material_category": ["Organic material"],
+    "has_specimen_category": ["Any biological specimen"],
+    "keywords": [
+        {
+            "keyword": "grab",
+            "scheme_name": "SESAR sample type"
+        }
+    ],
+    "produced_by": {
+        "label": "",
+        "description": "",
+        "has_feature_of_interest": "peatland",
+        "responsibility": ["collector: Miriam Jones"],
+        "result_time": "2017-09-01",
+        "samplingSite": {
+            "description": "small pool near stream 3 ~20 m from stream",
+            "label": "",
+            "location": {
+                "elevation": "",
+                "latitude": 60.25455,
+                "longitude": -149.3576
+            },
+            "place_name": ["Gold Fin"]
+        }
+    },
+    "registrant": "Jonathan Nichols",
+    "sampling_purpose": "",
+    "curation": {
+        "curation_location": "Lamont-Doherty Earth Observatory",
+        "responsibility": [
+            "sample owner: Jonathan Nichols",
+            "metadata publisher: info@geosamples.org; url: https://www.geosamples.org/contact/",
+            "curator: Jonathan E. Nichols"
+        ]
+    }
+}
