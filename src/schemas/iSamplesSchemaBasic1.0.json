@@ -4,7 +4,7 @@
     "type": "object",
     "title": "PhysicalSampleRecord",
     "additionalProperties": true,
-    "description": "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web. version: 20221007; metamodel_version 1.7.0",
+    "description": "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web. version: 20230317; metamodel_version 1.7.0",
     "properties": {
         "sample_identifier": {
             "description": "URI that identifies the physical sample described by this record",
@@ -57,7 +57,7 @@
             "type": "array"
         },
         "complies_with": {
-            "description": "a list of policies, recommendations, best practices (etc.) that have been followed in the collection and curation of the sample.",
+            "description": "a list of policies, recommendations, best practices (etc.) that have been followed in the collection and curation of the sample. If any special protocols were followed in the sampling procedure, they should be documented here, with prefix 'Sampling protocol:'.",
             "items": {"type": "string"},
             "type": "array"
         },
