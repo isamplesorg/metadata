@@ -11,7 +11,7 @@
         {"keyword": "coral"},
         {
             "keyword": "Quaternary",
-            "scheme_name": "geologic age"
+            "scheme_name": "chronostratigraphic age"
         },
         {
             "keyword": "Individual Sample>Cylinder",
