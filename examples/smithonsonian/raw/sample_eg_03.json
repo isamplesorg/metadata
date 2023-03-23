@@ -1,0 +1,90 @@
+{
+  "executionTimeMs": 3,
+  "qtype": 12,
+  "recordCount": 1,
+  "recordLimit": 10,
+  "recordStart": 0,
+  "recordsFetched": 1,
+  "recordsGeorefed": 0,
+  "sort": {
+    "idefa.ideqn": 1
+  },
+  "totalRecords": 1,
+  "records": [
+    {
+      "_id": 5057775,
+      "acqln": "000000",
+      "admdm": {
+        "$date": {
+          "$numberLong": "1408462620000"
+        }
+      },
+      "admuu": "cd7e1a2d5fa14b64aedda7cddd0c622c",
+      "bioar": "Ryukyu Islands",
+      "biooc": "Pacific",
+      "biopl": "Nama Mkt, Loo Choo Islands",
+      "biovn": "Albatross",
+      "catdp": "fs",
+      "catms": "NMNH",
+      "catnb": {
+        "catnc": "   195297",
+        "catnm": 195297
+      },
+      "caton": [
+        {
+          "catnt": "Tin Tag",
+          "catnv": "A 1615"
+        }
+      ],
+      "catot": "Specimen/Lot",
+      "catsc": 1,
+      "cevid": 5036545,
+      "coldv": {
+        "colvd": "7 Feb 1910",
+        "colvf": "19100207",
+        "colvr": "0000 00 00 - 0000 00 00",
+        "colvt": "19100207"
+      },
+      "darcl": "Actinopterygii",
+      "darco": "Pacific",
+      "darct": "Japan",
+      "darfm": "Balistidae",
+      "dargn": "Abalistes",
+      "darht": "Animalia, Chordata, Vertebrata, Osteichthyes, Actinopterygii, Neopterygii, Acanthopterygii, Tetraodontiformes, Tetraodontoidei, Balistidae",
+      "daric": "USNM",
+      "darin": 1,
+      "daris": "Okinawa",
+      "darkn": "Animalia",
+      "daror": "Tetraodontiformes",
+      "darph": "Chordata",
+      "darsn": "Abalistes stellatus",
+      "darsp": "stellatus",
+      "darst": "Okinawa Prefecture",
+      "darwb": "Pacific",
+      "flags": 0,
+      "idefa": {
+        "ifaid": 5021180,
+        "idefn": "Abalistes stellatus : Balistidae : Tetraodontiformes : Actinopterygii : Chordata",
+        "ideqn": "Abalistes stellatus"
+      },
+      "ideon": [
+        {
+          "ideod": "1 Oct 2009",
+          "ideoq": "Abalistes filamentosus"
+        },
+        {
+          "ideoq": "Abalistes stellaris"
+        }
+      ],
+      "tstmp": 1541574720,
+      "ustmp": 1541574720,
+      "xname": "Abalistes stellatus",
+      "zoopp": [
+        {
+          "zoopl": "Tank 03",
+          "zplid": 5000005
+        }
+      ]
+    }
+  ]
+}
