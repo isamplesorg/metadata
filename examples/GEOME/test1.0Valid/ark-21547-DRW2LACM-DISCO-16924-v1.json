@@ -9,9 +9,6 @@
     "has_specimen_category": ["Whole organism"],
     "informal_classification": [""],
     "keywords": [
-        {"keyword": "Los Angeles"},
-        {"keyword": "California"},
-        {"keyword": "North Pacific Ocean"},
         {
             "keyword": "San Pedro Bay",
             "keyword_uri": "http://vocab.getty.edu/page/tgn/1113759",
@@ -55,7 +52,12 @@
                 "latitude": 33.7345167,
                 "longitude": -118.277367
             },
-            "place_name": ["San Pedro Bay"]
+            "place_name": [
+                "San Pedro Bay",
+                "Los Angeles",
+                "California",
+                "North Pacific Ocean"
+            ]
         }
     },
     "registrant": "Mike O'Mahoney",
