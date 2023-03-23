@@ -1,5 +1,5 @@
 {
-    "@schema": "iSamplesSchemaBasic0.2.1.json",
+    "@schema": "iSamplesSchemaBasic1.0.json",
     "@id": "metadata/65665/30000cb27-702b-4d34-ac24-3e46e14d5519",
     "label": "Epinephelus merra AG5NS72",
     "sample_identifier": "ark:/65665/30000cb27-702b-4d34-ac24-3e46e14d5519",
