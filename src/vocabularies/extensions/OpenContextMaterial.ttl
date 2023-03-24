@@ -4,6 +4,7 @@
 # prefix: ocmat
 
 @prefix : <https://w3id.org/isample/vocabulary/opencontext/material/0.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix mat: <https://w3id.org/isample/vocabulary/material/0.9/> .
 @prefix ocmat: <https://w3id.org/isample/vocabulary/opencontext/material/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -16,7 +17,6 @@ ocmat:
   rdf:type owl:Ontology ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports mat:materialsvocabulary ;
-  owl:versionInfo "Created with TopBraid Composer" ;
 .
 ocmat:amber
   rdf:type skos:Concept ;
@@ -35,19 +35,21 @@ ocmat:anthropogenicorganicmaterial
 ocmat:basalt
   rdf:type skos:Concept ;
   skos:broader mat:rock ;
+  skos:closeMatch <http://resource.geosciml.org/classifier/cgi/lithology/basalt> ;
+  skos:prefLabel "Basalt"@en ;
 .
 ocmat:bone
   rdf:type skos:Concept ;
   rdfs:label "bone" ;
   skos:broader mat:biogenicnonorganicmaterial ;
-  skos:prefLabel "bone" ;
+  skos:prefLabel "Bone" ;
 .
 ocmat:brass
   rdf:type skos:Concept ;
   rdfs:label "brass" ;
   skos:broader mat:anthropogenicmetal ;
   skos:definition "alloy of copper (Cu) and zinc (Zn)" ;
-  skos:prefLabel "brass" ;
+  skos:prefLabel "Brass" ;
 .
 ocmat:brickclay
   rdf:type skos:Concept ;
@@ -58,10 +60,10 @@ ocmat:brickclay
 .
 ocmat:bronze
   rdf:type skos:Concept ;
-  rdfs:label "bronze" ;
+  rdfs:label "Bronze" ;
   skos:broader mat:anthropogenicmetal ;
   skos:definition "alloy consisting primarily of copper with subordinate tin;  often includes other metals" ;
-  skos:prefLabel "bronze" ;
+  skos:prefLabel "Bronze" ;
 .
 ocmat:ceramicclay
   rdf:type skos:Concept ;
@@ -74,36 +76,42 @@ ocmat:charcoal
   rdf:type skos:Concept ;
   rdfs:label "charcoal" ;
   skos:broader mat:biogenicnonorganicmaterial ;
-  skos:prefLabel "charcoal" ;
+  skos:prefLabel "Charcoal" ;
 .
 ocmat:chert
   rdf:type skos:Concept ;
+  skos:broadMatch <http://resource.geosciml.org/classifier/cgi/lithology/non_clastic_siliceous_sedimentary_rock> ;
   skos:broader mat:rock ;
+  skos:prefLabel "Chert"@en ;
 .
 ocmat:cinder
   rdf:type skos:Concept ;
   skos:broader mat:particulate ;
   skos:definition "The incombustible residue of something burnt.@en" ;
   skos:exactMatch <https://vocab.getty.edu/aat/300011788> ;
+  skos:prefLabel "Cinder"@en ;
 .
 ocmat:coal
   rdf:type skos:Concept ;
   skos:broader mat:biogenicnonorganicmaterial ;
   skos:broader mat:rock ;
+  skos:closeMatch <http://resource.geosciml.org/classifier/cgi/lithology/coal> ;
+  skos:prefLabel "Coal"@en ;
 .
 ocmat:copper
   rdf:type skos:Concept ;
   rdfs:label "copper" ;
   skos:broader mat:anthropogenicmetal ;
   skos:definition "copper metal, includes copper-rich alloys not identifiable as brass or bronze." ;
-  skos:prefLabel "copper" ;
+  skos:prefLabel "Copper" ;
 .
 ocmat:dolomite
   rdf:type skos:Concept ;
   rdfs:label "dolomite" ;
   skos:altLabel "dolostone" ;
   skos:broader mat:rock ;
-  skos:prefLabel "dolomite" ;
+  skos:closeMatch <http://resource.geosciml.org/classifier/cgi/lithology/dolostone> ;
+  skos:prefLabel "Dolomite"@en ;
 .
 ocmat:fibermaterial
   rdf:type skos:Concept ;
@@ -117,14 +125,16 @@ ocmat:fibermaterial
 ocmat:flint
   rdf:type skos:Concept ;
   rdfs:label "flint" ;
+  skos:broadMatch <http://resource.geosciml.org/classifier/cgi/lithology/non_clastic_siliceous_sedimentary_rock> ;
   skos:broader mat:rock ;
-  skos:prefLabel "flint" ;
+  skos:prefLabel "Flint" ;
 .
 ocmat:gabbro
   rdf:type skos:Concept ;
   rdfs:label "gabbro" ;
   skos:broader mat:rock ;
-  skos:prefLabel "gabbro" ;
+  skos:closeMatch <http://resource.geosciml.org/classifier/cgi/lithology/gabbroic_rock> ;
+  skos:prefLabel "Gabbro" ;
 .
 ocmat:glass
   rdf:type skos:Concept ;
@@ -138,76 +148,93 @@ ocmat:gold
   rdfs:label "gold" ;
   skos:broader mat:anthropogenicmetal ;
   skos:definition "" ;
-  skos:prefLabel "gold" ;
+  skos:prefLabel "Gold" ;
 .
 ocmat:greywacke
   rdf:type skos:Concept ;
   rdfs:label "greywacke" ;
   skos:altLabel "graywacke" ;
   skos:broader mat:rock ;
-  skos:prefLabel "greywacke" ;
+  skos:closeMatch <http://resource.geosciml.org/classifier/cgi/lithology/wacke> ;
+  skos:prefLabel "Greywacke" ;
 .
 ocmat:hair
   rdf:type skos:Concept ;
   rdfs:label "hair" ;
   skos:broader ocmat:organicanimalmaterial ;
-  skos:prefLabel "hair" ;
+  skos:prefLabel "Hair" ;
 .
 ocmat:hematite
   rdf:type skos:Concept ;
   rdfs:label "hematite" ;
   skos:broader mat:mineral ;
-  skos:prefLabel "hematite" ;
+  skos:prefLabel "Hematite" ;
 .
 ocmat:iron
   rdf:type skos:Concept ;
   rdfs:label "iron" ;
   skos:broader mat:anthropogenicmetal ;
   skos:definition "Iron or iron-rich alloy" ;
-  skos:prefLabel "iron" ;
+  skos:prefLabel "Iron" ;
 .
 ocmat:kaolin
   rdf:type skos:Concept ;
   rdfs:label "kaolin" ;
   skos:broader mat:mineral ;
-  skos:prefLabel "kaolin" ;
+  skos:prefLabel "Kaolin" ;
 .
 ocmat:lead
   rdf:type skos:Concept ;
   rdfs:label "lead" ;
   skos:broader mat:anthropogenicmetal ;
   skos:definition "lead or lead-rich alloy" ;
-  skos:prefLabel "lead" ;
+  skos:prefLabel "Lead" ;
 .
 ocmat:leather
   rdf:type skos:Concept ;
   rdfs:label "leather" ;
   skos:broader ocmat:organicanimalmaterial ;
-  skos:prefLabel "leather" ;
+  skos:closeMatch <http://vocab.getty.edu/page/aat/300011845> ;
+  skos:prefLabel "Leather" ;
 .
 ocmat:limestone
   rdf:type skos:Concept ;
   rdfs:label "limestone" ;
   skos:broader mat:rock ;
-  skos:prefLabel "limestone" ;
+  skos:closeMatch <http://resource.geosciml.org/classifier/cgi/lithology/limestone> ;
+  skos:prefLabel "Limestone" ;
 .
 ocmat:marble
   rdf:type skos:Concept ;
   rdfs:label "marble" ;
   skos:broader mat:rock ;
-  skos:prefLabel "marble" ;
+  skos:closeMatch <http://resource.geosciml.org/classifier/cgi/lithology/marble> ;
+  skos:prefLabel "Marble" ;
 .
 ocmat:mica
   rdf:type skos:Concept ;
   rdfs:label "mica" ;
   skos:broader mat:mineral ;
-  skos:prefLabel "mica" ;
+  skos:prefLabel "Mica" ;
 .
 ocmat:obsidian
   rdf:type skos:Concept ;
   rdfs:label "obsidian" ;
   skos:broader mat:rock ;
-  skos:prefLabel "obsidian" ;
+  skos:closeMatch <http://resource.geosciml.org/classifier/cgi/lithology/glassy_igneous_rock> ;
+  skos:prefLabel "Obsidian" ;
+.
+ocmat:opencontextmaterial
+  rdf:type owl:Ontology ;
+  rdf:type skos:ConceptScheme ;
+  dcterms:created "2022-10-19" ;
+  dcterms:modified "2023-03-24" ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports mat:materialsvocabulary ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+  skos:historyNote "2023-03-24. Add addtional labels, history note, reference uris in sample data for OpenContext"@en ;
+  skos:historyNote "Example extension vocabulary generated by S. M. Richard from open context example data."@en ;
+  skos:prefLabel "iSamples OpenContext Materials extension draft"@en ;
 .
 ocmat:organicanimalmaterial
   rdf:type skos:Concept ;
@@ -233,7 +260,7 @@ ocmat:pewter
   rdfs:label "pewter" ;
   skos:broader mat:anthropogenicmetal ;
   skos:definition "alloy consisting of mostly tin,  with antimony,  minor copper or bismuth, and sometimes silver." ;
-  skos:prefLabel "pewter" ;
+  skos:prefLabel "Pewter" ;
 .
 ocmat:plantfiber
   rdf:type skos:Concept ;
@@ -270,14 +297,15 @@ ocmat:porcelain
 ocmat:pumice
   rdf:type skos:Concept ;
   rdfs:label "pumice" ;
+  skos:broadMatch <http://resource.geosciml.org/classifier/cgi/lithology/pyroclastic_rock> ;
   skos:broader mat:rock ;
-  skos:prefLabel "pumice" ;
+  skos:prefLabel "Pumice" ;
 .
 ocmat:quartz
   rdf:type skos:Concept ;
   rdfs:label "quartz" ;
   skos:broader mat:mineral ;
-  skos:prefLabel "quartz" ;
+  skos:prefLabel "Quartz" ;
 .
 ocmat:rubber
   rdf:type skos:Concept ;
@@ -290,13 +318,14 @@ ocmat:shell
   rdf:type skos:Concept ;
   rdfs:label "shell" ;
   skos:broader mat:biogenicnonorganicmaterial ;
-  skos:prefLabel "shell" ;
+  skos:prefLabel "Shell" ;
 .
 ocmat:slate
   rdf:type skos:Concept ;
   rdfs:label "slate" ;
   skos:broader mat:rock ;
-  skos:prefLabel "slate" ;
+  skos:closeMatch <http://resource.geosciml.org/classifier/cgi/lithology/slate> ;
+  skos:prefLabel "Slate" ;
 .
 ocmat:terracotta
   rdf:type skos:Concept ;
@@ -309,7 +338,8 @@ ocmat:travertine
   rdf:type skos:Concept ;
   rdfs:label "travertine" ;
   skos:broader mat:rock ;
-  skos:prefLabel "travertine" ;
+  skos:closeMatch <http://resource.geosciml.org/classifier/cgi/lithology/travertine> ;
+  skos:prefLabel "Travertine"@en ;
 .
 ocmat:wood
   rdf:type skos:Concept ;
