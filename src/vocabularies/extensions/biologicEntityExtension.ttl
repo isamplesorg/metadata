@@ -1,0 +1,195 @@
+# baseURI: https://w3id.org/isample/vocabulary/biologicentity/0.9/
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <https://w3id.org/isample/vocabulary/mingroup/0.9/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix mat: <https://w3id.org/isample/vocabulary/material/0.9/> .
+@prefix bioe: <https://w3id.org/isample/vocabulary/biologicentity/0.9/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dct:created
+  rdf:type owl:AnnotationProperty ;
+.
+dct:license
+  rdf:type owl:AnnotationProperty ;
+.
+dct:modified
+  rdf:type owl:AnnotationProperty ;
+.
+<https://orcid.org/0000-0001-6041-5302>
+  rdf:type owl:NamedIndividual ;
+  rdfs:comment "e-mail: mailto:smrTucson@gmail.com " ;
+  rdfs:comment "orchid-id: https://orcid.org/0000-0001-6041-5302" ;
+  rdfs:label "Dr. Stephen M. Richard" ;
+.
+bioe:boratemineral
+  rdf:type owl:NamedIndividual ;
+  rdf:type skos:Concept ;
+  rdfs:label ""@en ;
+  skos:altLabel "Nickel-Strunz class 06"@en ;
+  skos:broader mat:mineral ;
+  skos:definition "Minerals which contain a borate anion group."@en ;
+  skos:exactMatch <http://linked.data.gov.au/def/minerals/borates> ;
+  skos:inScheme bioe:mineralgroupvocabulary ;
+  skos:prefLabel ""@en ;
+.
+
+
+bioe:Macrofungi
+  rdf:type skos:Concept ;
+  rdfs:label "Macrofungi"@en ;
+.
+
+bioe:Lichen
+  rdf:type skos:Concept ;
+  rdfs:label "Lichen"@en ;
+.
+
+bioe:Myxomycete
+  rdf:type skos:Concept ;
+  rdfs:label "Myxomycete"@en ;
+.
+
+bioe:Algae
+  rdf:type skos:Concept ;
+  rdfs:label "Algae"@en ;
+.
+
+bioe:Bryophyte
+  rdf:type skos:Concept ;
+  rdfs:label "Bryophyte"@en ;
+.
+
+bioe:pteridophyte
+  rdf:type skos:Concept ;
+  rdfs:label "Pteridophyte"@en ;
+.
+
+bioe:spermatophyte
+  rdf:type skos:Concept ;
+  rdfs:label "Seed plant"@en ;
+.
+
+
+bioe:hexapoda
+  rdf:type skos:Concept ;
+  rdfs:label "Insect"@en ;
+.
+
+bioe:arachnid
+  rdf:type skos:Concept ;
+  rdfs:label "Arachnid"@en ;
+.
+
+bioe:crustacea
+  rdf:type skos:Concept ;
+  rdfs:label "Crustaceans"@en ;
+.
+
+bioe:myriapod
+  rdf:type skos:Concept ;
+  rdfs:label "Myriapod"@en ;
+.
+
+bioe:porifera
+skos:altLabel "sponges";
+  rdf:type skos:Concept ;
+  rdfs:label "Porifera"@en ;
+.
+
+bioe:mollusca
+  rdf:type skos:Concept ;
+  rdfs:label "Mollusca"@en ;
+skos:altLabel "bivalves";
+skos:altLabel "gastropods";
+skos:altLabel "cephalopods";
+.
+bioe:fish
+  rdf:type skos:Concept ;
+  rdfs:label "fish"@en ;
+.
+bioe:amphibian
+  rdf:type skos:Concept ;
+  rdfs:label "Amphibian"@en ;
+.
+
+bioe:reptile
+  rdf:type skos:Concept ;
+  rdfs:label "Reptile"@en ;
+.
+
+bioe:bird
+  rdf:type skos:Concept ;
+  rdfs:label "Bird"@en ;
+.
+
+bioe:mammal
+  rdf:type skos:Concept ;
+  rdfs:label "Mammal"@en ;
+.
+
+bioe:phages
+  rdf:type skos:Concept ;
+  rdfs:label "Phage"@en ;
+.
+
+bioe:bacteria
+  rdf:type skos:Concept ;
+  rdfs:label "Bacteria"@en ;
+.
+
+bioe:archaea
+  rdf:type skos:Concept ;
+  rdfs:label "Archaea"@en ;
+.
+
+bioe:Plasmids
+  rdf:type skos:Concept ;
+  rdfs:label ""@en ;
+.
+
+bioe:Protozoa
+  rdf:type skos:Concept ;
+  rdfs:label ""@en ;
+.
+
+bioe:Eukaryotic microorganisms
+  rdf:type skos:Concept ;
+  rdfs:label ""@en ;
+.
+
+bioe:Viruses (animal and plant viruses)
+  rdf:type skos:Concept ;
+  rdfs:label ""@en ;
+.
+
+bioe:Microfungi (including moulds, yeasts)
+  rdf:type skos:Concept ;
+  rdfs:label ""@en ;
+.
+
+bioe:Algae 
+  rdf:type skos:Concept ;
+  rdfs:label ""@en ;
+
+.
+
+bioe:biologicentityvocabulary
+  rdf:type owl:NamedIndividual ;
+  rdf:type owl:Ontology ;
+  rdf:type skos:ConceptScheme ;
+  dct:created "2023-03-23"^^xsd:date ;
+  dct:creator <https://orcid.org/0000-0001-6041-5302> ;
+  dct:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
+  dct:modified "2023-03-23"^^xsd:date ;
+  dct:source "DiSSCo specimen & collection classification, draft 2023-03-23, https://docs.google.com/document/d/19OPyOm9VF2qfI3M6RmJPvRfo8JlZ3tt0II05aGCyBHQ" ;
+  rdfs:label "iSamples Biological Entity Extension Vocabulary"@en ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  skos:definition "Vocabulary to extend the SampledFeature biological entity to better account for the kinds of organisms that might be sampled "@en ;
+  skos:prefLabel "iSamples Biological Entity Extension Vocabulary"@en ;
+.
