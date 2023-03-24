@@ -42,7 +42,7 @@
             "type": "array"
         },
         "informal_classification": {
-            "description": "Free text classification terms, not from a controlled vocabulary; generally terms applied by collector.",
+            "description": "DEPRECATED. Use Keywords/keyword. Free text classification terms, not from a controlled vocabulary; generally terms applied by collector.",
             "items": {"type": "string"},
             "type": "array"
         },
