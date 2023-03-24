@@ -1,10 +1,10 @@
 {
-    "@schema": "../../iSamplesSchemaBasic0.2.json",
+    "@schema": "iSamplesSchemaBasic1.0.json",
     "@id": "metadata:21547-eg2AB4OQ34",
     "label": "Cookeolus japonicus AB4OQ34",
     "sample_identifier": "AB4OQ34",
     "description": "voucherCatalogNumber: USNM:Fish:433156",
-    "has_context_category": ["Marine biome"],
+    "has_context_category": ["Marine environment"],
     "has_material_category": ["Organic material"],
     "has_specimen_category": ["Whole organism"],
     "keywords": [
@@ -37,7 +37,10 @@
                 "latitude": 37.5267,
                 "longitude": -74.3667
             },
-            "place_name": ["USA", "North Atlantic Ocean"]
+            "place_name": [
+                "USA",
+                "North Atlantic Ocean"
+            ]
         }
     },
     "registrant": "",

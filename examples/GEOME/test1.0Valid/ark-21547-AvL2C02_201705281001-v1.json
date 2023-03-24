@@ -1,12 +1,12 @@
 {
-    "@schema": "iSamplesSchemaBasic.json",
+    "@schema": "iSamplesSchemaBasic1.0.json",
     "@id": "metadata/21547/Car2PIRE_0334",
     "label": "C02_201705281001, Aplysina fistularis",
     "sample_identifier": "ark:/21547/AvL2C02_201705281001",
     "description": "",
-    "has_context_category": ["Marine Biome"],
-    "has_material_category": ["Organic Material"],
-    "has_specimen_category": ["Whole Organism"],
+    "has_context_category": ["Marine environment"],
+    "has_material_category": ["Organic material"],
+    "has_specimen_category": ["Whole organism"],
     "keywords": [
         {
             "keyword": "Demospongiae",

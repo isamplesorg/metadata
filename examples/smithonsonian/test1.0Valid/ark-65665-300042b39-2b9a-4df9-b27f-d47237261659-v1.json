@@ -5,12 +5,9 @@
     "sample_identifier": "ark:/65665/300042b39-2b9a-4df9-b27f-d47237261659",
     "description": "Tissue & Parts, Muscle; basisOfRecord : MaterialSample | type : PhysicalObject | catalogNumber：589356.12522399 | disposition: in collection | startDayOfYear: 50 | endtDayOfYear: 50",
     "has_context_category": ["Subaerial surface environment"],
-    "has_material_category": ["Organic Material"],
-    "has_specimen_category": ["Organism Part"],
-    "informal_classification": ["Tomopterna cryptotis"],
+    "has_material_category": ["Organic material"],
+    "has_specimen_category": ["Organism part"],
     "keywords": [
-        {"keyword": "Africa"},
-        {"keyword": "Djibouti"},
         {"keyword": "Amphibian"},
         {
             "keyword": "Tadjourah",
@@ -37,8 +34,8 @@
         "responsibility": [],
         "result_time": "2016-02-19",
         "samplingSite": {
-            "description": "verbatimElevation：ca. 1470 m | verbatimLatitude: 11 46 14 N | verbatimLongitude: 42 39 07 E",
-            "label": "Day (village), ca. 2 km SE of, vicinity of abandoned lodge, Day Forest National Park",
+            "description": "ca. 2 km SE of, vicinity of abandoned lodge | verbatimElevation：ca. 1470 m | verbatimLatitude: 11 46 14 N | verbatimLongitude: 42 39 07 E",
+            "label": "Day (village), Day Forest National Park",
             "location": {
                 "elevation": "maximumElevationInMeters: 1470 | minimumElevationInMeters：1470| verbatimElevation：1470",
                 "latitude": 11.7706,
@@ -48,7 +45,7 @@
                 "Africa",
                 "Djibouti",
                 "Tadjourah",
-                "Day (village), ca. 2 km SE of, vicinity of abandoned lodge, Day Forest National Park"
+                "Day (village), Day Forest National Park"
             ]
         }
     },
@@ -59,6 +56,6 @@
         "description":"preservation: DMSO-EDTA",
         "curation_location": "",
         "responsibility": ["USNM http://grbio.org/cool/142r-0w94",
-        "metadata publisher: info@geosamples.org; url: https://www.geosamples.org/contact/"]
+        "metadata publisher: bot specified"]
     }
 }

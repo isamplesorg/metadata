@@ -1,5 +1,5 @@
 {
-    "@schema": "iSamplesSchemaBasic.json",
+    "@schema": "iSamplesSchemaBasic1.0.json",
     "@id": "https://data.geosamples.org/sample/igsn/IEJEN0040",
     "label": "Goldfin ~20 m moss from 30 cm hummock",
     "sample_identifier": "",

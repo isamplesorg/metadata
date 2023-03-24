@@ -4,19 +4,17 @@
     "label": "Epinephelus merra AG5NS72",
     "sample_identifier": "ark:/65665/30000cb27-702b-4d34-ac24-3e46e14d5519",
     "description": "basisOfRecord : MaterialSample | occurrenceRemarks: Specimen voucher located at Museum National d'Histoire Naturelle, Paris. | catalogNumber: 439549.12401721 | recordNumber:mbio324 | fieldNumber: Moorea F-06-05 | type: PhysicalObject | individualCount: 1 | disposition: in collection | startDayOfYear: 71 | endDayOfYear: 71",
-    "has_context_category": ["Marine water body"],
-    "has_material_category": ["Organic Material"],
-    "has_specimen_category": ["Whole Organism"],
+    "has_context_category": ["Marine environment"],
+    "has_material_category": ["Organic material"],
+    "has_specimen_category": ["Whole organism"],
     "keywords": [
         {"keyword": "Fishes"},
-        {"keyword": "French Polynesia"},
         {
             "keyword": "Moorea",
             "keyword_uri": "http://vocab.getty.edu/page/tgn/1008209",
             "scheme_name": "Getty Thesaurus of Geographic Names"
         },
         {"keyword": "Honeycomb grouper"},
-        {"keyword": "Pacific"},
         {"keyword": "Animalia"},
         {"keyword": "Chordata"},
         {"keyword": "Actinopterygii"},
@@ -54,7 +52,6 @@
             },
             "place_name": [
                 "Moorea, Club Med.",
-                "United States",
                 "French Polynesia",
                 "Moorea",
                 "Pacific"
@@ -66,6 +63,6 @@
     "curation": {
         "access_constraints": [],
         "curation_location": "USNM http://grbio.org/cool/142r-0w94",
-        "responsibility": ["metadata publisher: info@geosamples.org; url: https://www.geosamples.org/contact/"]
+        "responsibility": ["metadata publisher: not specified"]
     }
 }

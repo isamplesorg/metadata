@@ -4,9 +4,9 @@
     "label": "INDO106431.1",
     "sample_identifier": "ark:/21547/Cat2INDO106431.1",
     "description": "",
-    "has_context_category": ["Marine Biome"],
-    "has_material_category": ["Organic Material"],
-    "has_specimen_category": ["Organism Part"],
+    "has_context_category": ["Marine environment"],
+    "has_material_category": ["Organic material"],
+    "has_specimen_category": ["Organism part"],
     "keywords": [
         {
             "keyword": "Aceh",
@@ -47,6 +47,8 @@
                 "longitude": 95.25293
             },
             "place_name": [
+                "Aceh",
+                "Sumatra",
                 "Pulau Seulako",
                 "Indonesia",
                 "Asia"
@@ -58,7 +60,7 @@
     "curation": {
         "access_constraints": [],
         "curation_location": "tissueWell: C06, tissuePlate: 03_ACEH_080916",
-        "responsibility": ["metadata publisher: info@geosamples.org; url: https://www.geosamples.org/contact/"]
+        "responsibility": []
     },
     "relatedResource": [
         {

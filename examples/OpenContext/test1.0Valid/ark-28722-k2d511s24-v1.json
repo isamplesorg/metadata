@@ -1,5 +1,5 @@
 {
-    "@schema": "iSamplesSchemaBasic.json",
+    "@schema": "iSamplesSchemaBasic1.0.json",
     "@id": "metadata/28722/k2d511s24",
     "label": "PC 19711008",
     "sample_identifier": "ark:/28722/k2d511s24",
@@ -8,8 +8,6 @@
     "has_material_category": ["Anthropogenic material"],
     "has_specimen_category": ["Artifact"],
     "keywords": [
-        {"keyword": "Murlo"},
-        {"keyword": "Italy"},
         {
             "keyword": "Poggio Civitate",
             "keyword_uri": "http://vocab.getty.edu/page/tgn/7594277",
@@ -19,24 +17,24 @@
         {
             "keyword": "Cobalt glass",
             "scheme_name": "Materials Facet: Getty Art & Architecture Thesaurus",
-            "keyword_uri":"http://vocab.getty.edu/page/aat/300212176"
+            "keyword_uri": "http://vocab.getty.edu/page/aat/300212176"
         },
         {
             "keyword": "Archaic",
             "scheme_name": "Styles and Periods Facet: Getty Art & Architecture Thesaurus",
-            "keyword_uri":"http://vocab.getty.edu/page/aat/300020086"
+            "keyword_uri": "http://vocab.getty.edu/page/aat/300020086"
         },
         {
             "keyword": "Orientalizing",
             "scheme_name": "Styles and Periods Facet: Getty Art & Architecture Thesaurus",
-            "keyword_uri":"http://vocab.getty.edu/page/aat/300020085"
+            "keyword_uri": "http://vocab.getty.edu/page/aat/300020085"
         }
     ],
     "produced_by": {
         "label": "Murlo",
         "description": "",
         "has_feature_of_interest": "Poggio Civitate",
-        "responsibility": ["'Creator': Anthony Tuck"],
+        "responsibility": ["Creator: Anthony Tuck"],
         "result_time": "2012-12-28",
         "samplingSite": {
             "description": "Tesoro Rectangle 7",
@@ -48,6 +46,7 @@
             },
             "place_name": [
                 "Italy",
+                "Murlo",
                 "Poggio Civitate",
                 "Tesoro Rectangle",
                 "Tesoro Rectangle 7",

@@ -1,5 +1,5 @@
 {
-    "@schema": "iSamplesSchemaBasic.json",
+    "@schema": "iSamplesSchemaBasic1.0.json",
     "@id":"https://data.geosamples.org/sample/igsn/IERVTL1I7",
     "label": "0744; Gas_NTC1-140cm_20190524-H",
     "sample_identifier": "igsn:IERVTL1I7",
@@ -9,8 +9,7 @@
     "has_specimen_category": ["Fluid in container"],
     "keywords": [
     {"keyword":"Individual Sample",
-    "scheme_name":"SESAR: Sample Type"},
-    {}
+    "scheme_name":"SESAR: Sample Type"}
     ],
     "produced_by": {
         "label": "",

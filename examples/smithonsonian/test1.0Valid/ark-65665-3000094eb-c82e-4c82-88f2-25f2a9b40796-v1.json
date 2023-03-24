@@ -5,14 +5,10 @@
     "sample_identifier": "ark:/65665/3000094eb-c82e-4c82-88f2-25f2a9b40796",
     "description": "basisOfRecord : MaterialSample | catalogNumber： 1445124.13347881 | fieldNumber：BOEM-MARINE-HAZ/111716 | type: PhysicalObject | individualCount: 1 | disposition: in collection | startDayOfYear: 322 | endDayOfYear: 322",
     "has_context_category": ["Marine water body bottom"],
-    "has_material_category": ["Organic Material"],
-    "has_specimen_category": ["Whole Organism"],
+    "has_material_category": ["Organic material"],
+    "has_specimen_category": ["Whole organism"],
     "keywords": [
         {"keyword": "Invertebrate Zoology"},
-        {"keyword": "United States"},
-        {"keyword": "California"},
-        {"keyword": "San Luis Obispo County"},
-        {"keyword": "North Pacific Ocean"},
         {"keyword": "Animalia"},
         {"keyword": "Cnidaria"},
         {"keyword": "Anthozoa"},
@@ -59,6 +55,6 @@
         "access_constraints": [],
         "description": "preservation: Liq N, no buffer",
         "curation_location": "USNM http://grbio.org/cool/142r-0w94",
-        "responsibility": ["metadata publisher: info@geosamples.org; url: https://www.geosamples.org/contact/"]
+        "responsibility": ["metadata publisher: not specified"]
     }
 }

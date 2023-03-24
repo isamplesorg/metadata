@@ -1,13 +1,12 @@
 {
-    "@schema": "iSamplesSchemaBasic.json",
+    "@schema": "iSamplesSchemaBasic1.0.json",
     "@id": "",
     "label": "Clavelina huntsmani LACM:DISCO:16924",
     "sample_identifier": "LACM:DISCO:16924",
     "description": "",
-    "has_context_category": ["Marine biome"],
+    "has_context_category": ["Marine environment"],
     "has_material_category": ["Organic material"],
     "has_specimen_category": ["Whole organism"],
-    "informal_classification": [""],
     "keywords": [
         {
             "keyword": "San Pedro Bay",

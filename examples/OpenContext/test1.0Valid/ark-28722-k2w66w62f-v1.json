@@ -1,22 +1,19 @@
 {
-    "@schema": "iSamplesSchemaBasic.json",
+    "@schema": "iSamplesSchemaBasic1.0.json",
     "@id": "metadata/28722/k2w66w62f",
-    "label": "Obj 1278000007",
+    "label": "Object 1278000007",
     "sample_identifier": "ark:/28722/k2w66w62f",
     "description": "'early bce/ce': -6700.0 | 'late bce/ce': -6700.0 | 'updated': 2021-06-27T23:41:53Z [NOTE-- enhanced with information from https://opencontext.org/subjects/0bdb7906-a57b-4073-b329-1705cf49765c.json smr 2023-03-21]",
     "has_context_category": ["Site of past human activities"],
     "has_material_category": ["Rock"],
     "has_specimen_category": ["Artifact"],
-    "informal_classification": [],
     "keywords": [
         {"keyword": "The Eastern Korinthia Archaeological Survey"},
-        {"keyword": "Greece"},
         {
             "keyword": "Corinthia",
             "keyword_uri": "http://vocab.getty.edu/page/tgn/7002741",
             "scheme_name": "Getty Thesaurus of Geographic Names"
         },
-        {"keyword": "EKAS Region"},
         {
             "keyword": "Ayios Kosmas",
             "keyword_uri": "https://opencontext.org/subjects/4282cce3-1779-4036-9309-b88c906db8b5",
@@ -31,6 +28,12 @@
             "keyword": "Chert, flake",
             "keyword_uri": "http://vocab.getty.edu/page/aat/300011141",
             "scheme_name": "Materials facet: Getty Art & Architecture Thesaurus"
+        },
+        {
+            "keyword": "Chert",
+            "keyword_uri": "https://w3id.org/isample/vocabulary/opencontext/material/0.1/chert",
+            "scheme_name": "iSamples OpenContext Materials extension draft",
+            "scheme_uri": "https://w3id.org/isample/vocabulary/opencontext/material/0.1/opencontextmaterial"
         }
     ],
     "produced_by": {
@@ -38,16 +41,16 @@
         "description": "",
         "has_feature_of_interest": "",
         "responsibility": [
-            "'Creator':David K. Pettegrew",
-            "'Creator':Timothy E Gregory",
-            "'Creator':Daniel J Pullen",
-            "'Creator':Richard Rothaus",
-            "'Creator':Thomas F Tartaron"
+            "Creator:David K. Pettegrew",
+            "Creator:Timothy E Gregory",
+            "Creator:Daniel J Pullen",
+            "Creator:Richard Rothaus",
+            "Creator:Thomas F Tartaron"
         ],
         "result_time": "2021-06-04",
         "samplingSite": {
             "description": "",
-            "label": "Object",
+            "label": "DU 1278",
             "location": {
                 "elevation": "",
                 "latitude": 37.90846,

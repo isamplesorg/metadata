@@ -1,13 +1,12 @@
 {
-    "@schema": "iSamplesSchemaBasic0.2.1.json",
+    "@schema": "iSamplesSchemaBasic1.0.json",
     "@id": "metadata:21547/CgZ2PEER_7055",
     "label": "Polychaeta PEER_7055",
     "sample_identifier": "http://n2t.net/ark:/21547/R2INDO119289",
     "description": "",
-    "has_context_category": ["Marine biome"],
+    "has_context_category": ["Marine environment"],
     "has_material_category": ["Biogenic material"],
     "has_specimen_category": ["Organism product"],
-    "informal_classification": [""],
     "keywords": [
         {
             "keyword": "Lombok",
@@ -61,13 +60,5 @@
         "access_constraints": [],
         "curation_location": "",
         "responsibility": ["curator:Indonesian Biodiversity Research Center"]
-    },
-    "relatedResource": [
-        {
-            "label": "",
-            "description": "",
-            "target": "",
-            "relationshipType": ""
-        }
-    ]
+    }
 }

@@ -1,5 +1,5 @@
 {
-    "$schema": "iSamplesSchemaBasic.json",
+    "$schema": "iSamplesSchemaBasic1.0.json",
     "@id": "https://data.isamples.org/digitalsample/igsn/ODP02Q1IZ",
     "label": "Sample 178-1098B-1H-3 (26-27 cm.)",
     "sample_identifier": "IGSN:ODP02Q1IZ",

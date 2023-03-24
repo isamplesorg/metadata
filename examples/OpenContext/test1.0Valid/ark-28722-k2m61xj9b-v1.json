@@ -1,5 +1,5 @@
 {
-    "@schema": "iSamplesSchemaBasic.json",
+    "@schema": "iSamplesSchemaBasic1.0.json",
     "@id": "metadata/28722/k2m61xj9b",
     "label": "Bone 6874",
     "sample_identifier": "ark:/28722/k2m61xj9b",
@@ -38,23 +38,22 @@
             "keyword": "Eschen-Lutzengüetle",
             "keyword_uri": "https://opencontext.org/subjects/d141b994-72e6-4b1d-b60f-e961abb54d8e",
             "scheme_name": "oc-gen:cat-site"
-        },
-        {"keyword": "Eschen-Lutzengüetle SR"}
+        }
     ],
     "produced_by": {
         "label": "Neolithic and Bronze Age cattle data from Switzerland",
         "description": "",
         "has_feature_of_interest": "",
         "responsibility": [
-            "'Creator':Elizabeth Wright",
-            "'Creator':Margherita Schäfer",
-            "'Creator':Barbara Stopp",
-            "'Creator':Elisabeth Marti-Grädel",
-            "'Creator':Francesca Ginella",
-            "'Creator':Manar Kerdy",
-            "'Creator':Miki Bopp-Ito",
-            "'Creator':Sabine Deschler-Erb",
-            "'Creator':Jörg Schibler"
+            "Creator:Elizabeth Wright",
+            "Creator:Margherita Schäfer",
+            "Creator:Barbara Stopp",
+            "Creator:Elisabeth Marti-Grädel",
+            "Creator:Francesca Ginella",
+            "Creator:Manar Kerdy",
+            "Creator:Miki Bopp-Ito",
+            "Creator:Sabine Deschler-Erb",
+            "Creator:Jörg Schibler"
         ],
         "result_time": "2021-02-10",
         "samplingSite": {

@@ -1,5 +1,5 @@
 {
-    "$schema": "iSamplesSchemaBasic.json",
+    "$schema": "iSamplesSchemaBasic1.0.json",
     "@id": "https://data.isamples.org/digitalsample/igsn/IEEJR000M",
     "label": "16ER6F3",
     "sample_identifier": "igsn:IEEJR000M",

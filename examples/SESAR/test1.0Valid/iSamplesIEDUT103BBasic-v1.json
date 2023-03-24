@@ -1,5 +1,5 @@
 {
-    "@schema": "iSamplesSchemaBasic.json",
+    "@schema": "iSamplesSchemaBasic1.0.json",
     "@id": "https://data.geosamples.org/sample/igsn/IEDUT103B",
     "label": "JAM42",
     "sample_identifier": "IGSN:IEDUT103B",

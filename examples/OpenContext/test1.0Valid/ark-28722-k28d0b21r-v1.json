@@ -1,7 +1,7 @@
 {
-    "@schema": "iSamplesSchemaBasic.json",
+    "@schema": "iSamplesSchemaBasic1.0.json",
     "@id": "metadata/28722/k28d0b21r",
-    "label": "8110546",
+    "label": "Pottery 8110546",
     "sample_identifier": "ark:/28722/k28d0b21r",
     "description": "'early bce/ce': -2850.0 | 'late bce/ce': -2550.0 | 'updated': 2021-06-28T02:11:48Z",
     "has_context_category": ["Site of past human activities"],
@@ -13,7 +13,6 @@
             "keyword_uri": "http://vocab.getty.edu/page/aat/300019276",
             "scheme_name": "Styles and Periods Facet: Getty Art & Architecture Thesaurus"
         },
-        {"keyword": "Jordan"},
         {
             "keyword": "Numayra",
             "keyword_uri": "https://opencontext.org/subjects/efe8f73b-2dc7-45e4-8ee9-04b8c8b17ec8",
@@ -24,7 +23,6 @@
             "keyword_uri": "https://opencontext.org/subjects/503a2830-3c9c-42e5-affa-723b4f559b57",
             "scheme_name": "oc-gen:cat-square"
         },
-        {"keyword": "Locus 22"},
         {
             "keyword": "pottery",
             "keyword_uri": "http://vocab.getty.edu/page/aat/300010666",
@@ -36,14 +34,14 @@
         "description": "",
         "has_feature_of_interest": "",
         "responsibility": [
-            "'Creator':Meredith S. Chesson",
-            "'Creator':R. Thomas Schaub",
-            "'Creator':Walter E. Rast"
+            "Creator:Meredith S. Chesson",
+            "Creator:R. Thomas Schaub",
+            "Creator:Walter E. Rast"
         ],
         "result_time": "2019-10-05",
         "samplingSite": {
             "description": "",
-            "label": "Pottery",
+            "label": "Locus 22",
             "location": {
                 "elevation": "",
                 "latitude": 31.13142,
