@@ -24,116 +24,154 @@ ocmat:amber
   skos:broader mat:biogenicnonorganicmaterial ;
   skos:prefLabel "amber" ;
 .
+
+ocmat:anthropogenicorganicmaterial
+  rdf:type skos:Concept ;
+  rdfs:label "Anthropogenic organic material" ;
+  skos:broader mat:organicmaterial ;
+  skos:broader mat:otheranthropogenicmaterial ;
+  skos:definition "Organic material manufactured by humans" @en   ;
+  skos:prefLabel "Anthropogenic organic material" @en   ;
+.
+
 ocmat:basalt
   rdf:type skos:Concept ;
   skos:broader mat:rock ;
+  rdfs:label "Basalt" @en;
+  skos:prefLabel "Basalt" @en;
 .
 ocmat:bone
   rdf:type skos:Concept ;
-  rdfs:label "bone" ;
+  rdfs:label "bone" @en ;
   skos:broader mat:biogenicnonorganicmaterial ;
-  skos:prefLabel "bone" ;
+  skos:prefLabel "bone" @en ;
 .
 ocmat:brass
   rdf:type skos:Concept ;
-  rdfs:label "brass" ;
+  rdfs:label "brass" @en ;
   skos:broader mat:anthropogenicmetal ;
-  skos:definition "alloy of copper (Cu) and zinc (Zn)" ;
-  skos:prefLabel "brass" ;
+  skos:definition "alloy of copper (Cu) and zinc (Zn)" @en ;
+  skos:prefLabel "brass" @en ;
 .
 ocmat:brickclay
   rdf:type skos:Concept ;
-  rdfs:label "brick clay" ;
+  rdfs:label "Brick clay"@en ;
   skos:broader ocmat:ceramicclay ;
-  skos:definition "dried or low-fired clay-rich material used to make blocks for construction" ;
-  skos:prefLabel "brick clay" ;
+  skos:definition "dried or low-fired clay-rich material used to make blocks for construction"@en ;
+  skos:prefLabel "Brick clay"@en ;
 .
 ocmat:bronze
   rdf:type skos:Concept ;
-  rdfs:label "bronze" ;
+  rdfs:label "bronze" @en ;
   skos:broader mat:anthropogenicmetal ;
-  skos:definition "alloy consisting primarily of copper with subordinate tin;  often includes other metals" ;
-  skos:prefLabel "bronze" ;
+  skos:definition "alloy consisting primarily of copper with subordinate tin;  often includes other metals" @en ;
+  skos:prefLabel "bronze" @en ;
 .
+
 ocmat:bucchero
   rdf:type skos:Concept ;
-  rdfs:label "bucchero" ;
+  rdfs:label "bucchero" @en ;
   skos:broader ocmat:ceramicclay ;
-  skos:definition "ceramic with black fabric and glossy, black surface achieved through reduction firing" ;
-  skos:prefLabel "bucchero" ;
+  skos:definition "ceramic with black fabric and glossy, black surface achieved through reduction firing" @en ;
+  skos:prefLabel "bucchero" @en ;
 .
 ocmat:ceramicclay
   rdf:type skos:Concept ;
-  rdfs:label "ceramic clay" ;
   skos:broader mat:otheranthropogenicmaterial ;
-  skos:definition " any of the various hard, brittle, heat-resistant and corrosion-resistant materials made by shaping and then firing an inorganic, nonmetallic material, such as clay, at a high temperature.  Common examples are earthenware, porcelain, and brick. (https://en.wikipedia.org/wiki/Ceramic)" ;
-  skos:prefLabel "ceramic clay" ;
+  rdf:type skos:Concept ;
+  rdfs:label "Ceramic clay"@en ;
+  skos:broader mat:otheranthropogenicmaterial ;
+  skos:definition "Any of the various hard, brittle, heat-resistant and corrosion-resistant materials made by shaping and then firing an inorganic, nonmetallic material, such as clay, at a high temperature.  Common examples are earthenware, porcelain, and brick. (https://en.wikipedia.org/wiki/Ceramic)"@en ;
+  skos:prefLabel "Ceramic clay"@en ;
 .
 ocmat:charcoal
   rdf:type skos:Concept ;
-  rdfs:label "charcoal" ;
+  rdfs:label "charcoal" @en ;
   skos:broader mat:biogenicnonorganicmaterial ;
-  skos:prefLabel "charcoal" ;
+  skos:prefLabel "charcoal" @en ;
 .
 ocmat:chert
   rdf:type skos:Concept ;
   skos:broader mat:rock ;
+  rdfs:label "Chert" @en;
+  skos:prefLabel "Chert" @en;
 .
 ocmat:cinder
   rdf:type skos:Concept ;
   skos:broader mat:rock ;
+  skos:broader mat:particulate ;
+  skos:definition "The incombustible residue of something burnt.@en" ;
+  skos:exactMatch <https://vocab.getty.edu/aat/300011788> ;
+  rdfs:label "Cinder" @en;
+  skos:prefLabel "Cinder" @en;
+
 .
 ocmat:coal
   rdf:type skos:Concept ;
   skos:broader mat:biogenicnonorganicmaterial ;
   skos:broader mat:rock ;
+    rdfs:label "Coal" @en;
+  skos:prefLabel "coal" @en;
+
 .
 ocmat:copper
   rdf:type skos:Concept ;
-  rdfs:label "copper" ;
+  rdfs:label "Copper" @en ;
   skos:broader mat:anthropogenicmetal ;
-  skos:definition "copper metal, includes copper-rich alloys not identifiable as brass or bronze." ;
-  skos:prefLabel "copper" ;
+  skos:definition "copper metal, includes copper-rich alloys not identifiable as brass or bronze." @en ;
+  skos:prefLabel "Copper" @en ;
 .
 ocmat:dolomite
   rdf:type skos:Concept ;
-  rdfs:label "dolomite" ;
-  skos:altLabel "dolostone" ;
+  rdfs:label "dolomite" @en ;
+  skos:altLabel "dolostone" @en ;
   skos:broader mat:rock ;
-  skos:prefLabel "dolomite" ;
+  skos:prefLabel "dolomite" @en ;
 .
+
 ocmat:faience
   rdf:type skos:Concept ;
-  rdfs:label "faience" ;
+  rdfs:label "faience" @en ;
   skos:broader ocmat:ceramicclay ;
-  skos:definition "fine white-glazed ceramic (tin oxide based glaze)" ;
-  skos:prefLabel "faience" ;
+  skos:definition "fine white-glazed ceramic (tin oxide based glaze)" @en ;
+  skos:prefLabel "faience" @en ;
+
+ocmat:fibermaterial
+  rdf:type skos:Concept ;
+  rdfs:label "Fiber material"@en ;
+  skos:broader mat:otheranthropogenicmaterial ;
+  skos:definition "material composed of fibers twisted or woved togther. Fibers might be plant material or Anthropogenic Organic material."@en ;
+  skos:example "cloth, thread, rope, string are composed of fiber material."@en ;
+  skos:note "samples composed of fiber material might also be asserted to be composed of 'Plant fiber' or Anthropogenic organic material' if the nature of the fiber is known."@en ;
+  skos:prefLabel "Fiber material"@en ;
+
 .
 ocmat:flint
   rdf:type skos:Concept ;
-  rdfs:label "flint" ;
-  skos:broader mat:rock ;
-  skos:prefLabel "flint" ;
+  rdfs:label "flint" @en ;
+  skos:broader ocmat:chert ;
+  skos:prefLabel "flint" @en ;
 .
 ocmat:gabbro
   rdf:type skos:Concept ;
-  rdfs:label "gabbro" ;
+  rdfs:label "gabbro" @en ;
   skos:broader mat:rock ;
-  skos:prefLabel "gabbro" ;
+  skos:prefLabel "gabbro" @en ;
 .
 ocmat:glass
   rdf:type skos:Concept ;
-  rdfs:label "glass" ;
   skos:broader mat:otheranthropogenicmaterial ;
-  skos:definition "" ;
-  skos:prefLabel "glass" ;
+  rdfs:label "Glass"@en ;
+  skos:broader mat:otheranthropogenicmaterial ;
+  skos:definition "A non-crystalline, often transparent amorphous solid, most often formed by rapid cooling (quenching) of the molten silca rich material. (https://en.wikipedia.org/wiki/Glass)"@en ;
+  skos:prefLabel "Glass"@en ;
 .
 ocmat:gold
   rdf:type skos:Concept ;
-  rdfs:label "gold" ;
+  rdfs:label "Gold" ;
   skos:broader mat:anthropogenicmetal ;
-  skos:definition "" ;
-  skos:prefLabel "gold" ;
+  skos:definition "a chemical element with atomic number 79; a dense, soft metal that is easily malleable and ductile. It has a melting point of 1064 degrees Celsius and a boiling point of 2,807 degrees Celsius. (ChatGPT)" @en ;
+  skos:prefLabel "Gold" ;
 .
 ocmat:greywacke
   rdf:type skos:Concept ;
@@ -144,28 +182,28 @@ ocmat:greywacke
 .
 ocmat:hair
   rdf:type skos:Concept ;
-  rdfs:label "hair" ;
+  rdfs:label "Hair" @en;
   skos:broader ocmat:organicanimalproduct ;
-  skos:prefLabel "hair" ;
+  skos:prefLabel "Hair" @en ;
 .
 ocmat:hematite
   rdf:type skos:Concept ;
-  rdfs:label "hematite" ;
+  rdfs:label "Hematite" @en  ;
   skos:broader mat:mineral ;
-  skos:prefLabel "hematite" ;
+  skos:prefLabel "Hematite" @en  ;
 .
 ocmat:iron
   rdf:type skos:Concept ;
-  rdfs:label "iron" ;
+  rdfs:label "iron" @en  ;
   skos:broader mat:anthropogenicmetal ;
-  skos:definition "Iron or iron-rich alloy" ;
-  skos:prefLabel "iron" ;
+  skos:definition "Iron or iron-rich alloy" @en  ;
+  skos:prefLabel "iron" @en  ;
 .
 ocmat:kaolin
   rdf:type skos:Concept ;
-  rdfs:label "kaolin" ;
+  rdfs:label "kaolin" @en  ;
   skos:broader mat:mineral ;
-  skos:prefLabel "kaolin" ;
+  skos:prefLabel "kaolin" @en  ;
 .
 ocmat:lead
   rdf:type skos:Concept ;
@@ -176,15 +214,15 @@ ocmat:lead
 .
 ocmat:leather
   rdf:type skos:Concept ;
-  rdfs:label "leather" ;
+  rdfs:label "Leather" @en  ;
   skos:broader ocmat:organicanimalproduct ;
-  skos:prefLabel "leather" ;
+  skos:prefLabel "Leather" @en  ;
 .
 ocmat:limestone
   rdf:type skos:Concept ;
-  rdfs:label "limestone" ;
+  rdfs:label "Limestone" @en  ;
   skos:broader mat:rock ;
-  skos:prefLabel "limestone" ;
+  skos:prefLabel "limestone" @en  ;
 .
 ocmat:marble
   rdf:type skos:Concept ;
@@ -204,18 +242,32 @@ ocmat:obsidian
   skos:broader mat:rock ;
   skos:prefLabel "obsidian" ;
 .
+
 ocmat:organicanimalproduct
   rdf:type skos:Concept ;
   rdfs:label "Organic animal product" ;
   skos:broader mat:organicmaterial ;
   skos:prefLabel "Organic animal product" ;
 .
+
+ocmat:organicanimalmaterial
+  rdf:type skos:Concept ;
+  rdfs:label "Organic animal material"@en ;
+  skos:broader mat:organicmaterial ;
+  skos:prefLabel "Organic animal material"@en ;
+.
+ocmat:organicplantmaterial
+  rdf:type skos:Concept ;
+  rdfs:label "Organic plant material"@en ;
+  skos:broader mat:organicmaterial ;
+  skos:prefLabel "Organic plant material"@en ;
+.
 ocmat:paper
   rdf:type skos:Concept ;
-  rdfs:label "paper" ;
+  rdfs:label "Paper"@en ;
   skos:broader mat:otheranthropogenicmaterial ;
   skos:definition "" ;
-  skos:prefLabel "paper" ;
+  skos:prefLabel "Paper"@en ;
 .
 ocmat:pewter
   rdf:type skos:Concept ;
@@ -226,30 +278,50 @@ ocmat:pewter
 .
 ocmat:plantfiber
   rdf:type skos:Concept ;
-  rdfs:label "plantfiber" ;
+
+  rdfs:label "Plant fiber" @en  ;
   skos:broader ocmat:plantmaterial ;
   skos:example "cotton, linen, yucca fiber" ;
-  skos:prefLabel "plantfiber" ;
+  skos:prefLabel "Plant fiber" @en  ;
 .
 ocmat:plantmaterial
   rdf:type skos:Concept ;
-  rdfs:label "Plant Material" ;
+  rdfs:label "Plant Material" @en  ;
   skos:broader mat:organicmaterial ;
-  skos:prefLabel "Plant Material" ;
+  skos:prefLabel "Plant Material" @en  ;
 .
 ocmat:plaster
   rdf:type skos:Concept ;
-  rdfs:label "plaster" ;
+  rdfs:label "plaster" @en  ;
   skos:broader mat:otheranthropogenicmaterial ;
-  skos:definition "plaster or mortar" ;
-  skos:prefLabel "plaster" ;
+  skos:definition "plaster or mortar" @en  ;
+  skos:prefLabel "plaster" @en  ;
+.
+
+ocmat:plasterormortar
+  rdf:type skos:Concept ;
+  rdfs:label "Plaster or Mortar"@en ;
+  skos:broader mat:otheranthropogenicmaterial ;
+  skos:definition "Plaster is a pasty material that hardens on drying and is used for coating walls, ceilings, and partitions. Mortar is a similar pasty material used for cementing bricks or block together or coating walls in building construction."@en ;
+  skos:prefLabel "Plaster or Mortar"@en ;
+.
+ocmat:plastic
+  rdf:type skos:Concept ;
+  rdfs:label "Plastic (material)" @en  ; 
+  rdfs:seeAlso "" ;
+  skos:broadMatch <https://vocab.getty.edu/aat/300014570> ;
+  skos:broader ocmat:anthropogenicorganicmaterial ;
+  skos:closeMatch <http://purl.obolibrary.org/obo/ENVO_06105101> ;
+  skos:definition "Synthetic or semi-synthetic material that uses organic polymers as a main ingredient."@en ;
+  skos:prefLabel "Plastic (material)" @en   ;
 .
 ocmat:porcelain
   rdf:type skos:Concept ;
-  rdfs:label "porcelain" ;
+  rdfs:label "Porcelain"@en ;
   skos:broader ocmat:ceramicclay ;
-  skos:definition "kaolin rich high-fired ceramic" ;
-  skos:prefLabel "porcelain" ;
+  skos:definition "Kaolin rich high-fired ceramic; In China, it includes any such ware that is highly fired enough to produce a ringing sound when struck. In Europe, it is limited to hard-fired ceramic that is translucent. (https://vocab.getty.edu/aat/scopeNote/45436)"@en ;
+  skos:exactMatch <https://vocab.getty.edu/aat/300010662> ;
+  skos:prefLabel "Porcelain"@en ;
 .
 ocmat:pumice
   rdf:type skos:Concept ;
@@ -265,46 +337,48 @@ ocmat:quartz
 .
 ocmat:rubber
   rdf:type skos:Concept ;
-  rdfs:label "rubber" ;
   skos:broader mat:otheranthropogenicmaterial ;
-  skos:definition "" ;
-  skos:prefLabel "rubber" ;
+  rdfs:label "Rubber"@en ;
+  skos:definition "An elastomer, synthesized from petroleum byproducts or from latex harvested from the rubber tree (Hevea brasiliensis)."@en ;
+  skos:prefLabel "Rubber"@en ;
+
 .
 ocmat:shell
   rdf:type skos:Concept ;
-  rdfs:label "shell" ;
+  rdfs:label "Shell" @en   ;
   skos:broader mat:biogenicnonorganicmaterial ;
-  skos:prefLabel "shell" ;
+  skos:prefLabel "Shell" @en   ;
 .
 ocmat:slate
   rdf:type skos:Concept ;
-  rdfs:label "slate" ;
+  rdfs:label "Slate" @en   ;
   skos:broader mat:rock ;
-  skos:prefLabel "slate" ;
+  skos:prefLabel "Slate" @en   ;
 .
 ocmat:terracotta
   rdf:type skos:Concept ;
-  rdfs:label "terracotta" ;
+  rdfs:label "Terracotta"@en ;
   skos:broader ocmat:ceramicclay ;
-  skos:definition "clay-based unglazed or glazed, porous ceramic" ;
-  skos:prefLabel "terracotta" ;
+  skos:definition "clay-based unglazed or glazed, porous ceramic"@en ;
+  skos:prefLabel "Terracotta"@en ;
 .
 ocmat:terrasigilata
   rdf:type skos:Concept ;
-  rdfs:label "Terra sigilata" ;
+  rdfs:label "Terra sigilata" @en   ;
   skos:broader ocmat:ceramicclay ;
-  skos:definition "Fine red Ancient Roman pottery with glossy surface slips " ;
-  skos:prefLabel "Terra sigilata" ;
+  skos:definition "Fine red Ancient Roman pottery with glossy surface slips" @en   ;
+  skos:prefLabel "Terra sigilata" @en   ;
 .
 ocmat:travertine
   rdf:type skos:Concept ;
-  rdfs:label "travertine" ;
+  rdfs:label "Travertine" @en   ;
   skos:broader mat:rock ;
-  skos:prefLabel "travertine" ;
+  skos:prefLabel "Travertine" @en   ;
 .
 ocmat:wood
   rdf:type skos:Concept ;
-  rdfs:label "wood" ;
   skos:broader ocmat:plantmaterial ;
-  skos:prefLabel "wood" ;
+  rdfs:label "Wood"@en ;
+  skos:broader ocmat:organicplantmaterial ;
+  skos:prefLabel "Wood"@en ;
 .

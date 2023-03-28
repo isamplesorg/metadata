@@ -1,0 +1,85 @@
+{% if schemaview.class_parents(element.name) and schemaview.class_children(element.name) %}
+`case 1`
+```{{ gen.mermaid_directive() }}
+%%{init: {'securityLevel': 'loose', 'theme':'neutral', 'themeVariables': { 'fontSize':'14px', 'fontFamily':'Roboto Mono'}}}%%
+classDiagram
+    class {{ gen.name(element) }}
+      {% for s in schemaview.class_parents(element.name)|sort(attribute='name') -%}
+        {{ gen.name(schemaview.get_element(s)) }} <|-- {{ gen.name(element) }}
+      {% endfor %}
+      {% for s in schemaview.class_induced_slots(element.name)|sort(attribute='name') -%}
+        {{ gen.name(element) }} : {{gen.name(s)}}
+      {% endfor %}
+
+      {% for s in schemaview.class_children(element.name)|sort(attribute='name') -%}
+        {{ gen.name(element) }} <|-- {{ gen.name(schemaview.get_element(s)) }}
+      {% endfor %}
+      {% for s in schemaview.class_induced_slots(element.name)|sort(attribute='name') -%}
+        {{ gen.name(element) }} : {{gen.name(s)}}
+      {% endfor %}
+```
+{% elif schemaview.class_parents(element.name) %}
+`case 2`
+```{{ gen.mermaid_directive() }}
+%%{init: {'securityLevel': 'loose', 'theme':'neutral', 'themeVariables': { 'fontSize':'14px', 'fontFamily':'Roboto Mono'}}}%%
+classDiagram
+    class {{ gen.name(element) }}
+      {% for s in schemaview.class_parents(element.name)|sort(attribute='name') -%}
+        {{ gen.name(schemaview.get_element(s)) }} <|-- {{ gen.name(element) }}
+      {% endfor %}
+      {% for s in schemaview.class_induced_slots(element.name)|sort(attribute='name') -%}
+          {% if s.name in gen.get_direct_slots(element) -%}
+            {{ gen.name(element) }} : {{ s.range }} {{ gen.name(s) }}
+          {% endif %}
+      {% endfor %}
+```
+{% elif schemaview.class_children(element.name)  %}
+`case 3`
+```{{ gen.mermaid_directive() }}
+%%{init: {'securityLevel': 'loose', 'theme':'neutral', 'themeVariables': { 'fontSize':'14px', 'fontFamily':'Roboto Mono'}}}%%
+classDiagram
+    direction RL
+    class {{ gen.name(element) }}
+      {% for s in schemaview.class_children(element.name)|sort(attribute='name') -%}
+        {{ gen.name(element) }} <|-- {{ gen.name(schemaview.get_element(s)) }}
+      {% endfor %}
+      {% for s in schemaview.class_induced_slots(element.name)|sort(attribute='name') -%}
+        {{ gen.name(element) }} : {{ s.range }} {{gen.name(s)}}
+      {% endfor %}
+    {% for s in schemaview.class_induced_slots(element.name)|sort(attribute='name') -%}
+      {% if s.range in gen.all_class_names() -%}
+      {{ s.range }} --o {{ gen.name(element) }} : {{gen.name(s)}}
+      click {{  s.range }} href "{{ s.range }}.html" "Documentation"
+      {%  endif %}
+    {% endfor %}
+    {% for usage in schemaview.usage_index().get(element.name) -%}
+      {% if usage.used_by != gen.name(element) %}
+      {% endif %}
+    {% endfor %}
+```
+{% else %}
+`case 4`
+```{{ gen.mermaid_directive() }}
+%%{init: {'securityLevel': 'loose', 'theme':'neutral', 'themeVariables': { 'fontSize':'14px', 'fontFamily':'Roboto Mono'}}}%%
+classDiagram
+    direction RL
+    class {{ gen.name(element) }} {
+      {% for s in schemaview.class_induced_slots(element.name)|sort(attribute='name') -%}
+        {{gen.name(s)}} : {{ s.range }}{% if s.multivalued %}[]{% endif %}
+      {% endfor %}
+    }
+    {% for s in schemaview.class_induced_slots(element.name)|sort(attribute='name') -%}
+      {% if s.range in gen.all_class_names() -%}
+      {{ s.range }} --o {{ gen.name(element) }} : {{gen.name(s)}}
+      click {{  s.range }} href "{{ s.range }}.html" "Documentation"
+      {%  endif %}
+    {% endfor %}
+    {% for usage in schemaview.usage_index().get(element.name) -%}
+      {% if usage.used_by != gen.name(element) -%}
+       {{ gen.name(element) }} --o {{ usage.used_by }} : {{ usage.slot }}
+       click {{ usage.used_by }} href "{{ usage.used_by }}.html" "Documentation"
+      {% endif %}
+    {% endfor %}
+```
+{% endif %}
+

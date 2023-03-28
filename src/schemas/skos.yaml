@@ -1,0 +1,82 @@
+id: https://resource.isamples.org/skos/
+name: SKOS
+title: iSamples SKOS proxy
+version: 20221127
+prefixes:
+  linkml: 'https://w3id.org/linkml/'
+  skos: http://www.w3.org/2004/02/skos/core#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+default_prefix: skos
+
+imports:
+  - linkml:types
+
+classes:
+  # A loose proxy for skos:Concept to provide a base for
+  # vocabulary concept definitions
+  SKOSConcept:
+    class_uri: skos:Concept
+    slots:
+      - altLabel
+      - broader
+      - closeMatch
+      - definition
+      - exactMatch
+      - inScheme
+      - note
+      - narrowMatch
+      - prefLabel
+      - relatedMatch
+      - scopeNote
+      - seeAlso
+
+  SKOSConceptScheme:
+    class_uri: skos:ConceptScheme
+    slots:
+      - concepts
+      - definition
+      - prefLabel
+
+
+slots:
+  altLabel:
+    range: string
+    slot_uri: skos:altLabel
+  broader:
+    range: SKOSConcept
+    slot_uri: skos:broader
+  closeMatch:
+    range: uriorcurie
+    slot_uri: skos:closeMatch
+  concepts:
+    domain: SKOSConceptScheme
+    range: SKOSConcept
+  definition:
+    range: string
+    slot_uri: skos:definition
+  exactMatch:
+    range: uriorcurie
+    slot_uri: skos:exactMatch
+  inScheme:
+    range: SKOSConceptScheme
+    slot_uri: skos:inScheme
+  narrowMatch:
+    range: uriorcurie
+    slot_uri: skos:narrowMatch
+  note:
+    range: string
+    slot_uri: skos:note
+  prefLabel:
+    range: string
+    slot_uri: skos:prefLabel
+  relatedMatch:
+    range: uriorcurie
+    slot_uri: skos:relatedMatch
+  scopeNote:
+    range: string
+    slot_uri: skos:scopeNote
+  seeAlso:
+    range: uriorcurie
+    slot_uri: rdfs:seeAlso
+

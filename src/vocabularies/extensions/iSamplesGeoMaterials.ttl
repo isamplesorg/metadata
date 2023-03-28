@@ -1,0 +1,43 @@
+# baseURI: https://w3id.org/isample/vocabulary/geomaterial/0.9/geomaterialsvocabulary
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: https://w3id.org/isample/vocabulary/material/0.9/materialsvocabulary
+# imports: https://w3id.org/isample/vocabulary/mingroup/0.9/mineralgroupvocabulary
+# imports: https://w3id.org/isample/vocabulary/rocksediment/0.9/rocksedimentvocabulary
+
+@prefix : <https://w3id.org/isample/vocabulary/geomaterial/0.9/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix gmat: <https://w3id.org/isample/vocabulary/geomaterial/0.9/> .
+@prefix mat: <https://w3id.org/isample/vocabulary/material/0.9/> .
+@prefix ming: <https://w3id.org/isample/vocabulary/mingroup/0.9/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rksd: <https://w3id.org/isample/vocabulary/rocksediment/0.9/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dct:created
+  rdf:type owl:AnnotationProperty ;
+.
+dct:license
+  rdf:type owl:AnnotationProperty ;
+.
+dct:modified
+  rdf:type owl:AnnotationProperty ;
+.
+gmat:geomaterialsvocabulary
+  rdf:type owl:NamedIndividual ;
+  rdf:type owl:Ontology ;
+  rdf:type skos:ConceptScheme ;
+  dct:created "2022-08-27"^^xsd:date ;
+  dct:creator <https://orcid.org/0000-0001-6041-5302> ;
+  dct:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
+  rdfs:label "iSamples Geologic Materials Vocabulary"@en ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports mat:materialsvocabulary ;
+  owl:imports ming:mineralgroupvocabulary ;
+  owl:imports rksd:rocksedimentvocabulary ;
+  skos:definition "Vocabulary imports base iSamples material types, and import mineralGroup extension"@en ;
+  skos:prefLabel "iSamples geolgoic Materials Vocabulary "@en ;
+.
