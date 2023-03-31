@@ -224,6 +224,7 @@ slots:
             relation target. Should be controlled vocabulary (ScopedName). for now
             start with string, 'derivedFrom'.
     sample_identifier:
+        identifier: true
         range: string
         domain: PhysicalSampleRecord
         description: URI that identifies the physical sample described by this record
