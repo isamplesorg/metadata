@@ -64,7 +64,7 @@
         "curation": {"$ref": "#/definitions/SpecimenCuration"},
         "registrant": {
             "description": "identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.",
-            "type": "string"
+            "$ref": "#/definitions/Agent"
         }
     },
     "required": [
@@ -72,6 +72,34 @@
         "sample_identifier"
     ],
     "definitions": {
+        "Agent": {
+            "title": "Agent",
+            "type": "object",
+            "additionalProperties": true,
+            "description": "object to represent a person who plays a role relative to sample collection or curation.",
+            "properties": {
+                "name": {
+                    "description": "string, name of a person. Format {}firstName MI lastName}.",
+                    "type": "string"
+                },
+                "affiliation": {
+                    "description": "Name of an organization that employes or sponsors a person for the role they play relative to sample collection or curation.",
+                    "type": "string"
+                },
+                "contact_information": {
+                    "description": "e-mail address, telephone number, mailing address, or web site through which an agent can be contacted. Something that should be stable and reliable.",
+                    "type": "string"
+                },
+                "identifier": {
+                    "description": "a string that identifies some resource. Expectation is that it is a URI that is resolvable to some useful represenation of the resource.",
+                    "type": "string"
+                },
+                "role": {
+                    "description": "term that specifies how a person is related to a sample curation or collection activity.",
+                    "type": "string"
+                }
+            }
+        },
         "GeospatialCoordLocation": {
             "title": "GeospatialCoordLocation",
             "type": "object",
@@ -157,7 +185,7 @@
                 },
                 "responsibility": {
                     "description": "String with person name and affiliation, or organization name, and their role relative to the parent element.",
-                    "items": {"type": "string"},
+                    "items": {"$ref": "#/definitions/Agent"},
                     "type": "array"
                 },
                 "result_time": {
@@ -228,7 +256,7 @@
                 },
                 "responsibility": {
                     "description": "String with person name and affiliation, or organization name, and their role relative to the parent element.",
-                    "items": {"type": "string"},
+                    "items": {"$ref": "#/definitions/Agent"},
                     "type": "array"
                 }
             }

@@ -53,6 +53,15 @@ classes:
             sample_identifier:
                 required: true
 
+    Agent:
+        description: object to represent a person who plays a role relative to sample collection or curation.
+        slots:
+          - name
+          - affiliation
+          - contact_information
+          - identifier
+          - role
+ 
     Keyword:
         description: a simple string (tag) useful for guiding discovery of the sample, or a scoped name that associates the keyword string with a scheme name,and optional scheme URI and value URI. The scoped name keywords can be used to categorize the sample using a formal vocabulary. This mechanism provides the hook to use extension vocabularies for domain specific concepts extending the context, material type and object type high-level vocabularies.
         slots:
@@ -117,11 +126,19 @@ slots:
         description: |
           Cultural, legal, or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.
         multivalued: true
+    affiliation:
+        range: string
+        domain: Agent
+        description: Name of an organization that employes or sponsors a person for the role they play relative to sample collection or curation.
     authorized_by:
         range: string
         domain: PhysicalSampleRecord
         description: a list of permits or other formal permission documents under which the sample was collected. Use to cite legal documents authorizing sample collection.
         multivalued: true
+    contact_information:
+        range: string
+        domain: Agent
+        description: e-mail address, telephone number, mailing address, or web site through which an agent can be contacted. Something that should be stable and reliable.
     curation:
         range: SpecimenCuration
     curation_location:
@@ -147,6 +164,10 @@ slots:
         description: Free text classification terms, not from a controlled vocabulary;
             generally terms applied by collector.
         multivalued: true
+    identifier:
+        range: uriorcurie
+        description: a string that identifies some resource. Expectation is that it is a URI that is resolvable to some useful represenation of the resource.
+        
     has_context_category:
         # range is an instance of at least one skos:Concept
         # with skos:inScheme sf:sampledfeaturevocabulary ;
@@ -216,6 +237,11 @@ slots:
         description: geopatial location of site; required default is WGS84 latitude,
             longitude in decimal degrees. Elevation as a string with number, unit
             of measure, and datum.
+    name:
+        range: string
+        domain: Agent
+        description: string, name of a person. Format {}firstName MI lastName}.
+
     place_name:
         range: string
         domain: SamplingSite
@@ -227,7 +253,7 @@ slots:
         description: object that documents the sampling event--who, where, when the
             specimen was obtained
     registrant:
-        range: string
+        range: Agent
         domain: PhysicalSampleRecord
         description: identification of the agent that registered the sample, with
             contact information. Should include person name and affiliation, or position
@@ -243,6 +269,10 @@ slots:
         description: term to identify realationship between host sample and the sample
             relation target. Should be controlled vocabulary (ScopedName). for now
             start with string, 'derivedFrom'.
+    role:
+        range: string
+        domain: Agent
+        description: term that specifies how a person is related to a sample curation or collection activity.
     sample_identifier:
         range: string
         domain: PhysicalSampleRecord
@@ -254,7 +284,6 @@ slots:
         description: term to specify why a sample was collection.
     scheme_name:
         range: string
-        domain: Keyword
         description: string label for the concept scheme or vocabulary within which the keyword concept is defined. The scheme name can be used to scope keyword to particular categories, e.g. 'CGI rock classification', 'GCMD keywords', 'Getty AAT'
         multivalued: false
     scheme_uri:
@@ -267,9 +296,8 @@ slots:
         description: identifier for the target resource in the relationship. Start
             with string, should be Identifier object.
     responsibility:
-        range: string
-        description: String with person name and affiliation, or organization name,
-            and their role relative to the parent element.
+        range: Agent
+        description: Agent object includes person name, person identifier, affiliation, or organization name, their role relative to the parent element.
         multivalued: true
     result_time:
         range: date
