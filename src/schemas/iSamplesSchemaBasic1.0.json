@@ -18,6 +18,12 @@
             "description": "free text description of the physical sample, and any related information. Include as much detail as will be useful for users to find the sample and understand its context.",
             "type": "string"
         },
+        "alternate_identifiers": {
+            "description": "Top level context, based on the kind of feature sampled. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property. At least one value a skos:Concept from the iSamples sampledfeaturevocabulary.",
+            "items": {"$ref": "#/definitions/IdentifierObject"},
+            "type": "array",
+            "minItems": 0
+        }, 
         "produced_by": {
             "$ref": "#/definitions/SamplingEvent",
             "description": "object that documents the sampling event--who, where, when the specimen was obtained"

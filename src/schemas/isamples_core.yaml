@@ -35,6 +35,7 @@ classes:
           - sample_identifier
           - label
           - description
+          - alternate_identifiers
           - produced_by
           - sampling_purpose
           - has_context_category
@@ -120,6 +121,11 @@ classes:
 
 
 slots:
+    alternate_identifiers:
+        range: IdentifierObject
+        description: |
+          one or more identifiers used to identify the sample in other contexts. In this context, the identifier property and scheme_name should be required.
+        multivalued: true
     access_constraints:
         range: string
         description: |
