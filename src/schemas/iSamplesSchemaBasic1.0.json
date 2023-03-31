@@ -27,19 +27,22 @@
             "type": "string"
         },
         "has_context_category": {
-            "description": "Top level context, based on the kind of feature sampled. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property. At least one value is the skos:prefLabel for a skos:Concept from the iSamples sampledfeaturevocabulary. Specific identification of the sampled feature of interest is done through the SamplingEvent/has_feature_of_interest property.",
-            "items": {"type": "string"},
-            "type": "array"
+            "description": "Top level context, based on the kind of feature sampled. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property. At least one value a skos:Concept from the iSamples sampledfeaturevocabulary.",
+            "items": {"$ref": "#/definitions/IdentifierObject"},
+            "type": "array",
+            "minItems": 1
         },
         "has_material_category": {
-            "description": "The kind of material that constitutes the sample.  At least one value is the skos:prefLabel for a skos:Concept from the iSamples MaterialTypeVocabulary.",
-            "items": {"type": "string"},
-            "type": "array"
+            "description": "The kind of material that constitutes the sample.  At least one value is a skos:Concept from the iSamples MaterialTypeVocabulary.",
+            "items": {"$ref": "#/definitions/IdentifierObject"},
+            "type": "array",
+            "minItems": 1
         },
         "has_specimen_category": {
-            "description": "The kind of object the specimen is. At least one valueis the skos:prefLabel for a skos:Concept from the iSamples SpecimenTypeVocabulary.",
-            "items": {"type": "string"},
-            "type": "array"
+            "description": "The kind of object the specimen is. At least one value is a skos:Concept from the iSamples SpecimenTypeVocabulary.",
+            "items": {"$ref": "#/definitions/IdentifierObject"},
+            "type": "array",
+            "minItems": 1
         },
         "informal_classification": {
             "description": "DEPRECATED. Use Keywords/keyword. Free text classification terms, not from a controlled vocabulary; generally terms applied by collector.",
@@ -111,6 +114,27 @@
                 },
                 "scheme_uri": {
                     "description": "Identifier for the concept scheme or vocabulary within which the keyword concept is defined.",
+                    "type": "string"
+                }
+            }
+        },
+        
+        "IdentifierObject": {
+            "title": "Identifier object",
+            "type": "object",
+            "description": "object to represent an identified concept; property values from vocabularies with resolvable identifiers for vocabulary terms. Eitehr a label or identifier is required, to allow for cases that a URI is not available.  Data validation process will need to be used for properties that require an identified term value (e.g. has_context_category, has_material_category, has_specimen_category).",
+            "properties": {
+                "label": {
+                    "description": "string label for the identified resource. ",
+                    "type": "string"
+                },
+                "identifier": {
+                    "description": "an identifier for the keyword concept",
+                    "type": "string",
+                    "format": "uri"
+                },
+                "scheme_name": {
+                    "description": "string label for the vocabulary or ontolgoy within which the identified resource is defined.",
                     "type": "string"
                 }
             }
