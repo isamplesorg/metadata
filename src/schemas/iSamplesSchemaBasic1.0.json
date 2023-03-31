@@ -143,6 +143,10 @@
             "additionalProperties": true,
             "description": "Information about the event resulting in the creation of the physical sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description.  If any special protocols were followed in the sampling procedure, they should be documented using the PhysicalSampleRecord/complies_with property.",
             "properties": {
+                "identifier": {
+                    "description": "A string that identifies the samplingEvent. Use to gather all samples from a single sampling event.",
+                    "type": "string"
+                },
                 "label": {
                     "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
                     "type": "string"

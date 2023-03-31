@@ -72,6 +72,7 @@ classes:
     SamplingEvent:
         description: Information about the event resulting in the creation of the physical sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description. If any special protocols were followed in the sampling procedure, they should be documented using the PhysicalSampleRecord/complies_with property. 
         slots:
+          - identifier
           - label
           - description
           - has_feature_of_interest
@@ -141,6 +142,9 @@ slots:
         domain: GeospatialCoordLocation
         description: Should be a number and Unit of measure, and the datum. e.g. 401
             m above mean sea level.
+    identifier:
+        range: uriorcurie
+        description: a string that identifies a resource.
     informal_classification:
         range: string
         domain: PhysicalSampleRecord
