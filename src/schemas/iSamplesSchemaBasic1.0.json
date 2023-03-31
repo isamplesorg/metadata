@@ -1,74 +1,69 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "http://resource.isamples.org/schema/0.2.1",
+    "$id": "http://resource.isamples.org/schema/1.0",
     "type": "object",
     "title": "PhysicalSampleRecord",
     "additionalProperties": true,
-    "description": "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web. version: 20221007; metamodel_version 1.7.0",
+    "description": "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web. version: 20230317; metamodel_version 1.7.0",
     "properties": {
-        "authorized_by": {
-            "description": "a list of permits or other formal permission documents under which the sample was collected. Use to cite legal documents authorizing sample collection.",
-            "items": {"type": "string"},
-            "type": "array"
-        },
-        "complies_with": {
-            "description": "a list of policies, recommendations, best practices (etc.) that have been followed in the collection and curation of the sample.",
-            "items": {"type": "string"},
-            "type": "array"
-        },
-        "curation": {"$ref": "#/definitions/SpecimenCuration"},
-        "description": {
-            "description": "Free text description of the subject of a triple.",
+        "sample_identifier": {
+            "description": "URI that identifies the physical sample described by this record",
             "type": "string"
-        },
-        "has_context_category": {
-            "description": "Top level context, based on the kind of feature sampled. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property. At least one value is an instance of skos:Concept from the iSamples sampledfeaturevocabulary; extension vocabularies can be used for more precise categorization.",
-            "items": {"type": "string"},
-            "type": "array"
-        },
-        "has_material_category": {
-            "description": "The kind of material that constitutes the sample.  At least one value is an instance of skos:Concept from the iSamples MaterialTypeVocabulary; extension vocabularies can be used for more precise categorization.",
-            "items": {"type": "string"},
-            "type": "array"
-        },
-        "has_specimen_category": {
-            "description": "The kind of object the specimen is. At least one value is an instance of skos:Concept from the iSamples SpecimenTypeVocabulary; extension vocabularies can be used for more precise categorization.",
-            "items": {"type": "string"},
-            "type": "array"
-        },
-        "informal_classification": {
-            "description": "Free text classification terms, not from a controlled vocabulary; generally terms applied by collector.",
-            "items": {"type": "string"},
-            "type": "array"
-        },
-        "keywords": {
-            "description": "free text categorization of sample to support discovery",
-            "items": {"type": "string"},
-            "type": "array"
         },
         "label": {
             "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+            "type": "string"
+        },
+        "description": {
+            "description": "free text description of the physical sample, and any related information. Include as much detail as will be useful for users to find the sample and understand its context.",
             "type": "string"
         },
         "produced_by": {
             "$ref": "#/definitions/SamplingEvent",
             "description": "object that documents the sampling event--who, where, when the specimen was obtained"
         },
-        "registrant": {
-            "description": "identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.",
+        "sampling_purpose": {
+            "description": "term to specify why a sample was collection.",
             "type": "string"
+        },
+        "has_context_category": {
+            "description": "Top level context, based on the kind of feature sampled. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property. At least one value is the skos:prefLabel for a skos:Concept from the iSamples sampledfeaturevocabulary. Specific identification of the sampled feature of interest is done through the SamplingEvent/has_feature_of_interest property.",
+            "items": {"type": "string"},
+            "type": "array"
+        },
+        "has_material_category": {
+            "description": "The kind of material that constitutes the sample.  At least one value is the skos:prefLabel for a skos:Concept from the iSamples MaterialTypeVocabulary.",
+            "items": {"type": "string"},
+            "type": "array"
+        },
+        "has_specimen_category": {
+            "description": "The kind of object the specimen is. At least one valueis the skos:prefLabel for a skos:Concept from the iSamples SpecimenTypeVocabulary.",
+            "items": {"type": "string"},
+            "type": "array"
+        },
+        "informal_classification": {
+            "description": "DEPRECATED. Use Keywords/keyword. Free text classification terms, not from a controlled vocabulary; generally terms applied by collector.",
+            "items": {"type": "string"},
+            "type": "array"
+        },
+        "keywords": {
+            "description": "free text categorization of sample to support discovery",
+            "items": {"$ref": "#/definitions/Keyword"},
+            "type": "array"
         },
         "related_resource": {
             "description": "link to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource.",
             "items": {"$ref": "#/definitions/SampleRelation"},
             "type": "array"
         },
-        "sample_identifier": {
-            "description": "URI that identifies the physical sample described by this record",
-            "type": "string"
+        "complies_with": {
+            "description": "a list of policies, recommendations, best practices (etc.) that have been followed in the collection and curation of the sample. If any special protocols were followed in the sampling procedure, they should be documented here, with prefix 'Sampling protocol:'.",
+            "items": {"type": "string"},
+            "type": "array"
         },
-        "sampling_purpose": {
-            "description": "term to specify why a sample was collection.",
+        "curation": {"$ref": "#/definitions/SpecimenCuration"},
+        "registrant": {
+            "description": "identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.",
             "type": "string"
         }
     },
@@ -94,6 +89,29 @@
                 "longitude": {
                     "description": "angular coordinate measured positive eastward from the prime meridian.",
                     "type": "number"
+                }
+            }
+        },
+        "Keyword": {
+            "title": "Keyword",
+            "type": "object",
+            "description": "a simple string (tag) useful for guiding discovery of the sample, or a scoped name that associates the keyword string with a scheme name,and optional scheme URI and value URI. The scoped name keywords can be used to categorize the sample using a formal vocabulary. This mechanism provides the hook to use extension vocabularies for domain specific concepts extending the context, material type and object type high-level vocabularies.",
+            "properties": {
+                "keyword": {
+                    "description": "string label for a concept that characterizes the sample in some respect.",
+                    "type": "string"
+                },
+                "keyword_uri": {
+                    "description": "an identifier for the keyword concept",
+                    "type": "string"
+                },
+                "scheme_name": {
+                    "description": "string label for the concept scheme or vocabulary within which the keyword concept is defined. The scheme name can be used to scope keyword to particular categories, e.g. -CGI rock classification-, -GCMD keywords-, -Getty AAT- ",
+                    "type": "string"
+                },
+                "scheme_uri": {
+                    "description": "Identifier for the concept scheme or vocabulary within which the keyword concept is defined.",
+                    "type": "string"
                 }
             }
         },
@@ -123,18 +141,18 @@
         },
         "SamplingEvent": {
             "additionalProperties": true,
-            "description": "Information about the event resulting in the creation of the physical sample.",
+            "description": "Information about the event resulting in the creation of the physical sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description.  If any special protocols were followed in the sampling procedure, they should be documented using the PhysicalSampleRecord/complies_with property.",
             "properties": {
+                "label": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                },
                 "description": {
                     "description": "Free text description of the subject of a triple.",
                     "type": "string"
                 },
                 "has_feature_of_interest": {
                     "description": "What does the sample represent.",
-                    "type": "string"
-                },
-                "label": {
-                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
                     "type": "string"
                 },
                 "responsibility": {
@@ -150,6 +168,11 @@
                 "sampling_site": {
                     "$ref": "#/definitions/SamplingSite",
                     "description": "object that identifies the place where the sample was collected"
+                },
+                "authorized_by": {
+                    "description": "a list of permits or other formal permission documents under which the sample was collected. Use to cite legal documents authorizing sample collection.",
+                    "items": {"type": "string"},
+                    "type": "array"
                 }
             },
             "title": "SamplingEvent",

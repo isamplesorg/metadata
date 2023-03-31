@@ -1,0 +1,61 @@
+{
+    "@schema": "iSamplesSchemaBasic1.0.json",
+    "@id": "metadata/65665/300042b39-2b9a-4df9-b27f-d47237261659",
+    "label": "Tomopterna cryptotis AA7HT40",
+    "sample_identifier": "ark:/65665/300042b39-2b9a-4df9-b27f-d47237261659",
+    "description": "Tissue & Parts, Muscle; basisOfRecord : MaterialSample | type : PhysicalObject | catalogNumber：589356.12522399 | disposition: in collection | startDayOfYear: 50 | endtDayOfYear: 50",
+    "has_context_category": ["Subaerial surface environment"],
+    "has_material_category": ["Organic material"],
+    "has_specimen_category": ["Organism part"],
+    "keywords": [
+        {"keyword": "Amphibian"},
+        {
+            "keyword": "Tadjourah",
+            "keyword_uri": "http://vocab.getty.edu/page/tgn/7014973",
+            "scheme_name": "Getty Thesaurus of Geographic Names"
+        },
+        {"keyword": "Animalia"},
+        {"keyword": "Chordata"},
+        {"keyword": "Amphibia"},
+        {"keyword": "Anura"},
+        {"keyword": "Pyxicephalidae"},
+        {
+            "keyword": "Tomopterna cryptotis",
+            "keyword_uri": "https://www.wikidata.org/wiki/Q787959",
+            "scheme_name": "taxon: species"
+        },
+        {"keyword": "Common sand frog"}
+    ],
+    "produced_by": {
+        "@id": "",
+        "label": "",
+        "description": "verbatimEventDate：19 February 2016",
+        "has_feature_of_interest": "",
+        "responsibility": [],
+        "result_time": "2016-02-19",
+        "samplingSite": {
+            "description": "ca. 2 km SE of, vicinity of abandoned lodge | verbatimElevation：ca. 1470 m | verbatimLatitude: 11 46 14 N | verbatimLongitude: 42 39 07 E",
+            "label": "Day (village), Day Forest National Park",
+            "location": {
+                "elevation": "maximumElevationInMeters: 1470 | minimumElevationInMeters：1470| verbatimElevation：1470",
+                "latitude": 11.7706,
+                "longitude": 42.6519
+            },
+            "place_name": [
+                "Africa",
+                "Djibouti",
+                "Tadjourah",
+                "Day (village), Day Forest National Park"
+            ]
+        }
+    },
+    "registrant": "",
+    "sampling_purpose": "genetic",
+    "curation": {
+        "access_constraints": [],
+        "description":"preservation: DMSO-EDTA",
+        "curation_location": "",
+        "responsibility": ["USNM http://grbio.org/cool/142r-0w94",
+        "metadata publisher: not specified"]
+    }
+}

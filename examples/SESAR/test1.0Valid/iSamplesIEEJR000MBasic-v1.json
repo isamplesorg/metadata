@@ -1,0 +1,57 @@
+{
+    "$schema": "iSamplesSchemaBasic1.0.json",
+    "@id": "https://data.isamples.org/digitalsample/igsn/IEEJR000M",
+    "label": "16ER6F3",
+    "sample_identifier": "igsn:IEEJR000M",
+    "description": "Not Provided; Keyword mapping to URIs based on SMR material type mapping to CGI simple lithology subset",
+    "has_context_category": ["Earth interior"],
+    "has_material_category": ["Rock"],
+    "has_specimen_category": ["Other solid object"],
+    "keywords": [
+        {"keyword": "Metamorphic>Meta-Carbonate"},
+        {"keyword": "Marble"},
+        {
+            "keyword": "metamorphic rock",
+            "keyword_uri": "https://w3id.org/isample/vocabulary/rocksediment/0.9/Metamorphic_Rock",
+            "scheme_name": "iSamples rock and sediment vocabulary extension",
+            "scheme_uri": "https://w3id.org/isample/vocabulary/rocksediment/0.9/rocksedimentvocabulary"
+        },
+        {
+            "keyword": "carbonate sedimentary rock",
+            "keyword_uri": "https://w3id.org/isample/vocabulary/rocksediment/0.9/Carbonate_Sedimentary_Rock",
+            "scheme_name": "protolith",
+            "scheme_uri": "https://w3id.org/isample/vocabulary/rocksediment/0.9/rocksedimentvocabulary"
+        }
+    ],
+    "produced_by": {
+        "label": "collection event",
+        "description": "Manual>Hammer",
+        "has_feature_of_interest": "Metamorphic aureole",
+        "responsibility": ["collector:Jade Star Lackey"],
+        "result_time": "2021-01-19",
+        "samplingSite": {
+            "description": "Not Provided",
+            "label": "Not Provided",
+            "location": {
+                "elevation": "Not Provided",
+                "latitude": 36.4617,
+                "longitude": -118.5839
+            },
+            "place_name": [
+                "Mineral King",
+                "Sequoia National Forest",
+                "California",
+                "Tulare",
+                "Silver City"
+            ]
+        }
+    },
+    "registrant": "Sam Kodama",
+    "sampling_purpose": "",
+    "curation": {
+        "responsibility": [
+            "metadata publisher: info@geosamples.org; url: https://www.geosamples.org/contact/",
+            "sample owner:Evan Ramos"
+        ]
+    }
+}

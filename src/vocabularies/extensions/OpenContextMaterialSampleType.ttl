@@ -1,0 +1,123 @@
+# baseURI: https://w3id.org/isample/vocabulary/opencontext/specimentype/0.1/
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: https://w3id.org/isample/vocabulary/specimentype/0.9/specimentypevocabulary
+# prefix: ocspec
+
+@prefix : <https://w3id.org/isample/vocabulary/opencontext/material/0.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ocspec: <https://w3id.org/isample/vocabulary/opencontext/specimentype/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix spec: <https://w3id.org/isample/vocabulary/specimentype/0.9/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ocspec:
+  rdf:type owl:Ontology ;
+  rdf:type skos:ConceptScheme ;
+  dcterms:contributor "Hong Cui, Sarah Hyunju Song" ;
+  dcterms:created "2022-09-30"^^xsd:date ;
+  dcterms:creator <https://orcid.org/0000-0001-6041-5302> ;
+  dcterms:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
+  rdfs:comment "created based on summary of 'type' values found in OpenContext sample descriptions. This is a bottom-up vocabulary intended as a first draft and demonstration of a material sample type extension for the Open Context community in the iSamples context. Most of the categories are subclasses of spec:Artifact, except for 'bone object' which is a spec:OrganismPart."@en ;
+  rdfs:label "Open Context vocabulary extension for material sample type"@en ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports spec:specimentypevocabulary ;
+.
+ocspec:architecturalelement
+  rdf:type skos:Concept ;
+  rdfs:label "Architectural element"@en ;
+  skos:broader spec:artifact ;
+  skos:definition "Artifact that was part of a building."@en ;
+  skos:example "akroterion, antefix, finial, moulding, sima, blocks (shaped masses), brick, building stone, stud"@en ;
+  skos:note "could be subdivided into structural (e.g. brick, building stone, stud), ornamental (antefix, finial, moulding), and utilitarian (rainwater-spout, ridge-tile, roof-tile, window-pane) ?"@en ;
+  skos:prefLabel "Architectural element"@en ;
+.
+ocspec:clothing
+  rdf:type skos:Concept ;
+  rdfs:label "Clothing"@en ;
+  skos:broader spec:artifact ;
+  skos:definition "Item intended to be worn to cover the (human) body"@en ;
+  skos:example "shoes (footwear), shirt, jacket, pants, skirt, cape"@en ;
+  skos:note "Includes parts of clothing objects like buttons (fasteners), color patches (military patches), buckles, but not external decorations (jewlery, ornamental brooches)."@en ;
+  skos:prefLabel "Clothing"@en ;
+.
+ocspec:coin
+  rdf:type skos:Concept ;
+  rdfs:label "Coin"@en ;
+  skos:broader spec:artifact ;
+  skos:definition "peice of metal issued by some authority and recognized as money."@en ;
+  skos:note "Typically flat, with some identifying feature imprinted on the surface to establish authenticity and value"@en ;
+  skos:prefLabel "Coin"@en ;
+.
+ocspec:containerobject
+  rdf:type skos:Concept ;
+  rdfs:label "Container object"@en ;
+  skos:broader spec:artifact ;
+  skos:definition "Item designed to contain some fluid, granular material, or other items for preservation, transportation or display."@en ;
+  skos:example "amphora, aryballos, barrel, bottle, jar, Oenochoe, pithos"@en ;
+  skos:prefLabel "Container object"@en ;
+.
+ocspec:domesticitem
+  rdf:type skos:Concept ;
+  rdfs:label "Domestic item"@en ;
+  skos:broader spec:artifact ;
+  skos:definition "item intended for household use."@en ;
+  skos:example "loom weight, needle, spindle-whorl, spool, cup, dish, plate, cooking-pan, cooking-stand, funnel, grinding-stone, lid, stoneware (pottery), utensils, globes (lighting device components), lamp, cosmetic-pot"@en ;
+  skos:prefLabel "Domestic item"@en ;
+.
+ocspec:ornament
+  rdf:type skos:Concept ;
+  rdfs:label "Ornament"@en ;
+  skos:broader spec:artifact ;
+  skos:definition "item intended for decoration."@en ;
+  skos:example "bead, pendant, ring, inlay, plaque, statuette, tondo"@en ;
+  skos:prefLabel "Ornament"@en ;
+.
+ocspec:peiceofbone
+  rdf:type skos:Concept ;
+  rdfs:label "Bone object"@en ;
+  skos:broader spec:organismpart ;
+  skos:definition "Sample is an individual bone or part of a bone from an animal."@en ;
+  skos:prefLabel "Bone object"@en ;
+.
+ocspec:photograph
+  rdf:type skos:Concept ;
+  rdfs:label "Photograph"@en ;
+  skos:broader spec:artifact ;
+  skos:definition "image produced by the action of light on a chemically sensitive surface, preserved on paper, glass or other physical substrate."@en ;
+  skos:note "in this context, photograph is the physical object manifesting the image, not the image itself, which can also be represented electronically"@en ;
+  skos:prefLabel "Photograph"@en ;
+.
+ocspec:sherd
+  rdf:type skos:Concept ;
+  rdfs:label "Pot sherd"@en ;
+  skos:broader spec:artifact ;
+  skos:definition "fragment of pottery"@en ;
+  skos:prefLabel "Pot sherd"@en ;
+.
+ocspec:tile
+  rdf:type skos:Concept ;
+  rdfs:label "Tile"@en ;
+  skos:broader spec:artifact ;
+  skos:definition "flat or curved piece of fired clay, stone, or concrete used especially for roofs, floors, or walls and often for ornamental work"@en ;
+  skos:note "note possible overlap with 'Architectural element' and 'Ornament'"@en ;
+  skos:prefLabel "Tile"@en ;
+.
+ocspec:utilityitem
+  rdf:type skos:Concept ;
+  rdfs:label "Utility item"@en ;
+  skos:broader spec:artifact ;
+  skos:definition "Item intended for use in manufacture, construction, agriculture or other work activity."@en ;
+  skos:example "bolts (fasteners), hooks (fasteners), nails (fasteners), rivet, screws, spike, bellows, chain, crucible, stamps (tools), wire, tools"@en ;
+  skos:prefLabel "Utility item"@en ;
+.
+ocspec:weapon
+  rdf:type skos:Concept ;
+  rdfs:label "Weapon"@en ;
+  skos:broader spec:artifact ;
+  skos:definition "Item for use in combat, hunting, or self defense"@en ;
+  skos:example "arrow, balls (bullets), blade, cartridges (ammunition cases), gunflints, sling-shot, spear-head"@en ;
+  skos:prefLabel "Weapon"@en ;
+.

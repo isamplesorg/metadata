@@ -1,0 +1,37 @@
+{
+    "uri": "http://opencontext.org/subjects/dc86d1b7-b0b6-4503-b3c9-e58c25dafe49",
+    "citation uri": "https://n2t.net/ark:/28722/k2s473387",
+    "label": "Obj 1185000014",
+    "project label": "The Eastern Korinthia Archaeological Survey",
+    "project uri": "http://opencontext.org/projects/bc71c724-eb1e-47d6-9d45-b586ddafdcfe",
+    "context label": "Greece/Corinthia/EKAS Region/Kokkinia/DU 1185",
+    "context uri": "http://opencontext.org/subjects/c7581e8c-e127-44ef-8ea0-fd8568bf922b",
+    "latitude": 37.889375,
+    "longitude": 22.984746,
+    "early bce/ce": -6700.0,
+    "late bce/ce": 700.0,
+    "item category": "Object",
+    "published": "2021-06-04T07:17:27Z",
+    "updated": "2021-06-27T23:27:39Z",
+    "Creator": [{
+            "id": "http://opencontext.org/persons/01B146EA-9654-4A13-FE59-DEA17A785EFE",
+            "label": "David K. Pettegrew"
+        },
+        {
+            "id": "http://opencontext.org/persons/5653da47-bfc6-47c3-a40d-36b306ccce01",
+            "label": "Timothy E Gregory"
+        },
+        {
+            "id": "http://opencontext.org/persons/12381811-c322-4acc-aa21-8c09563ddc8e",
+            "label": "Daniel J Pullen"
+        },
+        {
+            "id": "http://opencontext.org/persons/278ab53c-e94a-4562-acd3-c29c76fd9c8b",
+            "label": "Richard Rothaus"
+        },
+        {
+            "id": "http://opencontext.org/persons/f6759704-16f0-4a6e-90e0-a9cd7275059e",
+            "label": "Thomas F Tartaron"
+        }
+    ]
+}

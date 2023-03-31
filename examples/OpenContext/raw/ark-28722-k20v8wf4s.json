@@ -1,0 +1,29 @@
+{
+    "uri": "http://opencontext.org/subjects/9da35843-397e-4c7a-96ee-9272f9a0d185",
+    "citation uri": "https://n2t.net/ark:/28722/k20v8wf4s",
+    "label": "8110256",
+    "project label": "Early Bronze Age Numayra",
+    "project uri": "http://opencontext.org/projects/685a86a5-ed68-4f92-8c50-d2dfb8f20995",
+    "context label": "Jordan/Numayra/Unit NE 4-1/Locus 8",
+    "context uri": "http://opencontext.org/subjects/3df0104e-66f0-4742-a56e-bf01175eca64",
+    "latitude": 31.13142,
+    "longitude": 35.52837,
+    "early bce/ce": -2850.0,
+    "late bce/ce": -2550.0,
+    "item category": "Pottery",
+    "published": "2019-10-05",
+    "updated": "2021-06-28T02:11:48Z",
+    "Creator": [{
+            "id": "http://opencontext.org/persons/265a123e-3941-41b2-b309-5c4dd8208250",
+            "label": "Meredith S. Chesson"
+        },
+        {
+            "id": "http://opencontext.org/persons/35876789-332c-4e26-89e4-1c30c9b6a0c2",
+            "label": "R. Thomas Schaub"
+        },
+        {
+            "id": "http://opencontext.org/persons/f276c41d-f3c6-456c-b1c1-63325f52f37f",
+            "label": " Walter E. Rast"
+        }
+    ]
+}

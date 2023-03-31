@@ -1,0 +1,50 @@
+{
+    "@schema": "iSamplesSchemaBasic1.0.json",
+    "@id": "metadata/65665/300008335-8d74-4c3f-873c-a9d8b4b3d6a8",
+    "label": "Bathymodiolus sp. AJ9VQ03",
+    "sample_identifier": "ark:/65665/300008335-8d74-4c3f-873c-a9d8b4b3d6a8",
+    "description": "basisOfRecord : MaterialSample | occurrenceRemarks: Order: 2885; Box Number: MBARI_0036; Box Position: F/5; MBARI Note: SIO Box 6 Sinatra | catalogNumber：1464106.14693703 | recordNumber：A3120-(B3-5) | fieldNumber：AL-3120 | type: PhysicalObject | individualCount: 1 | disposition: in collection | startDayOfYear: 191 | endDayOfYear: 191",
+    "has_context_category": ["Marine water body bottom"],
+    "has_material_category": ["Organic material"],
+    "has_specimen_category": ["Whole organism"],
+    "keywords": [
+        {"keyword": "Invertebrate Zoology"},
+        {"keyword": "Animalia"},
+        {"keyword": "Mollusca"},
+        {"keyword": "Bivalvia"},
+        {"keyword": "Mytilidae"},
+        {
+            "keyword": "Bathymodiolus",
+            "keyword_uri": "https://www.wikidata.org/wiki/Q292447",
+            "scheme_name": "taxon: genus"
+        }
+    ],
+    "produced_by": {
+        "@id": "",
+        "label": "",
+        "description": "",
+        "has_feature_of_interest": "",
+        "responsibility": ["recordsBy:R. Vrijenhoek et al."],
+        "result_time": "1997-07-10",
+        "samplingSite": {
+            "description": "verbatimLatitude: 37-17.629N | verbatimLongitude:32-16.532W",
+            "label": "MID-ATLANTIC RIDGE - Lucky Strike",
+            "location": {
+                "elevation": "maximumDepthInMeters: 1733.0",
+                "latitude": 37.2938,
+                "longitude": -32.2755
+            },
+            "place_name": [
+                "MID-ATLANTIC RIDGE - Lucky Strike",
+                "North Atlantic Ocean"
+            ]
+        }
+    },
+    "registrant": "",
+    "sampling_purpose": "",
+    "curation": {
+        "access_constraints": [],
+        "curation_location": "USNM http://grbio.org/cool/142r-0w94",
+        "responsibility": []
+    }
+}

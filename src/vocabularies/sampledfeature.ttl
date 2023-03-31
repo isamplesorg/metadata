@@ -97,6 +97,7 @@ sf:biologicalentity
   skos:definition "Sampled feature is an organism. Use for samples that represent some species of organism as the proximate sampled feature for which the focus is not the environment that the organism inhabits."@en ;
   skos:note "domain specific vocabulary extension will be useful to distinguish samples from different phyla/order/class..." ;
   skos:prefLabel "Biological entity"@en ;
+  skos:inScheme sf:sampledfeaturevocabulary ;
 .
 sf:earthenvironment
   rdf:type owl:NamedIndividual ;

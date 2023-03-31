@@ -1,0 +1,42 @@
+{
+    "@schema": "iSamplesSchemaBasic1.0.json",
+    "@id":"https://data.geosamples.org/sample/igsn/IERVTL1I7",
+    "label": "0744; Gas_NTC1-140cm_20190524-H",
+    "sample_identifier": "igsn:IERVTL1I7",
+    "description": "alternate identifier: 4369455",
+    "has_context_category": ["Subsurface fluid reservoir"],
+    "has_material_category": ["Gaseous material"],
+    "has_specimen_category": ["Fluid in container"],
+    "keywords": [
+    {"keyword":"Individual Sample",
+    "scheme_name":"SESAR: Sample Type"}
+    ],
+    "produced_by": {
+        "label": "",
+        "description": "Collection method: Headspace equilibration method",
+        "has_feature_of_interest": "floodplain, aquifer",
+        "result_time":"2019-05-24",
+        "responsibility": [
+            "Project: SLAC-SFA",
+            "collector: Zach Perzan; zperzan@stanford.edu"
+        ],
+        
+        "samplingSite": {
+            "description": "",
+            "label": "",
+            "location": {
+                "elevation": "-150.0 cm below surface",
+                "latitude": 42.9884,
+                "longitude": -108.4003
+            },
+            "place_name": [""]
+        }
+    },
+    "registrant": "SLAC SFA",
+    "sampling_purpose": "2018 inundation tracer tests",
+    "curation":{
+        "responsibility": [
+            "metadata publisher: info@geosamples.org; url: https://www.geosamples.org/contact/"
+        ]
+    }
+}

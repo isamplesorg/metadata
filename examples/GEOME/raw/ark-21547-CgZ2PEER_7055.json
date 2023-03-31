@@ -1,0 +1,42 @@
+{
+    "parent": {
+        "bcid": "ark:/21547/Cga2INDO_224",
+        "county": "Indonesia",
+        "entity": "Event",
+        "island": "Nusa Tenggara",
+        "country": "Indonesia",
+        "eventID": "INDO_224",
+        "taxTeam": "MINV",
+        "locality": "Gili Asahan",
+        "projectId": "78",
+        "islandGroup": "Lombok",
+        "dayCollected": "4",
+        "collectorList": "Eka Maya Kurniasih",
+        "stateProvince": "West Nusa Tenggara",
+        "yearCollected": "2017",
+        "continentOcean": "Asia",
+        "eventEnteredBy": "Eka Maya Kurniasih",
+        "expeditionCode": "PEER_2016",
+        "monthCollected": "6",
+        "decimalLatitude": "-8.73642",
+        "horizontalDatum": "unknown",
+        "decimalLongitude": "115.88083",
+        "samplingProtocol": "Dead Coral Head"
+    },
+    "record": {
+        "bcid": "ark:/21547/CgZ2PEER_7055",
+        "class": "Polychaeta",
+        "entity": "Sample",
+        "phylum": "Annelida",
+        "eventID": "INDO_224",
+        "projectId": "78",
+        "taxonRank": "class",
+        "catalogNumber": "http://n2t.net/ark:/21547/R2INDO119289",
+        "expeditionCode": "PEER_2016",
+        "scientificName": "Polychaeta",
+        "institutionCode": "Indonesian Biodiversity Research Center",
+        "sampleEnteredBy": "Eka Maya Kurniasih",
+        "materialSampleID": "PEER_7055"
+    },
+    "projectId": 78
+}

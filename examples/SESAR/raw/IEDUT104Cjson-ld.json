@@ -1,0 +1,120 @@
+{
+    "@context": "https://raw.githubusercontent.com/IGSN/igsn-json/master/schema.igsn.org/json/registration/v0.1/context.jsonld",
+    "@id": "https://data.geosamples.org/sample/igsn/IEDUT104C",
+    "igsn": "IEDUT104C",
+    "registrant": {
+        "name": "IEDA",
+        "identifiers": {
+            "kind": "uri",
+            "id": "https://www.geosamples.org"
+        }
+    },
+    "description": {
+        "sampleName": "CUR-13-01",
+        "sampleType": "Individual Sample>Specimen",
+        "collector": "Andrea Dutton",
+        "collectionStartDate": "2013-08",
+        "contributors": [
+            {
+                "contributor": [
+                    {
+                        "@type": "Person",
+                        "name": "Andrea Dutton",
+                        "givenName": "Andrea",
+                        "familyName": "Dutton"
+                    }
+                ],
+                "@type": "Role",
+                "roleName": "Sample Owner"
+            },
+            {
+                "contributor": [
+                    {
+                        "@type": "Person",
+                        "name": "Andrea Dutton",
+                        "givenName": "Andrea",
+                        "familyName": "Dutton"
+                    }
+                ],
+                "@type": "Role",
+                "roleName": "Sample Registrant"
+            },
+            {
+                "contributor": [
+                    {
+                        "@type": "Person",
+                        "name": "adutton@ufl.edu"
+                    }
+                ],
+                "@type": "Role",
+                "roleName": "Sample Archive Contact"
+            }
+        ],
+        "geoLocation": {
+            "geo": [
+                {
+                    "@type": "GeoCoordinates",
+                    "latitude": "-4.2845",
+                    "longitude": "55.7310"
+                }
+            ],
+            "@type": "Place"
+        },
+        "material": "Coral>Mineral",
+        "collectionMethod": "Manual>Hammer",
+        "description": "Platy leptastrea capped by corraline algae.",
+        "supplementMetadata": {
+            "sampleId": 4281335,
+            "cruiseFieldPrgrm": "Dutton Seychelles 2013",
+            "currentArchive": "University of Florida Department of Geological Sciences",
+            "currentArchiveContact": "adutton@ufl.edu",
+            "elevation": 3.86,
+            "elevationUnit": "meters",
+            "externalSampleId": "CUR-13-01",
+            "fieldName": "Leptastrea",
+            "geologicalAge": "Quaternary; MIS 5.5",
+            "locality": "Northeast Curieuse",
+            "locationDescription": "Internal site designation \"Site 22A\"",
+            "originalArchive": "University of Florida Department of Geological Sciences",
+            "primaryLocationType": "Reef",
+            "province": "Curieuse Island",
+            "purpose": "Paleo-Sea Level",
+            "country": "Seychelles",
+            "navigationType": "GPS",
+            "childIGSN": ["IEDUT10BR"],
+            "otherName": [],
+            "document": [],
+            "publicationUrl": []
+        },
+        "log": [
+            {
+                "type": "registered",
+                "timestamp": "2017-09-05 01:48:08"
+            },
+            {
+                "type": "published",
+                "timestamp": "2017-09-05 12:00:00"
+            },
+            {
+                "type": "lastUpdated",
+                "timestamp": "2017-09-05 01:48:08"
+            }
+        ],
+        "collectionDatePrecision": "month",
+        "collectorDetail": "University of Florida Department of Geological Sciences; adutton@ufl.edu",
+        "publisher": {
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "name": "Information Desk",
+                "contactType": "Customer Service",
+                "email": "info@geosamples.org",
+                "url": "https://www.geosamples.org/contact/"
+            },
+            "@type": "Organization",
+            "name": "EarthChem",
+            "@id": "https://www.geosamples.org",
+            "url": "https://www.geosamples.org"
+        },
+        "igsnPrefix": "IEDUT"
+    }
+}

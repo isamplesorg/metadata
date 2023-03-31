@@ -1,0 +1,55 @@
+{
+    "parent": {
+        "bcid": "ark:/21547/Cas2INDO_2016_SEU_1B",
+        "entity": "Event",
+        "island": "Sumatra",
+        "country": "Indonesia",
+        "eventID": "INDO_2016_SEU_1B",
+        "habitat": "Shallow, coastal reef. Apparent exposure to current, Porites dominated. Less impacted bleaching site, high recruitment, 12 m.",
+        "taxTeam": "MINV",
+        "locality": "Pulau Seulako",
+        "projectId": "80",
+        "dayCollected": "9",
+        "collectorList": "Aji Wahyu Anggoro, Andrianus Sembiring",
+        "stateProvince": "Aceh",
+        "yearCollected": "2016",
+        "continentOcean": "Asia",
+        "eventEnteredBy": "Chris Meyer",
+        "expeditionCode": "INDO_PIRE",
+        "monthCollected": "8",
+        "decimalLatitude": "5.89430",
+        "horizontalDatum": "unknown",
+        "decimalLongitude": "95.25293",
+        "samplingProtocol": "ARMS",
+        "maximumDepthInMeters": "12"
+    },
+    "record": {
+        "bcid": "ark:/21547/Car2PIRE_0334",
+        "class": "Gastropoda",
+        "entity": "Sample",
+        "phylum": "Mollusca",
+        "eventID": "INDO_2016_SEU_1B",
+        "projectId": "80",
+        "taxonRank": "class",
+        "catalogNumber": "http://n2t.net/ark:/21547/R2INDO106431",
+        "expeditionCode": "INDO_PIRE",
+        "scientificName": "Gastropoda",
+        "institutionCode": "No Voucher",
+        "sampleEnteredBy": "Chris Meyer",
+        "materialSampleID": "PIRE_0334"
+    },
+    "children": [
+        {
+            "bcid": "ark:/21547/Cat2INDO106431.1",
+            "entity": "Tissue",
+            "tissueID": "INDO106431.1",
+            "projectId": "80",
+            "tissueWell": "C06",
+            "tissuePlate": "03_ACEH_080916",
+            "expeditionCode": "INDO_PIRE",
+            "materialSampleID": "PIRE_0334",
+            "tissueCatalogNumber": "http://n2t.net/ark:/21547/Q2INDO106431.1"
+        }
+    ],
+    "projectId": 80
+}
