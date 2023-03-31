@@ -18,7 +18,7 @@ SCHEMA_NAME = isamples_core
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
 PKG_TGTS = jsonld_context json_schema owl shacl
 #TGTS = docs python $(PKG_TGTS)
-TGTS = docs
+TGTS = docs python json_schema
 
 # Targets by PKG_TGT
 PKG_T_GRAPHQL = $(PKG_DIR)/graphql
@@ -39,7 +39,8 @@ PKG_T_SCHEMA = $(PKG_T_MODEL)/schema
 GEN_OPTS = --log_level WARNING
 #ENV = export PIPENV_VENV_IN_PROJECT=true && export PIPENV_PIPFILE=make-venv/Pipfile && export PIPENV_IGNORE_VIRTUALENVS=1
 #RUN = $(ENV) && pipenv run
-RUN = python
+#RUN = python
+RUN =
 
 # ----------------------------------------
 # TOP LEVEL TARGETS
@@ -161,10 +162,10 @@ gen-json_schema: $(patsubst %, $(PKG_T_JSON_SCHEMA)/%.schema.json, $(SCHEMA_NAME
 
 $(PKG_T_JSON_SCHEMA)/%.schema.json: $(TARGET_DIR)/json_schema/%.schema.json
 	mkdir -p $(PKG_T_JSON_SCHEMA)
-	cp $< $@
+#	cp $< $@
 
 $(TARGET_DIR)/json_schema/%.schema.json: $(SCHEMA_DIR)/%.yaml tdir-json_schema install
-	$(RUN) gen-json-schema $(GEN_OPTS) -t transaction $< > $@
+	$(RUN) gen-json-schema $(GEN_OPTS) -t PhysicalSampleRecord $< | jq '.' > $@
 
 # ---------------------------------------
 # ShEx
