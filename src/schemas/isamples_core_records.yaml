@@ -1,0 +1,29 @@
+id: http://resource.isamples.org/schema/1.0
+name: physicalSampleRecords
+title: Schema for collections of Physical Sample Records
+description: Provides two container classes for lists and dicts of physical sample records
+license: https://creativecommons.org/publicdomain/zero/1.0/
+version: 20230317
+prefixes:
+    linkml: https://w3id.org/linkml/
+    isam: http://resource.isamples.org/schema/
+default_prefix: isam
+
+imports:
+    - linkml:types
+    - isamples_core
+
+classes:
+    PhysicalSampleRecordList:
+        attributes:
+            samples:
+                range: PhysicalSampleRecord
+                multivalued: true
+                inlined_as_list: true
+
+    PhysicalSampleRecordDict:
+        attributes:
+            samples:
+                range: PhysicalSampleRecord
+                multivalued: true
+                inlined: false
