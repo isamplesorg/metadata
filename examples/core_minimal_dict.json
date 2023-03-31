@@ -1,0 +1,11 @@
+{
+  "@type": "PhysicalSampleRecordDict",
+  "samples": {
+    "1": {
+      "label": "test minimal 1"
+    },
+    "2": {
+      "label": "test minimal 2"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+    "@type": "PhysicalSampleRecord",
+    "sample_identifier":"single_full",
+    "label":"sample label string",
+    "description":"A complete fake single PhysicalSampleRecord",
+    "complies_with":[
+      "complies 1 string",
+      "complies 2 string"
+    ],
+    "curation":{
+      "access_constraints":[
+        "a constraint 1 string",
+        "cultural constraint 2 string"
+      ],
+      "curation_location": "curation location string",
+      "description": "Curation description string",
+      "label":"curation label string",
+      "responsibility": [
+        "John Smith, Curator, The Museum string"
+      ]
+    },
+    "has_context_category":[
+      "context string 1",
+      "context string 2"
+    ],
+    "has_material_category": [
+      "https://material.example.com/uri/1",
+      "mat:rock"
+    ],
+    "has_specimen_category": [
+      "https://specimen.example.com/uri/1",
+      "https://specimen.example.com/uri/2"
+    ],
+    "informal_classification": [
+      "classification term 1 string",
+      "classification term 2 string"
+    ],
+    "keywords": [
+      "keyword 1 string",
+      "keyword 2 string"
+    ],
+    "produced_by":{
+      "description":"The SamplingEvent entry",
+      "has_feature_of_interest": "The feature of interest string",
+      "label":"SamplingEvent label string",
+      "responsibility":[
+        "responsibility item 1",
+        "responsibility item 2"
+      ],
+      "result_time":"2023-03-29",
+      "sampling_site": {
+        "description":"Description of the sampling site, string",
+        "label":"sampling site label, string",
+        "location":{
+          "elevation":"200m above sea level string",
+          "latitude": 23.4,
+          "longitude": -150.6
+        },
+        "place_name":[
+          "place name 1 string",
+          "place name 2 string"
+        ]
+      }
+    },
+    "registrant": "Registrant String",
+    "related_resource": [
+      {
+        "description":"SampleRelation description string",
+        "label":"sample relation label string",
+        "relationship":"relationship string",
+        "target":"relationship target string"
+      }
+    ],
+    "sampling_purpose": "sampling purpose string"
+}

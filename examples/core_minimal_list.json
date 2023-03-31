@@ -1,0 +1,13 @@
+{
+  "@type": "PhysicalSampleRecordList",
+  "samples": [
+    {
+      "sample_identifier": "1",
+      "label": "test minimal 1"
+    },
+    {
+      "sample_identifier": "2",
+      "label": "test minimal 2"
+    }
+  ]
+}
