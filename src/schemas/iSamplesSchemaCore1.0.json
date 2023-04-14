@@ -18,6 +18,12 @@
             "description": "free text description of the physical sample, and any related information. Include as much detail as will be useful for users to find the sample and understand its context.",
             "type": "string"
         },
+        "alternate_identifiers": {
+            "description": "Top level context, based on the kind of feature sampled. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property. At least one value a skos:Concept from the iSamples sampledfeaturevocabulary.",
+            "items": {"$ref": "#/definitions/IdentifierObject"},
+            "type": "array",
+            "minItems": 0
+        }, 
         "produced_by": {
             "$ref": "#/definitions/SamplingEvent",
             "description": "object that documents the sampling event--who, where, when the specimen was obtained"
@@ -67,7 +73,7 @@
         "curation": {"$ref": "#/definitions/SpecimenCuration"},
         "registrant": {
             "description": "identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.",
-            "type": "string"
+            "$ref": "#/definitions/Agent"
         }
     },
     "required": [
@@ -75,6 +81,34 @@
         "sample_identifier"
     ],
     "definitions": {
+        "Agent": {
+            "title": "Agent",
+            "type": "object",
+            "additionalProperties": true,
+            "description": "object to represent a person who plays a role relative to sample collection or curation.",
+            "properties": {
+                "name": {
+                    "description": "string, name of a person. Format {}firstName MI lastName}.",
+                    "type": "string"
+                },
+                "affiliation": {
+                    "description": "Name of an organization that employes or sponsors a person for the role they play relative to sample collection or curation.",
+                    "type": "string"
+                },
+                "contact_information": {
+                    "description": "e-mail address, telephone number, mailing address, or web site through which an agent can be contacted. Something that should be stable and reliable.",
+                    "type": "string"
+                },
+                "identifier": {
+                    "description": "a string that identifies some resource. Expectation is that it is a URI that is resolvable to some useful represenation of the resource.",
+                    "type": "string"
+                },
+                "role": {
+                    "description": "term that specifies how a person is related to a sample curation or collection activity.",
+                    "type": "string"
+                }
+            }
+        },
         "GeospatialCoordLocation": {
             "title": "GeospatialCoordLocation",
             "type": "object",
@@ -167,6 +201,10 @@
             "additionalProperties": true,
             "description": "Information about the event resulting in the creation of the physical sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description.  If any special protocols were followed in the sampling procedure, they should be documented using the PhysicalSampleRecord/complies_with property.",
             "properties": {
+                "identifier": {
+                    "description": "A string that identifies the samplingEvent. Use to gather all samples from a single sampling event.",
+                    "type": "string"
+                },
                 "label": {
                     "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
                     "type": "string"
@@ -181,7 +219,7 @@
                 },
                 "responsibility": {
                     "description": "String with person name and affiliation, or organization name, and their role relative to the parent element.",
-                    "items": {"type": "string"},
+                    "items": {"$ref": "#/definitions/Agent"},
                     "type": "array"
                 },
                 "result_time": {
@@ -252,7 +290,7 @@
                 },
                 "responsibility": {
                     "description": "String with person name and affiliation, or organization name, and their role relative to the parent element.",
-                    "items": {"type": "string"},
+                    "items": {"$ref": "#/definitions/Agent"},
                     "type": "array"
                 }
             }
