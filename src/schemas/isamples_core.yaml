@@ -35,6 +35,7 @@ classes:
           - sample_identifier
           - label
           - description
+          - alternate_identifiers
           - produced_by
           - sampling_purpose
           - has_context_category
@@ -69,7 +70,15 @@ classes:
           - keyword_uri
           - scheme_name
           - scheme_uri
-          
+
+    IdentifierObject:
+        description: object to represent an identified concept; property values from vocabularies with resolvable identifiers for vocabulary terms. Eitehr a label or identifier is required, to allow for cases that a URI is not available.  Data validation process will need to be used for properties that require an identified term value (e.g. has_context_category, has_material_category, has_specimen_category).
+        slots:
+          - label
+          - identifer
+          - scheme_name
+
+
     SamplingSite:
         description: documentation of the site where the sample was collected, wtih place name(s) and a geospatial location
         slots:
@@ -81,6 +90,7 @@ classes:
     SamplingEvent:
         description: Information about the event resulting in the creation of the physical sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description. If any special protocols were followed in the sampling procedure, they should be documented using the PhysicalSampleRecord/complies_with property. 
         slots:
+          - identifier
           - label
           - description
           - has_feature_of_interest
@@ -121,6 +131,11 @@ classes:
 
 
 slots:
+    alternate_identifiers:
+        range: IdentifierObject
+        description: |
+          one or more identifiers used to identify the sample in other contexts. In this context, the identifier property and scheme_name should be required.
+        multivalued: true
     access_constraints:
         range: string
         description: |
@@ -158,6 +173,10 @@ slots:
         domain: GeospatialCoordLocation
         description: Should be a number and Unit of measure, and the datum. e.g. 401
             m above mean sea level.
+    identifier:
+        range: uriorcurie
+        domain: IdentifierObject
+        description: a string.
     informal_classification:
         range: string
         domain: PhysicalSampleRecord
@@ -171,7 +190,7 @@ slots:
     has_context_category:
         # range is an instance of at least one skos:Concept
         # with skos:inScheme sf:sampledfeaturevocabulary ;
-        range: string
+        range: IdentifierObject
         domain: PhysicalSampleRecord
         description: Top level context, based on the kind of feature sampled. Specific
             identification of the sampled feature of interest is done through the
@@ -186,7 +205,7 @@ slots:
         # range is an instance of at least one skos:Concept
         # with skos:inScheme = mat:materialsVocabulary
         domain: PhysicalSampleRecord
-        range: uriorcurie
+        range: IdentifierObject
         description: The kind of material that constitutes the sample.  At least one value is an instance of 
             skos:Concept from the iSamples MaterialTypeVocabulary; 
             extension vocabularies can be used for more precise categorization.
@@ -198,7 +217,7 @@ slots:
         description: The kind of object the specimen is. At least one value is an instance of 
             skos:Concept from the iSamples SpecimenTypeVocabulary; 
             extension vocabularies can be used for more precise categorization.
-        range: uriorcurie
+        range: IdentifierObject
         multivalued: true
     keywords:
         range: Keyword
