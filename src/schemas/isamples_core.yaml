@@ -41,7 +41,6 @@ classes:
           - has_context_category
           - has_material_category
           - has_specimen_category
-          - informal_classification
           - keywords
           - related_resource
           - complies_with
@@ -173,16 +172,7 @@ slots:
         domain: GeospatialCoordLocation
         description: Should be a number and Unit of measure, and the datum. e.g. 401
             m above mean sea level.
-    identifier:
-        range: uriorcurie
-        domain: IdentifierObject
-        description: a string.
-    informal_classification:
-        range: string
-        domain: PhysicalSampleRecord
-        description: Free text classification terms, not from a controlled vocabulary;
-            generally terms applied by collector.
-        multivalued: true
+
     identifier:
         range: uriorcurie
         description: a string that identifies some resource. Expectation is that it is a URI that is resolvable to some useful represenation of the resource.

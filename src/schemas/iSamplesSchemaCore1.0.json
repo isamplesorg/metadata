@@ -50,11 +50,6 @@
             "type": "array",
             "minItems": 1
         },
-        "informal_classification": {
-            "description": "DEPRECATED. Use Keywords/keyword. Free text classification terms, not from a controlled vocabulary; generally terms applied by collector.",
-            "items": {"type": "string"},
-            "type": "array"
-        },
         "keywords": {
             "description": "free text categorization of sample to support discovery",
             "items": {"$ref": "#/definitions/Keyword"},
