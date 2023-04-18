@@ -30,7 +30,7 @@ jobs:
         uses: isamplesorg/vocabularies@main
         with:
           action: docs
-          path: ${{ github.workspace }}/docs/vocabularies
+          path: ${{ github.workspace }}/build/docs/vocabularies
 
       - name: Render documentation
         run: make gen-docs
