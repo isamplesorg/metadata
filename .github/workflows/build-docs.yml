@@ -32,6 +32,9 @@ jobs:
           action: docs
           path: ${{ github.workspace }}/build/docs/vocabularies
 
+      - name: List the output of the vocabulary
+        run: ls -l ${{ github.workspace }}/build/docs/vocabularies
+
       - name: Render documentation
         run: make gen-docs
 
