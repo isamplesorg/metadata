@@ -38,7 +38,7 @@ jobs:
         run: ls -l ${{ github.workspace }}/build/docs/
         
       - name: Gen docs without makefile
-        run: sudo python tools/docgen.py --log_level WARNING --dialect quarto --sort-by name --format quarto --mergeimports --metadata --directory build/docs src/schemas/isamples_core.yaml
+        run: python tools/docgen.py --log_level WARNING --dialect quarto --sort-by name --format quarto --mergeimports --metadata --directory build/docs src/schemas/isamples_core.yaml
 
       - name: Render documentation
         run: make gen-docs
