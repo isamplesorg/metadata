@@ -113,7 +113,7 @@ gen-docs: $(TARGET_DIR)/docs/index.md
 	cd $(TARGET_DIR)/docs && quarto render
 
 $(TARGET_DIR)/docs/index.md: $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml tdir-docs
-	python tools/docgen.py $(GEN_OPTS) --dialect quarto --sort-by name --format quarto --mergeimports --metadata --directory $(TARGET_DIR)/docs $<
+	sudo python tools/docgen.py $(GEN_OPTS) --dialect quarto --sort-by name --format quarto --mergeimports --metadata --directory $(TARGET_DIR)/docs $<
 
 # ---------------------------------------
 # YAML source
