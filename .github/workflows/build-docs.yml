@@ -23,7 +23,7 @@ jobs:
           python-version: 3.9
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: sudo pip install -r requirements.txt
 
       - name: Parse vocabularies
         uses: isamplesorg/vocabularies@main
@@ -38,7 +38,7 @@ jobs:
         run: ls -l ${{ github.workspace }}/build/docs/
         
       - name: Gen docs without makefile
-        run: python tools/docgen.py --log_level WARNING --dialect quarto --sort-by name --format quarto --mergeimports --metadata --directory build/docs src/schemas/isamples_core.yaml
+        run: sudo python tools/docgen.py --log_level WARNING --dialect quarto --sort-by name --format quarto --mergeimports --metadata --directory build/docs src/schemas/isamples_core.yaml
 
       - name: Render documentation
         run: make gen-docs
