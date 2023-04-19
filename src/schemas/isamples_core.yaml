@@ -183,10 +183,6 @@ slots:
         description: Free text classification terms, not from a controlled vocabulary;
             generally terms applied by collector.
         multivalued: true
-    identifier:
-        range: uriorcurie
-        description: a string that identifies some resource. Expectation is that it is a URI that is resolvable to some useful represenation of the resource.
-        
     has_context_category:
         # range is an instance of at least one skos:Concept
         # with skos:inScheme sf:sampledfeaturevocabulary ;
