@@ -103,14 +103,14 @@ tdir-%:
 # ---------------------------------------
 gen-docs: $(TARGET_DIR)/docs/index.md
 	# static sources
-	cp -R $(MODEL_DOCS_DIR)/*.md $(TARGET_DIR)/docs
+	sudo cp -R $(MODEL_DOCS_DIR)/*.md $(TARGET_DIR)/docs
 	# quarto configuation and customizations
-	cp quarto/* $(TARGET_DIR)/docs
+	sudo cp quarto/* $(TARGET_DIR)/docs
 	#cat $(TARGET_DIR)/docs/_contents.yaml >> $(TARGET_DIR)/docs/_quarto.yml
-	mkdir -p docs
-	touch docs/.nojekyll
+	sudo mkdir -p docs
+	sudo touch docs/.nojekyll
 	# output from quarto is determined by the output-dir property in _quarto.yml
-	cd $(TARGET_DIR)/docs && quarto render
+	sudo cd $(TARGET_DIR)/docs && sudo quarto render
 
 $(TARGET_DIR)/docs/index.md: $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml tdir-docs
 	sudo python tools/docgen.py $(GEN_OPTS) --dialect quarto --sort-by name --format quarto --mergeimports --metadata --directory $(TARGET_DIR)/docs $<
