@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>iSamples Model - Schema for documenting physical samples</title>
+<title>iSamples Model - affiliation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -58,9 +121,6 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -72,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Schema for documenting physical samples</h1>
+      <h1 class="quarto-secondary-nav-title">affiliation</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -165,12 +225,12 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Slots</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Slots</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./access_constraints.html" class="sidebar-item-text sidebar-link">access_constraints</a>
@@ -178,7 +238,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./affiliation.html" class="sidebar-item-text sidebar-link">affiliation</a>
+  <a href="./affiliation.html" class="sidebar-item-text sidebar-link active">affiliation</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -493,8 +553,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Schema for documenting physical samples</h1>
-<p class="subtitle lead">Schema documentation generated from linkml sources.</p>
+<h1 class="title d-none d-lg-block">affiliation</h1>
+<p class="subtitle lead">Slot: affiliation</p>
 </div>
 
 
@@ -515,422 +575,61 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change ‘id’ to ‘<span class="citation" data-cites="id">@id</span>’ and ‘schema’ to ‘$schema’. Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07. SMR 2023-03-17. Move authorized_by into SamplingEvent, change keywords to list of Keyword objects with string, uri, scheme and scheme URI. Reorder elements in slot list. Update scheme URI to 1.0.</p>
-<p>URI: http://resource.isamples.org/schema/1.0 Name: physicalSample</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">%%{init: {'securityLevel': 'loose', 'theme':'neutral', 'themeVariables': { 'fontSize':'14px', 'fontFamily':'Roboto Mono'}}}%%
-classDiagram
-  direction BT
-  class PhysicalSampleRecord {
-    alternate_identifiers : IdentifierObject[]
-    complies_with : string[]
-    curation : SpecimenCuration
-    description : string
-    has_context_category : IdentifierObject[]
-    has_material_category : IdentifierObject[]
-    has_specimen_category : IdentifierObject[]
-    informal_classification : string[]
-    keywords : Keyword[]
-    label : string
-    produced_by : SamplingEvent
-    registrant : Agent
-    related_resource : SampleRelation[]
-    sample_identifier : string
-    sampling_purpose : string
-    }
-    click PhysicalSampleRecord href "PhysicalSampleRecord.html" "Documentation"
-    IdentifierObject --o PhysicalSampleRecord : alternate_identifiers
-    SpecimenCuration --o PhysicalSampleRecord : curation
-    IdentifierObject --o PhysicalSampleRecord : has_context_category
-    IdentifierObject --o PhysicalSampleRecord : has_material_category
-    IdentifierObject --o PhysicalSampleRecord : has_specimen_category
-    Keyword --o PhysicalSampleRecord : keywords
-    SamplingEvent --o PhysicalSampleRecord : produced_by
-    Agent --o PhysicalSampleRecord : registrant
-    SampleRelation --o PhysicalSampleRecord : related_resource
-    
-  class Agent {
-    affiliation : string
-    contact_information : string
-    identifier : uriorcurie
-    name : string
-    role : string
-    }
-    click Agent href "Agent.html" "Documentation"
-    
-  class Keyword {
-    keyword : string
-    keyword_uri : string
-    scheme_name : string
-    scheme_uri : string
-    }
-    click Keyword href "Keyword.html" "Documentation"
-    
-  class IdentifierObject {
-    identifier : uriorcurie
-    label : string
-    scheme_name : string
-    }
-    click IdentifierObject href "IdentifierObject.html" "Documentation"
-    
-  class SamplingSite {
-    description : string
-    label : string
-    location : GeospatialCoordLocation
-    place_name : string[]
-    }
-    click SamplingSite href "SamplingSite.html" "Documentation"
-    GeospatialCoordLocation --o SamplingSite : location
-    
-  class SamplingEvent {
-    authorized_by : string[]
-    description : string
-    has_feature_of_interest : string
-    identifier : uriorcurie
-    label : string
-    responsibility : Agent[]
-    result_time : date
-    sampling_site : SamplingSite
-    }
-    click SamplingEvent href "SamplingEvent.html" "Documentation"
-    Agent --o SamplingEvent : responsibility
-    SamplingSite --o SamplingEvent : sampling_site
-    
-  class GeospatialCoordLocation {
-    elevation : string
-    latitude : decimal
-    longitude : decimal
-    }
-    click GeospatialCoordLocation href "GeospatialCoordLocation.html" "Documentation"
-    
-  class SpecimenCuration {
-    access_constraints : string[]
-    curation_location : string
-    description : string
-    label : string
-    responsibility : Agent[]
-    }
-    click SpecimenCuration href "SpecimenCuration.html" "Documentation"
-    Agent --o SpecimenCuration : responsibility
-    
-  class SampleRelation {
-    description : string
-    label : string
-    relationship : string
-    target : string
-    }
-    click SampleRelation href "SampleRelation.html" "Documentation"
-    
-  
-</pre>
-<div id="mermaid-tooltip-1" class="mermaidTooltip">
-
-</div>
-<p></p>
-</div>
-</div>
-</div>
-<section id="classes" class="level2">
-<h2 class="anchored" data-anchor-id="classes">Classes</h2>
+<p>Name of an organization that employes or sponsors a person for the role they play relative to sample collection or curation.</p>
+<p>URI: <a href="http://resource.isamples.org/schema/affiliation">isam:affiliation</a></p>
+<!-- no inheritance hierarchy -->
+<section id="applicable-classes" class="level2">
+<h2 class="anchored" data-anchor-id="applicable-classes">Applicable Classes</h2>
 <table class="table">
+<caption>Classes in which this slot appears.</caption>
+<colgroup>
+<col style="width: 30%">
+<col style="width: 70%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Class</th>
+<th>Name</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><a href="./Agent.html">Agent</a></td>
-<td>object to represent a person who plays a role relative to sample collection o…</td>
-</tr>
-<tr class="even">
-<td><a href="./GeospatialCoordLocation.html">GeospatialCoordLocation</a></td>
-<td>A physical location in decimal degrees using EPSG:4326</td>
-</tr>
-<tr class="odd">
-<td><a href="./IdentifierObject.html">IdentifierObject</a></td>
-<td>object to represent an identified concept; property values from vocabularies …</td>
-</tr>
-<tr class="even">
-<td><a href="./Keyword.html">Keyword</a></td>
-<td>a simple string (tag) useful for guiding discovery of the sample, or a scoped…</td>
-</tr>
-<tr class="odd">
-<td><a href="./PhysicalSampleRecord.html">PhysicalSampleRecord</a></td>
-<td>This is a data object that is a digital representation of a physical sample, …</td>
-</tr>
-<tr class="even">
-<td><a href="./SampleRelation.html">SampleRelation</a></td>
-<td>semantic link to other samples or related resources</td>
-</tr>
-<tr class="odd">
-<td><a href="./SamplingEvent.html">SamplingEvent</a></td>
-<td>Information about the event resulting in the creation of the physical sample</td>
-</tr>
-<tr class="even">
-<td><a href="./SamplingSite.html">SamplingSite</a></td>
-<td>documentation of the site where the sample was collected, wtih place name(s) …</td>
-</tr>
-<tr class="odd">
-<td><a href="./SpecimenCuration.html">SpecimenCuration</a></td>
-<td>Information about the current storage of sample, access to sample, and events…</td>
+<td>object to represent a person who plays a role relative to sample collection or curation.</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="slots" class="level2">
-<h2 class="anchored" data-anchor-id="slots">Slots</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Slot</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="./access_constraints.html">access_constraints</a></td>
-<td>Cultural, legal, or other policy issues that bear on access to view, borrow, …</td>
-</tr>
-<tr class="even">
-<td><a href="./affiliation.html">affiliation</a></td>
-<td>Name of an organization that employes or sponsors a person for the role they …</td>
-</tr>
-<tr class="odd">
-<td><a href="./alternate_identifiers.html">alternate_identifiers</a></td>
-<td>one or more identifiers used to identify the sample in other contexts</td>
-</tr>
-<tr class="even">
-<td><a href="./authorized_by.html">authorized_by</a></td>
-<td>a list of permits or other formal permission documents under which the sample…</td>
-</tr>
-<tr class="odd">
-<td><a href="./complies_with.html">complies_with</a></td>
-<td>a list of policies, recommendations, best practices (etc</td>
-</tr>
-<tr class="even">
-<td><a href="./contact_information.html">contact_information</a></td>
-<td>e-mail address, telephone number, mailing address, or web site through which …</td>
-</tr>
-<tr class="odd">
-<td><a href="./curation.html">curation</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><a href="./curation_location.html">curation_location</a></td>
-<td>Information about where and how the sample is currently stored</td>
-</tr>
-<tr class="odd">
-<td><a href="./description.html">description</a></td>
-<td>Free text description of the subject of a triple</td>
-</tr>
-<tr class="even">
-<td><a href="./elevation.html">elevation</a></td>
-<td>Should be a number and Unit of measure, and the datum</td>
-</tr>
-<tr class="odd">
-<td><a href="./has_context_category.html">has_context_category</a></td>
-<td>Top level context, based on the kind of feature sampled</td>
-</tr>
-<tr class="even">
-<td><a href="./has_feature_of_interest.html">has_feature_of_interest</a></td>
-<td>What does the sample represent</td>
-</tr>
-<tr class="odd">
-<td><a href="./has_material_category.html">has_material_category</a></td>
-<td>The kind of material that constitutes the sample</td>
-</tr>
-<tr class="even">
-<td><a href="./has_specimen_category.html">has_specimen_category</a></td>
-<td>The kind of object the specimen is</td>
-</tr>
-<tr class="odd">
-<td><a href="./identifier.html">identifier</a></td>
-<td>a string</td>
-</tr>
-<tr class="even">
-<td><a href="./informal_classification.html">informal_classification</a></td>
-<td>Free text classification terms, not from a controlled vocabulary; generally t…</td>
-</tr>
-<tr class="odd">
-<td><a href="./keyword.html">keyword</a></td>
-<td>string label for a concept that characterizes the sample in some respect</td>
-</tr>
-<tr class="even">
-<td><a href="./keyword_uri.html">keyword_uri</a></td>
-<td>an identifier for the keyword concept</td>
-</tr>
-<tr class="odd">
-<td><a href="./keywords.html">keywords</a></td>
-<td>free text terms or formal categories associate with sample to support discove…</td>
-</tr>
-<tr class="even">
-<td><a href="./label.html">label</a></td>
-<td>a human intelligible string used to identify a thing, i</td>
-</tr>
-<tr class="odd">
-<td><a href="./latitude.html">latitude</a></td>
-<td>angular coordinate measured positive north from the equator</td>
-</tr>
-<tr class="even">
-<td><a href="./location.html">location</a></td>
-<td>geopatial location of site; required default is WGS84 latitude, longitude in …</td>
-</tr>
-<tr class="odd">
-<td><a href="./longitude.html">longitude</a></td>
-<td>angular coordinate measured positive eastward from the prime meridian</td>
-</tr>
-<tr class="even">
-<td><a href="./name.html">name</a></td>
-<td>string, name of a person</td>
-</tr>
-<tr class="odd">
-<td><a href="./place_name.html">place_name</a></td>
-<td>one or more names by which the sampling site is known</td>
-</tr>
-<tr class="even">
-<td><a href="./produced_by.html">produced_by</a></td>
-<td>object that documents the sampling event–who, where, when the specimen was o…</td>
-</tr>
-<tr class="odd">
-<td><a href="./registrant.html">registrant</a></td>
-<td>identification of the agent that registered the sample, with contact informat…</td>
-</tr>
-<tr class="even">
-<td><a href="./related_resource.html">related_resource</a></td>
-<td>link to related resource with relationship property to indicate nature of con…</td>
-</tr>
-<tr class="odd">
-<td><a href="./relationship.html">relationship</a></td>
-<td>term to identify realationship between host sample and the sample relation ta…</td>
-</tr>
-<tr class="even">
-<td><a href="./responsibility.html">responsibility</a></td>
-<td>Agent object includes person name, person identifier, affiliation, or organiz…</td>
-</tr>
-<tr class="odd">
-<td><a href="./result_time.html">result_time</a></td>
-<td>Date on which the sample was collected</td>
-</tr>
-<tr class="even">
-<td><a href="./role.html">role</a></td>
-<td>term that specifies how a person is related to a sample curation or collectio…</td>
-</tr>
-<tr class="odd">
-<td><a href="./sample_identifier.html">sample_identifier</a></td>
-<td>URI that identifies the physical sample described by this record</td>
-</tr>
-<tr class="even">
-<td><a href="./sampling_purpose.html">sampling_purpose</a></td>
-<td>term to specify why a sample was collection</td>
-</tr>
-<tr class="odd">
-<td><a href="./sampling_site.html">sampling_site</a></td>
-<td>object that identifies the place where the sample was collected</td>
-</tr>
-<tr class="even">
-<td><a href="./scheme_name.html">scheme_name</a></td>
-<td>string label for the concept scheme or vocabulary within which the keyword co…</td>
-</tr>
-<tr class="odd">
-<td><a href="./scheme_uri.html">scheme_uri</a></td>
-<td>Identifier for the concept scheme or vocabulary within which the keyword conc…</td>
-</tr>
-<tr class="even">
-<td><a href="./target.html">target</a></td>
-<td>identifier for the target resource in the relationship</td>
-</tr>
-</tbody>
-</table>
+<section id="properties" class="level2">
+<h2 class="anchored" data-anchor-id="properties">Properties</h2>
+<ul>
+<li>Range: <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></li>
+<li>Multivalued: None</li>
+</ul>
 </section>
-<section id="enumerations" class="level2">
-<h2 class="anchored" data-anchor-id="enumerations">Enumerations</h2>
-<p>No enumerations are defined.</p>
+<section id="identifier-and-mapping-information" class="level2">
+<h2 class="anchored" data-anchor-id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<section id="schema-source" class="level3">
+<h3 class="anchored" data-anchor-id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: http://resource.isamples.org/schema/1.0</li>
+</ul>
 </section>
-<section id="types" class="level2">
-<h2 class="anchored" data-anchor-id="types">Types</h2>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a></td>
-<td>A binary (true or false) value</td>
-</tr>
-<tr class="even">
-<td><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></td>
-<td>a compact URI</td>
-</tr>
-<tr class="odd">
-<td><a href="http://www.w3.org/2001/XMLSchema#date">xsd:date</a></td>
-<td>a date (year, month and day) in an idealized calendar</td>
-</tr>
-<tr class="even">
-<td><a href="https://w3id.org/linkml/DateOrDatetime">linkml:DateOrDatetime</a></td>
-<td>Either a date or a datetime</td>
-</tr>
-<tr class="odd">
-<td><a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a></td>
-<td>The combination of a date and time</td>
-</tr>
-<tr class="even">
-<td><a href="http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a></td>
-<td>A real number with arbitrary precision that conforms to the xsd:decimal speci…</td>
-</tr>
-<tr class="odd">
-<td><a href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a></td>
-<td>A real number that conforms to the xsd:double specification</td>
-</tr>
-<tr class="even">
-<td><a href="http://www.w3.org/2001/XMLSchema#float">xsd:float</a></td>
-<td>A real number that conforms to the xsd:float specification</td>
-</tr>
-<tr class="odd">
-<td><a href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a></td>
-<td>An integer</td>
-</tr>
-<tr class="even">
-<td><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></td>
-<td>Prefix part of CURIE</td>
-</tr>
-<tr class="odd">
-<td><a href="shex:nonLiteral">shex:nonLiteral</a></td>
-<td>A URI, CURIE or BNODE that represents a node in a model</td>
-</tr>
-<tr class="even">
-<td><a href="shex:iri">shex:iri</a></td>
-<td>A URI or CURIE that represents an object in the model</td>
-</tr>
-<tr class="odd">
-<td><a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></td>
-<td>A character string</td>
-</tr>
-<tr class="even">
-<td><a href="http://www.w3.org/2001/XMLSchema#time">xsd:time</a></td>
-<td>A time object represents a (local) time of day, independent of any particular…</td>
-</tr>
-<tr class="odd">
-<td><a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a></td>
-<td>a complete URI</td>
-</tr>
-<tr class="even">
-<td><a href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a></td>
-<td>a URI or a CURIE</td>
-</tr>
-</tbody>
-</table>
 </section>
-<section id="subsets" class="level2">
-<h2 class="anchored" data-anchor-id="subsets">Subsets</h2>
-<p>No subsets are defined.</p>
+<section id="linkml-source" class="level2">
+<h2 class="anchored" data-anchor-id="linkml-source">LinkML Source</h2>
+<details>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> affiliation</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> Name of an organization that employes or sponsors a person for the role</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  they play relative to sample collection or curation.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">from_schema</span><span class="kw">:</span><span class="at"> http://resource.isamples.org/schema/1.0</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rank</span><span class="kw">:</span><span class="at"> </span><span class="dv">1000</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">domain</span><span class="kw">:</span><span class="at"> Agent</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">alias</span><span class="kw">:</span><span class="at"> affiliation</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">domain_of</span><span class="kw">:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> Agent</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span><span class="kw">:</span><span class="at"> string</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 
 
 </section>
