@@ -1,7 +1,7 @@
 {
 "NOTE":"USE THIS FOR children that are entity: tissue",
 
-    "@schema":  "../../iSamplesSchemaBasic0.2.json",
+    "@schema":  "iSamplesSchemaCore1.0.json",
     "@id": "concatenate 'metadata/' prefix with ark from child/bcid, e.g. metadata/21547/Cat2INDO106431.1]",
     "label": "child/tissueID",
     "sample_identifier": "child/bcid",
@@ -9,13 +9,12 @@
     "has_context_category": ["same as parent"],
     "has_material_category": ["'Organic material' unless record/entity, record/basisOfRecord, or record/collectionCode indicate otherwise"],
     "has_specimen_category": ["'Organism part'  unless record/entity, record/basisOfRecord, or record/collectionCode indicate otherwise"],
-    "informal_classification": [""],
-    "keywords": [""],
+    "keywords": [],
     "produced_by": {
         "label": "'tissue subsample from' & {record/materialSampleID}",
         "description": "",
         "has_feature_of_interest": "",
-        "responsibility": ["who did the tissue extract, if available"],
+        "responsibility": [{"role":"collector","name":"who did the tissue extract, if available"}],
         "result_time": "time the tissue extract was done, if available",
         "samplingSite": {
             "description": "This is same as parent sample; concatenate other stuff from parent.  Include min and max elevation if both present and not equal: 'elevation range:'& parent/maximumElevationInMeters &'-' & parent/maximumElevationInMeters. 'coordinate uncertainty:'& parent/coordinateUncertaintyInMeters.  ",
@@ -28,7 +27,7 @@
             "place_name": ["most specific of  parent/ -country, -county, -stateProvince, -continentOcean. Need to determine what are all the possible place name fields and set up partial order. "]
         }
     },
-    "registrant": "",
+    "registrant": {},
     "sampling_purpose": "",
     "curation": {
         "label":"",

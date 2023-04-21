@@ -1,13 +1,27 @@
 {
-    "@schema": "iSamplesSchemaBasic1.0.json",
+    "@schema": "iSamplesSchemaCore1.0.json",
     "@id": "metadata/21547/Car2PIRE_0334",
     "label": "C02_201705281001, Aplysina fistularis",
     "sample_identifier": "ark:/21547/AvL2C02_201705281001",
     "description": "",
-    "has_context_category": ["Marine environment"],
-    "has_material_category": ["Organic material"],
-    "has_specimen_category": ["Whole organism"],
-
+    "has_context_category": [
+        {
+            "label": "Marine environment",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/marinewaterbody"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Organic material",
+            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/organicmaterial"
+        }
+    ],
+    "has_specimen_category": [
+        {
+            "label": "Whole organism specimen",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/wholeorganism"
+        }
+    ],
     "keywords": [
         {
             "keyword": "Demospongiae",
@@ -20,7 +34,7 @@
         {
             "keyword": "Cuba",
             "scheme_name": "Getty Thesaurus of Geographic Names",
-            "scheme_uri":"http://vocab.getty.edu/page/tgn/7005380"
+            "scheme_uri": "http://vocab.getty.edu/page/tgn/7005380"
         },
         {
             "keyword": "Porifera",
@@ -28,7 +42,7 @@
         }
     ],
     "produced_by": {
-        "@id": "ark:/21547/CHk238e4e09d98ddb31008c63b0e546fd062",
+        "identifier": "ark:/21547/CHk238e4e09d98ddb31008c63b0e546fd062",
         "label": "event 38e4e09d98ddb31008c63b0e546fd062",
         "description": "expeditionCode: HBOI_CubaPor_P01; projectId: 85",
         "has_feature_of_interest": "coral reef",
@@ -44,12 +58,14 @@
             "place_name": ["Cuba"]
         }
     },
-    "registrant": "",
+    "registrant": {},
     "sampling_purpose": "genomic analysis",
     "curation": {
         "access_constraints": [],
         "curation_location": "",
-        "responsibility": ["HBOI"]
+        "responsibility": [
+            {"name": "HBOI"}
+        ]
     },
     "relatedResource": {
         "label": "Tissue",

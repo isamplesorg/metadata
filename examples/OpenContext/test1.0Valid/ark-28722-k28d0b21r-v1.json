@@ -1,12 +1,27 @@
 {
-    "@schema": "iSamplesSchemaBasic1.0.json",
+    "@schema": "iSamplesSchemaCore1.0.json",
     "@id": "metadata/28722/k28d0b21r",
     "label": "Pottery 8110546",
     "sample_identifier": "ark:/28722/k28d0b21r",
     "description": "'early bce/ce': -2850.0 | 'late bce/ce': -2550.0 | 'updated': 2021-06-28T02:11:48Z",
-    "has_context_category": ["Site of past human activities"],
-    "has_material_category": ["Anthropogenic material"],
-    "has_specimen_category": ["Artifact"],
+    "has_context_category": [
+        {
+            "label": "Site of past human activities",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/pasthumanoccupationsite"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Anthropogenic material",
+            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/otheranthropogenicmaterial"
+        }
+    ],
+    "has_specimen_category": [
+        {
+            "label": "Artifact",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/artifact"
+        }
+    ],
     "keywords": [
         {
             "keyword": "Early Bronze Age",
@@ -34,9 +49,18 @@
         "description": "",
         "has_feature_of_interest": "",
         "responsibility": [
-            "Creator:Meredith S. Chesson",
-            "Creator:R. Thomas Schaub",
-            "Creator:Walter E. Rast"
+            {
+                "role": "collector",
+                "name": "Meredith S. Chesson"
+            },
+            {
+                "role": "collector",
+                "name": "R. Thomas Schaub"
+            },
+            {
+                "role": "collector",
+                "name": "Walter E. Rast"
+            }
         ],
         "result_time": "2019-10-05",
         "samplingSite": {

@@ -1,12 +1,16 @@
 {
-    "@schema": "iSamplesSchemaBasic1.0.json",
+    "@schema": "iSamplesSchemaCore1.0.json",
     "@id": "metadata/28722/k2m61xj9b",
     "label": "Bone 6874",
     "sample_identifier": "ark:/28722/k2m61xj9b",
     "description": "'early bce/ce': -4100.0 | 'late bce/ce': -3900.0 | 'updated': 2021-06-27T21:34:12Z | 'Temporal Coverage': Neolithic | 'Temporal Coverage': Bronze age--Europe | 'Temporal Coverage': Neolithikum | 'Has taxonomic identifier': Bos taurus | 'Has anatomical identification': fused metatarsal bones 3 and 4",
-    "has_context_category": ["Site of past human activities"],
-    "has_material_category": ["Biogenic non-organic material"],
-    "has_specimen_category": ["Organism part"],
+    "has_context_category": [{
+            "label": "Site of past human activities",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/pasthumanoccupationsite"
+        }],
+    "has_material_category": [{"label":"Biogenic non-organic material",
+    "identifier":"https://w3id.org/isample/vocabulary/material/0.9/biogenicnonorganicmaterial"}],
+    "has_specimen_category": [{"label":"Organism part","identifier":"https://w3id.org/isample/vocabulary/specimentype/0.9/organismpart"}],
     "keywords": [
         {
             "keyword": "Neolithic",
@@ -45,15 +49,15 @@
         "description": "",
         "has_feature_of_interest": "",
         "responsibility": [
-            "Creator:Elizabeth Wright",
-            "Creator:Margherita Schäfer",
-            "Creator:Barbara Stopp",
-            "Creator:Elisabeth Marti-Grädel",
-            "Creator:Francesca Ginella",
-            "Creator:Manar Kerdy",
-            "Creator:Miki Bopp-Ito",
-            "Creator:Sabine Deschler-Erb",
-            "Creator:Jörg Schibler"
+            {"role":"collector","name":"Elizabeth Wright"},
+            {"role":"collector","name":"Margherita Schäfer"},
+            {"role":"collector","name":"Barbara Stopp"},
+            {"role":"collector","name":"Elisabeth Marti-Grädel"},
+            {"role":"collector","name":"Francesca Ginella"},
+            {"role":"collector","name":"Manar Kerdy"},
+            {"role":"collector","name":"Miki Bopp-Ito"},
+            {"role":"collector","name":"Sabine Deschler-Erb"},
+            {"role":"collector","name":"Jörg Schibler"}
         ],
         "result_time": "2021-02-10",
         "samplingSite": {

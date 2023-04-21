@@ -1,12 +1,27 @@
 {
-    "@schema": "iSamplesSchemaBasic1.0.json",
+    "@schema": "iSamplesSchemaCore1.0.json",
     "@id": "metadata/65665/30000cb27-702b-4d34-ac24-3e46e14d5519",
     "label": "Epinephelus merra AG5NS72",
     "sample_identifier": "ark:/65665/30000cb27-702b-4d34-ac24-3e46e14d5519",
     "description": "basisOfRecord : MaterialSample | occurrenceRemarks: Specimen voucher located at Museum National d'Histoire Naturelle, Paris. | catalogNumber: 439549.12401721 | recordNumber:mbio324 | fieldNumber: Moorea F-06-05 | type: PhysicalObject | individualCount: 1 | disposition: in collection | startDayOfYear: 71 | endDayOfYear: 71",
-    "has_context_category": ["Marine environment"],
-    "has_material_category": ["Organic material"],
-    "has_specimen_category": ["Whole organism"],
+    "has_context_category": [
+        {
+            "label": "Marine environment",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/marinewaterbody"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Organic material",
+            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/organicmaterial"
+        }
+    ],
+    "has_specimen_category": [
+        {
+            "label": "Whole organism specimen",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/wholeorganism"
+        }
+    ],
     "keywords": [
         {"keyword": "Fishes"},
         {
@@ -28,18 +43,38 @@
         }
     ],
     "produced_by": {
-        "@id": "",
         "label": "",
         "description": "",
         "has_feature_of_interest": "",
         "responsibility": [
-            "recordsBy:R. Causse",
-            "recordsBy: J. Grignon",
-            "recordsBy: D. Lecchini",
-            "recordsBy: V. Messmer",
-            "recordsBy: S. Planes",
-            "recordsBy: J. Williams",
-            "recordsBy: R. Galzin"
+            {
+                "role": "team member",
+                "name": "R. Causse"
+            },
+            {
+                "role": "team member",
+                "name": "J. Grignon"
+            },
+            {
+                "role": "team member",
+                "name": "D. Lecchini"
+            },
+            {
+                "role": "team member",
+                "name": "V. Messmer"
+            },
+            {
+                "role": "team member",
+                "name": "S. Planes"
+            },
+            {
+                "role": "team member",
+                "name": "J. Williams"
+            },
+            {
+                "role": "team member",
+                "name": "R. Galzin"
+            }
         ],
         "result_time": "2006-03-12",
         "samplingSite": {
@@ -58,11 +93,21 @@
             ]
         }
     },
-    "registrant": "",
+    "registrant": {"name": "not provided"},
     "sampling_purpose": "",
     "curation": {
         "access_constraints": [],
-        "curation_location": "USNM http://grbio.org/cool/142r-0w94",
-        "responsibility": ["metadata publisher: not specified"]
+        "curation_location": "Smithsonian Institution, National Museum of Natural History (USNM)",
+        "responsibility": [
+            {
+                "role": "metadata publisher",
+                "name": "not specified"
+            },
+            {
+                "role": "curator",
+                "name": "Smithsonian Institution, National Museum of Natural History (USNM)",
+                "identifier": "http://grbio.org/cool/142r-0w94"
+            }
+        ]
     }
 }

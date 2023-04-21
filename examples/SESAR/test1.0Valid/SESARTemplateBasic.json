@@ -1,22 +1,21 @@
 {
-    "@schema": "iSamplesSchemaBasic.json",
+    "@schema": "iSamplesSchemaCore.json",
     "@id":"",
     "label": "",
     "sample_identifier": "",
     "description": "",
-    "has_context_category": [""],
-    "has_material_category": [""],
-    "has_specimen_category": [""],
+    "has_context_category": [{"label":"","identifier":""}],
+    "has_material_category": [{"label":"","identifier":""}],
+    "has_specimen_category": [{"label":"","identifier":""}],
     "keywords": [
-    {},
-    {}
+    {"keyword":""},
+    {"keyword":""}
     ],
     "produced_by": {
         "label": "",
         "description": "",
         "has_feature_of_interest": "",
-        "responsibility": [],
-        
+        "responsibility": [{"role":"","name":""}],
         "samplingSite": {
             "description": "",
             "label": "",
@@ -28,6 +27,6 @@
             "place_name": [""]
         }
     },
-    "registrant": "",
+    "registrant": {"name":""},
     "sampling_purpose": ""
 }
