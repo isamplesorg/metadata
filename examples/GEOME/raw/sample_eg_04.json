@@ -1,0 +1,51 @@
+{
+  "projectId": 85,
+  "parent": {
+    "country": "USA",
+    "collectorList": "Robert Aguilar",
+    "dayCollected": "30",
+    "decimalLatitude": "38.88519",
+    "eventID": "121b4d1e83dfda52f33f03ca68ddd146",
+    "yearCollected": "2016",
+    "monthCollected": "6",
+    "decimalLongitude": "-76.53187",
+    "locality": "Maryland, Anne Arundel County, Rhode River, between Flat Island and High Island",
+    "expeditionCode": "FY14_SERCInvP13",
+    "projectId": "85",
+    "bcid": "ark:/21547/CEt2121b4d1e83dfda52f33f03ca68ddd146",
+    "entity": "Event"
+  },
+  "record": {
+    "family": "Carinimidae",
+    "collectionCode": "INVERT",
+    "phylum": "Nemertea",
+    "kingdom": "Animalia",
+    "genus": "Carinoma",
+    "institutionCode": "SERC",
+    "identifiedBy": "Robert Aguilar",
+    "eventID": "121b4d1e83dfda52f33f03ca68ddd146",
+    "catalogNumber": "1180",
+    "class": "Palaeonemertea",
+    "scientificName": "Carinoma tremaphoros",
+    "voucherCatalogNumber": "SERCINVERT1180",
+    "specificEpithet": "tremaphoros",
+    "materialSampleID": "0102453454",
+    "expeditionCode": "FY14_SERCInvP13",
+    "projectId": "85",
+    "bcid": "ark:/21547/AdI20102453454",
+    "entity": "Sample"
+  },
+  "children": [
+    {
+      "tissuePlate": "SERCINVERT_P13",
+      "tissueWell": "A08",
+      "materialSampleID": "0102453454",
+      "tissueID": "0102453454",
+      "tissueBarcode": "0102453454",
+      "expeditionCode": "FY14_SERCInvP13",
+      "projectId": "85",
+      "bcid": "ark:/21547/CEu20102453454",
+      "entity": "Tissue"
+    }
+  ]
+}

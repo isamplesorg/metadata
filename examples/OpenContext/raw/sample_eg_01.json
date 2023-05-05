@@ -1,0 +1,208 @@
+{
+    "@context": [
+        "https://opencontext.org/contexts/search.json",
+        "http://geojson.org/geojson-ld/geojson-context.jsonld"
+    ],
+    "id": "http://opencontext.org/subjects-search/?id=ark%3A%2F28722%2Fk27w68z78",
+    "label": "Open Context API",
+    "dcmi:modified": "2018-05-31T21:56:56Z",
+    "dcmi:created": "2013-10-25",
+    "oai-pmh:earliestDatestamp": "2013-10-25",
+    "start": "0300",
+    "stop": "0749",
+    "dc-terms:temporal": "0300/0749",
+
+    "oc-api:active-filters": [
+        {
+            "oc-api:filter": "Identifier Lookup",
+            "label": "Identifier: 'ark:/28722/k27w68z78'"
+        }
+    ],
+
+    "oc-api:has-form-use-life-ranges": [
+        {
+            "count": 1,
+            "category": "oc-api:chrono-facet",
+            "start": "0300",
+            "stop": "0749",
+            "properties": {
+                "early bce/ce": 300,
+                "late bce/ce": 749
+            }
+        }
+    ],
+
+    "oc-api:has-facets": [
+        {
+            "label": "Context",
+            "data-type": "id",
+            "type": "oc-api:facet-context",
+            "oc-api:has-id-options": [
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/subjects/67D9F00D-14E6-4A1B-3A61-EC92FC774098",
+                    "label": "Cyprus"
+                }
+            ]
+        },
+        {
+            "rdfs:isDefinedBy": "http://opencontext.org/vocabularies/oc-general/subjects",
+            "label": "Subjects",
+            "data-type": "id",
+            "type": "oc-api:facet-prop",
+            "oc-api:has-id-options": [
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/vocabularies/oc-general/cat-object",
+                    "label": "Object",
+                    "count": 1
+                }
+            ]
+        },
+        {
+
+            "label": "Project",
+            "data-type": "id",
+            "type": "oc-api:facet-project",
+            "oc-api:has-id-options": [
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/projects/3F6DCD13-A476-488E-ED10-47D25513FCB2",
+                    "label": "Pyla-Koutsopetria Archaeological Project I: Pedestrian Survey"
+                }
+            ]
+        },
+        {
+            "label": "Descriptions (Common Standards)",
+            "data-type": "id",
+            "type": "oc-api:facet-prop",
+            "oc-api:has-id-options": [
+                {
+                    "rdfs:isDefinedBy": "http://erlangen-crm.org/current/P2_has_type",
+                    "label": "Has type"
+                }
+            ]
+        },
+        {
+            "label": "Descriptions (Project Defined)",
+            "data-type": "id",
+            "oc-api:has-id-options": [
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/predicates/13D92295-65EA-47F7-EBF2-56C7667C6E5F",
+                    "label": "Chronotype"
+                }
+            ],
+            "oc-api:has-text-options": [
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/predicates/D7C8D3B9-6D33-42CB-27E5-B8C187366D03",
+                    "label": "Ct"
+                },
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/predicates/254EDD19-8E1E-4E09-FF38-0558C36B5E8E",
+                    "label": "Description Fabric"
+                },
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/predicates/55BBA93A-E2C0-41D6-1F5C-033D65767701",
+                    "label": "Description Shape"
+                },
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/predicates/8E555587-B12A-4FA5-6E6A-3791AA7CDFA1",
+                    "label": "Dimensions"
+                },
+                {
+                    "rdfs:isDefinedBy": "http://opencontext.org/predicates/ACB13E00-BD95-4715-122C-FC2C9D18239F",
+                    "label": "Munsell"
+                }
+            ]
+        },
+        {
+            "label": "Has Related Media",
+            "oc-api:has-rel-media-options": [
+                {
+                    "label": "Linked with images",
+                    "count": 1
+                }
+            ]
+        }
+    ],
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "category": "oc-api:geo-facet",
+            "when": {
+                "id": "#event-12210313133130032312",
+                "type": "oc-gen:formation-use-life",
+                "start": "0300",
+                "stop": "0749"
+            },
+            "geometry": {
+                "id": "#geo-disc-tile-geom-12210313133130032312",
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            33.713607788085945,
+                            34.98556569837692
+                        ],
+                        [
+                            33.71395111083984,
+                            34.98556569837692
+                        ],
+                        [
+                            33.71395111083984,
+                            34.985846981030285
+                        ],
+                        [
+                            33.713607788085945,
+                            34.985846981030285
+                        ],
+                        [
+                            33.713607788085945,
+                            34.98556569837692
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "label": "Discovery region (1)",
+                "feature-type": "discovery region (facet)",
+                "early bce/ce": 300,
+                "late bce/ce": 749
+            }
+        },
+        {
+            "label": "Artifact 223.17D",
+            "rdfs:isDefinedBy": "http://opencontext.org/subjects/E555826E-42A5-4293-3B0A-0C76553A9B53",
+            "type": "Feature",
+            "geometry": {
+                "id": "#geo-rec-geom-1-of-1",
+                "type": "Point",
+                "coordinates": [
+                    33.713922985712,
+                    34.985731608717
+                ]
+            },
+            "when": {
+                "type": "oc-gen:formation-use-life",
+                "start": "0300",
+                "stop": "0749"
+            },
+            "properties": {
+                "id": "#rec-1-of-1",
+                "feature-type": "item record",
+                "uri": "http://opencontext.org/subjects/E555826E-42A5-4293-3B0A-0C76553A9B53",
+                "href": "https://opencontext.org/subjects/E555826E-42A5-4293-3B0A-0C76553A9B53",
+                "citation uri": "https://n2t.net/ark:/28722/k27w68z78",
+                "label": "Artifact 223.17D",
+                "project label": "Pyla-Koutsopetria Archaeological Project I: Pedestrian Survey",
+                "project href": "https://opencontext.org/projects/3F6DCD13-A476-488E-ED10-47D25513FCB2",
+                "context label": "Cyprus/PKAP Survey Area/Dhekeleia/Unit 223/Batch 17",
+                "context href": "https://opencontext.org/subjects/636D6826-BCBD-4713-A2D4-79439239E754",
+                "early bce/ce": 300.0,
+                "late bce/ce": 749.0,
+                "item category": "Object",
+                "thumbnail": "https://artiraq.org/static/opencontext/pkap-cyprus/thumbs/artifacts-4/223_17D[2].jpg",
+                "published": "2013-10-25",
+                "updated": "2018-05-31T21:56:56Z"
+            }
+        }
+    ]
+}

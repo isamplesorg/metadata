@@ -1,0 +1,113 @@
+{
+    "@context": "https://raw.githubusercontent.com/IGSN/igsn-json/master/schema.igsn.org/json/registration/v0.1/context.jsonld",
+    "@id": "https://data.geosamples.org/sample/igsn/EOI00002H",
+    "igsn": "EOI00002H",
+    "registrant": {
+        "name": "IEDA",
+        "identifiers": {
+            "kind": "uri",
+            "id": "https://www.geosamples.org"
+        }
+    },
+    "description": {
+        "sampleName": "J730-GTHFS-16",
+        "sampleType": "Individual Sample",
+        "collector": "Evans_Leigh",
+        "collectionStartDate": "2013-09-14 01:30:00",
+        "contributors": [
+            {
+                "contributor": [
+                    {
+                        "@type": "Person",
+                        "name": "Andra Bobbitt",
+                        "givenName": "Andra",
+                        "familyName": "Bobbitt"
+                    }
+                ],
+                "@type": "Role",
+                "roleName": "Sample Owner"
+            },
+            {
+                "contributor": [
+                    {
+                        "@type": "Person",
+                        "name": "Andra Bobbitt",
+                        "givenName": "Andra",
+                        "familyName": "Bobbitt"
+                    }
+                ],
+                "@type": "Role",
+                "roleName": "Sample Registrant"
+            },
+            {
+                "contributor": [
+                    {"@type": "Person"}
+                ],
+                "@type": "Role",
+                "roleName": "Sample Archive Contact"
+            }
+        ],
+        "geoLocation": {
+            "geo": [
+                {
+                    "@type": "GeoCoordinates",
+                    "latitude": "45.9463",
+                    "longitude": "-129.9837"
+                }
+            ],
+            "@type": "Place"
+        },
+        "material": "Gas",
+        "collectionMethod": "Sampler:Fluid:GTHFS",
+        "description": "HFS gastight. Red-center-9. T=250C",
+        "supplementMetadata": {
+            "sampleId": 3661220,
+            "cruiseFieldPrgrm": "TN300",
+            "currentArchiveContact": "Lupton_John",
+            "elevation": -1520.0,
+            "elevationUnit": "meters",
+            "externalSampleId": "J730-GTHFS-16",
+            "launchPlatformName": "Jason II",
+            "locationDescription": "Trevi:Jason Tmax=257.9 C. In the direct flow at this small anhydrite mound (anhydrite knocked over).",
+            "platformName": "Jason II",
+            "primaryLocationName": "Axial Seamount",
+            "primaryLocationType": "volcano",
+            "launchTypeName": "ROV",
+            "navigationType": "USBL",
+            "childIGSN": [],
+            "otherName": [],
+            "document": [],
+            "publicationUrl": []
+        },
+        "log": [
+            {
+                "type": "registered",
+                "timestamp": "2014-02-18 09:32:01"
+            },
+            {
+                "type": "published",
+                "timestamp": "2014-02-14 12:00:00"
+            },
+            {
+                "type": "lastUpdated",
+                "timestamp": "2014-02-18 09:32:01"
+            }
+        ],
+        "collectionDatePrecision": "time",
+        "collectionMethodDescr": "GTHFS",
+        "publisher": {
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "name": "Information Desk",
+                "contactType": "Customer Service",
+                "email": "info@geosamples.org",
+                "url": "https://www.geosamples.org/contact/"
+            },
+            "@type": "Organization",
+            "name": "EarthChem",
+            "@id": "https://www.geosamples.org",
+            "url": "https://www.geosamples.org"
+        },
+        "igsnPrefix": "EOI"
+    }
+}

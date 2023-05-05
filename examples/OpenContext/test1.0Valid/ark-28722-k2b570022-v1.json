@@ -1,0 +1,63 @@
+{
+    "@schema": "iSamplesSchemaCore1.0.json",
+    "@id": "metadata/28722/k2b570022",
+    "label": "Object 11208190",
+    "sample_identifier": "ark:/28722/k2b570022",
+    "description": "'early bce/ce': 1820.0 | 'late bce/ce': 1950.0 | 'updated': 2021-06-27T19:54:46Z | 'Consists of': leather | 'Has type': fragments (object portions)",
+    "has_context_category": [
+        {
+            "label": "Site of past human activities",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/pasthumanoccupationsite"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Anthropogenic material",
+            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/otheranthropogenicmaterial"
+        }
+    ],
+    "has_specimen_category": [
+        {
+            "label": "Artifact",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/artifact"
+        }
+    ],
+    "keywords": [
+        {
+            "keyword": "Historic Fort Snelling",
+            "keyword_uri": "https://www.wikidata.org/wiki/Q480993",
+            "scheme_name": "Wikidata"
+        },
+        {
+            "keyword": "leather",
+            "scheme_name": "Materials Facet: Getty Art & Architecture Thesaurus",
+            "keyword_uri": "http://vocab.getty.edu/page/aat/300011845"
+        }
+    ],
+    "produced_by": {
+        "label": "Historic Fort Snelling",
+        "description": "",
+        "has_feature_of_interest": "Historic Fort Snelling",
+        "responsibility": [
+            {
+                "role": "collector",
+                "name": "Nancy Hoffman"
+            }
+        ],
+        "result_time": "2016-06-23",
+        "samplingSite": {
+            "description": "Base of stairwell",
+            "label": "Fort Snelling Short Barracks",
+            "location": {
+                "elevation": "",
+                "latitude": 44.893131,
+                "longitude": -93.181061
+            },
+            "place_name": [
+                "United States",
+                "Minnesota",
+                "Historic Fort Snelling"
+            ]
+        }
+    }
+}

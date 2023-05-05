@@ -1,0 +1,87 @@
+{
+    "@schema": "iSamplesSchemaCore1.0.json",
+    "@id": "metadata/21547/Cat2INDO106431.1",
+    "label": "INDO106431.1",
+    "sample_identifier": "ark:/21547/Cat2INDO106431.1",
+    "description": "",
+    "has_context_category": [
+        {
+            "label": "Marine environment",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/marinewaterbody"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Organic material",
+            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/organicmaterial"
+        }
+    ],
+    "has_specimen_category": [
+        {
+            "label": "Organism part",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/organismpart"
+        }
+    ],
+    "keywords": [
+        {
+            "keyword": "Aceh",
+            "scheme_name": "Getty Thesaurus of Geographic Names",
+            "keyword_uri": "http://vocab.getty.edu/page/tgn/7016479"
+        },
+        {
+            "keyword": "Sumatra",
+            "scheme_name": "Getty Thesaurus of Geographic Names",
+            "keyword_uri": "http://vocab.getty.edu/page/tgn/7016484"
+        },
+        {
+            "keyword": "Pulau Seulako",
+            "scheme_uri": "https://id.wikipedia.org/wiki/",
+            "keyword_uri": "https://id.wikipedia.org/wiki/Pulau_Seulako"
+        },
+        {
+            "keyword": "Mollusca",
+            "scheme_name": "Taxon: phylum"
+        },
+        {
+            "keyword": "Gastropoda",
+            "scheme_name": "Taxon: class"
+        }
+    ],
+    "produced_by": {
+        "label": "tissue subsample from PIRE_0334",
+        "description": "",
+        "has_feature_of_interest": "",
+        "responsibility": [],
+        "samplingSite": {
+            "description": "",
+            "label": "",
+            "location": {
+                "elevation": "maximumDepthInMeters: 12",
+                "latitude": 5.89430,
+                "longitude": 95.25293
+            },
+            "place_name": [
+                "Aceh",
+                "Sumatra",
+                "Pulau Seulako",
+                "Indonesia",
+                "Asia"
+            ]
+        }
+    },
+    "registrant": {"name": "Chris Meyer"},
+    "sampling_purpose": "genomic analysis",
+    "curation": {
+        "access_constraints": [],
+        "curation_location": "tissueWell: C06, tissuePlate: 03_ACEH_080916",
+        "responsibility": []
+    },
+    "relatedResource": [
+        {
+            "label": "parent sample PIRE_0334",
+            "description": "",
+            "target": "ark:/21547/Car2PIRE_0334",
+            "relationship": "derived from"
+        }
+    ]
+}

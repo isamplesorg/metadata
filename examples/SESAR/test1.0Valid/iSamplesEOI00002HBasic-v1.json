@@ -1,0 +1,67 @@
+{
+    "$schema": "iSamplesSchemaCore1.0.json",
+    "@id": "https://data.isamples.org/digitalsample/igsn/EOI00002H",
+    "label": "J730-GTHFS-16",
+    "sample_identifier": "igsn:EOI00002H",
+    "description": "Not Provided",
+    "has_context_category": [
+        {
+            "label": "Subsurface fluid reservoir",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/subsurfacefluidreservoir"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Gaseous material",
+            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/gas"
+        }
+    ],
+    "has_specimen_category": [
+        {
+            "label": "Fluid in container",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/fluidincontainer"
+        }
+    ],
+    "keywords": [
+        {"keyword": "Individual Sample"}
+    ],
+    "produced_by": {
+        "label": "Sampler:Fluid:GTHFS",
+        "description": "cruiseFieldPrgrm:TN300. launchPlatformName:Jason II. Sampler:Fluid:GTHFS. HFS gastight. Red-center-9. T=250C. launch type:ROV, navigation type:USBL",
+        "has_feature_of_interest": "volcano",
+        "responsibility": [
+            {
+                "role": "collector",
+                "name": "Evans_Leigh"
+            }            
+        ],
+        "result_time": "2013-09-14",
+        "samplingSite": {
+            "description": "Trevi:Jason Tmax=257.9 C. In the direct flow at this small anhydrite mound (anhydrite knocked over).",
+            "label": "Not Provided",
+            "location": {
+                "elevation": "-1520.0 m",
+                "latitude": 45.9463,
+                "longitude": -129.9837
+            },
+            "place_name": [
+                "Axial Seamount",
+                "North Pacific Ocean"
+            ]
+        }
+    },
+    "registrant": {"name": "Andra Bobbitt"},
+    "sampling_purpose": "",
+    "curation": {
+        "responsibility": [
+            {
+                "role": "metadata publisher",
+                "contact_information": "info@geosamples.org; url: https://www.geosamples.org/contact/"
+            },
+            {
+                "role": "sample owner",
+                "name": "Andra Bobbitt"
+            }
+        ]
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "uri": "http://opencontext.org/subjects/5142a2ce-e69e-43fb-9765-37c298a794f3",
+    "citation uri": "https://n2t.net/ark:/28722/k2r78rh73",
+    "label": "11208747",
+    "project label": "Historic Fort Snelling",
+    "project uri": "http://opencontext.org/projects/fab0532a-2953-4f13-aa97-8a9d7e992dbe",
+    "context label": "United States/Minnesota/Fort Snelling/Fort Snelling Short Barracks/10 S :: 20 E east half",
+    "context uri": "http://opencontext.org/subjects/d5d186e9-c4a4-4aa4-8f92-a99b3ea2ff47",
+    "latitude": 44.893206,
+    "longitude": -93.18089,
+    "early bce/ce": 1820.0,
+    "late bce/ce": 1950.0,
+    "item category": "Object",
+    "published": "2016-06-23T19:15:27Z",
+    "updated": "2021-06-27T19:55:08Z",
+    "Consists of": [{
+        "id": "http://vocab.getty.edu/aat/300010445",
+        "label": "kaolin"
+    }],
+    "Creator": [{
+        "id": "http://opencontext.org/persons/c2c92a0a-4acb-40c0-822d-e20e85fa10a1",
+        "label": "Nancy Hoffman"
+    }],
+    "Has type": [{
+        "id": "http://vocab.getty.edu/aat/300248067",
+        "label": "pipes (smoking equipment)"
+    }]
+}

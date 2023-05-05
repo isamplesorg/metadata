@@ -1,0 +1,121 @@
+{
+    "@context": "https://raw.githubusercontent.com/IGSN/igsn-json/master/schema.igsn.org/json/registration/v0.1/context.jsonld",
+    "@id": "https://data.geosamples.org/sample/igsn/IERVTL1I7",
+    "igsn": "IERVTL1I7",
+    "registrant": {
+        "name": "IEDA",
+        "identifiers": {
+            "kind": "uri",
+            "id": "https://www.geosamples.org"
+        }
+    },
+    "description": {
+        "sampleName": "0744",
+        "sampleType": "Individual Sample",
+        "collector": "Zach Perzan",
+        "collectionStartDate": "2019-05-24",
+        "contributors": [
+            {
+                "contributor": [
+                    {
+                        "@type": "Person",
+                        "name": "SLAC SFA",
+                        "givenName": "SLAC",
+                        "familyName": "SFA"
+                    }
+                ],
+                "@type": "Role",
+                "roleName": "Sample Owner"
+            },
+            {
+                "contributor": [
+                    {
+                        "@type": "Person",
+                        "name": "SLAC SFA",
+                        "givenName": "SLAC",
+                        "familyName": "SFA"
+                    }
+                ],
+                "@type": "Role",
+                "roleName": "Sample Registrant"
+            },
+            {
+                "contributor": [
+                    {"@type": "Person"}
+                ],
+                "@type": "Role",
+                "roleName": "Sample Archive Contact"
+            }
+        ],
+        "geoLocation": {
+            "geo": [
+                {
+                    "@type": "GeoCoordinates",
+                    "latitude": "42.9884",
+                    "longitude": "-108.4003"
+                }
+            ],
+            "@type": "Place"
+        },
+        "material": "Gas",
+        "collectionMethod": "Headspace equilibration method",
+        "supplementMetadata": {
+            "sampleId": 4369455,
+            "cruiseFieldPrgrm": "SLAC-SFA",
+            "depthMax": 150.0,
+            "depthMin": 150.0,
+            "depthScale": "cm",
+            "externalSampleId": "0744",
+            "primaryLocationType": "floodplain, aquifer",
+            "purpose": "2018 inundation tracer tests",
+            "childIGSN": [],
+            "siblingIGSN": [
+                "IERVTNTEZ",
+                "IERVTL17P",
+                "IERVTNTG2",
+                "IERVTL1CI",
+                "IERVTL1KX",
+                "IERVTL1MN",
+                "IERVTL1PV",
+                "IERVTL1T3",
+                "IERVTL1WP",
+                "IERVTL1Z2",
+                "IERVTNTGX",
+                "IERVTNTI1"
+            ],
+            "otherName": ["Gas_NTC1-140cm_20190524-H"],
+            "document": [],
+            "publicationUrl": []
+        },
+        "log": [
+            {
+                "type": "registered",
+                "timestamp": "2019-07-11 02:14:54"
+            },
+            {
+                "type": "published",
+                "timestamp": "2019-07-11 02:14:54"
+            },
+            {
+                "type": "lastUpdated",
+                "timestamp": "2019-11-19 04:52:20"
+            }
+        ],
+        "collectorDetail": "zperzan@stanford.edu; Stanford University, Stanford, CA",
+        "publisher": {
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "name": "Information Desk",
+                "contactType": "Customer Service",
+                "email": "info@geosamples.org",
+                "url": "https://www.geosamples.org/contact/"
+            },
+            "@type": "Organization",
+            "name": "EarthChem",
+            "@id": "https://www.geosamples.org",
+            "url": "https://www.geosamples.org"
+        },
+        "parentIdentifier": "IERVTNTEZ",
+        "igsnPrefix": "IERVT"
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "@schema": "iSamplesSchemaCore.json",
+    "@id":"",
+    "label": "",
+    "sample_identifier": "",
+    "description": "",
+    "has_context_category": [{"label":"","identifier":""}],
+    "has_material_category": [{"label":"","identifier":""}],
+    "has_specimen_category": [{"label":"","identifier":""}],
+    "keywords": [
+    {"keyword":""},
+    {"keyword":""}
+    ],
+    "produced_by": {
+        "label": "",
+        "description": "",
+        "has_feature_of_interest": "",
+        "responsibility": [{"role":"","name":""}],
+        "samplingSite": {
+            "description": "",
+            "label": "",
+            "location": {
+                "elevation": "",
+                "latitude": 0,
+                "longitude": 0
+            },
+            "place_name": [""]
+        }
+    },
+    "registrant": {"name":""},
+    "sampling_purpose": ""
+}

@@ -1,0 +1,90 @@
+{
+    "@schema": "iSamplesSchemaCore1.0.json",
+    "@id": "metadata:21547/CgZ2PEER_7055",
+    "label": "Polychaeta PEER_7055",
+    "sample_identifier": "http://n2t.net/ark:/21547/R2INDO119289",
+    "description": "",
+    "has_context_category": [
+        {
+            "label": "Marine environment",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/marinewaterbody"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Biogenic non-organic material",
+            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/biogenicnonorganicmaterial"
+        }
+    ],
+    "has_specimen_category": [
+        {
+            "label": "Organism product",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/organismproduct"
+        }
+    ],
+    "keywords": [
+        {
+            "keyword": "Lombok",
+            "scheme_name": "Getty Thesaurus of Geographic Names",
+            "keyword_uri": "http://vocab.getty.edu/page/tgn/1007904"
+        },
+        {
+            "keyword": "Gili Asahan",
+            "scheme_name": "Wikidata",
+            "keyword_uri": "https://www.wikidata.org/wiki/Q25020575"
+        },
+        {
+            "keyword": "Annelida",
+            "scheme_name": "Taxon: phylum"
+        },
+        {
+            "keyword": "Polychaeta",
+            "scheme_name": "Taxon: class"
+        }
+    ],
+    "complies_with": ["sampling protocol:Dead Coral Head"],
+    "produced_by": {
+        "identifier": "ark:/21547/Cga2INDO_224",
+        "label": "event INDO_224",
+        "description": "sampling protocol:Dead Coral Head; projectId:78 ; expeditionCode: PEER_2016",
+        "has_feature_of_interest": "Coral Reef",
+        "responsibility": [
+            {
+                "role": "Taxonymy team",
+                "name": "MINV"
+            },
+            {
+                "role": "Collector",
+                "name": "Eka Maya Kurniasih"
+            }
+        ],
+        "result_time": "2017-06-04",
+        "samplingSite": {
+            "description": "",
+            "label": "Gili Asahan",
+            "location": {
+                "elevation": "",
+                "latitude": -8.73642,
+                "longitude": 115.88083
+            },
+            "place_name": [
+                "Nusa Tenggara",
+                "Indonesia",
+                "West Nusa Tenggara",
+                "Asia"
+            ]
+        }
+    },
+    "registrant": {"name": "Eka Maya Kurniasih"},
+    "sampling_purpose": "",
+    "curation": {
+        "access_constraints": [],
+        "curation_location": "",
+        "responsibility": [
+            {
+                "role": "curator",
+                "name": "Indonesian Biodiversity Research Center"
+            }
+        ]
+    }
+}

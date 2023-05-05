@@ -1,0 +1,128 @@
+{
+    "@context": "https://raw.githubusercontent.com/IGSN/igsn-json/master/schema.igsn.org/json/registration/v0.1/context.jsonld",
+    "@id": "missing",
+    "igsn": "#/sample/igsn",
+    "registrant": {
+        "name": "missing",
+        "identifiers": {
+            "kind": "uri",
+            "id": "missing"
+        }
+    },
+    "description": {
+        "sampleName": "#/sample/name",
+        "sampleType": "#/sample/sample_type",
+        "collector": "#/sample/collector",
+        "collectionStartDate": "#/sample/collection_start_date",
+        "contributors-missing": [
+            {
+                "contributor": [
+                    {
+                        "@type": "Person",
+                        "name": "Matej Durcik",
+                        "givenName": "Matej",
+                        "familyName": "Durcik"
+                    }
+                ],
+                "@type": "Role",
+                "roleName": "Sample Owner"
+            },
+            {
+                "contributor": [
+                    {
+                        "@type": "Person",
+                        "name": "Matej Durcik",
+                        "givenName": "Matej",
+                        "familyName": "Durcik"
+                    }
+                ],
+                "@type": "Role",
+                "roleName": "Sample Registrant"
+            },
+            {
+                "contributor": [
+                    {"@type": "Person"}
+                ],
+                "@type": "Role",
+                "roleName": "Sample Archive Contact"
+            }
+        ],
+        "geoLocation": {
+            "geo": [
+                {
+                    "@type": "GeoCoordinates",
+                    "latitude": "#/sample/latitude",
+                    "longitude": "#/sample/longitude"
+                }
+            ],
+            "@type": "Place"
+        },
+        "material": "#/sample/material",
+        "collectionMethod": "#/sample/collection_method ",
+        "description": "#/sample/collection_method",
+        "supplementMetadata": {
+            "sampleId": "missing",
+            "county": "#/sample/county",
+            "cruiseFieldPrgrm": "#/sample/cruise_field_prgrm",
+            "currentArchive": "#/sample/current_archive",
+            "currentArchiveContact": "#/sample/current_archive_contact",
+            "depthMin": "#/sample/depth_min",
+            "depthScale": "#/sample/depth_scale",
+            "easting": "#/sample/easting",
+            "elevation": "#/sample/elevation",
+            "elevationUnit": "#/sample/elevation_unit",
+            "externalSampleId": "#/sample/name",
+            "fieldName": "#/sample/field_name",
+            "locality": "#/sample/locality",
+            "northing": "#/sample/northing",
+            "primaryLocationName": "#/sample/primary_location_name",
+            "primaryLocationType": "#/sample/primary_location_type",
+            "province": "#/sample/province",
+            "size": "#/sample/size",
+            "sizeUnit": "#/sample/size_unit",
+            "verticalDatum": "#/sample/vertical_datum",
+            "zone": "#/sample/zone",
+            "country": "#/sample/country",
+            "navigationType": "#/sample/navigation_type",
+            "childIGSN": ["missing-uses parent link"],
+            "siblingIGSN": [
+               "#/sample/siblings/samples/sample//igsn" 
+            ],
+            "otherName": [],
+            "document": [],
+            "publicationUrl": []
+        },
+        "log": [
+            {
+                "type": "registered",
+                "timestamp": "missing"
+            },
+            {
+                "type": "published",
+                "timestamp": "#/sample/publish_date"
+            },
+            {
+                "type": "lastUpdated",
+                "timestamp": "missing"
+            }
+        ],
+        "collectionDatePrecision": "#/sample/collection_date_precision",
+        "collectionMethodDescr": "#/sample/collection_method_descr",
+        "collectorDetail": "#/sample/collector_detail",
+        "publisher": {
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "name": "Information Desk",
+                "contactType": "Customer Service",
+                "email": "missing,
+                "url": "missing"
+            },
+            "@type": "Organization",
+            "name": "missing",
+            "@id": "missing",
+            "url": "missing"
+        },
+        "parentIdentifier": "#/sample/parents/samples/sample/igsn",
+        "igsnPrefix": "#/sample/user_code"
+    }
+}

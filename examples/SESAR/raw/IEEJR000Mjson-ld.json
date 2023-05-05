@@ -1,0 +1,107 @@
+{
+    "@context": "https://raw.githubusercontent.com/IGSN/igsn-json/master/schema.igsn.org/json/registration/v0.1/context.jsonld",
+    "@id": "https://data.geosamples.org/sample/igsn/IEEJR000M",
+    "igsn": "IEEJR000M",
+    "registrant": {
+        "name": "IEDA",
+        "identifiers": {
+            "kind": "uri",
+            "id": "https://www.geosamples.org"
+        }
+    },
+    "description": {
+        "sampleName": "16ER6F3",
+        "sampleType": "Individual Sample",
+        "collector": "Jade Star Lackey",
+        "contributors": [
+            {
+                "contributor": [
+                    {
+                        "@type": "Person",
+                        "name": "Evan Ramos",
+                        "givenName": "Evan",
+                        "familyName": "Ramos"
+                    }
+                ],
+                "@type": "Role",
+                "roleName": "Sample Owner"
+            },
+            {
+                "contributor": [
+                    {
+                        "@type": "Person",
+                        "name": "Sam Kodama",
+                        "givenName": "Sam",
+                        "familyName": "Kodama"
+                    }
+                ],
+                "@type": "Role",
+                "roleName": "Sample Registrant"
+            },
+            {
+                "contributor": [
+                    {"@type": "Person"}
+                ],
+                "@type": "Role",
+                "roleName": "Sample Archive Contact"
+            }
+        ],
+        "geoLocation": {
+            "geo": [
+                {
+                    "@type": "GeoCoordinates",
+                    "latitude": "36.4617",
+                    "longitude": "-118.5839"
+                }
+            ],
+            "@type": "Place"
+        },
+        "material": "Metamorphic>Meta-Carbonate>Rock",
+        "collectionMethod": "Manual>Hammer",
+        "supplementMetadata": {
+            "sampleId": 4580055,
+            "city": "Silver City",
+            "county": "Tulare",
+            "currentArchive": "The University of Texas at Austin",
+            "currentArchiveContact": "jdbarnes@jsg.utexas.edu",
+            "externalSampleId": "16ER6F3",
+            "fieldName": "Marble",
+            "primaryLocationName": "Mineral King; Sequoia National Forest",
+            "primaryLocationType": "Metamorphic aureole",
+            "province": "California",
+            "country": "United States",
+            "childIGSN": [],
+            "otherName": [],
+            "document": [],
+            "publicationUrl": []
+        },
+        "log": [
+            {
+                "type": "registered",
+                "timestamp": "2021-01-19 04:32:44"
+            },
+            {
+                "type": "published",
+                "timestamp": "2021-01-19 04:32:44"
+            },
+            {
+                "type": "lastUpdated",
+                "timestamp": "2021-01-19 04:32:44"
+            }
+        ],
+        "publisher": {
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "name": "Information Desk",
+                "contactType": "Customer Service",
+                "email": "info@geosamples.org",
+                "url": "https://www.geosamples.org/contact/"
+            },
+            "@type": "Organization",
+            "name": "EarthChem",
+            "@id": "https://www.geosamples.org",
+            "url": "https://www.geosamples.org"
+        },
+        "igsnPrefix": "IEEJR"
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "@schema": "iSamplesSchemaCore1.0.json",
+    "@id": "metadata/28722/k2m61xj9b",
+    "label": "Bone 6874",
+    "sample_identifier": "ark:/28722/k2m61xj9b",
+    "description": "'early bce/ce': -4100.0 | 'late bce/ce': -3900.0 | 'updated': 2021-06-27T21:34:12Z | 'Temporal Coverage': Neolithic | 'Temporal Coverage': Bronze age--Europe | 'Temporal Coverage': Neolithikum | 'Has taxonomic identifier': Bos taurus | 'Has anatomical identification': fused metatarsal bones 3 and 4",
+    "has_context_category": [{
+            "label": "Site of past human activities",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/pasthumanoccupationsite"
+        }],
+    "has_material_category": [{"label":"Biogenic non-organic material",
+    "identifier":"https://w3id.org/isample/vocabulary/material/0.9/biogenicnonorganicmaterial"}],
+    "has_specimen_category": [{"label":"Organism part","identifier":"https://w3id.org/isample/vocabulary/specimentype/0.9/organismpart"}],
+    "keywords": [
+        {
+            "keyword": "Neolithic",
+            "keyword_uri": "http://id.loc.gov/authorities/subjects/sh85090768",
+            "scheme_name": "LC Subject Headings (LCSH)"
+        },
+        {
+            "keyword": "Neolithic",
+            "keyword_uri": "http://vocab.getty.edu/page/aat/300019267",
+            "scheme_name": "Styles and Periods Facet: Getty Art & Architecture Thesaurus"
+        },
+        {
+            "keyword": "Bronze Age-Europe",
+            "keyword_uri": "http://id.loc.gov/authorities/subjects/sh85017098",
+            "scheme_name": "LC Subject Headings (LCSH)"
+        },
+        {"keyword": "cattle"},
+        {
+            "keyword": "bone",
+            "keyword_uri": "http://vocab.getty.edu/page/aat/300011798",
+            "scheme_name": "Materials Facet: Getty Art & Architecture Thesaurus"
+        },
+        {
+            "keyword": "Liechtenstein",
+            "keyword_uri": "http://vocab.getty.edu/page/tgn/7003515",
+            "scheme_name": "Getty Thesaurus of Geographic Names"
+        },
+        {
+            "keyword": "Eschen-Lutzengüetle",
+            "keyword_uri": "https://opencontext.org/subjects/d141b994-72e6-4b1d-b60f-e961abb54d8e",
+            "scheme_name": "oc-gen:cat-site"
+        }
+    ],
+    "produced_by": {
+        "label": "Neolithic and Bronze Age cattle data from Switzerland",
+        "description": "",
+        "has_feature_of_interest": "",
+        "responsibility": [
+            {"role":"collector","name":"Elizabeth Wright"},
+            {"role":"collector","name":"Margherita Schäfer"},
+            {"role":"collector","name":"Barbara Stopp"},
+            {"role":"collector","name":"Elisabeth Marti-Grädel"},
+            {"role":"collector","name":"Francesca Ginella"},
+            {"role":"collector","name":"Manar Kerdy"},
+            {"role":"collector","name":"Miki Bopp-Ito"},
+            {"role":"collector","name":"Sabine Deschler-Erb"},
+            {"role":"collector","name":"Jörg Schibler"}
+        ],
+        "result_time": "2021-02-10",
+        "samplingSite": {
+            "description": "",
+            "label": "Animal Bone",
+            "location": {
+                "elevation": "",
+                "latitude": 47.210228,
+                "longitude": 9.522178
+            },
+            "place_name": [
+                "Liechtenstein",
+                "Eschen-Lutzengüetle",
+                "Eschen-Lutzengüetle SR"
+            ]
+        }
+    }
+}

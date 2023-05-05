@@ -1,0 +1,76 @@
+{
+    "$schema": "iSamplesSchemaCore1.0.json",
+    "@id": "https://data.isamples.org/digitalsample/igsn/ODP02Q1IZ",
+    "label": "Sample 178-1098B-1H-3 (26-27 cm.)",
+    "sample_identifier": "IGSN:ODP02Q1IZ",
+    "description": "Not Provided",
+    "has_context_category": [
+        {
+            "label": "Earth interior",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/earthinterior"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Rock or sediment",
+            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/rockorsediment"
+        }
+    ],
+    "has_specimen_category": [
+        {
+            "label": "Other solid object",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/othersolidobject"
+        }
+    ],
+    "keywords": [
+        {
+            "keyword": "Individual Sample",
+            "scheme_name": "SESAR: Sample Type"
+        }
+    ],
+    "produced_by": {
+        "label": "Deep sea drilling program, ODP Leg 178",
+        "description": "cruiseFieldPrgrm:ODP Leg 178. Janus sample_id: 63151",
+        "has_feature_of_interest": "Sea-floor stratigraphy",
+        "responsibility": [
+            {
+                "role": "sponsor",
+                "name": "Integrated Ocean Drilling Program (TAMU)"
+            }
+        ],
+        "result_time": "2006-08-11",
+        "samplingSite": {
+            "description": "Not Provided",
+            "label": "Not Provided",
+            "location": {
+                "elevation": "-1010.6 m",
+                "latitude": -64.8619,
+                "longitude": -64.208
+            },
+            "place_name": []
+        }
+    },
+    "registrant": {},
+    "sampling_purpose": "",
+    "curation": {
+        "label": "Not Provided",
+        "description": "Not Provided",
+        "access_constraints": ["Not Provided"],
+        "curation_location": "Not Provided",
+        "responsibility": [
+            {
+                "role": "metadata publisher",
+                "contact_information": "info@geosamples.org; url: https://www.geosamples.org/contact/"
+            },
+            {
+                "role": "curator",
+                "name": "Integrated Ocean Drilling Program (TAMU)"
+            },
+            {
+                "role": "sample owner",
+                "name": "Integrated Ocean Drilling Program (TAMU)"
+            }
+        ]
+    },
+    "relatedResource": []
+}

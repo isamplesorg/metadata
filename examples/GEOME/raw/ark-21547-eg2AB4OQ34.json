@@ -1,0 +1,51 @@
+{
+    "parent": {
+        "bcid": "ark:/21547/CAZ22d56d67d0d9114f5eaec25e71aeb6604",
+        "entity": "Event",
+        "country": "USA",
+        "eventID": "2d56d67d0d9114f5eaec25e71aeb6604",
+        "locality": "USA",
+        "projectId": "85",
+        "dayCollected": "7",
+        "collectorList": "Northeast Fisheries Science Center (NEFSC), Woods Hole, MA",
+        "yearCollected": "2006",
+        "expeditionCode": "PT_02",
+        "monthCollected": "9",
+        "decimalLatitude": "37.5267",
+        "decimalLongitude": "-74.3667"
+    },
+    "record": {
+        "bcid": "ark:/21547/eg2AB4OQ34",
+        "class": "Actinopterygii",
+        "genus": "Cookeolus",
+        "order": "Perciformes",
+        "entity": "Sample",
+        "family": "Priacanthidae",
+        "phylum": "Chordata",
+        "eventID": "2d56d67d0d9114f5eaec25e71aeb6604",
+        "kingdom": "Animalia",
+        "projectId": "85",
+        "catalogNumber": "433156",
+        "collectionCode": "Fish",
+        "expeditionCode": "PT_02",
+        "scientificName": "Cookeolus japonicus",
+        "institutionCode": "USNM",
+        "specificEpithet": "japonicus",
+        "materialSampleID": "AB4OQ34",
+        "voucherCatalogNumber": "USNM:Fish:433156"
+    },
+    "children": [
+        {
+            "bcid": "ark:/21547/CAa2AB4OQ34",
+            "entity": "Tissue",
+            "tissueID": "AB4OQ34",
+            "projectId": "85",
+            "tissueWell": "E02",
+            "tissuePlate": "Proficiency_Test_02",
+            "tissueBarcode": "AB4OQ34",
+            "expeditionCode": "PT_02",
+            "materialSampleID": "AB4OQ34"
+        }
+    ],
+    "projectId": 85
+}

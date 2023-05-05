@@ -1,0 +1,44 @@
+{
+    "parent": {
+        "bcid": "ark:/21547/BLs210343a067c32e5ef5d675fe682ed49b8",
+        "entity": "Event",
+        "eventID": "10343a067c32e5ef5d675fe682ed49b8",
+        "locality": "Marshall Islands",
+        "projectId": "1",
+        "yearCollected": "2006",
+        "expeditionCode": "halmar_CO1_WL",
+        "decimalLatitude": "9.0612269",
+        "decimalLongitude": "167.2939682",
+        "georeferenceProtocol": "Google Earth",
+        "principalInvestigator": "Luiz Rocha",
+        "coordinateUncertaintyInMeters": "100000"
+    },
+    "record": {
+        "bcid": "ark:/21547/oK2HMA81",
+        "class": "Actinopterygii",
+        "genus": "Halichoeres",
+        "order": "Perciformes",
+        "entity": "Sample",
+        "family": "Labridae",
+        "phylum": "Chordata",
+        "eventID": "10343a067c32e5ef5d675fe682ed49b8",
+        "wormsID": "218987",
+        "projectId": "1",
+        "expeditionCode": "halmar_CO1_WL",
+        "specificEpithet": "margaritaceus",
+        "materialSampleID": "HMA81",
+        "associatedReferences": "DOI: 10.1371/journal.pone.0038113",
+        "identificationRemarks": "morphology"
+    },
+    "children": [
+        {
+            "bcid": "ark:/21547/BLt2HMA81",
+            "entity": "Tissue",
+            "tissueID": "HMA81",
+            "projectId": "1",
+            "expeditionCode": "halmar_CO1_WL",
+            "materialSampleID": "HMA81"
+        }
+    ],
+    "projectId": 1
+}

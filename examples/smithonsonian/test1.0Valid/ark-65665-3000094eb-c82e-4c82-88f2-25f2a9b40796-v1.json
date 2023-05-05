@@ -1,0 +1,92 @@
+{
+    "@schema": "iSamplesSchemaCore1.0.json",
+    "@id": "metadata/65665/3000094eb-c82e-4c82-88f2-25f2a9b40796",
+    "label": "Anthopleura elegantissima AC7BN99",
+    "sample_identifier": "ark:/65665/3000094eb-c82e-4c82-88f2-25f2a9b40796",
+    "description": "basisOfRecord : MaterialSample | catalogNumber： 1445124.13347881 | fieldNumber：BOEM-MARINE-HAZ/111716 | type: PhysicalObject | individualCount: 1 | disposition: in collection | startDayOfYear: 322 | endDayOfYear: 322.  scientificNameAuthorship:(Brandt)",
+    "has_context_category": [
+        {
+            "label": "Marine water body bottom",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/marinewaterbodybottom"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Organic material",
+            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/organicmaterial"
+        }
+    ],
+    "has_specimen_category": [
+        {
+            "label": "Whole organism specimen",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/wholeorganism"
+        }
+    ],
+    "keywords": [
+        {"keyword": "Invertebrate Zoology"},
+        {"keyword": "Animalia"},
+        {"keyword": "Cnidaria"},
+        {"keyword": "Anthozoa"},
+        {"keyword": "Actiniaria"},
+        {"keyword": "Actiniidae"},
+        {
+            "keyword": "Anthopleura elegantissima",
+            "keyword_uri": "https://www.wikidata.org/wiki/Q1626154",
+            "scheme_name": "taxon: species"
+        }
+    ],
+    "produced_by": {
+        "label": "",
+        "description": "verbatim EventDate：Afternoon low tide 3 - pm.",
+        "has_feature_of_interest": "biome, intertidal zone",
+        "responsibility": [
+            {
+                "role": "team member",
+                "name": "J. Burnaford"
+            },
+            {
+                "role": "team member",
+                "name": "L. Gilbane"
+            },
+            {
+                "role": "identified by",
+                "name": "Bell, C."
+            }
+        ],
+        "result_time": "2016-11-17",
+        "samplingSite": {
+            "description": "locationID：HAZ | verbatimDepth: Intertidal | verbatimLatitude: 35.2896614 | verbatimLongitude: -120.88325 [NOTE-lat and long place at point near Hazard canyon, north of Montana del Oro State Park...]",
+            "label": "MARINe Site, Montana del Oro State Park",
+            "location": {
+                "elevation": "",
+                "latitude": 35.2897,
+                "longitude": -120.883
+            },
+            "place_name": [
+                "MARINe Site, Montana del Oro State Park",
+                "United States",
+                "California",
+                "San Luis Obispo County",
+                "North Pacific Ocean"
+            ]
+        }
+    },
+    "registrant": {},
+    "sampling_purpose": "",
+    "curation": {
+        "access_constraints": [],
+        "description": "preservation: Liq N, no buffer",
+        "curation_location": "Smithsonian Institution, National Museum of Natural History (USNM)",
+        "responsibility": [
+            {
+                "role": "curator",
+                "name": "Smithsonian Institution, National Museum of Natural History (USNM)",
+                "identifier": "http://grbio.org/cool/142r-0w94"
+            },
+            {
+                "role": "metadata publisher",
+                "name": "not specified"
+            }
+        ]
+    }
+}
