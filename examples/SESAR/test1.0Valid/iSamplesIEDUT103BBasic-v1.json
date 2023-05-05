@@ -1,12 +1,27 @@
 {
-    "@schema": "iSamplesSchemaBasic1.0.json",
+    "@schema": "iSamplesSchemaCore1.0.json",
     "@id": "https://data.geosamples.org/sample/igsn/IEDUT103B",
     "label": "JAM42",
     "sample_identifier": "IGSN:IEDUT103B",
     "description": "Macrobiology>Coral>Biology; Coring>HandHeldCorer. piece of short core",
-    "has_context_category": ["Subaerial surface environment"],
-    "has_material_category": ["Biogenic non-organic material"],
-    "has_specimen_category": ["Other solid object"],
+    "has_context_category": [
+        {
+            "label": "Subaerial surface environment",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/subaerialsurfaceenvironment"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Biogenic non-organic material",
+            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/biogenicnonorganicmaterial"
+        }
+    ],
+    "has_specimen_category": [
+        {
+            "label": "Other solid object",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/othersolidobject"
+        }
+    ],
     "keywords": [
         {"keyword": "coral"},
         {
@@ -51,13 +66,23 @@
             ]
         }
     },
-    "registrant": "Andrea Dutton, adutton@ufl.edu",
+    "registrant": {
+        "name": "Andrea Dutton",
+        "contact_information": "adutton@ufl.edu"
+    },
     "sampling_purpose": "Paleosea-level",
     "curation": {
         "curation_location": "University of Florida Department of Geological Sciences",
         "responsibility": [
-            "sample owner: Andrea Dutton, adutton@ufl.edu",
-            "metadata publisher: info@geosamples.org; url: https://www.geosamples.org/contact/"
+            {
+                "role": "sample owner",
+                "name": "Andrea Dutton",
+                "contact_information": "adutton@ufl.edu"
+            },
+            {
+                "role": "metadata publisher",
+                "contact_information": "info@geosamples.org; url: https://www.geosamples.org/contact/"
+            }
         ]
     }
 }

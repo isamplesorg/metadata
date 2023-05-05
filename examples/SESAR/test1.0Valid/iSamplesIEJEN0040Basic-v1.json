@@ -1,12 +1,27 @@
 {
-    "@schema": "iSamplesSchemaBasic1.0.json",
+    "@schema": "iSamplesSchemaCore1.0.json",
     "@id": "https://data.geosamples.org/sample/igsn/IEJEN0040",
     "label": "Goldfin ~20 m moss from 30 cm hummock",
     "sample_identifier": "",
     "description": "",
-    "has_context_category": ["Subaerial surface environment"],
-    "has_material_category": ["Organic material"],
-    "has_specimen_category": ["Any biological specimen"],
+    "has_context_category": [
+        {
+            "label": "Subaerial surface environment",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/subaerialsurfaceenvironment"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Organic material",
+            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/organicmaterial"
+        }
+    ],
+    "has_specimen_category": [
+        {
+            "label": "Any biological specimen",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/biologicalspecimen"
+        }
+    ],
     "keywords": [
         {
             "keyword": "grab",
@@ -17,7 +32,12 @@
         "label": "",
         "description": "",
         "has_feature_of_interest": "peatland",
-        "responsibility": ["collector: Miriam Jones"],
+        "responsibility": [
+            {
+                "role": "collector",
+                "name": "Miriam Jones"
+            }
+        ],
         "result_time": "2017-09-01",
         "samplingSite": {
             "description": "small pool near stream 3 ~20 m from stream",
@@ -30,14 +50,23 @@
             "place_name": ["Gold Fin"]
         }
     },
-    "registrant": "Jonathan Nichols",
+    "registrant": {"name": "Jonathan Nichols"},
     "sampling_purpose": "",
     "curation": {
         "curation_location": "Lamont-Doherty Earth Observatory",
         "responsibility": [
-            "sample owner: Jonathan Nichols",
-            "metadata publisher: info@geosamples.org; url: https://www.geosamples.org/contact/",
-            "curator: Jonathan E. Nichols"
+            {
+                "role": "sample owner",
+                "name": "Jonathan Nichols"
+            },
+            {
+                "role": "metadata publisher",
+                "contact_information": "info@geosamples.org; url: https://www.geosamples.org/contact/"
+            },
+            {
+                "role": "curator",
+                "name": "Jonathan E. Nichols"
+            }
         ]
     }
 }

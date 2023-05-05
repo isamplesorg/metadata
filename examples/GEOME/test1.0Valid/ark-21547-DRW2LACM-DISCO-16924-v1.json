@@ -1,14 +1,28 @@
 {
-    "@schema": "iSamplesSchemaBasic1.0.json",
+    "@schema": "iSamplesSchemaCore1.0.json",
     "@id": "",
     "label": "Clavelina huntsmani LACM:DISCO:16924",
     "sample_identifier": "LACM:DISCO:16924",
     "description": "",
-    "has_context_category": ["Marine environment"],
-    "has_material_category": ["Organic material"],
-    "has_specimen_category": ["Whole organism"],
+    "has_context_category": [
+        {
+            "label": "Marine environment",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/marinewaterbody"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Organic material",
+            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/organicmaterial"
+        }
+    ],
+    "has_specimen_category": [
+        {
+            "label": "Whole organism specimen",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/wholeorganism"
+        }
+    ],
     "keywords": [
-
         {
             "keyword": "San Pedro Bay",
             "keyword_uri": "http://vocab.getty.edu/page/tgn/1113759",
@@ -28,20 +42,44 @@
         }
     ],
     "produced_by": {
-        "@id": "ark:/21547/DRX2DISCO_CollectionID:21213",
+        "identifier": "ark:/21547/DRX2DISCO_CollectionID:21213",
         "label": "event: DISCO_CollectionID:21213",
         "description": "L.A. Urban Ocean Expedition 2019. 66°F bottom 70°F surface, horizontal visibility 10-15 ft.  samplingProtocol: SCUBA, hand, hand dredge, rock hammer;  ; expeditionCode: LAUOE",
         "authorized_by": ["permitInformation: CA SCP S\u2010191440006\u201019209\u2010001"],
         "has_feature_of_interest": "microhabitat:kelp",
         "responsibility": [
-            "collector:Giant Stride",
-            "collector:Kimo Morris",
-            "collector:Z. Gold",
-            "collector:Shawn Wiedrick",
-            "collector:Gustav Paulay",
-            "collector:Jessica Whelpley",
-            "collector:Amanda Bemis",
-            "registrant: Diversity Initiative for the Southern California Ocean project of the Natural History Museum of Los Angeles County"
+            {
+                "role": "collector",
+                "name": "Giant Stride"
+            },
+            {
+                "role": "collector",
+                "name": "Kimo Morris"
+            },
+            {
+                "role": "collector",
+                "name": "Z. Gold"
+            },
+            {
+                "role": "collector",
+                "name": "Shawn Wiedrick"
+            },
+            {
+                "role": "collector",
+                "name": "Gustav Paulay"
+            },
+            {
+                "role": "collector",
+                "name": "Jessica Whelpley"
+            },
+            {
+                "role": "collector",
+                "name": "Amanda Bemis"
+            },
+            {
+                "role": "sponsor",
+                "name": "Diversity Initiative for the Southern California Ocean project of the Natural History Museum of Los Angeles County"
+            }
         ],
         "result_time": "2019-08-25",
         "samplingSite": {
@@ -52,7 +90,6 @@
                 "latitude": 33.7345167,
                 "longitude": -118.277367
             },
-
             "place_name": [
                 "San Pedro Bay",
                 "Los Angeles",
@@ -61,7 +98,7 @@
             ]
         }
     },
-    "registrant": "Mike O'Mahoney",
+    "registrant": {"name": "Mike O'Mahoney"},
     "sampling_purpose": "",
     "curation": {
         "label": "",

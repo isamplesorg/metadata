@@ -1,12 +1,27 @@
 {
-    "@schema": "iSamplesSchemaBasic.json",
+    "@schema": "iSamplesSchemaCore1.0.json",
     "@id": "metadata/21547/Cat2INDO106431.1",
     "label": "INDO106431.1",
     "sample_identifier": "ark:/21547/Cat2INDO106431.1",
     "description": "",
-    "has_context_category": ["Marine environment"],
-    "has_material_category": ["Organic material"],
-    "has_specimen_category": ["Organism part"],
+    "has_context_category": [
+        {
+            "label": "Marine environment",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/marinewaterbody"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Organic material",
+            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/organicmaterial"
+        }
+    ],
+    "has_specimen_category": [
+        {
+            "label": "Organism part",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/organismpart"
+        }
+    ],
     "keywords": [
         {
             "keyword": "Aceh",
@@ -23,8 +38,8 @@
             "scheme_uri": "https://id.wikipedia.org/wiki/",
             "keyword_uri": "https://id.wikipedia.org/wiki/Pulau_Seulako"
         },
-
-        {   "keyword": "Mollusca",
+        {
+            "keyword": "Mollusca",
             "scheme_name": "Taxon: phylum"
         },
         {
@@ -33,7 +48,6 @@
         }
     ],
     "produced_by": {
-        "@id": "",
         "label": "tissue subsample from PIRE_0334",
         "description": "",
         "has_feature_of_interest": "",
@@ -46,7 +60,6 @@
                 "latitude": 5.89430,
                 "longitude": 95.25293
             },
-
             "place_name": [
                 "Aceh",
                 "Sumatra",
@@ -54,10 +67,9 @@
                 "Indonesia",
                 "Asia"
             ]
-
         }
     },
-    "registrant": "Chris Meyer",
+    "registrant": {"name": "Chris Meyer"},
     "sampling_purpose": "genomic analysis",
     "curation": {
         "access_constraints": [],

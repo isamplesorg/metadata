@@ -1,25 +1,40 @@
 {
-    "$schema": "iSamplesSchemaBasic1.0.json",
+    "$schema": "iSamplesSchemaCore1.0.json",
     "@id": "https://data.isamples.org/digitalsample/igsn/IEEJR000M",
     "label": "16ER6F3",
     "sample_identifier": "igsn:IEEJR000M",
     "description": "Not Provided; Keyword mapping to URIs based on SMR material type mapping to CGI simple lithology subset",
-    "has_context_category": ["Earth interior"],
-    "has_material_category": ["Rock"],
-    "has_specimen_category": ["Other solid object"],
+    "has_context_category": [
+        {
+            "label": "Earth interior",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/earthinterior"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Rock",
+            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/rock"
+        }
+    ],
+    "has_specimen_category": [
+        {
+            "label": "Other solid object",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/othersolidobject"
+        }
+    ],
     "keywords": [
         {"keyword": "Metamorphic>Meta-Carbonate"},
         {"keyword": "Marble"},
         {
             "keyword": "metamorphic rock",
             "keyword_uri": "https://w3id.org/isample/vocabulary/rocksediment/0.9/Metamorphic_Rock",
-            "scheme_name": "iSamples rock and sediment vocabulary extension",
+            "scheme_name": "lithology: iSamples rock and sediment vocabulary extension",
             "scheme_uri": "https://w3id.org/isample/vocabulary/rocksediment/0.9/rocksedimentvocabulary"
         },
         {
             "keyword": "carbonate sedimentary rock",
             "keyword_uri": "https://w3id.org/isample/vocabulary/rocksediment/0.9/Carbonate_Sedimentary_Rock",
-            "scheme_name": "protolith",
+            "scheme_name": "protolith: iSamples rock and sediment vocabulary extension",
             "scheme_uri": "https://w3id.org/isample/vocabulary/rocksediment/0.9/rocksedimentvocabulary"
         }
     ],
@@ -27,7 +42,12 @@
         "label": "collection event",
         "description": "Manual>Hammer",
         "has_feature_of_interest": "Metamorphic aureole",
-        "responsibility": ["collector:Jade Star Lackey"],
+        "responsibility": [
+            {
+                "role": "collector",
+                "name": "Jade Star Lackey"
+            }
+        ],
         "result_time": "2021-01-19",
         "samplingSite": {
             "description": "Not Provided",
@@ -46,12 +66,18 @@
             ]
         }
     },
-    "registrant": "Sam Kodama",
+    "registrant": {"name": "Sam Kodama"},
     "sampling_purpose": "",
     "curation": {
         "responsibility": [
-            "metadata publisher: info@geosamples.org; url: https://www.geosamples.org/contact/",
-            "sample owner:Evan Ramos"
+            {
+                "role": "metadata publisher",
+                "contact_information": "info@geosamples.org; url: https://www.geosamples.org/contact/"
+            },
+            {
+                "role": "sample owner",
+                "name": "Evan Ramos"
+            }
         ]
     }
 }

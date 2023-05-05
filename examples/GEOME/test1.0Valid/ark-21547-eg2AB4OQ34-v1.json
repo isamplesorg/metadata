@@ -1,12 +1,27 @@
 {
-    "@schema": "iSamplesSchemaBasic1.0.json",
+    "@schema": "iSamplesSchemaCore1.0.json",
     "@id": "metadata:21547-eg2AB4OQ34",
     "label": "Cookeolus japonicus AB4OQ34",
     "sample_identifier": "AB4OQ34",
     "description": "voucherCatalogNumber: USNM:Fish:433156",
-    "has_context_category": ["Marine environment"],
-    "has_material_category": ["Organic material"],
-    "has_specimen_category": ["Whole organism"],
+    "has_context_category": [
+        {
+            "label": "Marine environment",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/marinewaterbody"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Organic material",
+            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/organicmaterial"
+        }
+    ],
+    "has_specimen_category": [
+        {
+            "label": "Whole organism specimen",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/wholeorganism"
+        }
+    ],
     "keywords": [
         {"keyword": "Chordata"},
         {"keyword": "Priacanthidae"},
@@ -23,11 +38,16 @@
         }
     ],
     "produced_by": {
-        "@id": "ark:/21547/CAZ22d56d67d0d9114f5eaec25e71aeb6604",
+        "identifier": "ark:/21547/CAZ22d56d67d0d9114f5eaec25e71aeb6604",
         "label": "expeditionCode: PT_02",
         "description": "projectId: 85",
         "has_feature_of_interest": "",
-        "responsibility": ["collector: Northeast Fisheries Science Center (NEFSC), Woods Hole, MA"],
+        "responsibility": [
+            {
+                "role": "sponsor",
+                "name": "Northeast Fisheries Science Center (NEFSC), Woods Hole, MA"
+            }
+        ],
         "result_time": "2006-09-07",
         "samplingSite": {
             "description": "",
@@ -43,14 +63,16 @@
             ]
         }
     },
-    "registrant": "",
+    "registrant": {},
     "sampling_purpose": "",
     "curation": {
         "label": "",
         "description": "",
         "access_constraints": [],
         "curation_location": "",
-        "responsibility": ["institutionCode: USNM"]
+        "responsibility": [
+            {"name": "institutionCode: USNM"}
+        ]
     },
     "relatedResource": [
         {

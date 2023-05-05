@@ -1,12 +1,27 @@
 {
-    "@schema": "iSamplesSchemaBasic1.0.json",
+    "@schema": "iSamplesSchemaCore1.0.json",
     "@id": "metadata/28722/k2w66w62f",
     "label": "Object 1278000007",
     "sample_identifier": "ark:/28722/k2w66w62f",
     "description": "'early bce/ce': -6700.0 | 'late bce/ce': -6700.0 | 'updated': 2021-06-27T23:41:53Z [NOTE-- enhanced with information from https://opencontext.org/subjects/0bdb7906-a57b-4073-b329-1705cf49765c.json smr 2023-03-21]",
-    "has_context_category": ["Site of past human activities"],
-    "has_material_category": ["Rock"],
-    "has_specimen_category": ["Artifact"],
+    "has_context_category": [
+        {
+            "label": "Site of past human activities",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/pasthumanoccupationsite"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Rock",
+            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/rock"
+        }
+    ],
+    "has_specimen_category": [
+        {
+            "label": "Artifact",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/artifact"
+        }
+    ],
     "keywords": [
         {"keyword": "The Eastern Korinthia Archaeological Survey"},
         {
@@ -41,11 +56,26 @@
         "description": "",
         "has_feature_of_interest": "",
         "responsibility": [
-            "Creator:David K. Pettegrew",
-            "Creator:Timothy E Gregory",
-            "Creator:Daniel J Pullen",
-            "Creator:Richard Rothaus",
-            "Creator:Thomas F Tartaron"
+            {
+                "role": "collector",
+                "name": "David K. Pettegrew"
+            },
+            {
+                "role": "collector",
+                "name": "Timothy E Gregory"
+            },
+            {
+                "role": "collector",
+                "name": "Daniel J Pullen"
+            },
+            {
+                "role": "collector",
+                "name": "Richard Rothaus"
+            },
+            {
+                "role": "collector",
+                "name": "Thomas F Tartaron"
+            }
         ],
         "result_time": "2021-06-04",
         "samplingSite": {

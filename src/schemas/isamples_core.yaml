@@ -74,7 +74,7 @@ classes:
         description: object to represent an identified concept; property values from vocabularies with resolvable identifiers for vocabulary terms. Eitehr a label or identifier is required, to allow for cases that a URI is not available.  Data validation process will need to be used for properties that require an identified term value (e.g. has_context_category, has_material_category, has_specimen_category).
         slots:
           - label
-          - identifer
+          - identifier
           - scheme_name
 
 
@@ -172,11 +172,10 @@ slots:
         domain: GeospatialCoordLocation
         description: Should be a number and Unit of measure, and the datum. e.g. 401
             m above mean sea level.
-
     identifier:
         range: uriorcurie
+        domain: IdentifierObject
         description: a string that identifies some resource. Expectation is that it is a URI that is resolvable to some useful represenation of the resource.
-        
     has_context_category:
         # range is an instance of at least one skos:Concept
         # with skos:inScheme sf:sampledfeaturevocabulary ;

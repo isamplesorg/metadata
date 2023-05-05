@@ -1,26 +1,49 @@
 {
-    "@schema": "iSamplesSchemaBasic1.0.json",
-    "@id":"https://data.geosamples.org/sample/igsn/IERVTL1I7",
+    "@schema": "iSamplesSchemaCore1.0.json",
+    "@id": "https://data.geosamples.org/sample/igsn/IERVTL1I7",
     "label": "0744; Gas_NTC1-140cm_20190524-H",
     "sample_identifier": "igsn:IERVTL1I7",
     "description": "alternate identifier: 4369455",
-    "has_context_category": ["Subsurface fluid reservoir"],
-    "has_material_category": ["Gaseous material"],
-    "has_specimen_category": ["Fluid in container"],
+    "has_context_category": [
+        {
+            "label": "Subsurface fluid reservoir",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/subsurfacefluidreservoir"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Gaseous material",
+            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/gas"
+        }
+    ],
+    "has_specimen_category": [
+        {
+            "label": "Fluid in container",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/fluidincontainer"
+        }
+    ],
     "keywords": [
-    {"keyword":"Individual Sample",
-    "scheme_name":"SESAR: Sample Type"}
+        {
+            "keyword": "Individual Sample",
+            "scheme_name": "SESAR: Sample Type"
+        }
     ],
     "produced_by": {
         "label": "",
         "description": "Collection method: Headspace equilibration method",
         "has_feature_of_interest": "floodplain, aquifer",
-        "result_time":"2019-05-24",
+        "result_time": "2019-05-24",
         "responsibility": [
-            "Project: SLAC-SFA",
-            "collector: Zach Perzan; zperzan@stanford.edu"
+            {
+                "role": "sponsor",
+                "name": "SLAC-SFA"
+            },
+            {
+                "role": "collector",
+                "name": "Zach Perzan",
+                "contact_information": "zperzan@stanford.edu"
+            }
         ],
-        
         "samplingSite": {
             "description": "",
             "label": "",
@@ -32,11 +55,14 @@
             "place_name": [""]
         }
     },
-    "registrant": "SLAC SFA",
+    "registrant": {"name": "SLAC SFA"},
     "sampling_purpose": "2018 inundation tracer tests",
-    "curation":{
+    "curation": {
         "responsibility": [
-            "metadata publisher: info@geosamples.org; url: https://www.geosamples.org/contact/"
+            {
+                "role": "metadata publisher",
+                "contact_information": "info@geosamples.org; url: https://www.geosamples.org/contact/"
+            }
         ]
     }
 }
