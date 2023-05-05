@@ -41,7 +41,6 @@ classes:
           - has_context_category
           - has_material_category
           - has_specimen_category
-          - informal_classification
           - keywords
           - related_resource
           - complies_with
@@ -176,13 +175,7 @@ slots:
     identifier:
         range: uriorcurie
         domain: IdentifierObject
-        description: a string.
-    informal_classification:
-        range: string
-        domain: PhysicalSampleRecord
-        description: Free text classification terms, not from a controlled vocabulary;
-            generally terms applied by collector.
-        multivalued: true
+        description: a string that identifies some resource. Expectation is that it is a URI that is resolvable to some useful represenation of the resource.
     has_context_category:
         # range is an instance of at least one skos:Concept
         # with skos:inScheme sf:sampledfeaturevocabulary ;
