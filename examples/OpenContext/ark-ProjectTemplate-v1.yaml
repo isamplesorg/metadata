@@ -1,0 +1,47 @@
+---
+#  this is an iSamples JSON record converted to YAML so I can put comments in....
+'@schema': iSamplesSchemaCore1.0.json  #this stays constant
+'@id':      #the @id becomes the node identifier, which is the iSamples record, not the material sample identifier, leave blank until a sample is collected
+label:   #  label for the metadata record, not assigned in template
+sample_identifier: #  identifier for the material sample, not assigned in template
+description: #  description of  the material sample, not assigned in template
+has_context_category:  # the high level context will likely be the same for all samples in an archaeology project
+- label: Site of past human activities
+  identifier: https://w3id.org/isample/vocabulary/sampledfeature/0.9/pasthumanoccupationsite
+has_material_category:  # this will vary from sample to sample, the project should provide a pick list, using iSamples Material type and openContext materials exetension 
+- label: 
+  identifier: 
+has_specimen_category: # this will vary from sample to sample, the project should provide a pick list, using iSamples Material Sample Type Vocabulary.  
+- label: 
+  identifier: 
+keywords: # this will vary from sample to sample, the project might provide a pick list and allow free text 'tagging'
+
+complies_with: # if the project is using a sampling protocol for all samples, describe it here, else blank
+-  
+produced_by:        # the sampling event
+  identifier:   # identifier for sampleing eventa assigned when sample collected; this could be assigned automatically based on trench, operator, and time stamp. Project needs to determine granularity of sampling events, e.g. an event is one investigator, in one trench, on the same day.  
+  label: 
+  description: ''
+  has_feature_of_interest: what was sampled, general site name, with more specific feature within site if applicable.
+  responsibility:
+  - role: Collector
+    name: # Required at collection time. This will be populated at start of event based on who is logged in to collect data.
+  result_time: '2017-06-04' # populate at collection time, could be start or end of collecting session, or a time interval with begin/end.
+  samplingSite:  # the high-level description of the sample site, e.g. Poggio Civitate, 
+    description: #template can contain generic site description, sample collectors add detail for individual samples
+    label: # some standard syntax with generic name for site and detail name for particular sampling event; Template prepopulate with generic name.
+    location:  # locations specified with lat/long; this could be centroid for the site shared by all samples, or more granular coordinates within site. If samples are located using a site-specific grid, those should be described in the descrition. 
+      elevation: ''
+      latitude: -8.73642
+      longitude: 115.88083
+    place_name:  # hight level keywords (country, ocean, state, county.. ) provide in template.
+    - name1
+registrant:
+  name: #populate with samples are registered
+sampling_purpose: # sample specific
+curation: #if this is known in advance, it can be populated in teh template
+  access_constraints: []
+  curation_location: 'where samples collected by teh project will end up'
+  responsibility:
+  - role: curator
+    name: name of curator (person/affiliation, or organization
