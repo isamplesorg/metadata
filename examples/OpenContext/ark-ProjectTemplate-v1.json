@@ -1,0 +1,54 @@
+{
+    "@schema": "iSamplesSchemaCore1.0.json",
+    "has_context_category": [
+        {
+            "label": "Site of past human activities",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/pasthumanoccupationsite"
+        }
+    ],
+    
+    "keywords": [
+        {
+            "keyword": "generic keyword(s)for site and project",
+            "scheme_name": "",
+            "keyword_uri": ""
+        },
+        {
+        }
+    ],
+    "complies_with": ["if the project is using a sampling protocol for all samples, describe it here, else blank"],
+    "produced_by": {
+         "has_feature_of_interest":  "default value for project; could be replaced on individual sample basis",
+         "responsibility": [
+                       {
+                "role": "Collector",
+                "name": "... populate with Agent object; template leaves slot because collector is required "
+            },
+             {       
+                 "role" : "Project" ,
+                 "name" : "constant for project, pre populate"
+            }
+        ],
+
+        "sampling_site": {
+            "description": "template can contain generic site description, sample collectors add detail for individual samples",
+            "label": " some standard syntax with generic name for site and detail name for particular sampling event; Template prepopulate with generic name",
+            "place_name": [
+                "list of generic place names"
+            ]
+        },
+        "authorized_by": [
+            "any permits under which the sampling is operating; "
+        ]
+    },
+    "curation": {                                            
+        "access_constraints": ["include in template if known"],
+        "curation_location": "include in template if known",
+        "responsibility": [
+            {
+                "role": "curator",
+                "name": "include in template if known"
+            }
+        ]
+    }
+}

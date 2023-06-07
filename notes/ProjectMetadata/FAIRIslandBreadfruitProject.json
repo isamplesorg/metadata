@@ -1,0 +1,59 @@
+{
+    "@context": "http://schema.org",
+    "@type": "CreativeWork",
+    "@id": "https://doi.org/10.17913/f3/100501.49426",
+    "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "reserveID.applicationID",
+        "value": "100501.49426"
+    },
+    "url": "https://ezid.cdlib.org/id/doi:10.17913/F3/100501.49426",
+    "additionalType": "Project",
+    "name": "Breadfruit survey",
+    "author": {
+        "name": "Russell Fielding",
+        "givenName": "Russell",
+        "familyName": "Fielding",
+        "affiliation": {
+            "@type": "Organization",
+            "@id": "https://ror.org/01621q256",
+            "name": "Coastal Carolina University"
+        },
+        "@type": "Person",
+        "@id": "46598"
+    },
+    "editor": {
+        "name": "Tetiaroa Society Ecostation",
+        "affiliation": {
+            "@type": "Organization",
+            "@id": "https://ror.org/04p8xrf95",
+            "name": "Tetiaroa Society Ecostation"
+        },
+        "contributorType": "Sponsor",
+        "@type": "Organization",
+        "@id": "https://ror.org/04p8xrf95"
+    },
+    "description": "I plan to conduct a survey of breadfruit trees growing on the atoll.",
+    "datePublished": "2022",
+    "spatialCoverage": {
+        "@type": "Place",
+        "geo": {
+            "@type": "GeoCoordinates",
+            "address": "Tetiaroa Society Ecostation"
+        }
+    },
+    "schemaVersion": "http://datacite.org/schema/kernel-4",
+    "publisher": {
+        "@type": "Organization",
+        "name": "University of California Natural Reserve System: Reserve Application Management System"
+    },
+    "funder": {
+        "@id": "https://ror.org/052csg198",
+        "@type": "Organization",
+        "name": "Alfred P. Sloan Foundation"
+    },
+    "provider": {
+        "@type": "Organization",
+        "name": "datacite"
+    }
+}

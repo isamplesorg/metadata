@@ -1,0 +1,61 @@
+{
+   # "@context": "http://schema.org", see https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/GETTING-STARTED.md#specifying-the-context for how to specify context
+     "@context": [
+    "https://schema.org/",
+    {
+      "datacite": "namespace URI base for datacite elements used"
+    }
+  ],
+    "@type": "Project",     #why not use this as the type?  If you need CreativeWork properties that are not in domainIncludes Project, make the type declaration an array ["Project", "CreativeWork"] . Schema.org project is unfortunately a subclass of Organization, and is missing what I think are some key properties of a project-- what's the purpose? Who are the stakeholders, who are the participants, what's the status (planned, in progress, complete...), when will it be (or was it) completed.... 
+    "@id": "https://doi.org/10.17913/f3/100501.49426",  #It appears that this URI identifies a project, which is a non-digital resource; resolving this URI should result in an http 303 with a redirect to this metadata record. This project is the subject of subsequent triples.
+    "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "reserveID.applicationID",
+        "value": "100501.49426"
+    },
+    "url": "https://ezid.cdlib.org/id/doi:10.17913/F3/100501.49426",  #url for what? the project is not a digital object, so it can only have representations that are digital objects with URLS. This URL must be for some representation of the projet, should be a distribution.
+    "additionalType": "Project",  #Unnecessary if you use @type: schema:Project. 
+    "name": "Breadfruit survey",
+    "author": {  #?founder, ? contactPoint? 
+        "name": "Russell Fielding",
+        "givenName": "Russell",
+        "familyName": "Fielding",
+        "affiliation": {
+            "@type": "Organization",
+            "@id": "https://ror.org/01621q256",
+            "name": "Coastal Carolina University"
+        },
+        "@type": "Person",
+        "@id": "46598"   
+    },
+    "member": [list of people participating in project?]
+    "sponsor": { #change editor to sponsor; 
+        "@type": "Organization",
+        "@id": "https://ror.org/04p8xrf95",
+        "name": "Tetiaroa Society Ecostation",
+        #organizations don't have affiliations
+    },
+    "description": "I plan to conduct a survey of breadfruit trees growing on the atoll. [why? when? how?]", #so this is project plan, not inprogress, or completed...
+    "datePublished": "2022", #?when the plan was published? 
+    "spatialCoverage": {
+        "@type": "Place", #shouldn't the place be the whole atoll, not just the station...
+        "geo": {
+            "@type": "GeoCoordinates",
+            "address": "Tetiaroa Society Ecostation"
+        }
+    },
+    "schemaVersion": "http://datacite.org/schema/kernel-4",  #wait a minute-- the context is schema.org... not datacite JSON
+    "publisher": {
+        "@type": "Organization",
+        "name": "University of California Natural Reserve System: Reserve Application Management System"
+    },
+    "funder": {
+        "@id": "https://ror.org/052csg198",
+        "@type": "Organization",
+        "name": "Alfred P. Sloan Foundation"  #use funding/grant if there is an identifier for the particular funding instrument
+    },
+    "provider": { #this is the metadata provider; the subject of this triple is the project, datacite is not the provider for the project. There is no identifier for the metadata record here so this statement has no subject.
+        "@type": "Organization",  
+        "name": "datacite"
+    }
+}
