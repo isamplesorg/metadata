@@ -1,0 +1,259 @@
+{
+    "@schema": "datacite_4.3_schema.json",
+    "id": "https://doi.org/10.17913/f3/100501.31069",
+    "doi": "10.17913/F3/100501.31069",
+    "url": "https://ezid.cdlib.org/id/doi:10.17913/F3/100501.31069",
+    "types": {
+        "ris": "GEN",  # its not clear what the utility of these types is. I think this is about a project, but seems twisted to say its an article, or creativeWork. what does ris:GEN or bibtex:misc tell a person or machine agent processing this record.  I would expect that there would be some linkage between 'datacite:resourceType=Project' and the content expected in this record; that content would be defined in a dataCite resourceType metadata profile (if there were such a thing). Since there are no schema.org properties here, having a schemorg type really doesn't do anything.
+        "bibtex": "misc",
+        "citeproc": "article",
+        "schemaOrg": "CreativeWork",
+        "resourceType": "Project",
+        "resourceTypeGeneral": "Other"
+    },
+    "creators": [
+        {
+            "name": "Meyer, Christopher",
+            "nameType": "Personal",
+            "givenName": "Christopher",
+            "familyName": "Meyer",
+            "affiliation": [
+                {
+                    "name": "Smithsonian Institution",
+                    "affiliationIdentifier": "https://ror.org/01pp8nd67",
+                    "affiliationIdentifierScheme": "https://ror.org"
+                }
+            ],
+            "nameIdentifiers": [
+                {
+                    "schemeUri": "",
+                    "nameIdentifier": "7483",
+                    "nameIdentifierScheme": "local"
+                },
+                {
+                    "schemeUri": "https://orcid.org",
+                    "nameIdentifier": "https://orcid.org/0000-0003-2501-7952",
+                    "nameIdentifierScheme": "ORCID"
+                }
+            ]
+        },
+        {
+            "name": "Liittschwager, David",
+            "nameType": "Personal",
+            "givenName": "David",
+            "familyName": "Liittschwager",
+            "affiliation": [
+                {
+                    "name": "National Geographic Society",
+                    "affiliationIdentifier": "https://ror.org/04bqh5m06",
+                    "affiliationIdentifierScheme": "https://ror.org"
+                }
+            ],
+            "nameIdentifiers": [
+                {
+                    "schemeUri": "",
+                    "nameIdentifier": "12708",
+                    "nameIdentifierScheme": "local"
+                }
+            ]
+        },
+        {
+            "name": "Schmeltzer, Emily",
+            "nameType": "Personal",
+            "givenName": "Emily",
+            "familyName": "Schmeltzer",
+            "affiliation": [
+                {
+                    "name": "California State University (CSU), Moss Landing Marine Laboratories",
+                    "affiliationIdentifier": "https://ror.org/01c8f2y33",
+                    "affiliationIdentifierScheme": "https://ror.org"
+                }
+            ],
+            "nameIdentifiers": [
+                {
+                    "schemeUri": "",
+                    "nameIdentifier": "28893",
+                    "nameIdentifierScheme": "local"
+                }
+            ]
+        },
+        {
+            "name": "Goodheart, Jessica",
+            "nameType": "Personal",
+            "givenName": "Jessica",
+            "familyName": "Goodheart",
+            "affiliation": [
+                {
+                    "name": "University of Maryland",
+                    "affiliationIdentifier": "https://ror.org/047s2c258",
+                    "affiliationIdentifierScheme": "https://ror.org"
+                }
+            ],
+            "nameIdentifiers": [
+                {
+                    "schemeUri": "",
+                    "nameIdentifier": "29068",
+                    "nameIdentifierScheme": "local"
+                }
+            ]
+        },
+        {
+            "name": "Lauter, Ryan",
+            "nameType": "Personal",
+            "givenName": "Ryan",
+            "familyName": "Lauter",
+            "affiliation": [
+                {
+                    "name": "National Geographic Society",
+                    "affiliationIdentifier": "https://ror.org/04bqh5m06",
+                    "affiliationIdentifierScheme": "https://ror.org"
+                }
+            ],
+            "nameIdentifiers": [
+                {
+                    "schemeUri": "",
+                    "nameIdentifier": "29096",
+                    "nameIdentifierScheme": "local"
+                }
+            ]
+        },
+        {
+            "name": "Kobrinsky, Zachariah",
+            "nameType": "Personal",
+            "givenName": "Zachariah",
+            "familyName": "Kobrinsky",
+            "affiliation": [
+                {
+                    "name": "Smithsonian Institution",
+                    "affiliationIdentifier": "https://ror.org/01pp8nd67",
+                    "affiliationIdentifierScheme": "https://ror.org"
+                }
+            ],
+            "nameIdentifiers": [
+                {
+                    "schemeUri": "",
+                    "nameIdentifier": "26161",
+                    "nameIdentifierScheme": "local"
+                }
+            ]
+        }
+    ],
+    "titles": [
+        {"title": "Autonomous Reef Monitoring Structures (ARMS) for Biodiversity Baselines in Polynesie Francaise"}
+    ],  # spell out what ARMS stands for (my guess...)
+    "publisher": "University of California Natural Reserve System: Reserve Application Management System",
+    "container": {}, # is this relevant. Leave out if not, populate if it is.  Is the project in a container?
+    "subjects": [],  # No keywords????
+    "contributors": [
+        {
+            "name": "Tetiaroa Society Ecostation",
+            "nameType": "Organizational",
+            "affiliation": [  # this doesn't make sense, TSE is affiliated with itself?
+                {
+                    "name": "Tetiaroa Society Ecostation",
+                    "affiliationIdentifier": "https://ror.org/04p8xrf95",
+                    "affiliationIdentifierScheme": "ROR"
+                }
+            ],
+            "contributorType": "Sponsor",
+            "nameIdentifiers": [
+                {
+                    "schemeUri": "https://ror.org",
+                    "nameIdentifier": "https://ror.org/04p8xrf95",
+                    "nameIdentifierScheme": "ROR"
+                },
+                {
+                    "schemeUri": "",  #leave out if no value ?
+                    "nameIdentifier": "100501",
+                    "nameIdentifierScheme": "local"
+                }
+            ]
+        }
+    ],
+    "dates": [
+        {
+            "date": "2015",
+            "dateType": "Issued"  # what does it mean for a project to be 'issued' ?
+        }
+    ],
+    "publicationYear": "2015",  # what does this mean for a project?  what the project was started, completed, the full temporal extent, the publication date for this metadata record...? 
+    "identifiers": [
+        {
+            "identifier": "100501.31069",
+            "identifierType": "reserveID.applicationID"  #does this identify some kind of application to do the work? shouldn't that be a related resource (relatedIdentifiers)
+        }
+    ],
+    "sizes": [], # not relevant, leave out?
+    "formats": [], # not relevant, leave out? projects don't have formats. a related resource describing the project might have a format, but relatedIdentifiers has no way of representing that.
+    "rightsList": [
+        {
+            "rights": "Local Contexts TK Notice https://localcontexts.org/notice/tk-notice: The TK Notice is a visible notification that there are accompanying cultural rights and responsibilities that need further attention for any future sharing and use of this material. The TK Notice may indicate that TK Labels are in development and their implementation is being negotiated.\n",
+            "rightsUri": "https://localcontextshub.org/projects/7894f2fd-bbcb-423c-afff-ea67b4e1e4f7/",
+            "rightsIdentifier": "tk-notice",
+            "rightsIdentifierScheme": "Local Contexts"
+        }
+    ],  # spell out Traditional Knowledge (TK) first time you use the acronym.
+    "descriptions": [
+        {
+            "description": "Recover ARMS and Process for Analyses",  # this is woefully inadequate. What is the monitoring system measured, what is actually being sampled (asuming  the related identifiers link to samples). How does this project work-- what is the sampling interval, how many structures, Is this only running one year?
+            "descriptionType": "Other"
+        }
+    ],
+    "geoLocations": [
+        {"geoLocationPlace": "Tetiaroa Society Ecostation"}  # I assume this is somewhere in the Tetiaroa atoll?  I couldn't find a location searching on the web (their web page doesn't say...)
+    ],
+    "fundingReferences": [],
+    "relatedIdentifiers": [
+        {
+            "relationType": "HasPart",  #what are these? looks like samples of some sort?  hasPart is a stretch to relate a physical thing to a project
+            "relatedIdentifier": "https://n2t.net/ark:/21547/Cfk2PLTET_201506_ARMS1_100",
+            "resourceTypeGeneral": "PhysicalObject",
+            "relatedIdentifierType": "ARK"
+        },
+        {
+            "relationType": "HasPart",
+            "relatedIdentifier": "https://n2t.net/ark:/21547/Cfk2PLTET_201506_ARMS1_500",
+            "resourceTypeGeneral": "PhysicalObject",
+            "relatedIdentifierType": "ARK"
+        },
+        {
+            "relationType": "HasPart",
+            "relatedIdentifier": "https://n2t.net/ark:/21547/Cfk2PLTET_201506_ARMS1_P1_T",
+            "resourceTypeGeneral": "PhysicalObject",
+            "relatedIdentifierType": "ARK"
+        },
+        {
+            "relationType": "HasPart",
+            "relatedIdentifier": "https://n2t.net/ark:/21547/Cfk2PLTET_201506_ARMS1_P2_B",
+            "resourceTypeGeneral": "PhysicalObject",
+            "relatedIdentifierType": "ARK"
+        },
+        {
+            "relationType": "HasPart",
+            "relatedIdentifier": "https://n2t.net/ark:/21547/Cfk2PLTET_201506_ARMS1_P2_T",
+            "resourceTypeGeneral": "PhysicalObject",
+            "relatedIdentifierType": "ARK"
+        },
+        {
+            "relationType": "HasPart",
+            "relatedIdentifier": "https://n2t.net/ark:/21547/Cfk2PLTET_201506_ARMS1_P3_B",
+            "resourceTypeGeneral": "PhysicalObject",
+            "relatedIdentifierType": "ARK"
+        },
+        {
+            "relationType": "HasPart",
+            "relatedIdentifier": "https://n2t.net/ark:/21547/Cfk2PLTET_201506_ARMS1_P3_T",
+            "resourceTypeGeneral": "PhysicalObject",
+            "relatedIdentifierType": "ARK"
+        }
+
+    ],
+    "relatedItems": [],  # a version 4.4 addition in the xml., There doesn't seem to be a JSON schema for v4.4 Unfortunately 'item' appears to mean 'publication' as opposed to a generic resource relationship. Oh well...
+    "schemaVersion": "http://datacite.org/schema/kernel-4",  #shouldn't this be an identifier for this particular verion of the JSON schema that is implemented here? otherwise what's the point?
+    
+    # the following are not defined in the JSON schema, and I suspect are actually about this metadata record, not about the project. I guess that only matters if you're thinking about this as rdf data. Not relevant if its just JSON, but do need to make clear when properties are about the described resource (the project) and when they're about the metadata record (self).
+    "providerId": "naqr",
+    "clientId": "cdl.cdl",
+    "agency": "datacite",
+    "state": "findable"
+}
