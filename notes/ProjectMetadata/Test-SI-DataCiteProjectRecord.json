@@ -1,0 +1,158 @@
+{
+    "@schema": "datacite_4.4_schema.json",
+    "doi": "10.17913/F3/100501.31069",
+    "identifiers": [
+        {
+            "identifier": "100501.31069",
+            "identifierType": "reserveID.applicationID"
+        }
+    ],
+    "types": {
+        "resourceType": "Project",
+        "resourceTypeGeneral": "Event"
+    },
+    "creators": [
+        {
+            "name": "Meyer, Christopher",
+            "nameType": "Personal",
+            "givenName": "Christopher",
+            "familyName": "Meyer",
+            "affiliation": [
+                {
+                    "name": "Smithsonian Institution",
+                    "affiliationIdentifier": "https://ror.org/01pp8nd67",
+                    "affiliationIdentifierScheme": "https://ror.org"
+                }
+            ],
+            "nameIdentifiers": [
+                {
+                    "nameIdentifier": "7483",
+                    "nameIdentifierScheme": "Smithsonian Institute employee number"
+                },
+                {
+                    "schemeUri": "https://orcid.org",
+                    "nameIdentifier": "https://orcid.org/0000-0003-2501-7952",
+                    "nameIdentifierScheme": "ORCID"
+                }
+            ]
+        },
+        {
+            "name": "Liittschwager, David",
+            "nameType": "Personal",
+            "givenName": "David",
+            "familyName": "Liittschwager",
+            "affiliation": [
+                {
+                    "name": "National Geographic Society",
+                    "affiliationIdentifier": "https://ror.org/04bqh5m06",
+                    "affiliationIdentifierScheme": "https://ror.org"
+                }
+            ]
+        }
+    ],
+    "titles": [
+        {"title": "Autonomous Reef Monitoring Structures (ARMS) for Biodiversity Baselines in Polynesie Francaise"}
+    ],
+    "publisher": "University of California Natural Reserve System: Reserve Application Management System",
+    "subjects": [
+        {"subject": "genomics"},
+        {"subject": "marine biology"}
+    ],
+    "contributors": [
+        {
+            "name": "Tetiaroa Society Ecostation",
+            "nameType": "Organizational",
+            "contributorType": "Sponsor",
+            "nameIdentifiers": [
+                {
+                    "schemeUri": "https://ror.org",
+                    "nameIdentifier": "https://ror.org/04p8xrf95",
+                    "nameIdentifierScheme": "ROR"
+                },
+                {
+                    "nameIdentifier": "100501",
+                    "nameIdentifierScheme": "local [to what?]"
+                }
+            ]
+        }
+    ],
+    "dates": [
+        {
+            "date": "2015",
+            "dateType": "Issued"
+        }
+    ],
+    "publicationYear": "2015",
+    "rightsList": [
+        {
+            "rights": "Local Contexts TK Notice https://localcontexts.org/notice/tk-notice: The TK Notice is a visible notification that there are accompanying cultural rights and responsibilities that need further attention for any future sharing and use of this material. The TK Notice may indicate that TK Labels are in development and their implementation is being negotiated.\n",
+            "rightsUri": "https://localcontextshub.org/projects/7894f2fd-bbcb-423c-afff-ea67b4e1e4f7/",
+            "rightsIdentifier": "tk-notice",
+            "rightsIdentifierScheme": "Local Contexts"
+        }
+    ],
+    "descriptions": [
+        {
+            "description": "Recover ARMS and Process for Analyses",
+            "descriptionType": "Other"
+        }
+    ],
+    "geoLocations": [
+        {"geoLocationPlace": "Tetiaroa Society Ecostation"},
+        {"geoLocationPlace": "Tetiaroa, French Polynesia"},
+        {
+            "geoLocationPoint": {
+                "elevation": "0 to 15 m above mean sea level",
+                "pointLatitude": -17.0,
+                "pointLongitude": -149.6
+            }
+        },
+        {
+            "geoLocationBox": {
+                "westBoundLongitude": -149.60,
+                "eastBoundLongitude": -149.56,
+                "southBoundLatitude": -16.98,
+                "northBoundLatitude": -17.02
+            }
+        }
+    ],
+    "fundingReferences": [
+        {
+            "funderName": "Tetiaroa Society",
+            "funderIdentifier": "https://ror.org/04p8xrf95",
+            "funderIdentifierType": "ROR",
+            "awardTitle": "Tetiaroa Biodiversity Monitoring Program"
+        }
+    ],
+    "relatedIdentifiers": [
+        {
+            "relationType": "IsDocumentedBy",
+            "resourcetypeGeneral": "Text",
+            "relatedIdentifier": "https://ezid.cdlib.org/id/doi:10.17913/F3/100501.31069",
+            "relatedIdentifierType": "URL"
+        },
+        {
+            "relationType": "HasPart",
+            "relatedIdentifier": "https://n2t.net/ark:/21547/Cfk2PLTET_201506_ARMS1_100",
+            "resourceTypeGeneral": "PhysicalObject",
+            "relatedIdentifierType": "ARK"
+        },
+        {
+            "relationType": "HasPart",
+            "relatedIdentifier": "https://n2t.net/ark:/21547/Cfk2PLTET_201506_ARMS1_500",
+            "resourceTypeGeneral": "PhysicalObject",
+            "relatedIdentifierType": "ARK"
+        },
+        {
+            "relationType": "HasPart",
+            "relatedIdentifier": "https://n2t.net/ark:/21547/Cfk2PLTET_201506_ARMS1_P1_T",
+            "resourceTypeGeneral": "PhysicalObject",
+            "relatedIdentifierType": "ARK"
+        }
+    ],
+    "schemaVersion": "http://datacite.org/schema/kernel-4",
+    "providerId": "naqr",
+    "clientId": "cdl.cdl",
+    "agency": "datacite",
+    "state": "findable"
+}
