@@ -1,0 +1,284 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://resource.isamples.org/schema/project/0.1",
+    "type": "object",
+    "title": "ProjectDescriptionRecord",
+    "additionalProperties": true,
+    "description": "This is a data object that is a digital representation of a Project. A project is a continuant in the view of this model. We adopt the definition from CitizenScience.org 'A Project is an organized effort carefully designed to achieve a particular goal.'(https://core.citizenscience.org/docs/project/). This implementation uses schema.org entities and properties ",
+    "properties": {
+        "identifier": {
+            "description": "URI that identifies the physical sample described by this record. Schema.org property",
+            "type": "string"
+        },
+        "name": {
+            "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of its applicable context. Schema.org property",
+            "type": "string"
+        },
+        "description": {
+            "description": "free text description of the physical sample, and any related information. Include as much detail as will be useful for users to find the sample and understand its context. Include description of workflow/procedure for achieving project goals. Schema.org property",
+            "type": "string"
+        },
+        "alternate_identifiers": {
+            "description": "Top level context, based on the kind of feature sampled. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property. At least one value a skos:Concept from the iSamples sampledfeaturevocabulary. Use DatCite identifiers pattern. Datacite property pattern.",
+            "items": {"$ref": "#/definitions/IdentifierObject"},
+            "type": "array",
+            "minItems": 0
+        },
+        "purpose": {
+            "description": "purpose for the project. Should include information about the plannedOutcome. statement of the motivation for the project. No corresponding property in DCAT, DataCite, or Schema.org",
+            "type": "string"
+        },
+        "subjects": {
+            "description": "categorization of project to support discovery. Use DataCite subjects pattern.",
+            "items": {"$ref": "#/definitions/Subject"},
+            "type": "array"
+        },
+        "responsibilities": {
+            "description": "element to provide inforamtion about People and Organizations in various roles with respect to the project. Roles include sponsor, host, pointOf contact, team member, project lead, research contributor, associated party, collaborator.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/Agent"}
+        },
+        "status": {
+            "type": "string",
+            "description": "The activity status of the project. should be an enumeration, e.g. {planned, in progress, complete, abandoned, on hold}..."
+        },
+        "startDate": {
+            "type": "string",
+            "description": "if the start date is in the future, status must be 'planned', and it’s a planned start date",
+            "anyOf": [
+                {"format": "year"},
+                {"format": "yearmonth"},
+                {"format": "date"},
+                {"format": "datetime"}
+            ]
+        },
+        "endDate": {
+            "type": "string",
+            "description": "if the end date is in the future, it is a planned end date, if its in the past, the project is complete",
+            "anyOf": [
+                {"format": "year"},
+                {"format": "yearmonth"},
+                {"format": "date"},
+                {"format": "datetime"}
+            ]
+        },
+        "duration": {
+            "type": "string",
+            "description": "The duration or elapsed time over which a project was undertaken. This would typically be derived as the difference in a unit of time between the start and end dates of a project, but may be infinite (if no end date applies) or explicit (if duration is given with no end date specified. Use ISO8601 duration format."
+        },
+        "instrument": {
+            "type": "array",
+            "description": "any particular equiment used for the project, e.g. a Ship if the project is a cruise, or particular instruments used to make measurements. Scoped name allows label and identifier (if available). Schema.org property, defined as 'The object that helped the agent perform the action.', with domainIncludes Action. ",
+            "items": {"$ref": "#/definitions/IdentifierObject"}
+        },
+        "funding": {
+            "type": "array",
+            "description": "link to a Grant object, that identifies the funding agent. If there is no specific grant name or ID, the Grant object just specifies teh name of the funding organization",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {"type": "string"},
+                    "description": {"type": "string"},
+                    "identifier": {"type": "string"},
+                    "funder": {"$ref": "#/definitions/Agent"}
+                }
+            }
+        },
+        "result": {
+            "type": "string",
+            "description": "The outcome(s) achieved or delivered by a project.  Links to products use relatedResource with relType 'projectProduct'"
+        },
+        "location": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "description": "use model from DataCite, without range restrictions on Lat and long",
+                "properties": {
+                    "geoLocationPlace": {"type": "string"},
+                    "geoLocationPoint": {"$ref": "#/definitions/GeoLocationPoint"},
+                    "geoLocationBox": {
+                        "type": "object",
+                        "properties": {
+                            "westBoundLongitude": {"type": "number"},
+                            "eastBoundLongitude": {"type": "number"},
+                            "southBoundLatitude": {"type": "number"},
+                            "northBoundLatitude": {"type": "number"}
+                        },
+                        "required": [
+                            "westBoundLongitude",
+                            "eastBoundLongitude",
+                            "southBoundLatitude",
+                            "northBoundLatitude"
+                        ]
+                    },
+                    "geoLocationPolygons": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "polygonPoints": {
+                                    "type": "array",
+                                    "items": {"$ref": "#/definitions/GeoLocationPoint"},
+                                    "minItems": 4
+                                },
+                                "inPolygonPoint": {"$ref": "#/definitions/GeoLocationPoint"}
+                            },
+                            "required": ["polygonPoints"]
+                        },
+                        "uniqueItems": true
+                    }
+                }
+            },
+            "uniqueItems": true
+        },
+        "related_resource": {
+            "type": "array",
+            "description": "link to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource. roles include partOf, hasPart, projectMedia, projectLandingPage, citingPublication, dataProduct, materialSample.",
+            "items": {"$ref": "#/definitions/ResourceLink"}
+        },
+        "complies_with": {
+            "type": "array",
+            "description": "a list of policies, recommendations, best practices (etc.) that have been followed in the project execution. If any special protocols were followed, they should be documented here.",
+            "items": {"type": "string"}
+        },
+        "authorized_by": {
+            "description": "a list of permits or other formal permission documents under which the project is working. Use to cite legal documents authorizing project activities.",
+            "items": {"type": "string"},
+            "type": "array"
+        },
+        "registrant": {
+            "description": "identification of the agent that created this project documentation record, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.",
+            "$ref": "#/definitions/Agent"
+        },
+        "metadata_update_date": {
+            "type": "string",
+            "description": "date (YYYY-MM-DD) or DateTime (YYYY-MM-DDTHH:MM) of most recent update to this metadata.",
+            "anyOf": [
+                {"format": "date"},
+                {"format": "datetime"}
+            ]
+        }
+    },
+    "required": [
+        "label",
+        "identifier",
+        "registrant"
+    ],
+    "definitions": {
+        "Agent": {
+            "title": "Agent",
+            "type": "object",
+            "additionalProperties": true,
+            "description": "object to represent a person who plays a role relative the project.",
+            "properties": {
+                "name": {
+                    "description": "string, name of a person. Format {firstName MI lastName}.",
+                    "type": "string"
+                },
+                "affiliation": {
+                    "description": "Name of an organization that employes or sponsors a person for the role they play relative to sample collection or curation.",
+                    "type": "string"
+                },
+                "contact_information": {
+                    "description": "e-mail address, telephone number, mailing address, or web site through which an agent can be contacted. Something that should be stable and reliable.",
+                    "type": "string"
+                },
+                "identifier": {
+                    "description": "a string that identifies the agent. Expectation is that it is a URI that is resolvable to some useful represenation.",
+                    "type": "string"
+                },
+                "role": {
+                    "description": "term that specifies how a person is related to an activity or product",
+                    "type": "string"
+                }
+            }
+        },
+        "GeoLocationPoint": {
+            "title": "GeospatialPointLocation",
+            "type": "object",
+            "additionalProperties": true,
+            "description": "A physical location in decimal degrees using EPSG:4326. Elevation is is expressed in meters relative to the WGS84 ellipsoid. Could be sample point location, or the centroid of a sampling area",
+            "properties": {
+                "elevation": {
+                    "description": "Should be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level.",
+                    "type": "string"
+                },
+                "pointlatitude": {
+                    "description": "angular coordinate measured positive north from the equator.",
+                    "type": "number"
+                },
+                "pointlongitude": {
+                    "description": "angular coordinate measured positive eastward from the prime meridian.",
+                    "type": "number"
+                }
+            }
+        },
+        "Subject": {
+            "title": "Subject",
+            "type": "object",
+            "description": "a simple string (tag) useful for guiding discovery of the sample, or a scoped name that associates the keyword string with a scheme name,and optional scheme URI and value URI. The scoped name keywords can be used to categorize the sample using a formal vocabulary. This mechanism provides the hook to use extension vocabularies for domain specific concepts extending the context, material type and object type high-level vocabularies.",
+            "properties": {
+                "subject": {
+                    "description": "string label for a concept that characterizes the sample in some respect.",
+                    "type": "string"
+                },
+                "subject_uri": {
+                    "description": "an identifier for the keyword concept",
+                    "type": "string"
+                },
+                "scheme_name": {
+                    "description": "string label for the concept scheme or vocabulary within which the keyword concept is defined. The scheme name can be used to scope keyword to particular categories, e.g. -CGI rock classification-, -GCMD keywords-, -Getty AAT- ",
+                    "type": "string"
+                },
+                "scheme_uri": {
+                    "description": "Identifier for the concept scheme or vocabulary within which the keyword concept is defined.",
+                    "type": "string"
+                }
+            }
+        },
+        "IdentifierObject": {
+            "title": "Identifier object",
+            "type": "object",
+            "description": "object to represent an identified concept; property values from vocabularies with resolvable identifiers for vocabulary terms. Eitehr a label or identifier is required, to allow for cases that a URI is not available.  Data validation process will need to be used for properties that require an identified term value (e.g. has_context_category, has_material_category, has_specimen_category).",
+            "properties": {
+                "label": {
+                    "description": "string label for the identified resource. Use in user interfaces as shortcut so don't have to resolve indentifier to present a useful label. ",
+                    "type": "string"
+                },
+                "identifier": {
+                    "description": "an identifier for the keyword concept. Map to dataCite alternateIdentifier",
+                    "type": "string",
+                    "format": "uri"
+                },
+                "identifier_type": {
+                    "description": "string label that scopes the context in which the identifier is used. Could be a vocabulary or ontology within which the identified resource is defined. Map to dataCite alternateIdentifierType",
+                    "type": "string"
+                }
+            }
+        },
+        "ResourceLink": {
+            "title": "Relation",
+            "type": "object",
+            "additionalProperties": false,
+            "description": "semantic link to a related resource.",
+            "properties": {
+                "description": {
+                    "description": "Free text description of related resource, explanation of link.",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "a short human intelligible string to identify the link.",
+                    "type": "string"
+                },
+                "relationship": {
+                    "description": "term to identify realationship between the project and the relation target. Should be controlled vocabulary (ScopedName).",
+                    "type": "string"
+                },
+                "target": {
+                    "description": "identifier for the target resource in the relationship. Start with string, should be Identifier object.",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
