@@ -1,0 +1,390 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://resource.isamples.org/schema/project/0.2",
+    "type": "object",
+    "title": "ProjectDescriptionRecord",
+    "additionalProperties": true,
+    "description": "This is a data object that is a digital representation of a Project. A project is a continuant in the view of this model. We adopt the definition from CitizenScience.org 'A Project is an organized effort carefully designed to achieve a particular goal.'(https://core.citizenscience.org/docs/project/). This implementation uses schema.org entities and properties, and a sampling of metadata for projects on DataCite (https://metadatagamechangers.com/blog/2023/5/2/project-metadata-in-datacite) and in the Ocean Info Hub (https://book.oceaninfohub.org/thematics/projects/README.html). In order to validate with validator.schema.org, have to declare @types to include {ResearchProject, MedicalStudy, Event, Action, CreativeWork}. Can't validate with JSON schema, so root @type property is not in the schema; this allows including properties relevant to projects but scoped more narrowly in schema.org domainIncludes.",
+    "properties": {
+        "@context": {"const": "https://schema.org/"},
+        "@id": {
+            "type": "string",
+            "description": "this is a URI that identifies the project; when the JSON-LD is converted to triples, this will be the subject of triples whose predicate is one of the keys that are siblings of the @id key."
+        },
+        "identifier": {
+            "description": "alternate identifiers for the project described by this record.  Schema.org property",
+            "type": "array",
+            "items": {"$ref": "#/definitions/IdentifierObject"}
+        },
+        "name": {
+            "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of its applicable context. Schema.org property",
+            "type": "string"
+        },
+        "description": {
+            "description": "free text description of the project, and any related information. Include as much detail as will be useful for users to understand the project. Include description of workflow/procedure for achieving project goals. Explain the purpose for the project here. Should include information about the plannedOutcome and motivation for the project. Schema.org property",
+            "type": "string"
+        },
+        "keywords": {
+            "description": "categorization of project to support discovery.",
+            "items": {
+                "oneOf": [
+                    {"type": "string"},
+                    {"$ref": "#/definitions/ScopedName"}
+                ]
+            },
+            "type": "array"
+        },
+        "participant": {
+            "description": "an array of schema.org Role objects to provide information about People and Organizations in various roles with respect to the project. Roles include principle investigator, sponsor, host, pointOf contact, team member, project lead, research contributor, associated party, collaborator.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/AgentRole"}
+        },
+        "status": {
+            "type": "string",
+            "description": "The activity status of the project. should be an enumeration, e.g. {planned, in progress, complete, abandoned, on hold}... Schema.org docs specify domainIncludes MedicalCondition, MedicalProcedure, or MedicalStudy so MedicalStudy is added as a @type for this object."
+        },
+        "startDate": {
+            "type": "string",
+            "description": "if the start date is in the future, status must be 'planned', and it’s a planned start date",
+            "anyOf": [
+                {"format": "year"},
+                {"format": "yearmonth"},
+                {"format": "date"},
+                {"format": "datetime"}
+            ]
+        },
+        "endDate": {
+            "type": "string",
+            "description": "if the end date is in the future, it is a planned end date, if its in the past, the project is complete",
+            "anyOf": [
+                {"format": "year"},
+                {"format": "yearmonth"},
+                {"format": "date"},
+                {"format": "datetime"}
+            ]
+        },
+        "duration": {
+            "type": "string",
+            "description": "The duration or elapsed time over which a project was undertaken. This would typically be derived as the difference in a unit of time between the start and end dates of a project, but may be infinite (if no end date applies) or explicit (if duration is given with no end date specified. Use ISO8601 duration format."
+        },
+        "instrument": {
+            "type": "array",
+            "description": "any particular equiment used for the project, e.g. a Ship if the project is a cruise, or particular instruments used to make measurements. Scoped name allows label and identifier (if available). Schema.org property, defined as 'The object that helped the agent perform the action.', with domainIncludes Action. ",
+            "items": {
+                "oneOf": [
+                    {"type": "string"},
+                    {"$ref": "#/definitions/ScopedName"}
+                ]
+            }
+        },
+        "funding": {
+            "type": "array",
+            "description": "link to a Grant object, that identifies the funding agent. If there is no specific grant name or ID, the Grant object just specifies teh name of the funding organization",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {"type": "string"},
+                    "description": {"type": "string"},
+                    "identifier": {
+                        "type": "array",
+                        "items": {"$ref": "#/definitions/IdentifierObject"}
+                    },
+                    "funder": {
+                        "oneOf": [
+                            {"$ref": "#/definitions/AgentPerson"},
+                            {"$ref": "#/definitions/AgentOrganization"}
+                        ]
+                    }
+                }
+            }
+        },
+        "result": {
+            "type": "array",
+            "description": "The outcome(s) achieved or delivered by a project.  Domain of schema:result is schema:Action, range is schema:Thing.  Use this to link to project products.",
+            "items": {
+                "oneOf": [
+                    {"type": "string"},
+                    {"$ref": "#/definitions/ResourceLink"}
+                ]
+            }
+        },
+        "location": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "description": "use schema.org model. Probably good to include a GeoSPARQL or GeoJSON serialization as well.",
+                "properties": {
+                    "@type": {"const": "Place"},
+                    "name": {
+                        "type": "string",
+                        "description": "name of the place [make string or scopedName?]"
+                    },
+                    "geo": {
+                        "type": "array",
+                        "description": "location can be specified by one or more point location or  bounding box. Leave polygon out for now to simplify.",
+                        "items": {
+                            "oneOf": [
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "@type": {"const": "GeoCoordinates"},
+                                        "elevation": {
+                                            "type": "string",
+                                            "description": "string that specifies elevation, units of measure, and the vertical reference datum, e.g. mean sea level, ground surface..."
+                                        },
+                                        "latitude": {"type": "number"},
+                                        "longitude": {"type": "number"}
+                                    }
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "@type": {"const": "GeoShape"},
+                                        "box": {
+                                            "type": "string",
+                                            "description": "A rectangle on the earth surface specified by point locations of the southwest corner and northeast corner in latitude-longitude coordinates. Point locations are tuples of {latitude east-longitude} (y x). Use commas to separate latitude and longitude. The two corner coordinate points are separated by a space. 'East longitude' means positive longitude values are east of the prime (Greenwich) meridian. See https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#bounding-boxes for details"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "uniqueItems": true
+        },
+        "url": {
+            "type": "array",
+            "description": "link to related resource with linkRelationship property to indicate nature of connection. LinkRole URL should be identifier for a resource. roles include partOf, hasPart, projectMedia, projectLandingPage, citingPublication, dataProduct, materialSample. Note that this serialization raises an error with https://validator.schema.org/, even though its follows the example at https://schema.org/LinkRole#eg-0227 (on the JSON-LD tab)",
+            "items": {"$ref": "#/definitions/ResourceLink"}
+        },
+        "ethicsPolicy": {
+            "type": "array",
+            "description": "a list of policies, recommendations, best practices (etc.) that have been followed in the project execution. If any special protocols were followed, they should be documented here.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@type": {"const": "CreativeWork"},
+                    "name": {"type": "string"},
+                    "description": {"type": "string"},
+                    "url": {"type": "string"}
+                }
+            }
+        },
+        "authorized_by": {
+            "description": "a list of permits or other formal permission documents under which the project is working. Use to cite legal documents authorizing project activities.",
+            "items": {"type": "string"},
+            "type": "array"
+        },
+        "sdPublisher": {
+            "description": "identification of the agent that created this project documentation record, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.",
+            "oneOf": [
+                {"$ref": "#/definitions/AgentPerson"},
+                {"$ref": "#/definitions/AgentOrganization"}
+            ]
+        },
+        "sd:DatePublished": {
+            "type": "string",
+            "description": "date (YYYY-MM-DD) or DateTime (YYYY-MM-DDTHH:MM) of most recent update to this metadata.",
+            "anyOf": [
+                {"format": "date"},
+                {"format": "datetime"}
+            ]
+        }
+    },
+    "required": [
+        "name",
+        "@id",
+        "sdPublisher"
+    ],
+    "definitions": {
+        "AgentRole": {
+            "title": "Agent in Role",
+            "type": "object",
+            "additionalProperties": true,
+            "description": "object to represent a person who plays a role relative the project.",
+            "properties": {
+                "@type": {"const": "Role"},
+                "roleName": {
+                    "oneOf": [
+                        {"type": "string"},
+                        {"$ref": "#/definitions/ScopedName"}
+                    ],
+                    "description": "a string or URI that specifies the relationship of a person or organization to the project"
+                },
+                "participant": {
+                    "oneOf": [
+                        {"$ref": "#/definitions/AgentPerson"},
+                        {"$ref": "#/definitions/AgentOrganization"}
+                    ]
+                }
+            }
+        },
+        "AgentPerson": {
+            "title": "Agent",
+            "type": "object",
+            "additionalProperties": true,
+            "description": "object to represent a person who plays a role relative the project.",
+            "properties": {
+                "@type": {"const": "Person"},
+                "@id": {
+                    "type": "string",
+                    "description": "identifier for the person, recommend ORCID"
+                },
+                "name": {
+                    "description": "string, name of a person. Format {firstName MI lastName}.",
+                    "type": "string"
+                },
+                "affiliation": {
+                    "description": "Name of an organization that employes or sponsors a person for the role they play relative to sample collection or curation.",
+                    "$ref": "#/definitions/AgentOrganization"
+                },
+                "contact_information": {
+                    "description": "e-mail address, telephone number, mailing address, or web site through which an agent can be contacted. Something that should be stable and reliable.",
+                    "type": "string"
+                },
+                "identifier": {
+                    "description": "other identifiers for the person",
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/IdentifierObject"}
+                }
+            }
+        },
+        "AgentOrganization": {
+            "title": "Agent",
+            "type": "object",
+            "additionalProperties": true,
+            "description": "object to represent a person who plays a role relative the project.",
+            "properties": {
+                "@type": {"const": "Organization"},
+                "@id": {
+                    "type": "string",
+                    "description": "identifier for the organization, recommend ROR"
+                },
+                "name": {
+                    "description": "string, name of a person. Format {firstName MI lastName}.",
+                    "type": "string"
+                },
+                "contact_information": {
+                    "description": "e-mail address, telephone number, mailing address, or web site through which an agent can be contacted. Something that should be stable and reliable.",
+                    "type": "string"
+                },
+                "identifier": {
+                    "description": "alternate identifier(s) for the organization. Expectation is that it is a URI that is resolvable to some useful represenation.",
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/IdentifierObject"}
+                }
+            }
+        },
+        "GeoLocationPoint": {
+            "title": "GeospatialPointLocation",
+            "type": "object",
+            "additionalProperties": true,
+            "description": "A physical location in decimal degrees using EPSG:4326. Elevation is is expressed in meters relative to the WGS84 ellipsoid. Could be sample point location, or the centroid of a sampling area",
+            "properties": {
+                "elevation": {
+                    "description": "Should be a number and Unit of measure, and the datum. e.g. 401 m above mean sea level.",
+                    "type": "string"
+                },
+                "pointlatitude": {
+                    "description": "angular coordinate measured positive north from the equator.",
+                    "type": "number"
+                },
+                "pointlongitude": {
+                    "description": "angular coordinate measured positive eastward from the prime meridian.",
+                    "type": "number"
+                }
+            }
+        },
+        "ScopedName": {
+            "title": "ScopedName",
+            "type": "object",
+            "description": "Use schema.org DefinedTerm pattern (see https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#keywords) to associate keyword string with a scheme (DefinedTermSet) name,and optional scheme URI and value URI. The scoped name keywords can be used to categorize the sample using a formal vocabulary. ",
+            "properties": {
+                "@type": {"const": "DefinedTerm"},
+                "name": {
+                    "description": "string label for the keyword concept.",
+                    "type": "string"
+                },
+                "identifier": {
+                    "description": "an identifier for the keyword concept",
+                    "type": "string"
+                },
+                "termCode": {
+                    "type": "string",
+                    "description": "an abbreviation or short text string used to identify the keyword in data"
+                },
+                "inDefinedTermSet": {
+                    "type": "object",
+                    "properties": {
+                        "@type": {"const": "DefinedTermSet"},
+                        "name": {
+                            "description": "string label for the concept scheme or vocabulary within which the keyword concept is defined. The scheme name can be used to scope keyword to particular categories, e.g. -CGI rock classification-, -GCMD keywords-, -Getty AAT- ",
+                            "type": "string"
+                        },
+                        "identifier": {
+                            "description": "Identifier for the concept scheme or vocabulary within which the keyword concept is defined.",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "IdentifierObject": {
+            "title": "Identifier object",
+            "type": "object",
+            "description": "object to represent an identifier; use for identifiers that are not URIs, and for alternate identifiers. Preferred identifier should be in @id; Use Property value pattern (https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#identifier). ",
+            "properties": {
+                "type": {"const": "PropertyValue"},
+                "propertyID": {
+                    "type": "string",
+                    "description": "identifier for the kind of identifier provided here, e.g. ISSN, ark, ISBN"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "the string representation of the identifier"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "if the identifier value is not resolvable, provide a url that will get a representation of the resource associated with the identifier, which is likely to be the containing metadata record, but might be a landing page"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "text explanation of the context for this identifier"
+                }
+            }
+        },
+        "ResourceLink": {
+            "title": "Relation",
+            "type": "object",
+            "additionalProperties": false,
+            "description": "semantic link to a related resource.",
+            "properties": {
+                "@type": {"const": "LinkRole"},
+                "name": {
+                    "description": "a short human intelligible string to label the link.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Free text description of related resource, explanation of link.",
+                    "type": "string"
+                },
+                "linkRelationship": {
+                    "description": "term to identify realationship between the project and the relation target. Should be controlled vocabulary (ScopedName).",
+                    "oneOf": [
+                        {"type": "string"},
+                        {"$ref": "#/definitions/ScopedName"}
+                    ]
+                },
+                "url": {
+                    "description": "identifier for the target resource in the relationship. Start with string, should be Identifier object.",
+                    "type": "string"
+                },
+                "encodingFormat": {
+                    "type": "string",
+                    "description": "domain is CreativeWork, add as type. The format of the item that is the target of the url"
+                }
+            }
+        }
+    }
+}
