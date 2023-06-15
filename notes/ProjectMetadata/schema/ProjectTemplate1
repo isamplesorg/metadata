@@ -1,0 +1,159 @@
+{
+    "@context": "https://schema.org/",
+    "@id": "",
+    "identifier": [
+        {
+            "type": "PropertyValue",
+            "propertyID": "",
+            "value": "",
+            "url": "",
+            "description": ""
+        }
+    ],
+    "name": "",
+    "description": "",
+    "keywords": [""],
+    "participant": [
+        {
+            "@type": "Role",
+            "roleName": "",
+            "participant": {
+                "@type": "Person",
+                "@id": "",
+                "name": "",
+                "affiliation": {
+                    "@type": "Organization",
+                    "@id": "",
+                    "name": "",
+                    "contact_information": "",
+                    "identifier": [
+                        {
+                            "type": "PropertyValue",
+                            "propertyID": "",
+                            "value": "",
+                            "url": "",
+                            "description": ""
+                        }
+                    ]
+                },
+                "contact_information": "",
+                "identifier": [
+                    {
+                        "type": "PropertyValue",
+                        "propertyID": "",
+                        "value": "",
+                        "url": "",
+                        "description": ""
+                    }
+                ]
+            }
+        }
+    ],
+    "status": "",
+    "startDate": "",
+    "endDate": "",
+    "duration": "",
+    "instrument": [""],
+    "funding": [
+        {
+            "name": "",
+            "description": "",
+            "identifier": "",
+            "funder": {
+                "@type": "Person",
+                "@id": "",
+                "name": "",
+                "affiliation": {
+                    "@type": "Organization",
+                    "@id": "",
+                    "name": "",
+                    "contact_information": "",
+                    "identifier": [
+                        {
+                            "type": "PropertyValue",
+                            "propertyID": "",
+                            "value": "",
+                            "url": "",
+                            "description": ""
+                        }
+                    ]
+                },
+                "contact_information": "",
+                "identifier": [
+                    {
+                        "type": "PropertyValue",
+                        "propertyID": "",
+                        "value": "",
+                        "url": "",
+                        "description": ""
+                    }
+                ]
+            }
+        }
+    ],
+    "result": [""],
+    "location": [
+        {
+            "@type": "Place",
+            "name": "",
+            "geo": [
+                {
+                    "@type": "GeoCoordinates",
+                    "elevation": "",
+                    "latitude": 0,
+                    "longitude": 0
+                }
+            ]
+        }
+    ],
+    "url": [
+        {
+            "@type": "LinkRole",
+            "name": "",
+            "description": "",
+            "linkRelationship": "",
+            "url": "",
+            "encodingFormat": ""
+        }
+    ],
+    "ethicsPolicy": [
+        {
+            "@type": "CreativeWork",
+            "name": "",
+            "description": "",
+            "url": ""
+        }
+    ],
+    "authorized_by": [""],
+    "sdPublisher": {
+        "@type": "Person",
+        "@id": "",
+        "name": "",
+        "affiliation": {
+            "@type": "Organization",
+            "@id": "",
+            "name": "",
+            "contact_information": "",
+            "identifier": [
+                {
+                    "type": "PropertyValue",
+                    "propertyID": "",
+                    "value": "",
+                    "url": "",
+                    "description": ""
+                }
+            ]
+        },
+        "contact_information": "",
+        "identifier": [
+            {
+                "type": "PropertyValue",
+                "propertyID": "",
+                "value": "",
+                "url": "",
+                "description": ""
+            }
+        ]
+    },
+    "sd:DatePublished": ""
+}
