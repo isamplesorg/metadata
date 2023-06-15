@@ -1,21 +1,15 @@
 {
-    "@context": [
-        "https://schema.org/",
-        {"proj": "https://example.org/project/"}
-    ],
+    "@context": "https://schema.org/",
     "@type": [
         "ResearchProject",
         "MedicalStudy",
         "Event",
-        "ProgramMembership",
         "Action",
         "CreativeWork"
     ],
     "@id": "https://doi.org/10.17913/f3/100501.31069",
-    "identifier": "doi:10.17913/f3/100501.31069",
     "name": "Breadfruit tree survey, Tetiaroa, French Polynesia",
-    "description": "This project will inventory breadfruit trees (Artocarpus altilis) growing on the islands of Onetahi, Honuea, and Tiaraunu in the Tetiaroa Atoll. Trees will be identified by ground survey where access permits, and by inspection of aerial photography in inaccessible areas. Survey will be conducted in May through August, 2022. A motor boat will be used for transit between and around the islands, with foot traverses on a GPS-guided Grid. For trees inventoried on the ground, measurement of tree diameter and estimated height will be made, and GPS will be used to locate the tree. ",
-    "proj:purpose": "Breadfruit trees are a source of sustanance for islanders, and the abundance and health of the trees is important for food security",
+    "description": "This project will inventory breadfruit trees (Artocarpus altilis) growing on the islands of Onetahi, Honuea, and Tiaraunu in the Tetiaroa Atoll. Trees will be identified by ground survey where access permits, and by inspection of aerial photography in inaccessible areas. Survey will be conducted in May through August, 2022. A motor boat will be used for transit between and around the islands, with foot traverses on a GPS-guided Grid. For trees inventoried on the ground, measurement of tree diameter and estimated height will be made, and GPS will be used to locate the tree. Breadfruit trees are a source of sustanance for islanders, and the abundance and health of the trees is important for food security",
     "keywords": [
         {
             "@type": "DefinedTerm",
@@ -29,42 +23,58 @@
         "'uru",
         "food security"
     ],
-    "organizer": {
-        "@type": "Role",
-        "roleName": "Principle Investigator",
-        "organizer": {
-            "@type": "Person",
-            "@id": "https://orcid.org/0000-0002-5401-2141",
-            "name": "Russell Fielding",
-            "affiliation": {
-                "@type": "Organization",
-                "@id": "https://ror.org/01621q256",
-                "name": "Coastal Carolina University"
-            },
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "email": "rfielding@coastal.edu"
-            },
-            "identifier": "46598"
-        }
-    },
-    "hostingOrganization": {
-        "@type": "Organization",
-        "@id": "https://ror.org/04p8xrf95",
-        "name": "Tetiaroa Society Ecostation",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "url": "https://www.tetiaroasociety.org/"
+    "participant": [
+        {
+            "@type": "Role",
+            "roleName": "Principle Investigator",
+            "participant": {
+                "@type": "Person",
+                "@id": "https://orcid.org/0000-0002-5401-2141",
+                "name": "Russell Fielding",
+                "affiliation": {
+                    "@type": "Organization",
+                    "@id": "https://ror.org/01621q256",
+                    "name": "Coastal Carolina University"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "rfielding@coastal.edu"
+                },
+                "identifier": [
+                    {
+                        "@type": "PropertyValue",
+                        "propertyID": "Local identifier from CCU",
+                        "value": "46598"
+                    }
+                ]
+            }
         },
-        "identifier": "ISNI 0000 0005 0267 6108"
-    },
+        {
+            "@type": "Role",
+            "roleName": "hosting Organization",
+            "participant": {
+                "@type": "Organization",
+                "@id": "https://ror.org/04p8xrf95",
+                "name": "Tetiaroa Society Ecostation",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "url": "https://www.tetiaroasociety.org/"
+                },
+                "identifier": [
+                    {
+                        "@type": "PropertyValue",
+                        "propertyID": "https://isni.org/",
+                        "value": "ISNI 0000 0005 0267 6108",
+                        "url": "https://isni.org/isni/0000000502676108"
+                    }
+                ]
+            }
+        }
+    ],
     "status": "complete",
     "startDate": "2021-10-09",
     "endDate": "2022-12-10",
-    "duration": {
-        "@type": "Duration",
-        "@value": "P1Y3M"
-    },
+    "duration": "P1Y3M",
     "instrument": [
         "Land Rover Truck",
         "Garmin 12 GPS",
@@ -75,20 +85,13 @@
             "@type": "Grant",
             "name": "Breadfruit inventory program",
             "description": "Program funding authorized by Tetiaroa Society board",
-            "identifier": "nil:missing",
             "funder": {
-                "@type": "Organization",
-                "@id": "https://ror.org/04p8xrf95",
-                "name": "Tetiaroa Society",
-                "contactPoint": {
-                    "@type": "ContactPoint",
-                    "url": "https://www.tetiaroasociety.org/"
-                },
-                "identifier": "ISNI 0000 0005 0267 6108"
+                "@type":"Organization",
+                "@id": "https://ror.org/04p8xrf95"
             }
         }
     ],
-    "result": "no record",
+    "result": ["no record"],
     "location": [
         {
             "@type": "Place",
@@ -104,15 +107,27 @@
                     "@type": "GeoShape",
                     "box": " -149.60,-16.98  -149.56, -17.02"
                 }
-            ]
+            ],
+            "geosparql:asWKT": {
+                "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+                "@value": "POINT(-149.6 -17.0)"
+            }
         }
     ],
-    "proj:complies_with": [],
+    "ethicsPolicy": [
+        {
+            "@type": "CreativeWork",
+            "description": "describe policies related to FAIR, CARE and other principles followed in project participation and execution"
+        }
+    ],
     "sdPublisher": {
         "@type": "Person",
+        "@id": "https://orcid.org/0000-0001-6041-5302",
         "name": "Stephen M. Richard",
-        "affiliation": "iSamples project",
-        "identifier": "https://orcid.org/0000-0001-6041-5302"
+        "affiliation": {
+            "@type": "Organization",
+            "name": "iSamples project"
+        }
     },
     "sdDatePublished": "2023-06-09"
 }

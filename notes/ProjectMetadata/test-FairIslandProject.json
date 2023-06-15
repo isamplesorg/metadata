@@ -1,0 +1,263 @@
+{
+   "$schema":"http://resource.isamples.org/schema/project/0.2",
+   "@context": "https://schema.org/",
+    "@type": [
+        "ResearchProject",
+        "MedicalStudy",
+        "Event",
+        "Action",
+        "CreativeWork"
+    ],
+    "@id": "http://raid.org/project/2132549",
+    "name": "The FAIR Island Project for Place-based Open Science",
+    "description": "The goal of the project is to translate the FAIR and CARE principles into a set of specific requirements and implementable activities that demonstrate how good data management practices and policies accelerate field-based research for the benefit of all stakeholders. The FAIR Island project examines the impact of implementing optimal research data management policies and requirements, affording us the unique opportunity to look at the outcomes of strong data policies at a working field station. It also offers a real-world example to prove the capabilities of machine-actionable data management plans (maDMPs) and to analyze the downstream effects of these policies in the resulting release of data. ",
+    "keywords": [
+        "Place-based research",
+        "FAIR Principles",
+        "CARE Principles",
+        "research data infrastructure",
+        "data policy",
+        "data management plans"
+    ],
+    "participant": [
+        {
+            "@type": "Role",
+            "roleName": "Principal Investigator",
+            "participant": {
+                "@type": "Person",
+                "@id": "https://orcid.org/0000-0002-7378-2408",
+                "name": "John Chodacki",
+                "affiliation": {
+                    "@type": "Organization",
+                    "@id": "https://ror.org/00dmfq477",
+                    "name": "University of California Office of the President",
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "url": "https://www.ucop.edu"
+                    }
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "john.chodacki@ucop.edu"
+                },
+                "identifier": [
+                    {
+                        "type": "PropertyValue",
+                        "propertyID": "Github user name",
+                        "value": "GitHub: chodacki",
+                        "url": "https://github.com/chodacki"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "Role",
+            "roleName": "Co-Principal Investigator",
+            "participant": {
+                "@type": "Person",
+                "@id": "https://orcid.org/0000-0001-9998-0114",
+                "name": "Erin Robinson",
+                "affiliation": {
+                    "@type": "Organization",
+                    "@id": "https://ror.org/05bp8ka05",
+                    "name": "Metadata Game Changers LLC",
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "url": "https://metadatagamechangers.com/"
+                    }
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "erin@metadatagamechangers.com"
+                }
+            }
+        },
+        {
+            "@type": "Role",
+            "roleName": "Co-Principal Investigator",
+            "participant": {
+                "@type": "Person",
+                "@id": "https://orcid.org/0000-0001-7234-3684",
+                "name": "Matthew Buys",
+                "affiliation": {
+                    "@type": "Organization",
+                    "@id": " https://ror.org/04wxnsj81",
+                    "name": "DataCite",
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "url": "https://www.datacite.org"
+                    }
+                },
+                "identifier": [
+                    {
+                        "type": "PropertyValue",
+                        "propertyID": "Web of Science ResearcherID",
+                        "value": "ResearcherID: J-2686-2014",
+                        "url": "https://www.webofscience.com/wos/author/record/J-2686-2014"
+                    }
+                ]
+            }
+        },
+        {
+            "@type": "Role",
+            "roleName": "Co-Principal Investigator",
+            "participant": {
+                "@type": "Person",
+                "@id": "https://orcid.org/0000-0001-8085-5014",
+                "name": "Neil Davies",
+                "affiliation": {
+                    "@type": "Organization",
+                    "@id": "https://ror.org/01an7q238",
+                    "name": "University of California Berkeley",
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "url": "http://www.berkeley.edu/"
+                    },
+                    "identifier": [
+                        {
+                            "type": "PropertyValue",
+                            "propertyID": "https://isni.org/",
+                            "value": "ISNI: 0000000121817878",
+                            "url": "https://isni.org/isni/0000000121817878"
+                        }
+                    ]
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "neiltahiti@gmail.com"
+                },
+                "identifier": [
+                    {
+                        "type": "PropertyValue",
+                        "propertyID": "Web of Science ResearcherID",
+                        "value": "ResearcherID: E-5863-2012",
+                        "url": "https://www.webofscience.com/wos/author/record/E-5863-2012"
+                    }
+                ]
+            }
+        }
+    ],
+    "status": "in progress",
+    "startDate": "2021-07-01",
+    "endDate": "2024-06-30",
+    "instrument": [""],
+    "funding": [
+        {
+            "name": "EAGER: The FAIR Island Project for Place-based Open Science",
+            "description": "This exploratory project will test FAIR (Findable, Accessible, Interoperable, and Reusable) data principles for Open Science purposes in a comprehensive manner for field station data gathering on the Pacific atoll of Tetiaroa. This project is a timely opportunity to leverage the new field station on the atoll of Tetiaroa which has close ties to U.S. institutions through the University of California, including a nearby NSF Long Term Ecological Research (LTER) site, as well as international research programs. Work plan: Phase 1: Establishing FAIR-compliant Data Policies; Phase 2: Developing Machine-Actionable Data Management Plans; Phase 3: Integrating with External Systems; Phase 4: Continuing to Analyze, Iterate, and Improve; Phase 5: Expanding the FAIR Island Initiative",
+            "identifier": [{
+                "type": "PropertyValue",
+                "propertyID": "NSF Award Number",
+                "value": "2132549",
+                "url": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2132549"
+            }],
+            "funder": {
+                "@type": "Organization",
+                "@id": "https://ror.org/04nh1dc89",
+                "name": "National Science Foundation, Office of Advanced Cyberinfrastructure (OAC)",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "url": "http://www.nsf.gov/div/index.jsp?div=ACI"
+                },
+                "identifier": [
+                    {
+                        "type": "PropertyValue",
+                        "propertyID": "Crossref Funder ID",
+                        "value": "100007523",
+                        "url": "https://api.crossref.org/funders/100007523"
+                    }
+                ]
+            }
+        }
+    ],
+    "result": [
+        {
+            "@type": "LinkRole",
+            "name": "FAIR Island: real-world examples of place-based open science",
+            "description": "In Year 1, we created and a place-based data policy for Tetiaroa Ecostation.",
+            "url": "https://doi.org/10.5281/zenodo.7384146",
+            "linkRelationship": "publication landing page"
+        },
+        {
+            "@type": "LinkRole",
+            "name": "Generic Place-based Data Policy V1.0.2",
+            "description": "Robinson, E., Buys, M., Chodacki, J., Garza, K., Monfort, S., Nancarrow, C., Praetzellis, M., Riley, B., Wimalaratne, S., & Davies, N. (2022). FAIR Island: Real-World Examples of Place-based Open Science. Zenodo",
+            "linkRelationship": "publication landing page",
+            "url": "https://doi.org/10.5281/zenodo.6977453"
+        }
+    ],
+    "location": [
+        {
+            "@type": "Place",
+            "name": "Tetiaroa, French Polynesia",
+            "geo": [
+                {
+                    "@type": "GeoCoordinates",
+                    "elevation": "0 to 15 m above mean sea level",
+                    "latitude": -17.0,
+                    "longitude": -149.6
+                },
+                {
+                    "@type": "GeoShape",
+                    "box": " -149.60,-16.98  -149.56, -17.02"
+                }
+            ],
+            "geosparql:asWKT": {
+                "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+                "@value": "POINT(-149.6 -17.0)"
+            }
+        },
+        {
+            "@type": "Place",
+            "name": "Gump Station, BP 244, Maharepa - 98728, Moorea, French Polynesia",
+            "geo": [
+                {
+                    "@type": "GeoCoordinates",
+                    "elevation": "0 to 5 m above mean sea level",
+                    "latitude": -17.491,
+                    "longitude": -149.825
+                }
+            ],
+            "geosparql:asWKT": {
+                "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+                "@value": "POINT(-149.825 -17.491)"
+            }
+        }
+    ],
+    "url": [
+        {
+            "@type": "LinkRole",
+            "name": "Project web page",
+            "linkRelationship": "information",
+            "url": "https://fairisland.org/",
+            "encodingFormat": "application/html"
+        },
+        {
+            "@type": "LinkRole",
+            "name": "EAGER: The FAIR Island Project for Open Science",
+            "description": "This page describes a data management plan written for the National Science Foundation (nsf.gov) using the DMPTool.",
+            "linkRelationship": "document landing page",
+            "url": "https://dmphub.cdlib.org/dmps/doi:10.48321/D17598",
+            "encodingFormat": "application/html"
+        }
+    ],
+    "ethicsPolicy": [
+        {
+            "@type": "CreativeWork",
+            "name": "CARE Principles for Indigenous Data Governance",
+            "description": "The CARE Principles for Indigenous Data Governance are people and purpose-oriented, reflecting the crucial role of data in advancing Indigenous innovation and self-determination. These principles complement the existing FAIR principles encouraging open and other data movements to consider both people and purpose in their advocacy and pursuits.",
+            "url": "https://www.gida-global.org/care"
+        }
+    ],
+    "authorized_by": ["are there any permits to cite?. I can't find any appropriate scheme.org property. This might need a different namespace"],
+    "sdPublisher": {
+        "@type": "Person",
+        "@id": "https://orcid.org/0000-0001-6041-5302",
+        "name": "Stephen M. Richard",
+        "affiliation": {
+            "@type": "Organization",
+            "name": "iSamples project"
+        }
+    },
+    "sdDatePublished": "2023-06-14"
+}
