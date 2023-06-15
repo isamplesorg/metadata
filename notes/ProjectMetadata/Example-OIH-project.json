@@ -1,0 +1,31 @@
+{
+    "@context": {"@vocab": "https://schema.org/"},
+    "@type": "ResearchProject",
+    "@id": "https://edmerp.seadatanet.org/report/11668",
+    "name": "MApping of a COmplete GlacIal depositional system",
+    "identifier": "11668",
+    "alternateName": "MAGICO",
+    "url": "https://edmerp.seadatanet.org/report/11668",
+    "sameAs": "http://www.csna.it/Progetti/Rapporti/2002_03_13_Rebesco_report.pdf",
+    "description": "The project started with an acquisition cruise of the R/V OGS-Explora (Ushuaia 19.01.04 -18.02.04 Ushuaia). The cruise had two primary scientific targets: The South Scotia Ridge (Responsible: Nevio Zitellini) and the Drift 7 on the Antarctic Peninsula Pacific Margin (Responsible: Michele Rebesco), and approximately 10 days of investigations were dedicated to each of these. The second target (the objective of the MAGICO project) has previously been studied by OGS and others using multi-channel seismics, shallow cores, and ODP- drillings (Sites 1095 and 1096). During the cruise nearly 37,000 km2 of swath bathymetry and about 5,000 km of sub-bottom (CHIRP) profiles were collected across Sediment Drift 7. The data are part of the large data set (including several thousands km of multichannel seismic data) acquired by R/V OGS-Explora between 1995 and 2004 within the projects MAGICO and SEDANO (Sedimentary Drifts of the Antarctic Offshore) funded by PNRA. The analysis of the data conducted in Italy revealed that growth of the drift reflects variations in both Antarctic ice sheet and Southern Ocean alongslope bottom-water (contouritic) currents. The ice sheet transported the sediments to the continental margin, and of flow of contouritic currents controlled their deposition. The understanding of contourite systems and of their sedimentary processes is relevant for paleoclimatic studies and for oil-exploration. Moreover, the discovery of a large field of mud volcanoes with significant active fluid escapes represents the new frontier for research in this margin since the presence of cold-water bioherms coupled to bottom current and fluid escapes may not be ruled out. Of the scientific products, 16 are cited in SCOPUS. Hirsch index (H = 5).",
+    "parentOrganization": {
+        "@type": "Organization",
+        "url": "https://edmo.seadatanet.org/report/2276"
+    },
+    "memberOf": [
+        {
+            "@type": "ProgramMembership",
+            "programName": "European Directory of Marine Environmental Research Projects (EDMERP)"
+        },
+        {
+            "@type": "Organization",
+            "url": "https://edmo.seadatanet.org/report/2276"
+        }
+    ],
+    "prov:wasAttributedTo": {
+        "@id": "https://oceaninfohub.org/.well-known/org/edmerp",
+        "@type": "prov:Organization",
+        "rdf:name": "European Directory of Marine Environmental Research Projects (EDMERP) SeaDataNet",
+        "rdfs:seeAlso": "https://edmerp.seadatanet.org"
+    }
+}
