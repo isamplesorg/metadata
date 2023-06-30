@@ -1,0 +1,266 @@
+# baseURI: http://linkedevents.org/ontology/
+# imports: http://purl.org/NET/c4dm/event.owl
+# imports: http://web.resource.org/cc/
+# imports: http://www.cidoc-crm.org/cidoc-crm/
+# imports: http://www.ontologydesignpatterns.org/ont/dul/DUL.owl
+# prefix: lev
+
+@prefix cc: <http://web.resource.org/cc/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dcterm: <http://purl.org/dc/terms/> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix ev: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix lev: <http://linkedevents.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+lev:
+  rdf:type owl:Ontology ;
+  dcterm:contributor [
+      foaf:homepage <http://www.cwi.nl/~lynda/> ;
+      foaf:name "Lynda Hardman" ;
+    ] ;
+  dcterm:contributor [
+      foaf:homepage <http://www.eurecom.fr/~troncy/> ;
+      foaf:name "Raphaël Troncy" ;
+    ] ;
+  dcterm:creator [
+      foaf:homepage <http://aeshin.org/> ;
+      foaf:name "Ryan Shaw" ;
+    ] ;
+  dcterm:date "2020-10-31"^^xsd:date ;
+  dcterm:description """
+This document describes an ontology for publishing descriptions of
+historical events as Linked Data, and for mapping between other
+event-related vocabularies and ontologies."""@en ;
+  dcterm:hasFormat <http://linkedevents.org/ontology/html/> ;
+  dcterm:hasFormat <http://linkedevents.org/ontology/rdfxml/> ;
+  dcterm:hasFormat <http://linkedevents.org/ontology/ttl/> ;
+  dcterm:identifier "http://linkedevents.org/ontology/2020-10-31/" ;
+  dcterm:isVersionOf lev: ;
+  dcterm:issued "2009-10-07"^^xsd:date ;
+  dcterm:modified "2020-10-31"^^xsd:date ;
+  dcterm:replaces <http://linkedevents.org/ontology/2010-10-07/> ;
+  dcterm:rights "Copyright © 2021 Ryan Shaw" ;
+  dcterm:title "LODE: An ontology for Linking Open Descriptions of Events"@en ;
+  vann:preferredNamespacePrefix "lode" ;
+  vann:preferredNamespaceUri "http://linkedevents.org/ontology/" ;
+  cc:license <http://creativecommons.org/licenses/by-sa/3.0/> ;
+  rdfs:comment """
+This document describes an ontology for publishing descriptions of
+historical events as Linked Data, and for mapping between other
+event-related vocabularies and ontologies."""@en ;
+  rdfs:label "LODE: An ontology for Linking Open Descriptions of Events"@en ;
+  owl:imports <http://purl.org/NET/c4dm/event.owl> ;
+  owl:imports cc: ;
+  owl:imports crm: ;
+  owl:imports <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
+  owl:versionInfo "2020-10-31" ;
+  skos:changeNote [
+      dcterm:creator "Ryan Shaw" ;
+      dcterm:date "2020-10-31"^^xsd:date ;
+      rdf:value "Added Turtle serialization." ;
+    ] ;
+  skos:historyNote [
+      dcterm:creator "Raphaël Troncy" ;
+      dcterm:date "2010-10-07"^^xsd:date ;
+      rdf:value "Added illustrate property." ;
+    ] ;
+  skos:historyNote [
+      dcterm:creator "Ryan Shaw" ;
+      dcterm:date "2020-10-31"^^xsd:date ;
+      rdf:value "Updated CRM and DUL namespaces." ;
+    ] ;
+.
+lev:Event
+  rdf:type owl:Class ;
+  dcterm:issued "2009-07-28"^^xsd:date ;
+  rdfs:comment """
+An event consists of some temporal and spatial boundaries subjectively
+imposed on the flux of reality or imagination, that we wish to treat
+as an entity for the purposes of making statements about it. In
+particular, we may wish to make statements that relate people, places,
+or things to an event."""@en ;
+  rdfs:comment """
+Note that, unlike some defintions of \"event,\" this definition does not
+specify that an event involves a change of state, nor does it attempt
+to distinguish events from processes or states."""@en ;
+  rdfs:isDefinedBy lev: ;
+  rdfs:label "Event"@en ;
+  rdfs:subClassOf dctype:Event ;
+  rdfs:subClassOf crm:E2_Temporal_Entity ;
+  owl:equivalentClass ev:Event ;
+  owl:equivalentClass dul:Event ;
+  skos:definition """
+\"Something that happened,\" as might be reported in a news article or
+explained by a historian."""@en ;
+.
+lev:atPlace
+  rdf:type owl:ObjectProperty ;
+  dcterm:issued "2009-07-28"^^xsd:date ;
+  rdfs:comment """
+This property relates an event to some meaningful place, which may
+have a name (e.g. \"Paris\") or may be defined relative to some other
+entity or entities (e.g. \"the unincorporated area between Carson and
+Harbor Gateway\"). An event may be related to more than one such
+place."""@en ;
+  rdfs:domain lev:Event ;
+  rdfs:isDefinedBy lev: ;
+  rdfs:label "at place"@en ;
+  rdfs:range dul:Place ;
+  rdfs:subPropertyOf dul:hasLocation ;
+  skos:definition """
+a named or relatively specified place that is where
+an event happened."""@en ;
+.
+lev:atTime
+  rdf:type owl:FunctionalProperty ;
+  rdf:type owl:ObjectProperty ;
+  dcterm:issued "2009-07-28"^^xsd:date ;
+  rdfs:comment """
+Equivalent definitions from other ontologies:
+
+* C4DM Event ontology: \"Relates an event to a time object, classifying
+  a time region (either instantaneous or having an extent).\""""@en ;
+  rdfs:comment """
+This property relates an event to some subjectively imposed temporal
+boundaries, i.e. a span of time. An event can be related to only one
+such span of time."""@en ;
+  rdfs:domain lev:Event ;
+  rdfs:isDefinedBy lev: ;
+  rdfs:label "at time"@en ;
+  rdfs:range time:TemporalEntity ;
+  rdfs:subPropertyOf crm:P4_has_time-span ;
+  rdfs:subPropertyOf dul:isObservableAt ;
+  owl:equivalentProperty ev:time ;
+  skos:definition """
+an abstract instant or interval of
+time that is when an event happened."""@en ;
+.
+lev:circa
+  rdf:type owl:ObjectProperty ;
+  dcterm:issued "2009-07-28"^^xsd:date ;
+  rdfs:comment """
+This property relates a span of time that cannot be precisely located
+in a chronological series to another span of time that can be
+precisely located, thus asserting that the latter is an approximation
+of the former."""@en ;
+  rdfs:comment "An temporal relation expressing nearness in time."@en ;
+  rdfs:domain time:TemporalEntity ;
+  rdfs:isDefinedBy lev: ;
+  rdfs:label "circa"@en ;
+  rdfs:range time:DateTimeInterval ;
+  skos:definition """
+an interval of time that can be
+precisely described using calendar dates and clock times."""@en ;
+.
+<http://linkedevents.org/ontology/html/>
+  dcterm:format [
+      rdf:type dcterm:IMT ;
+      rdf:value "text/html" ;
+      rdfs:label "HTML"@en ;
+    ] ;
+.
+lev:illustrate
+  rdf:type owl:ObjectProperty ;
+  dcterm:issued "2010-10-07"^^xsd:date ;
+  rdfs:comment """
+This property relates any thing (typically a media object) to an event which it
+illustrates, documents or comments upon."""@en ;
+  rdfs:domain owl:Thing ;
+  rdfs:isDefinedBy lev: ;
+  rdfs:label "illustrate"@en ;
+  rdfs:range lev:Event ;
+  skos:definition """
+an event illustrated by some thing (typically a media object)."""@en ;
+.
+lev:inSpace
+  rdf:type owl:FunctionalProperty ;
+  rdf:type owl:ObjectProperty ;
+  dcterm:issued "2009-07-28"^^xsd:date ;
+  rdfs:comment """
+Note that a statement that relates an event to a region of space using
+this property only asserts that an event occurred somewhere within
+the region and does not assert that it occurred everywhere within the
+region."""@en ;
+  rdfs:comment """
+This property relates an event to some subjectively imposed spatial
+boundaries, i.e. a region of space. An event can be related to only
+one such region of space."""@en ;
+  rdfs:domain lev:Event ;
+  rdfs:isDefinedBy lev: ;
+  rdfs:label "in space"@en ;
+  rdfs:range geo:SpatialThing ;
+  rdfs:subPropertyOf dul:hasRegion ;
+  owl:equivalentProperty ev:place ;
+  skos:definition """
+an abstract region of space (e.g. a
+geospatial point or region) that is where an event happened."""@en ;
+.
+lev:involved
+  rdf:type owl:ObjectProperty ;
+  dcterm:issued "2009-07-28"^^xsd:date ;
+  rdfs:comment """
+This property relates an event to any physical, social, or mental
+object or substance. It does not imply any causal relationship or
+influence or any other kind of explanatory relationship such as
+creation, destruction, etc."""@en ;
+  rdfs:domain lev:Event ;
+  rdfs:isDefinedBy lev: ;
+  rdfs:label "involved"@en ;
+  rdfs:range dul:Object ;
+  owl:equivalentProperty dul:hasParticipant ;
+  skos:definition """
+a (physical, social, or mental) object involved in
+an event."""@en ;
+.
+lev:involvedAgent
+  rdf:type owl:ObjectProperty ;
+  dcterm:issued "2009-07-28"^^xsd:date ;
+  rdfs:comment """
+This property relates an event to anything with agency, such as a
+(legal or natural) person, a group, an organization, a computational
+agent, etc. It does not imply any causal relationship, influence,
+intentionality, etc."""@en ;
+  rdfs:domain lev:Event ;
+  rdfs:isDefinedBy lev: ;
+  rdfs:label "involved agent"@en ;
+  rdfs:range dul:Agent ;
+  rdfs:subPropertyOf lev:involved ;
+  owl:equivalentProperty dul:involvesAgent ;
+  skos:definition "an agent involved in an event."@en ;
+.
+<http://linkedevents.org/ontology/rdfxml/>
+  dcterm:format [
+      rdf:type dcterm:IMT ;
+      rdf:value "application/rdf+xml" ;
+      rdfs:label "RDF/XML"@en ;
+    ] ;
+.
+<http://linkedevents.org/ontology/ttl/>
+  dcterm:format [
+      rdf:type dcterm:IMT ;
+      rdf:value "text/turtle" ;
+      rdfs:label "TTL"@en ;
+    ] ;
+.
+ev:agent
+  rdfs:subPropertyOf lev:involvedAgent ;
+.
+crm:P11_had_participant
+  rdfs:subPropertyOf lev:involvedAgent ;
+.
+crm:P12_occurred_in_the_presence_of
+  rdfs:subPropertyOf lev:involved ;
+.
+crm:P7_took_place_at
+  rdfs:subPropertyOf lev:inSpace ;
+.

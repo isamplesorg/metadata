@@ -1,0 +1,2516 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix nao: <http://www.semanticdesktop.org/ontologies/2007/08/15/nao#> .
+@prefix nco: <http://www.semanticdesktop.org/ontologies/2007/03/22/nco#> .
+@prefix nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#> .
+@prefix nrl: <http://www.semanticdesktop.org/ontologies/2007/08/15/nrl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix core: <http://purl.org/ontology/olo/core#> .
+@prefix prov: <http://www.w3.org/ns/prov-o-20130430#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix prov1: <http://www.w3.org/ns/prov#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+<http://purl.org/net/cosi#> a owl:Ontology ;
+owl:imports <http://purl.org/ontology/olo/core#> , <http://www.w3.org/ns/prov-o-20130430> ;
+vann:preferredNamespacePrefix "cosi" ;
+rdfs:label "Core Ontology of Scientific Investigation - COSI"@en ;
+owl:versionInfo "0.1"^^xsd:decimal ;
+terms:description "An ontology for the representation of scientific investigation"@en ;
+terms:creator "Armand Brahaj" .
+# # Annotation properties
+# http://purl.org/dc/elements/1.1/contributor
+dc:contributor a owl:AnnotationProperty .
+# http://purl.org/dc/elements/1.1/coverage
+dc:coverage a owl:AnnotationProperty .
+# http://purl.org/dc/elements/1.1/creator
+dc:creator a owl:AnnotationProperty .
+# http://purl.org/dc/elements/1.1/date
+dc:date a owl:AnnotationProperty .
+# http://purl.org/dc/elements/1.1/description
+dc:description a owl:AnnotationProperty .
+# http://purl.org/dc/elements/1.1/format
+dc:format a owl:AnnotationProperty .
+# http://purl.org/dc/elements/1.1/identifier
+dc:identifier a owl:AnnotationProperty .
+# http://purl.org/dc/elements/1.1/language
+dc:language a owl:AnnotationProperty .
+# http://purl.org/dc/elements/1.1/publisher
+dc:publisher a owl:AnnotationProperty .
+# http://purl.org/dc/elements/1.1/relation
+dc:relation a owl:AnnotationProperty .
+# http://purl.org/dc/elements/1.1/rights
+dc:rights a owl:AnnotationProperty .
+# http://purl.org/dc/elements/1.1/source
+dc:source a owl:AnnotationProperty .
+# http://purl.org/dc/elements/1.1/subject
+dc:subject a owl:AnnotationProperty .
+# http://purl.org/dc/elements/1.1/title
+dc:title a owl:AnnotationProperty .
+# http://purl.org/dc/elements/1.1/type
+dc:type a owl:AnnotationProperty .
+# http://purl.org/dc/terms/abstract
+terms:abstract a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:description .
+# http://purl.org/dc/terms/accessRights
+terms:accessRights a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:rights .
+# http://purl.org/dc/terms/alternative
+terms:alternative a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:title ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/available
+terms:available a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:date ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/bibliographicCitation
+terms:bibliographicCitation a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:identifier ;
+rdfs:range rdfs:Literal ;
+rdfs:domain terms:BibliographicResource .
+# http://purl.org/dc/terms/conformsTo
+terms:conformsTo a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/contributor
+
+terms:contributor a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:contributor .
+# http://purl.org/dc/terms/coverage
+terms:coverage a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:coverage .
+# http://purl.org/dc/terms/created
+terms:created a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:date ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/creator
+terms:creator a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:creator .
+# http://purl.org/dc/terms/date
+terms:date a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:date ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/dateAccepted
+terms:dateAccepted a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:date ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/dateCopyrighted
+terms:dateCopyrighted a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:date ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/dateSubmitted
+terms:dateSubmitted a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:date ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/description
+terms:description a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:description ;
+rdfs:domain :Onymous .
+# http://purl.org/dc/terms/extent
+terms:extent a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:format .
+# http://purl.org/dc/terms/format
+terms:format a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:format .
+# http://purl.org/dc/terms/hasFormat
+terms:hasFormat a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/hasPart
+terms:hasPart a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/hasVersion
+terms:hasVersion a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/identifier
+terms:identifier a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:identifier ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/isFormatOf
+terms:isFormatOf a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/isPartOf
+terms:isPartOf a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/isReferencedBy
+terms:isReferencedBy a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/isReplacedBy
+terms:isReplacedBy a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/isRequiredBy
+terms:isRequiredBy a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/isVersionOf
+terms:isVersionOf a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/issued
+terms:issued a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:date ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/language
+terms:language a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:language .
+# http://purl.org/dc/terms/license
+terms:license a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:rights .
+# http://purl.org/dc/terms/medium
+terms:medium a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:format .
+# http://purl.org/dc/terms/modified
+terms:modified a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:date ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/publisher
+terms:publisher a owl:AnnotationProperty ;
+terms:contributor a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:contributor .
+# http://purl.org/dc/terms/coverage
+terms:coverage a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:coverage .
+# http://purl.org/dc/terms/created
+terms:created a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:date ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/creator
+terms:creator a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:creator .
+# http://purl.org/dc/terms/date
+terms:date a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:date ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/dateAccepted
+terms:dateAccepted a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:date ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/dateCopyrighted
+terms:dateCopyrighted a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:date ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/dateSubmitted
+terms:dateSubmitted a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:date ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/description
+terms:description a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:description ;
+rdfs:domain :Onymous .
+# http://purl.org/dc/terms/extent
+terms:extent a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:format .
+# http://purl.org/dc/terms/format
+terms:format a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:format .
+# http://purl.org/dc/terms/hasFormat
+terms:hasFormat a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/hasPart
+terms:hasPart a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/hasVersion
+terms:hasVersion a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/identifier
+terms:identifier a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:identifier ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/isFormatOf
+terms:isFormatOf a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/isPartOf
+terms:isPartOf a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/isReferencedBy
+terms:isReferencedBy a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/isReplacedBy
+terms:isReplacedBy a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/isRequiredBy
+terms:isRequiredBy a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/isVersionOf
+terms:isVersionOf a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:relation , terms:relation .
+# http://purl.org/dc/terms/issued
+terms:issued a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:date ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/language
+terms:language a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:language .
+# http://purl.org/dc/terms/license
+terms:license a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:rights .
+# http://purl.org/dc/terms/medium
+terms:medium a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:format .
+# http://purl.org/dc/terms/modified
+terms:modified a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:date ;
+rdfs:range rdfs:Literal .
+# http://purl.org/dc/terms/publisher
+terms:publisher a owl:AnnotationProperty ;
+
+rdfs:subPropertyOf nie:hasLogicalPart .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileCreated
+nfo:fileCreated a owl:AnnotationProperty ;
+rdfs:subPropertyOf nie:created ;
+rdfs:range xsd:dateTime ;
+rdfs:domain nfo:FileDataObject .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileLastAccessed
+nfo:fileLastAccessed a owl:AnnotationProperty ;
+rdfs:subPropertyOf dc:date ;
+rdfs:range xsd:dateTime ;
+rdfs:domain nfo:FileDataObject .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileLastModified
+nfo:fileLastModified a owl:AnnotationProperty ;
+rdfs:subPropertyOf nie:lastModified ;
+rdfs:range xsd:dateTime ;
+rdfs:domain nfo:FileDataObject .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName
+nfo:fileName a owl:AnnotationProperty ;
+rdfs:subPropertyOf nao:prefLabel ;
+rdfs:range xsd:string ;
+rdfs:domain nfo:FileDataObject .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileSize
+nfo:fileSize a owl:AnnotationProperty ;
+rdfs:subPropertyOf nie:byteSize ;
+rdfs:range xsd:integer ;
+rdfs:domain nfo:FileDataObject .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileUrl
+nfo:fileUrl a owl:AnnotationProperty ;
+rdfs:subPropertyOf nie:url ;
+rdfs:range rdfs:Resource .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#foundry
+nfo:foundry a owl:AnnotationProperty ;
+rdfs:subPropertyOf nco:creator .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#hasMediaStream
+nfo:hasMediaStream a owl:AnnotationProperty ;
+rdfs:subPropertyOf nie:hasPart ;
+rdfs:range nie:DataObject .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#uuid
+nfo:uuid a owl:AnnotationProperty ;
+rdfs:subPropertyOf nie:identifier ;
+rdfs:range xsd:string ;
+rdfs:domain nfo:Filesystem .
+# http://www.semanticdesktop.org/ontologies/2007/08/15/nao#deprecated
+nao:deprecated a owl:AnnotationProperty .
+# http://www.semanticdesktop.org/ontologies/2007/08/15/nao#prefLabel
+nao:prefLabel a owl:AnnotationProperty .
+# http://www.semanticdesktop.org/ontologies/2007/08/15/nao#userVisible
+nao:userVisible a owl:AnnotationProperty .
+# http://www.semanticdesktop.org/ontologies/2007/08/15/nrl#cardinality
+nrl:cardinality a owl:AnnotationProperty .
+# http://www.semanticdesktop.org/ontologies/2007/08/15/nrl#inverseProperty
+nrl:inverseProperty a owl:AnnotationProperty .
+# http://www.semanticdesktop.org/ontologies/2007/08/15/nrl#maxCardinality
+nrl:maxCardinality a owl:AnnotationProperty .
+# http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment a owl:AnnotationProperty .
+# http://www.w3.org/2000/01/rdf-schema#isDefinedBy
+rdfs:isDefinedBy a owl:AnnotationProperty .
+# http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label a owl:AnnotationProperty .
+# http://www.w3.org/2000/01/rdf-schema#seeAlso
+rdfs:seeAlso a owl:AnnotationProperty .
+# http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo a owl:AnnotationProperty .
+# http://www.w3.org/2004/02/skos/core#note
+skos:note a owl:AnnotationProperty .
+# http://www.w3.org/ns/prov#definition
+prov1:definition a owl:AnnotationProperty .
+# # Datatypes
+# http://purl.org/dc/terms/Box
+terms:Box a rdfs:Datatype .
+# http://purl.org/dc/terms/ISO3166
+terms:ISO3166 a rdfs:Datatype .
+# http://purl.org/dc/terms/ISO639-2
+terms:ISO639-2 a rdfs:Datatype .
+# http://purl.org/dc/terms/ISO639-3
+terms:ISO639-3 a rdfs:Datatype .
+# http://purl.org/dc/terms/Period
+terms:Period a rdfs:Datatype .
+# http://purl.org/dc/terms/Point
+terms:Point a rdfs:Datatype .
+# http://purl.org/dc/terms/RFC1766
+terms:RFC1766 a rdfs:Datatype .
+# http://purl.org/dc/terms/RFC3066
+terms:RFC3066 a rdfs:Datatype .
+# http://purl.org/dc/terms/RFC4646
+terms:RFC4646 a rdfs:Datatype .
+# http://purl.org/dc/terms/RFC5646
+
+terms:RFC5646 a rdfs:Datatype .
+# http://purl.org/dc/terms/URI
+terms:URI a rdfs:Datatype .
+# http://purl.org/dc/terms/W3CDTF
+terms:W3CDTF a rdfs:Datatype .
+# http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral
+rdf:PlainLiteral a rdfs:Datatype .
+# http://www.w3.org/2000/01/rdf-schema#Literal
+rdfs:Literal a rdfs:Datatype .
+# http://www.w3.org/2001/XMLSchema#date
+xsd:date a rdfs:Datatype .
+# http://www.w3.org/2001/XMLSchema#dateTime
+xsd:dateTime a rdfs:Datatype .
+# http://www.w3.org/2001/XMLSchema#duration
+xsd:duration a rdfs:Datatype .
+# # Object Properties
+# http://purl.org/dc/terms/accessRights
+terms:accessRights a owl:ObjectProperty ;
+rdfs:subPropertyOf terms:rights .
+# http://purl.org/dc/terms/accrualMethod
+terms:accrualMethod a owl:ObjectProperty .
+# http://purl.org/dc/terms/accrualPeriodicity
+terms:accrualPeriodicity a owl:ObjectProperty .
+# http://purl.org/dc/terms/accrualPolicy
+terms:accrualPolicy a owl:ObjectProperty ;
+rdfs:range terms:Policy .
+# http://purl.org/dc/terms/audience
+terms:audience a owl:ObjectProperty .
+# http://purl.org/dc/terms/conformsTo
+terms:conformsTo a owl:ObjectProperty .
+# http://purl.org/dc/terms/contributor
+terms:contributor a owl:ObjectProperty .
+# http://purl.org/dc/terms/coverage
+terms:coverage a owl:ObjectProperty .
+# http://purl.org/dc/terms/creator
+terms:creator a owl:ObjectProperty ;
+rdfs:subPropertyOf terms:contributor .
+# http://purl.org/dc/terms/educationLevel
+terms:educationLevel a owl:ObjectProperty ;
+rdfs:subPropertyOf terms:audience .
+# http://purl.org/dc/terms/extent
+terms:extent a owl:ObjectProperty ;
+rdfs:subPropertyOf terms:format .
+# http://purl.org/dc/terms/format
+terms:format a owl:ObjectProperty .
+# http://purl.org/dc/terms/instructionalMethod
+terms:instructionalMethod a owl:ObjectProperty .
+# http://purl.org/dc/terms/language
+terms:language a owl:ObjectProperty .
+# http://purl.org/dc/terms/license
+terms:license a owl:ObjectProperty ;
+rdfs:subPropertyOf terms:rights .
+# http://purl.org/dc/terms/mediator
+terms:mediator a owl:ObjectProperty ;
+rdfs:subPropertyOf terms:audience .
+# http://purl.org/dc/terms/medium
+terms:medium a owl:ObjectProperty ;
+rdfs:subPropertyOf terms:format .
+# http://purl.org/dc/terms/provenance
+terms:provenance a owl:ObjectProperty .
+# http://purl.org/dc/terms/publisher
+terms:publisher a owl:ObjectProperty .
+# http://purl.org/dc/terms/rights
+terms:rights a owl:ObjectProperty .
+# http://purl.org/dc/terms/rightsHolder
+terms:rightsHolder a owl:ObjectProperty .
+# http://purl.org/dc/terms/spatial
+terms:spatial a owl:ObjectProperty ;
+rdfs:subPropertyOf terms:coverage .
+# http://purl.org/dc/terms/temporal
+terms:temporal a owl:ObjectProperty ;
+rdfs:subPropertyOf terms:coverage .
+# http://purl.org/dc/terms/type
+terms:type a owl:ObjectProperty .
+# http://purl.org/net/cosi#acceptedInput
+:acceptedInput a owl:ObjectProperty ;
+rdfs:domain :Instrument ;
+rdfs:comment "Provides information on the accepted format or composition of the input information"@en ;
+rdfs:label "acceptedInput"@en .
+# http://purl.org/net/cosi#belongsToProgramme
+:belongsToProgramme a owl:ObjectProperty ;
+rdfs:domain :Study ;
+rdfs:range :Programme ;
+rdfs:label "belongsToProgramme"@en .
+# http://purl.org/net/cosi#belongsToResearchFacility
+:belongsToResearchFacility a owl:ObjectProperty ;
+rdfs:domain :Instrument ;
+rdfs:range :ResearchFacility ;
+rdfs:comment "Relates an instrument with a location"@en ;
+rdfs:label "belongsToResearchFacility"@en .
+# http://purl.org/net/cosi#belongsToStudy
+:belongsToStudy a owl:ObjectProperty ;
+owl:inverseOf :hasInvestigation ;
+rdfs:domain :Investigation ;
+rdfs:label "belongsToStudy"@en .
+# http://purl.org/net/cosi#dataOutput
+:dataOutput a owl:ObjectProperty ;
+rdfs:domain :DigitalInstrument ;
+rdfs:comment "Provides information on the result output."@en ;
+rdfs:label "dataOutput"@en .
+# http://purl.org/net/cosi#derivesFromResult
+:derivesFromResult a owl:ObjectProperty ;
+rdfs:domain :Result ;
+rdfs:range :Result .
+# http://purl.org/net/cosi#generatedResultSet
+:generatedResultSet a owl:ObjectProperty ;
+owl:inverseOf :isGeneratedByInstrument ;
+rdfs:domain :Instrument ;
+rdfs:range :ResultSet .
+# http://purl.org/net/cosi#hasActivity
+:hasActivity a owl:ObjectProperty ;
+rdfs:domain :Process ;
+rdfs:range prov1:Activity .
+# http://purl.org/net/cosi#hasCalibration
+:hasCalibration a owl:ObjectProperty ;
+rdfs:domain :Instrument ;
+rdfs:comment "Relates an instrument with a specific of calibrations"@en ;
+rdfs:label "hasCalibration"@en .
+# http://purl.org/net/cosi#hasConclusion
+:hasConclusion a owl:ObjectProperty ;
+rdfs:domain :Result ;
+rdfs:range :Conclusion ;
+rdfs:label "hasConclusion"@en .
+# http://purl.org/net/cosi#hasDigitalModel
+:hasDigitalModel a owl:ObjectProperty ;
+rdfs:domain :Simulation ;
+rdfs:label "hasDigitalModel"@en .
+# http://purl.org/net/cosi#hasExperimentProcedure
+:hasExperimentProcedure a owl:ObjectProperty ;
+rdfs:subPropertyOf :hasProcedure ;
+rdfs:domain :Experiment ;
+rdfs:range :ExperimentProcedure .
+# http://purl.org/net/cosi#hasFieldOfStudy
+:hasFieldOfStudy a owl:ObjectProperty ;
+rdfs:domain :Investigation ;
+rdfs:range :AcademicDiscipline .
+# http://purl.org/net/cosi#hasHypothesis
+:hasHypothesis a owl:ObjectProperty ;
+rdfs:domain :Investigation ;
+rdfs:range :Hypothesis .
+# http://purl.org/net/cosi#hasHypothesisAcceptance
+:hasHypothesisAcceptance a owl:ObjectProperty ;
+rdfs:domain :Result ;
+rdfs:range :HypothesisAcceptance ;
+rdfs:label "hasHypothesisAcceptance"@en .
+# http://purl.org/net/cosi#hasHypothesisRejection
+:hasHypothesisRejection a owl:ObjectProperty ;
+rdfs:domain :Result ;
+rdfs:range :HypothesisRejection .
+# http://purl.org/net/cosi#hasHypothesisStatement
+:hasHypothesisStatement a owl:ObjectProperty ;
+rdfs:domain :Hypothesis ;
+rdfs:range :HypothesisStatement .
+# http://purl.org/net/cosi#hasIdentifier
+:hasIdentifier a owl:ObjectProperty ;
+rdfs:domain :Preservation , nie:DataObject , nie:InformationElement .
+# http://purl.org/net/cosi#hasInput
+:hasInput a owl:ObjectProperty ;
+rdfs:domain :Process ;
+rdfs:range :Input ;
+rdfs:label "hasInput"@en .
+# http://purl.org/net/cosi#hasInstrument
+:hasInstrument a owl:ObjectProperty ;
+rdfs:domain :Experiment , :Measurement , :Rig ;
+rdfs:range :Instrument ;
+rdfs:label "hasInstrument"@en .
+# http://purl.org/net/cosi#hasInvestigation
+:hasInvestigation a owl:ObjectProperty ;
+rdfs:domain :Study ;
+rdfs:range :Investigation .
+# http://purl.org/net/cosi#hasInvestigationProcedure
+:hasInvestigationProcedure a owl:ObjectProperty ;
+rdfs:domain :Investigation ;
+rdfs:range :InvestigationProcedure .
+# http://purl.org/net/cosi#hasInvestigator
+
+:hasInvestigator a owl:ObjectProperty ;
+owl:inverseOf :isInvestigatorOf ;
+rdfs:domain :Investigation , :Study ;
+rdfs:range :Investigator .
+# http://purl.org/net/cosi#hasLicenceInformation
+:hasLicenceInformation a owl:ObjectProperty ;
+rdfs:domain :ResultSet , :Study , nie:InformationElement ;
+rdfs:range :LicenceInformation ;
+rdfs:comment "Relates a Study with one ore more LegalNotes"@en ;
+rdfs:label "hasLicenceInformation"@en .
+# http://purl.org/net/cosi#hasMeasurementProcedure
+:hasMeasurementProcedure a owl:ObjectProperty ;
+rdfs:subPropertyOf :hasProcedure .
+# http://purl.org/net/cosi#hasModel
+:hasModel a owl:ObjectProperty ;
+rdfs:domain :Instrument ;
+rdfs:comment "Relates an instrument to a model number obtained by the vendor"@en ;
+rdfs:label "hasModel"@en .
+# http://purl.org/net/cosi#hasMonitoredFolder
+:hasMonitoredFolder a owl:ObjectProperty ;
+rdfs:domain :DigitalInstrument ;
+rdfs:range nfo:FileDataObject ;
+rdfs:comment "Provides information on a path where the information is saved from the instrument"@en ;
+rdfs:label "hasMonitoredFolder"@en .
+# http://purl.org/net/cosi#hasMoticationPublication
+:hasMoticationPublication a owl:ObjectProperty ;
+rdfs:subPropertyOf :hasPublication ;
+rdfs:domain :Investigation , :Study ;
+rdfs:range :Motivation_Publication .
+# http://purl.org/net/cosi#hasObservationProcedure
+:hasObservationProcedure a owl:ObjectProperty ;
+rdfs:subPropertyOf :hasProcedure ;
+rdfs:domain :Observation ;
+rdfs:range :ObservationProcedure .
+# http://purl.org/net/cosi#hasObserver
+:hasObserver a owl:ObjectProperty ;
+rdfs:subPropertyOf :hasInvestigator ;
+owl:inverseOf :isObserverOf ;
+rdfs:domain :Observation , :ObservationProcedure ;
+rdfs:range :Observer .
+# http://purl.org/net/cosi#hasOperatingSystem
+:hasOperatingSystem a owl:ObjectProperty ;
+rdfs:domain :DigitalInstrument ;
+rdfs:comment "Provides information on an operating system for the instrument"@en ;
+rdfs:label "hasOperatingSystem"@en .
+# http://purl.org/net/cosi#hasOrderederProcedure
+:hasOrderederProcedure a owl:ObjectProperty ;
+rdfs:subPropertyOf core:ordered_list ;
+rdfs:domain :ExperimentProcedure ;
+rdfs:range core:OrderedList .
+# http://purl.org/net/cosi#hasOutput
+:hasOutput a owl:ObjectProperty ;
+rdfs:domain :Process ;
+rdfs:range :Output ;
+rdfs:label "hasOutput"@en .
+# http://purl.org/net/cosi#hasParameter
+:hasParameter a owl:ObjectProperty ;
+rdfs:domain :DigitalInstrument , :Experiment , :Measurement ;
+rdfs:range :Parameter ;
+rdfs:label "hasParameter"@en .
+# http://purl.org/net/cosi#hasPersistendIdentifier
+:hasPersistendIdentifier a owl:ObjectProperty ;
+rdfs:subPropertyOf :hasIdentifier ;
+rdfs:domain :Preservation ;
+rdfs:range :PersistendIdentifier .
+# http://purl.org/net/cosi#hasPhysicalPath
+:hasPhysicalPath a owl:ObjectProperty ;
+rdfs:domain :Preservation ;
+rdfs:range nie:DataObject .
+# http://purl.org/net/cosi#hasPreviousInvestigation
+:hasPreviousInvestigation a owl:ObjectProperty ;
+rdfs:domain :Investigation , :Study ;
+rdfs:range :Investigation , :Study .
+# http://purl.org/net/cosi#hasPriorPreservationVersion
+:hasPriorPreservationVersion a owl:ObjectProperty ;
+rdfs:domain :Preservation ;
+rdfs:range :Preservation .
+# http://purl.org/net/cosi#hasProcedure
+:hasProcedure a owl:ObjectProperty ;
+rdfs:domain :Investigation , :Procedure ;
+rdfs:range :Procedure .
+# http://purl.org/net/cosi#hasPublication
+:hasPublication a owl:ObjectProperty ;
+rdfs:domain :Investigation , :Study ;
+rdfs:range :Publication , :ScholarCommunication , nie:InformationElement .
+# http://purl.org/net/cosi#hasRelatedMaterial
+:hasRelatedMaterial a owl:ObjectProperty ;
+
+rdfs:domain :Study ;
+rdfs:range nie:InformationElement ;
+rdfs:comment """Relates a Study with one ore more Document types
+Might be a follow up publication, a technical report etc"""@en ;
+rdfs:label "hasRelatedMaterial"@en .
+# http://purl.org/net/cosi#hasResearchFacility
+:hasResearchFacility a owl:ObjectProperty ;
+rdfs:domain :Experiment ;
+rdfs:range :ResearchFacility .
+# http://purl.org/net/cosi#hasResult
+:hasResult a owl:ObjectProperty ;
+rdfs:subPropertyOf owl:topObjectProperty ;
+rdfs:domain :Investigation , :Publication , :Study ;
+rdfs:range :Result ;
+rdfs:label "hasResult"@en .
+# http://purl.org/net/cosi#hasResultConclusion
+:hasResultConclusion a owl:ObjectProperty ;
+rdfs:domain :Result ;
+rdfs:range :S6_Conclusion .
+# http://purl.org/net/cosi#hasResultError
+:hasResultError a owl:ObjectProperty ;
+rdfs:domain :Result ;
+rdfs:range :ResultError .
+# http://purl.org/net/cosi#hasResultPublication
+:hasResultPublication a owl:ObjectProperty ;
+rdfs:subPropertyOf :hasPublication ;
+rdfs:domain :Investigation ;
+rdfs:range :Result_Publication .
+# http://purl.org/net/cosi#hasResultSet
+:hasResultSet a owl:ObjectProperty ;
+rdfs:domain :Result ;
+rdfs:range :ResultSet , nie:DataObject ;
+rdfs:comment "The relation to a result to the final dataset, or digital objects containing the outcome"@en ;
+rdfs:label "hasResultSet"@en .
+# http://purl.org/net/cosi#hasRig
+:hasRig a owl:ObjectProperty ;
+rdfs:domain :Experiment , :ExperimentProcedure ;
+rdfs:range :Rig ;
+rdfs:label "hasRig"@en .
+# http://purl.org/net/cosi#hasRightsDocument
+:hasRightsDocument a owl:ObjectProperty ;
+rdfs:domain :RightsStatement ;
+rdfs:range :RightsDocumentation .
+# http://purl.org/net/cosi#hasRightsStatement
+:hasRightsStatement a owl:ObjectProperty ;
+rdfs:domain :Motivation_Publication , :Publication , :ResultSet , :Result_Publication , :RightsDocumentation , nie:DataObject , nie:InformationElement , nfo:ArchiveItem , nfo:Attachment , nfo:DataContainer , nfo:DeletedResource , nfo:EmbeddedFileDataObject , nfo:FileDataObject , nfo:Folder , nfo:HtmlDocument , nfo:LocalFileDataObject , nfo:PaginatedTextDocument , nfo:PlainTextDocument , nfo:Presentation , nfo:RemoteDataObject , nfo:SourceCode , nfo:Spreadsheet , nfo:TextDocument , nfo:Website , prov1:Entity ;
+rdfs:range :RightsStatement .
+# http://purl.org/net/cosi#hasSimulationProcedure
+:hasSimulationProcedure a owl:ObjectProperty ;
+rdfs:subPropertyOf :hasProcedure .
+# http://purl.org/net/cosi#hasStatus
+:hasStatus a owl:ObjectProperty ;
+rdfs:domain :Study ;
+rdfs:comment "Relates the study to a literal or enumerated status"@en ;
+rdfs:label "hasStatus"@en .
+# http://purl.org/net/cosi#hasStudy
+:hasStudy a owl:ObjectProperty ;
+owl:inverseOf :runByInstitution ;
+rdfs:domain :Programme ;
+rdfs:range :Study .
+# http://purl.org/net/cosi#hasThroughput
+:hasThroughput a owl:ObjectProperty ;
+rdfs:domain :DigitalInstrument ;
+rdfs:comment "Provides information on the sum of the data rates that are delivered by the instrument"@en ;
+rdfs:label "hasThroughput"@en .
+# http://purl.org/net/cosi#hasTopic
+:hasTopic a owl:ObjectProperty ;
+rdfs:domain :Study ;
+rdfs:range :Topic ;
+rdfs:label "hasTopic"@en .
+# http://purl.org/net/cosi#hasVendor
+:hasVendor a owl:ObjectProperty ;
+rdfs:domain :Instrument ;
+rdfs:comment "Relates an instrument to a vendor"@en ;
+rdfs:label "hasVendor"@en .
+# http://purl.org/net/cosi#isGeneratedByInstrument
+:isGeneratedByInstrument a owl:ObjectProperty .
+# http://purl.org/net/cosi#isInvestigatorOf
+:isInvestigatorOf a owl:ObjectProperty .
+# http://purl.org/net/cosi#isObserverOf
+:isObserverOf a owl:ObjectProperty ;
+
+rdfs:domain :Observer ;
+rdfs:range :Observation ;
+rdfs:label "isObserverOf"@en .
+# http://purl.org/net/cosi#isPartOf
+:isPartOf a owl:ObjectProperty ;
+rdfs:domain :Instrument ;
+rdfs:range :Rig ;
+rdfs:comment "Relates an Instrument with a Rig as part of system, part of a platform or pipeline"@en ;
+rdfs:label "isPartOf"@en .
+# http://purl.org/net/cosi#isResearchFacilityOfExperiment
+:isResearchFacilityOfExperiment a owl:ObjectProperty ;
+rdfs:domain :ResearchFacility ;
+rdfs:range :Experiment .
+# http://purl.org/net/cosi#returnsDataFormat
+:returnsDataFormat a owl:ObjectProperty ;
+rdfs:domain :DigitalInstrument ;
+rdfs:comment "Provides information on the data format which the instrument will store the data"@en ;
+rdfs:label "returnsDataFormat"@en .
+# http://purl.org/net/cosi#runByInstitution
+:runByInstitution a owl:ObjectProperty ;
+rdfs:domain :Investigation , :Study ;
+rdfs:range :Institution .
+# http://purl.org/net/cosi#runsOnComputer
+:runsOnComputer a owl:ObjectProperty ;
+rdfs:domain :Simulation ;
+rdfs:range :Computer .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#belongsToContainer
+nfo:belongsToContainer a owl:ObjectProperty ;
+rdfs:domain nie:DataObject .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#bookmarks
+nfo:bookmarks a owl:ObjectProperty .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#compressionType
+nfo:compressionType a owl:ObjectProperty ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The type of the compression. Values include, 'lossy' and 'lossless'." ;
+rdfs:label "compressionType" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#containsBookmark
+nfo:containsBookmark a owl:ObjectProperty .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#containsBookmarkFolder
+nfo:containsBookmarkFolder a owl:ObjectProperty .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#containsPlacemark
+nfo:containsPlacemark a owl:ObjectProperty .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#depiction
+nfo:depiction a owl:ObjectProperty ;
+nrl:inverseProperty nfo:depicts ;
+rdfs:comment "Relates an information element to an image which depicts said element." ;
+rdfs:label "depiction" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#depicts
+nfo:depicts a owl:ObjectProperty ;
+nrl:inverseProperty nfo:depiction ;
+rdfs:comment "Relates an image to the information elements it depicts." ;
+rdfs:label "depicts" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#encryptionStatus
+nfo:encryptionStatus a owl:ObjectProperty ;
+rdfs:domain nie:InformationElement ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The status of the encryption of the InformationElement." ;
+rdfs:label "encryptionStatus" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileOwner
+nfo:fileOwner a owl:ObjectProperty ;
+rdfs:domain nfo:FileDataObject ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The owner of the file as defined by the file system access rights feature." ;
+rdfs:label "fileOwner" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileUrl
+nfo:fileUrl a owl:ObjectProperty ;
+rdfs:domain nfo:FileDataObject .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#foundry
+nfo:foundry a owl:ObjectProperty .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#hasHash
+nfo:hasHash a owl:ObjectProperty ;
+rdfs:domain nfo:FileDataObject .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#hasMediaFileListEntry
+nfo:hasMediaFileListEntry a owl:ObjectProperty ;
+rdfs:comment "This property is intended to point to an RDF list of MediaFiles." ;
+rdfs:label "hasMediaFileListEntry" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#hasMediaStream
+nfo:hasMediaStream a owl:ObjectProperty .
+# http://www.w3.org/ns/prov#generated
+prov1:generated a owl:ObjectProperty .
+# http://www.w3.org/ns/prov#used
+prov1:used a owl:ObjectProperty .
+# # Data properties
+# http://purl.org/dc/terms/abstract
+terms:abstract a owl:DatatypeProperty ;
+rdfs:subPropertyOf terms:description .
+# http://purl.org/dc/terms/alternative
+terms:alternative a owl:DatatypeProperty ;
+rdfs:subPropertyOf terms:title .
+# http://purl.org/dc/terms/available
+terms:available a owl:DatatypeProperty ;
+rdfs:subPropertyOf terms:date .
+# http://purl.org/dc/terms/bibliographicCitation
+terms:bibliographicCitation a owl:DatatypeProperty ;
+rdfs:subPropertyOf terms:identifier .
+# http://purl.org/dc/terms/created
+terms:created a owl:DatatypeProperty ;
+rdfs:subPropertyOf terms:date .
+# http://purl.org/dc/terms/date
+terms:date a owl:DatatypeProperty .
+# http://purl.org/dc/terms/dateAccepted
+terms:dateAccepted a owl:DatatypeProperty ;
+rdfs:subPropertyOf terms:date .
+# http://purl.org/dc/terms/dateCopyrighted
+terms:dateCopyrighted a owl:DatatypeProperty ;
+rdfs:subPropertyOf terms:date .
+# http://purl.org/dc/terms/dateSubmitted
+terms:dateSubmitted a owl:DatatypeProperty ;
+rdfs:subPropertyOf terms:date .
+# http://purl.org/dc/terms/description
+terms:description a owl:DatatypeProperty .
+# http://purl.org/dc/terms/identifier
+terms:identifier a owl:DatatypeProperty .
+# http://purl.org/dc/terms/issued
+terms:issued a owl:DatatypeProperty ;
+rdfs:subPropertyOf terms:date .
+# http://purl.org/dc/terms/modified
+terms:modified a owl:DatatypeProperty ;
+rdfs:subPropertyOf terms:date .
+# http://purl.org/dc/terms/tableOfContents
+terms:tableOfContents a owl:DatatypeProperty ;
+rdfs:subPropertyOf terms:description .
+# http://purl.org/dc/terms/title
+terms:title a owl:DatatypeProperty .
+# http://purl.org/dc/terms/valid
+terms:valid a owl:DatatypeProperty ;
+rdfs:subPropertyOf terms:date .
+# http://purl.org/net/cosi#hasDescription
+:hasDescription a owl:DatatypeProperty ;
+rdfs:subPropertyOf terms:description .
+# http://purl.org/net/cosi#hasDigestAlgorithm
+:hasDigestAlgorithm a owl:DatatypeProperty ;
+rdfs:domain :Preservation ;
+prov1:definition "Ex: MD5 hash code" .
+# http://purl.org/net/cosi#hasEndOfLife
+:hasEndOfLife a owl:DatatypeProperty ;
+rdfs:domain :Preservation ;
+prov1:definition "Foreseen End Of Life for the Preservation Action." .
+# http://purl.org/net/cosi#hasFirstPublicDate
+:hasFirstPublicDate a owl:DatatypeProperty ;
+rdfs:domain :Preservation .
+# http://purl.org/net/cosi#hasHandler
+:hasHandler a owl:DatatypeProperty .
+# http://purl.org/net/cosi#hasHypothesis
+:hasHypothesis a owl:DatatypeProperty ;
+rdfs:range rdfs:Literal .
+# http://purl.org/net/cosi#hasIdentifier
+:hasIdentifier a owl:DatatypeProperty ;
+rdfs:subPropertyOf terms:identifier .
+# http://purl.org/net/cosi#hasIdentifierValue
+:hasIdentifierValue a owl:DatatypeProperty .
+# http://purl.org/net/cosi#hasIngestDate
+:hasIngestDate a owl:DatatypeProperty ;
+rdfs:domain :Preservation .
+# http://purl.org/net/cosi#hasPreservationStatus
+:hasPreservationStatus a owl:DatatypeProperty ;
+prov1:definition "A status for the preservation that indicates availability of the resources. Eg. Public, Withdrawn, Pending Delete, Public" .
+# http://purl.org/net/cosi#hasTitle
+:hasTitle a owl:DatatypeProperty ;
+rdfs:subPropertyOf terms:title .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#aspectRatio
+nfo:aspectRatio a owl:DatatypeProperty ;
+rdfs:range xsd:float ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Visual content aspect ratio. (Width divided by Height)" ;
+rdfs:label "aspectRatio" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#averageBitrate
+nfo:averageBitrate a owl:DatatypeProperty ;
+rdfs:subPropertyOf nfo:rate ;
+rdfs:range xsd:float ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The average overall bitrate of a media container. (i.e. the size of the piece of media in bits, divided by it's duration expressed in seconds)." ;
+rdfs:label "averageBitrate" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#bitDepth
+nfo:bitDepth a owl:DatatypeProperty ;
+rdfs:range rdfs:Literal ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "A common superproperty for all properties signifying the amount of bits for an atomic unit of data. Examples of subproperties may include bitsPerSample and bitsPerPixel" ;
+rdfs:label "bitDepth" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#bitrateType
+nfo:bitrateType a owl:DatatypeProperty ;
+rdfs:range xsd:string ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The type of the bitrate. Examples may include CBR and VBR." ;
+rdfs:label "bitrateType" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#bitsPerSample
+nfo:bitsPerSample a owl:DatatypeProperty ;
+rdfs:subPropertyOf nfo:bitDepth ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Amount of bits in each audio sample." ;
+rdfs:label "bitsPerSample" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#channels
+nfo:channels a owl:DatatypeProperty ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Number of channels. This property is to be used directly if no detailed information is necessary. Otherwise use more detailed subproperties." ;
+rdfs:label "channels" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#characterCount
+nfo:characterCount a owl:DatatypeProperty ;
+rdfs:domain nfo:TextDocument ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The amount of characters in the document." ;
+rdfs:label "characterCount" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#characterPosition
+nfo:characterPosition a owl:DatatypeProperty ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Character position of the bookmark." ;
+rdfs:label "characterPosition" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#codec
+nfo:codec a owl:DatatypeProperty ;
+rdfs:range rdfs:Literal ;
+rdfs:comment "The name of the codec necessary to decode a piece of media." ;
+rdfs:label "codec" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#colorCount
+nfo:colorCount a owl:DatatypeProperty ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The number of colors used/available in a raster image." ;
+rdfs:label "color count" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#colorDepth
+nfo:colorDepth a owl:DatatypeProperty ;
+rdfs:subPropertyOf nfo:bitDepth ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Amount of bits used to express the color of each pixel." ;
+rdfs:label "colorDepth" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#commentCharacterCount
+nfo:commentCharacterCount a owl:DatatypeProperty ;
+rdfs:domain nfo:SourceCode ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The amount of character in comments i.e. characters ignored by the compiler/interpreter." ;
+rdfs:label "commentCharacterCount" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#count
+nfo:count a owl:DatatypeProperty ;
+rdfs:range xsd:integer ;
+rdfs:comment "A common superproperty for all properties signifying the amount of atomic media data units. Examples of subproperties may include sampleCount and frameCount." ;
+rdfs:label "count" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#definesClass
+nfo:definesClass a owl:DatatypeProperty ;
+rdfs:domain nfo:SourceCode ;
+rdfs:range xsd:string ;
+rdfs:comment "Name of a class defined in the source code file." ;
+rdfs:label "definesClass" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#definesFunction
+nfo:definesFunction a owl:DatatypeProperty ;
+rdfs:domain nfo:SourceCode ;
+rdfs:range xsd:string ;
+rdfs:comment "A name of a function/method defined in the given source code file." ;
+rdfs:label "definesFunction" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#definesGlobalVariable
+nfo:definesGlobalVariable a owl:DatatypeProperty ;
+rdfs:domain nfo:SourceCode ;
+
+rdfs:range xsd:string ;
+rdfs:comment "Name of a global variable defined within the source code file." ;
+rdfs:label "definesGlobalVariable" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#deletionDate
+nfo:deletionDate a owl:DatatypeProperty ;
+rdfs:domain nfo:DeletedResource ;
+rdfs:range xsd:dateTime ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The date and time of the deletion." ;
+rdfs:label "deletionDate" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#duration
+nfo:duration a owl:DatatypeProperty ;
+rdfs:range xsd:duration ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Duration of a media piece." ;
+rdfs:label "duration" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#encoding
+nfo:encoding a owl:DatatypeProperty ;
+rdfs:domain nfo:EmbeddedFileDataObject ;
+rdfs:range xsd:string ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The encoding used for the Embedded File. Examples might include BASE64 or UUEncode" ;
+rdfs:label "encoding" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileCreated
+nfo:fileCreated a owl:DatatypeProperty .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileLastAccessed
+nfo:fileLastAccessed a owl:DatatypeProperty .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileLastModified
+nfo:fileLastModified a owl:DatatypeProperty .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName
+nfo:fileName a owl:DatatypeProperty .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileSize
+nfo:fileSize a owl:DatatypeProperty .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#filesystemType
+nfo:filesystemType a owl:DatatypeProperty ;
+rdfs:range xsd:string ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Type of filesystem such as ext3 and ntfs." ;
+rdfs:label "filesystemType" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fontFamily
+nfo:fontFamily a owl:DatatypeProperty ;
+rdfs:range xsd:string ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The name of the font family." ;
+rdfs:label "fontFamily" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#frameCount
+nfo:frameCount a owl:DatatypeProperty ;
+rdfs:subPropertyOf nfo:count ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The amount of frames in a video sequence." ;
+rdfs:label "frameCount" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#frameRate
+nfo:frameRate a owl:DatatypeProperty ;
+rdfs:subPropertyOf nfo:rate ;
+rdfs:range xsd:float ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Amount of video frames per second." ;
+rdfs:label "frameRate" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#freeSpace
+nfo:freeSpace a owl:DatatypeProperty ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Unoccupied storage space of the filesystem." ;
+rdfs:label "freeSpace" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#frontChannels
+nfo:frontChannels a owl:DatatypeProperty ;
+rdfs:subPropertyOf nfo:channels ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Number of front channels." ;
+rdfs:label "frontChannels" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#hashAlgorithm
+nfo:hashAlgorithm a owl:DatatypeProperty ;
+rdfs:range xsd:string ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Name of the algorithm used to compute the hash value. Examples might include CRC32, MD5, SHA, TTH etc." ;
+rdfs:label "hashAlgorithm" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#hashValue
+nfo:hashValue a owl:DatatypeProperty ;
+rdfs:range xsd:string ;
+nrl:cardinality "1"^^xsd:integer ;
+rdfs:comment "The actual value of the hash." ;
+rdfs:label "hashValue" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#height
+nfo:height a owl:DatatypeProperty ;
+rdfs:range xsd:integer ;
+
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Visual content height in pixels." ;
+rdfs:label "height" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#horizontalResolution
+nfo:horizontalResolution a owl:DatatypeProperty ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Horizontal resolution of an image (if printed). Expressed in DPI." ;
+rdfs:label "horizontalResolution" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#interlaceMode
+nfo:interlaceMode a owl:DatatypeProperty ;
+rdfs:range xsd:boolean ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "True if the image is interlaced, false if not." ;
+rdfs:label "interlaceMode" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#isPasswordProtected
+nfo:isPasswordProtected a owl:DatatypeProperty ;
+rdfs:domain nfo:ArchiveItem ;
+rdfs:range xsd:boolean ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "States if a given resource is password-protected." ;
+rdfs:label "isPasswordProtected" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#lfeChannels
+nfo:lfeChannels a owl:DatatypeProperty ;
+rdfs:subPropertyOf nfo:channels ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Number of Low Frequency Expansion (subwoofer) channels." ;
+rdfs:label "lfeChannels" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#lineCount
+nfo:lineCount a owl:DatatypeProperty ;
+rdfs:domain nfo:TextDocument ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The amount of lines in a text document" ;
+rdfs:label "lineCount" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#occupiedSpace
+nfo:occupiedSpace a owl:DatatypeProperty ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Occupied storage space of the filesystem." ;
+rdfs:label "occupiedSpace" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#originalLocation
+nfo:originalLocation a owl:DatatypeProperty ;
+rdfs:domain nfo:DeletedResource ;
+rdfs:range xsd:string ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The original location of the deleted resource." ;
+rdfs:label "originalLocation" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#pageCount
+nfo:pageCount a owl:DatatypeProperty ;
+rdfs:domain nfo:PaginatedTextDocument ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Number of pages." ;
+rdfs:label "pageCount" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#pageNumber
+nfo:pageNumber a owl:DatatypeProperty ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Page linked by the bookmark." ;
+rdfs:label "pageNumber" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#paletteSize
+nfo:paletteSize a owl:DatatypeProperty ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The number of colors defined in palette of the raster image." ;
+rdfs:label "palette size" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#permissions
+nfo:permissions a owl:DatatypeProperty ;
+rdfs:domain nfo:FileDataObject ;
+rdfs:range xsd:string ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "A string containing the permissions of a file. A feature common in many UNIX-like operating systems." ;
+rdfs:label "permissions" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#programmingLanguage
+nfo:programmingLanguage a owl:DatatypeProperty ;
+rdfs:domain nfo:SourceCode ;
+rdfs:range xsd:string ;
+rdfs:comment "Indicates the name of the programming language this source code file is written in. Examples might include 'C', 'C++', 'Java' etc." ;
+rdfs:label "programmingLanguage" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#rate
+nfo:rate a owl:DatatypeProperty ;
+rdfs:range xsd:float ;
+
+rdfs:comment "A common superproperty for all properties specifying the media rate. Examples of subproperties may include frameRate for video and sampleRate for audio. This property is expressed in units per second." ;
+rdfs:label "rate" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#rearChannels
+nfo:rearChannels a owl:DatatypeProperty ;
+rdfs:subPropertyOf nfo:channels ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Number of rear channels." ;
+rdfs:label "rearChannels" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#sampleCount
+nfo:sampleCount a owl:DatatypeProperty ;
+rdfs:subPropertyOf nfo:count ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The amount of samples in an audio clip." ;
+rdfs:label "sampleCount" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#sampleRate
+nfo:sampleRate a owl:DatatypeProperty ;
+rdfs:subPropertyOf nfo:rate ;
+rdfs:range xsd:float ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The amount of audio samples per second." ;
+rdfs:label "sampleRate" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#sideChannels
+nfo:sideChannels a owl:DatatypeProperty ;
+rdfs:subPropertyOf nfo:channels ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Number of side channels" ;
+rdfs:label "sideChannels" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#streamPosition
+nfo:streamPosition a owl:DatatypeProperty ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Stream position of the bookmark, suitable for e.g. audio books. Expressed in milliseconds" ;
+rdfs:label "streamPosition" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#totalSpace
+nfo:totalSpace a owl:DatatypeProperty ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Total storage space of the filesystem, which can be different from nie:contentSize because the latter includes filesystem format overhead." ;
+rdfs:label "totalSpace" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#uncompressedSize
+nfo:uncompressedSize a owl:DatatypeProperty ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Uncompressed size of the content of a compressed file." ;
+rdfs:label "uncompressedSize" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#uuid
+nfo:uuid a owl:DatatypeProperty .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#verticalResolution
+nfo:verticalResolution a owl:DatatypeProperty ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Vertical resolution of an Image (if printed). Expressed in DPI" ;
+rdfs:label "verticalResolution" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#width
+nfo:width a owl:DatatypeProperty ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "Visual content width in pixels." ;
+rdfs:label "width" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#wordCount
+nfo:wordCount a owl:DatatypeProperty ;
+rdfs:domain nfo:TextDocument ;
+rdfs:range xsd:integer ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The amount of words in a text document." ;
+rdfs:label "wordCount" .
+# http://www.w3.org/ns/prov#endedAtTime
+prov1:endedAtTime a owl:DatatypeProperty .
+# http://www.w3.org/ns/prov#startedAtTime
+prov1:startedAtTime a owl:DatatypeProperty .
+# # Classes
+# http://purl.org/dc/terms/Policy
+terms:Policy a owl:Class ;
+rdfs:subClassOf :Proposition .
+# http://purl.org/net/cosi#AcademicDiscipline
+:AcademicDiscipline a owl:Class ;
+rdfs:subClassOf :Proposition ;
+rdfs:comment "SUMO \"An academic or applied discipline with recognized experts and with a core of accepted theory or practice. Note that FieldOfStudy is a subclass of Proposition, because a FieldOfStudy is understood to be a body of abstract, informational content, with varying degrees of certainty attached to each element of this content.\"" .
+
+
+# http://purl.org/net/cosi#Article
+:Article a owl:Class ;
+rdfs:subClassOf :ScholarCommunication ;
+prov1:definition "A relatively short Text that either is unbound or is bound with other Articles in a Book"^^xsd:string .
+# http://purl.org/net/cosi#Book
+:Book a owl:Class ;
+rdfs:subClassOf :ScholarCommunication .
+# http://purl.org/net/cosi#Computer
+:Computer a owl:Class ;
+rdfs:subClassOf :DigitalInstrument .
+# http://purl.org/net/cosi#Conclusion
+:Conclusion a owl:Class ;
+rdfs:subClassOf :Proposition .
+# http://purl.org/net/cosi#CopyRightInformation
+:CopyRightInformation a owl:Class ;
+rdfs:subClassOf :RightsStatement ;
+rdfs:comment "When rights basis is a copyright, copyrightInformation should be provided."^^xsd:string ;
+prov1:definition "Information about the copyright status of the object(s)."^^xsd:string .
+# http://purl.org/net/cosi#DigitalInstrument
+:DigitalInstrument a owl:Class ;
+rdfs:subClassOf :Instrument ;
+rdfs:comment "A Digital Instrument is a device based on a digital computational system."@en ;
+rdfs:label "Digital Instrument"@en .
+# http://purl.org/net/cosi#ErrorInComparison
+:ErrorInComparison a owl:Class ;
+rdfs:subClassOf :ResultError .
+# http://purl.org/net/cosi#ErrorInConclusion
+:ErrorInConclusion a owl:Class ;
+rdfs:subClassOf :ResultError .
+# http://purl.org/net/cosi#ErrorIncompleteData
+:ErrorIncompleteData a owl:Class ;
+rdfs:subClassOf :ResultError .
+# http://purl.org/net/cosi#Experiment
+:Experiment a owl:Class ;
+rdfs:subClassOf :Investigation ;
+rdfs:comment "Experiments. Investigations into the physical behaviour of the environment usually to test a hypothesis, typically involving an instrument operating under some instrumental settings and environmental conditions, and generating datasets in files."@en ;
+rdfs:label "Experiment"@en ;
+prov1:definition "The experiment relies in a concrete controlled environment, usually a laboratory or an experiment site"@en .
+# http://purl.org/net/cosi#ExperimentProcedure
+:ExperimentProcedure a owl:Class ;
+rdfs:subClassOf :InvestigationProcedure ;
+rdfs:comment "An Experiment Procedure is a procedure or a set of ordered procedures involving artefacts of an experiment and their interoperable functionality"@en ;
+rdfs:label "Experiment Procedure"@en ;
+prov1:definition "An Experiment Procedure is a procedure or a set of ordered procedures involving artefacts of an experiment and their interoperable functionality"@en .
+# http://purl.org/net/cosi#Hypothesis
+:Hypothesis a owl:Class ;
+rdfs:subClassOf :Proposition .
+# http://purl.org/net/cosi#HypothesisAcceptance
+:HypothesisAcceptance a owl:Class ;
+rdfs:subClassOf :HypothesisStatement .
+# http://purl.org/net/cosi#HypothesisRejection
+:HypothesisRejection a owl:Class ;
+rdfs:subClassOf :HypothesisStatement .
+# http://purl.org/net/cosi#HypothesisStatement
+:HypothesisStatement a owl:Class ;
+rdfs:subClassOf :Proposition .
+# http://purl.org/net/cosi#Input
+:Input a owl:Class ;
+rdfs:subClassOf nie:DataObject ;
+dc:description "An Input is what is put in, taken in, or operated on by any process or system"@en ;
+rdfs:label "Input"@en ;
+prov1:definition "A dataobject operated on by any process or activity"@en .
+# http://purl.org/net/cosi#Institution
+:Institution a owl:Class ;
+owl:equivalentClass prov1:Organization ;
+rdfs:comment "An administrative organization, same as prov:Organization"@en ;
+rdfs:label "Institution"@en .
+# http://purl.org/net/cosi#Instrument
+:Instrument a owl:Class ;
+rdfs:comment "An Instrument is a device used in investigations"@en ;
+rdfs:label "Instrument"@en ;
+prov1:definition "An Instrument is a device used in investigations"@en .
+# http://purl.org/net/cosi#Investigation
+:Investigation a owl:Class ;
+owl:equivalentClass :S5_Investigation ;
+rdfs:subClassOf :Process , _:genid1 .
+_:genid1 a owl:Restriction ;
+owl:onProperty :hasInvestigator ;
+owl:someValuesFrom :Investigator .
+:Investigation rdfs:subClassOf _:genid2 .
+_:genid2 a owl:Restriction ;
+
+owl:onProperty :hasProcedure ;
+owl:someValuesFrom :Procedure .
+:Investigation rdfs:subClassOf _:genid3 .
+_:genid3 a owl:Restriction ;
+owl:onProperty :hasInvestigator ;
+owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+owl:onClass :PrincipalInvestigator .
+:Investigation rdfs:subClassOf _:genid4 .
+_:genid4 a owl:Restriction ;
+owl:onProperty :hasHypothesis ;
+owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+owl:onClass :Hypothesis .
+:Investigation rdfs:label "Investigation"@en ;
+prov1:definition """Definition 2: Investigation is an examination process in support of a hypothesis. It is part of a systematic study and adheres to a scientific procedure
+An investigation has a title, a description and is identifiable. It has at least a principal investigator role and an undefined number of additional investigators"""@en .
+# http://purl.org/net/cosi#InvestigationProcedure
+:InvestigationProcedure a owl:Class ;
+rdfs:subClassOf :Procedure ;
+rdfs:comment "An Investigation Procedure is a well defined Procedure related to an Investigation Process"@en ;
+rdfs:label "Investigation Procedure"@en .
+# http://purl.org/net/cosi#Investigator
+:Investigator a owl:Class ;
+rdfs:subClassOf prov1:Role ;
+dc:description "An individual who is involved in a research process"@en ;
+rdfs:label "Investigator"@en ;
+prov1:definition "An Investigator is an entity involved in a research process"@en .
+# http://purl.org/net/cosi#Journal
+:Journal a owl:Class ;
+rdfs:subClassOf :ScholarCommunication .
+# http://purl.org/net/cosi#LicenceInformation
+:LicenceInformation a owl:Class ;
+rdfs:subClassOf :RightsStatement ;
+rdfs:comment "When rights basis is a license, licenseInformation should be provided."^^xsd:string ;
+prov1:definition "Information about a license or other agreement granting permissions related to an object."^^xsd:string .
+# http://purl.org/net/cosi#Magazine
+:Magazine a owl:Class ;
+rdfs:subClassOf :ScholarCommunication .
+# http://purl.org/net/cosi#Measurement
+:Measurement a owl:Class ;
+rdfs:subClassOf :Investigation ;
+rdfs:comment "Measurements. Investigations that record the state of some aspect of the environment over a sequence of points in time and space, using some passive detector, e.g., the measurement of temperature at a point on the earth surface taken hourly using a thermometer of known accuracy."@en ;
+rdfs:label "Measurement"@en ;
+prov1:definition "A Measurement is a form of investigation defined by a Measurement Procedure"@en .
+# http://purl.org/net/cosi#Motivation_Publication
+:Motivation_Publication a owl:Class ;
+rdfs:subClassOf :Publication .
+# http://purl.org/net/cosi#Observation
+:Observation a owl:Class ;
+rdfs:subClassOf :Investigation , _:genid5 .
+_:genid5 a owl:Restriction ;
+owl:onProperty :hasObservationProcedure ;
+owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+owl:onClass :ObservationProcedure .
+:Observation dc:description "An Observation is a form of investigation defined by an Observation Procedure and run by one or more observers."@en ;
+rdfs:label "Observation"@en ;
+prov1:definition "An Investigation Activity where facts are learned by a (human) observer."@en .
+# http://purl.org/net/cosi#ObservationProcedure
+:ObservationProcedure a owl:Class ;
+rdfs:subClassOf :InvestigationProcedure ;
+rdfs:label "Observation Procedure"@en ;
+prov1:definition "An Observation Procedure is run by one or more observers and the gathered information is result of human perception"@en .
+# http://purl.org/net/cosi#Observer
+:Observer a owl:Class ;
+rdfs:subClassOf :Investigator , prov1:Person , _:genid6 .
+_:genid6 a owl:Restriction ;
+owl:onProperty :isObserverOf ;
+owl:someValuesFrom :ObservationProcedure .
+:Observer dc:description "A person who becomes aware of through the senses"@en ;
+rdfs:label "Observer"@en ;
+prov1:definition "An Observer is a person involved in some Observation process who becomes aware of through the senses."@en .
+# http://purl.org/net/cosi#Onymous
+:Onymous a owl:Class ;
+rdfs:subClassOf _:genid7 .
+_:genid7 a owl:Restriction ;
+owl:onProperty :hasIdentifier ;
+owl:cardinality "1"^^xsd:nonNegativeInteger .
+:Onymous rdfs:subClassOf _:genid8 .
+_:genid8 a owl:Restriction ;
+owl:onProperty :hasIdentifierValue ;
+
+
+owl:cardinality "1"^^xsd:nonNegativeInteger .
+:Onymous dc:description "An Onymous is an entity that is identifiable, has a title and a description"@en ;
+rdfs:comment "An Onymous is an entity that is identifiable, has a title and a description"@en .
+# http://purl.org/net/cosi#Output
+:Output a owl:Class ;
+rdfs:subClassOf nie:DataObject ;
+dc:description "An output is the result of a process."@en ;
+rdfs:label "Output"@en ;
+prov1:definition "An output is the dataobject resuling of a process or activity"@en .
+# http://purl.org/net/cosi#Parameter
+:Parameter a owl:Class ;
+rdfs:subClassOf nie:DataObject .
+# http://purl.org/net/cosi#PersistendIdentifier
+:PersistendIdentifier a owl:Class ;
+rdfs:subClassOf :Onymous , _:genid9 .
+_:genid9 a owl:Restriction ;
+owl:onProperty :hasHandler ;
+owl:cardinality "1"^^xsd:nonNegativeInteger .
+# http://purl.org/net/cosi#Preservation
+:Preservation a owl:Class ;
+rdfs:subClassOf prov1:Activity ;
+prov1:definition "A preservation action is the definition of sets of neccessary information created upon ingest of a digital object (eg Result Set from an Investigation) in a repository."^^xsd:string .
+# http://purl.org/net/cosi#PreservationPlan
+:PreservationPlan a owl:Class ;
+rdfs:subClassOf :Preservation ;
+prov1:definition "The systematic process that defines the goals and priorities for the preservation"^^xsd:string .
+# http://purl.org/net/cosi#PrincipalInvestigator
+:PrincipalInvestigator a owl:Class ;
+rdfs:subClassOf :Investigator ;
+dc:description "An investigator responsible for a specific Investigation"@en , "Principal Investigator"@en ;
+prov1:definition "An investigator which is the responsible for a specific Investigation"@en .
+# http://purl.org/net/cosi#Procedure
+:Procedure a owl:Class ;
+rdfs:label "Procedure"@en ;
+prov1:definition """Procedure is a specific was to carry out an activity or a process
+An Investigation Procedure \"an accepted or approved\" procedure in the domain of an investigation"""^^rdfs:Literal .
+# http://purl.org/net/cosi#Proceedings
+:Proceedings a owl:Class ;
+rdfs:subClassOf :ScholarCommunication .
+# http://purl.org/net/cosi#Process
+:Process a owl:Class ;
+owl:equivalentClass prov1:Activity ;
+dc:description "A process is an activity or a set of activities that use resources to transfer input to output"@en ;
+rdfs:label "Process"@en ;
+prov1:definition "A process is an activity or a set of activities that use resources to transfer input to output"@en .
+# http://purl.org/net/cosi#Programme
+:Programme a owl:Class ;
+rdfs:subClassOf :Proposition ;
+rdfs:comment """Scientific research programme
+Programmes related studies that have a common theme which are usually funded and resourced directly or with an intermediary organisation under the rubric of the programme."""@en ;
+rdfs:label "Programme"@en .
+# http://purl.org/net/cosi#Proposition
+:Proposition a owl:Class ;
+prov1:definition "Propositions are Abstract entities that express a complete thought or a set of such thoughts."^^xsd:string .
+# http://purl.org/net/cosi#Publication
+:Publication a owl:Class ;
+owl:equivalentClass :ScholarCommunication ;
+rdfs:subClassOf nfo:Document ;
+rdfs:comment "publication (the communication of something to the public; making information generally known)"@en .
+# http://purl.org/net/cosi#ResearchFacility
+:ResearchFacility a owl:Class ;
+dc:description "An entity where a particular process can be run. In the context of this ontology, the Research Facility is used to denote a geo-located artifact such as a Laboratory or research facility."@en ;
+rdfs:label "Research Facility"@en ;
+prov1:definition "A stationary artifact where particular process can be run"@en .
+# http://purl.org/net/cosi#Result
+:Result a owl:Class ;
+nao:prefLabel "Result Set"@en ;
+rdfs:comment "Results is the representation of an activity once it has ended"@en ;
+rdfs:label "Result"@en ;
+prov1:definition "A result is collection of data objects gathered in the execution of an activity. It consists of a data collection and a descriptive document on the findings"@en .
+# http://purl.org/net/cosi#ResultError
+:ResultError a owl:Class ;
+rdfs:subClassOf :Proposition .
+# http://purl.org/net/cosi#ResultSet
+:ResultSet a owl:Class ;
+rdfs:subClassOf :Result , nie:DataObject ;
+
+prov1:definition "The set of data generated as a result of an investigation operation"^^xsd:string .
+# http://purl.org/net/cosi#Result_Publication
+:Result_Publication a owl:Class ;
+rdfs:subClassOf :Publication .
+# http://purl.org/net/cosi#Rig
+:Rig a owl:Class ;
+owl:equivalentClass core:OrderedList ;
+rdfs:comment "A RIG is an ordered combination of all the artefacts participating in an investigation"@en ;
+rdfs:label "Rig"@en ;
+prov1:definition "A RIG is an ordered combination of all the artefacts participating in an investigation"@en .
+# http://purl.org/net/cosi#RightsDocumentation
+:RightsDocumentation a owl:Class ;
+rdfs:subClassOf nie:DataObject , nie:InformationElement ;
+prov1:definition "A designation used to uniquely identify documentation supporting the specified rights within the repository system."^^xsd:string .
+# http://purl.org/net/cosi#RightsStatement
+:RightsStatement a owl:Class ;
+rdfs:subClassOf nie:InformationElement ;
+rdfs:comment "This semantic unit is optional because in some cases rights may be unknown. Institutions are encouraged to record rights information when possible. Either rightsStatement or rightsExtension must be present if the Rights entity is included. The rightsStatement should be repeated when the act(s) described has more than one basis, or when different acts have different bases."^^xsd:string ;
+prov1:definition "Documentation of the repository's right to perform one or more acts."^^xsd:string .
+# http://purl.org/net/cosi#S1_ScientificTaskDefinition
+:S1_ScientificTaskDefinition a owl:Class ;
+rdfs:subClassOf :ScientificTask ;
+rdfs:comment """Define the question, Define the idea
+Search the literature, formulate statement""" .
+# http://purl.org/net/cosi#S2_RelatedInformation
+:S2_RelatedInformation a owl:Class ;
+rdfs:subClassOf :ScientificTask ;
+prov1:definition "Related Information points to information gathering is the scientific task of collecting information for further analysis or for other scientific purposes."@en .
+# http://purl.org/net/cosi#S3_HypothesisDefinition
+:S3_HypothesisDefinition a owl:Class ;
+rdfs:subClassOf :ScientificTask .
+# http://purl.org/net/cosi#S4_MethodologyDefinition
+:S4_MethodologyDefinition a owl:Class ;
+rdfs:subClassOf :ScientificTask ;
+prov1:definition "Definition of a methodology and procedure to be followed." .
+# http://purl.org/net/cosi#S5_Investigation
+:S5_Investigation a owl:Class ;
+rdfs:subClassOf :ScientificTask ;
+prov1:definition "Execution of an Investigation or subclass of an Investigation" .
+# http://purl.org/net/cosi#S6_Conclusion
+:S6_Conclusion a owl:Class ;
+rdfs:subClassOf :ScientificTask ;
+prov1:definition "Interpretation of the Results and challenge of the Hypothesis." .
+# http://purl.org/net/cosi#S7_ResultPublication
+:S7_ResultPublication a owl:Class ;
+rdfs:subClassOf :ScientificTask ;
+prov1:definition "Reference to the publication of the results. This may be merely in a repository or in a classical scholarly communication format" .
+# http://purl.org/net/cosi#ScholarCommunication
+:ScholarCommunication a owl:Class ;
+rdfs:subClassOf nie:InformationElement , nfo:Document .
+# http://purl.org/net/cosi#ScientificTask
+:ScientificTask a owl:Class ;
+rdfs:subClassOf :Proposition ;
+rdfs:comment "A scientific task follows a scientific method in a study"^^xsd:string .
+# http://purl.org/net/cosi#Simulation
+:Simulation a owl:Class ;
+rdfs:subClassOf :Investigation ;
+rdfs:comment "A Simulation is a form of investigation created on a computer imitation of a real scenario based on digital model"@en ;
+rdfs:label "Simulation"@en ;
+prov1:definition "A Simulation is a form of investigation created on a computer imitation of a real scenario based on digital model"@en .
+# http://purl.org/net/cosi#Study
+:Study a owl:Class ;
+rdfs:subClassOf :Process ;
+rdfs:comment "Studies investigate some aspect of science"@en ;
+rdfs:label "Study"@en .
+# http://purl.org/net/cosi#Summary
+:Summary a owl:Class ;
+rdfs:subClassOf :ScholarCommunication .
+# http://purl.org/net/cosi#TechnicalPaper
+:TechnicalPaper a owl:Class ;
+rdfs:subClassOf :ScholarCommunication .
+# http://purl.org/net/cosi#Topic
+:Topic a owl:Class ;
+rdfs:subClassOf :Proposition ;
+
+rdfs:comment "The topic object property provides a subject relevant to the particular study. Considering the focus of the model to be more investigation and result set oriented, the topic entity might be designed minimalistic as defined in the CCLRC Scientific Metadata Model. Such a Topic will include a set of keywords and a subject pointing to specific disciplines (yet another another entity). However, it makes more sense to connect the \"topic\" with a standard vocabulary which contains a complete list of scientific disciplines. Such a vocabulary might the German standard classification described in the “DFG Classification of Subject Area, Research Area and Scientific Discipline” [36]. A SKOS representation of this vocabulary has been also defined for the context of this research and is presented in URL-TODOFILL"@en ;
+rdfs:label "Topic"@en .
+# http://purl.org/ontology/olo/core#OrderedList
+# http://www.semanticdesktop.org/ontologies/2007/01/19/nie#DataObject
+nie:DataObject a owl:Class .
+# http://www.semanticdesktop.org/ontologies/2007/01/19/nie#InformationElement
+nie:InformationElement a owl:Class .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#ArchiveItem
+nfo:ArchiveItem a owl:Class ;
+rdfs:subClassOf nfo:EmbeddedFileDataObject ;
+rdfs:comment "A file entity inside an archive." ;
+rdfs:label "ArchiveItem" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Attachment
+nfo:Attachment a owl:Class ;
+rdfs:subClassOf nfo:EmbeddedFileDataObject ;
+rdfs:comment "A file attached to another data object. Many data formats allow for attachments: emails, vcards, ical events, id3 and exif..." ;
+rdfs:label "Attachment" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DataContainer
+nfo:DataContainer a owl:Class ;
+rdfs:subClassOf nie:InformationElement ;
+rdfs:comment "A superclass for all entities, whose primary purpose is to serve as containers for other data object. They usually don't have any \"meaning\" by themselves. Examples include folders, archives and optical disc images." ;
+rdfs:label "DataContainer" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#DeletedResource
+nfo:DeletedResource a owl:Class ;
+rdfs:subClassOf nfo:FileDataObject ;
+rdfs:comment "A file entity that has been deleted from the original source. Usually such entities are stored within various kinds of 'Trash' or 'Recycle Bin' folders." ;
+rdfs:label "DeletedResource" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Document
+nfo:Document a owl:Class ;
+rdfs:subClassOf nie:InformationElement ;
+rdfs:comment "A generic document. A common superclass for all documents on the desktop." ;
+rdfs:label "Document" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#EmbeddedFileDataObject
+nfo:EmbeddedFileDataObject a owl:Class ;
+rdfs:subClassOf nfo:FileDataObject ;
+rdfs:comment "A file embedded in another data object. There are many ways in which a file may be embedded in another one. Use this class directly only in cases if none of the subclasses gives a better description of your case." ;
+rdfs:label "EmbeddedFileDataObject" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileDataObject
+nfo:FileDataObject a owl:Class ;
+rdfs:subClassOf nie:DataObject ;
+rdfs:comment "A resource containing a finite sequence of bytes with arbitrary information, that is available to a computer program and is usually based on some kind of durable storage. A file is durable in the sense that it remains available for programs to use after the current program has finished." ;
+rdfs:label "file" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Folder
+nfo:Folder a owl:Class ;
+rdfs:subClassOf nfo:DataContainer ;
+rdfs:comment "A folder/directory. Examples of folders include folders on a filesystem and message folders in a mailbox." ;
+rdfs:label "Folder" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#HtmlDocument
+nfo:HtmlDocument a owl:Class ;
+rdfs:subClassOf nfo:PlainTextDocument ;
+rdfs:comment "A HTML document, may contain links to other files." ;
+rdfs:label "HtmlDocument" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#LocalFileDataObject
+nfo:LocalFileDataObject a owl:Class ;
+rdfs:subClassOf nfo:FileDataObject ;
+rdfs:comment "A local file data object which is stored on a local file system. Its nie:url always uses the file:/ protocol. The main use of this class is to distinguish local and non-local files." ;
+rdfs:label "local file" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#PaginatedTextDocument
+nfo:PaginatedTextDocument a owl:Class ;
+rdfs:subClassOf nfo:TextDocument ;
+rdfs:comment "A file containing a text document, that is unambiguously divided into pages. Examples might include PDF, DOC, PS, DVI etc." ;
+rdfs:label "PaginatedTextDocument" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#PlainTextDocument
+nfo:PlainTextDocument a owl:Class ;
+rdfs:subClassOf nfo:TextDocument ;
+rdfs:comment "A file containing plain text (ASCII, Unicode or other encodings). Examples may include TXT, HTML, XML, program source code etc." ;
+rdfs:label "PlainTextDocument" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Presentation
+
+nfo:Presentation a owl:Class ;
+rdfs:subClassOf nfo:Document ;
+rdfs:comment "A Presentation made by some presentation software (Corel Presentations, OpenOffice Impress, MS Powerpoint etc.)" ;
+rdfs:label "Presentation" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#RemoteDataObject
+nfo:RemoteDataObject a owl:Class ;
+rdfs:subClassOf nfo:FileDataObject ;
+rdfs:comment "A file data object stored at a remote location. Don't confuse this class with a RemotePortAddress. This one applies to a particular resource, RemotePortAddress applies to an address, that can have various interpretations." ;
+rdfs:label "RemoteDataObject" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#SourceCode
+nfo:SourceCode a owl:Class ;
+rdfs:subClassOf nfo:PlainTextDocument ;
+rdfs:comment "Code in a compilable or interpreted programming language." ;
+rdfs:label "SourceCode" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Spreadsheet
+nfo:Spreadsheet a owl:Class ;
+rdfs:subClassOf nfo:Document ;
+rdfs:comment "A spreadsheet, created by a spreadsheet application. Examples might include Gnumeric, OpenOffice Calc or MS Excel." ;
+rdfs:label "Spreadsheet" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#TextDocument
+nfo:TextDocument a owl:Class ;
+rdfs:subClassOf nfo:Document ;
+rdfs:comment "A text document" ;
+rdfs:label "TextDocument" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#Website
+nfo:Website a owl:Class ;
+rdfs:subClassOf nie:InformationElement ;
+rdfs:comment "A website, usually a container for remote resources, that may be interpreted as HTMLDocuments, images or other types of content." ;
+rdfs:label "Website" .
+# http://www.w3.org/2000/01/rdf-schema#Class
+rdfs:Class a owl:Class .
+# http://www.w3.org/2002/07/owl#Thing
+owl:Thing a owl:Class .
+# http://www.w3.org/ns/prov#Activity
+prov1:Activity a owl:Class .
+# http://www.w3.org/ns/prov#Entity
+prov1:Entity a owl:Class .
+# http://www.w3.org/ns/prov#Organization
+# http://www.w3.org/ns/prov#Role
+prov1:Role a owl:Class .
+# # Individuals
+# http://purl.org/dc/aboutdcmi#DCMI
+<http://purl.org/dc/aboutdcmi#DCMI> a owl:NamedIndividual .
+# http://purl.org/dc/terms/
+<http://purl.org/dc/terms/> a owl:NamedIndividual ;
+terms:modified "2012-06-14"^^xsd:date ;
+terms:publisher <http://purl.org/dc/aboutdcmi#DCMI> ;
+terms:title "DCMI Metadata Terms - other"@en .
+# http://purl.org/dc/terms/Agent
+terms:Agent a owl:NamedIndividual .
+# http://purl.org/dc/terms/AgentClass
+terms:AgentClass a owl:NamedIndividual .
+# http://purl.org/dc/terms/BibliographicResource
+terms:BibliographicResource a owl:NamedIndividual .
+# http://purl.org/dc/terms/Box
+terms:Box a owl:NamedIndividual .
+# http://purl.org/dc/terms/DCMIType
+terms:DCMIType a owl:NamedIndividual ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#DCMIType-005> ;
+terms:issued "2000-07-11"^^xsd:date ;
+terms:modified "2012-06-14"^^xsd:date ;
+rdfs:comment "The set of classes specified by the DCMI Type Vocabulary, used to categorize the nature or genre of the resource."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "DCMI Type Vocabulary"@en ;
+rdfs:seeAlso <http://purl.org/dc/dcmitype/> .
+# http://purl.org/dc/terms/DDC
+terms:DDC a owl:NamedIndividual ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#DDC-003> ;
+terms:issued "2000-07-11"^^xsd:date ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "The set of conceptual resources specified by the Dewey Decimal Classification."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "DDC"@en ;
+rdfs:seeAlso <http://www.oclc.org/dewey/> .
+# http://purl.org/dc/terms/FileFormat
+terms:FileFormat a owl:NamedIndividual .
+# http://purl.org/dc/terms/Frequency
+terms:Frequency a owl:NamedIndividual .
+# http://purl.org/dc/terms/IMT
+terms:IMT a owl:NamedIndividual ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#IMT-004> ;
+terms:issued "2000-07-11"^^xsd:date ;
+
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "The set of media types specified by the Internet Assigned Numbers Authority."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "IMT"@en ;
+rdfs:seeAlso <http://www.iana.org/assignments/media-types/> .
+# http://purl.org/dc/terms/ISO3166
+terms:ISO3166 a owl:NamedIndividual .
+# http://purl.org/dc/terms/ISO639-2
+terms:ISO639-2 a owl:NamedIndividual .
+# http://purl.org/dc/terms/ISO639-3
+terms:ISO639-3 a owl:NamedIndividual .
+# http://purl.org/dc/terms/Jurisdiction
+terms:Jurisdiction a owl:NamedIndividual .
+# http://purl.org/dc/terms/LCC
+terms:LCC a owl:NamedIndividual ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#LCC-003> ;
+terms:issued "2000-07-11"^^xsd:date ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "The set of conceptual resources specified by the Library of Congress Classification."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "LCC"@en ;
+rdfs:seeAlso <http://lcweb.loc.gov/catdir/cpso/lcco/lcco.html> .
+# http://purl.org/dc/terms/LCSH
+terms:LCSH a owl:NamedIndividual ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#LCSH-003> ;
+terms:issued "2000-07-11"^^xsd:date ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "The set of labeled concepts specified by the Library of Congress Subject Headings."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "LCSH"@en .
+# http://purl.org/dc/terms/LicenseDocument
+terms:LicenseDocument a owl:NamedIndividual .
+# http://purl.org/dc/terms/LinguisticSystem
+terms:LinguisticSystem a owl:NamedIndividual .
+# http://purl.org/dc/terms/Location
+terms:Location a owl:NamedIndividual .
+# http://purl.org/dc/terms/LocationPeriodOrJurisdiction
+terms:LocationPeriodOrJurisdiction a owl:NamedIndividual .
+# http://purl.org/dc/terms/MESH
+terms:MESH a owl:NamedIndividual ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#MESH-003> ;
+terms:issued "2000-07-11"^^xsd:date ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "The set of labeled concepts specified by the Medical Subject Headings."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "MeSH"@en ;
+rdfs:seeAlso <http://www.nlm.nih.gov/mesh/meshhome.html> .
+# http://purl.org/dc/terms/MediaType
+terms:MediaType a owl:NamedIndividual .
+# http://purl.org/dc/terms/MediaTypeOrExtent
+terms:MediaTypeOrExtent a owl:NamedIndividual .
+# http://purl.org/dc/terms/MethodOfAccrual
+terms:MethodOfAccrual a owl:NamedIndividual .
+# http://purl.org/dc/terms/MethodOfInstruction
+terms:MethodOfInstruction a owl:NamedIndividual .
+# http://purl.org/dc/terms/NLM
+terms:NLM a owl:NamedIndividual ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#NLM-002> ;
+terms:issued "2005-06-13"^^xsd:date ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "The set of conceptual resources specified by the National Library of Medicine Classification."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "NLM"@en ;
+rdfs:seeAlso <http://wwwcf.nlm.nih.gov/class/> .
+# http://purl.org/dc/terms/Period
+terms:Period a owl:NamedIndividual .
+# http://purl.org/dc/terms/PeriodOfTime
+terms:PeriodOfTime a owl:NamedIndividual .
+# http://purl.org/dc/terms/PhysicalMedium
+terms:PhysicalMedium a owl:NamedIndividual .
+# http://purl.org/dc/terms/PhysicalResource
+terms:PhysicalResource a owl:NamedIndividual .
+# http://purl.org/dc/terms/Point
+terms:Point a owl:NamedIndividual .
+# http://purl.org/dc/terms/Policy
+terms:Policy a owl:NamedIndividual .
+# http://purl.org/dc/terms/ProvenanceStatement
+terms:ProvenanceStatement a owl:NamedIndividual .
+# http://purl.org/dc/terms/RFC1766
+terms:RFC1766 a owl:NamedIndividual .
+# http://purl.org/dc/terms/RFC3066
+terms:RFC3066 a owl:NamedIndividual .
+# http://purl.org/dc/terms/RFC4646
+terms:RFC4646 a owl:NamedIndividual .
+# http://purl.org/dc/terms/RFC5646
+
+terms:RFC5646 a owl:NamedIndividual .
+# http://purl.org/dc/terms/RightsStatement
+terms:RightsStatement a owl:NamedIndividual ;
+rdfs:comment "This semantic unit is optional because in some cases rights may be unknown. Institutions are encouraged to record rights information when possible."^^xsd:string ;
+prov1:definition "Documentation of the repository's right to perform one or more acts."@en .
+# http://purl.org/dc/terms/SizeOrDuration
+terms:SizeOrDuration a owl:NamedIndividual .
+# http://purl.org/dc/terms/Standard
+terms:Standard a owl:NamedIndividual .
+# http://purl.org/dc/terms/TGN
+terms:TGN a owl:NamedIndividual ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#TGN-003> ;
+terms:issued "2000-07-11"^^xsd:date ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "The set of places specified by the Getty Thesaurus of Geographic Names."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "TGN"@en ;
+rdfs:seeAlso <http://www.getty.edu/research/tools/vocabulary/tgn/index.html> .
+# http://purl.org/dc/terms/UDC
+terms:UDC a owl:NamedIndividual ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#UDC-003> ;
+terms:issued "2000-07-11"^^xsd:date ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "The set of conceptual resources specified by the Universal Decimal Classification."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "UDC"@en ;
+rdfs:seeAlso <http://www.udcc.org/> .
+# http://purl.org/dc/terms/URI
+terms:URI a owl:NamedIndividual .
+# http://purl.org/dc/terms/W3CDTF
+terms:W3CDTF a owl:NamedIndividual .
+# http://purl.org/dc/terms/abstract
+terms:abstract a owl:NamedIndividual .
+# http://purl.org/dc/terms/accessRights
+terms:accessRights a owl:NamedIndividual .
+# http://purl.org/dc/terms/accrualMethod
+terms:accrualMethod a owl:NamedIndividual .
+# http://purl.org/dc/terms/accrualPeriodicity
+terms:accrualPeriodicity a owl:NamedIndividual .
+# http://purl.org/dc/terms/accrualPolicy
+terms:accrualPolicy a owl:NamedIndividual .
+# http://purl.org/dc/terms/alternative
+terms:alternative a owl:NamedIndividual .
+# http://purl.org/dc/terms/audience
+terms:audience a owl:NamedIndividual .
+# http://purl.org/dc/terms/available
+terms:available a owl:NamedIndividual .
+# http://purl.org/dc/terms/bibliographicCitation
+terms:bibliographicCitation a owl:NamedIndividual .
+# http://purl.org/dc/terms/conformsTo
+terms:conformsTo a owl:NamedIndividual .
+# http://purl.org/dc/terms/contributor
+terms:contributor a owl:NamedIndividual .
+# http://purl.org/dc/terms/coverage
+terms:coverage a owl:NamedIndividual .
+# http://purl.org/dc/terms/created
+terms:created a owl:NamedIndividual .
+# http://purl.org/dc/terms/creator
+terms:creator a owl:NamedIndividual .
+# http://purl.org/dc/terms/date
+terms:date a owl:NamedIndividual .
+# http://purl.org/dc/terms/dateAccepted
+terms:dateAccepted a owl:NamedIndividual .
+# http://purl.org/dc/terms/dateCopyrighted
+terms:dateCopyrighted a owl:NamedIndividual .
+# http://purl.org/dc/terms/dateSubmitted
+terms:dateSubmitted a owl:NamedIndividual .
+# http://purl.org/dc/terms/description
+terms:description a owl:NamedIndividual .
+# http://purl.org/dc/terms/educationLevel
+terms:educationLevel a owl:NamedIndividual .
+# http://purl.org/dc/terms/extent
+terms:extent a owl:NamedIndividual .
+# http://purl.org/dc/terms/format
+terms:format a owl:NamedIndividual .
+# http://purl.org/dc/terms/hasFormat
+terms:hasFormat a owl:NamedIndividual .
+# http://purl.org/dc/terms/hasPart
+terms:hasPart a owl:NamedIndividual .
+# http://purl.org/dc/terms/hasVersion
+terms:hasVersion a owl:NamedIndividual .
+# http://purl.org/dc/terms/identifier
+terms:identifier a owl:NamedIndividual .
+# http://purl.org/dc/terms/instructionalMethod
+terms:instructionalMethod a owl:NamedIndividual .
+# http://purl.org/dc/terms/isFormatOf
+
+terms:isFormatOf a owl:NamedIndividual .
+# http://purl.org/dc/terms/isPartOf
+terms:isPartOf a owl:NamedIndividual .
+# http://purl.org/dc/terms/isReferencedBy
+terms:isReferencedBy a owl:NamedIndividual .
+# http://purl.org/dc/terms/isReplacedBy
+terms:isReplacedBy a owl:NamedIndividual .
+# http://purl.org/dc/terms/isRequiredBy
+terms:isRequiredBy a owl:NamedIndividual .
+# http://purl.org/dc/terms/isVersionOf
+terms:isVersionOf a owl:NamedIndividual .
+# http://purl.org/dc/terms/issued
+terms:issued a owl:NamedIndividual .
+# http://purl.org/dc/terms/language
+terms:language a owl:NamedIndividual .
+# http://purl.org/dc/terms/license
+terms:license a owl:NamedIndividual .
+# http://purl.org/dc/terms/mediator
+terms:mediator a owl:NamedIndividual .
+# http://purl.org/dc/terms/medium
+terms:medium a owl:NamedIndividual .
+# http://purl.org/dc/terms/modified
+terms:modified a owl:NamedIndividual .
+# http://purl.org/dc/terms/provenance
+terms:provenance a owl:NamedIndividual .
+# http://purl.org/dc/terms/publisher
+terms:publisher a owl:NamedIndividual .
+# http://purl.org/dc/terms/references
+terms:references a owl:NamedIndividual .
+# http://purl.org/dc/terms/relation
+terms:relation a owl:NamedIndividual .
+# http://purl.org/dc/terms/replaces
+terms:replaces a owl:NamedIndividual .
+# http://purl.org/dc/terms/requires
+terms:requires a owl:NamedIndividual .
+# http://purl.org/dc/terms/rights
+terms:rights a owl:NamedIndividual .
+# http://purl.org/dc/terms/rightsHolder
+terms:rightsHolder a owl:NamedIndividual .
+# http://purl.org/dc/terms/source
+terms:source a owl:NamedIndividual .
+# http://purl.org/dc/terms/spatial
+terms:spatial a owl:NamedIndividual .
+# http://purl.org/dc/terms/subject
+terms:subject a owl:NamedIndividual .
+# http://purl.org/dc/terms/tableOfContents
+terms:tableOfContents a owl:NamedIndividual .
+# http://purl.org/dc/terms/temporal
+terms:temporal a owl:NamedIndividual .
+# http://purl.org/dc/terms/title
+terms:title a owl:NamedIndividual .
+# http://purl.org/dc/terms/type
+terms:type a owl:NamedIndividual .
+# http://purl.org/dc/terms/valid
+terms:valid a owl:NamedIndividual .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#decryptedStatus
+nfo:decryptedStatus a owl:NamedIndividual ;
+rdfs:label "DecryptedStatus" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#encryptedStatus
+nfo:encryptedStatus a owl:NamedIndividual ;
+rdfs:label "EncryptedStatus" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#hasHash
+nfo:hasHash a owl:NamedIndividual .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#losslessCompressionType
+nfo:losslessCompressionType a owl:NamedIndividual ;
+rdfs:label "losslessCompressionType" .
+# http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#lossyCompressionType
+nfo:lossyCompressionType a owl:NamedIndividual ;
+rdfs:label "lossyCompressionType" .
+# # Annotations
+terms:Box terms:issued "2000-07-11"^^xsd:date ;
+rdfs:comment "The set of regions in space defined by their geographic coordinates according to the DCMI Box Encoding Scheme."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:seeAlso <http://dublincore.org/documents/dcmi-box/> ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:label "DCMI Box"@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#Box-003> .
+#
+terms:ISO3166 terms:issued "2000-07-11"^^xsd:date ;
+rdfs:comment "The set of codes listed in ISO 3166-1 for the representation of names of countries."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#ISO3166-004> ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:label "ISO 3166"@en ;
+rdfs:seeAlso <http://www.iso.org/iso/en/prods-services/iso3166ma/02iso-3166-code-lists/list-en1.html> .
+
+#
+terms:ISO639-2 rdfs:seeAlso <http://lcweb.loc.gov/standards/iso639-2/langhome.html> ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:issued "2000-07-11"^^xsd:date ;
+rdfs:comment "The three-letter alphabetic codes listed in ISO639-2 for the representation of names of languages."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "ISO 639-2"@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#ISO639-2-003> .
+#
+terms:ISO639-3 rdfs:label "ISO 639-3"@en ;
+rdfs:comment "The set of three-letter codes listed in ISO 639-3 for the representation of names of languages."@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#ISO639-3-001> ;
+terms:issued "2008-01-14"^^xsd:date ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:seeAlso <http://www.sil.org/iso639-3/> .
+#
+terms:Period rdfs:comment "The set of time intervals defined by their limits according to the DCMI Period Encoding Scheme."@en ;
+rdfs:seeAlso <http://dublincore.org/documents/dcmi-period/> ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:issued "2000-07-11"^^xsd:date ;
+rdfs:label "DCMI Period"@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#Period-003> .
+#
+terms:Point rdfs:comment "The set of points in space defined by their geographic coordinates according to the DCMI Point Encoding Scheme."@en ;
+rdfs:label "DCMI Point"@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:issued "2000-07-11"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#Point-003> ;
+rdfs:seeAlso <http://dublincore.org/documents/dcmi-point/> ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+#
+terms:Policy rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "Policy"@en ;
+rdfs:comment "A plan or course of action by an authority, intended to influence and determine decisions, actions, and other matters."@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#Policy-001> ;
+terms:issued "2008-01-14"^^xsd:date .
+#
+terms:RFC1766 rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:issued "2000-07-11"^^xsd:date ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#RFC1766-003> ;
+rdfs:comment "The set of tags, constructed according to RFC 1766, for the identification of languages."@en ;
+rdfs:seeAlso <http://www.ietf.org/rfc/rfc1766.txt> ;
+rdfs:label "RFC 1766"@en .
+#
+terms:RFC3066 terms:issued "2002-07-13"^^xsd:date ;
+rdfs:label "RFC 3066"@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:description "RFC 3066 has been obsoleted by RFC 4646."@en ;
+rdfs:comment "The set of tags constructed according to RFC 3066 for the identification of languages."@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:seeAlso <http://www.ietf.org/rfc/rfc3066.txt> ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#RFC3066-002> .
+#
+terms:RFC4646 terms:description "RFC 4646 obsoletes RFC 3066."@en ;
+terms:issued "2008-01-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#RFC4646-001> ;
+rdfs:seeAlso <http://www.ietf.org/rfc/rfc4646.txt> ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:comment "The set of tags constructed according to RFC 4646 for the identification of languages."@en ;
+rdfs:label "RFC 4646"@en .
+#
+terms:RFC5646 terms:issued "2010-10-11"^^xsd:date ;
+rdfs:seeAlso <http://www.ietf.org/rfc/rfc5646.txt> ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#RFC5646-001> ;
+rdfs:comment "The set of tags constructed according to RFC 5646 for the identification of languages."@en ;
+rdfs:label "RFC 5646"@en ;
+terms:description "RFC 5646 obsoletes RFC 4646."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+#
+terms:URI rdfs:comment "The set of identifiers constructed according to the generic syntax for Uniform Resource Identifiers as specified by the Internet Engineering Task Force."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:issued "2000-07-11"^^xsd:date ;
+rdfs:seeAlso <http://www.ietf.org/rfc/rfc3986.txt> ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#URI-003> ;
+rdfs:label "URI"@en ;
+terms:modified "2008-01-14"^^xsd:date .
+
+#
+terms:W3CDTF rdfs:label "W3C-DTF"@en ;
+rdfs:comment "The set of dates and times constructed according to the W3C Date and Time Formats Specification."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#W3CDTF-003> ;
+terms:issued "2000-07-11"^^xsd:date ;
+rdfs:seeAlso <http://www.w3.org/TR/NOTE-datetime> ;
+terms:modified "2008-01-14"^^xsd:date .
+#
+terms:abstract rdfs:label "Abstract"@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#abstract-003> ;
+terms:issued "2000-07-11"^^xsd:date ;
+rdfs:comment "A summary of the resource."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+#
+terms:accessRights terms:description "Access Rights may include information regarding access or restrictions based on privacy, security, or other policies."@en ;
+terms:issued "2003-02-15"^^xsd:date ;
+rdfs:comment "Information about who can access the resource or an indication of its security status."@en ;
+rdfs:label "Access Rights"@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#accessRights-002> ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+#
+terms:accrualMethod terms:hasVersion <http://dublincore.org/usage/terms/history/#accrualMethod-003> ;
+rdfs:label "Accrual Method"@en ;
+terms:modified "2010-10-11"^^xsd:date ;
+rdfs:comment "The method by which items are added to a collection."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:issued "2005-06-13"^^xsd:date .
+#
+terms:accrualPeriodicity terms:modified "2010-10-11"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#accrualPeriodicity-003> ;
+rdfs:label "Accrual Periodicity"@en ;
+rdfs:comment "The frequency with which items are added to a collection."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:issued "2005-06-13"^^xsd:date .
+#
+terms:accrualPolicy rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:issued "2005-06-13"^^xsd:date ;
+terms:modified "2010-10-11"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#accrualPolicy-003> ;
+rdfs:comment "The policy governing the addition of items to a collection."@en ;
+rdfs:label "Accrual Policy"@en .
+#
+terms:alternative rdfs:comment "An alternative name for the resource."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#alternative-003> ;
+terms:modified "2010-10-11"^^xsd:date ;
+terms:description "The distinction between titles and alternative titles is application-specific."@en ;
+terms:issued "2000-07-11"^^xsd:date ;
+rdfs:label "Alternative Title"@en .
+#
+terms:audience terms:issued "2001-05-21"^^xsd:date ;
+rdfs:comment "A class of entity for whom the resource is intended or useful."@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#audience-003> ;
+rdfs:label "Audience"@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:modified "2008-01-14"^^xsd:date .
+#
+terms:available rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:comment "Date (often a range) that the resource became or will become available."@en ;
+rdfs:label "Date Available"@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#available-003> ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:issued "2000-07-11"^^xsd:date .
+#
+terms:bibliographicCitation terms:modified "2008-01-14"^^xsd:date ;
+terms:description "Recommended practice is to include sufficient bibliographic detail to identify the resource as unambiguously as possible."@en ;
+rdfs:label "Bibliographic Citation"@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#bibliographicCitation-002> ;
+rdfs:comment "A bibliographic reference for the resource."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:issued "2003-02-15"^^xsd:date .
+#
+terms:conformsTo rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "Conforms To"@en ;
+rdfs:comment "An established standard to which the described resource conforms."@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#conformsTo-003> ;
+terms:issued "2001-05-21"^^xsd:date .
+#
+terms:contributor rdfs:comment "An entity responsible for making contributions to the resource."@en ;
+
+terms:modified "2010-10-11"^^xsd:date ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:description "Examples of a Contributor include a person, an organization, or a service."@en ;
+terms:issued "2008-01-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#contributorT-001> ;
+rdfs:label "Contributor"@en .
+#
+terms:coverage rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#coverageT-001> ;
+terms:description "Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended best practice is to use a controlled vocabulary such as the Thesaurus of Geographic Names [TGN]. Where appropriate, named places or time periods can be used in preference to numeric identifiers such as sets of coordinates or date ranges."@en ;
+rdfs:label "Coverage"@en ;
+terms:issued "2008-01-14"^^xsd:date ;
+rdfs:comment "The spatial or temporal topic of the resource, the spatial applicability of the resource, or the jurisdiction under which the resource is relevant."@en ;
+terms:modified "2008-01-14"^^xsd:date .
+#
+terms:created rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:comment "Date of creation of the resource."@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#created-003> ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:label "Date Created"@en ;
+terms:issued "2000-07-11"^^xsd:date .
+#
+terms:creator rdfs:comment "An entity primarily responsible for making the resource."@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#creatorT-002> ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:modified "2010-10-11"^^xsd:date ;
+terms:issued "2008-01-14"^^xsd:date ;
+rdfs:label "Creator"@en ;
+terms:description "Examples of a Creator include a person, an organization, or a service."@en .
+#
+terms:date rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:comment "A point or period of time associated with an event in the lifecycle of the resource."@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#dateT-001> ;
+terms:description "Date may be used to express temporal information at any level of granularity. Recommended best practice is to use an encoding scheme, such as the W3CDTF profile of ISO 8601 [W3CDTF]."@en ;
+rdfs:label "Date"@en ;
+terms:issued "2008-01-14"^^xsd:date ;
+terms:modified "2008-01-14"^^xsd:date .
+#
+terms:dateAccepted terms:modified "2008-01-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#dateAccepted-002> ;
+terms:issued "2002-07-13"^^xsd:date ;
+terms:description "Examples of resources to which a Date Accepted may be relevant are a thesis (accepted by a university department) or an article (accepted by a journal)."@en ;
+rdfs:label "Date Accepted"@en ;
+rdfs:comment "Date of acceptance of the resource."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+#
+terms:dateCopyrighted rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "Date Copyrighted"@en ;
+rdfs:comment "Date of copyright."@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#dateCopyrighted-002> ;
+terms:issued "2002-07-13"^^xsd:date .
+#
+terms:dateSubmitted terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "Date of submission of the resource."@en ;
+terms:description "Examples of resources to which a Date Submitted may be relevant are a thesis (submitted to a university department) or an article (submitted to a journal)."@en ;
+terms:issued "2002-07-13"^^xsd:date ;
+rdfs:label "Date Submitted"@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#dateSubmitted-002> ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+#
+terms:description terms:modified "2008-01-14"^^xsd:date ;
+rdfs:label "Description"@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#descriptionT-001> ;
+terms:issued "2008-01-14"^^xsd:date ;
+rdfs:comment "An account of the resource."@en ;
+terms:description "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."@en .
+#
+terms:educationLevel terms:modified "2008-01-14"^^xsd:date ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:issued "2002-07-13"^^xsd:date ;
+rdfs:label "Audience Education Level"@en ;
+rdfs:comment "A class of entity, defined in terms of progression through an educational or training context, for which the described resource is intended."@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#educationLevel-002> .
+
+#
+terms:extent terms:modified "2008-01-14"^^xsd:date ;
+terms:issued "2000-07-11"^^xsd:date ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:comment "The size or duration of the resource."@en ;
+rdfs:label "Extent"@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#extent-003> .
+#
+terms:format terms:issued "2008-01-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#formatT-001> ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "The file format, physical medium, or dimensions of the resource."@en ;
+terms:description "Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME]."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "Format"@en .
+#
+terms:hasFormat rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/). As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#hasFormat-003> ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:label "Has Format"@en ;
+rdfs:comment "A related resource that is substantially the same as the pre-existing described resource, but in another format."@en ;
+terms:issued "2000-07-11"^^xsd:date .
+#
+terms:hasPart rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/). As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en ;
+terms:issued "2000-07-11"^^xsd:date ;
+rdfs:label "Has Part"@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "A related resource that is included either physically or logically in the described resource."@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#hasPart-003> .
+#
+terms:hasVersion terms:hasVersion <http://dublincore.org/usage/terms/history/#hasVersion-003> ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:comment "A related resource that is a version, edition, or adaptation of the described resource."@en ;
+skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/). As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en ;
+rdfs:label "Has Version"@en ;
+terms:issued "2000-07-11"^^xsd:date ;
+terms:modified "2008-01-14"^^xsd:date .
+#
+terms:identifier terms:hasVersion <http://dublincore.org/usage/terms/history/#identifierT-001> ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:description "Recommended best practice is to identify the resource by means of a string conforming to a formal identification system. "@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "An unambiguous reference to the resource within a given context."@en ;
+rdfs:label "Identifier"@en ;
+terms:issued "2008-01-14"^^xsd:date .
+#
+terms:instructionalMethod terms:issued "2005-06-13"^^xsd:date ;
+terms:description "Instructional Method will typically include ways of presenting instructional materials or conducting instructional activities, patterns of learner-to-learner and learner-to-instructor interactions, and mechanisms by which group and individual levels of learning are measured. Instructional methods include all aspects of the instruction and learning processes from planning and implementation through evaluation and feedback."@en ;
+rdfs:label "Instructional Method"@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "A process, used to engender knowledge, attitudes and skills, that the described resource is designed to support."@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#instructionalMethod-002> ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+#
+terms:isFormatOf terms:hasVersion <http://dublincore.org/usage/terms/history/#isFormatOf-003> ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "A related resource that is substantially the same as the described resource, but in another format."@en ;
+terms:issued "2000-07-11"^^xsd:date ;
+skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/). As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en ;
+rdfs:label "Is Format Of"@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+#
+terms:isPartOf terms:modified "2008-01-14"^^xsd:date ;
+rdfs:label "Is Part Of"@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#isPartOf-003> ;
+terms:issued "2000-07-11"^^xsd:date ;
+
+skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/). As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:comment "A related resource in which the described resource is physically or logically included."@en .
+#
+terms:isReferencedBy rdfs:label "Is Referenced By"@en ;
+rdfs:comment "A related resource that references, cites, or otherwise points to the described resource."@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/). As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en ;
+terms:issued "2000-07-11"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#isReferencedBy-003> .
+#
+terms:isReplacedBy rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "Is Replaced By"@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "A related resource that supplants, displaces, or supersedes the described resource."@en ;
+terms:issued "2000-07-11"^^xsd:date ;
+skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/). As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#isReplacedBy-003> .
+#
+terms:isRequiredBy rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/). As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en ;
+terms:issued "2000-07-11"^^xsd:date ;
+rdfs:label "Is Required By"@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#isRequiredBy-003> ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "A related resource that requires the described resource to support its function, delivery, or coherence."@en .
+#
+terms:isVersionOf rdfs:label "Is Version Of"@en ;
+rdfs:comment "A related resource of which the described resource is a version, edition, or adaptation."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:issued "2000-07-11"^^xsd:date ;
+skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/). As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#isVersionOf-003> ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:description "Changes in version imply substantive changes in content rather than differences in format."@en .
+#
+terms:issued terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "Date of formal issuance (e.g., publication) of the resource."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#issued-003> ;
+terms:issued "2000-07-11"^^xsd:date ;
+rdfs:label "Date Issued"@en .
+#
+terms:language rdfs:label "Language"@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#languageT-001> ;
+terms:issued "2008-01-14"^^xsd:date ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:description "Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646]."@en ;
+rdfs:comment "A language of the resource."@en .
+#
+terms:license terms:issued "2004-06-14"^^xsd:date ;
+rdfs:label "License"@en ;
+rdfs:comment "A legal document giving official permission to do something with the resource."@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#license-002> ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+#
+terms:mediator terms:description "In an educational context, a mediator might be a parent, teacher, teaching assistant, or care-giver."@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "An entity that mediates access to the resource and for whom the resource is intended or useful."@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#mediator-003> ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "Mediator"@en ;
+terms:issued "2001-05-21"^^xsd:date .
+#
+terms:medium rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "Medium"@en ;
+
+rdfs:comment "The material or physical carrier of the resource."@en ;
+terms:issued "2000-07-11"^^xsd:date ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#medium-003> .
+#
+terms:modified rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "Date Modified"@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#modified-003> ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "Date on which the resource was changed."@en ;
+terms:issued "2000-07-11"^^xsd:date .
+#
+terms:provenance rdfs:comment "A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation."@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:issued "2004-09-20"^^xsd:date ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:description "The statement may include a description of any changes successive custodians made to the resource."@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#provenance-002> ;
+rdfs:label "Provenance"@en .
+#
+terms:publisher terms:modified "2010-10-11"^^xsd:date ;
+terms:issued "2008-01-14"^^xsd:date ;
+rdfs:label "Publisher"@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#publisherT-001> ;
+terms:description "Examples of a Publisher include a person, an organization, or a service."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:comment "An entity responsible for making the resource available."@en .
+#
+terms:references rdfs:comment "A related resource that is referenced, cited, or otherwise pointed to by the described resource."@en ;
+rdfs:label "References"@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:issued "2000-07-11"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#references-003> ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/). As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en .
+#
+terms:relation terms:issued "2008-01-14"^^xsd:date ;
+skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/). As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#relationT-001> ;
+rdfs:label "Relation"@en ;
+terms:description "Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system. "@en ;
+rdfs:comment "A related resource."@en ;
+terms:modified "2008-01-14"^^xsd:date .
+#
+terms:replaces skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/). As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en ;
+terms:issued "2000-07-11"^^xsd:date ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:label "Replaces"@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#replaces-003> ;
+rdfs:comment "A related resource that is supplanted, displaced, or superseded by the described resource."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+#
+terms:requires terms:hasVersion <http://dublincore.org/usage/terms/history/#requires-003> ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:label "Requires"@en ;
+rdfs:comment "A related resource that is required by the described resource to support its function, delivery, or coherence."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/). As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en ;
+terms:issued "2000-07-11"^^xsd:date .
+#
+terms:rights rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:issued "2008-01-14"^^xsd:date ;
+rdfs:label "Rights"@en ;
+rdfs:comment "Information about rights held in and over the resource."@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#rightsT-001> ;
+terms:description "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights."@en .
+#
+terms:rightsHolder rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#rightsHolder-002> ;
+terms:modified "2008-01-14"^^xsd:date ;
+rdfs:comment "A person or organization owning or managing rights over the resource."@en ;
+
+terms:issued "2004-06-14"^^xsd:date ;
+rdfs:label "Rights Holder"@en .
+#
+terms:source rdfs:label "Source"@en ;
+skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/). As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en ;
+terms:issued "2008-01-14"^^xsd:date ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#sourceT-001> ;
+rdfs:comment "A related resource from which the described resource is derived."@en ;
+terms:description "The described resource may be derived from the related resource in whole or in part. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system."@en .
+#
+terms:spatial terms:issued "2000-07-11"^^xsd:date ;
+rdfs:label "Spatial Coverage"@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:comment "Spatial characteristics of the resource."@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#spatial-003> .
+#
+terms:subject terms:modified "2012-06-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#subjectT-002> ;
+skos:note "This term is intended to be used with non-literal values as defined in the DCMI Abstract Model (http://dublincore.org/documents/abstract-model/). As of December 2007, the DCMI Usage Board is seeking a way to express this intention with a formal range declaration."@en ;
+terms:issued "2008-01-14"^^xsd:date ;
+rdfs:label "Subject"@en ;
+rdfs:comment "The topic of the resource."@en ;
+terms:description "Typically, the subject will be represented using keywords, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary."@en ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+#
+terms:tableOfContents rdfs:comment "A list of subunits of the resource."@en ;
+terms:issued "2000-07-11"^^xsd:date ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+rdfs:label "Table Of Contents"@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#tableOfContents-003> .
+#
+terms:temporal terms:modified "2008-01-14"^^xsd:date ;
+terms:issued "2000-07-11"^^xsd:date ;
+rdfs:label "Temporal Coverage"@en ;
+rdfs:comment "Temporal characteristics of the resource."@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#temporal-003> ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+#
+terms:title rdfs:label "Title"@en ;
+rdfs:comment "A name given to the resource."@en ;
+terms:issued "2008-01-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#titleT-002> ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:modified "2010-10-11"^^xsd:date .
+#
+terms:type rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+terms:description "Recommended best practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [DCMITYPE]. To describe the file format, physical medium, or dimensions of the resource, use the Format element."@en ;
+rdfs:comment "The nature or genre of the resource."@en ;
+rdfs:label "Type"@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#typeT-001> ;
+terms:issued "2008-01-14"^^xsd:date .
+#
+terms:valid rdfs:comment "Date (often a range) of validity of a resource."@en ;
+terms:modified "2008-01-14"^^xsd:date ;
+terms:issued "2000-07-11"^^xsd:date ;
+rdfs:label "Date Valid"@en ;
+terms:hasVersion <http://dublincore.org/usage/terms/history/#valid-003> ;
+rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+#
+:hasDescription rdfs:label "hasDescription"@en .
+#
+:hasIdentifier rdfs:label "hasIdentifier"@en .
+#
+:hasTitle rdfs:label "hasTitle"@en .
+#
+nfo:belongsToContainer rdfs:comment "Models the containment relations between Files and Folders (or CompressedFiles)." ;
+rdfs:label "belongsToContainer" .
+#
+nfo:bookmarks rdfs:comment "The address of the linked object. Usually a web URI." ;
+nrl:cardinality "1"^^xsd:integer ;
+rdfs:label "link" .
+#
+nfo:conflicts rdfs:label "conflicts" ;
+244
+rdfs:comment "States that a piece of software is in conflict with another piece of software." .
+#
+nfo:containsBookmark rdfs:label "contains bookmark" ;
+rdfs:comment "The folder contains a bookmark." .
+#
+nfo:containsBookmarkFolder rdfs:comment "The folder contains a bookmark folder." ;
+rdfs:label "contains folder" .
+#
+nfo:containsPlacemark rdfs:label "contains Placemark" ;
+rdfs:comment "Containment relation between placemark containers (files) and placemarks within." .
+#
+nfo:fileCreated rdfs:comment "File creation date" ;
+rdfs:label "fileCreated" ;
+nrl:maxCardinality "1"^^xsd:integer .
+#
+nfo:fileLastAccessed rdfs:comment "Time when the file was last accessed." ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:label "fileLastAccessed" .
+#
+nfo:fileLastModified nao:deprecated "true"^^xsd:boolean ;
+rdfs:comment "last modification date" ;
+rdfs:label "fileLastModified" .
+#
+nfo:fileName rdfs:comment "Name of the file, together with the extension" ;
+rdfs:label "fileName" ;
+nrl:maxCardinality "1" .
+#
+nfo:fileSize nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:label "fileSize" ;
+rdfs:comment "The size of the file in bytes. For compressed files it means the size of the packed file, not of the contents. For folders it means the aggregated size of all contained files and folders " .
+#
+nfo:fileUrl nao:deprecated "true"^^xsd:boolean ;
+rdfs:label "fileUrl" ;
+rdfs:comment "URL of the file. It points at the location of the file. In cases where creating a simple file:// or http:// URL for a file is difficult (e.g. for files inside compressed archives) the applications are encouraged to use conventions defined by Apache Commons VFS Project at http://jakarta.apache.org/ commons/ vfs/ filesystems.html." .
+#
+nfo:foundry rdfs:label "foundry" ;
+nrl:maxCardinality "1"^^xsd:integer ;
+rdfs:comment "The foundry, the organization that created the font." .
+#
+nfo:hasHash rdfs:comment "Links the file with it's hash value." ;
+nao:userVisible "false"^^xsd:boolean ;
+rdfs:label "hasHash" .
+#
+nfo:hasMediaStream rdfs:label "hasMediaStream" ;
+rdfs:comment "Connects a media container with a single media stream contained within." .
+#
+nfo:supercedes rdfs:comment "States that a piece of software supercedes another piece of software." ;
+rdfs:label "supercedes" .
+#
+nfo:uuid rdfs:label "uuid" ;
+rdfs:comment "Universally unique identifier of the filesystem. In the future, this property may have its parent changed to a more generic class." .
+
+
