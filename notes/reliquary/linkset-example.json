@@ -1,0 +1,40 @@
+{
+    "linkset": [
+        {
+            "anchor": "https://isamples.org/linkset-reliquary/1436",
+            "author": [
+                {
+                    "href": "https://orcid.org/0000-0001-6041-5302",
+                    "title": "Stephen M. Richard"
+                }
+            ],
+            "item": [
+                {
+                    "href": "https://doi.org/10.58052/IEALT0001",
+                    "type": "text/html",
+                    "title": "landing page for sample"
+                },
+                {
+                    "href": "https://doi.org/10.58052/IEALT0002",
+                    "type": "text/html",
+                    "title": "landing page for sample"
+                },
+                {
+                    "href": "https://doi.org/10.58052/IEALT0035",
+                    "type": "text/html",
+                    "title": "landing page for sample"
+                }
+            ],
+            "publication":{
+                "href": "https://doi.org/10.5802/crgeos.61",
+                "title":"landing page for article using data from these samples",
+                "type":"text/html"
+            },
+            "related":{
+                "href": "https://doi.org/10.1594/IEDA/100625",
+                "title":"landing page for dataset that reports analytical data obtained from these samples.",
+                "type":"text/html"
+            }
+        }
+    ]
+}

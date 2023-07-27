@@ -1,0 +1,125 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ore: <http://www.openarchives.org/ore/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports dcterms: ,
+               ore:
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/format
+dc:format rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/language
+dc:language rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+dc:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+dcterms:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://www.openarchives.org/ore/terms/describes
+ore:describes rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+rdf:type rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/mbox
+foaf:mbox rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/page
+foaf:page rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://arxiv.org/aggregation/astro-ph/0601007
+<http://arxiv.org/aggregation/astro-ph/0601007> rdf:type owl:NamedIndividual ,
+                                                         ore:Aggregation ;
+                                                dc:title "Parametrization of K-essence and Its Kinetic Term" ;
+                                                dcterms:creator [ foaf:mbox <mailto:lihui@somewhere.cn> ;
+                                                                  foaf:name "Hui Li"
+                                                                ] ,
+                                                                [ foaf:name "Zong-Kuan Guo"
+                                                                ] ,
+                                                                [ foaf:name "Yuan-Zhong Zhang"
+                                                                ] ;
+                                                ore:aggregates <http://arxiv.org/abs/astro-ph/0601007> ,
+                                                               <http://arxiv.org/pdf/astro-ph/0601007> ,
+                                                               <http://arxiv.org/ps/astro-ph/0601007> .
+
+
+###  http://arxiv.org/rem/atom/astro-ph/0601007
+<http://arxiv.org/rem/atom/astro-ph/0601007> rdf:type owl:NamedIndividual ,
+                                                      ore:ResourceMap ;
+                                             dc:rights "This Resource Map is available under the Creative Commons Attribution-Noncommercial Generic license" ;
+                                             dcterms:created "2008-10-01T18:30:02Z" ;
+                                             dcterms:creator [ foaf:name "arXiv.org e-Print Repository" ;
+                                                               foaf:page <http://arxiv.org>
+                                                             ] ;
+                                             dcterms:modified "2008-10-03T07:30:34Z" ;
+                                             dcterms:rights <http://creativecommons.org/licenses/by-nc/2.5/rdf> ;
+                                             ore:describes <http://arxiv.org/aggregation/astro-ph/0601007> .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://arxiv.org/abs/astro-ph/0601007> dc:format "text/html" ;
+                                        rdf:type "info:eu-repo/semantics/humanStartPage" ;
+                                        dc:title "[astro-ph/0601007] Parametrization of K-essence and Its Kinetic Term" .
+
+
+<http://arxiv.org/pdf/astro-ph/0601007> dc:language "en" ;
+                                        dc:format "application/pdf" ;
+                                        dc:title "Parametrization of K-essence and Its Kinetic Term" .
+
+
+<http://arxiv.org/ps/astro-ph/0601007> dc:format "application/postscript" ;
+                                       dc:title "Parametrization of K-essence and Its Kinetic Term" ;
+                                       dc:language "en" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

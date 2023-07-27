@@ -1,0 +1,144 @@
+# baseURI: http://isamples.org/aggregation/collection/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.openarchives.org/ore/1.0/terms
+
+@prefix : <http://isamples.org/aggregation/collection/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix isam: <https://isamples.org/schema/iSamplesSchemaCore/> .
+@prefix ore: <http://www.openarchives.org/ore/1.0/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<SCOPUS:7006331578>
+  rdf:type sdo:Person ;
+  rdfs:label "Dr. Jeffrey C. Alt" ;
+  sdo:affiliation [
+      rdf:type sdo:Organization ;
+      sdo:name "University of Michigan, Ann Arbor, United States" ;
+    ] ;
+  sdo:identifier "SCOPUS:7006331578" ;
+  sdo:name "Dr. Jeffrey C. Alt" ;
+.
+:
+  rdf:type owl:Ontology ;
+  rdf:type <http://www.w3.org/2002/07/owl#Ontology> ;
+  owl:imports dcterms: ;
+  owl:imports <http://www.openarchives.org/ore/1.0/terms>  ;
+.
+<http://isamples.org/aggregation/collection/0601007>
+  rdf:type ore:Aggregation ;
+  rdf:type sdo:Product ;
+  dcterms:created "2012-12-08" ;
+  dcterms:creator <https://orcid.org/0000-0001-6041-5302> ;
+  dcterms:description "This reliquary contains links to samples used by the study 'The contents and isotope compositions of carbon in altered oceanic basalts' " ;
+  dcterms:isRequiredBy <https://doi.org/10.1594/IEDA/100625> ;
+  dcterms:modified "2023-07-26" ;
+  dcterms:rights <https://creativecommons.org/licenses/by-nc-sa/3.0/us/> ;
+  dcterms:title "Collection of altered oceanic basalt samples. " ;
+  ore:aggregates <https://doi.org/10.58052/IEALT0001> ;
+  ore:aggregates <https://doi.org/10.58052/IEALT0002> ;
+  ore:aggregates <https://doi.org/10.58052/IEALT0035> ;
+  sdo:name "Collection of altered oceanic basalt samples " ;
+.
+<https://doi.org/10.58052/IEALT0001>
+  rdf:type isam:PhysicalSampleRecord ;
+  isam:hasContextCategory "Earth interior" ;
+  isam:hasMaterialCategory "Rock" ;
+  isam:hasSpecimenCategory "Other solid object" ;
+  isam:keywords "Core Piece" ;
+  isam:label "U1365E 12 R 1 76 80" ;
+  isam:producedBy [
+      rdf:type isam:SamplingEvent ;
+      isam:hasFeatureOfInterest "South Pacific Gyre" ;
+      isam:responsibility [
+          rdf:type isam:Agent ;
+          <https://data.isamples.org/schema/iSamplesSchemaBasic0.2/role:> "Sample Owner" ;
+          isam:identifier <SCOPUS:7006331578> ;
+          isam:name "Jeffrey Alt" ;
+        ] ;
+      isam:resultTime "2016-12-01 03:49:42" ;
+      isam:samplingSite [
+          rdf:type isam:SamplingSite ;
+          isam:location [
+              rdf:type isam:Location ;
+              isam:elevation "-5693.7 m" ;
+              isam:latitude -23.8508 ;
+              isam:longitude -165.644 ;
+            ] ;
+        ] ;
+    ] ;
+  isam:registrant <SCOPUS:7006331578> ;
+.
+<https://doi.org/10.58052/IEALT0002>
+  rdf:type isam:PhysicalSampleRecord ;
+  isam:hasContextCategory "Earth interior" ;
+  isam:hasMaterialCategory "Rock" ;
+  isam:hasSpecimenCategory "Other solid object" ;
+  isam:keywords "Core Piece" ;
+  isam:label "U1365E 4 R 2 130 135" ;
+  isam:producedBy [
+      rdf:type isam:SamplingEvent ;
+      isam:hasFeatureOfInterest "South Pacific Gyre" ;
+      isam:responsibility [
+          rdf:type isam:Agent ;
+          <https://data.isamples.org/schema/iSamplesSchemaBasic0.2/role:> "Sample Owner" ;
+          isam:identifier <SCOPUS:7006331578> ;
+          isam:name "Jeffrey Alt" ;
+        ] ;
+      isam:resultTime "2016-12-01 03:49:42" ;
+      isam:samplingSite [
+          rdf:type isam:SamplingSite ;
+          isam:location [
+              <https://data.isamples.org/schema/iSamplesSchemaBasic0.2/elevation:> "-5693.7 m" ;
+              <https://data.isamples.org/schema/iSamplesSchemaBasic0.2/latitude:> -23.8508 ;
+              <https://data.isamples.org/schema/iSamplesSchemaBasic0.2/longitude:> -165.644 ;
+            ] ;
+        ] ;
+    ] ;
+  isam:registrant <SCOPUS:7006331578> ;
+.
+<https://doi.org/10.58052/IEALT0035>
+  rdf:type isam:PhysicalSampleRecord ;
+  isam:hasContextCategory "Earth interior" ;
+  isam:hasMaterialCategory "Rock" ;
+  isam:hasSpecimenCategory "Other solid object" ;
+  isam:keywords "Core Piece" ;
+  isam:label "1376 17 R 2" ;
+  isam:producedBy [
+      rdf:type isam:SamplingEvent ;
+      isam:hasFeatureOfInterest "Louisville Seamounts" ;
+      isam:responsibility [
+          rdf:type isam:Agent ;
+          <https://data.isamples.org/schema/iSamplesSchemaBasic0.2/role:> "Sample Owner" ;
+          isam:identifier <SCOPUS:7006331578> ;
+          isam:name "Jeffrey Alt" ;
+        ] ;
+      isam:resultTime "2016-12-01 03:49:42" ;
+      isam:samplingSite [
+          rdf:type isam:SamplingSite ;
+          isam:location [
+              <https://data.isamples.org/schema/iSamplesSchemaBasic0.2/elevation:> "-1503.3 m" ;
+              <https://data.isamples.org/schema/iSamplesSchemaBasic0.2/latitude:> -32.2174 ;
+              <https://data.isamples.org/schema/iSamplesSchemaBasic0.2/longitude:> -171.8807 ;
+            ] ;
+        ] ;
+    ] ;
+  isam:registrant <SCOPUS:7006331578> ;
+.
+<https://orcid.org/0000-0001-6041-5302>
+  rdf:type sdo:Person ;
+  rdfs:label "Stephen M. Richard" ;
+  sdo:affiliation [
+      rdf:type sdo:Project ;
+      sdo:name "iSamples" ;
+    ] ;
+  sdo:email "smrTucson@gmail.com " ;
+  sdo:identifier <https://orcid.org/0000-0001-6041-5302> ;
+  sdo:name "Stephen M. Richard" ;
+.

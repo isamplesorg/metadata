@@ -1,0 +1,673 @@
+[ {
+  "@id" : "SCOPUS:7006331578",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://schema.org/Person" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Dr. Jeffrey C. Alt"
+  } ],
+  "https://schema.org/affiliation" : [ {
+    "@id" : "_:genid1"
+  } ],
+  "https://schema.org/identifier" : [ {
+    "@value" : "SCOPUS:7006331578"
+  } ],
+  "https://schema.org/name" : [ {
+    "@value" : "Dr. Jeffrey C. Alt"
+  } ]
+}, {
+  "@id" : "_:genid1",
+  "@type" : [ "https://schema.org/Organization" ],
+  "https://schema.org/name" : [ {
+    "@value" : "University of Michigan, Ann Arbor, United States"
+  } ]
+}, {
+  "@id" : "_:genid10",
+  "@type" : [ "https://isamples.org/schema/iSamplesSchemaCore/SamplingEvent" ],
+  "https://isamples.org/schema/iSamplesSchemaCore/hasFeatureOfInterest" : [ {
+    "@value" : "Louisville Seamounts"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/responsibility" : [ {
+    "@id" : "_:genid11"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/resultTime" : [ {
+    "@value" : "2016-12-01 03:49:42"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/samplingSite" : [ {
+    "@id" : "_:genid12"
+  } ]
+}, {
+  "@id" : "_:genid11",
+  "@type" : [ "https://isamples.org/schema/iSamplesSchemaCore/Agent" ],
+  "https://data.isamples.org/schema/iSamplesSchemaBasic0.2/role:" : [ {
+    "@value" : "Sample Owner"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/identifier" : [ {
+    "@id" : "SCOPUS:7006331578"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/name" : [ {
+    "@value" : "Jeffrey Alt"
+  } ]
+}, {
+  "@id" : "_:genid12",
+  "@type" : [ "https://isamples.org/schema/iSamplesSchemaCore/SamplingSite" ],
+  "https://isamples.org/schema/iSamplesSchemaCore/location" : [ {
+    "@id" : "_:genid13"
+  } ]
+}, {
+  "@id" : "_:genid13",
+  "https://data.isamples.org/schema/iSamplesSchemaBasic0.2/elevation:" : [ {
+    "@value" : "-1503.3 m"
+  } ],
+  "https://data.isamples.org/schema/iSamplesSchemaBasic0.2/latitude:" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "-32.2174"
+  } ],
+  "https://data.isamples.org/schema/iSamplesSchemaBasic0.2/longitude:" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "-171.8807"
+  } ]
+}, {
+  "@id" : "_:genid14",
+  "@type" : [ "https://schema.org/Project" ],
+  "https://schema.org/name" : [ {
+    "@value" : "iSamples"
+  } ]
+}, {
+  "@id" : "_:genid15",
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "The Open Archives Initiative ORE Project"
+  } ]
+}, {
+  "@id" : "_:genid2",
+  "@type" : [ "https://isamples.org/schema/iSamplesSchemaCore/SamplingEvent" ],
+  "https://isamples.org/schema/iSamplesSchemaCore/hasFeatureOfInterest" : [ {
+    "@value" : "South Pacific Gyre"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/responsibility" : [ {
+    "@id" : "_:genid3"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/resultTime" : [ {
+    "@value" : "2016-12-01 03:49:42"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/samplingSite" : [ {
+    "@id" : "_:genid4"
+  } ]
+}, {
+  "@id" : "_:genid3",
+  "@type" : [ "https://isamples.org/schema/iSamplesSchemaCore/Agent" ],
+  "https://data.isamples.org/schema/iSamplesSchemaBasic0.2/role:" : [ {
+    "@value" : "Sample Owner"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/identifier" : [ {
+    "@id" : "SCOPUS:7006331578"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/name" : [ {
+    "@value" : "Jeffrey Alt"
+  } ]
+}, {
+  "@id" : "_:genid4",
+  "@type" : [ "https://isamples.org/schema/iSamplesSchemaCore/SamplingSite" ],
+  "https://isamples.org/schema/iSamplesSchemaCore/location" : [ {
+    "@id" : "_:genid5"
+  } ]
+}, {
+  "@id" : "_:genid5",
+  "@type" : [ "https://isamples.org/schema/iSamplesSchemaCore/Location" ],
+  "https://isamples.org/schema/iSamplesSchemaCore/elevation" : [ {
+    "@value" : "-5693.7 m"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/latitude" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "-23.8508"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/longitude" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "-165.644"
+  } ]
+}, {
+  "@id" : "_:genid6",
+  "@type" : [ "https://isamples.org/schema/iSamplesSchemaCore/SamplingEvent" ],
+  "https://isamples.org/schema/iSamplesSchemaCore/hasFeatureOfInterest" : [ {
+    "@value" : "South Pacific Gyre"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/responsibility" : [ {
+    "@id" : "_:genid7"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/resultTime" : [ {
+    "@value" : "2016-12-01 03:49:42"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/samplingSite" : [ {
+    "@id" : "_:genid8"
+  } ]
+}, {
+  "@id" : "_:genid7",
+  "@type" : [ "https://isamples.org/schema/iSamplesSchemaCore/Agent" ],
+  "https://data.isamples.org/schema/iSamplesSchemaBasic0.2/role:" : [ {
+    "@value" : "Sample Owner"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/identifier" : [ {
+    "@id" : "SCOPUS:7006331578"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/name" : [ {
+    "@value" : "Jeffrey Alt"
+  } ]
+}, {
+  "@id" : "_:genid8",
+  "@type" : [ "https://isamples.org/schema/iSamplesSchemaCore/SamplingSite" ],
+  "https://isamples.org/schema/iSamplesSchemaCore/location" : [ {
+    "@id" : "_:genid9"
+  } ]
+}, {
+  "@id" : "_:genid9",
+  "https://data.isamples.org/schema/iSamplesSchemaBasic0.2/elevation:" : [ {
+    "@value" : "-5693.7 m"
+  } ],
+  "https://data.isamples.org/schema/iSamplesSchemaBasic0.2/latitude:" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "-23.8508"
+  } ],
+  "https://data.isamples.org/schema/iSamplesSchemaBasic0.2/longitude:" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "-165.644"
+  } ]
+}, {
+  "@id" : "http://isamples.org/aggregation/collection/",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "http://isamples.org/aggregation/collection/0601007",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.openarchives.org/ore/1.0/terms/Aggregation", "https://schema.org/Product" ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2012-12-08"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@id" : "https://orcid.org/0000-0001-6041-5302"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "This reliquary contains links to samples used by the study 'The contents and isotope compositions of carbon in altered oceanic basalts' "
+  } ],
+  "http://purl.org/dc/terms/isRequiredBy" : [ {
+    "@id" : "https://doi.org/10.1594/IEDA/100625"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2023-07-26"
+  } ],
+  "http://purl.org/dc/terms/rights" : [ {
+    "@id" : "https://creativecommons.org/licenses/by-nc-sa/3.0/us/"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@value" : "Collection of altered oceanic basalt samples. "
+  } ],
+  "http://www.openarchives.org/ore/1.0/terms/aggregates" : [ {
+    "@id" : "https://doi.org/10.58052/IEALT0001"
+  }, {
+    "@id" : "https://doi.org/10.58052/IEALT0002"
+  }, {
+    "@id" : "https://doi.org/10.58052/IEALT0035"
+  } ],
+  "https://schema.org/name" : [ {
+    "@value" : "Collection of altered oceanic basalt samples "
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/dcmitype/Collection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/created",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/hasPart",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/isPartOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/isRequiredBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/modified",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/publisher",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/rights",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.openarchives.org/ore/1.0/terms/Aggregation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.openarchives.org/ore/1.0/terms/aggregates",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.openarchives.org/ore/terms/",
+  "http://purl.org/dc/terms/license" : [ {
+    "@id" : "http://creativecommons.org/licenses/by-sa/3.0/"
+  } ],
+  "http://purl.org/dc/terms/publisher" : [ {
+    "@id" : "_:genid15"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@value" : "The OAI ORE terms vocabulary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The set of terms provided by the OAI ORE initiative"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "The OAI ORE terms vocabulary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "http://www.openarchives.org/ore/toc"
+  } ]
+}, {
+  "@id" : "http://www.openarchives.org/ore/terms/AggregatedResource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A resource which is included in an Aggregation. Note that asserting that a resource is a member of the class of Aggregated Resources does not imply anything other than that it is aggregated by at least one Aggregation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Aggregated Resource"
+  } ]
+}, {
+  "@id" : "http://www.openarchives.org/ore/terms/Aggregation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A set of related resources (Aggregated Resources), grouped together such that the set can be treated as a single resource. This is the entity described within the ORE interoperability framework by a Resource Map."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Aggregation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/dc/dcmitype/Collection"
+  } ]
+}, {
+  "@id" : "http://www.openarchives.org/ore/terms/Proxy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A Proxy represents an Aggregated Resource as it exists in a specific Aggregation. All assertions made about an entity are globally true, not only within the context of the Aggregation. As such, in order to make assertions which are only true of a resource as it exists in an Aggregation, a Proxy object is required. For example, one might want to cite an article as it appears in a specific journal, or assign aggregation-specific metadata to a Resource."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Proxy"
+  } ]
+}, {
+  "@id" : "http://www.openarchives.org/ore/terms/ResourceMap",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A description of an Aggregation according to the OAI-ORE data model. Resource Maps are serialised to a machine readable format according to the implementation guidelines."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Resource Map"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2004/03/trix/rdfg-1/Graph"
+  } ]
+}, {
+  "@id" : "http://www.openarchives.org/ore/terms/aggregates",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty", "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Aggregations, by definition, aggregate resources. The ore:aggregates relationship expresses that the object resource is a member of the set of Aggregated Resources of the subject (the Aggregation). This relationship between the Aggregation and its Aggregated Resources is thus more specific than a simple part/whole relationship, as expressed by dcterms:hasPart for example."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/Aggregation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Aggregates"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/AggregatedResource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/dc/terms/hasPart"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/isAggregatedBy"
+  } ]
+}, {
+  "@id" : "http://www.openarchives.org/ore/terms/describes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "This relationship asserts that the subject (a Resource Map) describes the object (an Aggregation)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/ResourceMap"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Describes"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/Aggregation"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/isDescribedBy"
+  } ]
+}, {
+  "@id" : "http://www.openarchives.org/ore/terms/isAggregatedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The inverse relationship of ore:aggregates, ore:isAggregatedBy asserts that an Aggregated Resource is aggregated by an Aggregation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/AggregatedResource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Is Aggregated By"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/Aggregation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/dc/terms/isPartOf"
+  } ]
+}, {
+  "@id" : "http://www.openarchives.org/ore/terms/isDescribedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The inverse relationship of ore:describes, in this case the object of the relationship is the Resource Map and the subject is the Aggregation which it describes."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/Aggregation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Is Described By"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/ResourceMap"
+  } ]
+}, {
+  "@id" : "http://www.openarchives.org/ore/terms/lineage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "ore:lineage is a relationship between two Proxy objects, both of which MUST have the same Resource for which they are proxies. The meaning is that the Resource for which the subject of the relationship is a Proxy was discovered in the Aggregation in which the object Proxy's resource is aggregated."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/Proxy"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Lineage"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/Proxy"
+  } ]
+}, {
+  "@id" : "http://www.openarchives.org/ore/terms/proxyFor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Proxy objects are used to represent a Resource as it is aggregated in a particular Aggregation. The ore:proxyFor relationship is used to link the proxy to the Aggregated Resource it is a proxy for. The subject of the relationship is a Proxy object, and the object of the relationship is the Aggregated Resource."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/Proxy"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Proxy For"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/AggregatedResource"
+  } ]
+}, {
+  "@id" : "http://www.openarchives.org/ore/terms/proxyIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Proxy objects must link to the Aggregation in which the resource being proxied is aggregated. The ore:proxyIn relationship is used for this purpose. The subject of the relationship is a Proxy object, and the object of the relationship is the Aggregation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/Proxy"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Proxy In"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/Aggregation"
+  } ]
+}, {
+  "@id" : "http://www.openarchives.org/ore/terms/similarTo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "The subject of this relationship MUST be an Aggregation.  This Aggregation should be considered an expression within the ORE context of the object of the relationship, as it is broadly equivalent to the resource. For example, the Aggregation may consist of the resources which, together, make up a journal article which has a DOI assigned to it. The Aggregation is not the article to which the DOI was assigned, but is a representation of it in some manner."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/Aggregation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://www.openarchives.org/ore/terms/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Similar To"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2004/03/trix/rdfg-1/Graph",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://data.isamples.org/schema/iSamplesSchemaBasic0.2/elevation:",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://data.isamples.org/schema/iSamplesSchemaBasic0.2/latitude:",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://data.isamples.org/schema/iSamplesSchemaBasic0.2/longitude:",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://data.isamples.org/schema/iSamplesSchemaBasic0.2/role:",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://doi.org/10.58052/IEALT0001",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://isamples.org/schema/iSamplesSchemaCore/PhysicalSampleRecord" ],
+  "https://isamples.org/schema/iSamplesSchemaCore/hasContextCategory" : [ {
+    "@value" : "Earth interior"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/hasMaterialCategory" : [ {
+    "@value" : "Rock"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/hasSpecimenCategory" : [ {
+    "@value" : "Other solid object"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/keywords" : [ {
+    "@value" : "Core Piece"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/label" : [ {
+    "@value" : "U1365E 12 R 1 76 80"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/producedBy" : [ {
+    "@id" : "_:genid2"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/registrant" : [ {
+    "@id" : "SCOPUS:7006331578"
+  } ]
+}, {
+  "@id" : "https://doi.org/10.58052/IEALT0002",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://isamples.org/schema/iSamplesSchemaCore/PhysicalSampleRecord" ],
+  "https://isamples.org/schema/iSamplesSchemaCore/hasContextCategory" : [ {
+    "@value" : "Earth interior"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/hasMaterialCategory" : [ {
+    "@value" : "Rock"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/hasSpecimenCategory" : [ {
+    "@value" : "Other solid object"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/keywords" : [ {
+    "@value" : "Core Piece"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/label" : [ {
+    "@value" : "U1365E 4 R 2 130 135"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/producedBy" : [ {
+    "@id" : "_:genid6"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/registrant" : [ {
+    "@id" : "SCOPUS:7006331578"
+  } ]
+}, {
+  "@id" : "https://doi.org/10.58052/IEALT0035",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://isamples.org/schema/iSamplesSchemaCore/PhysicalSampleRecord" ],
+  "https://isamples.org/schema/iSamplesSchemaCore/hasContextCategory" : [ {
+    "@value" : "Earth interior"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/hasMaterialCategory" : [ {
+    "@value" : "Rock"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/hasSpecimenCategory" : [ {
+    "@value" : "Other solid object"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/keywords" : [ {
+    "@value" : "Core Piece"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/label" : [ {
+    "@value" : "1376 17 R 2"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/producedBy" : [ {
+    "@id" : "_:genid10"
+  } ],
+  "https://isamples.org/schema/iSamplesSchemaCore/registrant" : [ {
+    "@id" : "SCOPUS:7006331578"
+  } ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/Agent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/Location",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/PhysicalSampleRecord",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/SamplingEvent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/SamplingSite",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/elevation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/hasContextCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/hasFeatureOfInterest",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/hasMaterialCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/hasSpecimenCategory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/identifier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/keywords",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/label",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/latitude",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/location",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/longitude",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/name",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/producedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/registrant",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/responsibility",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/resultTime",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://isamples.org/schema/iSamplesSchemaCore/samplingSite",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://orcid.org/0000-0001-6041-5302",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "https://schema.org/Person" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Stephen M. Richard"
+  } ],
+  "https://schema.org/affiliation" : [ {
+    "@id" : "_:genid14"
+  } ],
+  "https://schema.org/email" : [ {
+    "@value" : "smrTucson@gmail.com "
+  } ],
+  "https://schema.org/identifier" : [ {
+    "@id" : "https://orcid.org/0000-0001-6041-5302"
+  } ],
+  "https://schema.org/name" : [ {
+    "@value" : "Stephen M. Richard"
+  } ]
+}, {
+  "@id" : "https://schema.org/Organization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://schema.org/Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://schema.org/Product",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://schema.org/Project",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://schema.org/affiliation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://schema.org/email",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://schema.org/identifier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://schema.org/name",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+} ]

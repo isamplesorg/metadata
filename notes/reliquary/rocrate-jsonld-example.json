@@ -1,0 +1,51 @@
+{
+    "@context": "https://w3id.org/ro/crate/1.1/context",
+    "@graph": [
+        {
+            "@type": "CreativeWork",
+            "additionalType": "https://isamples.org/resource/reliquary",
+            "@id": "https://isamples.org/ro-crate-reliquary/1436",
+            "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"},
+            "description":"In RO Crate, this is metadata about the reliquary, similar to ORE distinction of 'Aggregation', and 'ResourceMap'",
+            "about": {"@id": "./"}
+        },
+        {
+            "@id": "./",
+            "@type": ["Collection"],
+            "collectionSize":3,
+            "description":"the actual crate contains the list of samples, a link to the dataset derived from teh samples",
+            "hasPart": [
+                {"@id": "samplelist"},
+                {"@id": "DOI:10.1594/IEDA/100625"},
+                {"@id": "DOI: 10.5802/crgeos.61"}
+            ]
+        },
+        {
+            "@id": "sampleList",
+            "@type": "ItemList",
+            "name": "List of samples used in creation of  DOI:10.1594/IEDA/100625. (this is incomplete)",
+            "description":"this example only has the URI's for the samples; additional content could be added in this graph with more information about the samples",
+            "numberOfItems":3,
+            "item": [
+                {"@id": "https://doi.org/10.58052/IEALT0001"},
+                {"@id": "https://doi.org/10.58052/IEALT0002"},
+                {"@id": "https://doi.org/10.58052/IEALT0035"}
+            ]
+        },
+        {
+            "@id": "DOI:10.1594/IEDA/100625",
+            "@type": "Dataset",
+            "name": "The contents and isotope compositions of carbon in altered oceanic basalts",
+            "description":"this is the dataset that contains analytical data obtained by analysis of samples in the sample list",
+            "url": "https://doi.org/10.1594/IEDA/100625"
+        },
+        {
+            "@id": "DOI:10.5802/crgeos.61",
+            "@type": "Article",
+            "additionalType":"JournalArticle",
+            "name": "The origin and fate of C during alteration of the oceanic crust",
+            "description":"this is a publication that uses data from these samples (maybe...)",
+            "url": "https://doi.org/10.5802/crgeos.61"
+        }
+    ]
+}

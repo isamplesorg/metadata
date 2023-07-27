@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+    xmlns:ore="http://www.openarchives.org/ore/terms/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/" >
+
+    <!-- About the Aggregation for the ArXiv document -->
+
+    <rdf:Description rdf:about="http://arxiv.org/aggregation/astro-ph/0601007">
+        <!-- The Resource is an ORE Aggregation  -->
+        <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/Aggregation"/>
+        <!-- The Aggregation aggregates ... -->
+        <ore:aggregates rdf:resource="http://arxiv.org/abs/astro-ph/0601007"/>
+        <ore:aggregates rdf:resource="http://arxiv.org/ps/astro-ph/0601007"/>
+        <ore:aggregates rdf:resource="http://arxiv.org/pdf/astro-ph/0601007"/>
+        <!-- Metadata about the Aggregation: title and authors -->
+        <dc:title>Parametrization of K-essence and Its Kinetic Term</dc:title>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Hui Li</foaf:name>
+            <foaf:mbox rdf:resource="mailto:lihui@somewhere.cn"/>
+        </dcterms:creator>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Zong-Kuan Guo</foaf:name>
+        </dcterms:creator>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Yuan-Zhong Zhang</foaf:name>
+        </dcterms:creator>
+    </rdf:Description>
+    
+    <!-- About the Resource Map (this RDF/XML document) that describes the Aggregation -->
+    
+    <rdf:Description rdf:about="http://arxiv.org/rem/atom/astro-ph/0601007">
+        <!-- The Resource is an ORE Resource Map  -->
+        <rdf:type rdf:resource="http://www.openarchives.org/ore/terms/ResourceMap"/>
+        <!-- The Resource Map describes a specific Aggregation   -->
+        <ore:describes rdf:resource="http://arxiv.org/aggregation/astro-ph/0601007"/>
+        <!-- Metadata about the Resource Map: datetimes, rights, and author -->
+        <dcterms:modified>2008-10-03T07:30:34Z</dcterms:modified>
+        <dcterms:created>2008-10-01T18:30:02Z</dcterms:created>
+        <dc:rights>This Resource Map is available under the Creative Commons Attribution-Noncommercial Generic license</dc:rights>
+        <dcterms:rights rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/rdf"/>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:page rdf:resource="http://arxiv.org"/>
+            <foaf:name>arXiv.org e-Print Repository</foaf:name>
+        </dcterms:creator>
+    </rdf:Description>
+    
+    <!-- About the human start page that is part of the Aggregation -->
+    
+    <rdf:Description rdf:about="http://arxiv.org/abs/astro-ph/0601007">
+        <dc:format>text/html</dc:format>
+        <dc:title>[astro-ph/0601007] Parametrization of K-essence and Its Kinetic Term</dc:title>
+        <rdf:type>info:eu-repo/semantics/humanStartPage</rdf:type>
+    </rdf:Description>
+    
+    <!-- About the PostScript resource that is part of the Aggregation -->
+    
+    <rdf:Description rdf:about="http://arxiv.org/ps/astro-ph/0601007">
+        <dc:format>application/postscript</dc:format>
+        <dc:language>en</dc:language>
+        <dc:title>Parametrization of K-essence and Its Kinetic Term</dc:title>
+    </rdf:Description>
+    
+    <!-- About the PDF resource that is part of the Aggregation -->
+    
+    <rdf:Description rdf:about="http://arxiv.org/pdf/astro-ph/0601007">
+        <dc:format>application/pdf</dc:format>
+        <dc:language>en</dc:language>
+        <dc:title>Parametrization of K-essence and Its Kinetic Term</dc:title>
+    </rdf:Description>
+</rdf:RDF>
