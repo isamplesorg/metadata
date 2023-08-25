@@ -25,12 +25,7 @@ imports:
 
 classes:
     PhysicalSampleRecord:
-        description: This is a data object that is a digital representation of a physical
-            sample, and thus shares the same identifier as the physical object. It
-            provides descriptive properties for any iSamples physical sample, URI
-            for the metadata record is same as URI for physical sample-- digital object
-            is considered twin of physical object, a representation. IGSN is recommended.
-            Must be a URI that can be dereferenced on the web.
+        description: This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.
         slots:
           - sample_identifier
           - label
@@ -81,10 +76,12 @@ classes:
     SamplingSite:
         description: documentation of the site where the sample was collected, wtih place name(s) and a geospatial location
         slots:
+          - identifier
           - description
           - label
           - location
           - place_name
+          - is_part_of
 
     SamplingEvent:
         description: Information about the event resulting in the creation of the physical sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description. If any special protocols were followed in the sampling procedure, they should be documented using the PhysicalSampleRecord/complies_with property. 
@@ -99,8 +96,7 @@ classes:
           - authorized_by
 
     GeospatialCoordLocation:
-        description: A physical location in decimal degrees using EPSG:4326. Elevation is
-            is expressed in meters relative to the WGS84 ellipsoid. Could be sample point location, or the centroid of a sampling area
+        description: A physical location in decimal degrees using EPSG:4326. Could be sample point location, or the centroid of a sampling area. Elevation is specified as a string that should include the measure, units of measure, and the vertical reference system (e.g. 'above mean sea level', 'below ground surface', 'below sea floor'...)
         slots:
           - elevation
           - latitude
@@ -207,6 +203,13 @@ slots:
             skos:Concept from the iSamples SpecimenTypeVocabulary; 
             extension vocabularies can be used for more precise categorization.
         range: IdentifierObject
+        multivalued: true
+    is_part_of:
+        range: uriorcurie
+        domain: SamplingSite
+        description: A link from a SamplingSite to a larger sampling site that spatially contains the source 
+           SamplingSite.  The container site is specified by its identifier. 
+        close_mappings: sdo:isPartOf
         multivalued: true
     keywords:
         range: Keyword
