@@ -114,6 +114,7 @@ classes:
             to analysis preparation such as crushing, dissolution, evaporation, filtering
             are considered part of the sampling method for the derived child sample.
         slots:
+          - identifier
           - access_constraints
           - curation_location
           - description
@@ -300,7 +301,7 @@ slots:
         description: Identifier for the concept scheme or vocabulary within which the keyword concept is defined. 
         multivalued: false
     target:
-        range: string
+        range: uriorcurie
         description: identifier for the target resource in the relationship. Start
             with string, should be Identifier object.
     responsibility:
