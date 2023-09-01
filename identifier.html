@@ -688,6 +688,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td><a href="./SamplingEvent.html">SamplingEvent</a></td>
 <td>Information about the event resulting in the creation of the physical sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description. If any special protocols were followed in the sampling procedure, they should be documented using the PhysicalSampleRecord/complies_with property.</td>
 </tr>
+<tr class="odd">
+<td><a href="./SpecimenCuration.html">SpecimenCuration</a></td>
+<td>Information about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.</td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -722,7 +726,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> IdentifierObject</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> SamplingSite</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> SamplingEvent</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span><span class="kw">:</span><span class="at"> uriorcurie</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> SpecimenCuration</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span><span class="kw">:</span><span class="at"> uriorcurie</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 
