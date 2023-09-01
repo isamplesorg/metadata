@@ -71,7 +71,7 @@ classes:
           - scheme_uri
 
     IdentifierObject:
-        description: object to represent an identified concept; property values from vocabularies with resolvable identifiers for vocabulary terms. Eitehr a label or identifier is required, to allow for cases that a URI is not available.  Data validation process will need to be used for properties that require an identified term value (e.g. has_context_category, has_material_category, has_specimen_category).
+        description: object to represent an identified concept; property values from vocabularies with resolvable identifiers for vocabulary terms. Either a label or identifier is required, to allow for cases that a URI is not available.  Data validation process will need to be used for properties that require an identified term value (e.g. has_context_category, has_material_category, has_specimen_category).
         slots:
           - label
           - identifier
@@ -105,6 +105,7 @@ classes:
           - elevation
           - latitude
           - longitude
+          - obfuscated
 
     SpecimenCuration:
         description: Information about the current storage of sample,
@@ -249,7 +250,11 @@ slots:
         range: string
         domain: Agent
         description: string, name of a person. Format {}firstName MI lastName}.
-
+    obfuscated:
+        range: boolean
+        domain: GeospatialCoordLocation
+        description: Flag to indicate that accuracy of provided coordinate location has been reduced (obfuscated) because the exact location is restricted information.
+        ifabsent: False
     place_name:
         range: string
         domain: SamplingSite
