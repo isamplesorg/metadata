@@ -282,6 +282,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./is_part_of.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">is_part_of</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./keyword.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">keyword</span></a>
   </div>
@@ -675,6 +681,8 @@ classDiagram
     
   class SamplingSite {
     description : string
+    identifier : uriorcurie
+    is_part_of : uriorcurie[]
     label : string
     location : GeospatialCoordLocation
     place_name : string[]
@@ -848,94 +856,98 @@ classDiagram
 <td>a string that identifies some resource</td>
 </tr>
 <tr class="even">
+<td><a href="./is_part_of.html">is_part_of</a></td>
+<td>A link from a SamplingSite to a larger sampling site that spatially contains …</td>
+</tr>
+<tr class="odd">
 <td><a href="./keyword.html">keyword</a></td>
 <td>string label for a concept that characterizes the sample in some respect</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./keyword_uri.html">keyword_uri</a></td>
 <td>an identifier for the keyword concept</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./keywords.html">keywords</a></td>
 <td>free text terms or formal categories associate with sample to support discove…</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./label.html">label</a></td>
 <td>a human intelligible string used to identify a thing, i</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./latitude.html">latitude</a></td>
 <td>angular coordinate measured positive north from the equator</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./location.html">location</a></td>
 <td>geopatial location of site; required default is WGS84 latitude, longitude in …</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./longitude.html">longitude</a></td>
 <td>angular coordinate measured positive eastward from the prime meridian</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./name.html">name</a></td>
 <td>string, name of a person</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./obfuscated.html">obfuscated</a></td>
 <td>Flag to indicate that accuracy of provided coordinate location has been reduc…</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./place_name.html">place_name</a></td>
 <td>one or more names by which the sampling site is known</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./produced_by.html">produced_by</a></td>
 <td>object that documents the sampling event–who, where, when the specimen was o…</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./registrant.html">registrant</a></td>
 <td>identification of the agent that registered the sample, with contact informat…</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./related_resource.html">related_resource</a></td>
 <td>link to related resource with relationship property to indicate nature of con…</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./relationship.html">relationship</a></td>
 <td>term to identify realationship between host sample and the sample relation ta…</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./responsibility.html">responsibility</a></td>
 <td>Agent object includes person name, person identifier, affiliation, or organiz…</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./result_time.html">result_time</a></td>
 <td>Date on which the sample was collected</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./role.html">role</a></td>
 <td>term that specifies how a person is related to a sample curation or collectio…</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./sample_identifier.html">sample_identifier</a></td>
 <td>URI that identifies the physical sample described by this record</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./sampling_purpose.html">sampling_purpose</a></td>
 <td>term to specify why a sample was collection</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./sampling_site.html">sampling_site</a></td>
 <td>object that identifies the place where the sample was collected</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./scheme_name.html">scheme_name</a></td>
 <td>string label for the concept scheme or vocabulary within which the keyword co…</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./scheme_uri.html">scheme_uri</a></td>
 <td>Identifier for the concept scheme or vocabulary within which the keyword conc…</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./target.html">target</a></td>
 <td>identifier for the target resource in the relationship</td>
 </tr>

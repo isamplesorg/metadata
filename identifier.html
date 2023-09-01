@@ -311,6 +311,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./is_part_of.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">is_part_of</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./keyword.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">keyword</span></a>
   </div>
@@ -669,6 +675,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>object to represent an identified concept; property values from vocabularies with resolvable identifiers for vocabulary terms. Either a label or identifier is required, to allow for cases that a URI is not available. Data validation process will need to be used for properties that require an identified term value (e.g.&nbsp;has_context_category, has_material_category, has_specimen_category).</td>
 </tr>
 <tr class="odd">
+<td><a href="./SamplingSite.html">SamplingSite</a></td>
+<td>documentation of the site where the sample was collected, wtih place name(s) and a geospatial location</td>
+</tr>
+<tr class="even">
 <td><a href="./SamplingEvent.html">SamplingEvent</a></td>
 <td>Information about the event resulting in the creation of the physical sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description. If any special protocols were followed in the sampling procedure, they should be documented using the PhysicalSampleRecord/complies_with property.</td>
 </tr>
@@ -704,8 +714,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">domain_of</span><span class="kw">:</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> Agent</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> IdentifierObject</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> SamplingEvent</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span><span class="kw">:</span><span class="at"> uriorcurie</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> SamplingSite</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> SamplingEvent</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span><span class="kw">:</span><span class="at"> uriorcurie</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 
