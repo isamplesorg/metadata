@@ -39,6 +39,7 @@ classes:
           - keywords
           - related_resource
           - complies_with
+          - dc_rights
           - curation
           - registrant
 
@@ -159,7 +160,11 @@ slots:
         range: string
         domain: PhysicalSampleRecord
         description: a list of policies, recommendations, best practices (etc.) that have been followed in the collection and curation of the sample. 
-        multivalued: true
+        multivalued: true    
+    dc_rights:
+        range: string
+        description: a statement about various property rights associated with the resource, including intellectual property rights. Recommended practice is to refer to a rights statement with a URI. If this is not possible or feasible, a literal value (name, label, or short text) may be provided.
+        close_mappings: dct:rights
     description:
         range: string
         description: Free text description of the subject of a triple.
@@ -167,8 +172,7 @@ slots:
     elevation:
         range: string
         domain: GeospatialCoordLocation
-        description: Should be a number and Unit of measure, and the datum. e.g. 401
-            m above mean sea level.
+        description: Should be a number and Unit of measure, and the vertical reference system. e.g. 401 m above mean sea level.
     identifier:
         range: uriorcurie
         domain: IdentifierObject
