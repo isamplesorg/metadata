@@ -25,12 +25,7 @@ imports:
 
 classes:
     PhysicalSampleRecord:
-        description: This is a data object that is a digital representation of a physical
-            sample, and thus shares the same identifier as the physical object. It
-            provides descriptive properties for any iSamples physical sample, URI
-            for the metadata record is same as URI for physical sample-- digital object
-            is considered twin of physical object, a representation. IGSN is recommended.
-            Must be a URI that can be dereferenced on the web.
+        description: This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.
         slots:
           - sample_identifier
           - label
@@ -44,6 +39,7 @@ classes:
           - keywords
           - related_resource
           - complies_with
+          - dc_rights
           - curation
           - registrant
 
@@ -71,7 +67,7 @@ classes:
           - scheme_uri
 
     IdentifierObject:
-        description: object to represent an identified concept; property values from vocabularies with resolvable identifiers for vocabulary terms. Eitehr a label or identifier is required, to allow for cases that a URI is not available.  Data validation process will need to be used for properties that require an identified term value (e.g. has_context_category, has_material_category, has_specimen_category).
+        description: object to represent an identified concept; property values from vocabularies with resolvable identifiers for vocabulary terms. Either a label or identifier is required, to allow for cases that a URI is not available.  Data validation process will need to be used for properties that require an identified term value (e.g. has_context_category, has_material_category, has_specimen_category).
         slots:
           - label
           - identifier
@@ -81,10 +77,12 @@ classes:
     SamplingSite:
         description: documentation of the site where the sample was collected, wtih place name(s) and a geospatial location
         slots:
+          - identifier
           - description
           - label
           - location
           - place_name
+          - is_part_of
 
     SamplingEvent:
         description: Information about the event resulting in the creation of the physical sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description. If any special protocols were followed in the sampling procedure, they should be documented using the PhysicalSampleRecord/complies_with property. 
@@ -99,12 +97,12 @@ classes:
           - authorized_by
 
     GeospatialCoordLocation:
-        description: A physical location in decimal degrees using EPSG:4326. Elevation is
-            is expressed in meters relative to the WGS84 ellipsoid. Could be sample point location, or the centroid of a sampling area
+        description: A physical location in decimal degrees using EPSG:4326. Could be sample point location, or the centroid of a sampling area. Elevation is specified as a string that should include the measure, units of measure, and the vertical reference system (e.g. 'above mean sea level', 'below ground surface', 'below sea floor'...)
         slots:
           - elevation
           - latitude
           - longitude
+          - obfuscated
 
     SpecimenCuration:
         description: Information about the current storage of sample,
@@ -114,6 +112,7 @@ classes:
             to analysis preparation such as crushing, dissolution, evaporation, filtering
             are considered part of the sampling method for the derived child sample.
         slots:
+          - identifier
           - access_constraints
           - curation_location
           - description
@@ -162,7 +161,11 @@ slots:
         range: string
         domain: PhysicalSampleRecord
         description: a list of policies, recommendations, best practices (etc.) that have been followed in the collection and curation of the sample. 
-        multivalued: true
+        multivalued: true    
+    dc_rights:
+        range: string
+        description: a statement about various property rights associated with the resource, including intellectual property rights. Recommended practice is to refer to a rights statement with a URI. If this is not possible or feasible, a literal value (name, label, or short text) may be provided.
+        close_mappings: dct:rights
     description:
         range: string
         description: Free text description of the subject of a triple.
@@ -170,8 +173,7 @@ slots:
     elevation:
         range: string
         domain: GeospatialCoordLocation
-        description: Should be a number and Unit of measure, and the datum. e.g. 401
-            m above mean sea level.
+        description: Should be a number and Unit of measure, and the vertical reference system. e.g. 401 m above mean sea level.
     identifier:
         range: uriorcurie
         domain: IdentifierObject
@@ -207,6 +209,13 @@ slots:
             skos:Concept from the iSamples SpecimenTypeVocabulary; 
             extension vocabularies can be used for more precise categorization.
         range: IdentifierObject
+        multivalued: true
+    is_part_of:
+        range: uriorcurie
+        domain: SamplingSite
+        description: A link from a SamplingSite to a larger sampling site that spatially contains the source 
+           SamplingSite.  The container site is specified by its identifier. 
+        close_mappings: sdo:isPartOf
         multivalued: true
     keywords:
         range: Keyword
@@ -249,7 +258,11 @@ slots:
         range: string
         domain: Agent
         description: string, name of a person. Format {}firstName MI lastName}.
-
+    obfuscated:
+        range: boolean
+        domain: GeospatialCoordLocation
+        description: Flag to indicate that accuracy of provided coordinate location has been reduced (obfuscated) because the exact location is restricted information.
+        ifabsent: False
     place_name:
         range: string
         domain: SamplingSite
@@ -300,7 +313,7 @@ slots:
         description: Identifier for the concept scheme or vocabulary within which the keyword concept is defined. 
         multivalued: false
     target:
-        range: string
+        range: uriorcurie
         description: identifier for the target resource in the relationship. Start
             with string, should be Identifier object.
     responsibility:
