@@ -1,7 +1,7 @@
 id: http://resource.isamples.org/schema/1.0
 name: physicalSample
 title: Schema for documenting physical samples
-description: Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change 'id' to '@id' and 'schema' to '$schema'.  Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07. SMR 2023-03-17. Move authorized_by into SamplingEvent, change keywords to list of Keyword objects with string, uri, scheme and scheme URI. Reorder elements in slot list.  Update scheme URI to 1.0. 
+description: Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change 'id' to '@id' and 'schema' to '$schema'.  Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07. SMR 2023-03-17. Move authorized_by into SamplingEvent, change keywords to list of Keyword objects with string, uri, scheme and scheme URI. Reorder elements in slot list. Update scheme URI to 1.0 2023-06-13 SMR add project property on SamplingEvent, with text or URI value. 
 license: https://creativecommons.org/publicdomain/zero/1.0/
 version: 20230317
 prefixes:
@@ -91,6 +91,7 @@ classes:
           - label
           - description
           - has_feature_of_interest
+          - project
           - responsibility
           - result_time
           - sampling_site
@@ -268,6 +269,16 @@ slots:
         domain: SamplingSite
         description: one or more names by which the sampling site is known.
         multivalued: true
+    project:
+        range: string
+        domain: SamplingEvent
+        description: the name or identifier for a project that is the sponsor
+            for a samplingEvent. Use to link samples collected in the context
+            of a particular project. We do not have a preferred project model
+            at this point; the RAID effort (ISO23527, https://www.raid.org.au/) 
+            will hopefully mature into a registry we can use for project identification 
+            and metadata. Property value should be a name or a resolvable URI. 
+    
     produced_by:
         range: SamplingEvent
         domain: PhysicalSampleRecord

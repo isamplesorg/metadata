@@ -212,6 +212,10 @@
                     "description": "What does the sample represent.",
                     "type": "string"
                 },
+                "project": {
+                    "description": "the name or identifier for a project that is the sponsor for a samplingEvent. Use to link samples collected in the context of a particular project. We do not have a preferred project model at this point; the RAID effort (ISO23527, https://www.raid.org.au/)  will hopefully mature into a registry we can use for project identification and metadata. Property value should be a name or a resolvable URI.",
+                    "type": "string"
+                },
                 "responsibility": {
                     "description": "String with person name and affiliation, or organization name, and their role relative to the parent element.",
                     "items": {"$ref": "#/definitions/Agent"},
