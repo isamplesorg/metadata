@@ -4,10 +4,10 @@
     "type": "object",
     "title": "Material sample description",
     "additionalProperties": true,
-    "description": "This is a data object that is a digital representation of a material sample using the schema.org vocabulary, implemented for RDF using JSON-LD",
+    "description": "This is a data object that is a digital representation of a material sample using the schema.org vocabulary, implemented for RDF using JSON-LD.  The context is not specified in the schema, but must be added in instance documents. '\"@context\": {\"@vocab\": \"https://schema.org/\", \"dcterms\": \"http://purl.org/dc/terms/\",\"id\": \"@id\", \"type\": \"@type\", \"curation\":\"http://resource.isamples.org/schema/1.0/SpecimenCuration\" }' ",
     "properties": {
-        "@type": {"const": "Product"},
-        "@id": {
+        "type": {"const": "DigitalDocument"},
+        "id": {
             "type": "string",
             "description": "identifier for the metadata record"
         },
@@ -21,19 +21,26 @@
         },
         "about": {
             "type": "object",
-            "description": "this is the part of the metadata that describes the sample, with content defiend by http://resource.isamples.org/schema/1.0",
+            "description": "this is the part of the metadata that describes the sample, with content defined by http://resource.isamples.org/schema/1.0",
             "properties": {
-                "@id": {
+                "id": {
                     "type": "string",
                     "description": "this is the iSamples sample_identifier"
                 },
+                "type": {
+                    "const": "Thing",
+                    "description": "typing as thing leads to lots of warnings about properties that are not 'expected' for Thing, but seems like the least incoherent type to assign to a material sample..."
+                },
                 "name": {
                     "type": "string",
-                    "description": "this ins the iSamples label"
+                    "description": "this is the iSamples label"
                 },
-                "description": {"type": "string"},
+                "description": {
+                    "type": "string",
+                    "description": "free text description of the sample"
+                },
                 "identifier": {
-                    "description": "alternate identifiers for the sample described by this record",
+                    "description": "alternate identifiers for the sample described by this record. Note that about/id is the URI for the sample.",
                     "type": "array",
                     "items": {"$ref": "#/definitions/IdentifierObject"}
                 },
@@ -53,13 +60,13 @@
                 },
                 "category": {
                     "type": "array",
-                    "description": "array containing required sample category terms for iSamples",
+                    "description": "array containing required sample category terms for material type and sampledFEature. The specimenType (materialSampleType) is specified as about/additionalType, above. Formally defined extension vocabulary terms (that are subclassed from an  iSample vocabulary) are also included here",
                     "items": {
                         "type": "object",
                         "title": "iSamples vocabulary concept",
                         "properties": {
-                            "@type": {"const": "DefinedTerm"},
-                            "@id": {
+                            "type": {"const": "DefinedTerm"},
+                            "id": {
                                 "type": "string",
                                 "description": "term URI from iSamples type vocabulary"
                             },
@@ -70,14 +77,14 @@
                             "inDefinedTermSet": {
                                 "type": "object",
                                 "properties": {
-                                    "@type": {"const": "DefinedTermSet"},
-                                    "@id": {"type": "string"},
+                                    "type": {"const": "DefinedTermSet"},
+                                    "id": {"type": "string"},
                                     "name": {"type": "string"}
                                 }
                             }
                         }
                     },
-                    "minItems": 3
+                    "minItems": 2
                 },
                 "relatedLink": {
                     "type": "array",
@@ -90,7 +97,7 @@
                     "items": {
                         "type": "object",
                         "properties": {
-                            "@type": {"const": "CreativeWork"},
+                            "type": {"const": "CreativeWork"},
                             "name": {"type": "string"},
                             "description": {"type": "string"},
                             "url": {"type": "string"}
@@ -99,8 +106,13 @@
                 },
                 "curation": {
                     "type": "object",
+                    "description": "documentation of preservation, preparation, loans, any modification to original sample after acession into repository. Events before assesion to repository should be documented as part of the samplingEvent",
                     "properties": {
-                        "@type": {"const": "Event"},
+                        "type": {"const": "Event"},
+                        "name":{
+                            "type":"string",
+                            "description":"short text string to identify and summarize curation"
+                        },
                         "description:": {"type": "string"},
                         "maintainer": {
                             "description": "Information about where the sample is currently stored. Implements iSamples curation_location",
@@ -111,24 +123,28 @@
                             "items": {"type": "string"},
                             "type": "array"
                         },
+                        "location": {
+                            "type": "string",
+                            "description": "Information about where and how the sample is currently stored."
+                        },
                         "subEvent": {
                             "type": "array",
-                            "description":"an array of timestamped events in curation history. If sample is loaned, moved to different repository, or conditions of access change, these should be recorded as events",
+                            "description": "an array of timestamped events in curation history. If sample is loaned, moved to different repository, or conditions of access change, these should be recorded as events.",
                             "items": {"$ref": "#/definitions/SpecimenCurationEvent"}
                         }
                     }
                 }
             },
             "required": [
-                "@id",
+                "id",
                 "name",
                 "category"
             ]
         }
     },
     "required": [
-        "@type",
-        "@id",
+        "type",
+        "id",
         "dcterms:conformsTo",
         "about"
     ],
@@ -139,8 +155,8 @@
             "additionalProperties": true,
             "description": "object to represent a person who plays a role relative the project.",
             "properties": {
-                "@type": {"const": "Person"},
-                "@id": {
+                "type": {"const": "Person"},
+                "id": {
                     "type": "string",
                     "description": "identifier for the person, recommend ORCID"
                 },
@@ -156,14 +172,14 @@
                     "type": "object",
                     "description": "e-mail address, telephone number, mailing address, or web site through which an agent can be contacted. Something that should be stable and reliable.",
                     "properties": {
-                        "@type": {"const": "ContactPoint"},
+                        "type": {"const": "ContactPoint"},
                         "name": {"type": "string"},
                         "email": {"type": "string"},
                         "telephone": {"type": "string"}
                     }
                 },
                 "identifier": {
-                    "description": "other identifiers for the person. @id should be ORCID or similar resolvable identifier, use this key for other identifiers",
+                    "description": "other identifiers for the person. id should be ORCID or similar resolvable identifier, use this key for other identifiers",
                     "type": "array",
                     "items": {"$ref": "#/definitions/IdentifierObject"}
                 }
@@ -175,8 +191,8 @@
             "additionalProperties": true,
             "description": "object to represent a person who plays a role relative the project.",
             "properties": {
-                "@type": {"const": "Organization"},
-                "@id": {
+                "type": {"const": "Organization"},
+                "id": {
                     "type": "string",
                     "description": "identifier for the organization, recommend ROR"
                 },
@@ -188,7 +204,7 @@
                     "type": "object",
                     "description": "e-mail address, telephone number, mailing address, or web site through which an agent can be contacted. Something that should be stable and reliable.",
                     "properties": {
-                        "@type": {"const": "ContactPoint"},
+                        "type": {"const": "ContactPoint"},
                         "name": {"type": "string"},
                         "email": {"type": "string"},
                         "telephone": {"type": "string"}
@@ -205,7 +221,7 @@
             "type": "object",
             "description": "use schema.org Role pattern; assume base property is 'sdo:participant'; that gets repeated inside the Role object.",
             "properties": {
-                "@type": {"const": "Role"},
+                "type": {"const": "Role"},
                 "roleName": {
                     "type": "array",
                     "items": [
@@ -229,13 +245,13 @@
         "IdentifierObject": {
             "title": "Identifier object",
             "type": "object",
-            "description": "Use schema.org PropertyValue object to represent an identifier; use for identifiers that are not URIs, and for alternate identifiers. Preferred identifier should be in @id; Use Property value pattern (https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#identifier). ",
+            "description": "Use schema.org PropertyValue object to represent an identifier; use for identifiers that are not URIs, and for alternate identifiers. Preferred identifier should be in id; Use Property value pattern (https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#identifier). ",
             "properties": {
-                "@id": {
+                "id": {
                     "type": "string",
                     "description": "the identifier string value"
                 },
-                "@type": {"const": "PropertyValue"},
+                "type": {"const": "PropertyValue"},
                 "propertyID": {
                     "type": "string",
                     "description": "Identifier scheme URI. identifier for the kind of identifier provided here, e.g. ISSN, ark, ISBN"
@@ -260,11 +276,11 @@
             "type": "object",
             "title": "SamplingEvent",
             "properties": {
-                "@id": {
+                "id": {
                     "description": "A string that identifies the samplingEvent. Use to gather all samples from a single sampling event.",
                     "type": "string"
                 },
-                "@type": {"const": "Event"},
+                "type": {"const": "Event"},
                 "name": {
                     "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
                     "type": "string"
@@ -331,7 +347,7 @@
                             "type": "object",
                             "description": "geopatial location of site; required default is WGS84 latitude, longitude in decimal degrees. Elevation as a string with number, unit of measure, and datum.",
                             "properties": {
-                                "@type": {"const": "GeoCoordinates"},
+                                "type": {"const": "GeoCoordinates"},
                                 "elevation": {
                                     "type": "string",
                                     "description": "string that specifies elevation, units of measure, and the vertical reference datum, e.g. mean sea level, ground surface..."
@@ -354,7 +370,7 @@
             "type": "object",
             "description": "Use schema.org DefinedTerm pattern (see https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#keywords) to associate keyword string with a scheme (DefinedTermSet) name,and optional scheme URI and value URI. The scoped name keywords can be used to categorize the sample using a formal vocabulary. ",
             "properties": {
-                "@type": {"const": "DefinedTerm"},
+                "type": {"const": "DefinedTerm"},
                 "name": {
                     "description": "string label for the keyword concept.",
                     "type": "string"
@@ -370,7 +386,7 @@
                 "inDefinedTermSet": {
                     "type": "object",
                     "properties": {
-                        "@type": {"const": "DefinedTermSet"},
+                        "type": {"const": "DefinedTermSet"},
                         "name": {
                             "description": "string label for the concept scheme or vocabulary within which the keyword concept is defined. The scheme name can be used to scope keyword to particular categories, e.g. -CGI rock classification-, -GCMD keywords-, -Getty AAT- ",
                             "type": "string"
@@ -388,7 +404,7 @@
             "type": "object",
             "description": "semantic link to a related resource.",
             "properties": {
-                "@type": {"const": "LinkRole"},
+                "type": {"const": "LinkRole"},
                 "name": {
                     "description": "a short human intelligible string to label the link.",
                     "type": "string"
@@ -412,8 +428,8 @@
                     "description": "identifier for the target resource in the relationship. Start with string, should be Identifier object.",
                     "type": "object",
                     "properties": {
-                        "@type": {"const": "EntryPoint"},
-                        "@id": {"type": "string"},
+                        "type": {"const": "EntryPoint"},
+                        "id": {"type": "string"},
                         "url": {"type": "string"},
                         "name": {"type": "string"},
                         "encodingType": {
@@ -431,7 +447,7 @@
             "additionalProperties": false,
             "description": "Information about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.",
             "properties": {
-                "@type": {"const": "Event"},
+                "type": {"const": "Event"},
                 "name": {
                     "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
                     "type": "string"
