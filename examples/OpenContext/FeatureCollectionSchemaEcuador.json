@@ -1,0 +1,99 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "type": "object",
+    "properties": {
+        "type": {"type": "string"},
+        "features": {"$ref": "#/$defs/features_type"}
+    },
+    "$defs": {
+        "coordinates_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {"type": "number"}
+        },
+        "geometry_type": {
+            "type": "object",
+            "properties": {
+                "id": {"type": "string"},
+                "type": {"type": "string"},
+                "coordinates": {"$ref": "#/$defs/coordinates_type"}
+            }
+        },
+        "when_type": {
+            "type": "object",
+            "properties": {
+                "id": {"type": "string"},
+                "event_type": {"type": "string"},
+                "type": {"type": "string"},
+                "start": {"type": "string"},
+                "stop": {"type": "string"}
+            }
+        },
+        "properties_type": {
+            "type": "object",
+            "properties": {
+                "URI": {"type": "string"},
+                "Citation URI": {"type": "string"},
+                "Item Label": {"type": "string"},
+                "Project": {"type": "string"},
+                "Project URI": {"type": "string"},
+                "Context": {"type": "string"},
+                "Context URI": {"type": "string"},
+                "Early BCE/CE": {"type": "integer"},
+                "Late BCE/CE": {"type": "integer"},
+                "Item Category": {"type": "string"},
+                "icon": {"type": "string"},
+                "Thumbnail": {"type": "string"},
+                "Published Date": {"type": "string"},
+                "Updated Date": {"type": "string"},
+                "Has type": {"type": "string"},
+                "Has type [URI]": {"type": "string"},
+                "Consists of": {"type": "string"},
+                "Consists of [URI]": {"type": "string"},
+                "Temporal Coverage": {"type": "string"},
+                "Temporal Coverage [URI]": {"type": "string"},
+                "Spatial Coverage": {"type": "string"},
+                "Spatial Coverage [URI]": {"type": "string"},
+                "Subject": {"type": "string"},
+                "Subject [URI]": {"type": "string"},
+                "Creator": {"type": "string"},
+                "Creator [URI]": {"type": "string"},
+                "License": {"type": "string"},
+                "License [URI]": {"type": "string"}
+            }
+        },
+        "features_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {"type": "string"},
+                    "label": {"type": "string"},
+                    "slug": {"type": "string"},
+                    "rdfs:isDefinedBy": {"type": "string"},
+                    "oc-api:descriptiveness": {"type": "number"},
+                    "oc-api:human-remains-related": {"type": "boolean"},
+                    "type": {"type": "string"},
+                    "category": {"type": "string"},
+                    "geometry": {"$ref": "#/$defs/geometry_type"},
+                    "when": {"$ref": "#/$defs/when_type"},
+                    "properties": {"$ref": "#/$defs/properties_type"}
+                },
+                "required": [
+                    "rdfs:isDefinedBy",
+                    "oc-api:human-remains-related",
+                    "geometry",
+                    "id",
+                    "label",
+                    "oc-api:descriptiveness",
+                    "type",
+                    "category",
+                    "when",
+                    "slug",
+                    "properties"
+                ]
+            }
+        }
+    }
+}

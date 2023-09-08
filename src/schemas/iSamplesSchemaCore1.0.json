@@ -253,7 +253,7 @@
                     "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
                     "type": "string"
                 },
-                "location": {
+                "sample_location": {
                     "$ref": "#/definitions/GeospatialCoordLocation",
                     "description": "geopatial location of site; required default is WGS84 latitude, longitude in decimal degrees. Elevation as a string with number, unit of measure, and datum."
                 },

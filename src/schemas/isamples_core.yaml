@@ -80,7 +80,7 @@ classes:
           - identifier
           - description
           - label
-          - location
+          - sample_location
           - place_name
           - is_part_of
 
@@ -249,7 +249,7 @@ slots:
         domain: GeospatialCoordLocation
         description: angular coordinate measured positive eastward from the prime
             meridian.
-    location:
+    sample_location:
         range: GeospatialCoordLocation
         domain: SamplingSite
         description: geopatial location of site; required default is WGS84 latitude,
