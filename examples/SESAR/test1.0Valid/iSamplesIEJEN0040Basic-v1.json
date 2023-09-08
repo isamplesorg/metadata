@@ -39,10 +39,10 @@
             }
         ],
         "result_time": "2017-09-01",
-        "samplingSite": {
+        "sampling_site": {
             "description": "small pool near stream 3 ~20 m from stream",
             "label": "",
-            "location": {
+            "sample_location": {
                 "elevation": "",
                 "latitude": 60.25455,
                 "longitude": -149.3576

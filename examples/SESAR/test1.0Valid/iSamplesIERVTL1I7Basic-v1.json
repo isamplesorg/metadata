@@ -44,10 +44,10 @@
                 "contact_information": "zperzan@stanford.edu"
             }
         ],
-        "samplingSite": {
+        "sampling_site": {
             "description": "",
             "label": "",
-            "location": {
+            "sample_location": {
                 "elevation": "-150.0 cm below surface",
                 "latitude": 42.9884,
                 "longitude": -108.4003

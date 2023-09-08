@@ -30,10 +30,10 @@
         "has_feature_of_interest": "[infer from specimen category, locality; need to so some unique values analysis]",
         "responsibility": [{"role":"for each {name} in parent/collectorList: 'collector:& {name}'","name":"for each {name} in parent/principalInvestigator: 'principleInvestigator: & {name}'; for each {name} in record/identifiedBy 'identifiedBy: & {name}';  for each {name} in parent/taxteam 'taxonomy team: & {name}' for each {name} in parent/eventEnteredBy 'registrant: & {name}'"}],
         "result_time": "parent/yearCollected & parent/monthCollected & parent/dayCollected, YYYY-MM-DD format",
-        "samplingSite": {
+        "sampling_site": {
             "description": "concatenate other stuff from parent.  Include min and max elevation if both present and not equal: 'elevation range:'& parent/maximumElevationInMeters &'-' & parent/maximumElevationInMeters. 'coordinate uncertainty:'& parent/coordinateUncertaintyInMeters.  ",
             "label": "parent/locality",
-            "location": {
+            "sample_location": {
                 "elevation": "parent/maximumElevationInMeters",
                 "latitude": "[parent/decimalLatitude]",
                 "longitude": "[decimalLatitude/decimalLongitude]"
@@ -50,18 +50,18 @@
         "curation_location": "record/institutionCode [?this field should be where sample is stored/curated]",
         "responsibility": []
     },
-    "relatedResource": [
+    "related_resource": [
         {
             "label": "child/entity",
             "description": "",
             "target": "child/bcid",
-            "relationshipType": "if tissue, relation is 'tissue extract'; if photo, relation is 'image of'"
+            "relationship": "if tissue, relation is 'tissue extract'; if photo, relation is 'image of'"
         },
         {
             "label": "associated sequence",
             "description": "",
             "target": "associatedSequences, one relation for each sequence",
-            "relationshipType": "associated sequence"
+            "relationship": "associated sequence"
         }
     ]
 }

@@ -34,10 +34,10 @@
         "has_feature_of_interest": "",
         "responsibility": [{"role":"team member","name":"R. Vrijenhoek et al."}],
         "result_time": "1997-07-10",
-        "samplingSite": {
+        "sampling_site": {
             "description": "verbatimLatitude: 37-17.629N | verbatimLongitude:32-16.532W",
             "label": "MID-ATLANTIC RIDGE - Lucky Strike",
-            "location": {
+            "sample_location": {
                 "elevation": "maximumDepthInMeters: 1733.0",
                 "latitude": 37.2938,
                 "longitude": -32.2755

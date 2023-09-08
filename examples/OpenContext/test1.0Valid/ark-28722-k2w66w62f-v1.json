@@ -78,10 +78,10 @@
             }
         ],
         "result_time": "2021-06-04",
-        "samplingSite": {
+        "sampling_site": {
             "description": "",
             "label": "DU 1278",
-            "location": {
+            "sample_location": {
                 "elevation": "",
                 "latitude": 37.90846,
                 "longitude": 22.966693

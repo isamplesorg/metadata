@@ -39,10 +39,10 @@
             }
         ],
         "result_time": "2006-08-11",
-        "samplingSite": {
+        "sampling_site": {
             "description": "Not Provided",
             "label": "Not Provided",
-            "location": {
+            "sample_location": {
                 "elevation": "-1010.6 m",
                 "latitude": -64.8619,
                 "longitude": -64.208
@@ -72,5 +72,5 @@
             }
         ]
     },
-    "relatedResource": []
+    "related_resource": []
 }

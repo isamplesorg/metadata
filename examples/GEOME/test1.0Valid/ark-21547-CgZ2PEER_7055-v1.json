@@ -59,10 +59,10 @@
             }
         ],
         "result_time": "2017-06-04",
-        "samplingSite": {
+        "sampling_site": {
             "description": "",
             "label": "Gili Asahan",
-            "location": {
+            "sample_location": {
                 "elevation": "",
                 "latitude": -8.73642,
                 "longitude": 115.88083
