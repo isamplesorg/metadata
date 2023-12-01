@@ -3,7 +3,7 @@ name: physicalSample
 title: Schema for documenting physical samples
 description: Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change 'id' to '@id' and 'schema' to '$schema'.  Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07. SMR 2023-03-17. Move authorized_by into SamplingEvent, change keywords to list of Keyword objects with string, uri, scheme and scheme URI. Reorder elements in slot list. Update scheme URI to 1.0 2023-06-13 SMR add project property on SamplingEvent, with text or URI value. 
 license: https://creativecommons.org/publicdomain/zero/1.0/
-version: 20230317
+version: 20230613
 prefixes:
     linkml: https://w3id.org/linkml/
     isam: http://resource.isamples.org/schema/
