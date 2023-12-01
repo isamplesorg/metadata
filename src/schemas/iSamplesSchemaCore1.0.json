@@ -83,7 +83,7 @@
             "description": "object to represent a person who plays a role relative to sample collection or curation.",
             "properties": {
                 "name": {
-                    "description": "string, name of a person. Format {}firstName MI lastName}.",
+                    "description": "string, name of a person. Format {firstName MI lastName}.",
                     "type": "string"
                 },
                 "affiliation": {
