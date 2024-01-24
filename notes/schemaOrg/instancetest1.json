@@ -21,7 +21,7 @@
     "about": {
         "type":  "Thing",
         "id": "https://igsn.org/slk222-046537",
-        "additionalType": ["https://w3id.org/isample/vocabulary/specimentype/0.9/othersolidobject"],
+        "additionalType": ["https://w3id.org/isample/vocabulary/specimentype/1.0/othersolidobject"],
         "name": "really cool rock",
         "description": "Dark purple-gray chunk of leaverite, contains Austinite, Tilasite, Quartz and native Gold.",
         "identifier": [
@@ -86,20 +86,20 @@
             {
                 "type": "DefinedTerm",
                 "name": "Rock",
-                "id": "https://w3id.org/isample/vocabulary/material/0.9/rock",
+                "id": "https://w3id.org/isample/vocabulary/material/1.0/rock",
                 "inDefinedTermSet": {
                     "type": "DefinedTermSet",
-                    "id": "https://w3id.org/isample/vocabulary/specimentype/0.9/materialsvocabulary",
+                    "id": "https://w3id.org/isample/vocabulary/specimentype/1.0/materialsvocabulary",
                     "name": "iSamples Materials Vocabulary"
                 }
             },
             {
                 "type": "DefinedTerm",
                 "name": "Earth Interior",
-                "id": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/earthinterior",
+                "id": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/earthinterior",
                 "inDefinedTermSet": {
                     "type": "DefinedTermSet",
-                    "id": "https://w3id.org/isample/vocabulary/specimentype/0.9/sampledfeaturevocabulary",
+                    "id": "https://w3id.org/isample/vocabulary/specimentype/1.0/sampledfeaturevocabulary",
                     "name": "Sampled Feature Type vocabulary"
                 }
             }
