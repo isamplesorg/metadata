@@ -43,13 +43,8 @@
                 },
                 "additionalType": {
                     "type": "array",
-                    "description": "a string (term or uri) or ScopedName (label, uri, definedTermSet) that identifies a more granular type for the described resource. Recommendation is use on of the terms from https://w3id.org/isample/vocabulary/specimentype",
-                    "items": {
-                        "oneOf": [
-                            {"type": "string"},
-                            {"$ref": "#/definitions/ScopedName"}
-                        ]
-                    }
+                    "description": "a string (term or uri) that identifies a more granular type for the described resource. Recommendation is use on of the terms from https://w3id.org/isample/vocabulary/specimentype. Ideally should be a ScopedName, but this would throw error with validator.schema.org",
+                    "items": {"type": "string"}
                 },
                 "name": {
                     "type": "string",
