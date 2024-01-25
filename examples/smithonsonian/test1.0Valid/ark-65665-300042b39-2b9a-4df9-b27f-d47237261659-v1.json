@@ -47,10 +47,10 @@
         "has_feature_of_interest": "",
         "responsibility": [],
         "result_time": "2016-02-19",
-        "samplingSite": {
+        "sampling_site": {
             "description": "ca. 2 km SE of, vicinity of abandoned lodge | verbatimElevation：ca. 1470 m | verbatimLatitude: 11 46 14 N | verbatimLongitude: 42 39 07 E",
             "label": "Day (village), Day Forest National Park",
-            "location": {
+            "sample_location": {
                 "elevation": "maximumElevationInMeters: 1470 | minimumElevationInMeters：1470| verbatimElevation：1470",
                 "latitude": 11.7706,
                 "longitude": 42.6519

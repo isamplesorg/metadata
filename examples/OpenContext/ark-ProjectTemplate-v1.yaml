@@ -27,10 +27,10 @@ produced_by:        # the sampling event
   - role: Collector
     name: # Required at collection time. This will be populated at start of event based on who is logged in to collect data.
   result_time: '2017-06-04' # populate at collection time, could be start or end of collecting session, or a time interval with begin/end.
-  samplingSite:  # the high-level description of the sample site, e.g. Poggio Civitate, 
+  sampling_site:  # the high-level description of the sample site, e.g. Poggio Civitate, 
     description: #template can contain generic site description, sample collectors add detail for individual samples
     label: # some standard syntax with generic name for site and detail name for particular sampling event; Template prepopulate with generic name.
-    location:  # locations specified with lat/long; this could be centroid for the site shared by all samples, or more granular coordinates within site. If samples are located using a site-specific grid, those should be described in the descrition. 
+    sample_location:  # locations specified with lat/long; this could be centroid for the site shared by all samples, or more granular coordinates within site. If samples are located using a site-specific grid, those should be described in the descrition. 
       elevation: ''
       latitude: -8.73642
       longitude: 115.88083

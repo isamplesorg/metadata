@@ -54,10 +54,10 @@
             }
         ],
         "result_time": "2016-11-17",
-        "samplingSite": {
+        "sampling_site": {
             "description": "locationID：HAZ | verbatimDepth: Intertidal | verbatimLatitude: 35.2896614 | verbatimLongitude: -120.88325 [NOTE-lat and long place at point near Hazard canyon, north of Montana del Oro State Park...]",
             "label": "MARINe Site, Montana del Oro State Park",
-            "location": {
+            "sample_location": {
                 "elevation": "",
                 "latitude": 35.2897,
                 "longitude": -120.883

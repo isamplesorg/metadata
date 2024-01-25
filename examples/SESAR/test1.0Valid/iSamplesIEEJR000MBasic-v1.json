@@ -49,10 +49,10 @@
             }
         ],
         "result_time": "2021-01-19",
-        "samplingSite": {
+        "sampling_site": {
             "description": "Not Provided",
             "label": "Not Provided",
-            "location": {
+            "sample_location": {
                 "elevation": "Not Provided",
                 "latitude": 36.4617,
                 "longitude": -118.5839

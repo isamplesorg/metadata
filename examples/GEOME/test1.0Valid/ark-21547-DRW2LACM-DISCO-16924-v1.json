@@ -82,10 +82,10 @@
             }
         ],
         "result_time": "2019-08-25",
-        "samplingSite": {
+        "sampling_site": {
             "description": "Depth to bottom 4.57 m",
             "label": "San Pedro Bay, breakwater",
-            "location": {
+            "sample_location": {
                 "elevation": "",
                 "latitude": 33.7345167,
                 "longitude": -118.277367
@@ -107,18 +107,18 @@
         "curation_location": "",
         "responsibility": []
     },
-    "relatedResource": [
+    "related_resource": [
         {
             "label": "child tissue sample LACM:DISCO:16924:9597",
             "description": "",
             "target": "ark:/21547/DRY2LACM:DISCO:16924:9597",
-            "relationshipType": "subsample"
+            "relationship": "subsample"
         },
         {
             "label": "child tissue sample LACM:DISCO:16924.2",
             "description": "",
             "target": "ark:/21547/DRY2LACM:DISCO:16924.2",
-            "relationshipType": "subsample"
+            "relationship": "subsample"
         }
     ]
 }

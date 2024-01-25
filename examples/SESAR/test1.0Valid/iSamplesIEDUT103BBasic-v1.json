@@ -51,10 +51,10 @@
         "has_feature_of_interest": "coral reef",
         "result_time": "2015-06-19",
         "responsibility": [],
-        "samplingSite": {
+        "sampling_site": {
             "description": "Between Buccaneer Villa, Treasure Beach, and Great Bay",
             "label": "Treasure Beach",
-            "location": {
+            "sample_location": {
                 "elevation": "1.626 m above MSL",
                 "latitude": 17.8845,
                 "longitude": -77.7711

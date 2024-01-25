@@ -47,14 +47,10 @@
         "description": "expeditionCode: HBOI_CubaPor_P01; projectId: 85",
         "has_feature_of_interest": "coral reef",
         "responsibility": [],
-        "samplingSite": {
+        "sampling_site": {
             "description": "",
             "label": "Cuba",
-            "location": {
-                "elevation": "",
-                "latitude": "",
-                "longitude": ""
-            },
+            "sample_location": {},
             "place_name": ["Cuba"]
         }
     },
@@ -67,10 +63,12 @@
             {"name": "HBOI"}
         ]
     },
-    "relatedResource": {
-        "label": "Tissue",
-        "description": "",
-        "target": "ark:/21547/CHl2C02_201705281001",
-        "relationship": "tissue extract"
-    }
+    "related_resource": [
+        {
+            "label": "Tissue",
+            "description": "",
+            "target": "ark:/21547/CHl2C02_201705281001",
+            "relationship": "tissue extract"
+        }
+    ]
 }

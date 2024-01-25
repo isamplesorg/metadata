@@ -36,10 +36,10 @@
             }            
         ],
         "result_time": "2013-09-14",
-        "samplingSite": {
+        "sampling_site": {
             "description": "Trevi:Jason Tmax=257.9 C. In the direct flow at this small anhydrite mound (anhydrite knocked over).",
             "label": "Not Provided",
-            "location": {
+            "sample_location": {
                 "elevation": "-1520.0 m",
                 "latitude": 45.9463,
                 "longitude": -129.9837

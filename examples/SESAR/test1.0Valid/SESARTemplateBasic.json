@@ -16,10 +16,10 @@
         "description": "",
         "has_feature_of_interest": "",
         "responsibility": [{"role":"","name":""}],
-        "samplingSite": {
+        "sampling_site": {
             "description": "",
             "label": "",
-            "location": {
+            "sample_location": {
                 "elevation": "",
                 "latitude": 0,
                 "longitude": 0
