@@ -19,6 +19,16 @@
                 {"$ref": "#/definitions/AgentOrganization"}
             ]
         },
+        "sdLicense": {
+            "type": "object",
+            "properties": {
+                "type": {"const": "CreativeWork"},
+                "name": {"type": "string"},
+                "description": {"type": "string"},
+                "url": {"type": "string"}
+            },
+            "description": "A license document that applies to this material sample metadata record. Restrictions on the use of the sample should be indicated in the curation/conditionsOfAccess property"
+        },
         "about": {
             "type": "object",
             "description": "this is the part of the metadata that describes the sample, with content defined by http://resource.isamples.org/schema/1.0",
