@@ -31,6 +31,16 @@
                     "const": "Thing",
                     "description": "typing as thing leads to lots of warnings about properties that are not 'expected' for Thing, but seems like the least incoherent type to assign to a material sample..."
                 },
+                "additionalType": {
+                    "type": "array",
+                    "description": "a string (term or uri) or ScopedName (label, uri, definedTermSet) that identifies a more granular type for the described resource. Recommendation is use on of the terms from https://w3id.org/isample/vocabulary/specimentype",
+                    "items": {
+                        "oneOf": [
+                            {"type": "string"},
+                            {"$ref": "#/definitions/ScopedName"}
+                        ]
+                    }
+                },
                 "name": {
                     "type": "string",
                     "description": "this is the iSamples label"
@@ -60,7 +70,7 @@
                 },
                 "category": {
                     "type": "array",
-                    "description": "array containing required sample category terms for material type and sampledFEature. The specimenType (materialSampleType) is specified as about/additionalType, above. Formally defined extension vocabulary terms (that are subclassed from an  iSample vocabulary) are also included here",
+                    "description": "array containing required sample category terms for material type and sampledFeature. The specimenType (materialSampleType) is specified as about/additionalType, above. Formally defined extension vocabulary terms (that are subclassed from an  iSample vocabulary) are also included here",
                     "items": {
                         "type": "object",
                         "title": "iSamples vocabulary concept",
@@ -109,14 +119,14 @@
                     "description": "documentation of preservation, preparation, loans, any modification to original sample after acession into repository. Events before assesion to repository should be documented as part of the samplingEvent",
                     "properties": {
                         "type": {"const": "Event"},
-                        "name":{
-                            "type":"string",
-                            "description":"short text string to identify and summarize curation"
+                        "name": {
+                            "type": "string",
+                            "description": "short text string to identify and summarize curation"
                         },
                         "description:": {"type": "string"},
                         "maintainer": {
                             "description": "Information about where the sample is currently stored. Implements iSamples curation_location",
-                            "$ref": "#/definitions/AgentOrganization"
+                            "$ref": "#/definitions/AgentRole"
                         },
                         "conditionsOfAccess": {
                             "description": "Cultural, legal, or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site. Implements iSamples access_constraints",
@@ -297,7 +307,7 @@
                     ]
                 },
                 "participant": {
-                    "description": "String with person name and affiliation, or organization name, and their role relative to the sampleing event.",
+                    "description": "Agent with person name and affiliation, or organization name, and their role relative to the sampling event.",
                     "type": "array",
                     "items": {"$ref": "#/definitions/AgentRole"}
                 },
