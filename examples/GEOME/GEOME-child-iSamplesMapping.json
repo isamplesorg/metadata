@@ -16,10 +16,10 @@
         "has_feature_of_interest": "",
         "responsibility": [{"role":"collector","name":"who did the tissue extract, if available"}],
         "result_time": "time the tissue extract was done, if available",
-        "samplingSite": {
+        "sampling_site": {
             "description": "This is same as parent sample; concatenate other stuff from parent.  Include min and max elevation if both present and not equal: 'elevation range:'& parent/maximumElevationInMeters &'-' & parent/maximumElevationInMeters. 'coordinate uncertainty:'& parent/coordinateUncertaintyInMeters.  ",
             "label": "parent/locality",
-            "location": {
+            "sample_location": {
                 "elevation": "parent/maximumElevationInMeters",
                 "latitude": "[parent/decimalLatitude]",
                 "longitude": "[decimalLatitude/decimalLongitude]"
@@ -36,10 +36,10 @@
         "curation_location": "'tissueWell:' & child/tissueWell & 'tissuePlate:' & child/tissuePlate",
         "responsibility": []
     },
-    "relatedResource": [ {
+    "related_resource": [ {
         "label":"'parent sample' & record/materialSampleID",
         "description":"",
         "target":"record/bcid",
-        "relationshipType":"'derived_from'"
+        "relationship":"'derived_from'"
     } ]
 }

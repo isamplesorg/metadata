@@ -1,0 +1,241 @@
+{
+    "id": "https://opencontext.org/subjects/f423496d-c695-46da-97c5-aacc89553f69",
+    "uuid": "f423496d-c695-46da-97c5-aacc89553f69",
+    "slug": "105-8110546",
+    "label": "8110546",
+    "category": "oc-gen:cat-pottery",
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "id": "#feature-1",
+            "geometry": {
+                "id": "#geo-geom-efe8f73b-3cce-c234-fe7b-ad95334132d7",
+                "type": "Point",
+                "coordinates": [
+                    35.52837,
+                    31.13142
+                ]
+            },
+            "properties": {
+                "id": "#feature-props-1",
+                "href": "https://opencontext.org/subjects/f423496d-c695-46da-97c5-aacc89553f69",
+                "type": "oc-gen:general-time-space",
+                "reference_type": "inferred",
+                "reference_uri": "https://opencontext.org/subjects/efe8f73b-2dc7-45e4-8ee9-04b8c8b17ec8",
+                "reference_label": "Numayra",
+                "reference_slug": "105-numayra",
+                "contained_in_region": false,
+                "location_precision_note": "Location data available with no intentional reduction in precision, and no documented estimates of precision or accuracy."
+            },
+            "when": {
+                "id": "#feature-when-efe8f73b-3cce-c234-fe7b-ad95334132d7",
+                "type": "Interval",
+                "start": "-2849",
+                "stop": "-2549",
+                "reference_type": "inferred",
+                "reference_uri": "https://opencontext.org/subjects/efe8f73b-2dc7-45e4-8ee9-04b8c8b17ec8",
+                "reference_label": "Numayra",
+                "reference_slug": "105-numayra"
+            }
+        }
+    ],
+    "oc-gen:has-contexts": [
+        {
+            "id": "https://opencontext.org/subjects/a6c5488c-98de-4e5a-9654-c1a2be698840",
+            "slug": "oc-asia",
+            "label": "Asia",
+            "type": "oc-gen:cat-region"
+        },
+        {
+            "id": "https://opencontext.org/subjects/1f3a0b9f-ddb6-64f1-bf2d-65e364bdc942",
+            "slug": "jordan",
+            "label": "Jordan",
+            "type": "oc-gen:cat-region"
+        },
+        {
+            "id": "https://opencontext.org/subjects/efe8f73b-2dc7-45e4-8ee9-04b8c8b17ec8",
+            "slug": "105-numayra",
+            "label": "Numayra",
+            "type": "oc-gen:cat-site"
+        },
+        {
+            "id": "https://opencontext.org/subjects/503a2830-3c9c-42e5-affa-723b4f559b57",
+            "slug": "105-unit-se-9-1",
+            "label": "Unit SE 9-1",
+            "type": "oc-gen:cat-square"
+        },
+        {
+            "id": "https://opencontext.org/subjects/7c767465-af87-49ef-97a2-3d77e2885eea",
+            "slug": "105-locus-22-22",
+            "label": "Locus 22",
+            "type": "oc-gen:cat-locus"
+        }
+    ],
+    "oc-gen:has-obs": [
+        {
+            "id": "#obs-oc-default-obs",
+            "label": "Main Observation",
+            "oc-pred:105-registration-number": [
+                {
+                    "@en": "8110546"
+                }
+            ],
+            "oc-pred:105-field": [
+                {
+                    "@en": "43.81"
+                }
+            ],
+            "oc-pred:105-excavation-unit": [
+                {
+                    "@en": "SE 9/1"
+                }
+            ],
+            "oc-pred:105-basket": [
+                {
+                    "@en": "23"
+                }
+            ],
+            "oc-pred:105-fabric-color": [
+                {
+                    "@en": "Reddish-yellow (5YR7/8; 5YR6/8) (21)"
+                }
+            ],
+            "oc-pred:105-fabric-texture": [
+                {
+                    "id": "https://opencontext.org/types/406f79f8-6255-4850-a50c-f17b20ea1516",
+                    "slug": "105-medium-coarse-3",
+                    "label": "Medium-coarse (3)"
+                }
+            ],
+            "oc-pred:105-temper": [
+                {
+                    "id": "https://opencontext.org/types/e9f71ea4-0108-4e4a-8f39-37adcdf6a6f7",
+                    "slug": "105-limestone-l",
+                    "label": "Limestone (L)"
+                }
+            ],
+            "oc-pred:105-fabric-core": [
+                {
+                    "id": "https://opencontext.org/types/c1a6d802-3044-4a89-a9f1-0fd4ee67450b",
+                    "slug": "105-core-of-more-than-50-2",
+                    "label": "Core of more than 50% (2)"
+                }
+            ],
+            "oc-pred:105-slip-placement": [
+                {
+                    "id": "https://opencontext.org/types/4af2c3da-4888-468a-989f-68835ca32967",
+                    "slug": "105-none-0",
+                    "label": "None (0)"
+                }
+            ],
+            "oc-pred:105-burnish-placement": [
+                {
+                    "id": "https://opencontext.org/types/1c043807-0c93-49fe-bc66-06f2ed39a718",
+                    "slug": "105-none-0-1",
+                    "label": "None (0)"
+                }
+            ],
+            "oc-pred:105-wash-placement": [
+                {
+                    "id": "https://opencontext.org/types/fd949414-ec8a-48ff-b7f4-fe07253bcb8c",
+                    "slug": "105-none-0-2",
+                    "label": "None (0)"
+                }
+            ],
+            "oc-pred:105-excised-or-incised-decoration": [
+                {
+                    "id": "https://opencontext.org/types/318330d6-5fba-417e-bd1b-6ef08a6a91b0",
+                    "slug": "105-none-00",
+                    "label": "None (00)"
+                }
+            ],
+            "oc-pred:105-applique-decoration": [
+                {
+                    "id": "https://opencontext.org/types/010a58d8-b2bb-4d2f-8a2f-362bc2b4c74c",
+                    "slug": "105-none-0-4",
+                    "label": "None (0)"
+                }
+            ],
+            "oc-pred:105-base-impression": [
+                {
+                    "id": "https://opencontext.org/types/b8ab4e31-1939-4178-9c9d-e3e4030962f6",
+                    "slug": "105-none-0-5",
+                    "label": "None (0)"
+                }
+            ],
+            "oc-pred:105-vessel-types": [
+                {
+                    "id": "https://opencontext.org/types/80dbf3fa-06eb-414f-ac25-a5df804b36f3",
+                    "slug": "105-wide-mouth-necked-jar-jr",
+                    "label": "Wide-mouth necked jar (JR)"
+                }
+            ],
+            "oc-pred:105-construction-technique": [
+                {
+                    "id": "https://opencontext.org/types/5dd5219d-898a-4906-9052-731bcb753103",
+                    "slug": "105-tournette-t",
+                    "label": "Tournette (T)"
+                }
+            ]
+        },
+        {
+            "id": "#obs-oc-equiv-ld-obs",
+            "label": "Standards Annotations",
+            "https://erlangen-crm.org/current/P2_has_type": [
+                {
+                    "id": "https://vocab.getty.edu/aat/300195347",
+                    "slug": "getty-aat-300195347",
+                    "label": "jars"
+                }
+            ],
+            "https://erlangen-crm.org/current/P45_consists_of": [
+                {
+                    "id": "https://vocab.getty.edu/aat/300235507",
+                    "slug": "getty-aat-300235507",
+                    "label": "ceramic (material)"
+                }
+            ]
+        }
+    ],
+    "dc-terms:title": "8110546 from Asia/Jordan/Numayra/Unit SE 9-1/Locus 22",
+    "dc-terms:issued": "2019-10-05",
+    "dc-terms:modified": "2022-09-29",
+    "dc-terms:creator": [
+        {
+            "id": "https://opencontext.org/persons/265a123e-3941-41b2-b309-5c4dd8208250",
+            "slug": "105-meredith-s-chesson",
+            "label": "Meredith S. Chesson",
+            "type": "https://xmlns.com/foaf/spec/#term_Person"
+        },
+        {
+            "id": "https://opencontext.org/persons/35876789-332c-4e26-89e4-1c30c9b6a0c2",
+            "slug": "105-r-thomas-schaub",
+            "label": "R. Thomas Schaub",
+            "type": "https://xmlns.com/foaf/spec/#term_Person"
+        },
+        {
+            "id": "https://opencontext.org/persons/f276c41d-f3c6-456c-b1c1-63325f52f37f",
+            "slug": "105-walter-e-rast",
+            "label": "Walter E. Rast",
+            "type": "https://xmlns.com/foaf/spec/#term_Person"
+        }
+    ],
+    "dc-terms:isPartOf": [
+        {
+            "id": "https://opencontext.org/projects/685a86a5-ed68-4f92-8c50-d2dfb8f20995",
+            "slug": "105-early-bronze-age-numayra",
+            "label": "Early Bronze Age Numayra"
+        }
+    ],
+    "dc-terms:license": [
+        {
+            "id": "https://creativecommons.org/licenses/by/4.0",
+            "slug": "cc-by-4",
+            "label": "Attribution 4.0 International (CC BY 4.0)"
+        }
+    ],
+    "dc-terms:identifier": [
+        "https://n2t.net/ark:/28722/k28d0b21r"
+    ]
+}

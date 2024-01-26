@@ -45,10 +45,10 @@
             }
         ],
         "result_time": "2016-06-23",
-        "samplingSite": {
+        "sampling_site": {
             "description": "Base of stairwell",
             "label": "Fort Snelling Short Barracks",
-            "location": {
+            "sample_location": {
                 "elevation": "",
                 "latitude": 44.893131,
                 "longitude": -93.181061

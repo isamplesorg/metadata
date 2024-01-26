@@ -1,17 +1,17 @@
 id: http://resource.isamples.org/schema/1.0
 name: physicalSample
 title: Schema for documenting physical samples
-description: Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change 'id' to '@id' and 'schema' to '$schema'.  Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07. SMR 2023-03-17. Move authorized_by into SamplingEvent, change keywords to list of Keyword objects with string, uri, scheme and scheme URI. Reorder elements in slot list.  Update scheme URI to 1.0. 
+description: Schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change 'id' to '@id' and 'schema' to '$schema'.  Schema name is iSamplesSchemaCore1.0.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07. SMR 2023-03-17. Move authorized_by into SamplingEvent, change keywords to list of Keyword objects with string, uri, scheme and scheme URI. Reorder elements in slot list. Update scheme URI to 1.0 2023-06-13 SMR add project property on SamplingEvent, with text or URI value. 2024-01-17 SMR run linkml-lint from current linkml version before rebuilding JSON schema. The JSON schema is out of sync with Github isamples/metadata 151 to 156 updates in yaml. 
 license: https://creativecommons.org/publicdomain/zero/1.0/
-version: 20230317
+version: "20240117"
 prefixes:
     linkml: https://w3id.org/linkml/
-    isam: http://resource.isamples.org/schema/
+    isam: http://resource.isamples.org/schema/1.0/
     dct: http://purl.org/dc/terms/
-    mat: https://w3id.org/isample/vocabulary/material/0.9/
-    sf: https://w3id.org/isample/vocabulary/sampledfeature/0.9/
+    mat: https://w3id.org/isample/vocabulary/material/1.0/
+    sf: https://w3id.org/isample/vocabulary/sampledfeature/1.0/
     skos: http://www.w3.org/2004/02/skos/core#
-    spec: https://w3id.org/isample/vocabulary/specimentype/0.9/
+    spec: https://w3id.org/isample/vocabulary/specimentype/1.0/
     w3cpos: http://www.w3.org/2003/01/geo/wgs84_pos#
     rdfs: http://www.w3.org/2000/01/rdf-schema#
     xsd: http://www.w3.org/2001/XMLSchema#
@@ -80,7 +80,7 @@ classes:
           - identifier
           - description
           - label
-          - location
+          - sample_location
           - place_name
           - is_part_of
 
@@ -91,6 +91,7 @@ classes:
           - label
           - description
           - has_feature_of_interest
+          - project
           - responsibility
           - result_time
           - sampling_site
@@ -154,6 +155,7 @@ slots:
         description: e-mail address, telephone number, mailing address, or web site through which an agent can be contacted. Something that should be stable and reliable.
     curation:
         range: SpecimenCuration
+        description: Information about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.
     curation_location:
         range: string
         description: Information about where and how the sample is currently stored.
@@ -165,11 +167,11 @@ slots:
     dc_rights:
         range: string
         description: a statement about various property rights associated with the resource, including intellectual property rights. Recommended practice is to refer to a rights statement with a URI. If this is not possible or feasible, a literal value (name, label, or short text) may be provided.
-        close_mappings: dct:rights
+        close_mappings: [dct:rights]
     description:
         range: string
         description: Free text description of the subject of a triple.
-        close_mappings: dct:description
+        close_mappings: [dct:description]
     elevation:
         range: string
         domain: GeospatialCoordLocation
@@ -215,13 +217,13 @@ slots:
         domain: SamplingSite
         description: A link from a SamplingSite to a larger sampling site that spatially contains the source 
            SamplingSite.  The container site is specified by its identifier. 
-        close_mappings: sdo:isPartOf
+        close_mappings: [sdo:isPartOf]
         multivalued: true
     keywords:
         range: Keyword
         domain: PhysicalSampleRecord
         description: free text terms or formal categories associate with sample to support discovery. As in DataCite metadata, each keyword is a separate element. Multiple keywords should NOT be included as a comma-delimited list.
-        close_mappings: sdo:keywords, datacite:subjects
+        close_mappings: [sdo:keywords, datacite:subjects]
         multivalued: true
     keyword:
         range: string
@@ -238,7 +240,7 @@ slots:
         description: a human intelligible string used to identify a thing, i.e. the
             name to use for the thing; should be unique in the scope of a sample collection
             or dataset.
-        close_mappings: rdfs:label
+        close_mappings: [rdfs:label]
     latitude:
         range: decimal
         domain: GeospatialCoordLocation
@@ -248,7 +250,7 @@ slots:
         domain: GeospatialCoordLocation
         description: angular coordinate measured positive eastward from the prime
             meridian.
-    location:
+    sample_location:
         range: GeospatialCoordLocation
         domain: SamplingSite
         description: geopatial location of site; required default is WGS84 latitude,
@@ -262,12 +264,22 @@ slots:
         range: boolean
         domain: GeospatialCoordLocation
         description: Flag to indicate that accuracy of provided coordinate location has been reduced (obfuscated) because the exact location is restricted information.
-        ifabsent: False
+        ifabsent: "False"
     place_name:
         range: string
         domain: SamplingSite
         description: one or more names by which the sampling site is known.
         multivalued: true
+    project:
+        range: string
+        domain: SamplingEvent
+        description: the name or identifier for a project that is the sponsor
+            for a samplingEvent. Use to link samples collected in the context
+            of a particular project. We do not have a preferred project model
+            at this point; the RAID effort (ISO23527, https://www.raid.org.au/) 
+            will hopefully mature into a registry we can use for project identification 
+            and metadata. Property value should be a name or a resolvable URI. 
+    
     produced_by:
         range: SamplingEvent
         domain: PhysicalSampleRecord
@@ -298,7 +310,7 @@ slots:
         range: string
         domain: PhysicalSampleRecord
         description: URI that identifies the physical sample described by this record
-        close_mappings: sdo:identifier
+        close_mappings: [sdo:identifier]
     sampling_purpose:
         range: string
         domain: PhysicalSampleRecord

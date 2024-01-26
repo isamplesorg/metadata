@@ -56,10 +56,10 @@
             }
         ],
         "result_time": "2012-12-28",
-        "samplingSite": {
+        "sampling_site": {
             "description": "Tesoro Rectangle 7, 1971, ID:286",
             "label": "Tesoro Rectangle",
-            "location": {
+            "sample_location": {
                 "elevation": "",
                 "latitude": 43.153333,
                 "longitude": 11.401381

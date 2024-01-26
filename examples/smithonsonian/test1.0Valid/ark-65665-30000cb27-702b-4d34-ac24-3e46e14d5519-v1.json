@@ -77,10 +77,10 @@
             }
         ],
         "result_time": "2006-03-12",
-        "samplingSite": {
+        "sampling_site": {
             "description": "verbatimLatitude: 17 29 69.8 S | verbatimLongitude: 149 55 29.9 W | geodeticDatum: WGS 84 | georeferenceProtocol：GPS",
             "label": "Moorea, Club Med.",
-            "location": {
+            "sample_location": {
                 "elevation": "maximumDepthInMeters: 1.7",
                 "latitude": -17.5027,
                 "longitude": -149.925

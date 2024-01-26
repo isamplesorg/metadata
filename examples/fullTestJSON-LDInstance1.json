@@ -1,0 +1,104 @@
+{
+    "$schema": "../src/schemas/iSamplesSchemaCore1.0.json",
+    "@id": "https://isamples.org/metadata/4327q543jh",
+    "@context": "https://isamples.org/metadata",
+    "@type": "schema:DigitalDocument",
+    "dct:conformsTo": "https://isamples.org/metadata",
+    "registrant": {
+        "name": "name",
+        "affiliation": "affiliation",
+        "contact_information": "contact_information",
+        "identifier": "identifier",
+        "role": "role"
+    },
+    "about": {
+        "@id":"sample_identifier",
+        "@type":"schema:Thing",
+        "sample_identifier": "sample_identifier",
+        "label": "label",
+        "description": "description",
+        "alternate_identifiers": [],
+        "produced_by": {
+            "identifier": "identifier",
+            "label": "label",
+            "description": "description",
+            "has_feature_of_interest": "has_feature_of_interest",
+            "project": "project",
+            "responsibility": [
+                {
+                    "name": "name",
+                    "affiliation": "affiliation",
+                    "contact_information": "contact_information",
+                    "identifier": "identifier",
+                    "role": "role"
+                }
+            ],
+            "result_time": "2000-01-01",
+            "sampling_site": {
+                "description": "description",
+                "label": "label",
+                "sample_location": {
+                    "elevation": "elevation",
+                    "latitude": 0,
+                    "longitude": 0
+                },
+                "place_name": ["place_name0"]
+            },
+            "authorized_by": ["authorized_by0"]
+        },
+        "sampling_purpose": "sampling_purpose",
+        "has_context_category": [
+            {
+                "label": "label",
+                "identifier": "http://example.com/resource?foo=bar#fragment",
+                "scheme_name": "scheme_name"
+            }
+        ],
+        "has_material_category": [
+            {
+                "label": "label",
+                "identifier": "http://example.com/resource?foo=bar#fragment",
+                "scheme_name": "scheme_name"
+            }
+        ],
+        "has_specimen_category": [
+            {
+                "label": "label",
+                "identifier": "http://example.com/resource?foo=bar#fragment",
+                "scheme_name": "scheme_name"
+            }
+        ],
+        "keywords": [
+            {
+                "keyword": "keyword",
+                "keyword_uri": "keyword_uri",
+                "scheme_name": "scheme_name",
+                "scheme_uri": "scheme_uri"
+            }
+        ],
+        "related_resource": [
+            {
+                "description": "description",
+                "label": "label",
+                "relationship": "relationship",
+                "target": "target"
+            }
+        ],
+        "complies_with": ["complies_with0"],
+        "curation": {
+            "access_constraints": ["access_constraints0"],
+            "curation_location": "curation_location",
+            "description": "description",
+            "label": "label",
+            "responsibility": [
+                {
+                    "name": "name",
+                    "affiliation": "affiliation",
+                    "contact_information": "contact_information",
+                    "identifier": "identifier",
+                    "role": "role"
+                }
+            ]
+        }
+    }
+}

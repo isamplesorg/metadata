@@ -52,10 +52,10 @@
         "description": "",
         "has_feature_of_interest": "",
         "responsibility": [],
-        "samplingSite": {
+        "sampling_site": {
             "description": "",
             "label": "",
-            "location": {
+            "sample_location": {
                 "elevation": "maximumDepthInMeters: 12",
                 "latitude": 5.89430,
                 "longitude": 95.25293
@@ -76,7 +76,7 @@
         "curation_location": "tissueWell: C06, tissuePlate: 03_ACEH_080916",
         "responsibility": []
     },
-    "relatedResource": [
+    "related_resource": [
         {
             "label": "parent sample PIRE_0334",
             "description": "",
