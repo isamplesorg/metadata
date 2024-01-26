@@ -1,5 +1,5 @@
 {
-    "$id": "http://resource.isamples.org/schema/1.0",
+    "$id": "https://w3id.org/isample/schema/1.0",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
     "description": "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web. metamodel_version 1.7.0; version 20240117",

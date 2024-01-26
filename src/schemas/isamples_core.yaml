@@ -1,12 +1,12 @@
-id: http://resource.isamples.org/schema/1.0
+id: https://w3id.org/isample/schema/1.0
 name: physicalSample
 title: Schema for documenting physical samples
-description: Schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change 'id' to '@id' and 'schema' to '$schema'.  Schema name is iSamplesSchemaCore1.0.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07. SMR 2023-03-17. Move authorized_by into SamplingEvent, change keywords to list of Keyword objects with string, uri, scheme and scheme URI. Reorder elements in slot list. Update scheme URI to 1.0 2023-06-13 SMR add project property on SamplingEvent, with text or URI value. 2024-01-17 SMR run linkml-lint from current linkml version before rebuilding JSON schema. The JSON schema is out of sync with Github isamples/metadata 151 to 156 updates in yaml. 
+description: Schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change 'id' to '@id' and 'schema' to '$schema'.  Schema name is iSamplesSchemaCore1.0.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07. SMR 2023-03-17. Move authorized_by into SamplingEvent, change keywords to list of Keyword objects with string, uri, scheme and scheme URI. Reorder elements in slot list. Update scheme URI to 1.0 2023-06-13 SMR add project property on SamplingEvent, with text or URI value. 2024-01-17 SMR run linkml-lint from current linkml version before rebuilding JSON schema. The JSON schema is out of sync with Github isamples/metadata 151 to 156 updates in yaml. 2024-01-26 SMR change base URI to https://w3id.org/isample/schema/1.0/
 license: https://creativecommons.org/publicdomain/zero/1.0/
-version: "20240117"
+version: "20240126"
 prefixes:
     linkml: https://w3id.org/linkml/
-    isam: http://resource.isamples.org/schema/1.0/
+    isam: https://w3id.org/isample/schema/1.0/
     dct: http://purl.org/dc/terms/
     mat: https://w3id.org/isample/vocabulary/material/1.0/
     sf: https://w3id.org/isample/vocabulary/sampledfeature/1.0/
