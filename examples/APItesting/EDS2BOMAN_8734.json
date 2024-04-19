@@ -1,0 +1,97 @@
+{
+    "$schema": "iSamplesSchemaCore1.0.json",
+    "@id": "metadata/21547/EDS2BOMAN_8734",
+    "label": "Pycnogonida BOMAN_8734",
+    "sample_identifier": "ark:/21547/EDS2BOMAN_8734",
+    "description": "",
+    "has_context_category": [
+        {
+            "label": "Marine environment",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/marinewaterbody"
+        }
+    ],
+    "has_context_category_confidence": [1.0],
+    "has_material_category": [
+        {
+            "label": "Organic material",
+            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/organicmaterial"
+        }
+    ],
+    "has_material_category_confidence": [1.0],
+    "has_specimen_category": [
+        {
+            "label": "Whole organism specimen",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/1.0/wholeorganism"
+        }
+    ],
+    "has_specimen_category_confidence": [1.0],
+    "informal_classification": ["Pycnogonida"],
+    "keywords": [
+        {"keyword": "Dhofar Governate"},
+        {"keyword": "Oman"},
+        {
+            "keyword": "Arthropoda",
+            "scheme_name": "Taxon: phylum"
+        }
+    ],
+    "produced_by": {
+
+        "label": "event OM22_30",
+        "description": "expeditionCode: NSF_OMAN_2022 | projectId: 74",
+        "has_feature_of_interest": "",
+                "identifier": "ark:/21547/EDS2BOMAN_8734",
+        "responsibility": [
+            {
+                "role": "Event registrant",
+                "name": "Abby Uehling"
+            }
+        ],
+        "result_time": "2001-01-01",
+        "sampling_site": {
+            "description": "",
+            "label": "Michel's Reef",
+            "sample_location": {
+                "elevation": "30 m",
+                "latitude": 16.943316666666668,
+                "longitude": 54.73005
+            },
+            "place_name": [
+                "Michel's Reef",
+                "Dhofar Governate",
+                "Oman"
+            ]
+        }
+    },
+    "registrant": {"name": "Abby Uehling"},
+    "sampling_purpose": "",
+    "curation": {
+        "label": "",
+        "description": "",
+        "access_constraints": [""],
+        "curation_location": "University of Florida",
+        "responsibility": [
+            {
+                "role": "curator",
+                "name": "University of Florida"
+            }
+        ]
+    },
+    "related_resource": [],
+    "authorized_by": [""],
+    "complies_with": [],
+    "producedBy_samplingSite_location_h3_0": "8063fffffffffff",
+    "producedBy_samplingSite_location_h3_1": "81633ffffffffff",
+    "producedBy_samplingSite_location_h3_2": "826337fffffffff",
+    "producedBy_samplingSite_location_h3_3": "836332fffffffff",
+    "producedBy_samplingSite_location_h3_4": "8463323ffffffff",
+    "producedBy_samplingSite_location_h3_5": "8563323bfffffff",
+    "producedBy_samplingSite_location_h3_6": "8663323afffffff",
+    "producedBy_samplingSite_location_h3_7": "8763323a8ffffff",
+    "producedBy_samplingSite_location_h3_8": "8863323a85fffff",
+    "producedBy_samplingSite_location_h3_9": "8963323a84fffff",
+    "producedBy_samplingSite_location_h3_10": "8a63323a84e7fff",
+    "producedBy_samplingSite_location_h3_11": "8b63323a84e3fff",
+    "producedBy_samplingSite_location_h3_12": "8c63323a84e37ff",
+    "producedBy_samplingSite_location_h3_13": "8d63323a84e367f",
+    "producedBy_samplingSite_location_h3_14": "8e63323a84e3667"
+}

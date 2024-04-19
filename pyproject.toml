@@ -11,8 +11,7 @@ rdflib = "^6.1.1"
 click = "^8.0.1"
 pyLODE = "<3.0"
 #mkdocs-gitbook = {git = "https://gitlab.com/lramage/mkdocs-gitbook-theme.git"}
-quarto = "^0.1.0"
-linkml = "^1.3.10"
+linkml = "^1.7.2"
 
 
 [tool.poetry.dev-dependencies]
@@ -20,6 +19,7 @@ ipykernel = "^6.9.1"
 
 [tool.poetry.group.dev.dependencies]
 mkdocs-mermaid2-plugin = "^0.6.0"
+yamllint = "^1.34.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
