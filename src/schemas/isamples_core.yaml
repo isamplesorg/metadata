@@ -19,7 +19,7 @@ prefixes:
   mat: https://w3id.org/isample/vocabulary/material/1.0/
   sf: https://w3id.org/isample/vocabulary/sampledfeature/1.0/
   skos: http://www.w3.org/2004/02/skos/core#
-  spec: https://w3id.org/isample/vocabulary/specimentype/1.0/
+  spec: https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/
   w3cpos: http://www.w3.org/2003/01/geo/wgs84_pos#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   xsd: http://www.w3.org/2001/XMLSchema#
@@ -47,7 +47,7 @@ classes:
       - sampling_purpose
       - has_context_category
       - has_material_category
-      - has_specimen_category
+      - has_sample_object_type
       - keywords
       - related_resource
       - complies_with
@@ -88,7 +88,7 @@ classes:
       Object to represent an identified concept; property values from vocabularies with resolvable identifiers for
       vocabulary terms. Either a label or identifier is required, to allow for cases that a URI is not available.  Data
       validation process will need to be used for properties that require an identified term value
-      (e.g. has_context_category, has_material_category, has_specimen_category).
+      (e.g. has_context_category, has_material_category, has_sample_object_type).
     slots:
       - label
       - identifier
@@ -134,7 +134,7 @@ classes:
       - longitude
       - obfuscated
 
-  SpecimenCuration:
+  MaterialSampleCuration:
     description: >
       Information about the current storage of sample, access to sample, and events in curation history. Curation as
       used here starts when the sample is removed from its original context, and might include various processing steps
@@ -191,7 +191,7 @@ slots:
       E-mail address, telephone number, mailing address, or web site through which an agent can be contacted. Something
       that should be stable and reliable.
   curation:
-    range: SpecimenCuration
+    range: MaterialSampleCuration
     description: >
       Information about the current storage of sample, access to sample, and events in curation history. Curation as
       used here starts when the sample is removed from its original context, and might include various processing steps
@@ -256,13 +256,13 @@ slots:
       The kind of material that constitutes the sample.  At least one value is an instance of skos:Concept from the
       iSamples MaterialTypeVocabulary. Extension vocabularies can be used for more precise categorization.
     multivalued: true
-  has_specimen_category:
+  has_sample_object_type:
     # range is an instance at least one skos:Concept
-    # with skos:inScheme = mat:specimentypevocabulary
+    # with skos:inScheme = mat:sampleobjecttypevocabulary
     domain: PhysicalSampleRecord
     description: >
-      The kind of object the specimen is. At least one value is an instance of skos:Concept from the iSamples
-      SpecimenTypeVocabulary; extension vocabularies can be used for more precise categorization.
+      The kind of object the material sample is. At least one value is an instance of skos:Concept from the iSamples
+      sampleobjecttypeVocabulary; extension vocabularies can be used for more precise categorization.
     range: IdentifierObject
     multivalued: true
   is_part_of:
@@ -351,7 +351,7 @@ slots:
     domain: PhysicalSampleRecord
     description: >
       Object that documents the sampling event--who, where, when the
-      specimen was obtained.
+      material sample was obtained.
   registrant:
     range: Agent
     domain: PhysicalSampleRecord

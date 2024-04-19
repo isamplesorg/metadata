@@ -25,7 +25,7 @@
         },
         "produced_by": {
             "$ref": "#/$defs/SamplingEvent",
-            "description": "object that documents the sampling event--who, where, when the specimen was obtained"
+            "description": "object that documents the sampling event--who, where, when the material sample was obtained"
         },
         "sampling_purpose": {
             "description": "term to specify why a sample was collection.",
@@ -37,12 +37,12 @@
             "type": "array"
         },
         "has_material_category": {
-            "description": "The kind of material that constitutes the sample.  At least one value is an instance of skos:Concept from the iSamples MaterialTypeVocabulary; extension vocabularies can be used for more precise categorization.",
+            "description": "The kind of material that constitutes the sample.  At least one value is an instance of skos:Concept from the iSamples MaterialType Vocabulary; extension vocabularies can be used for more precise categorization.",
             "items": {"$ref": "#/$defs/IdentifierObject"},
             "type": "array"
         },
-        "has_specimen_category": {
-            "description": "The kind of object the specimen is. At least one value is an instance of skos:Concept from the iSamples SpecimenTypeVocabulary; extension vocabularies can be used for more precise categorization.",
+        "has_sample_object_type": {
+            "description": "The kind of object the material sample is. At least one value is an instance of skos:Concept from the iSamples SampleObjectType Vocabulary; extension vocabularies can be used for more precise categorization.",
             "items": {"$ref": "#/$defs/IdentifierObject"},
             "type": "array"
         },
@@ -66,7 +66,7 @@
             "type": "string"
         },
         "curation": {
-            "$ref": "#/$defs/SpecimenCuration",
+            "$ref": "#/$defs/MaterialSampleCuration",
             "description": "Information about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample."
         },
         "registrant": {
@@ -133,7 +133,7 @@
         },
         "IdentifierObject": {
             "additionalProperties": false,
-            "description": "object to represent an identified concept; property values from vocabularies with resolvable identifiers for vocabulary terms. Either a label or identifier is required, to allow for cases that a URI is not available.  Data validation process will need to be used for properties that require an identified term value (e.g. has_context_category, has_material_category, has_specimen_category).",
+            "description": "object to represent an identified concept; property values from vocabularies with resolvable identifiers for vocabulary terms. Either a label or identifier is required, to allow for cases that a URI is not available.  Data validation process will need to be used for properties that require an identified term value (e.g. has_context_category, has_material_category, has_sample_object_type).",
             "properties": {
                 "identifier": {
                     "description": "a string that identifies some resource. Expectation is that it is a URI that is resolvable to some useful represenation of the resource.",
@@ -280,7 +280,7 @@
             "title": "SamplingSite",
             "type": "object"
         },
-        "SpecimenCuration": {
+        "MaterialSampleCuration": {
             "additionalProperties": false,
             "description": "Information about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.",
             "properties": {
