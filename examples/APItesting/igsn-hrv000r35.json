@@ -1,0 +1,75 @@
+{
+    "$schema": "../../src/schemas/iSamplesSchemaCore1.0.json",
+    "@id": "https://data.isamples.org/digitalsample/igsn/HRV000R35",
+    "label": "87831",
+    "sample_identifier": "IGSN:HRV000R35",
+    "description": "",
+    "has_context_category": [
+        {
+            "label": "Any sampled feature",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/anysampledfeature"
+        }
+    ],
+    "has_context_category_confidence": [1.0],
+    "has_material_category": [
+        {
+            "label": "Mineral",
+            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/mineral"
+        }
+    ],
+    "has_material_category_confidence": null,
+    "has_specimen_category": [
+        {
+            "label": "Physical specimen",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/1.0/physicalspecimen"
+        }
+    ],
+    "has_specimen_category_confidence": [1.0],
+    "informal_classification": [""],
+    "keywords": [{"keyword":"Individual Sample"}],
+    "produced_by": {
+        "label": "Manual",
+        "description": "Manual. Mineral Group: Columbite;   ",
+        "has_feature_of_interest": "",
+        "identifier":"SamplingEventID",
+        "responsibility": [{"name":"Carl Francis","role":"Sample Owner"}],
+        "result_time": "2007-02-03",
+        "sampling_site": {
+            "description": "",
+            "label": "",
+            "sample_location": {},
+            "place_name": [
+                "Connecticut",
+                "Middletown",
+                "Middletown"
+            ]
+        }
+    },
+    "registrant": {"name": "Carl Francis"},
+    "sampling_purpose": "",
+    "curation": {
+        "label": "",
+        "description": "",
+        "access_constraints": [""],
+        "curation_location": "",
+        "responsibility": []
+    },
+    "related_resource": [],
+    "authorized_by": [],
+    "complies_with": [],
+    "producedBy_samplingSite_location_h3_0": null,
+    "producedBy_samplingSite_location_h3_1": null,
+    "producedBy_samplingSite_location_h3_2": null,
+    "producedBy_samplingSite_location_h3_3": null,
+    "producedBy_samplingSite_location_h3_4": null,
+    "producedBy_samplingSite_location_h3_5": null,
+    "producedBy_samplingSite_location_h3_6": null,
+    "producedBy_samplingSite_location_h3_7": null,
+    "producedBy_samplingSite_location_h3_8": null,
+    "producedBy_samplingSite_location_h3_9": null,
+    "producedBy_samplingSite_location_h3_10": null,
+    "producedBy_samplingSite_location_h3_11": null,
+    "producedBy_samplingSite_location_h3_12": null,
+    "producedBy_samplingSite_location_h3_13": null,
+    "producedBy_samplingSite_location_h3_14": null
+}

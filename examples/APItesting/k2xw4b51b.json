@@ -1,0 +1,111 @@
+{
+    "$schema": "iSamplesSchemaCore1.0.json",
+    "@id": "metadata/28722/k2xw4b51b",
+    "label": "Animal Bone Bone 1277",
+    "sample_identifier": "ark:/28722/k2xw4b51b",
+    "description": "'early bce/ce': -7400.0 | 'late bce/ce': -6000.0 | 'updated': 2023-10-03T21:20:42Z | 'Consists of': animal material | 'Has type': bone element",
+    "has_context_category": [
+        {
+            "label": "Site of past human activities",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/pasthumanoccupationsite"
+        }
+    ],
+    "has_context_category_confidence": [1.0],
+    "has_material_category": [
+        {
+            "label": "Material",
+            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/material"
+        }
+    ],
+    "has_material_category_confidence": [1.0],
+    "has_specimen_category": [
+        {
+            "label": "Artifact",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/1.0/artifact"
+        },
+        {
+            "label": "Organism product",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/1.0/organismproduct"
+        },
+        {
+            "label": "Organism part",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/1.0/organismpart"
+        }
+    ],
+    "has_specimen_category_confidence": [
+        0.9983230233192444,
+        0.0010172827169299126,
+        0.0006596413441002369
+    ],
+    "informal_classification": ["Mammalia"],
+    "keywords": [
+        {"keyword": "Mammal remains (archaeology)"},
+        {"keyword": "Animal remains (Archaeology)"},
+        {"keyword": "Subsistence economy"},
+        {"keyword": "Neolithic"}
+    ],
+    "produced_by": {
+        "label": "Çatalhöyük Area TP Zooarchaeology",
+        "description": "http://opencontext.org/projects/02594c48-7497-40d7-11ae-ab942dc513b8",
+        "has_feature_of_interest": "",
+        "responsibility": [
+            {
+                "role": "creator",
+                "name": "Arek Marciniak"
+            },
+            {
+                "role": "collector",
+                "name": "Arek Marciniak"
+            },
+            {
+                "role": "collector",
+                "name": "Kamilla Pawlowska"
+            }
+        ],
+        "result_time": "2013-01-01",
+        "sampling_site": {
+            "description": "https://opencontext.org/subjects/e44a115a-dfcb-4971-6750-40955df2c062",
+            "label": "Çatalhöyük",
+            "sample_location": {
+                "elevation": "",
+                "latitude": 37.668196,
+                "longitude": 32.827191
+            },
+            "place_name": [
+                "Asia",
+                "Turkey",
+                "Çatalhöyük",
+                "Mound East",
+                "Area TP",
+                "Unit 6721"
+            ]
+        }
+    },
+    "registrant": {"name": ""},
+    "sampling_purpose": "",
+    "curation": {
+        "label": "",
+        "description": "",
+        "access_constraints": [],
+        "curation_location": "",
+        "responsibility": []
+    },
+    "related_resource": [],
+    "authorized_by": [],
+    "complies_with": [],
+    "producedBy_samplingSite_location_h3_0": "802dfffffffffff",
+    "producedBy_samplingSite_location_h3_1": "812d3ffffffffff",
+    "producedBy_samplingSite_location_h3_2": "823f6ffffffffff",
+    "producedBy_samplingSite_location_h3_3": "833f6dfffffffff",
+    "producedBy_samplingSite_location_h3_4": "843f6d3ffffffff",
+    "producedBy_samplingSite_location_h3_5": "853f6d37fffffff",
+    "producedBy_samplingSite_location_h3_6": "863f6dadfffffff",
+    "producedBy_samplingSite_location_h3_7": "873f6dadbffffff",
+    "producedBy_samplingSite_location_h3_8": "883f6dadb5fffff",
+    "producedBy_samplingSite_location_h3_9": "893f6dadb5bffff",
+    "producedBy_samplingSite_location_h3_10": "8a3f6dadb58ffff",
+    "producedBy_samplingSite_location_h3_11": "8b3f6dadb58afff",
+    "producedBy_samplingSite_location_h3_12": "8c3f6dadb58adff",
+    "producedBy_samplingSite_location_h3_13": "8d3f6dadb58ad7f",
+    "producedBy_samplingSite_location_h3_14": "8e3f6dadb58ad47"
+}
