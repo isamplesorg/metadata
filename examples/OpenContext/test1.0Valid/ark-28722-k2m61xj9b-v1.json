@@ -10,7 +10,7 @@
         }],
     "has_material_category": [{"label":"Biogenic non-organic material",
     "identifier":"https://w3id.org/isample/vocabulary/material/0.9/biogenicnonorganicmaterial"}],
-    "has_specimen_category": [{"label":"Organism part","identifier":"https://w3id.org/isample/vocabulary/specimentype/0.9/organismpart"}],
+    "has_sample_object_type": [{"label":"Organism part","identifier":"https://w3id.org/isample/vocabulary/sampleobjecttype/0.9/organismpart"}],
     "keywords": [
         {
             "keyword": "Neolithic",

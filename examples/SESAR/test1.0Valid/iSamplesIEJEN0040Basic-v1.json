@@ -16,10 +16,10 @@
             "identifier": "https://w3id.org/isample/vocabulary/material/0.9/organicmaterial"
         }
     ],
-    "has_specimen_category": [
+    "has_sample_object_type": [
         {
-            "label": "Any biological specimen",
-            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/biologicalspecimen"
+            "label": "Biological material sample",
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/0.9/biologicalmaterialsample"
         }
     ],
     "keywords": [

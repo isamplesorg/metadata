@@ -6,7 +6,7 @@
     "description": "[concatenate key:value pairs from other content in record/ that is not mapped, e.g. 'voucherCatalogNumber:USNM:Fish:433156'; record/preservative, ]",
     "has_context_category": ["[infer from locality and taxon names]"],
     "has_material_category": ["'Organic material' unless record/entity, record/basisOfRecord, or record/collectionCode indicate otherwise"],
-    "has_specimen_category": ["'Whole organism'  unless record/entity, record/basisOfRecord, or record/collectionCode indicate otherwise"],
+    "has_sample_object_type": ["'Whole organism'  unless record/entity, record/basisOfRecord, or record/collectionCode indicate otherwise"],
     "informal_classification": ["record/scientificName or if that is missing, concat record/genus & record/specificEpithet"],
     "keywords": [
         "JSON array of keyword objects",

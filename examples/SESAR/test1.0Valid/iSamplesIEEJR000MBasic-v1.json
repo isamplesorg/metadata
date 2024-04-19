@@ -16,10 +16,10 @@
             "identifier": "https://w3id.org/isample/vocabulary/material/0.9/rock"
         }
     ],
-    "has_specimen_category": [
+    "has_sample_object_type": [
         {
             "label": "Other solid object",
-            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/othersolidobject"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/0.9/othersolidobject"
         }
     ],
     "keywords": [
