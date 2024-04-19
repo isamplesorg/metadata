@@ -4,7 +4,7 @@
     "type": "object",
     "title": "Material sample description",
     "additionalProperties": true,
-    "description": "This is a data object that is a digital representation of a material sample using the schema.org vocabulary, implemented for RDF using JSON-LD.  This implementation includes some feature that are not present in iSamples: sdLicense for license about the metadata record; curation/subEvents to record multiple events in preservation/curation history.  Recommended schema.org @type is 'Thing', use 'additionalType' to indicate the iSamples materialSample type for more useful granularity. Instances conforming to this schema will validate with schema.org/validator, but there will be numerous warnings about properties that are not expected for various base types. These can be ignored. The context is not specified in the schema, but must be added in instance documents. '\"@context\": [\"https://schema.org/\", {\"dcterms\": \"http://purl.org/dc/terms/\",\"id\": \"@id\", \"type\": \"@type\", \"curation\":\"http://resource.isamples.org/schema/1.0/SpecimenCuration\" }]' ",
+    "description": "This is a data object that is a digital representation of a material sample using the schema.org vocabulary, implemented for RDF using JSON-LD.  This implementation includes some feature that are not present in iSamples: sdLicense for license about the metadata record; curation/subEvents to record multiple events in preservation/curation history.  Recommended schema.org @type is 'Thing', use 'additionalType' to indicate the iSamples materialSample type for more useful granularity. Instances conforming to this schema will validate with schema.org/validator, but there will be numerous warnings about properties that are not expected for various base types. These can be ignored. The context is not specified in the schema, but must be added in instance documents. '\"@context\": [\"https://schema.org/\", {\"dcterms\": \"http://purl.org/dc/terms/\",\"id\": \"@id\", \"type\": \"@type\", \"curation\":\"http://resource.isamples.org/schema/1.0/MaterialSampleCuration\" }]' ",
     "properties": {
         "type": {"const": "DigitalDocument"},
         "id": {
@@ -43,7 +43,7 @@
                 },
                 "additionalType": {
                     "type": "array",
-                    "description": "a string (term or uri) that identifies a more granular type for the described resource. Recommendation is use on of the terms from https://w3id.org/isample/vocabulary/specimentype. Ideally should be a ScopedName, but this would throw error with validator.schema.org; could include label string and URI as separate array elements...",
+                    "description": "a string (term or uri) that identifies a more granular type for the described resource. Recommendation is use on of the terms from https://w3id.org/isample/vocabulary/sampleobjecttype. Ideally should be a ScopedName, but this would throw error with validator.schema.org; could include label string and URI as separate array elements...",
                     "items": {"type": "string"}
                 },
                 "name": {
@@ -61,7 +61,7 @@
                 },
                 "event": {
                     "$ref": "#/definitions/SamplingEvent",
-                    "description": "object that documents the sampling event--who, where, when the specimen was obtained. Implements iSamples SamplingEvent"
+                    "description": "object that documents the sampling event--who, where, when the material sample was obtained. Implements iSamples SamplingEvent"
                 },
                 "keywords": {
                     "description": "categorization of sample to support discovery. Use ScopedName (sdo:DefinedTerm) to provide categorization using other domain-specific vocabularies. String values are for free-text tags.",
@@ -75,7 +75,7 @@
                 },
                 "category": {
                     "type": "array",
-                    "description": "array containing required sample category terms for material type and sampledFeature. The specimenType (materialSampleType) is specified as about/additionalType, above. Formally defined extension vocabulary terms (that are subclassed from an  iSample vocabulary) are also included here",
+                    "description": "array containing required sample category terms for material type and sampledFeature. The sampleobjecttype (materialSampleType) is specified as about/additionalType, above. Formally defined extension vocabulary terms (that are subclassed from an  iSample vocabulary) are also included here",
                     "items": {
                         "type": "object",
                         "title": "iSamples vocabulary concept",
@@ -145,7 +145,7 @@
                         "subEvent": {
                             "type": "array",
                             "description": "an array of timestamped events in curation history. If sample is loaned, moved to different repository, or conditions of access change, these should be recorded as events.",
-                            "items": {"$ref": "#/definitions/SpecimenCurationEvent"}
+                            "items": {"$ref": "#/definitions/MaterialSampleCurationEvent"}
                         }
                     }
                 }
@@ -456,8 +456,8 @@
                 }
             }
         },
-        "SpecimenCurationEvent": {
-            "title": "SpecimenCuration",
+        "MaterialSampleCurationEvent": {
+            "title": "MaterialSampleCuration",
             "type": "object",
             "additionalProperties": false,
             "description": "Information about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.",
