@@ -1,0 +1,112 @@
+{
+    "$schema": "../../src/schemas/iSamplesSchemaCore1.0.json",
+    "@id": "metadata/65665/309fc4ed5-cbc9-4821-918a-1ff0aa92d0dd",
+    "label": "Gardinerosergia splendens AN6GX48",
+    "sample_identifier": "ark:/65665/309fc4ed5-cbc9-4821-918a-1ff0aa92d0dd",
+    "description": "basisOfRecord: MaterialSample | occurrenceRemarks: Photos are named with multiple USNM numbers with no indication which specimen is which number. Since we could not establish a one-to-one photovoucher relationship, we attached all the photos to all relevant DNAs. | catalogNumber: USNM 1448661 | type: PhysicalObject | individualCount: 1 | lifeStage: larva | disposition: in collection | associatedMedia: 14445608; 14445610; 14445614; 14445616; 14445617 | associatedSequences: MW203544; MW124872 | startDayOfYear: 170 | endDayOfYear: 170",
+    "has_context_category": [
+        {
+            "label": "Any sampled feature",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/anysampledfeature"
+        }
+    ],
+    "has_context_category_confidence": [1.0],
+    "has_material_category": [
+        {
+            "label": "Organic material",
+            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/organicmaterial"
+        }
+    ],
+    "has_material_category_confidence": [1.0],
+    "has_specimen_category": [
+        {
+            "label": "Organism part",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/1.0/organismpart"
+        }
+    ],
+    "has_specimen_category_confidence": [1.0],
+    "informal_classification": ["Gardinerosergia splendens"],
+    "keywords": [
+        {"keyword": "IZ"},
+        {"keyword": "North Atlantic Ocean"},
+        {"keyword": "Animalia"},
+        {"keyword": "Arthropoda"},
+        {"keyword": "Crustacea"},
+        {"keyword": "Malacostraca"},
+        {"keyword": "Eumalacostraca"},
+        {"keyword": "Eucarida"},
+        {"keyword": "Decapoda"},
+        {"keyword": "Dendrobranchiata"},
+        {"keyword": "Sergestidae"},
+        {"keyword": "Gardinerosergia splendens"}
+    ],
+    "produced_by": {
+        "label": "",
+        "description": "",
+        "has_feature_of_interest": "",
+        "responsibility": [
+            {
+                "role": "recorded by",
+                "name": "K. Osborn"
+            },
+            {
+                "role": "scientific name authorship",
+                "name": "(Sund)"
+            },
+            {
+                "role": "identified by",
+                "name": "Osborn, Karen J., (IZ), Smithsonian Institution - National Museum of Natural History (UNITED STATES)"
+            }
+        ],
+        "result_time": "2017-06-19",
+        "sampling_site": {
+            "description": "verbatimLatitude: 27.4548833 | verbatimLongitude: -79.9531833",
+            "label": "Gulf Stream off Fort Pierce",
+            "sample_location": {
+                "elevation": "minimumDepthInMeters: 0.0 | maximumDepthInMeters: 77.0",
+                "latitude": 27.4549,
+                "longitude": -79.9532
+            },
+            "place_name": [
+                "Gulf Stream off Fort Pierce",
+                "Florida",
+                "United States",
+                "North Atlantic Ocean",
+                "North Atlantic Ocean",
+                "North Atlantic Ocean, United States, Florida"
+            ]
+        }
+    },
+    "registrant": {"name": ""},
+    "sampling_purpose": "",
+    "curation": {
+        "label": "",
+        "description": "",
+        "access_constraints": [""],
+        "curation_location": "",
+        "responsibility": [
+            {
+                "role": "curator",
+                "name": "USNM http://grbio.org/cool/142r-0w94"
+            }
+        ]
+    },
+    "related_resource": [],
+    "authorized_by": [],
+    "complies_with": [],
+    "producedBy_samplingSite_location_h3_0": "8045fffffffffff",
+    "producedBy_samplingSite_location_h3_1": "8144bffffffffff",
+    "producedBy_samplingSite_location_h3_2": "8244affffffffff",
+    "producedBy_samplingSite_location_h3_3": "8344aefffffffff",
+    "producedBy_samplingSite_location_h3_4": "8444ae3ffffffff",
+    "producedBy_samplingSite_location_h3_5": "8544ae2ffffffff",
+    "producedBy_samplingSite_location_h3_6": "8644ae2c7ffffff",
+    "producedBy_samplingSite_location_h3_7": "8744ae2c1ffffff",
+    "producedBy_samplingSite_location_h3_8": "8844ae2c11fffff",
+    "producedBy_samplingSite_location_h3_9": "8944ae2c117ffff",
+    "producedBy_samplingSite_location_h3_10": "8a44ae2c1157fff",
+    "producedBy_samplingSite_location_h3_11": "8b44ae2c1150fff",
+    "producedBy_samplingSite_location_h3_12": "8c44ae2c11547ff",
+    "producedBy_samplingSite_location_h3_13": "8d44ae2c11546ff",
+    "producedBy_samplingSite_location_h3_14": "8e44ae2c11546cf"
+}
