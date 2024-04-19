@@ -1,0 +1,14 @@
+has_specimen_category  -->  has_sample_object_type
+Physical specimen -->  Material sample
+specimentype --> sampleobjecttype
+earthenv_specimen_type  --> earthenv_sample_object_type
+solidmaterialspecimen  --> solidmaterialsample
+1.0/physicalspecimen --> 1.0/materialsample
+hasSpecimenCategory --> has_sample_object_type
+Any biological specimen --> Biological material sample
+/biologicalspecimen  -->  /biologicalmaterialsample
+/mineralspecimen -->  /mineralmaterialsample
+Whole organism specimen -- Whole organism material sample
+SpecimenCurationEvent -->  MaterialSampleCurationEvent
+specimen samples  --> material sample represents
+/SpecimenCuration  --> /MaterialSampleCuration
