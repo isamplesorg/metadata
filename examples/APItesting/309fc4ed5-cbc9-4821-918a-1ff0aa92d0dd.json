@@ -41,9 +41,7 @@
         {"keyword": "Gardinerosergia splendens"}
     ],
     "produced_by": {
-        "label": "",
-        "description": "",
-        "has_feature_of_interest": "",
+
         "responsibility": [
             {
                 "role": "recorded by",
@@ -77,36 +75,15 @@
             ]
         }
     },
-    "registrant": {"name": ""},
-    "sampling_purpose": "",
+
     "curation": {
-        "label": "",
-        "description": "",
-        "access_constraints": [""],
-        "curation_location": "",
+
         "responsibility": [
             {
                 "role": "curator",
-                "name": "USNM http://grbio.org/cool/142r-0w94"
+                "name": "USNM",
+                "identifier":"http://grbio.org/cool/142r-0w94"
             }
         ]
-    },
-    "related_resource": [],
-    "authorized_by": [],
-    "complies_with": [],
-    "producedBy_samplingSite_location_h3_0": "8045fffffffffff",
-    "producedBy_samplingSite_location_h3_1": "8144bffffffffff",
-    "producedBy_samplingSite_location_h3_2": "8244affffffffff",
-    "producedBy_samplingSite_location_h3_3": "8344aefffffffff",
-    "producedBy_samplingSite_location_h3_4": "8444ae3ffffffff",
-    "producedBy_samplingSite_location_h3_5": "8544ae2ffffffff",
-    "producedBy_samplingSite_location_h3_6": "8644ae2c7ffffff",
-    "producedBy_samplingSite_location_h3_7": "8744ae2c1ffffff",
-    "producedBy_samplingSite_location_h3_8": "8844ae2c11fffff",
-    "producedBy_samplingSite_location_h3_9": "8944ae2c117ffff",
-    "producedBy_samplingSite_location_h3_10": "8a44ae2c1157fff",
-    "producedBy_samplingSite_location_h3_11": "8b44ae2c1150fff",
-    "producedBy_samplingSite_location_h3_12": "8c44ae2c11547ff",
-    "producedBy_samplingSite_location_h3_13": "8d44ae2c11546ff",
-    "producedBy_samplingSite_location_h3_14": "8e44ae2c11546cf"
+    }
 }
