@@ -7,19 +7,19 @@
     "has_context_category": [
         {
             "label": "Subaerial surface environment",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/subaerialsurfaceenvironment"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/subaerialsurfaceenvironment"
         }
     ],
     "has_material_category": [
         {
             "label": "Biogenic non-organic material",
-            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/biogenicnonorganicmaterial"
+            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/biogenicnonorganicmaterial"
         }
     ],
     "has_sample_object_type": [
         {
             "label": "Other solid object",
-            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/0.9/othersolidobject"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/othersolidobject"
         }
     ],
     "keywords": [

@@ -6,11 +6,11 @@
     "description": "'early bce/ce': -4100.0 | 'late bce/ce': -3900.0 | 'updated': 2021-06-27T21:34:12Z | 'Temporal Coverage': Neolithic | 'Temporal Coverage': Bronze age--Europe | 'Temporal Coverage': Neolithikum | 'Has taxonomic identifier': Bos taurus | 'Has anatomical identification': fused metatarsal bones 3 and 4",
     "has_context_category": [{
             "label": "Site of past human activities",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/pasthumanoccupationsite"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/pasthumanoccupationsite"
         }],
     "has_material_category": [{"label":"Biogenic non-organic material",
-    "identifier":"https://w3id.org/isample/vocabulary/material/0.9/biogenicnonorganicmaterial"}],
-    "has_sample_object_type": [{"label":"Organism part","identifier":"https://w3id.org/isample/vocabulary/sampleobjecttype/0.9/organismpart"}],
+    "identifier":"https://w3id.org/isample/vocabulary/material/1.0/biogenicnonorganicmaterial"}],
+    "has_sample_object_type": [{"label":"Organism part","identifier":"https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/organismpart"}],
     "keywords": [
         {
             "keyword": "Neolithic",

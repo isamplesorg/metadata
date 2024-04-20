@@ -7,19 +7,19 @@
     "has_context_category": [
         {
             "label": "Earth interior",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/earthinterior"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/earthinterior"
         }
     ],
     "has_material_category": [
         {
             "label": "Rock or sediment",
-            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/rockorsediment"
+            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/rockorsediment"
         }
     ],
     "has_sample_object_type": [
         {
             "label": "Other solid object",
-            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/0.9/othersolidobject"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/othersolidobject"
         }
     ],
     "keywords": [

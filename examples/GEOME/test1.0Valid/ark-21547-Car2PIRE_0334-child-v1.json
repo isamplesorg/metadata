@@ -7,19 +7,19 @@
     "has_context_category": [
         {
             "label": "Marine environment",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/marinewaterbody"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/marinewaterbody"
         }
     ],
     "has_material_category": [
         {
             "label": "Organic material",
-            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/organicmaterial"
+            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/organicmaterial"
         }
     ],
     "has_sample_object_type": [
         {
             "label": "Organism part",
-            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/0.9/organismpart"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/organismpart"
         }
     ],
     "keywords": [
