@@ -11,7 +11,7 @@ has_context_category:  # the high level context will likely be the same for all 
 has_material_category:  # this will vary from sample to sample, the project should provide a pick list, using iSamples Material type and openContext materials exetension 
 - label: 
   identifier: 
-has_specimen_category: # this will vary from sample to sample, the project should provide a pick list, using iSamples Material Sample Type Vocabulary.  
+has_sample_object_type: # this will vary from sample to sample, the project should provide a pick list, using iSamples Material Sample Type Vocabulary.  
 - label: 
   identifier: 
 keywords: # this will vary from sample to sample, the project might provide a pick list and allow free text 'tagging'

@@ -61,7 +61,7 @@
                 "scheme_name": "scheme_name"
             }
         ],
-        "has_specimen_category": [
+        "has_sample_object_type": [
             {
                 "label": "label",
                 "identifier": "http://example.com/resource?foo=bar#fragment",

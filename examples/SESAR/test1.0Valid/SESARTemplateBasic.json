@@ -6,7 +6,7 @@
     "description": "",
     "has_context_category": [{"label":"","identifier":""}],
     "has_material_category": [{"label":"","identifier":""}],
-    "has_specimen_category": [{"label":"","identifier":""}],
+    "has_sample_object_type": [{"label":"","identifier":""}],
     "keywords": [
     {"keyword":""},
     {"keyword":""}

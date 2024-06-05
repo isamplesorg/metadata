@@ -18,13 +18,13 @@
         }
     ],
     "has_material_category_confidence": [1.0],
-    "has_specimen_category": [
+    "has_sample_object_type": [
         {
             "label": "Organism part",
-            "identifier": "https://w3id.org/isample/vocabulary/specimentype/1.0/organismpart"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/organismpart"
         }
     ],
-    "has_specimen_category_confidence": [1.0],
+    "has_sample_object_type_confidence": [1.0],
     "informal_classification": ["Gardinerosergia splendens"],
     "keywords": [
         {"keyword": "IZ"},

@@ -17,7 +17,7 @@
         "description": "",
         "hasContextCategory": ["Marine biome"],
         "hasMaterialCategory": ["Organic material"],
-        "hasSpecimenCategory": ["Whole organism"],
+        "has_sample_object_type": ["Whole organism"],
         "informalClassification": [
             "Lightbulb tunicate",
             "lightbulb ascidian"
