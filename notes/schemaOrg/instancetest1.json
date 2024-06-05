@@ -21,7 +21,7 @@
     "about": {
         "type":  "Thing",
         "id": "https://igsn.org/slk222-046537",
-        "additionalType": ["https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/othersolidobject"],
+        "additionalType": ["https://w3id.org/isample/vocabulary/materialsampleobjecttype/1.0/solidmaterialsample"],
         "name": "really cool rock",
         "description": "Dark purple-gray chunk of leaverite, contains Austinite, Tilasite, Quartz and native Gold.",
         "identifier": [

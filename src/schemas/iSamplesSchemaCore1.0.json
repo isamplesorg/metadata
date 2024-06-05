@@ -1,13 +1,13 @@
 {
-    "$id": "http://resource.isamples.org/schema/1.0",
+    "$id": "https://w3id.org/isample/schema/1.0",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
-    "description": "This is a data object that is a digital representation of a physical sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web. metamodel_version 1.7.0; version 20240117",
-    "title": "PhysicalSampleRecord",
+    "description": "This is a data object that is a digital representation of a material sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples material sample, URI for the metadata record is same as URI for material sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web. metamodel_version 1.7.0; version 20240117",
+    "title": "MaterialSampleRecord",
     "type": "object",
     "properties": {
         "sample_identifier": {
-            "description": "URI that identifies the physical sample described by this record",
+            "description": "URI that identifies the material sample described by this record",
             "type": "string"
         },
         "label": {
@@ -201,7 +201,7 @@
         },
         "SamplingEvent": {
             "additionalProperties": false,
-            "description": "Information about the event resulting in the creation of the physical sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description. If any special protocols were followed in the sampling procedure, they should be documented using the PhysicalSampleRecord/complies_with property.",
+            "description": "Information about the event resulting in the creation of the material sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description. If any special protocols were followed in the sampling procedure, they should be documented using the MaterialSampleRecord/complies_with property.",
             "properties": {
                 "authorized_by": {
                     "description": "a list of permits or other formal permission documents under which the sample was collected. Use to cite legal documents authorizing sample collection.",
@@ -235,7 +235,18 @@
                 },
                 "result_time": {
                     "description": "Date on which the sample was collected.",
-                    "format": "date",
+                    "anyOf": [
+                        {"format": "date",
+                        "description":"YYYY-MM-DD"},
+                        {"format": "date-time",
+                        "description":"YYYY:MM::DDThh:mm:ss.sTZD"},
+                        {
+                            "pattern": "^(?:[1]?[0-9]{3}|20[0-2][0-9])$",
+                            "description": "gets YYYY"
+                        },
+                        {"pattern": "^(?:[1]?[0-9]{3}|20[0-2][0-9])-(?:0[1-9]|1[0-2])$",
+                        "description":"gets YYYY-MM"}
+                    ],
                     "type": "string"
                 },
                 "sampling_site": {
@@ -311,7 +322,7 @@
                     "type": "array"
                 }
             },
-            "title": "SpecimenCuration",
+            "title": "MaterialSampleCuration",
             "type": "object"
         }
     }

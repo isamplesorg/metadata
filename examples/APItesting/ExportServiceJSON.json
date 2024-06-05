@@ -1,0 +1,39 @@
+{
+    "sample_identifier": "IGSN:NHB000TLJ",
+    "label": "NMNH 125875-00 (MIN)",
+    "description": "",
+    "source_collection": "SESAR",
+    "has_sample_object_type": [{"label":"Other solid object"}],
+    "has_material_category": [{"label":"Mineral"}],
+    "has_context_category": [{"label":"Earth interior"}],
+    "keywords": [{"keyword":"Individual Sample"}],
+    "produced_by": {
+        "responsibility": [{"name":"Adam Mansur","role":"Sample Owner"}],
+        "result_time": "2015-05-02",
+        "sampling_site": {
+            "description": "Matched to Tsumeb (3352593) in GeoNames based on township and country. Assigned a 5 km error radius around the city.",
+            "place_name": [
+                "Otjikoto",
+                "Tsumeb"
+            ],
+            "sample_location": {
+            "elevation": "",
+            "latitude": -19.23,
+            "longitude": 17.72 }
+        }
+    },
+    "registrant": {
+        "name": "Adam Mansur"
+    },
+    "sampling_purpose": "",
+    "curation": {
+        "label": "",
+        "description": "",
+        "access_constraints": [],
+        "curation_location": "",
+        "responsibility": []
+    },
+    "related_resource": [],
+    "authorized_by": null,
+    "complies_with": []
+}
