@@ -234,18 +234,24 @@
                     "type": "array"
                 },
                 "result_time": {
-                    "description": "Date on which the sample was collected.",
+                    "description": "Date on which the sample was collected. Can be YYYY, YYYY-MM, xsd:date, or xsd:dateTime.",
                     "anyOf": [
-                        {"format": "date",
-                        "description":"YYYY-MM-DD"},
-                        {"format": "date-time",
-                        "description":"YYYY:MM::DDThh:mm:ss.sTZD"},
+                        {
+                            "format": "date",
+                            "description": "YYYY-MM-DD"
+                        },
+                        {
+                            "format": "date-time",
+                            "description": "YYYY:MM::DDThh:mm:ss.sTZD"
+                        },
                         {
                             "pattern": "^(?:[1]?[0-9]{3}|20[0-2][0-9])$",
                             "description": "gets YYYY"
                         },
-                        {"pattern": "^(?:[1]?[0-9]{3}|20[0-2][0-9])-(?:0[1-9]|1[0-2])$",
-                        "description":"gets YYYY-MM"}
+                        {
+                            "pattern": "^(?:[1]?[0-9]{3}|20[0-2][0-9])-(?:0[1-9]|1[0-2])$",
+                            "description": "gets YYYY-MM"
+                        }
                     ],
                     "type": "string"
                 },
