@@ -413,10 +413,15 @@ slots:
       to the parent element.
     multivalued: true
   result_time:
-    range: date
+    range: string
+    any_of:
+       - range: date
+       - range: datetime
+       - pattern: "^(?:[1]?[0-9]{3}|20[0-2][0-9])$"
+       - pattern: "^(?:[1]?[0-9]{3}|20[0-2][0-9])-(?:0[1-9]|1[0-2])$"
     domain: SamplingEvent
     description: >
-      Date on which the sample was collected.
+      Date on which the sample was collected. Can be YYYY, YYYY-MM, xsd:date, or xsd:dateTime.
   sampling_site:
     range: SamplingSite
     domain: SamplingEvent
