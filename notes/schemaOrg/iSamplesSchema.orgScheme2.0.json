@@ -1,0 +1,511 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://resource.isamples.org/schema/0.2/schema.org",
+    "type": "object",
+    "title": "Material sample description",
+    "additionalProperties": true,
+    "description": "This is a data object that is a digital representation of a material sample using the schema.org vocabulary, implemented for RDF using JSON-LD.  This implementation includes some feature that are not present in iSamples: sdLicense for license about the metadata record; curation/subEvents to record multiple events in preservation/curation history.  Recommended schema.org @type is 'Thing', use 'additionalType' to indicate the iSamples materialSample type for more useful granularity. Instances conforming to this schema will validate with schema.org/validator, but there will be numerous warnings about properties that are not expected for various base types. These can be ignored. The context is not specified in the schema, but must be added in instance documents. '\"@context\": [\"https://schema.org/\", {\"dcterms\": \"http://purl.org/dc/terms/\",\"id\": \"@id\", \"type\": \"@type\", \"curation\":\"http://resource.isamples.org/schema/0.2/MaterialSampleCuration\" }]' 2024-07-24, SMR change handling of registration information to align with current proposal for cross-domain interoperability (CDIF)",
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "this is the iSamples sample_identifier"
+        },
+        "type": {
+            "const": "Thing",
+            "description": "typing as thing leads to lots of warnings about properties that are not 'expected' for Thing, but seems like the least incoherent type to assign to a material sample..."
+        },
+        "additionalType": {
+            "type": "array",
+            "description": "a string (term or uri) that identifies a more granular type for the described resource. Recommendation is use on of the terms from https://w3id.org/isample/vocabulary/sampleobjecttype. Ideally should be a ScopedName, but this would throw error with validator.schema.org; could include label string and URI as separate array elements...",
+            "items": {"type": "string"}
+        },
+        "name": {
+            "type": "string",
+            "description": "this is the iSamples label"
+        },
+        "description": {
+            "type": "string",
+            "description": "free text description of the sample"
+        },
+        "identifier": {
+            "description": "alternate identifiers for the sample described by this record. Note that about/id is the URI for the sample.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/IdentifierObject"}
+        },
+        "event": {
+            "$ref": "#/definitions/SamplingEvent",
+            "description": "object that documents the sampling event--who, where, when the material sample was obtained. Implements iSamples SamplingEvent"
+        },
+        "keywords": {
+            "description": "categorization of sample to support discovery. Use ScopedName (sdo:DefinedTerm) to provide categorization using other domain-specific vocabularies. String values are for free-text tags.",
+            "items": {
+                "oneOf": [
+                    {"type": "string"},
+                    {"$ref": "#/definitions/ScopedName"}
+                ]
+            },
+            "type": "array"
+        },
+        "category": {
+            "type": "array",
+            "description": "array containing required sample category terms for material type and sampledFeature. The sampleobjecttype (materialSampleType) is specified as about/additionalType, above. Formally defined extension vocabulary terms (that are subclassed from an  iSample vocabulary) are also included here",
+            "items": {
+                "type": "object",
+                "title": "iSamples vocabulary concept",
+                "properties": {
+                    "type": {"const": "DefinedTerm"},
+                    "id": {
+                        "type": "string",
+                        "description": "term URI from iSamples type vocabulary"
+                    },
+                    "name": {
+                        "description": "string label for the type concept from isamples vocabulary.",
+                        "type": "string"
+                    },
+                    "inDefinedTermSet": {
+                        "type": "object",
+                        "properties": {
+                            "type": {"const": "DefinedTermSet"},
+                            "id": {"type": "string"},
+                            "name": {"type": "string"}
+                        }
+                    }
+                }
+            },
+            "minItems": 2
+        },
+        "relatedLink": {
+            "type": "array",
+            "description": "link to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource.",
+            "items": {"$ref": "#/definitions/ResourceLink"}
+        },
+        "ethicsPolicy": {
+            "type": "array",
+            "description": "a list of policies, recommendations, best practices (etc.) that have been followed in the acquisition and curation of the sample . If any special protocols were followed, they should be documented here. ",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "type": {"const": "CreativeWork"},
+                    "name": {"type": "string"},
+                    "description": {"type": "string"},
+                    "url": {"type": "string"}
+                }
+            }
+        },
+        "http://resource.isamples.org/schema/0.2/curation": {
+            "type": "object",
+            "description": "documentation of preservation, preparation, loans, any modification to original sample after acession into repository. Events before assesion to repository should be documented as part of the samplingEvent",
+            "properties": {
+                "type": {"const": "Event"},
+                "name": {
+                    "type": "string",
+                    "description": "short text string to identify and summarize curation"
+                },
+                "description:": {"type": "string"},
+                "maintainer": {
+                    "description": "Information about where the sample is currently stored. Implements iSamples curation_location",
+                    "$ref": "#/definitions/AgentRole"
+                },
+                "conditionsOfAccess": {
+                    "description": "Cultural, legal, or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site. Implements iSamples access_constraints",
+                    "items": {"type": "string"},
+                    "type": "array"
+                },
+                "location": {
+                    "type": "string",
+                    "description": "Information about where and how the sample is currently stored."
+                },
+                "subEvent": {
+                    "type": "array",
+                    "description": "an array of timestamped events in curation history. If sample is loaned, moved to different repository, or conditions of access change, these should be recorded as events.",
+                    "items": {"$ref": "#/definitions/MaterialSampleCurationEvent"}
+                }
+            }
+        },
+        "subjectOf": {
+            "type": "object",
+            "description": "see https://github.com/Cross-Domain-Interoperability-Framework/Discovery/issues/13 for discussion on how to make assertion about the sample registration and metadata distinct from statements about the physical object",
+            "properties": {
+                "type": {"const": "DigitalDocument"},
+                "id": {
+                    "type": "string",
+                    "description": "identifier for the metadata record"
+                },
+                "about": {
+                    "type": "object",
+                    "properties": {
+                        "type": {"const": "DigitalDocument"},
+                        "url": {
+                            "type": "string",
+                            "description": "this should be the @id value found in the parent sample metadata record"
+                        }
+                    }
+                },
+                "dcterms:conformsTo": {"const": "http://resource.isamples.org/schema/0.2/schema.org"},
+                "sdPublisher": {
+                    "description": "iSamples Registrant. identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.",
+                    "oneOf": [
+                        {"$ref": "#/definitions/AgentPerson"},
+                        {"$ref": "#/definitions/AgentOrganization"}
+                    ]
+                },
+                "sdDatePublished": {
+                    "description": "date of most recent update to the metadata content, extends iSamples schema",
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "sdLicense": {
+                    "type": "object",
+                    "properties": {
+                        "type": {"const": "CreativeWork"},
+                        "name": {"type": "string"},
+                        "description": {"type": "string"},
+                        "url": {"type": "string"}
+                    },
+                    "description": "A license document that applies to this material sample metadata record. Restrictions on the use of the sample should be indicated in the curation/conditionsOfAccess property"
+                }
+            }
+        }
+    },
+    "required": [
+        "id",
+        "name",
+        "category"
+    ],
+    "definitions": {
+        "AgentPerson": {
+            "title": "Agent",
+            "type": "object",
+            "additionalProperties": true,
+            "description": "object to represent a person who plays a role relative the project.",
+            "properties": {
+                "type": {"const": "Person"},
+                "id": {
+                    "type": "string",
+                    "description": "identifier for the person, recommend ORCID"
+                },
+                "name": {
+                    "description": "string, name of a person. Format {firstName MI lastName}.",
+                    "type": "string"
+                },
+                "affiliation": {
+                    "description": "Name of an organization that employes or sponsors a person for the role they play relative to sample collection or curation.",
+                    "$ref": "#/definitions/AgentOrganization"
+                },
+                "contactPoint": {
+                    "type": "object",
+                    "description": "e-mail address, telephone number, mailing address, or web site through which an agent can be contacted. Something that should be stable and reliable.",
+                    "properties": {
+                        "type": {"const": "ContactPoint"},
+                        "name": {"type": "string"},
+                        "email": {"type": "string"},
+                        "telephone": {"type": "string"}
+                    }
+                },
+                "identifier": {
+                    "description": "other identifiers for the person. id should be ORCID or similar resolvable identifier, use this key for other identifiers",
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/IdentifierObject"}
+                }
+            }
+        },
+        "AgentOrganization": {
+            "title": "Agent",
+            "type": "object",
+            "additionalProperties": true,
+            "description": "object to represent a person who plays a role relative the project.",
+            "properties": {
+                "type": {"const": "Organization"},
+                "id": {
+                    "type": "string",
+                    "description": "identifier for the organization, recommend ROR"
+                },
+                "name": {
+                    "description": "string, name of a organization.",
+                    "type": "string"
+                },
+                "contactPoint": {
+                    "type": "object",
+                    "description": "e-mail address, telephone number, mailing address, or web site through which an agent can be contacted. Something that should be stable and reliable.",
+                    "properties": {
+                        "type": {"const": "ContactPoint"},
+                        "name": {"type": "string"},
+                        "email": {"type": "string"},
+                        "telephone": {"type": "string"}
+                    }
+                },
+                "identifier": {
+                    "description": "alternate identifier(s) for the organization. Expectation is that it is a URI that is resolvable to some useful represenation.",
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/IdentifierObject"}
+                }
+            }
+        },
+        "AgentRole": {
+            "type": "object",
+            "description": "use schema.org Role pattern; assume base property is 'sdo:participant'; that gets repeated inside the Role object.",
+            "properties": {
+                "type": {"const": "Role"},
+                "roleName": {
+                    "type": "array",
+                    "items": [
+                        {
+                            "description": "a string or URI that specifies the relationship of a person or organization to the sampling event.",
+                            "oneOf": [
+                                {"type": "string"},
+                                {"$ref": "#/definitions/ScopedName"}
+                            ]
+                        }
+                    ]
+                },
+                "participant": {
+                    "oneOf": [
+                        {"$ref": "#/definitions/AgentPerson"},
+                        {"$ref": "#/definitions/AgentOrganization"}
+                    ]
+                }
+            }
+        },
+        "IdentifierObject": {
+            "title": "Identifier object",
+            "type": "object",
+            "description": "Use schema.org PropertyValue object to represent an identifier; use for identifiers that are not URIs, and for alternate identifiers. Preferred identifier should be in id; Use Property value pattern (https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#identifier). ",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "the identifier string value"
+                },
+                "type": {"const": "PropertyValue"},
+                "propertyID": {
+                    "type": "string",
+                    "description": "Identifier scheme URI. identifier for the kind of identifier provided here, e.g. ISSN, ark, ISBN"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "the string representation of the identifier"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "if the identifier value is not resolvable, provide a url that will get a representation of the resource associated with the identifier, which is likely to be the containing metadata record, but might be a landing page"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "text explanation of the context for this identifier"
+                }
+            }
+        },
+        "SamplingEvent": {
+            "additionalProperties": true,
+            "description": "Information about the event resulting in the creation of the physical sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description.  If any special protocols were followed in the sampling procedure, they should be documented using the PhysicalSampleRecord/complies_with property.",
+            "type": "object",
+            "title": "SamplingEvent",
+            "properties": {
+                "id": {
+                    "description": "A string that identifies the samplingEvent. Use to gather all samples from a single sampling event.",
+                    "type": "string"
+                },
+                "type": {"const": "Event"},
+                "name": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Free text description of the subject of a triple.",
+                    "type": "string"
+                },
+                "about": {
+                    "description": "What was sampled. implements iSample has_feature_of_interest",
+                    "oneOf": [
+                        {"type": "string"},
+                        {"$ref": "#/definitions/ScopedName"}
+                    ]
+                },
+                "participant": {
+                    "description": "Agent with person name and affiliation, or organization name, and their role relative to the sampling event.",
+                    "type": "array",
+                    "items": {"$ref": "#/definitions/AgentRole"}
+                },
+                "startDate": {
+                    "type": "string",
+                    "description": "only necessary if sampling event has some significant duration",
+                    "anyOf": [
+                        {"format": "year"},
+                        {"format": "yearmonth"},
+                        {"format": "date"},
+                        {"format": "datetime"}
+                    ]
+                },
+                "organizer": {
+                    "description": "implements iSamples 'project property'. The name or identifier for a project that is the sponsor for a samplingEvent. Use to link samples collected in the context of a particular project. Project description should include link to funding. ",
+                    "oneOf": [
+                        {"type": "string"},
+                        {"$ref": "#/definitions/ScopedName"}
+                    ]
+                },
+                "endDate": {
+                    "type": "string",
+                    "description": "when the sampling event was done.",
+                    "anyOf": [
+                        {"format": "year"},
+                        {"format": "yearmonth"},
+                        {"format": "date"},
+                        {"format": "datetime"}
+                    ]
+                },
+                "location": {
+                    "title": "Sampling Site",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "description": "documentation of the site where the sample was collected, wtih place name(s) and a geospatial location. Implements iSamples SamplingSite",
+                    "properties": {
+                        "description": {
+                            "description": "Free text description of the sampling site.",
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "array",
+                            "description": "one or more names by which the sampling site is known. iSamples PlaceName",
+                            "items": {"type": "string"}
+                        },
+                        "geo": {
+                            "type": "object",
+                            "description": "geopatial location of site; required default is WGS84 latitude, longitude in decimal degrees. Elevation as a string with number, unit of measure, and datum.",
+                            "properties": {
+                                "type": {"const": "GeoCoordinates"},
+                                "elevation": {
+                                    "type": "string",
+                                    "description": "string that specifies elevation, units of measure, and the vertical reference datum, e.g. mean sea level, ground surface..."
+                                },
+                                "latitude": {"type": "number"},
+                                "longitude": {"type": "number"}
+                            }
+                        }
+                    }
+                },
+                "http://resource.isamples.org/schema/0.2/authorized_by": {
+                    "description": "a list of permits or other formal permission documents under which the sample was collected. Use to cite legal documents authorizing sample collection. Can't find a suitable schema.org property. Value could be sdo:Permit",
+                    "items": {"type": "string"},
+                    "type": "array"
+                }
+            }
+        },
+        "ScopedName": {
+            "title": "ScopedName",
+            "type": "object",
+            "description": "Use schema.org DefinedTerm pattern (see https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#keywords) to associate keyword string with a scheme (DefinedTermSet) name,and optional scheme URI and value URI. The scoped name keywords can be used to categorize the sample using a formal vocabulary. ",
+            "properties": {
+                "type": {"const": "DefinedTerm"},
+                "name": {
+                    "description": "string label for the keyword concept.",
+                    "type": "string"
+                },
+                "identifier": {
+                    "description": "an identifier for the keyword concept",
+                    "type": "string"
+                },
+                "termCode": {
+                    "type": "string",
+                    "description": "an abbreviation or short text string used to identify the keyword in data"
+                },
+                "inDefinedTermSet": {
+                    "type": "object",
+                    "properties": {
+                        "type": {"const": "DefinedTermSet"},
+                        "name": {
+                            "description": "string label for the concept scheme or vocabulary within which the keyword concept is defined. The scheme name can be used to scope keyword to particular categories, e.g. -CGI rock classification-, -GCMD keywords-, -Getty AAT- ",
+                            "type": "string"
+                        },
+                        "identifier": {
+                            "description": "Identifier for the concept scheme or vocabulary within which the keyword concept is defined.",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "ResourceLink": {
+            "title": "Relation to another resource",
+            "type": "object",
+            "description": "semantic link to a related resource.",
+            "properties": {
+                "type": {"const": "LinkRole"},
+                "name": {
+                    "description": "a short human intelligible string to label the link.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Free text description of related resource, explanation of link.",
+                    "type": "string"
+                },
+                "linkRelationship": {
+                    "description": "term to identify realationship between the project and the relation target. Should be controlled vocabulary (ScopedName).",
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {"type": "string"},
+                            {"$ref": "#/definitions/ScopedName"}
+                        ]
+                    }
+                },
+                "inLanguage": {"type": "string"},
+                "target": {
+                    "description": "identifier for the target resource in the relationship. Start with string, should be Identifier object.",
+                    "type": "object",
+                    "properties": {
+                        "type": {"const": "EntryPoint"},
+                        "id": {"type": "string"},
+                        "url": {"type": "string"},
+                        "name": {"type": "string"},
+                        "encodingType": {
+                            "type": "string",
+                            "description": "The format of the item that is the target of the url"
+                        },
+                        "contentType": {"type": "string"}
+                    }
+                }
+            }
+        },
+        "MaterialSampleCurationEvent": {
+            "title": "MaterialSampleCuration",
+            "type": "object",
+            "additionalProperties": false,
+            "description": "Information about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.",
+            "properties": {
+                "type": {"const": "Event"},
+                "name": {
+                    "description": "a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "information about how the sample has been processed since collection, including any preservation activities, or events that have altered the samples original condition.",
+                    "type": "string"
+                },
+                "participant": {
+                    "description": "Person or Organization their role relative to the sample curation.",
+                    "items": {"$ref": "#/definitions/AgentRole"},
+                    "type": "array"
+                },
+                "startDate": {
+                    "type": "string",
+                    "description": "only necessary if sampling event has some significant duration",
+                    "anyOf": [
+                        {"format": "year"},
+                        {"format": "yearmonth"},
+                        {"format": "date"},
+                        {"format": "datetime"}
+                    ]
+                },
+                "endDate": {
+                    "type": "string",
+                    "description": "only necessary if sampling event has some significant duration",
+                    "anyOf": [
+                        {"format": "year"},
+                        {"format": "yearmonth"},
+                        {"format": "date"},
+                        {"format": "datetime"}
+                    ]
+                }
+            }
+        }
+    }
+}
