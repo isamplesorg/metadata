@@ -1,19 +1,43 @@
-has_specimen_category  -->  has_sample_object_type
-Physical specimen -->  Material sample
-specimentype --> sampleobjecttype
-earthenv_specimen_type  --> earthenv_sample_object_type
-solidmaterialspecimen  --> solidmaterialsample
-1.0/physicalspecimen --> 1.0/materialsample
-hasSpecimenCategory --> has_sample_object_type
-Any biological specimen --> Biological material sample
-/biologicalspecimen  -->  /biologicalmaterialsample
-/mineralspecimen -->  /mineralmaterialsample
-Whole organism specimen -- Whole organism material sample
-SpecimenCurationEvent -->  MaterialSampleCurationEvent
-specimen samples  --> material sample represents
-/SpecimenCuration  --> /MaterialSampleCuration
 
-in isamples_core.yaml and iSamplesSchemaCore1.0.json
-PhysicalSampleRecord -->  MaterialSampleRecord
-physical sample --> material sample
-SpecimenCuration --> MaterialSampleCuration
+****in material_sample_object_type.ttl (was material_sample_type.ttl)
+conceptscheme URI
+...specimentype/1.0/specimentypevocabulary --> ...materialsampleobjecttype/1.0/conceptscheme
+
+
+conceptURIs
+specimentype/1.0/physicalspecimen --> materialsampleobjecttype/1.0/materialsample
+			 .../biologicalspecimen  -->  					   .../biologicalmaterialsample
+			 .../solidmaterialspecimen  --> 				   .../solidmaterialsample
+
+Labels
+Physical specimen -->  Material sample
+Any biological specimen --> Biological material sample
+Whole organism specimen -- Whole organism material sample
+
+
+
+***** in isamples_core.yaml and iSamplesSchemaCore1.0.json
+PhysicalSampleRecord -->  MaterialSampleRecord   type name
+physical sample --> material sample.  label
+has_specimen_category  -->  has_sample_object_type  .property name
+/SpecimenCuration  --> /MaterialSampleCuration (type name, shouldn't impact json instances)
+
+in isamples_core.yaml
+#  spec: https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/  replaced by 
+  msot: https://w3id.org/isample/vocabulary/materialsampleobjecttype/1.0/
+
+
+in Readme,
+hasSpecimenCategory --> has_sample_object_type
+
+in sampled_feature_type.ttl concept description text
+specimen samples  --> sampled feature is
+
+
+(in draft schema.org schema, ignore)
+SpecimenCurationEvent -->  MaterialSampleCurationEvent  
+
+
+
+
+
