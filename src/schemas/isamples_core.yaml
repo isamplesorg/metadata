@@ -263,7 +263,7 @@ slots:
     domain: MaterialSampleRecord
     description: >
       The kind of object the material sample is. At least one value is an instance of skos\:Concept from the iSamples
-      sampleobjecttypeVocabulary; extension vocabularies can be used for more precise categorization.
+      materialsampleobjecttype Vocabulary; extension vocabularies can be used for more precise categorization.
     range: IdentifierObject
     multivalued: true
   is_part_of:
