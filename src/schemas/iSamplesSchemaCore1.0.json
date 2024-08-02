@@ -32,17 +32,17 @@
             "type": "string"
         },
         "has_context_category": {
-            "description": "Top level context, based on the kind of feature sampled. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property. At least one value is an instance of skos:Concept from the iSamples sampledfeaturevocabulary.",
+            "description": "Top level context, based on the kind of feature sampled. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property. At least one value is an instance of skos:Concept from the iSamples sampled_feature_type.",
             "items": {"$ref": "#/$defs/IdentifierObject"},
             "type": "array"
         },
         "has_material_category": {
-            "description": "The kind of material that constitutes the sample.  At least one value is an instance of skos:Concept from the iSamples MaterialType Vocabulary; extension vocabularies can be used for more precise categorization.",
+            "description": "The kind of material that constitutes the sample.  At least one value is an instance of skos:Concept from the iSamples material_type Vocabulary; extension vocabularies can be used for more precise categorization.",
             "items": {"$ref": "#/$defs/IdentifierObject"},
             "type": "array"
         },
         "has_sample_object_type": {
-            "description": "The kind of object the material sample is. At least one value is an instance of skos:Concept from the iSamples SampleObjectType Vocabulary; extension vocabularies can be used for more precise categorization.",
+            "description": "The kind of object the material sample is. At least one value is an instance of skos:Concept from the iSamples material_sample_object_type Vocabulary; extension vocabularies can be used for more precise categorization.",
             "items": {"$ref": "#/$defs/IdentifierObject"},
             "type": "array"
         },

@@ -19,7 +19,8 @@ prefixes:
   mat: https://w3id.org/isample/vocabulary/material/1.0/
   sf: https://w3id.org/isample/vocabulary/sampledfeature/1.0/
   skos: http://www.w3.org/2004/02/skos/core#
-  spec: https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/
+#  spec: https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/
+  msot: https://w3id.org/isample/vocabulary/materialsampleobjecttype/1.0/
   w3cpos: http://www.w3.org/2003/01/geo/wgs84_pos#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   xsd: http://www.w3.org/2001/XMLSchema#
@@ -258,7 +259,7 @@ slots:
     multivalued: true
   has_sample_object_type:
     # range is an instance at least one skos:Concept
-    # with skos:inScheme = mat:sampleobjecttypevocabulary
+    # with skos:inScheme = msot:conceptscheme
     domain: MaterialSampleRecord
     description: >
       The kind of object the material sample is. At least one value is an instance of skos\:Concept from the iSamples
