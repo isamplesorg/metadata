@@ -4,7 +4,7 @@
         "dcterms": "http://purl.org/dc/terms/",
         "id": "@id",
         "type": "@type",
-        "curation":"http://resource.isamples.org/schema/1.0/SpecimenCuration"
+        "curation":"http://resource.isamples.org/schema/1.0/MaterialSampleCuration"
     },
     "type": "DigitalDocument",
     "id": "https://isamples.org/igsn-id/metadata",
@@ -21,7 +21,7 @@
     "about": {
         "type":  "Thing",
         "id": "https://igsn.org/slk222-046537",
-        "additionalType": ["https://w3id.org/isample/vocabulary/specimentype/1.0/othersolidobject"],
+        "additionalType": ["https://w3id.org/isample/vocabulary/materialsampleobjecttype/1.0/solidmaterialsample"],
         "name": "really cool rock",
         "description": "Dark purple-gray chunk of leaverite, contains Austinite, Tilasite, Quartz and native Gold.",
         "identifier": [
@@ -89,7 +89,7 @@
                 "id": "https://w3id.org/isample/vocabulary/material/1.0/rock",
                 "inDefinedTermSet": {
                     "type": "DefinedTermSet",
-                    "id": "https://w3id.org/isample/vocabulary/specimentype/1.0/materialsvocabulary",
+                    "id": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/materialsvocabulary",
                     "name": "iSamples Materials Vocabulary"
                 }
             },
@@ -99,7 +99,7 @@
                 "id": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/earthinterior",
                 "inDefinedTermSet": {
                     "type": "DefinedTermSet",
-                    "id": "https://w3id.org/isample/vocabulary/specimentype/1.0/sampledfeaturevocabulary",
+                    "id": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/sampledfeaturevocabulary",
                     "name": "Sampled Feature Type vocabulary"
                 }
             }
@@ -126,7 +126,7 @@
         ],
         "curation": {
             "type":  "Event",
-            "additionalType": ["http://resource.isamples.org/schema/1.0/SpecimenCuration"],
+            "additionalType": ["http://resource.isamples.org/schema/1.0/MaterialSampleCuration"],
             "description": ["2010-11-05; Samples are packaged in plastic bags and stored in the basement at the Arizona Geological Survey. Samples are maintained at the survey for 5 years after publication of related geologic map."],
             
             "conditionsOfAccess": ["Samples are viewable by contacting the maintainer identifier in this record. Subsamples might be made available for analysis on a case by case basis"],

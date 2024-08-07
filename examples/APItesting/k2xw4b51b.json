@@ -18,21 +18,21 @@
         }
     ],
     "has_material_category_confidence": [1.0],
-    "has_specimen_category": [
+    "has_sample_object_type": [
         {
             "label": "Artifact",
-            "identifier": "https://w3id.org/isample/vocabulary/specimentype/1.0/artifact"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/artifact"
         },
         {
             "label": "Organism product",
-            "identifier": "https://w3id.org/isample/vocabulary/specimentype/1.0/organismproduct"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/organismproduct"
         },
         {
             "label": "Organism part",
-            "identifier": "https://w3id.org/isample/vocabulary/specimentype/1.0/organismpart"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/organismpart"
         }
     ],
-    "has_specimen_category_confidence": [
+    "has_sample_object_type_confidence": [
         0.9983230233192444,
         0.0010172827169299126,
         0.0006596413441002369

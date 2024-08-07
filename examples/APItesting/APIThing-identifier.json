@@ -1,0 +1,78 @@
+{
+    "$schema": "iSamplesSchemaCore1.0.json",
+    "@id": "https://data.isamples.org/digitalsample/igsn/NHB000TLJ",
+    "label": "NMNH 125875-00 (MIN)",
+    "sample_identifier": "IGSN:NHB000TLJ",
+    "description": "",
+    "has_context_category": [
+        {
+            "label": "Any sampled feature",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/anysampledfeature"
+        }
+    ],
+    "has_context_category_confidence": [1.0],
+    "has_material_category": [
+        {
+            "label": "Mineral",
+            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/mineral"
+        }
+    ],
+    "has_material_category_confidence": "None",
+    "has_specimen_category": [
+        {
+            "label": "Physical specimen",
+            "identifier": "https://w3id.org/isample/vocabulary/specimentype/1.0/physicalspecimen"
+        }
+    ],
+    "has_specimen_category_confidence": [1.0],
+    "informal_classification": [""],
+    "keywords": ["Individual Sample"],
+    "produced_by": {
+        "@id": "",
+        "label": "",
+        "description": "",
+        "has_feature_of_interest": "",
+        "responsibility": ["Adam Mansur,,Sample Owner"],
+        "result_time": "2015-05-02 11:21:17",
+        "sampling_site": {
+            "description": "Matched to Tsumeb (3352593) in GeoNames based on township and country. Assigned a 5 km error radius around the city.",
+            "label": "",
+            "sample_location": {
+                "elevation": "",
+                "latitude": -19.23,
+                "longitude": 17.72
+            },
+            "place_name": [
+                "Otjikoto",
+                "Tsumeb"
+            ]
+        }
+    },
+    "registrant": {"name": "Adam Mansur"},
+    "sampling_purpose": "",
+    "curation": {
+        "label": "",
+        "description": "",
+        "access_constraints": "",
+        "curation_location": "",
+        "responsibility": []
+    },
+    "related_resource": [],
+    "authorized_by": [],
+    "complies_with": [],
+    "producedBy_samplingSite_location_h3_0": "80adfffffffffff",
+    "producedBy_samplingSite_location_h3_1": "81acbffffffffff",
+    "producedBy_samplingSite_location_h3_2": "82acb7fffffffff",
+    "producedBy_samplingSite_location_h3_3": "83acb3fffffffff",
+    "producedBy_samplingSite_location_h3_4": "84acb33ffffffff",
+    "producedBy_samplingSite_location_h3_5": "85acb32ffffffff",
+    "producedBy_samplingSite_location_h3_6": "86acb32e7ffffff",
+    "producedBy_samplingSite_location_h3_7": "87acb32e6ffffff",
+    "producedBy_samplingSite_location_h3_8": "88acb32e65fffff",
+    "producedBy_samplingSite_location_h3_9": "89acb32e643ffff",
+    "producedBy_samplingSite_location_h3_10": "8aacb32e640ffff",
+    "producedBy_samplingSite_location_h3_11": "8bacb32e6408fff",
+    "producedBy_samplingSite_location_h3_12": "8cacb32e64083ff",
+    "producedBy_samplingSite_location_h3_13": "8dacb32e64082bf",
+    "producedBy_samplingSite_location_h3_14": "8eacb32e640828f"
+}

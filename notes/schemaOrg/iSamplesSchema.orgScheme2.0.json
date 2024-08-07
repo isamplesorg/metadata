@@ -1,167 +1,176 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "http://resource.isamples.org/schema/1.0/schema.org",
+    "$id": "http://resource.isamples.org/schema/0.2/schema.org",
     "type": "object",
     "title": "Material sample description",
     "additionalProperties": true,
-    "description": "This is a data object that is a digital representation of a material sample using the schema.org vocabulary, implemented for RDF using JSON-LD.  This implementation includes some feature that are not present in iSamples: sdLicense for license about the metadata record; curation/subEvents to record multiple events in preservation/curation history.  Recommended schema.org @type is 'Thing', use 'additionalType' to indicate the iSamples materialSample type for more useful granularity. Instances conforming to this schema will validate with schema.org/validator, but there will be numerous warnings about properties that are not expected for various base types. These can be ignored. The context is not specified in the schema, but must be added in instance documents. '\"@context\": [\"https://schema.org/\", {\"dcterms\": \"http://purl.org/dc/terms/\",\"id\": \"@id\", \"type\": \"@type\", \"curation\":\"http://resource.isamples.org/schema/1.0/MaterialSampleCuration\" }]' ",
+    "description": "This is a data object that is a digital representation of a material sample using the schema.org vocabulary, implemented for RDF using JSON-LD.  This implementation includes some feature that are not present in iSamples: sdLicense for license about the metadata record; curation/subEvents to record multiple events in preservation/curation history.  Recommended schema.org @type is 'Thing', use 'additionalType' to indicate the iSamples materialSample type for more useful granularity. Instances conforming to this schema will validate with schema.org/validator, but there will be numerous warnings about properties that are not expected for various base types. These can be ignored. The context is not specified in the schema, but must be added in instance documents. '\"@context\": [\"https://schema.org/\", {\"dcterms\": \"http://purl.org/dc/terms/\",\"id\": \"@id\", \"type\": \"@type\", \"curation\":\"http://resource.isamples.org/schema/0.2/MaterialSampleCuration\" }]' 2024-07-24, SMR change handling of registration information to align with current proposal for cross-domain interoperability (CDIF)",
     "properties": {
-        "type": {"const": "DigitalDocument"},
         "id": {
             "type": "string",
-            "description": "identifier for the metadata record"
+            "description": "this is the iSamples sample_identifier"
         },
-        "dcterms:conformsTo": {"const": "http://resource.isamples.org/schema/1.0/schema.org"},
-        "sdPublisher": {
-            "description": "iSamples Registrant. identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.",
-            "oneOf": [
-                {"$ref": "#/definitions/AgentPerson"},
-                {"$ref": "#/definitions/AgentOrganization"}
-            ]
+        "type": {
+            "const": "Thing",
+            "description": "typing as thing leads to lots of warnings about properties that are not 'expected' for Thing, but seems like the least incoherent type to assign to a material sample..."
         },
-        "sdLicense": {
-            "type": "object",
-            "properties": {
-                "type": {"const": "CreativeWork"},
-                "name": {"type": "string"},
-                "description": {"type": "string"},
-                "url": {"type": "string"}
+        "additionalType": {
+            "type": "array",
+            "description": "a string (term or uri) that identifies a more granular type for the described resource. Recommendation is use on of the terms from https://w3id.org/isample/vocabulary/sampleobjecttype. Ideally should be a ScopedName, but this would throw error with validator.schema.org; could include label string and URI as separate array elements...",
+            "items": {"type": "string"}
+        },
+        "name": {
+            "type": "string",
+            "description": "this is the iSamples label"
+        },
+        "description": {
+            "type": "string",
+            "description": "free text description of the sample"
+        },
+        "identifier": {
+            "description": "alternate identifiers for the sample described by this record. Note that about/id is the URI for the sample.",
+            "type": "array",
+            "items": {"$ref": "#/definitions/IdentifierObject"}
+        },
+        "event": {
+            "$ref": "#/definitions/SamplingEvent",
+            "description": "object that documents the sampling event--who, where, when the material sample was obtained. Implements iSamples SamplingEvent"
+        },
+        "keywords": {
+            "description": "categorization of sample to support discovery. Use ScopedName (sdo:DefinedTerm) to provide categorization using other domain-specific vocabularies. String values are for free-text tags.",
+            "items": {
+                "oneOf": [
+                    {"type": "string"},
+                    {"$ref": "#/definitions/ScopedName"}
+                ]
             },
-            "description": "A license document that applies to this material sample metadata record. Restrictions on the use of the sample should be indicated in the curation/conditionsOfAccess property"
+            "type": "array"
         },
-        "about": {
-            "type": "object",
-            "description": "this is the part of the metadata that describes the sample, with content defined by http://resource.isamples.org/schema/1.0",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "this is the iSamples sample_identifier"
-                },
-                "type": {
-                    "const": "Thing",
-                    "description": "typing as thing leads to lots of warnings about properties that are not 'expected' for Thing, but seems like the least incoherent type to assign to a material sample..."
-                },
-                "additionalType": {
-                    "type": "array",
-                    "description": "a string (term or uri) that identifies a more granular type for the described resource. Recommendation is use on of the terms from https://w3id.org/isample/vocabulary/sampleobjecttype. Ideally should be a ScopedName, but this would throw error with validator.schema.org; could include label string and URI as separate array elements...",
-                    "items": {"type": "string"}
-                },
-                "name": {
-                    "type": "string",
-                    "description": "this is the iSamples label"
-                },
-                "description": {
-                    "type": "string",
-                    "description": "free text description of the sample"
-                },
-                "identifier": {
-                    "description": "alternate identifiers for the sample described by this record. Note that about/id is the URI for the sample.",
-                    "type": "array",
-                    "items": {"$ref": "#/definitions/IdentifierObject"}
-                },
-                "event": {
-                    "$ref": "#/definitions/SamplingEvent",
-                    "description": "object that documents the sampling event--who, where, when the material sample was obtained. Implements iSamples SamplingEvent"
-                },
-                "keywords": {
-                    "description": "categorization of sample to support discovery. Use ScopedName (sdo:DefinedTerm) to provide categorization using other domain-specific vocabularies. String values are for free-text tags.",
-                    "items": {
-                        "oneOf": [
-                            {"type": "string"},
-                            {"$ref": "#/definitions/ScopedName"}
-                        ]
+        "category": {
+            "type": "array",
+            "description": "array containing required sample category terms for material type and sampledFeature. The sampleobjecttype (materialSampleType) is specified as about/additionalType, above. Formally defined extension vocabulary terms (that are subclassed from an  iSample vocabulary) are also included here",
+            "items": {
+                "type": "object",
+                "title": "iSamples vocabulary concept",
+                "properties": {
+                    "type": {"const": "DefinedTerm"},
+                    "id": {
+                        "type": "string",
+                        "description": "term URI from iSamples type vocabulary"
                     },
-                    "type": "array"
-                },
-                "category": {
-                    "type": "array",
-                    "description": "array containing required sample category terms for material type and sampledFeature. The sampleobjecttype (materialSampleType) is specified as about/additionalType, above. Formally defined extension vocabulary terms (that are subclassed from an  iSample vocabulary) are also included here",
-                    "items": {
-                        "type": "object",
-                        "title": "iSamples vocabulary concept",
-                        "properties": {
-                            "type": {"const": "DefinedTerm"},
-                            "id": {
-                                "type": "string",
-                                "description": "term URI from iSamples type vocabulary"
-                            },
-                            "name": {
-                                "description": "string label for the type concept from isamples vocabulary.",
-                                "type": "string"
-                            },
-                            "inDefinedTermSet": {
-                                "type": "object",
-                                "properties": {
-                                    "type": {"const": "DefinedTermSet"},
-                                    "id": {"type": "string"},
-                                    "name": {"type": "string"}
-                                }
-                            }
-                        }
+                    "name": {
+                        "description": "string label for the type concept from isamples vocabulary.",
+                        "type": "string"
                     },
-                    "minItems": 2
-                },
-                "relatedLink": {
-                    "type": "array",
-                    "description": "link to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource.",
-                    "items": {"$ref": "#/definitions/ResourceLink"}
-                },
-                "ethicsPolicy": {
-                    "type": "array",
-                    "description": "a list of policies, recommendations, best practices (etc.) that have been followed in the acquisition and curation of the sample . If any special protocols were followed, they should be documented here. ",
-                    "items": {
+                    "inDefinedTermSet": {
                         "type": "object",
                         "properties": {
-                            "type": {"const": "CreativeWork"},
-                            "name": {"type": "string"},
-                            "description": {"type": "string"},
-                            "url": {"type": "string"}
-                        }
-                    }
-                },
-                "curation": {
-                    "type": "object",
-                    "description": "documentation of preservation, preparation, loans, any modification to original sample after acession into repository. Events before assesion to repository should be documented as part of the samplingEvent",
-                    "properties": {
-                        "type": {"const": "Event"},
-                        "name": {
-                            "type": "string",
-                            "description": "short text string to identify and summarize curation"
-                        },
-                        "description:": {"type": "string"},
-                        "maintainer": {
-                            "description": "Information about where the sample is currently stored. Implements iSamples curation_location",
-                            "$ref": "#/definitions/AgentRole"
-                        },
-                        "conditionsOfAccess": {
-                            "description": "Cultural, legal, or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site. Implements iSamples access_constraints",
-                            "items": {"type": "string"},
-                            "type": "array"
-                        },
-                        "location": {
-                            "type": "string",
-                            "description": "Information about where and how the sample is currently stored."
-                        },
-                        "subEvent": {
-                            "type": "array",
-                            "description": "an array of timestamped events in curation history. If sample is loaned, moved to different repository, or conditions of access change, these should be recorded as events.",
-                            "items": {"$ref": "#/definitions/MaterialSampleCurationEvent"}
+                            "type": {"const": "DefinedTermSet"},
+                            "id": {"type": "string"},
+                            "name": {"type": "string"}
                         }
                     }
                 }
             },
-            "required": [
-                "id",
-                "name",
-                "category"
-            ]
+            "minItems": 2
+        },
+        "relatedLink": {
+            "type": "array",
+            "description": "link to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource.",
+            "items": {"$ref": "#/definitions/ResourceLink"}
+        },
+        "ethicsPolicy": {
+            "type": "array",
+            "description": "a list of policies, recommendations, best practices (etc.) that have been followed in the acquisition and curation of the sample . If any special protocols were followed, they should be documented here. ",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "type": {"const": "CreativeWork"},
+                    "name": {"type": "string"},
+                    "description": {"type": "string"},
+                    "url": {"type": "string"}
+                }
+            }
+        },
+        "http://resource.isamples.org/schema/0.2/curation": {
+            "type": "object",
+            "description": "documentation of preservation, preparation, loans, any modification to original sample after acession into repository. Events before assesion to repository should be documented as part of the samplingEvent",
+            "properties": {
+                "type": {"const": "Event"},
+                "name": {
+                    "type": "string",
+                    "description": "short text string to identify and summarize curation"
+                },
+                "description:": {"type": "string"},
+                "maintainer": {
+                    "description": "Information about where the sample is currently stored. Implements iSamples curation_location",
+                    "$ref": "#/definitions/AgentRole"
+                },
+                "conditionsOfAccess": {
+                    "description": "Cultural, legal, or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site. Implements iSamples access_constraints",
+                    "items": {"type": "string"},
+                    "type": "array"
+                },
+                "location": {
+                    "type": "string",
+                    "description": "Information about where and how the sample is currently stored."
+                },
+                "subEvent": {
+                    "type": "array",
+                    "description": "an array of timestamped events in curation history. If sample is loaned, moved to different repository, or conditions of access change, these should be recorded as events.",
+                    "items": {"$ref": "#/definitions/MaterialSampleCurationEvent"}
+                }
+            }
+        },
+        "subjectOf": {
+            "type": "object",
+            "description": "see https://github.com/Cross-Domain-Interoperability-Framework/Discovery/issues/13 for discussion on how to make assertion about the sample registration and metadata distinct from statements about the physical object",
+            "properties": {
+                "type": {"const": "DigitalDocument"},
+                "id": {
+                    "type": "string",
+                    "description": "identifier for the metadata record"
+                },
+                "about": {
+                    "type": "object",
+                    "properties": {
+                        "type": {"const": "DigitalDocument"},
+                        "url": {
+                            "type": "string",
+                            "description": "this should be the @id value found in the parent sample metadata record"
+                        }
+                    }
+                },
+                "dcterms:conformsTo": {"const": "http://resource.isamples.org/schema/0.2/schema.org"},
+                "sdPublisher": {
+                    "description": "iSamples Registrant. identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.",
+                    "oneOf": [
+                        {"$ref": "#/definitions/AgentPerson"},
+                        {"$ref": "#/definitions/AgentOrganization"}
+                    ]
+                },
+                "sdDatePublished": {
+                    "description": "date of most recent update to the metadata content, extends iSamples schema",
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "sdLicense": {
+                    "type": "object",
+                    "properties": {
+                        "type": {"const": "CreativeWork"},
+                        "name": {"type": "string"},
+                        "description": {"type": "string"},
+                        "url": {"type": "string"}
+                    },
+                    "description": "A license document that applies to this material sample metadata record. Restrictions on the use of the sample should be indicated in the curation/conditionsOfAccess property"
+                }
+            }
         }
     },
     "required": [
-        "type",
         "id",
-        "dcterms:conformsTo",
-        "about"
+        "name",
+        "category"
     ],
     "definitions": {
         "AgentPerson": {
@@ -373,7 +382,7 @@
                         }
                     }
                 },
-                "http://resource.isamples.org/schema/1.0/authorized_by": {
+                "http://resource.isamples.org/schema/0.2/authorized_by": {
                     "description": "a list of permits or other formal permission documents under which the sample was collected. Use to cite legal documents authorizing sample collection. Can't find a suitable schema.org property. Value could be sdo:Permit",
                     "items": {"type": "string"},
                     "type": "array"

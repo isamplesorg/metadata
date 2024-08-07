@@ -7,19 +7,19 @@
     "has_context_category": [
         {
             "label": "Subsurface fluid reservoir",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/subsurfacefluidreservoir"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/subsurfacefluidreservoir"
         }
     ],
     "has_material_category": [
         {
             "label": "Gaseous material",
-            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/gas"
+            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/gas"
         }
     ],
-    "has_specimen_category": [
+    "has_sample_object_type": [
         {
             "label": "Fluid in container",
-            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/fluidincontainer"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/fluidincontainer"
         }
     ],
     "keywords": [

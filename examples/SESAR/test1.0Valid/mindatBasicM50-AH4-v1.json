@@ -7,35 +7,35 @@
     "has_context_category": [
         {
             "label": "Earth interior",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/earthinterior"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/earthinterior"
         }
     ],
     "has_material_category": [
         {
             "label": "Rock",
-            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/rock"
+            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/rock"
         },
         {
             "label": "Mineral",
-            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/mineral"
+            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/mineral"
         },
         {
             "label": "Mineral-Silicate or Germanate",
-            "identifier": "https://w3id.org/isample/vocabulary/mingroup/0.9/silicategermanatemineral"
+            "identifier": "https://w3id.org/isample/vocabulary/mingroup/1.0/silicategermanatemineral"
         },
         {
             "label": "metamorphic rock",
-            "identifier": "https://w3id.org/isample/vocabulary/rocksediment/0.9/Metamorphic_Rock"
+            "identifier": "https://w3id.org/isample/vocabulary/rocksediment/1.0/Metamorphic_Rock"
         }
     ],
-    "has_specimen_category": [
+    "has_sample_object_type": [
         {
             "label": "Other solid object",
-            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/othersolidobject"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/othersolidobject"
         },
         {
             "label": "Mineral specimen",
-            "identifier": "https://w3id.org/isample/1.0/esmaterialsample/mineralspecimen"
+            "identifier": "https://w3id.org/isample/1.0/esmaterialsample/mineralmaterialsample"
         }
     ],
     "keywords": [
