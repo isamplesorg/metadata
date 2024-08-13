@@ -353,7 +353,8 @@ myst-parser==0.18.1 ; python_version >= "3.9" and python_version < "4.0" \
     --hash=sha256:79317f4bb2c13053dd6e64f9da1ba1da6cd9c40c8a430c447a7b146a594c246d
 nbclient==0.7.4 ; python_version >= "3.9" and python_version < "4.0" \
     --hash=sha256:290d933b290aedf04f1a4f148d79ce8ebbe7fb1ff738eb5dfbacd6fa10104be3 \
-    --hash=sha256:bb722f2751e3779d2ef13537772dcd1bf9c984aa58a40ca6c817d44bd12013fa
+    --hash=sha256:bb722f2751e3779d2ef13537772dcd1bf9c984aa58a40ca6c817d44bd12013fa \
+    --hash=sha256:c817c0768c5ff0d60e468e017613e6eae27b6fa31e43f905addd2d24df60c125
 nbformat==5.7.0 ; python_version >= "3.9" and python_version < "4.0" \
     --hash=sha256:1b05ec2c552c2f1adc745f4eddce1eac8ca9ffd59bb9fd859e827eaa031319f9 \
     --hash=sha256:1d4760c15c1a04269ef5caf375be8b98dd2f696e5eb9e603ec2bf091f9b0d3f3
