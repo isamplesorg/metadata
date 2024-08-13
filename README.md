@@ -7,7 +7,7 @@
 
 Defines the core metadata model for iSamples.
 
-`src/schemas/iSamplesCoreSchema.yml` defines the iSamples core model in linkml. It references vocabularies contained in `src/vocabularies/` which define terms for the Material Type, Sampled Feature, and Specimen Type vocabularies.
+`src/schemas/isamples_core.yaml` defines the iSamples core model in linkml. It references vocabularies contained in `src/vocabularies/` which define terms for the Material Type, Sampled Feature, and Material Sample Object Type vocabularies.
 
 The following artifacts are generated from the linkml and vocabulary sources:
 
