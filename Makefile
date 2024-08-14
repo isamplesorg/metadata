@@ -8,16 +8,13 @@ SRC_DIR = src
 PKG_DIR = generated
 TARGET_DIR = build
 SCHEMA_DIR = $(SRC_DIR)/schemas
-VOCAB_DIR = ../vocabularies/tree/develop/vocabulary
-#VOCAB_DIR = $(SRC_DIR)/vocabularies
+VOCAB_DIR = $(SRC_DIR)/vocabularies
 MODEL_DOCS_DIR = $(SRC_DIR)/docs
 SOURCE_FILES := $(shell find $(SCHEMA_DIR) -name '*.yaml')
-# only processing one schema, so make this the same as SCHEMA_NAME
-#SCHEMA_NAMES = $(patsubst $(SCHEMA_DIR)/%.yaml, %, $(SOURCE_FILES))
+SCHEMA_NAMES = $(patsubst $(SCHEMA_DIR)/%.yaml, %, $(SOURCE_FILES))
 VOCAB_FILES := $(shell find $(VOCAB_DIR) -name '*.ttl')
 
 SCHEMA_NAME = isamples_core
-SCHEMA_NAMES = isamples_core
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
 PKG_TGTS = jsonld_context json_schema owl shacl
 #TGTS = docs python $(PKG_TGTS)
