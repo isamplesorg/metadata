@@ -36,8 +36,8 @@ jobs:
         with:
           action: docs
           path: ${{ github.workspace }}/build/docs/vocabularies
-          inputttl: material_sample_object_type|material_sample_type|material_type|sampled_feature_type
-          inputvocaburi: msot:conceptscheme|spec:specimentypevocabulary|mat:materialsvocabulary|sf:sampledfeaturevocabulary
+          inputttl: material_sample_object_type|material_type|sampled_feature_type
+          inputvocaburi: msot:conceptscheme|mat:materialsvocabulary|sf:sampledfeaturevocabulary
 
       - name: List the output of the vocabulary
         run: ls -l ${{ github.workspace }}/build/docs/vocabularies
