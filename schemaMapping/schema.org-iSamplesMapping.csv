@@ -1,0 +1,76 @@
+﻿iSamplesSchemaCore1.0,iSamples notes,Schema.org,Schema.org note
+X-- affiliation identifier,Add in iSamples Agent/affiliation value string.,subjectOf/sdpublisher/ identifier,
+X-- digital object identifier,identifier for the metadata record,subjectOf/@id,
+X-- metadata license,,subjectOf/sdLicense,if dc_rights statement is about the metadata
+$schema,"identifier for the schema for this metadata ('digital sample' document). iSamples sample descriptions are implemented with a JSON serialization, so this should be an identifier for a JSON schema",subjectOf/dcterms:conformsTo,
+alternate_identifiers,"other identifiers can be provided with label, scheme_name (authority), and identifier string. ",identifier,alternate identifiers for the sample described by this record. Note that about/id is the URI for the sample.
+alternate_identifiers/ identifier,,identifier/value,
+alternate_identifiers/label,,identifier/ description,
+alternate_identifiers/scheme_name,,identifier/ propertyID,
+complies_with,"a list of policies, recommendations, best practices (etc.) that have been followed in the collection and curation of the sample. If any special protocols were followed in the sampling procedure, they should be documented here, with prefix 'Sampling protocol:'.",ethicsPolicy,
+X-- curation,"Information about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.",curation,No schema.org property;  Use iSamples curation property with value that is typed as schema:Event.
+X-- curation/access_constraints,"cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample (Curation) ",curation/ conditionsOfAccess,
+X-- curation/curation_location,Information about where and how the sample is currently stored.,curation/location,
+X-- curation/description,,curation/ description,"If the schema.org curation event includes subEvents, concatenate information from those into isample:curation/description"
+X-- curation/label,,curation/name,
+X-- curation/responsibility [role='classification'],"unique identifier for the person, people, groups, or organizations responsible for assigning the scientific name to the subject. Include this as a curation/responsibility",curation/ maintainer[roleName = classification],
+X-- curation/responsibility.Agent,"Agents associated with sample curation, Need mapping from iSample roles to DataCite contributorType",curation/ maintainer/Role,"person or organization, implemented as schema:Role"
+X-- curation/responsibility/ affiliation,"If a person, can have an organization affiliation",curation/ maintainer/participant/ affiliation,if the participant is a Person.
+X-- curation/responsibility/ contact_information,,curation/ maintainer/participant/ pointOfContact,
+X-- curation/responsibility/ identifier,Identifier for person or organization. only one identifier in iSamples. An identifier for the institution having custody of the object(s),curation/ maintainer/participant/ identifier,
+X-- curation/responsibility/name,Person or organization name,curation/ maintainer/participant/ name,
+X-- curation/responsibility/role,roles should be restricted to those relevant to sample curation,curation/ maintainer/roleName,
+dc_rights,"A statement about various property rights associated with the resource, including intellectual property rights. Recommended practice is to refer to a rights statement with a URI. If this is not possible or feasible, a literal value (name, label, or short text) may be provided.",curation/ conditionsOfAccess or subjectOf/sdLicense,"if the rights pertain to the sample, goes in conditionsOfAccess; if the rights pertain to the sample metadata record, put in subjectOf/sdLicense."
+description,"free text description of the physical sample, and any related information. Include as much detail as will be useful for users to find the sample and understand its context.",description,
+has_context_category/ scheme_name,https://w3id.org/isample/vocabulary/sampledfeature/1.0/sampledfeaturevocabulary,category/inDefinedTermSet/name = iSamples SampledFeature type,
+has_context_category/ identifier,use URI from isamples sampledFeature vocabulary,category[inDefinedTermSet/ name = iSamples SampledFeature type]/id,
+has_context_category/label,"For context using controlled vocabulary, the dataCite subject is the identifier/label, for keywords, it is the keyword",category[inDefinedTermSet/ name = iSamples SampledFeature type]/name,
+has_material_category/ identifier,use URI from iSamples material type vocabular,category[inDefinedTermSet/ name = iSamples Material type]/id,
+has_material_category/ scheme_name,use https://w3id.org/isample/vocabulary/material/1.0/materialsvocabulary,category/inDefinedTermSet/name = iSamples material type],
+has_material_category/label,"For material using controlled vocabulary, the dataCite subject is the identifier/label, for keywords, it is the keyword",category[inDefinedTermSet/ name = iSamples Material type]/name,
+has_material_sample_object_type,"specify the kind of object that the material sample is, use iSamples Material Sample Object Type Vocabulary, with ResourceTypeGeneral = PhysicalObject. the label for the Material Sample Object Type is the text value for dataCite ResourceType",additionalType,implement with schema:additionalType
+has_ material_sample_object_type / identifier,,additionalType,The URI for term. At least one URI from iSamples vocabulary is expected
+has_ material_sample_object_type /label,repeat label and uri in subjects for datacite,additionalType,Label associated with material sample object type. 
+keywords/keyword,An identifier for the nomenclatural (not taxonomic) details of a scientific name.,keywords/{string} or keywords/name,
+keywords/keyword_uri,,keywords/identifier,
+keywords/scheme_name,,keywords/ inDefinedTermSet/name,
+keywords/scheme_uri,not included for controlled vocabulary terms,keywords/ inDefinedTermSet/ identifier,
+label,a human intelligible string used to identify the sample; i.e. the name to use for the sample; should be unique in the scope of a sample collection. This will typically be a sample identiifer or label assigned by the original collector,name,
+produced_by/SamplingEvent,"object that documents the sampling event--who, where, when the material sample was obtained",event,"object that documents the sampling event--who, where, when the material sample was obtained. Implements iSamples SamplingEvent"
+produced_by/SamplingEvent/ responsibility/affiliation,,event/participant [roleName={role}]/affiliation,
+produced_by/SamplingEvent/ responsibility/contact_information,any agent can have an e-mail or telephone number for contacting ,event/participant [roleName={role}]/contactPoint,
+produced_by/SamplingEvent/ responsibility/identifier,,event/participant [roleName={role}]/identifier,
+produced_by/SamplingEvent/ responsibility/name,,event/participant [roleName={role}]/name,
+produced_by/SamplingEvent/ responsibility/role,,event/participant [roleName={role}],
+"produced_by/SamplingEvent/ responsibility[roles other than 'collector', 'funder'],","Agents associated with sampling event, agent/role is subclass of 'contributor'. Need mapping from iSample roles to DataCite contributorType",event/participant,
+X-- produced_by/ SamplingEvent/ authorized_by,a list of permits or other formal permission documents under which the sample was collected. Use to cite legal documents authorizing sample collection.,http://resource.isamples.org/schema/1.0/ authorized_by,no schema.org property
+produced_by/SamplingEvent/description,,event/description,
+produced_by/SamplingEvent/has_feature_of_interest,The specific thing that was sampled; should be an instance of the type identified by the has_context_category property,event/about,What was sampled. implements iSample has_feature_of_interest. string or scopedName
+produced_by/SamplingEvent/identifier,,event/@id,A string that identifies the samplingEvent. Use to gather all samples from a single sampling event.
+produced_by/SamplingEvent/label,,event/name,
+produced_by/SamplingEvent/project,"the name or identifier for a project that is the sponsor for a samplingEvent. Use to link samples collected in the context of a particular project. Property value should be a name or a resolvable URI. If funding was through an identified grant/award/contract instrument, this is the label associated with that instrument, If a grant/contract/award was the instrument, this would be the award title.",event/organizer,string or scopedName
+produced_by/SamplingEvent/responsibility,"the responsibility is an agent-- could be person or organization, with role = 'collector'. Other agents associated with the sampling event could be included, e.g. with roles like 'sponsor', 'funder'....",event/participant,"Agent with person name and affiliation, or organization name, and their role relative to the sampling event."
+produced_by/SamplingEvent/responsibility[role=collector]/ identifier,only one identifier associated with person in this role. iSamples identifier value is a string.,event/participant [roleName=collector]/identifier,
+produced_by/SamplingEvent/responsibility[role=collector]/affiliation,only one affiliation associated with person in this role.,event/participant [roleName=collector]/affiliation/name,
+produced_by/SamplingEvent/responsibility[role=collector]/name,"string, name of a person. Format: {firstName MI lastName}.",event/participant [roleName=collector]/name,"participant has a Role, Agent can be person or organization"
+produced_by/SamplingEvent/responsibility[Role=funder]/ identifier,identifier for funding agent,event/participant [roleName=funder]/identifier,
+produced_by/SamplingEvent/responsibility[Role=funder]/ name,Name person or organization that supported the activity; ,event/participant [roleName=funder]/name,
+produced_by/SamplingEvent/result_time,Date on which the sample was collected.,event/endDate,when the sampling event was done.
+produced_by/SamplingEvent/sampling_site,one WGS 84 Decimal Degree lat /long point location is required. Schema doesn't accomodate other coordinate locations. This corresponds to DataCite geoLocationPoint. Multiple places might be specified; iSamples is limited to a single point location -- doesn't make sense for a sample to come from more than one point location...,event/location,
+produced_by/SamplingEvent/sampling_site/ sample_location/latitude,sample location point coordinate,event/location/geo/latitude,
+produced_by/SamplingEvent/sampling_site/ sample_location/longitude,sample location point coordinate,event/location/geo/longitude,
+produced_by/SamplingEvent/sampling_site/description,description of location ,event/location/ description,
+produced_by/SamplingEvent/sampling_site/label,text to identify a location for human users; ,event/location/ name,
+produced_by/SamplingEvent/sampling_site/sample_location/elevation,"Should be a number and Unit of measure, and the vertical reference system. e.g. 401 m above mean sea level.",event/location/geo/elevation,
+produced_by/SamplingEvent/sampling_site/sample_location/is_part_of,A link from a SamplingSite to a larger sampling site that spatially contains the source SamplingSite. The container site is specified by its identifier.,event/location/ containedInPlace/ identifier or name,
+X-- produced_by/SamplingEvent/ sampling_site/ sample_location/ obfuscated,Flag to indicate that accuracy of provided coordinate location has been reduced (obfuscated) because the exact location is restricted information. Default is 'false',--,no schema.org property
+registrant [role=registrant]/name/,"identification of the agent that registered the sample, with contact information. Role = 'registrant'",subjectOf/sdpublisher/name,
+registrant/ contact_information,,subjectOf/sdpublisher/affiliation/ contactPoint,
+registrant/affiliation,,subjectOf/sdpublisher/affiliation/ name,
+registrant/identifier,,subjectOf/sdpublisher/identifier,
+related_resource,"link to another resource via identifier for the target resource, with a relationship type, label, and description. Label and description do not have matching properties in DataCite.",relatedLink,
+related_resource/description,,relatedLink/ description,
+related_resource/label,"a human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.",relatedLink/name,
+related_resource/relationship,nature of relationship between sample and resource that is the target of the relationship. See vocabulary in development: https://docs.google.com/spreadsheets/d/1yk3ZEWzEc1cXBOwb-foCtq3isaBBa95Rv8eA6TIyieM,relatedLink/ linkRelationship/name,string or scopedName
+related_resource/target,,relatedLink/ linkRelationship/target/url,
+sample_identifier,"unique identifier for the physical object, ideally a URI that is physically attached to the material sample object, an IGSN or ARK ",@id ,@id identifies the subject of the triples; should be a resolvable URI. 
