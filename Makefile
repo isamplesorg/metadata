@@ -12,7 +12,7 @@ VOCAB_DIR = $(SRC_DIR)/vocabularies
 MODEL_DOCS_DIR = $(SRC_DIR)/docs
 SOURCE_FILES := $(shell find $(SCHEMA_DIR) -name '*.yaml')
 SCHEMA_NAMES = $(patsubst $(SCHEMA_DIR)/%.yaml, %, $(SOURCE_FILES))
-VOCAB_FILES := $(shell find $(VOCAB_DIR) -name '*.ttl')
+# VOCAB_FILES := $(shell find $(VOCAB_DIR) -name '*.ttl')
 
 SCHEMA_NAME = isamples_core
 SCHEMA_SRC = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
