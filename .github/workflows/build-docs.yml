@@ -39,11 +39,11 @@ jobs:
           inputttl: material_sample_object_type|material_type|sampled_feature_type
           inputvocaburi: msot:conceptscheme|mat:materialsvocabulary|sf:sampledfeaturevocabulary
 
-      - name: List the output of the vocabulary
-        run: ls -l ${{ github.workspace }}/build/docs/vocabularies
+#      - name: List the output of the vocabulary
+#        run: ls -l ${{ github.workspace }}/build/docs/vocabularies
         
-      - name: List the output of the docs directory
-        run: ls -l ${{ github.workspace }}/build/docs/
+#      - name: List the output of the docs directory
+#        run: ls -l ${{ github.workspace }}/build/docs/
 
       - name: Render documentation
         run: |
