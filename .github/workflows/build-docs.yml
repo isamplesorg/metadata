@@ -29,13 +29,13 @@ jobs:
         run: pip install -e .
 
       - name: Make directory for output (workaround for permissions issue)
-        run: mkdir -p ${{ github.workspace }}/build/docs/vocabularies/docs
+        run: mkdir -p ${{ github.workspace }}/build/vocabularies/docs
 
       - name: Parse vocabularies
         uses: isamplesorg/vocabularies@main
         with:
           action: docs
-          path: ${{ github.workspace }}/build/docs/vocabularies
+          path: ${{ github.workspace }}/build/vocabularies
           inputttl: material_sample_object_type|material_type|sampled_feature_type
           inputvocaburi: msot:conceptscheme|mat:materialsvocabulary|sf:sampledfeaturevocabulary
 
@@ -49,6 +49,8 @@ jobs:
         run: |
           quarto --version
           python --version
+          mkdir -p ${{ github.workspace }}/build/docs/vocabularies
+          cp -r -p ${{ github.workspace }}/build/vocabularies/docs ${{ github.workspace }}/build/docs/vocabularies
           ls -la ${{ github.workspace }}/build/docs/
           make gen-docs
 
