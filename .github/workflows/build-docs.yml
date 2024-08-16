@@ -50,7 +50,6 @@ jobs:
           quarto --version
           python --version
           mkdir -p ${{ github.workspace }}/build/docs/vocabularies
-#          cp -r -p ${{ github.workspace }}/build/vocabularies/docs ${{ github.workspace }}/build/docs/vocabularies
           ls -la ${{ github.workspace }}/build/docs/vocabularies
           make gen-docs
 
