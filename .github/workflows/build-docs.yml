@@ -28,16 +28,16 @@ jobs:
       - name: Install dependencies
         run: pip install -e .
 
-      - name: Make directory for output (workaround for permissions issue)
-        run: mkdir -p ${{ github.workspace }}/build/vocabularies/docs
-
-      - name: Parse vocabularies
-        uses: isamplesorg/vocabularies@main
-        with:
-          action: docs
-          path: ${{ github.workspace }}/build/vocabularies
-          inputttl: material_sample_object_type|material_type|sampled_feature_type
-          inputvocaburi: msot:conceptscheme|mat:materialsvocabulary|sf:sampledfeaturevocabulary
+#      - name: Make directory for output (workaround for permissions issue)
+#        run: mkdir -p ${{ github.workspace }}/build/vocabularies/docs
+#
+#      - name: Parse vocabularies
+#        uses: isamplesorg/vocabularies@main
+#        with:
+#          action: docs
+#          path: ${{ github.workspace }}/build/vocabularies
+#          inputttl: material_sample_object_type|material_type|sampled_feature_type
+#          inputvocaburi: msot:conceptscheme|mat:materialsvocabulary|sf:sampledfeaturevocabulary
 
 #      - name: List the output of the vocabulary
 #        run: ls -l ${{ github.workspace }}/build/docs/vocabularies
