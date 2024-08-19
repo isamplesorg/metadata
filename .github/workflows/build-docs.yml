@@ -49,9 +49,6 @@ jobs:
         run: |
           quarto --version
           python --version
-# Quarto build fails if the build/docs/vocabularies exists.
-#          mkdir -p ${{ github.workspace }}/build/docs/vocabularies
-#          ls -la ${{ github.workspace }}/build/docs/vocabularies
           make gen-docs
 
       - name: Publish documentation
