@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.37">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>iSamples Model - Schema for documenting physical samples</title>
+<title>Schema for documenting material samples – iSamples Model</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -45,7 +45,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -54,8 +60,10 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="site_libs/quarto-diagram/mermaid.min.js"></script>
@@ -67,19 +75,18 @@ ul.task-list li input[type="checkbox"] {
 
 <body class="nav-sidebar docked fullcontent">
 
-
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
       iSamples Model
       </li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -89,7 +96,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">iSamples Model</a> 
@@ -109,18 +116,18 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Model</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Classes</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -151,8 +158,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./PhysicalSampleRecord.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">PhysicalSampleRecord</span></a>
+  <a href="./MaterialSampleCuration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MaterialSampleCuration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MaterialSampleRecord.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MaterialSampleRecord</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -173,19 +186,13 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">SamplingSite</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./SpecimenCuration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">SpecimenCuration</span></a>
-  </div>
-</li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Slots</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -276,8 +283,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./has_specimen_category.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">has_specimen_category</span></a>
+  <a href="./has_sample_object_type.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">has_sample_object_type</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -324,12 +331,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./location.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">location</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./longitude.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">longitude</span></a>
   </div>
@@ -356,6 +357,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./produced_by.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">produced_by</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">project</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -402,6 +409,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./sample_location.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">sample_location</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./sampling_purpose.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">sampling_purpose</span></a>
   </div>
@@ -438,9 +451,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Types</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -519,13 +532,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="shex:nonLiteral" class="sidebar-item-text sidebar-link">
+  <a href="http://www.w3.org/ns/shex#nonLiteral" class="sidebar-item-text sidebar-link">
  <span class="menu-text">shex:nonLiteral</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="shex:iri" class="sidebar-item-text sidebar-link">
+  <a href="http://www.w3.org/ns/shex#iri" class="sidebar-item-text sidebar-link">
  <span class="menu-text">shex:iri</span></a>
   </div>
 </li>
@@ -562,40 +575,15 @@ ul.task-list li input[type="checkbox"] {
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text">Vocabularies</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./vocabularies/mat_materialsvocabulary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">iSamples Materials Vocabulary</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./vocabularies/sf_sampledfeaturevocabulary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sampled Feature Type vocabulary</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./vocabularies/spec_specimentypevocabulary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">iSamples Material Sample Type Vocabulary</span></a>
-  </div>
-</li>
-      </ul>
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Vocabularies</span></span>
   </li>
       </ul>
   </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
@@ -603,7 +591,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Schema for documenting physical samples</h1>
+<h1 class="title">Schema for documenting material samples</h1>
 <p class="subtitle lead">Schema documentation generated from linkml sources.</p>
 </div>
 
@@ -616,33 +604,36 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">September 1, 2023</p>
+      <p class="date-modified">August 19, 2024</p>
     </div>
   </div>
     
   </div>
   
 
+
 </header>
 
-<p>Startup schema for iSamples sample registry integration. updated from 0.2 by synchronizing the vocabulary enumerations, change ‘id’ to ‘<span class="citation" data-cites="id">@id</span>’ and ‘schema’ to ‘$schema’. Schema name is iSamplesSchemaBasic0.2.1.json. Target JSON schema version is http://json-schema.org/draft-07/schema# SMR 2022-10-07. SMR 2023-03-17. Move authorized_by into SamplingEvent, change keywords to list of Keyword objects with string, uri, scheme and scheme URI. Reorder elements in slot list. Update scheme URI to 1.0.</p>
-<p>URI: http://resource.isamples.org/schema/1.0 Name: physicalSample</p>
-<div class="cell">
+
+<p>SMR 2022-10-07. Schema for iSamples sample registry integration. Updated from 0.2 by synchronizing the vocabulary enumerations, change ‘id’ to ‘<span class="citation" data-cites="id">@id</span>’ and ‘schema’ to ‘$schema’. Schema name is iSamplesSchemaCore1.0.json. Target JSON schema version is https://json-schema.org/draft/2019-09/schema. SMR 2023-03-17. Move authorized_by into SamplingEvent, change keywords to list of Keyword objects with string, uri, scheme and scheme URI. Reorder elements in slot list. Update scheme URI to 1.0 2023-06-13 SMR add project property on SamplingEvent, with text or URI value. 2024-01-17 SMR run linkml-lint from current linkml version before rebuilding JSON schema. 2024-04-19. DV ran yaml linter on the file to clean up formatting, put hard return in text bodies. Update schema URI to dereference with w3id.</p>
+<p>URI: https://w3id.org/isample/schema/1.0 Name: materialSample</p>
+<div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
+<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">%%{init: {'securityLevel': 'loose', 'theme':'neutral', 'themeVariables': { 'fontSize':'14px', 'fontFamily':'Roboto Mono'}}}%%
 classDiagram
   direction BT
-  class PhysicalSampleRecord {
+  class MaterialSampleRecord {
     alternate_identifiers : IdentifierObject[]
     complies_with : string[]
-    curation : SpecimenCuration
+    curation : MaterialSampleCuration
     dc_rights : string
     description : string
     has_context_category : IdentifierObject[]
     has_material_category : IdentifierObject[]
-    has_specimen_category : IdentifierObject[]
+    has_sample_object_type : IdentifierObject[]
     keywords : Keyword[]
     label : string
     produced_by : SamplingEvent
@@ -651,16 +642,16 @@ classDiagram
     sample_identifier : string
     sampling_purpose : string
     }
-    click PhysicalSampleRecord href "PhysicalSampleRecord.html" "Documentation"
-    IdentifierObject --o PhysicalSampleRecord : alternate_identifiers
-    SpecimenCuration --o PhysicalSampleRecord : curation
-    IdentifierObject --o PhysicalSampleRecord : has_context_category
-    IdentifierObject --o PhysicalSampleRecord : has_material_category
-    IdentifierObject --o PhysicalSampleRecord : has_specimen_category
-    Keyword --o PhysicalSampleRecord : keywords
-    SamplingEvent --o PhysicalSampleRecord : produced_by
-    Agent --o PhysicalSampleRecord : registrant
-    SampleRelation --o PhysicalSampleRecord : related_resource
+    click MaterialSampleRecord href "MaterialSampleRecord.html" "Documentation"
+    IdentifierObject --o MaterialSampleRecord : alternate_identifiers
+    MaterialSampleCuration --o MaterialSampleRecord : curation
+    IdentifierObject --o MaterialSampleRecord : has_context_category
+    IdentifierObject --o MaterialSampleRecord : has_material_category
+    IdentifierObject --o MaterialSampleRecord : has_sample_object_type
+    Keyword --o MaterialSampleRecord : keywords
+    SamplingEvent --o MaterialSampleRecord : produced_by
+    Agent --o MaterialSampleRecord : registrant
+    SampleRelation --o MaterialSampleRecord : related_resource
     
   class Agent {
     affiliation : string
@@ -691,11 +682,11 @@ classDiagram
     identifier : uriorcurie
     is_part_of : uriorcurie[]
     label : string
-    location : GeospatialCoordLocation
     place_name : string[]
+    sample_location : GeospatialCoordLocation
     }
     click SamplingSite href "SamplingSite.html" "Documentation"
-    GeospatialCoordLocation --o SamplingSite : location
+    GeospatialCoordLocation --o SamplingSite : sample_location
     
   class SamplingEvent {
     authorized_by : string[]
@@ -703,8 +694,9 @@ classDiagram
     has_feature_of_interest : string
     identifier : uriorcurie
     label : string
+    project : string
     responsibility : Agent[]
-    result_time : date
+    result_time : string
     sampling_site : SamplingSite
     }
     click SamplingEvent href "SamplingEvent.html" "Documentation"
@@ -719,7 +711,7 @@ classDiagram
     }
     click GeospatialCoordLocation href "GeospatialCoordLocation.html" "Documentation"
     
-  class SpecimenCuration {
+  class MaterialSampleCuration {
     access_constraints : string[]
     curation_location : string
     description : string
@@ -727,8 +719,8 @@ classDiagram
     label : string
     responsibility : Agent[]
     }
-    click SpecimenCuration href "SpecimenCuration.html" "Documentation"
-    Agent --o SpecimenCuration : responsibility
+    click MaterialSampleCuration href "MaterialSampleCuration.html" "Documentation"
+    Agent --o MaterialSampleCuration : responsibility
     
   class SampleRelation {
     description : string
@@ -741,12 +733,13 @@ classDiagram
   
 </pre>
 </div>
+<p></p></figure><p></p>
 </div>
 </div>
 </div>
 <section id="classes" class="level2">
 <h2 class="anchored" data-anchor-id="classes">Classes</h2>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Class</th>
@@ -756,7 +749,7 @@ classDiagram
 <tbody>
 <tr class="odd">
 <td><a href="./Agent.html">Agent</a></td>
-<td>object to represent a person who plays a role relative to sample collection o…</td>
+<td>Object to represent a person who plays a role relative to sample collection o…</td>
 </tr>
 <tr class="even">
 <td><a href="./GeospatialCoordLocation.html">GeospatialCoordLocation</a></td>
@@ -764,38 +757,38 @@ classDiagram
 </tr>
 <tr class="odd">
 <td><a href="./IdentifierObject.html">IdentifierObject</a></td>
-<td>object to represent an identified concept; property values from vocabularies …</td>
+<td>Object to represent an identified concept; property values from vocabularies …</td>
 </tr>
 <tr class="even">
 <td><a href="./Keyword.html">Keyword</a></td>
-<td>a simple string (tag) useful for guiding discovery of the sample, or a scoped…</td>
+<td>A simple string (tag) useful for guiding discovery of the sample, or a scoped…</td>
 </tr>
 <tr class="odd">
-<td><a href="./PhysicalSampleRecord.html">PhysicalSampleRecord</a></td>
-<td>This is a data object that is a digital representation of a physical sample, …</td>
-</tr>
-<tr class="even">
-<td><a href="./SampleRelation.html">SampleRelation</a></td>
-<td>semantic link to other samples or related resources</td>
-</tr>
-<tr class="odd">
-<td><a href="./SamplingEvent.html">SamplingEvent</a></td>
-<td>Information about the event resulting in the creation of the physical sample</td>
-</tr>
-<tr class="even">
-<td><a href="./SamplingSite.html">SamplingSite</a></td>
-<td>documentation of the site where the sample was collected, wtih place name(s) …</td>
-</tr>
-<tr class="odd">
-<td><a href="./SpecimenCuration.html">SpecimenCuration</a></td>
+<td><a href="./MaterialSampleCuration.html">MaterialSampleCuration</a></td>
 <td>Information about the current storage of sample, access to sample, and events…</td>
+</tr>
+<tr class="even">
+<td><a href="./MaterialSampleRecord.html">MaterialSampleRecord</a></td>
+<td>This is a data object that is a digital representation of a material sample, …</td>
+</tr>
+<tr class="odd">
+<td><a href="./SampleRelation.html">SampleRelation</a></td>
+<td>Semantic link to other samples or related resources</td>
+</tr>
+<tr class="even">
+<td><a href="./SamplingEvent.html">SamplingEvent</a></td>
+<td>Information about the event resulting in the creation of the material sample</td>
+</tr>
+<tr class="odd">
+<td><a href="./SamplingSite.html">SamplingSite</a></td>
+<td>Documentation of the site where the sample was collected, wtih place name(s) …</td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="slots" class="level2">
 <h2 class="anchored" data-anchor-id="slots">Slots</h2>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Slot</th>
@@ -813,23 +806,23 @@ classDiagram
 </tr>
 <tr class="odd">
 <td><a href="./alternate_identifiers.html">alternate_identifiers</a></td>
-<td>one or more identifiers used to identify the sample in other contexts</td>
+<td>One or more identifiers used to identify the sample in other contexts</td>
 </tr>
 <tr class="even">
 <td><a href="./authorized_by.html">authorized_by</a></td>
-<td>a list of permits or other formal permission documents under which the sample…</td>
+<td>A list of permits or other formal permission documents under which the sample…</td>
 </tr>
 <tr class="odd">
 <td><a href="./complies_with.html">complies_with</a></td>
-<td>a list of policies, recommendations, best practices (etc</td>
+<td>A list of policies, recommendations, best practices (etc</td>
 </tr>
 <tr class="even">
 <td><a href="./contact_information.html">contact_information</a></td>
-<td>e-mail address, telephone number, mailing address, or web site through which …</td>
+<td>E-mail address, telephone number, mailing address, or web site through which …</td>
 </tr>
 <tr class="odd">
 <td><a href="./curation.html">curation</a></td>
-<td></td>
+<td>Information about the current storage of sample, access to sample, and events…</td>
 </tr>
 <tr class="even">
 <td><a href="./curation_location.html">curation_location</a></td>
@@ -837,7 +830,7 @@ classDiagram
 </tr>
 <tr class="odd">
 <td><a href="./dc_rights.html">dc_rights</a></td>
-<td>a statement about various property rights associated with the resource, inclu…</td>
+<td>A statement about various property rights associated with the resource, inclu…</td>
 </tr>
 <tr class="even">
 <td><a href="./description.html">description</a></td>
@@ -860,12 +853,12 @@ classDiagram
 <td>The kind of material that constitutes the sample</td>
 </tr>
 <tr class="odd">
-<td><a href="./has_specimen_category.html">has_specimen_category</a></td>
-<td>The kind of object the specimen is</td>
+<td><a href="./has_sample_object_type.html">has_sample_object_type</a></td>
+<td>The kind of object the material sample is</td>
 </tr>
 <tr class="even">
 <td><a href="./identifier.html">identifier</a></td>
-<td>a string that identifies some resource</td>
+<td>A string that identifies some resource</td>
 </tr>
 <tr class="odd">
 <td><a href="./is_part_of.html">is_part_of</a></td>
@@ -873,59 +866,59 @@ classDiagram
 </tr>
 <tr class="even">
 <td><a href="./keyword.html">keyword</a></td>
-<td>string label for a concept that characterizes the sample in some respect</td>
+<td>String label for a concept that characterizes the sample in some respect</td>
 </tr>
 <tr class="odd">
 <td><a href="./keyword_uri.html">keyword_uri</a></td>
-<td>an identifier for the keyword concept</td>
+<td>An identifier for the keyword concept</td>
 </tr>
 <tr class="even">
 <td><a href="./keywords.html">keywords</a></td>
-<td>free text terms or formal categories associate with sample to support discove…</td>
+<td>Free text terms or formal categories associate with sample to support discove…</td>
 </tr>
 <tr class="odd">
 <td><a href="./label.html">label</a></td>
-<td>a human intelligible string used to identify a thing, i</td>
+<td>A human intelligible string used to identify a thing, i</td>
 </tr>
 <tr class="even">
 <td><a href="./latitude.html">latitude</a></td>
-<td>angular coordinate measured positive north from the equator</td>
+<td>Angular coordinate measured positive north from the equator</td>
 </tr>
 <tr class="odd">
-<td><a href="./location.html">location</a></td>
-<td>geopatial location of site; required default is WGS84 latitude, longitude in …</td>
-</tr>
-<tr class="even">
 <td><a href="./longitude.html">longitude</a></td>
-<td>angular coordinate measured positive eastward from the prime meridian</td>
-</tr>
-<tr class="odd">
-<td><a href="./name.html">name</a></td>
-<td>string, name of a person</td>
+<td>Angular coordinate measured positive eastward from the prime meridian</td>
 </tr>
 <tr class="even">
+<td><a href="./name.html">name</a></td>
+<td>String, name of a person</td>
+</tr>
+<tr class="odd">
 <td><a href="./obfuscated.html">obfuscated</a></td>
 <td>Flag to indicate that accuracy of provided coordinate location has been reduc…</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./place_name.html">place_name</a></td>
-<td>one or more names by which the sampling site is known</td>
+<td>One or more names by which the sampling site is known</td>
+</tr>
+<tr class="odd">
+<td><a href="./produced_by.html">produced_by</a></td>
+<td>Object that documents the sampling event–who, where, when the material sampl…</td>
 </tr>
 <tr class="even">
-<td><a href="./produced_by.html">produced_by</a></td>
-<td>object that documents the sampling event–who, where, when the specimen was o…</td>
+<td><a href="./project.html">project</a></td>
+<td>The name or identifier for a project that is the sponsor for a samplingEvent</td>
 </tr>
 <tr class="odd">
 <td><a href="./registrant.html">registrant</a></td>
-<td>identification of the agent that registered the sample, with contact informat…</td>
+<td>Identification of the agent that registered the sample, with contact informat…</td>
 </tr>
 <tr class="even">
 <td><a href="./related_resource.html">related_resource</a></td>
-<td>link to related resource with relationship property to indicate nature of con…</td>
+<td>Link to related resource with relationship property to indicate nature of con…</td>
 </tr>
 <tr class="odd">
 <td><a href="./relationship.html">relationship</a></td>
-<td>term to identify realationship between host sample and the sample relation ta…</td>
+<td>Term to identify realationship between host sample and the sample relation ta…</td>
 </tr>
 <tr class="even">
 <td><a href="./responsibility.html">responsibility</a></td>
@@ -937,31 +930,35 @@ classDiagram
 </tr>
 <tr class="even">
 <td><a href="./role.html">role</a></td>
-<td>term that specifies how a person is related to a sample curation or collectio…</td>
+<td>Term that specifies how a person is related to a sample curation or collectio…</td>
 </tr>
 <tr class="odd">
 <td><a href="./sample_identifier.html">sample_identifier</a></td>
-<td>URI that identifies the physical sample described by this record</td>
+<td>URI that identifies the material sample described by this record</td>
 </tr>
 <tr class="even">
+<td><a href="./sample_location.html">sample_location</a></td>
+<td>Geopatial location of site; required default is WGS84 latitude, longitude in …</td>
+</tr>
+<tr class="odd">
 <td><a href="./sampling_purpose.html">sampling_purpose</a></td>
-<td>term to specify why a sample was collection</td>
-</tr>
-<tr class="odd">
-<td><a href="./sampling_site.html">sampling_site</a></td>
-<td>object that identifies the place where the sample was collected</td>
+<td>Term to specify why a sample was collection</td>
 </tr>
 <tr class="even">
-<td><a href="./scheme_name.html">scheme_name</a></td>
-<td>string label for the concept scheme or vocabulary within which the keyword co…</td>
+<td><a href="./sampling_site.html">sampling_site</a></td>
+<td>Object that identifies the place where the sample was collected</td>
 </tr>
 <tr class="odd">
+<td><a href="./scheme_name.html">scheme_name</a></td>
+<td>String label for the concept scheme or vocabulary within which the keyword co…</td>
+</tr>
+<tr class="even">
 <td><a href="./scheme_uri.html">scheme_uri</a></td>
 <td>Identifier for the concept scheme or vocabulary within which the keyword conc…</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./target.html">target</a></td>
-<td>identifier for the target resource in the relationship</td>
+<td>Identifier for the target resource in the relationship</td>
 </tr>
 </tbody>
 </table>
@@ -972,7 +969,7 @@ classDiagram
 </section>
 <section id="types" class="level2">
 <h2 class="anchored" data-anchor-id="types">Types</h2>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Type</th>
@@ -1029,11 +1026,11 @@ classDiagram
 <td>Prefix part of CURIE</td>
 </tr>
 <tr class="odd">
-<td><a href="shex:nonLiteral">shex:nonLiteral</a></td>
+<td><a href="http://www.w3.org/ns/shex#nonLiteral">shex:nonLiteral</a></td>
 <td>A URI, CURIE or BNODE that represents a node in a model</td>
 </tr>
 <tr class="even">
-<td><a href="shex:iri">shex:iri</a></td>
+<td><a href="http://www.w3.org/ns/shex#iri">shex:iri</a></td>
 <td>A URI or CURIE that represents an object in the model</td>
 </tr>
 <tr class="odd">
@@ -1102,18 +1099,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1145,11 +1131,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1159,8 +1184,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1172,31 +1206,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, function() {
-      let href = xref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children.length > 2) {
-          for (let i = 0; i < 2; i++) {
-            container.appendChild(note.children[i].cloneNode(true));
-          }
-          return container.innerHTML
-        } else {
-          return note.innerHTML;
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
         }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
       } else {
         return note.innerHTML;
       }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1240,6 +1373,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1265,6 +1399,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1327,15 +1487,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">© Copyright 2020, iSamples Project. This material is based upon work supported by the National Science Foundation under Grant Numbers <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004839">2004839</a>, <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004562">2004562</a>, <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004642">2004642</a>, and <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004815">2004815</a>. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the <a href="https://nsf.gov/">National Science Foundation</a>.</div>   
+    <div class="nav-footer-left">
+<p>© Copyright 2020, iSamples Project. This material is based upon work supported by the National Science Foundation under Grant Numbers <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004839">2004839</a>, <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004562">2004562</a>, <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004642">2004642</a>, and <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004815">2004815</a>. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the <a href="https://nsf.gov/">National Science Foundation</a>.</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/isamplesorg/metadata/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/isamplesorg/metadata/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/isamplesorg/metadata/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/isamplesorg/metadata/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 
