@@ -7,19 +7,19 @@
     "has_context_category": [
         {
             "label": "Earth interior",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/earthinterior"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/earthinterior"
         }
     ],
     "has_material_category": [
         {
             "label": "Rock",
-            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/rock"
+            "identifier": "https://w3id.org/isample/vocabulary/material/rock"
         }
     ],
     "has_sample_object_type": [
         {
             "label": "Other solid object",
-            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/othersolidobject"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/othersolidobject"
         }
     ],
     "keywords": [
@@ -27,15 +27,15 @@
         {"keyword": "Marble"},
         {
             "keyword": "metamorphic rock",
-            "keyword_uri": "https://w3id.org/isample/vocabulary/rocksediment/1.0/Metamorphic_Rock",
+            "keyword_uri": "https://w3id.org/isample/vocabulary/rocksediment/Metamorphic_Rock",
             "scheme_name": "lithology: iSamples rock and sediment vocabulary extension",
-            "scheme_uri": "https://w3id.org/isample/vocabulary/rocksediment/1.0/rocksedimentvocabulary"
+            "scheme_uri": "https://w3id.org/isample/vocabulary/rocksediment/rocksedimentvocabulary"
         },
         {
             "keyword": "carbonate sedimentary rock",
-            "keyword_uri": "https://w3id.org/isample/vocabulary/rocksediment/1.0/Carbonate_Sedimentary_Rock",
+            "keyword_uri": "https://w3id.org/isample/vocabulary/rocksediment/Carbonate_Sedimentary_Rock",
             "scheme_name": "protolith: iSamples rock and sediment vocabulary extension",
-            "scheme_uri": "https://w3id.org/isample/vocabulary/rocksediment/1.0/rocksedimentvocabulary"
+            "scheme_uri": "https://w3id.org/isample/vocabulary/rocksediment/rocksedimentvocabulary"
         }
     ],
     "produced_by": {

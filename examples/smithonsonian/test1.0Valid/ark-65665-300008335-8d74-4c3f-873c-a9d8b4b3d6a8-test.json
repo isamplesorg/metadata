@@ -6,15 +6,15 @@
     "description": "basisOfRecord : MaterialSample | occurrenceRemarks: Order: 2885; Box Number: MBARI_0036; Box Position: F/5; MBARI Note: SIO Box 6 Sinatra | catalogNumber：1464106.14693703 | recordNumber：A3120-(B3-5) | fieldNumber：AL-3120 | type: PhysicalObject | individualCount: 1 | disposition: in collection | startDayOfYear: 191 | endDayOfYear: 191",
     "has_context_category": [{
             "label": "Marine water body bottom",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/marinewaterbodybottom"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/marinewaterbodybottom"
         }],
     "has_material_category": [{
             "label": "Organic material",
-            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/organicmaterial"
+            "identifier": "https://w3id.org/isample/vocabulary/material/organicmaterial"
         }],
     "has_sample_object_type": [{
             "label": "Whole organism material sample",
-            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/wholeorganism"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/wholeorganism"
         }],
     "keywords": [
         {"keyword": "Invertebrate Zoology"},
