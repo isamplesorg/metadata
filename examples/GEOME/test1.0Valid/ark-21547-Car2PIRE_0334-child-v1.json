@@ -70,6 +70,7 @@
         }
     },
     "registrant": {"name": "Chris Meyer"},
+    "last_modified_time":"2024-09-13T09:20:00-07:00",
     "sampling_purpose": "genomic analysis",
     "curation": {
         "access_constraints": [],
