@@ -17,11 +17,11 @@ prefixes:
   linkml: https://w3id.org/linkml/
   isam: https://w3id.org/isample/schema/1.0/
   dct: http://purl.org/dc/terms/
-  mat: https://w3id.org/isample/vocabulary/material/1.0/
-  sf: https://w3id.org/isample/vocabulary/sampledfeature/1.0/
+  mat: https://w3id.org/isample/vocabulary/material/
+  sf: https://w3id.org/isample/vocabulary/sampledfeature/
   skos: http://www.w3.org/2004/02/skos/core#
-#  spec: https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/
-  msot: https://w3id.org/isample/vocabulary/materialsampleobjecttype/1.0/
+#  spec: https://w3id.org/isample/vocabulary/sampleobjecttype/
+  msot: https://w3id.org/isample/vocabulary/materialsampleobjecttype/
   w3cpos: http://www.w3.org/2003/01/geo/wgs84_pos#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   xsd: http://www.w3.org/2001/XMLSchema#

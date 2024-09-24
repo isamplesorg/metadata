@@ -7,29 +7,29 @@
     "has_context_category": [
         {
             "label": "Site of past human activities",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/pasthumanoccupationsite"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/pasthumanoccupationsite"
         }
     ],
     "has_context_category_confidence": [1.0],
     "has_material_category": [
         {
             "label": "Material",
-            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/material"
+            "identifier": "https://w3id.org/isample/vocabulary/material/material"
         }
     ],
     "has_material_category_confidence": [1.0],
     "has_sample_object_type": [
         {
             "label": "Artifact",
-            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/artifact"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/artifact"
         },
         {
             "label": "Organism product",
-            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/organismproduct"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/organismproduct"
         },
         {
             "label": "Organism part",
-            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/organismpart"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/organismpart"
         }
     ],
     "has_sample_object_type_confidence": [

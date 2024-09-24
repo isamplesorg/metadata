@@ -7,19 +7,19 @@
     "has_context_category": [
         {
             "label": "Site of past human activities",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/pasthumanoccupationsite"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/pasthumanoccupationsite"
         }
     ],
     "has_material_category": [
         {
             "label": "Rock",
-            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/rock"
+            "identifier": "https://w3id.org/isample/vocabulary/material/rock"
         }
     ],
     "has_sample_object_type": [
         {
             "label": "Artifact",
-            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/artifact"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/artifact"
         }
     ],
     "keywords": [
