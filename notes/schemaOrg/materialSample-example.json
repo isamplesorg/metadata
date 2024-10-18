@@ -160,22 +160,11 @@
             "name": "sample access and use",
             "actionStatus": "PotentialActionStatus",
             "description": "Samples are viewable by contacting the maintainer identifier in this record. Subsamples might be made available for analysis on a case by case basis",
-            "participant": {
-                "@type": "Role",
-                "roleName": "maintainer",
-                "participant": {
-                    "@type": "Person",
-                    "identifier": "https://orcid.org/0000-0111-2241-5355",
-                    "name": "Tom Garmin",
-                    "affiliation": {
-                        "@type": "Organization",
-                        "identifier": "https://ror.org/00vcszp55",
-                        "contactPoint": {
-                            "@type": "ContactPoint",
-                            "email": "garmin@azgs.arizona.edu"
-                        }
-                    }
-                }
+            "agent": {
+                "@type": "Person",
+                "identifier": "https://orcid.org/0000-0111-2241-5355",
+                "name": "Tom Garmin",
+                 "email": "garmin@azgs.arizona.edu"
             }
         }
     ],
@@ -186,9 +175,13 @@
         "leaverite"
     ],
     "material": {
-        "@type": "DefinedTerm",
+        "@type": [
+            "Product",
+            "DefinedTerm"
+        ],
         "name": "Rock",
         "identifier": "https://w3id.org/isample/vocabulary/material/1.0/rock",
+        "comment": "@type Product is kludge to get validator to accept DefinedTerm as the value type",
         "inDefinedTermSet": {
             "@type": "DefinedTermSet",
             "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/materialsvocabulary",
@@ -225,10 +218,13 @@
         },
         {
             "@type": "Dataset",
-            "url": "https://data.org/chem/26357",
+            "about": "Chemical analysis",
             "name": "Chemistry of rock samples from Saddle Mountain",
-            "encodingType": "text/csv",
-            "contentType": "Chemical analysis"
+            "distribution": {
+                "@type": "DataDownload",
+                "contentUrl": "https://data.org/chem/26357",
+                "encodingFormat": "text/csv"
+            }
         }
     ]
 }
