@@ -17,7 +17,7 @@
         "description": "",
         "hasContextCategory": [""],
         "hasMaterialCategory": [""],
-        "hasSpecimenCategory": [""],
+        "has_sample_object_type": [""],
         "informalClassification": [
             ""
         ],

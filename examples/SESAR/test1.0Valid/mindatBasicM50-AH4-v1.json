@@ -1,0 +1,100 @@
+{
+    "$schema": "iSamplesSchemaCore1.0.json",
+    "@id": "https://data.isamples.org/digitalsample/igsn/EOI00002H",
+    "label": "M50-AH4",
+    "sample_identifier": "https://www.mindat.org/M50-AH4",
+    "description": "25 mm diameter deep red almandine crystal perched on top of a medium-fine-grained muscovite granofels.",
+    "has_context_category": [
+        {
+            "label": "Earth interior",
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/earthinterior"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "Rock",
+            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/rock"
+        },
+        {
+            "label": "Mineral",
+            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/mineral"
+        },
+        {
+            "label": "Mineral-Silicate or Germanate",
+            "identifier": "https://w3id.org/isample/vocabulary/mingroup/1.0/silicategermanatemineral"
+        },
+        {
+            "label": "metamorphic rock",
+            "identifier": "https://w3id.org/isample/vocabulary/rocksediment/1.0/Metamorphic_Rock"
+        }
+    ],
+    "has_sample_object_type": [
+        {
+            "label": "Other solid object",
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/othersolidobject"
+        },
+        {
+            "label": "Mineral specimen",
+            "identifier": "https://w3id.org/isample/1.0/esmaterialsample/mineralmaterialsample"
+        }
+    ],
+    "keywords": [
+        {
+            "keyword": "almandine",
+            "keyword_uri": "https://www.mindat.org/1:1:452:5",
+            "scheme_name": "mindat web site"
+        },
+        {"keyword":"Coast Plutonic Complex"},
+        {"keyword":"Photo of the day"}
+    ],
+    "produced_by": {
+        "label": "sampleevent:46737",
+        "description": "no description",
+        "has_feature_of_interest": "Metamorphic rocks associated with the Coast plutonic complex",
+        "responsibility": [
+            {
+                "role": "collector",
+                "name": "Andreas Schmid"
+            }
+        ],
+        "samplingSite": {
+            "description": "A famous Alaska mineral locality known since the early 1900s that has long been mined for garnet specimens. Mine site is at an elevation of from about 50 to 200 feet and about 1000 feet from the shoreline in the north-central portion of section 19, T 61 S, R 83 E.; it can be reached by a well marked trail along Garnet Creek from a landing on the Stikine River. Currently (1998) the property is owned by the Boy Scouts in Wrangell and permission to enter it should be obtained from them. (USGS MRDS)",
+            "label": "Garnet Ledge, near Wrangell, SE Alaska ",
+            "location": {
+                "elevation": "50 to 200 feet ASL",
+                "latitude": 56.57361,
+                "longitude": -132.36278
+            },
+            "place_name": [
+                "Garnet Ledge",
+                "Garnet Creek",
+                "Alaska"
+            ]
+        }
+    },
+    "registrant": {
+        "name": "Stephen M. Richard",
+        "identifier": "https://orcid.org/0000-0001-6041-5302"
+    },
+    "sampling_purpose": "mineral specimen",
+    "curation": {
+        "responsibility": [
+            {
+                "role": "metadata publisher",
+                "contact_information": "info@geosamples.org; url: https://www.geosamples.org/contact/"
+            },
+            {
+                "role": "sample owner",
+                "name": "Andreas Schmid"
+            }
+        ]
+    },
+    "relatedResource": [
+        {
+            "label": "photo of garnet specimen",
+            "description": "6667 by 4516 pixels, 30.11 megapixels. Photo added 2016-11-08; photo by Andreas Schmid",
+            "relationship": "subjectOf",
+            "target": "https://www.mindat.org/photo-783955.html"
+        }
+    ]
+}

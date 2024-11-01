@@ -7,7 +7,7 @@
 
 Defines the core metadata model for iSamples.
 
-`src/schemas/iSamplesCoreSchema.yml` defines the iSamples core model in linkml. It references vocabularies contained in `src/vocabularies/` which define terms for the Material Type, Sampled Feature, and Specimen Type vocabularies.
+`src/schemas/isamples_core.yaml` defines the iSamples core model in linkml. It references vocabularies contained in `src/vocabularies/` which define terms for the Material Type, Sampled Feature, and Material Sample Object Type vocabularies.
 
 The following artifacts are generated from the linkml and vocabulary sources:
 
@@ -88,7 +88,7 @@ The command will save the result in the jsonld file. After we have the converted
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "sf": "http://resource.isamples.org/vocabulary/sampledFeature/",
       "skos": "http://www.w3.org/2004/02/skos/core#",
-      "spt": "http://resource.isamples.org/vocabulary/specimentype/",
+      "spt": "http://resource.isamples.org/vocabulary/sampleobjecttype/",
       "w3cpos": "http://www.w3.org/2003/01/geo/wgs84_pos#",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
       "@vocab": "http://resource.isamples.org/schema/",
@@ -101,7 +101,7 @@ The command will save the result in the jsonld file. After we have the converted
       "hasMaterialCategory": {
          "@type":"materialtype"
       },
-      "hasSpecimenCategory": {
+      "has_sample_object_type": {
          "@type":"specimencategory"
       },
       "id": "@id",
@@ -145,7 +145,7 @@ Before we valideting all instance files, we need to add modified JSON-LD context
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "sf": "http://resource.isamples.org/vocabulary/sampledFeature/",
       "skos": "http://www.w3.org/2004/02/skos/core#",
-      "spt": "http://resource.isamples.org/vocabulary/specimentype/",
+      "spt": "http://resource.isamples.org/vocabulary/sampleobjecttype/",
       "w3cpos": "http://www.w3.org/2003/01/geo/wgs84_pos#",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
       "@vocab": "http://resource.isamples.org/schema/",
@@ -158,7 +158,7 @@ Before we valideting all instance files, we need to add modified JSON-LD context
       "hasMaterialCategory": {
          "@type":"materialtype"
       },
-      "hasSpecimenCategory": {
+      "has_sample_object_type": {
          "@type":"specimencategory"
       },
       "id": "@id",
@@ -193,7 +193,7 @@ Before we valideting all instance files, we need to add modified JSON-LD context
     "description": "",
     "hasContextCategory": ["Marine Biome"],
     "hasMaterialCategory": ["Organic Material"],
-    "hasSpecimenCategory": ["Whole Organism"],
+    "has_sample_object_type": ["Whole Organism"],
     "informalClassification": ["Gastropoda"],
     "keywords": ["Aceh", "Sumatra","Indonesia","Asia", "Mollusca"],
     "producedBy": {

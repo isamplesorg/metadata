@@ -1,25 +1,26 @@
 ---
-id: http://resource.isamples.org/schema/1.0
-name: physicalSample
-title: Schema for documenting physical samples
+id: https://w3id.org/isample/schema/1.0
+name: materialSample
+title: Schema for documenting material samples
 description: |
-  Schema for iSamples sample registry integration. Updated from 0.2 by synchronizing the vocabulary enumerations, change
+  SMR 2022-10-07. Schema for iSamples sample registry integration. Updated from 0.2 by synchronizing the vocabulary enumerations, change
   'id' to '@id' and 'schema' to '$schema'.  Schema name is iSamplesSchemaCore1.0.json. Target JSON schema version is
-  http://json-schema.org/draft-07/schema# SMR 2022-10-07. SMR 2023-03-17. Move authorized_by into SamplingEvent, change
+  https://json-schema.org/draft/2019-09/schema.  SMR 2023-03-17. Move authorized_by into SamplingEvent, change
   keywords to list of Keyword objects with string, uri, scheme and scheme URI. Reorder elements in slot list. Update
   scheme URI to 1.0 2023-06-13 SMR add project property on SamplingEvent, with text or URI value. 2024-01-17 SMR run
-  linkml-lint from current linkml version before rebuilding JSON schema. The JSON schema is out of sync with Github
-  isamples/metadata 151 to 156 updates in yaml.
+  linkml-lint from current linkml version before rebuilding JSON schema.  2024-04-19. DV ran yaml linter on the file to clean 
+  up formatting, put hard return in text bodies.  Update schema URI to dereference with w3id.
 license: https://creativecommons.org/publicdomain/zero/1.0/
 version: "20240117"
 prefixes:
   linkml: https://w3id.org/linkml/
-  isam: http://resource.isamples.org/schema/1.0/
+  isam: https://w3id.org/isample/schema/1.0/
   dct: http://purl.org/dc/terms/
   mat: https://w3id.org/isample/vocabulary/material/1.0/
   sf: https://w3id.org/isample/vocabulary/sampledfeature/1.0/
   skos: http://www.w3.org/2004/02/skos/core#
-  spec: https://w3id.org/isample/vocabulary/specimentype/1.0/
+#  spec: https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/
+  msot: https://w3id.org/isample/vocabulary/materialsampleobjecttype/1.0/
   w3cpos: http://www.w3.org/2003/01/geo/wgs84_pos#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   xsd: http://www.w3.org/2001/XMLSchema#
@@ -32,11 +33,11 @@ imports:
   - linkml:types
 
 classes:
-  PhysicalSampleRecord:
+  MaterialSampleRecord:
     description: >
-      This is a data object that is a digital representation of a physical sample, and thus shares the same
-      identifier as the physical object. It provides descriptive properties for any iSamples physical sample, URI for
-      the metadata record is same as URI for physical sample-- digital object is considered twin of physical object, a
+      This is a data object that is a digital representation of a material sample, and thus shares the same
+      identifier as the physical object. It provides descriptive properties for any iSamples material sample, URI for
+      the metadata record is same as URI for material sample-- digital object is considered twin of physical object, a
       representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.
     slots:
       - sample_identifier
@@ -47,7 +48,7 @@ classes:
       - sampling_purpose
       - has_context_category
       - has_material_category
-      - has_specimen_category
+      - has_sample_object_type
       - keywords
       - related_resource
       - complies_with
@@ -88,7 +89,7 @@ classes:
       Object to represent an identified concept; property values from vocabularies with resolvable identifiers for
       vocabulary terms. Either a label or identifier is required, to allow for cases that a URI is not available.  Data
       validation process will need to be used for properties that require an identified term value
-      (e.g. has_context_category, has_material_category, has_specimen_category).
+      (e.g. has_context_category, has_material_category, has_sample_object_type).
     slots:
       - label
       - identifier
@@ -108,10 +109,10 @@ classes:
 
   SamplingEvent:
     description: >
-      Information about the event resulting in the creation of the physical sample. Include information about
+      Information about the event resulting in the creation of the material sample. Include information about
       permitting in the authorized_by property. The sampling procedure should be described in the description. If any
       special protocols were followed in the sampling procedure, they should be documented using the
-      PhysicalSampleRecord/complies_with property.
+      MaterialSampleRecord/complies_with property.
     slots:
       - identifier
       - label
@@ -125,16 +126,16 @@ classes:
 
   GeospatialCoordLocation:
     description: >
-      A physical location in decimal degrees using EPSG:4326. Could be sample point location, or the centroid of a
+      A physical location in decimal degrees using EPSG\:4326. Could be sample point location, or the centroid of a
       sampling area. Elevation is specified as a string that should include the measure, units of measure, and the
-      vertical reference system (e.g. 'above mean sea level', 'below ground surface', 'below sea floor'...)
+      vertical reference system, e.g. 'above mean sea level', 'below ground surface', 'below sea floor'...
     slots:
       - elevation
       - latitude
       - longitude
       - obfuscated
 
-  SpecimenCuration:
+  MaterialSampleCuration:
     description: >
       Information about the current storage of sample, access to sample, and events in curation history. Curation as
       used here starts when the sample is removed from its original context, and might include various processing steps
@@ -179,7 +180,7 @@ slots:
       or curation.
   authorized_by:
     range: string
-    domain: PhysicalSampleRecord
+    domain: MaterialSampleRecord
     description: >
       A list of permits or other formal permission documents under which the sample was collected. Use to cite legal
       documents authorizing sample collection.
@@ -191,7 +192,7 @@ slots:
       E-mail address, telephone number, mailing address, or web site through which an agent can be contacted. Something
       that should be stable and reliable.
   curation:
-    range: SpecimenCuration
+    range: MaterialSampleCuration
     description: >
       Information about the current storage of sample, access to sample, and events in curation history. Curation as
       used here starts when the sample is removed from its original context, and might include various processing steps
@@ -203,7 +204,7 @@ slots:
       Information about where and how the sample is currently stored.
   complies_with:
     range: string
-    domain: PhysicalSampleRecord
+    domain: MaterialSampleRecord
     description: >
       A list of policies, recommendations, best practices (etc.) that have been followed in the collection and curation
       of the sample.
@@ -235,7 +236,7 @@ slots:
     # range is an instance of at least one skos:Concept
     # with skos:inScheme sf:sampledfeaturevocabulary ;
     range: IdentifierObject
-    domain: PhysicalSampleRecord
+    domain: MaterialSampleRecord
     description: >
       Top level context, based on the kind of feature sampled. Specific
       identification of the sampled feature of interest is done through the
@@ -250,19 +251,19 @@ slots:
   has_material_category:
     # range is an instance of at least one skos:Concept
     # with skos:inScheme = mat:materialsVocabulary
-    domain: PhysicalSampleRecord
+    domain: MaterialSampleRecord
     range: IdentifierObject
     description: >
-      The kind of material that constitutes the sample.  At least one value is an instance of skos:Concept from the
+      The kind of material that constitutes the sample.  At least one value is an instance of skos\:Concept from the
       iSamples MaterialTypeVocabulary. Extension vocabularies can be used for more precise categorization.
     multivalued: true
-  has_specimen_category:
+  has_sample_object_type:
     # range is an instance at least one skos:Concept
-    # with skos:inScheme = mat:specimentypevocabulary
-    domain: PhysicalSampleRecord
+    # with skos:inScheme = msot:conceptscheme
+    domain: MaterialSampleRecord
     description: >
-      The kind of object the specimen is. At least one value is an instance of skos:Concept from the iSamples
-      SpecimenTypeVocabulary; extension vocabularies can be used for more precise categorization.
+      The kind of object the material sample is. At least one value is an instance of skos\:Concept from the iSamples
+      materialsampleobjecttype Vocabulary; extension vocabularies can be used for more precise categorization.
     range: IdentifierObject
     multivalued: true
   is_part_of:
@@ -275,7 +276,7 @@ slots:
     multivalued: true
   keywords:
     range: Keyword
-    domain: PhysicalSampleRecord
+    domain: MaterialSampleRecord
     description: >
       Free text terms or formal categories associate with sample to support discovery. As in DataCite metadata, each
       keyword is a separate element. Multiple keywords should NOT be included as a comma-delimited list.
@@ -348,13 +349,13 @@ slots:
 
   produced_by:
     range: SamplingEvent
-    domain: PhysicalSampleRecord
+    domain: MaterialSampleRecord
     description: >
       Object that documents the sampling event--who, where, when the
-      specimen was obtained.
+      material sample was obtained.
   registrant:
     range: Agent
-    domain: PhysicalSampleRecord
+    domain: MaterialSampleRecord
     description: >
       Identification of the agent that registered the sample, with
       contact information. Should include person name and affiliation, or position
@@ -379,13 +380,13 @@ slots:
       Term that specifies how a person is related to a sample curation or collection activity.
   sample_identifier:
     range: string
-    domain: PhysicalSampleRecord
+    domain: MaterialSampleRecord
     description: >
-      URI that identifies the physical sample described by this record
+      URI that identifies the material sample described by this record
     close_mappings: [sdo:identifier]
   sampling_purpose:
     range: string
-    domain: PhysicalSampleRecord
+    domain: MaterialSampleRecord
     description: >
       Term to specify why a sample was collection.
   scheme_name:
@@ -413,10 +414,15 @@ slots:
       to the parent element.
     multivalued: true
   result_time:
-    range: date
+    range: string
+    any_of:
+       - range: date
+       - range: datetime
+       - pattern: "^(?:[1]?[0-9]{3}|20[0-2][0-9])$"
+       - pattern: "^(?:[1]?[0-9]{3}|20[0-2][0-9])-(?:0[1-9]|1[0-2])$"
     domain: SamplingEvent
     description: >
-      Date on which the sample was collected.
+      Date on which the sample was collected. Can be YYYY, YYYY-MM, xsd:date, or xsd:dateTime.
   sampling_site:
     range: SamplingSite
     domain: SamplingEvent

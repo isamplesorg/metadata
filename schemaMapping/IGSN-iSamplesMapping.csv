@@ -1,0 +1,36 @@
+﻿iSamplesSchemaCore1.0,iSamples notes,IGSN Element,Definition
+X-- affiliation identifier,"organization in an affiliation does not have an identifier in iSamples, could put in affiliation.",registrant/ affiliation/identifier,has identifier type
+X-- geometry spatial reference system,"Not applicable, iSamples requires WGS84",geometry/sridType,"controlled vocabulary; only value is '4326', apparently requiring use of WGS84?"
+X-- location URI,An identifier for the geographical locality where the material sample was collected.,toponym/identifier,
+X-- metadata update date,Update date not currently included,logElement [event = updated] @timeStamp,
+X-- name identifier scheme name,no iSamples property. ,collector/identifier/ identifierType,
+X-- publication year,"Time stamp for when the sample registration information is made public through the identifier authority; not currently included in iSamples metadata, use year of sample registration; If an embargo period has been in effect, use the date when the embargo period ends.",logElement [eventtype = registered] @timeStamp,"Log of events relevant to the object. Events have eventType, timeStamp and comments. eventType in {submitted, registered, updated, deprecated, destroyed}"
+X-- related identifier type,"no iSamples equivalent. Default to PURL, unless you can determine its one of the others in the DataCite vocabulary.",relatedIdentifierType,"Has relatedIdentifierType in {doi, handle, lsid, url, urn, igsn}"
+alternate_identifiers/ identifier,,alternateIdentifier,
+alternate_identifiers/ scheme_name,,alternateIdentifier/ identifierType,
+curation/ access_constraints,"cultural, legal or other policy issues that bear on access to view, borrow, or subsample a sample (Curation) ",sampleAccess,
+description,"free text description of the physical sample, and any related information. Include as much detail as will be useful for users to find the sample and understand its context.",description,"Free text, anything else that might be useful to know about the sample at its ‘birth’."
+has_material_sample_object_type/ label,"repeat label and uri, from iSamples Material Sample Object Type vocabulary.",alternateResourceType,map to iSamples vocabulary
+keywords/keyword,An identifier for the nomenclatural (not taxonomic) details of a scientific name.,alternateResourceType | alternateMaterial,include verbatim as keywords; map resourceType and material to iSamples vocabulary if possible.
+keywords/keyword [scheme_name= IGSN_description],,"resourceType, material","controlled vocabulary {feature, sample, collection} and {uses ODM2 medium vocabulary}"
+label,a human intelligible string used to identify the sample; i.e. the name to use for the sample; should be unique in the scope of a sample collection. This will typically be a sample identifier or label assigned by the original collector,name,Text string for people to understand what is identified. What would typically be presented in a user interface.
+produced_by/ SamplingEvent/ responsibility,"the responsibility is an agent-- could be person or organization, with role = 'collector'. Other agents associated with the sampling event could be included, e.g. with roles like 'sponsor', 'funder'....",collector,"Who collected the sample. has identifier, identifierType, name, affiliation that map to iSamples Agent"
+produced_by/ SamplingEvent/ responsibility [role=collector]/ affiliation,only one affiliation associated with person in this role.,collector/affiliation/ name & affiliation/identifier,has affiliation identifier
+produced_by/ SamplingEvent/ responsibility [role=collector]/ identifier,only one identifier associated with person in this role. iSamples identifier value is a string.,collector/identifier,
+produced_by/ SamplingEvent/ responsibility [role=collector]/name,"string, name of a person. Format: {firstName MI lastName}.",collector/name,
+produced_by/ SamplingEvent/ responsibility/identifier,,contributor/identifier,
+produced_by/ SamplingEvent/ responsibility/name,,contributor/name,
+produced_by/ SamplingEvent/ responsibility/role,,contributor/ contributorType,Controlled Vocabulary
+"produced_by/ SamplingEvent/ responsibility[roles other than 'collector', 'funder'],","Agents associated with sampling event, agent/role is subclass of 'contributor'. Need mapping from iSample roles to DataCite contributorType",contributors ,
+produced_by/ SamplingEvent/ sampling_site/ place_name,iSamples can have multiple values.,toponym/name,
+produced_by/ SamplingEvent/ sampling_site/ sample_location or place_name,"for DCAT, use whichever is there",geoLocations,"Where was the sample acquired relative to the Earth (or another celestial body...). Some samples might be ‘non-geographic’: mineral specimen, synthetic material. geometry types allowed: {LineString, MultiLineString, point, multipoint, polygon, multipolygon}. Allows different spatial reference systems"
+produced_by/ SamplingEvent/description,,collectionMethod | alternateCollectionMethod,"collectionMethod has controlled vocabulary, looks similar to SESAR"
+produced_by/ SamplingEvent/result_time,Date on which the sample was collected.,collectionTime,When was the sample collected. instant or interval. 
+produced_by/label && produced_by/ description && produced_by/ authorized_by,concatenate iSamples SamplingEvent label and description; include information in 'authorized_by',collectionMethod,Term to categorize the process through which the sample was acquired as an independent object.
+registrant [role=registrant]/name/,"identification of the agent that registered the sample, with contact information. Role = 'registrant'",registrant/ registrantName,"allocating agent. appears in Registration and description, but labels are slightly different."
+registrant/affiliation,,registrant/ affiliation,
+registrant/identifier,,registrant/ nameIdentifier,"name identifier has scheme in {ORCID, ISNI, VIAF, researcherID}"
+related_resource [relationship= 'hasOtherMetadata'],,supplementalMetadata/ record,
+related_resource/ relationship,nature of relationship between sample and resource that is the target of the relationship. See vocabulary in development: https://docs.google.com/spreadsheets/d/1yk3ZEWzEc1cXBOwb-foCtq3isaBBa95Rv8eA6TIyieM,relatedResourceIdentifier @relationType (relatedIdentifier/ relationType in Description schema),controlled vocabulary
+related_resource/target,identifier for the target resource in the relationship. Should be a resolvable URI.,relatedResourceIdentifier (relatedIdentifier in Description schema),"Identifiers of related resources. Has relatedIdentifierType in {doi, handle, lsid, url, urn, igsn}"
+sample_identifier,"unique identifier for the physical object, ideally a URI that is physically attached to the material sample object, an IGSN or ARK ",sampleNumber,"The Identifier is a unique string that identifies a resource. At present, the only allowed value is an IGSN handle."

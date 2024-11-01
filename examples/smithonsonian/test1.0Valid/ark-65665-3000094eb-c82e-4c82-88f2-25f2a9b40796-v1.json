@@ -7,19 +7,19 @@
     "has_context_category": [
         {
             "label": "Marine water body bottom",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/0.9/marinewaterbodybottom"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/marinewaterbodybottom"
         }
     ],
     "has_material_category": [
         {
             "label": "Organic material",
-            "identifier": "https://w3id.org/isample/vocabulary/material/0.9/organicmaterial"
+            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/organicmaterial"
         }
     ],
-    "has_specimen_category": [
+    "has_sample_object_type": [
         {
-            "label": "Whole organism specimen",
-            "identifier": "https://w3id.org/isample/vocabulary/specimentype/0.9/wholeorganism"
+            "label": "Whole organism material sample",
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/wholeorganism"
         }
     ],
     "keywords": [
