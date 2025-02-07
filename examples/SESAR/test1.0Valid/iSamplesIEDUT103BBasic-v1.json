@@ -7,19 +7,19 @@
     "has_context_category": [
         {
             "label": "Subaerial surface environment",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/subaerialsurfaceenvironment"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/subaerialsurfaceenvironment"
         }
     ],
     "has_material_category": [
         {
             "label": "Biogenic non-organic material",
-            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/biogenicnonorganicmaterial"
+            "identifier": "https://w3id.org/isample/vocabulary/material/biogenicnonorganicmaterial"
         }
     ],
     "has_sample_object_type": [
         {
             "label": "Other solid object",
-            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/othersolidobject"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/othersolidobject"
         }
     ],
     "keywords": [
@@ -70,6 +70,7 @@
         "name": "Andrea Dutton",
         "contact_information": "adutton@ufl.edu"
     },
+    "last_modified_time":"2024-09-13T12:23:00-07:00",
     "sampling_purpose": "Paleosea-level",
     "curation": {
         "curation_location": "University of Florida Department of Geological Sciences",

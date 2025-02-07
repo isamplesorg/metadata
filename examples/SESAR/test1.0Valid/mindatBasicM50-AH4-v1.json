@@ -7,35 +7,35 @@
     "has_context_category": [
         {
             "label": "Earth interior",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/earthinterior"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/earthinterior"
         }
     ],
     "has_material_category": [
         {
             "label": "Rock",
-            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/rock"
+            "identifier": "https://w3id.org/isample/vocabulary/material/rock"
         },
         {
             "label": "Mineral",
-            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/mineral"
+            "identifier": "https://w3id.org/isample/vocabulary/material/mineral"
         },
         {
             "label": "Mineral-Silicate or Germanate",
-            "identifier": "https://w3id.org/isample/vocabulary/mingroup/1.0/silicategermanatemineral"
+            "identifier": "https://w3id.org/isample/vocabulary/mingroup/silicategermanatemineral"
         },
         {
             "label": "metamorphic rock",
-            "identifier": "https://w3id.org/isample/vocabulary/rocksediment/1.0/Metamorphic_Rock"
+            "identifier": "https://w3id.org/isample/vocabulary/rocksediment/Metamorphic_Rock"
         }
     ],
     "has_sample_object_type": [
         {
             "label": "Other solid object",
-            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/othersolidobject"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/othersolidobject"
         },
         {
             "label": "Mineral specimen",
-            "identifier": "https://w3id.org/isample/1.0/esmaterialsample/mineralmaterialsample"
+            "identifier": "https://w3id.org/isample/esmaterialsample/mineralmaterialsample"
         }
     ],
     "keywords": [
@@ -76,6 +76,7 @@
         "name": "Stephen M. Richard",
         "identifier": "https://orcid.org/0000-0001-6041-5302"
     },
+    "last_modified_time":"2024-09-13T09:20:00-07:00",
     "sampling_purpose": "mineral specimen",
     "curation": {
         "responsibility": [

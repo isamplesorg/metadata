@@ -7,19 +7,19 @@
     "has_context_category": [
         {
             "label": "Subsurface fluid reservoir",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/subsurfacefluidreservoir"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/subsurfacefluidreservoir"
         }
     ],
     "has_material_category": [
         {
             "label": "Gaseous material",
-            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/gas"
+            "identifier": "https://w3id.org/isample/vocabulary/material/gas"
         }
     ],
     "has_sample_object_type": [
         {
             "label": "Fluid in container",
-            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/fluidincontainer"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/fluidincontainer"
         }
     ],
     "keywords": [
@@ -51,6 +51,7 @@
         }
     },
     "registrant": {"name": "Andra Bobbitt"},
+    "last_modified_time":"2024-09-13T12:23:00-07:00",
     "sampling_purpose": "",
     "curation": {
         "responsibility": [

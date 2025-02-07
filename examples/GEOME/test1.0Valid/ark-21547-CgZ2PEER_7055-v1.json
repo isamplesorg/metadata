@@ -7,19 +7,19 @@
     "has_context_category": [
         {
             "label": "Marine environment",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/marinewaterbody"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/marinewaterbody"
         }
     ],
     "has_material_category": [
         {
             "label": "Biogenic non-organic material",
-            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/biogenicnonorganicmaterial"
+            "identifier": "https://w3id.org/isample/vocabulary/material/biogenicnonorganicmaterial"
         }
     ],
     "has_sample_object_type": [
         {
             "label": "Organism product",
-            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/organismproduct"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/organismproduct"
         }
     ],
     "keywords": [
@@ -76,6 +76,7 @@
         }
     },
     "registrant": {"name": "Eka Maya Kurniasih"},
+    "last_modified_time":"2024-09-13T09:20:00-07:00",
     "sampling_purpose": "",
     "curation": {
         "access_constraints": [],

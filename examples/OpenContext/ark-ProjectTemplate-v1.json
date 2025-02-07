@@ -3,7 +3,7 @@
     "has_context_category": [
         {
             "label": "Site of past human activities",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/pasthumanoccupationsite"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/pasthumanoccupationsite"
         }
     ],
     

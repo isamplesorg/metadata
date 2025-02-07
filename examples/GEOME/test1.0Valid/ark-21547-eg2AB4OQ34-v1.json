@@ -7,19 +7,19 @@
     "has_context_category": [
         {
             "label": "Marine environment",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/marinewaterbody"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/marinewaterbody"
         }
     ],
     "has_material_category": [
         {
             "label": "Organic material",
-            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/organicmaterial"
+            "identifier": "https://w3id.org/isample/vocabulary/material/organicmaterial"
         }
     ],
     "has_sample_object_type": [
         {
             "label": "Whole organism material sample",
-            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/wholeorganism"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/wholeorganism"
         }
     ],
     "keywords": [
@@ -64,6 +64,7 @@
         }
     },
     "registrant": {},
+    "last_modified_time":"2024-09-13T09:20:00-07:00",
     "sampling_purpose": "",
     "curation": {
         "label": "",

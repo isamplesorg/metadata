@@ -2,7 +2,7 @@
     "$id": "https://w3id.org/isample/schema/1.0",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
-    "description": "This is a data object that is a digital representation of a material sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples material sample, URI for the metadata record is same as URI for material sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web. metamodel_version 1.7.0; version 20240117",
+    "description": "This is a data object that is a digital representation of a material sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples material sample, URI for the metadata record is same as URI for material sample-- digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web. metamodel_version 1.7.0; version 20240913",
     "title": "MaterialSampleRecord",
     "type": "object",
     "properties": {
@@ -72,11 +72,17 @@
         "registrant": {
             "$ref": "#/$defs/Agent",
             "description": "identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information."
+        },
+        "last_modified_time": {
+            "description": "time stamp when the metadata record was most recently uupdated.",
+            "format": "date-time",
+            "type": "string"
         }
     },
     "required": [
         "sample_identifier",
-        "label"
+        "label",
+        "last_modified_time"
     ],
     "$defs": {
         "Agent": {

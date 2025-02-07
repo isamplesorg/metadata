@@ -7,19 +7,19 @@
     "has_context_category": [
         {
             "label": "Subaerial surface environment",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/subaerialsurfaceenvironment"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/subaerialsurfaceenvironment"
         }
     ],
     "has_material_category": [
         {
             "label": "Organic material",
-            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/organicmaterial"
+            "identifier": "https://w3id.org/isample/vocabulary/material/organicmaterial"
         }
     ],
     "has_sample_object_type": [
         {
             "label": "Biological material sample",
-            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/biologicalmaterialsample"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/biologicalmaterialsample"
         }
     ],
     "keywords": [
@@ -51,6 +51,7 @@
         }
     },
     "registrant": {"name": "Jonathan Nichols"},
+    "last_modified_time":"2024-09-13T12:23:00-07:00",
     "sampling_purpose": "",
     "curation": {
         "curation_location": "Lamont-Doherty Earth Observatory",

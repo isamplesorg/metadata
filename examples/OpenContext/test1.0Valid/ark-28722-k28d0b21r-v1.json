@@ -7,19 +7,19 @@
     "has_context_category": [
         {
             "label": "Site of past human activities",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/pasthumanoccupationsite"
+            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/pasthumanoccupationsite"
         }
     ],
     "has_material_category": [
         {
             "label": "Anthropogenic material",
-            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/otheranthropogenicmaterial"
+            "identifier": "https://w3id.org/isample/vocabulary/material/otheranthropogenicmaterial"
         }
     ],
     "has_sample_object_type": [
         {
             "label": "Artifact",
-            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/artifact"
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/artifact"
         }
     ],
     "keywords": [
@@ -44,6 +44,7 @@
             "scheme_name": "Object Facet: Getty Art & Architecture Thesaurus"
         }
     ],
+    "last_modified_time":"2024-09-13T09:20:00-07:00",
     "produced_by": {
         "label": "Early Bronze Age Numayra",
         "description": "",
