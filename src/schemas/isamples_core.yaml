@@ -85,7 +85,7 @@ classes:
       - pid
       - description
       - label
-      - sample_location
+      - site_location
       - place_name
       - is_part_of
 
@@ -296,6 +296,13 @@ slots:
     description: >
       Angular coordinate measured positive eastward from the prime meridian.
   sample_location:
+    range: GeospatialCoordLocation
+    domain: SamplingEvent
+    description: >
+      Geopatial location of sample event; required default is WGS84 latitude,
+      longitude in decimal degrees. Elevation as a string with number, unit
+      of measure, and datum.
+  site_location:
     range: GeospatialCoordLocation
     domain: SamplingSite
     description: >
