@@ -46,11 +46,11 @@ jobs:
       #- name: List the output of the vocabulary
       #  run: ls -l ${{ github.workspace }}/build/docs/vocabularies
         
-      - name: List the output of the docs directory
-        run: ls -l ${{ github.workspace }}/build/docs/
-
       - name: Render documentation
         run: make gen-docs
+
+      - name: List the output of the docs directory
+        run: ls -l ${{ github.workspace }}/build/docs/
 
       - name: Publish documentation
         uses: peaceiris/actions-gh-pages@v3
