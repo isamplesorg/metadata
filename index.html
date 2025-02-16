@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,10 +35,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed20e031201a2f52d49632ac7658f477.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-da64417afad5d74052a0a6cd7b488b19.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -146,14 +146,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./IdentifierObject.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">IdentifierObject</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./Keyword.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Keyword</span></a>
+  <a href="./IdentifiedConcept.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IdentifiedConcept</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -289,26 +283,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./identifier.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">identifier</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./is_part_of.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">is_part_of</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./keyword.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">keyword</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./keyword_uri.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">keyword_uri</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -321,6 +297,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./label.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">label</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./last_modified_time.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">last_modified_time</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -345,6 +327,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./obfuscated.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">obfuscated</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pid.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">pid</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -435,6 +423,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./scheme_uri.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">scheme_uri</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./site_location.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">site_location</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -604,7 +598,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 19, 2024</p>
+      <p class="date-modified">February 16, 2025</p>
     </div>
   </div>
     
@@ -615,7 +609,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>SMR 2022-10-07. Schema for iSamples sample registry integration. Updated from 0.2 by synchronizing the vocabulary enumerations, change ‘id’ to ‘<span class="citation" data-cites="id">@id</span>’ and ‘schema’ to ‘$schema’. Schema name is iSamplesSchemaCore1.0.json. Target JSON schema version is https://json-schema.org/draft/2019-09/schema. SMR 2023-03-17. Move authorized_by into SamplingEvent, change keywords to list of Keyword objects with string, uri, scheme and scheme URI. Reorder elements in slot list. Update scheme URI to 1.0 2023-06-13 SMR add project property on SamplingEvent, with text or URI value. 2024-01-17 SMR run linkml-lint from current linkml version before rebuilding JSON schema. 2024-04-19. DV ran yaml linter on the file to clean up formatting, put hard return in text bodies. Update schema URI to dereference with w3id.</p>
+<p>DV 2025-02-07. Modifications after discussion on iSamples tech. Add geo directly to SamplingEvent, add has_context_category to SamplingEvent. SMR 2022-10-07. Schema for iSamples sample registry integration. Updated from 0.2 by synchronizing the vocabulary enumerations, change ‘id’ to ‘<span class="citation" data-cites="id">@id</span>’ and ‘schema’ to ‘$schema’. Schema name is iSamplesSchemaCore1.0.json. Target JSON schema version is https://json-schema.org/draft/2019-09/schema. SMR 2023-03-17. Move authorized_by into SamplingEvent, change keywords to list of Keyword objects with string, uri, scheme and scheme URI. Reorder elements in slot list. Update scheme URI to 1.0 2023-06-13 SMR add project property on SamplingEvent, with text or URI value. 2024-01-17 SMR run linkml-lint from current linkml version before rebuilding JSON schema. 2024-04-19. DV ran yaml linter on the file to clean up formatting, put hard return in text bodies. Update schema URI to dereference with w3id. SMR 2024-09-13 add last_modified_time as property of MaterialSampleRecord.</p>
 <p>URI: https://w3id.org/isample/schema/1.0 Name: materialSample</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -626,16 +620,18 @@ ul.task-list li input[type="checkbox"] {
 classDiagram
   direction BT
   class MaterialSampleRecord {
-    alternate_identifiers : IdentifierObject[]
+    alternate_identifiers : string[]
     complies_with : string[]
     curation : MaterialSampleCuration
     dc_rights : string
     description : string
-    has_context_category : IdentifierObject[]
-    has_material_category : IdentifierObject[]
-    has_sample_object_type : IdentifierObject[]
-    keywords : Keyword[]
+    has_context_category : IdentifiedConcept[]
+    has_material_category : IdentifiedConcept[]
+    has_sample_object_type : IdentifiedConcept[]
+    keywords : IdentifiedConcept[]
     label : string
+    last_modified_time : datetime
+    pid : uriorcurie
     produced_by : SamplingEvent
     registrant : Agent
     related_resource : SampleRelation[]
@@ -643,12 +639,11 @@ classDiagram
     sampling_purpose : string
     }
     click MaterialSampleRecord href "MaterialSampleRecord.html" "Documentation"
-    IdentifierObject --o MaterialSampleRecord : alternate_identifiers
     MaterialSampleCuration --o MaterialSampleRecord : curation
-    IdentifierObject --o MaterialSampleRecord : has_context_category
-    IdentifierObject --o MaterialSampleRecord : has_material_category
-    IdentifierObject --o MaterialSampleRecord : has_sample_object_type
-    Keyword --o MaterialSampleRecord : keywords
+    IdentifiedConcept --o MaterialSampleRecord : has_context_category
+    IdentifiedConcept --o MaterialSampleRecord : has_material_category
+    IdentifiedConcept --o MaterialSampleRecord : has_sample_object_type
+    IdentifiedConcept --o MaterialSampleRecord : keywords
     SamplingEvent --o MaterialSampleRecord : produced_by
     Agent --o MaterialSampleRecord : registrant
     SampleRelation --o MaterialSampleRecord : related_resource
@@ -656,51 +651,40 @@ classDiagram
   class Agent {
     affiliation : string
     contact_information : string
-    identifier : uriorcurie
     name : string
+    pid : uriorcurie
     role : string
     }
     click Agent href "Agent.html" "Documentation"
     
-  class Keyword {
-    keyword : string
-    keyword_uri : string
-    scheme_name : string
-    scheme_uri : string
-    }
-    click Keyword href "Keyword.html" "Documentation"
-    
-  class IdentifierObject {
-    identifier : uriorcurie
-    label : string
-    scheme_name : string
-    }
-    click IdentifierObject href "IdentifierObject.html" "Documentation"
-    
   class SamplingSite {
     description : string
-    identifier : uriorcurie
     is_part_of : uriorcurie[]
     label : string
+    pid : uriorcurie
     place_name : string[]
-    sample_location : GeospatialCoordLocation
+    site_location : GeospatialCoordLocation
     }
     click SamplingSite href "SamplingSite.html" "Documentation"
-    GeospatialCoordLocation --o SamplingSite : sample_location
+    GeospatialCoordLocation --o SamplingSite : site_location
     
   class SamplingEvent {
     authorized_by : string[]
     description : string
+    has_context_category : IdentifiedConcept[]
     has_feature_of_interest : string
-    identifier : uriorcurie
     label : string
+    pid : uriorcurie
     project : string
     responsibility : Agent[]
     result_time : string
+    sample_location : GeospatialCoordLocation
     sampling_site : SamplingSite
     }
     click SamplingEvent href "SamplingEvent.html" "Documentation"
+    IdentifiedConcept --o SamplingEvent : has_context_category
     Agent --o SamplingEvent : responsibility
+    GeospatialCoordLocation --o SamplingEvent : sample_location
     SamplingSite --o SamplingEvent : sampling_site
     
   class GeospatialCoordLocation {
@@ -715,8 +699,8 @@ classDiagram
     access_constraints : string[]
     curation_location : string
     description : string
-    identifier : uriorcurie
     label : string
+    pid : uriorcurie
     responsibility : Agent[]
     }
     click MaterialSampleCuration href "MaterialSampleCuration.html" "Documentation"
@@ -729,6 +713,14 @@ classDiagram
     target : uriorcurie
     }
     click SampleRelation href "SampleRelation.html" "Documentation"
+    
+  class IdentifiedConcept {
+    label : string
+    pid : uriorcurie
+    scheme_name : string
+    scheme_uri : string
+    }
+    click IdentifiedConcept href "IdentifiedConcept.html" "Documentation"
     
   
 </pre>
@@ -756,30 +748,26 @@ classDiagram
 <td>A physical location in decimal degrees using EPSG:4326</td>
 </tr>
 <tr class="odd">
-<td><a href="./IdentifierObject.html">IdentifierObject</a></td>
-<td>Object to represent an identified concept; property values from vocabularies …</td>
+<td><a href="./IdentifiedConcept.html">IdentifiedConcept</a></td>
+<td>An identifier with a label, used for vocabulary terms</td>
 </tr>
 <tr class="even">
-<td><a href="./Keyword.html">Keyword</a></td>
-<td>A simple string (tag) useful for guiding discovery of the sample, or a scoped…</td>
-</tr>
-<tr class="odd">
 <td><a href="./MaterialSampleCuration.html">MaterialSampleCuration</a></td>
 <td>Information about the current storage of sample, access to sample, and events…</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./MaterialSampleRecord.html">MaterialSampleRecord</a></td>
 <td>This is a data object that is a digital representation of a material sample, …</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./SampleRelation.html">SampleRelation</a></td>
 <td>Semantic link to other samples or related resources</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./SamplingEvent.html">SamplingEvent</a></td>
 <td>Information about the event resulting in the creation of the material sample</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./SamplingSite.html">SamplingSite</a></td>
 <td>Documentation of the site where the sample was collected, wtih place name(s) …</td>
 </tr>
@@ -857,28 +845,20 @@ classDiagram
 <td>The kind of object the material sample is</td>
 </tr>
 <tr class="even">
-<td><a href="./identifier.html">identifier</a></td>
-<td>A string that identifies some resource</td>
-</tr>
-<tr class="odd">
 <td><a href="./is_part_of.html">is_part_of</a></td>
 <td>A link from a SamplingSite to a larger sampling site that spatially contains …</td>
 </tr>
-<tr class="even">
-<td><a href="./keyword.html">keyword</a></td>
-<td>String label for a concept that characterizes the sample in some respect</td>
-</tr>
 <tr class="odd">
-<td><a href="./keyword_uri.html">keyword_uri</a></td>
-<td>An identifier for the keyword concept</td>
-</tr>
-<tr class="even">
 <td><a href="./keywords.html">keywords</a></td>
 <td>Free text terms or formal categories associate with sample to support discove…</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./label.html">label</a></td>
 <td>A human intelligible string used to identify a thing, i</td>
+</tr>
+<tr class="odd">
+<td><a href="./last_modified_time.html">last_modified_time</a></td>
+<td>time stamp when the metadata record was most recently uupdated</td>
 </tr>
 <tr class="even">
 <td><a href="./latitude.html">latitude</a></td>
@@ -897,64 +877,72 @@ classDiagram
 <td>Flag to indicate that accuracy of provided coordinate location has been reduc…</td>
 </tr>
 <tr class="even">
+<td><a href="./pid.html">pid</a></td>
+<td>A string that identifies some resource</td>
+</tr>
+<tr class="odd">
 <td><a href="./place_name.html">place_name</a></td>
 <td>One or more names by which the sampling site is known</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./produced_by.html">produced_by</a></td>
 <td>Object that documents the sampling event–who, where, when the material sampl…</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./project.html">project</a></td>
 <td>The name or identifier for a project that is the sponsor for a samplingEvent</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./registrant.html">registrant</a></td>
 <td>Identification of the agent that registered the sample, with contact informat…</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./related_resource.html">related_resource</a></td>
 <td>Link to related resource with relationship property to indicate nature of con…</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./relationship.html">relationship</a></td>
 <td>Term to identify realationship between host sample and the sample relation ta…</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./responsibility.html">responsibility</a></td>
 <td>Agent object includes person name, person identifier, affiliation, or organiz…</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./result_time.html">result_time</a></td>
 <td>Date on which the sample was collected</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./role.html">role</a></td>
 <td>Term that specifies how a person is related to a sample curation or collectio…</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./sample_identifier.html">sample_identifier</a></td>
 <td>URI that identifies the material sample described by this record</td>
 </tr>
-<tr class="even">
-<td><a href="./sample_location.html">sample_location</a></td>
-<td>Geopatial location of site; required default is WGS84 latitude, longitude in …</td>
-</tr>
 <tr class="odd">
+<td><a href="./sample_location.html">sample_location</a></td>
+<td>Geopatial location of sample event; required default is WGS84 latitude, longi…</td>
+</tr>
+<tr class="even">
 <td><a href="./sampling_purpose.html">sampling_purpose</a></td>
 <td>Term to specify why a sample was collection</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./sampling_site.html">sampling_site</a></td>
 <td>Object that identifies the place where the sample was collected</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./scheme_name.html">scheme_name</a></td>
 <td>String label for the concept scheme or vocabulary within which the keyword co…</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./scheme_uri.html">scheme_uri</a></td>
 <td>Identifier for the concept scheme or vocabulary within which the keyword conc…</td>
+</tr>
+<tr class="even">
+<td><a href="./site_location.html">site_location</a></td>
+<td>Geopatial location of site; required default is WGS84 latitude, longitude in …</td>
 </tr>
 <tr class="odd">
 <td><a href="./target.html">target</a></td>
@@ -1146,8 +1134,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1258,7 +1244,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
