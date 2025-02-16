@@ -16,29 +16,35 @@ jobs:
   github-pages:
     runs-on: ubuntu-latest
     steps:
+      - name: for running under act on mac os
+        run: |
+          # Hack to get setup-python to work on act
+          if [ ! -f "/etc/lsb-release" ] ; then
+            echo "DISTRIB_RELEASE=22.04" > /etc/lsb-release
+          fi
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
-          version: 1.4.37
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+          version: 1.6.40
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
-          python-version: 3.9
+          python-version: 3.11
           cache: 'pip'
 
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Make directory for output (workaround for permissions issue)
-        run: mkdir -p ${{ github.workspace }}/build/docs/vocabularies
+      #- name: Make directory for output (workaround for permissions issue)
+      #  run: mkdir -p ${{ github.workspace }}/build/docs/vocabularies
 
-      - name: Parse vocabularies
-        uses: isamplesorg/vocabularies@main
-        with:
-          action: docs
-          path: ${{ github.workspace }}/build/docs/vocabularies
+      #- name: Parse vocabularies
+      #  uses: isamplesorg/vocabularies@main
+      #  with:
+      #    action: docs
+      #    path: ${{ github.workspace }}/build/docs/vocabularies
 
-      - name: List the output of the vocabulary
-        run: ls -l ${{ github.workspace }}/build/docs/vocabularies
+      #- name: List the output of the vocabulary
+      #  run: ls -l ${{ github.workspace }}/build/docs/vocabularies
         
       - name: List the output of the docs directory
         run: ls -l ${{ github.workspace }}/build/docs/
