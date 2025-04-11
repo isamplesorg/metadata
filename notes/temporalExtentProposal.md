@@ -2,9 +2,13 @@
 The temporal extent extension for the iSamples sample metadata scheme allows declaration of a time position or interval that is significant for understanding the context of a material sample. Typically this is the time at which the sampled feature originated, was used, was alive or some other event in the history of the sample. Temporal extents can be specified using various systems (see [Time Ontology](https://w3c.github.io/sdw/time/), and allowing any possible representation would complicate interperability. We thus provide recommendations for a subset of approaches.
 
 Extents can be specified with calendar dates, numerical coordinates, or using named temporal eras.  Example numeric systems include years before present (with various interpretations of what 'present' means), C.E./B.C.E years, unix time, julian date.  Reference systems based on named eras include various geological time scales, the dynasties of ancient Egypt, reigns of English kings, ceramic-style chronologies. 
+
 For isamplesPurposes the following scheme is proposed. 
+
 MaterialSampleReord has optional temporalExtent property
+
 the value of the temporalExtent property is a TimePosition object with the following properties.
+
 - numeric_younger_bound: decimal number
 - numeric_older_bound: decimal number
 - numeric_reference_system: identifiedConcept
@@ -19,12 +23,14 @@ the value of the temporalExtent property is a TimePosition object with the follo
 
 To be useful, a temporal extent specification must include at least one numeric bound, named era bound, or date-time specification. 
 
+Multiple temporal extents might be associated with a sample.
+
 The identifiedConcept value type used in various places is based on the pattern used in schema.org, DataCite and other metadata schemes, allowing inclusion of a label, identifier, and specification of the containing vocabulary. 
 
 ### Numeric bounds
-A numeric value that is a position on a one-dimension temporal coordinate system.  Values are quantized at some level, e.g. to the year, thousand year, million year. The units are specified in the numeric reference system definition. A younger and older bound can be provided; The extent is specified by a single value (the lower and upper bound are not distinct at the resolution of the value), the lower and upper bound are the same value.  The bounds should include the uncertainty limits on the values. 
+A numeric value that is a position on a one-dimension temporal coordinate system.  Values are quantized at some level, e.g. to the year, thousand year, million year. The units are specified in the numeric reference system definition. A younger and older bound can be provided.  When the lower and upper bound are not distinct at the resolution of the value, the lower and upper bound are the same value.  The bounds should include the uncertainty limits on the values. 
 ### Numeric_reference_system
-Name, URI, or text description specifying the temporal coordinate system, including origin, unit of measure, and positive direction.  
+IdentifiedConcept with at least one of label or URI specifying the temporal coordinate system, including origin, unit of measure, and positive direction.  For interoperability, recommend using 'years before present (https://vocabs.gsq.digital/v/vocab/def:trs/trs:BeforePresent), with units of yr (yrbp) or Ma (million years),  or CE (common era) with units of years, origin at 0 (??? birth of Christ???), negative values for BCE [EricK-- need your help here...]. Switch from yr to Ma at the boundary between the Holocene and Pleistocene at 11700 yrbp.
 ### Named eras
 Name and optional URI (identifier) for a time ordinal era, which is a time interval defined by bounding events that do not necessarily have known temporal coordinates. Chronologic relationships between events (before, after..) might be known to allow determination of temporal topologic relationships ([Allen, 1984](http://dx.doi.org/10.1016/0004-3702%2884%2990008-0), [Allen and Ferguson, 1997](http://dx.doi.org/10.1007/978-0-585-28322-7_7) ) between the intervals. 
 ### Era reference system
@@ -58,7 +64,10 @@ classes:
       - evidence
     IdentifiedConcept:
       slots:
-        -
+        - label
+        - pid
+        - scheme_name
+        - scheme_uri
   slots:
     temporal_extent:
       range: TimePosition
