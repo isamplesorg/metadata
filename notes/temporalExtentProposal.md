@@ -25,6 +25,8 @@ To be useful, a temporal extent specification must include at least one numeric 
 
 Multiple temporal extents might be associated with a sample.
 
+Each temporal extent object can have a PID that identifies that data object, a label for displaying the value in a user interface, and a description.  The label can be calculated from the fields in the object if it is not provided on data entry.  Description can be used to specify uncertainties, ranges of values for the bounds, or other information useful to understand the extent assignment. 
+
 The identifiedConcept value type used in various places is based on the pattern used in schema.org, DataCite and other metadata schemes, allowing inclusion of a label, identifier, and specification of the containing vocabulary. 
 
 ### Numeric bounds
@@ -34,18 +36,20 @@ IdentifiedConcept with at least one of label or URI specifying the temporal coor
 ### Named eras
 Name and optional URI (identifier) for a time ordinal era, which is a time interval defined by bounding events that do not necessarily have known temporal coordinates. Chronologic relationships between events (before, after..) might be known to allow determination of temporal topologic relationships ([Allen, 1984](http://dx.doi.org/10.1016/0004-3702%2884%2990008-0), [Allen and Ferguson, 1997](http://dx.doi.org/10.1007/978-0-585-28322-7_7) ) between the intervals. 
 ### Era reference system
-A set of time ordinal eras used to assign temporal positions (https://w3c.github.io/sdw/time/#time:TRS). Note that in the original W3C formulation, the boundaries of the eras were required to be date-time positions; the [Cox and Richard 2014](http://dx.doi.org/10.1007/s12145-014-0170-6) formulation for the geologic time scale generalizes this to allow other boundary definitions applicable in domains dealing with intervals that predate calendar time.
-### Data and time
-This field is for extents that are within the scope of define calendar dates and/or times that can be represented using the syntax defined by [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) (see [Wikipedia page](https://en.wikipedia.org/wiki/ISO_8601) for a non-paywall description). This syntax allows representing individual dates with or without time(and time zone), as well as intervals (closed or open ended). 
+A set of time ordinal eras used to assign temporal positions (https://w3c.github.io/sdw/time/#time:TRS). Note that in the original W3C formulation, the boundaries of the eras were required to be date-time positions; the [Cox and Richard 2014](http://dx.doi.org/10.1007/s12145-014-0170-6) formulation for the geologic time scale generalizes this to allow other boundary definitions applicable in domains dealing with intervals that predate calendar time. For geologic time, recommend use of International Commission on Stratigraphy chronostratigraphic chart (https://stratigraphy.org/chart). Unless there is more specific data indicating use of a different chart version, https://github.com/i-c-stratigraphy/chart-data/blob/main/isc2020.ttl. RDF representation of older versions of the chart (with URIs) are available at https://github.com/CGI-IUGS/timescale-data/tree/master/rdf/.
+### Date and time
+This field is for extents that are within the scope of calendar dates and/or times that can be represented using the syntax defined by [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) (see [Wikipedia page](https://en.wikipedia.org/wiki/ISO_8601) for a non-paywall description). This syntax allows representing individual dates with or without time (and time zone), as well as intervals (closed or open ended). 
 ### Event
-Material samples (endurants) do not have an age; events have an age (temporal extent). We are interested in the events that will assist in sample discovery and assessment using iSamples metadata.  The value here would ideally be a registered identifier for a scheme useful across domains; multiple values might be provided with different granularity, ranging from cross domain to research-group specific. Use of the schema.org/DefinedTerm construct (or a similare implementation) allow inclusion of the identifier, label. and scheme name.
+Material samples (endurants) do not have an age; events have an age (temporal extent). We are interested in the events in the sample history that will assist in sample discovery and assessment using iSamples metadata.  The value here would ideally be an identifier from a scheme useful across domains; multiple values might be provided with different granularity, ranging from cross domain to research-group specific. Use of the IdentifiedConcept construct will allow inclusion of the identifier, label. and scheme name.
 ### Evidence
-Text description of the basis for assigning a temporal extent to event in the history of the sample.
+Text description of the basis for assigning a temporal extent to event in the history of the sample, e.g. isotopic date results, biostratigraphy, association with other dated objects.
 
-#Reading
+# Reading
 [ŠUMRADA, 2003, Temporal Data and Temporal Reference Systems](https://www.fig.net/resources/proceedings/fig_proceedings/fig_2003/TS_10/TS10_3_Sumrada.pdf)
 
-Schema;
+
+# Schema;
+```
 YAML definition additions:
 classes:
   MaterialSampleRecord:
@@ -53,6 +57,9 @@ classes:
       - temporal_extent
   TimePosition:
     slots:
+      - pid
+      - label
+      - description
       - numeric_younger_bound
       - numeric_older_bound
       - numeric_reference_system
@@ -88,8 +95,9 @@ classes:
       range:IdentifiedConcept
       multivalued: false
     era_reference_system
-    date_time
       range: string
+      multivalued: false
+    date_time
       any_of:
        - range: date
        - range: datetime
@@ -101,4 +109,4 @@ classes:
       multivalued: false
     evidence:
       range: string
-  
+  ```
