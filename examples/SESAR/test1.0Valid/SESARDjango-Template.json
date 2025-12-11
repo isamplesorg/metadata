@@ -1,0 +1,69 @@
+{
+    "@schema": "iSamplesSchemaCore1.0.json",
+    "@id":"{{data.metadataid}}",
+    "label": "{{data.label}}",
+"sample_identifier": "{{data.igsn}}",
+    "description": "{{data.description}}",
+	{% if data.featuretype %}
+		"has_context_category": [
+		{% for feat in data.featuretype %}
+			{"label":"","identifier":""},
+		{% endfor  %}
+		],
+	{% endif %}
+	{% if data.materials %}
+		"has_material_category": [
+		{% for mat in data.materials %}
+			{"label":"","identifier":""},
+		{% endfor  %}
+		],
+	{% endif %}
+	{% if data.objecttype %}
+		"has_sample_object_type": [
+		{% for obj in data.objecttype %}
+			{"label":"","identifier":""},
+		{%  endfor %}
+		],
+	{% endif %}
+
+		{% endif %}
+		{% if data.keywords %}
+		"keywords": [
+			{% for word in data.kewords %}
+				{% if  word.uri%}
+				{
+					"keyword": "{{word.label}}",
+					"keyword_uri": "{{word.uri}}",
+					{% if  word.uri%}
+					"scheme_name": "{{word.schemename}}",
+					{% endif %}
+					{% if  word.uri%}
+					"scheme_uri": "word.schemeuri"
+				},	{% endif %}
+				{% else %}
+				{"keyword":"{{word.label}"},
+				{% endif %}
+			{% endfor %}
+			],
+		{% endif %}
+
+    "produced_by": {
+        "label": "",
+        "description": "",
+        "has_feature_of_interest": "{{data.locality_type}}",
+        "responsibility": [{"role":"collector","name":"{{individual_name}}"}],
+        "sampling_site": {
+            "description": "{{locality_detail}}",
+            "label": "",
+            "sample_location": {
+                "elevation": "",
+                "latitude": 0,
+                "longitude": 0
+            },
+            "place_name": [""]
+        }
+    },
+    "registrant": {"name":"{{registrant}}"},
+    "last_modified_time":"2024-09-13T09:20:00-07:00",
+    "sampling_purpose": ""
+}
