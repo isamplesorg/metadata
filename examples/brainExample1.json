@@ -1,0 +1,123 @@
+{
+    "$schema": "../src/schemas/iSamplesSchemaCore1.0.json",
+    "@id": "https://isamples.org/metadata/4327q543jh",
+    "@context": "https://isamples.org/metadata",
+    "@type": "schema:DigitalDocument",
+    "dct:conformsTo": "https://isamples.org/metadata",
+    "registrant": {
+        "name": "name",
+        "affiliation": "affiliation",
+        "contact_information": "contact_information",
+        "identifier": "identifier",
+        "role": "role"
+    },
+    "about": {
+        "@id":"xxx:metadataabout/NYBB-MS1",
+        "@type":"schema:Thing",
+        "sample_identifier": "NYBB-MS1",
+        "label": "Brain, Spinal Cord from Male adult",
+        "description": "Brain and spinal cord tissue from male adult, age 65 at death, affected by multiple sclerosis",
+        "alternate_identifiers": [],
+        "produced_by": {
+            "identifier": "identifier",
+            "label": "post-mortem analysis",
+            "description": "description",
+            "has_feature_of_interest": "Human Body",
+            "project": "Brain inventory",
+            "responsibility": [
+                {
+                    "name": "Dr. Who did the dissection",
+                    "affiliation": "affiliation",
+                    "contact_information": "contact_information",
+                    "identifier": "identifier",
+                    "role": "role"
+                }
+            ],
+            "result_time": "2020-09-24",
+            "sampling_site": {
+                "description": "Post mortem dissection, St. Mary's hospital, Tucson, AZ",
+                "label": "Post mortem dissection, patient MYBB-MS1",
+                "place_name": ["St. Mary's Hospital, Tucson, AZ"]
+            },
+            "authorized_by": ["appropriate documentation authorizing collection of body parts for research"]
+        },
+        "sampling_purpose": "pathology analysis",
+        "has_context_category": [
+            {
+                "label": "Human Body",
+                "identifier": "http://example.com/resource/humanbody/brain",
+                "scheme_name": "scheme_name"
+            },
+            {
+                "label": "Biological entity",
+                "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/biologicalentity",
+                "scheme_name": "iSamples Sampled Feature Type vocabulary"
+            }
+        ],
+        "has_material_category": [
+            {
+                "label": "Organic material",
+                "identifier": "https://w3id.org/isample/vocabulary/material/organicmaterial",
+                "scheme_name": "iSamples Materials Vocabulary"
+            }
+        ],
+        "has_sample_object_type": [
+            {
+                "label": "Organism part",
+                "identifier": "https://w3id.org/isample/vocabulary/materialsampleobjecttype/organismpart",
+                "scheme_name": "iSamples Material Sample Object Type Vocabulary"
+            },
+            {
+                "label": "Human brain",
+                "identifier": "\t\nhttp://purl.org/sig/ont/fma/fma50801",
+                "scheme_name": "Foundational Model of Anatomy"
+            },
+            {
+                "label": "Human spinal cord",
+                "identifier": "http://purl.org/sig/ont/fma/fma7647",
+                "scheme_name": "Foundational Model of Anatomy"
+            }
+        ],
+        "keywords": [
+            {
+                "keyword": "brain",
+                "keyword_uri": "keyword_uri",
+                "scheme_name": "scheme_name",
+                "scheme_uri": "scheme_uri"
+            },
+            {
+                "keyword": "spinal cord"
+            },
+            {
+                "keyword": "Multiple Sclerosis"
+            }
+        ],
+        "related_resource": [
+            {
+                "description": "Tissue thin section from NYBB_MS1, BA9",
+                "label": "SBB1.3",
+                "relationship": "Child sample",
+                "target": "http://medsamples.org/research/nybbms1/sbb1.3"
+            },
+            {
+                "description": "many other child samples...."
+            }
+        ],
+        "complies_with": ["links or descriptions of protocols for collection and use of human body parts for research"],
+        "curation": {
+            "access_constraints": ["access_constraints0"],
+            "curation_location": "curation_location",
+            "description": "How and where is this tissue material preserverd; who to contact about access to sample?",
+            "label": "label",
+            "responsibility": [
+                {
+                    "name": "name",
+                    "affiliation": "affiliation",
+                    "contact_information": "contact_information",
+                    "identifier": "identifier",
+                    "role": "role"
+                }
+            ]
+        }
+    }
+}

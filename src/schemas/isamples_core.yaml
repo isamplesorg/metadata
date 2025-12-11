@@ -1,9 +1,8 @@
 ---
-id: https://w3id.org/isample/schema/1.0
-name: materialSample
+id: https://w3id.org/isample/schema/2.0
+name: MaterialSampleRecord
 title: Schema for documenting material samples
 description: |
-  DV 2025-02-07. Modifications after discussion on iSamples tech. Add geo directly to SamplingEvent, add has_context_category to SamplingEvent.
   SMR 2022-10-07. Schema for iSamples sample registry integration. Updated from 0.2 by synchronizing the vocabulary enumerations, change
   'id' to '@id' and 'schema' to '$schema'.  Schema name is iSamplesSchemaCore1.0.json. Target JSON schema version is
   https://json-schema.org/draft/2019-09/schema.  SMR 2023-03-17. Move authorized_by into SamplingEvent, change
@@ -11,12 +10,14 @@ description: |
   scheme URI to 1.0 2023-06-13 SMR add project property on SamplingEvent, with text or URI value. 2024-01-17 SMR run
   linkml-lint from current linkml version before rebuilding JSON schema.  2024-04-19. DV ran yaml linter on the file to clean 
   up formatting, put hard return in text bodies.  Update schema URI to dereference with w3id. SMR 2024-09-13 add last_modified_time
-  as property of MaterialSampleRecord.
+  as property of MaterialSampleRecord. DV 2025-02-07. Modifications after discussion on iSamples tech.  Change IdentifierObject to 
+  IdentifiedConcept, change identifier property labels to 'pid' add geo location directly to SamplingEvent, add has_context_category 
+  to SamplingEvent, change keywords values to IdentifiedConcept.
 license: https://creativecommons.org/publicdomain/zero/1.0/
 version: "20250207"
 prefixes:
   linkml: https://w3id.org/linkml/
-  isam: https://w3id.org/isample/schema/1.0/
+  isam: https://w3id.org/isample/schema/2.0/
   dct: http://purl.org/dc/terms/
   mat: https://w3id.org/isample/vocabulary/material/
   sf: https://w3id.org/isample/vocabulary/sampledfeature/
@@ -37,10 +38,12 @@ imports:
 classes:
   MaterialSampleRecord:
     description: >
-      This is a data object that is a digital representation of a material sample, and thus shares the same
-      identifier as the physical object. It provides descriptive properties for any iSamples material sample, URI for
-      the metadata record is same as URI for material sample-- digital object is considered twin of physical object, a
-      representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.
+      This is a data object that is a digital representation of a material sample; this digital object is identified by 
+      the pid property, which plays the same role as the '@id' in schema.org metadata. The sample_identifier property contains
+      the identifier of the physical object that the MaterialSampleRecord is about. IGSN is recommended for sample identifiers.
+      The sample_identifier is expected to be a URI that can be dereferenced on the web; one of the representations 
+      accessible through this dereferencing is expected to be this iSamples MaterialSampleRecord, but other content types
+      may be offered via content negotiation or other mechanisms.
     slots:
       - pid
       - label
@@ -80,7 +83,7 @@ classes:
 
   SamplingSite:
     description: >
-      Documentation of the site where the sample was collected, wtih place name(s) and a geospatial location.
+      Documentation of the site where the sample was collected, with place name(s) and a geospatial location.
     slots:
       - pid
       - description
@@ -222,7 +225,7 @@ slots:
     range: uriorcurie
     description: >
       A string that identifies some resource. Expectation is that it is a URI that is resolvable to some useful
-      represenation of the resource.
+      representation of the resource.
   has_context_category:
     # range is an instance of at least one skos:Concept
     # with skos:inScheme sf:sampledfeaturevocabulary ;
@@ -232,13 +235,14 @@ slots:
       Top level context, based on the kind of feature sampled. Specific
       identification of the sampled feature of interest is done through the
       SamplingEvent/Feature of Interest property. At least one value is an instance of
-      skos:Concept from the iSamples sampledfeaturevocabulary.
+      skos\:Concept from the iSamples sampledfeaturevocabulary.
     multivalued: true
   has_feature_of_interest:
     range: string
     domain: SamplingEvent
     description: >
-      What does the sample represent.
+      A more specific name of the feature that was sampled, as opposed to the kind of feature
+      that is specified by the context_category.
   has_material_category:
     # range is an instance of at least one skos:Concept
     # with skos:inScheme = mat:materialsVocabulary
@@ -284,7 +288,7 @@ slots:
     range: datetime
     domain: MaterialSampleRecord
     description: >
-      time stamp when the metadata record was most recently uupdated. 
+      time stamp when the metadata record was most recently updated. 
   latitude:
     range: decimal
     domain: GeospatialCoordLocation
@@ -313,7 +317,7 @@ slots:
     range: string
     domain: Agent
     description: >
-      String, name of a person. Format {}firstName MI lastName}.
+      String, name of a person. Format {firstName MI lastName}.
   obfuscated:
     range: boolean
     domain: GeospatialCoordLocation
@@ -361,7 +365,7 @@ slots:
   relationship:
     range: string
     description: >
-      Term to identify realationship between host sample and the sample
+      Term to identify relationship between host sample and the sample
       relation target. Should be controlled vocabulary (ScopedName). for now
       start with string, 'derivedFrom'.
   role:

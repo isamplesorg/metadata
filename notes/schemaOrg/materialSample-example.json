@@ -3,200 +3,39 @@
         "@vocab": "https://schema.org/",
         "dcterms": "http://purl.org/dc/terms/"
     },
+    "@id": "https://metadata.mySystem.org/2311252",
     "@type": [
         "Thing",
         "Product"
     ],
-    "@id": "https://metadata.mySystem.org/2311252",
     "additionalType": [
         "https://w3id.org/isample/vocabulary/materialsampleobjecttype/1.0/solidmaterialsample",
         "solid material sample",
         "sample composed of solid material"
     ],
-    "name": "really cool rock",
+    "category": {
+        "@type": "DefinedTerm",
+        "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/earthinterior",
+        "inDefinedTermSet": {
+            "@type": "DefinedTermSet",
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/sampledfeaturevocabulary",
+            "name": "Sampled Feature Type vocabulary"
+        },
+        "name": "Earth Interior"
+    },
+    "conditionsOfAccess": "Samples are viewable by contacting the maintainer identifier in this record. Subsamples might be made available for analysis on a case by case basis",
+    "countryOfLastProcessing": "usa",
+    "countryOfOrigin": "usa",
     "description": "Dark purple-gray chunk of leaverite, contains Austinite, Tilasite, Quartz and native Gold. [example generated from isamples first drafts by SMR and P.L. Buttiegieg 2024-10-17",
-    "identifier": [
-        {
+    "identifier": [{
             "@type": "PropertyValue",
             "name": "AZGS field sample number",
             "value": "smr2010-398"
-        },
-        {
+        }, {
             "@type": "PropertyValue",
             "name": "International Generic Sample Numbers",
             "propertyID": "https://registry.identifiers.org/registry/igsn",
             "value": "https://igsn.org/slk222-046537"
-        }
-    ],
-    "countryOfOrigin": "usa",
-    "countryOfLastProcessing": "usa",
-    "conditionsOfAccess": "Samples are viewable by contacting the maintainer identifier in this record. Subsamples might be made available for analysis on a case by case basis",
-    "potentialAction": [
-        {
-            "@type": "Action",
-            "identifier": "https://isample.org/events/235728",
-            "additionalType": [
-                "https://w3id.org/isample/schema/1.0/SamplingEvent",
-                "sampling event"
-            ],
-            "actionStatus": "CompletedActionStatus",
-            "name": "collection of smr2010-398",
-            "description": "after a long hot day slogging through the brush on Saddleback Mountain, found and sampled vein described by Gilluly (1922)",
-            "object": [
-                {
-                    "@type": "DefinedTerm",
-                    "identifier": "https://w3id.org/gso/geologicfeature/Vein_Dike_Lithosome",
-                    "name": "mineralized vein"
-                },
-                {
-                    "@type": "DefinedTerm",
-                    "identifier": "http://purl.obolibrary.org/obo/ENVO_01000302",
-                    "name": "outcrop"
-                }
-            ],
-            "participant":[ {
-                "@type": "Role",
-                "roleName": ["Collector"],
-                "participant": {
-                    "@type": "Person",
-                    "identifier":[ {
-                        "@type": "PropertyValue",
-                        "propertyID": "https://registry.identifiers.org/registry/orcid",
-                        "value": "https://orcid.org/0000-0001-6041-5333"
-                    }],
-                    "name": "Joe Geologist",
-                    "affiliation": {
-                        "@type": "Organization",
-                         "identifier": [
-                            {"@type": "PropertyValue",
-                                "value":"https://ror.org/00vcszp55"
-                            }],
-                        "name": "Arizona Geological Survey"
-                    },
-                    "contactPoint": {
-                        "@type": "ContactPoint",
-                        "email": "joe@azgs.arizona.edu"
-                    }
-                }
-            }],
-            "startTime": "2010-10-29T14:11Z",
-            "endTime": "2010-10-29T15:00Z",
-            "organizer": {
-                "@type": "Project",
-                "name": "Statemap 2010, Saddle Mountain project",
-                "funder": [
-                    {
-                        "@type": "Organization",
-                        "name": "Moneybags Inc"
-                    }
-                ],
-                "ethicsPolicy": {
-                    "@type": "CreativeWork",
-                    "url": "https://www.myOrganisation.org/ethicsPolicy.md",
-                    "name": "Careful geology",
-                    "description": "The ethics policy our organisation uses when creating samples"
-                },
-                "contactPoint": {
-                    "@type": "ContactPoint",
-                    "email": "sampler@azgs.arizona.edu"
-                }
-            },
-            "location": {
-                "description": "prospect pit on steep NW facing slope",
-                "name": ["SMR station 2020-018"],
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "elevation": "5827 ft. asl",
-                    "latitude": 32.990297,
-                    "longitude": -110.665585
-                }
-            },
-            "additionalProperty":[ {
-                "@type": "PropertyValue",
-                "propertyID": "https://w3id.org/isample/schema/1.0/authorized_by",
-                "name": "authorized_by",
-                "value": "BLM land, no permits required"
-            }]
-        },
-        {
-            "@type": "Action",
-            "additionalType": [
-                "https://w3id.org/isample/schema/1.0/MaterialSampleCuration",
-                "material sample curation",
-                "curation"
-            ],
-            "actionStatus": "CompletedActionStatus",
-            "organizer": {
-                "@type": "Project",
-                "name": "Statemap 2010, Saddle Mountain project",
-                "funder": [{
-                "@type":"Organization",
-                "name":"Moneybags Inc"}],
-                "contactPoint": {
-                    "@type": "ContactPoint",
-                    "email": "samplecuration@azgs.arizona.edu"
-                }
-            },
-            "description": "2010-11-05; Samples are packaged in plastic bags and stored in the basement at the Arizona Geological Survey. Samples are maintained at the survey for 5 years after publication of related geologic map.",
-            "name": "Storage at Arizona Geological Survey",
-            "subEvent": [{
-                "@type": [
-                    "Action",
-                    "Event"
-                ],
-                "actionStatus": "CompletedActionStatus",
-                "endTime": "2010-11-12T15:00Z",
-                "description": "initial sample cleaning, packaging and labeling for storage",
-                "participant":[ {
-                    "@type": "Role",
-                    "roleName": ["curator"],
-                    "participant": {
-                        "@type": "Person",
-                        "identifier":[{
-                        "@type":"PropertyValue",
-                        "value":"https://orcid.org/0000-0111-2241-5355"
-                        }],
-                        "name": "Tom Garmin",
-                        "affiliation": {
-                            "@type": "Organization",
-                                    "identifier": [{
-                                        "@type":"PropertyValue",
-                                        "value":"https://ror.org/00vcszp55"}],
-                            "contactPoint": {
-                                "@type": "ContactPoint",
-                                "email": "garmin@azgs.arizona.edu"
-                            }
-                        }
-                    }
-                }]
-            }]
-        },
-        {
-            "@type": "Action",
-            "name": "sample access and use",
-            "actionStatus": "PotentialActionStatus",
-            "description": "Samples are viewable by contacting the maintainer identifier in this record. Subsamples might be made available for analysis on a case by case basis",
-            "participant":[ {
-                "@type": "Role",
-                "roleName":["maintainer"],
-                "participant": {
-                    "@type": "Person",
-                    "identifier": [{
-                    "@type":"PropertyValue",
-                    "value":"https://orcid.org/0000-0111-2241-5355"}],
-                    "name": "Tom Garmin",
-                    "affiliation": {
-                        "@type": "Organization",
-                            "identifier": [{
-                                "@type":"PropertyValue",
-                                "value":"https://ror.org/00vcszp55"}],
-                        "contactPoint": {
-                            "@type": "ContactPoint",
-                            "email": "garmin@azgs.arizona.edu"
-                        }
-                    }
-                }
-            }]
         }
     ],
     "keywords": [
@@ -205,58 +44,223 @@
         "Saddle Mountain",
         "leaverite"
     ],
-    "category": [
-        {
-            "@type": "DefinedTerm",
-            "name": "Earth Interior",
-            "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/earthinterior",
-            "inDefinedTermSet": {
-                "@type": "DefinedTermSet",
-                "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/sampledfeaturevocabulary",
-                "name": "Sampled Feature Type vocabulary"
-            }
-        },
-        {
-            "@type": "DefinedTerm",
-            "name": "Rock",
-            "identifier": "https://w3id.org/isample/vocabulary/material/1.0/rock",
-            "inDefinedTermSet": {
-                "@type": "DefinedTermSet",
-                "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/materialsvocabulary",
-                "name": "iSamples Materials Vocabulary"
-            }
+    "name": "really cool rock",
+    "potentialAction": [{
+            "@type": "Action",
+            "actionStatus": "CompletedActionStatus",
+            "additionalProperty": [{
+                    "@type": "PropertyValue",
+                    "name": "authorized_by",
+                    "propertyID": "https://w3id.org/isample/schema/1.0/authorized_by",
+                    "value": "BLM land, no permits required"
+                }
+            ],
+            "additionalType": [
+                "https://w3id.org/isample/schema/1.0/SamplingEvent",
+                "sampling event"
+            ],
+            "description": "after a long hot day slogging through the brush on Saddleback Mountain, found and sampled vein described by Gilluly (1922)",
+            "endTime": "2010-10-29T15:00Z",
+            "identifier": "https://isample.org/events/235728",
+            "location": {
+                "description": "prospect pit on steep NW facing slope",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "elevation": "5827 ft. asl",
+                    "latitude": 32.990297,
+                    "longitude": -110.665585
+                },
+                "name": [
+                    "SMR station 2020-018"
+                ]
+            },
+            "name": "collection of smr2010-398",
+            "object": [{
+                    "@type": "DefinedTerm",
+                    "identifier": "https://w3id.org/gso/geologicfeature/Vein_Dike_Lithosome",
+                    "name": "mineralized vein"
+                }, {
+                    "@type": "DefinedTerm",
+                    "identifier": "http://purl.obolibrary.org/obo/ENVO_01000302",
+                    "name": "outcrop"
+                }
+            ],
+            "organizer": {
+                "@type": "Project",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "sampler@azgs.arizona.edu"
+                },
+                "ethicsPolicy": {
+                    "@type": "CreativeWork",
+                    "description": "The ethics policy our organisation uses when creating samples",
+                    "name": "Careful geology",
+                    "url": "https://www.myOrganisation.org/ethicsPolicy.md"
+                },
+                "funder": [{
+                        "@type": "Organization",
+                        "name": "Moneybags Inc"
+                    }
+                ],
+                "name": "Statemap 2010, Saddle Mountain project"
+            },
+            "participant": [{
+                    "@type": "Role",
+                    "participant": {
+                        "@type": "Person",
+                        "affiliation": {
+                            "@type": "Organization",
+                            "identifier": [{
+                                    "@type": "PropertyValue",
+                                    "value": "https://ror.org/00vcszp55"
+                                }
+                            ],
+                            "name": "Arizona Geological Survey"
+                        },
+                        "contactPoint": {
+                            "@type": "ContactPoint",
+                            "email": "joe@azgs.arizona.edu"
+                        },
+                        "identifier": [{
+                                "@type": "PropertyValue",
+                                "propertyID": "https://registry.identifiers.org/registry/orcid",
+                                "value": "https://orcid.org/0000-0001-6041-5333"
+                            }
+                        ],
+                        "name": "Joe Geologist"
+                    },
+                    "roleName": [
+                        "Collector"
+                    ]
+                }
+            ],
+            "startTime": "2010-10-29T14:11Z"
+        }, {
+            "@type": "Action",
+            "actionStatus": "CompletedActionStatus",
+            "additionalType": [
+                "https://w3id.org/isample/schema/1.0/MaterialSampleCuration",
+                "material sample curation",
+                "curation"
+            ],
+            "description": "2010-11-05; Samples are packaged in plastic bags and stored in the basement at the Arizona Geological Survey. Samples are maintained at the survey for 5 years after publication of related geologic map.",
+            "name": "Storage at Arizona Geological Survey",
+            "organizer": {
+                "@type": "Project",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "samplecuration@azgs.arizona.edu"
+                },
+                "funder": [{
+                        "@type": "Organization",
+                        "name": "Moneybags Inc"
+                    }
+                ],
+                "name": "Statemap 2010, Saddle Mountain project"
+            },
+            "subEvent": [{
+                    "@type": [
+                        "Action",
+                        "Event"
+                    ],
+                    "actionStatus": "CompletedActionStatus",
+                    "description": "initial sample cleaning, packaging and labeling for storage",
+                    "endTime": "2010-11-12T15:00Z",
+                    "participant": [{
+                            "@type": "Role",
+                            "participant": {
+                                "@type": "Person",
+                                "affiliation": {
+                                    "@type": "Organization",
+                                    "contactPoint": {
+                                        "@type": "ContactPoint",
+                                        "email": "garmin@azgs.arizona.edu"
+                                    },
+                                    "identifier": [{
+                                            "@type": "PropertyValue",
+                                            "value": "https://ror.org/00vcszp55"
+                                        }
+                                    ]
+                                },
+                                "identifier": [{
+                                        "@type": "PropertyValue",
+                                        "value": "https://orcid.org/0000-0111-2241-5355"
+                                    }
+                                ],
+                                "name": "Tom Garmin"
+                            },
+                            "roleName": [
+                                "curator"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, {
+            "@type": "Action",
+            "actionStatus": "PotentialActionStatus",
+            "description": "Samples are viewable by contacting the maintainer identifier in this record. Subsamples might be made available for analysis on a case by case basis",
+            "name": "sample access and use",
+            "participant": [{
+                    "@type": "Role",
+                    "participant": {
+                        "@type": "Person",
+                        "affiliation": {
+                            "@type": "Organization",
+                            "contactPoint": {
+                                "@type": "ContactPoint",
+                                "email": "garmin@azgs.arizona.edu"
+                            },
+                            "identifier": [{
+                                    "@type": "PropertyValue",
+                                    "value": "https://ror.org/00vcszp55"
+                                }
+                            ]
+                        },
+                        "identifier": [{
+                                "@type": "PropertyValue",
+                                "value": "https://orcid.org/0000-0111-2241-5355"
+                            }
+                        ],
+                        "name": "Tom Garmin"
+                    },
+                    "roleName": [
+                        "maintainer"
+                    ]
+                }
+            ]
         }
     ],
-    "relatedLink": [
-        {
+    "relatedLink": [{
             "@type": "LinkRole",
+            "name": "Chemistry of rock samples from Saddle Mountain",
             "target": {
                 "@type": "EntryPoint",
-                "url": "https://data.org/chem/26357",
+                "contentType": "Chemical analysis",
                 "encodingType": "text/csv",
-                "contentType": "Chemical analysis"
-            },
-            "name": "Chemistry of rock samples from Saddle Mountain"
+                "url": "https://data.org/chem/26357"
+            }
         }
     ],
     "subjectOf": {
         "@id": "https://metadataexample.org/2436",
         "@type": "DigitalDocument",
         "about": "https://metadata.mySystem.org/2311252",
-        "dcterms:conformsTo": ["http://resource.isamples.org/schema/1/cdifschema.org"],
+        "dcterms:conformsTo": [
+            "http://resource.isamples.org/schema/1/cdifschema.org"
+        ],
         "sdPublisher": {
             "@type": "Organization",
-            "identifier": [
-                {
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "curator@gsample.org"
+            },
+            "identifier": [{
                     "@type": "PropertyValue",
                     "value": "https://ror.org/someorg7523824"
                 }
             ],
-            "name": "Museum of great samples",
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "email": "curator@gsample.org"
-            }
+            "name": "Museum of great samples"
         }
     }
 }
