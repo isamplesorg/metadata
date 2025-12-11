@@ -1,0 +1,330 @@
+{
+    "$id": "https://w3id.org/isample/schema/2.0",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "description": "This is a data object that is a digital representation of a material sample; this digital object is identified by  the pid property, which plays the same role as the '@id' in schema.org metadata. The sample_identifier property contains the identifier of the physical object that the MaterialSampleRecord is about. IGSN is recommended for sample identifiers. The sample_identifier is expected to be a URI that can be dereferenced on the web; one of the representations  accessible through this dereferencing is expected to be this iSamples MaterialSampleRecord, but other content types may be offered via content negotiation or other mechanisms.",
+    "metamodel_version": "1.7.0",
+    "required": [
+        "pid",
+        "label",
+        "last_modified_time"
+    ],
+    "title": "materialSampleRecord",
+    "type": "object",
+    "version": "20250207",
+    "properties": {
+        "alternate_identifiers": {
+            "description": "One or more identifiers used to identify the sample in other contexts. In this context, the identifier property and scheme_name should be required.\n",
+            "items": {"type": "string"},
+            "type": "array"
+        },
+        "complies_with": {
+            "description": "A list of policies, recommendations, best practices (etc.) that have been followed in the collection and curation of the sample.\n",
+            "items": {"type": "string"},
+            "type": "array"
+        },
+        "curation": {
+            "$ref": "#/$defs/MaterialSampleCuration",
+            "description": "Information about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation.  Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.\n"
+        },
+        "dc_rights": {
+            "description": "A statement about various property rights associated with the resource, including intellectual property rights. Recommended practice is to refer to a rights statement with a URI. If this is not possible or feasible, a literal value (name, label, or short text) may be provided.\n",
+            "type": "string"
+        },
+        "description": {
+            "description": "Free text description of the subject of a triple.\n",
+            "type": "string"
+        },
+        "has_context_category": {
+            "description": "Top level context, based on the kind of feature sampled. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property. At least one value is an instance of skos\\:Concept from the iSamples sampledfeaturevocabulary.\n",
+            "items": {"$ref": "#/$defs/IdentifiedConcept"},
+            "type": "array"
+        },
+        "has_material_category": {
+            "description": "The kind of material that constitutes the sample.  At least one value is an instance of skos\\:Concept from the iSamples MaterialTypeVocabulary. Extension vocabularies can be used for more precise categorization.\n",
+            "items": {"$ref": "#/$defs/IdentifiedConcept"},
+            "type": "array"
+        },
+        "has_sample_object_type": {
+            "description": "The kind of object the material sample is. At least one value is an instance of skos\\:Concept from the iSamples materialsampleobjecttype Vocabulary; extension vocabularies can be used for more precise categorization.\n",
+            "items": {"$ref": "#/$defs/IdentifiedConcept"},
+            "type": "array"
+        },
+        "keywords": {
+            "description": "Free text terms or formal categories associate with sample to support discovery. As in DataCite metadata, each keyword is a separate element. Multiple keywords should NOT be included as a comma-delimited list.\n",
+            "items": {"$ref": "#/$defs/IdentifiedConcept"},
+            "type": "array"
+        },
+        "label": {
+            "description": "A human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\n",
+            "type": "string"
+        },
+        "last_modified_time": {
+            "description": "time stamp when the metadata record was most recently updated. \n",
+            "format": "date-time",
+            "type": "string"
+        },
+        "pid": {
+            "description": "A string that identifies some resource. Expectation is that it is a URI that is resolvable to some useful representation of the resource.\n",
+            "type": "string"
+        },
+        "produced_by": {
+            "$ref": "#/$defs/SamplingEvent",
+            "description": "Object that documents the sampling event--who, where, when the material sample was obtained.\n"
+        },
+        "registrant": {
+            "$ref": "#/$defs/Agent",
+            "description": "Identification of the agent that registered the sample, with contact information. Should include person name and affiliation, or position name and affiliation, or just organization name. e-mail address is preferred contact information.\n"
+        },
+        "related_resource": {
+            "description": "Link to related resource with relationship property to indicate nature of connection. Target should be identifier for a resource.\n",
+            "items": {"$ref": "#/$defs/SampleRelation"},
+            "type": "array"
+        },
+        "sample_identifier": {
+            "description": "URI that identifies the material sample described by this record\n",
+            "type": "string"
+        },
+        "sampling_purpose": {
+            "description": "Term to specify why a sample was collection.\n",
+            "type": "string"
+        }
+    },
+    "$defs": {
+        "Agent": {
+            "additionalProperties": false,
+            "description": "Object to represent a person who plays a role relative to sample collection or curation.",
+            "properties": {
+                "affiliation": {
+                    "description": "Name of an organization that employes or sponsors a person for the role they play relative to sample collection or curation.\n",
+                    "type": "string"
+                },
+                "contact_information": {
+                    "description": "E-mail address, telephone number, mailing address, or web site through which an agent can be contacted. Something that should be stable and reliable.\n",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "String, name of a person. Format {firstName MI lastName}.\n",
+                    "type": "string"
+                },
+                "pid": {
+                    "description": "A string that identifies some resource. Expectation is that it is a URI that is resolvable to some useful representation of the resource.\n",
+                    "type": "string"
+                },
+                "role": {
+                    "description": "Term that specifies how a person is related to a sample curation or collection activity.\n",
+                    "type": "string"
+                }
+            },
+            "title": "Agent",
+            "type": "object"
+        },
+        "GeospatialCoordLocation": {
+            "additionalProperties": false,
+            "description": "A physical location in decimal degrees using EPSG\\:4326. Could be point location, or the centroid of a area. Elevation is specified as a string that should include the measure, units of measure, and the vertical reference system, e.g. 'above mean sea level', 'below ground surface', 'below sea floor'...",
+            "properties": {
+                "elevation": {
+                    "description": "Should be a number and Unit of measure, and the vertical reference system. e.g. 401 m above mean sea level.\n",
+                    "type": "string"
+                },
+                "latitude": {
+                    "description": "Angular coordinate measured positive north from the equator.\n",
+                    "type": "number"
+                },
+                "longitude": {
+                    "description": "Angular coordinate measured positive eastward from the prime meridian.\n",
+                    "type": "number"
+                },
+                "obfuscated": {
+                    "description": "Flag to indicate that accuracy of provided coordinate location has been reduced (obfuscated) because the exact location is restricted information.\n",
+                    "type": "boolean"
+                }
+            },
+            "title": "GeospatialCoordLocation",
+            "type": "object"
+        },
+        "IdentifiedConcept": {
+            "additionalProperties": false,
+            "description": "An identifier with a label, used for vocabulary terms.",
+            "properties": {
+                "label": {
+                    "description": "A human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\n",
+                    "type": "string"
+                },
+                "pid": {
+                    "description": "A string that identifies some resource. Expectation is that it is a URI that is resolvable to some useful representation of the resource.\n",
+                    "type": "string"
+                },
+                "scheme_name": {
+                    "description": "String label for the concept scheme or vocabulary within which the keyword concept is defined. The scheme name can be used to scope keyword to particular categories, e.g. 'CGI rock classification', 'GCMD keywords', 'Getty AAT'.\n",
+                    "type": "string"
+                },
+                "scheme_uri": {
+                    "description": "Identifier for the concept scheme or vocabulary within which the keyword concept is defined.\n",
+                    "type": "string"
+                }
+            },
+            "title": "IdentifiedConcept",
+            "type": "object"
+        },
+        "MaterialSampleCuration": {
+            "additionalProperties": false,
+            "description": "Information about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.",
+            "properties": {
+                "access_constraints": {
+                    "description": "Cultural, legal, or other policy issues that bear on access to view, borrow, or subsample a sample or visit a sampling site.\n",
+                    "items": {"type": "string"},
+                    "type": "array"
+                },
+                "curation_location": {
+                    "description": "Information about where and how the sample is currently stored.\n",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Free text description of the subject of a triple.\n",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\n",
+                    "type": "string"
+                },
+                "pid": {
+                    "description": "A string that identifies some resource. Expectation is that it is a URI that is resolvable to some useful representation of the resource.\n",
+                    "type": "string"
+                },
+                "responsibility": {
+                    "description": "Agent object includes person name, person identifier, affiliation, or organization name, their role relative to the parent element.\n",
+                    "items": {"$ref": "#/$defs/Agent"},
+                    "type": "array"
+                }
+            },
+            "title": "MaterialSampleCuration",
+            "type": "object"
+        },
+        "SampleRelation": {
+            "additionalProperties": false,
+            "description": "Semantic link to other samples or related resources.",
+            "properties": {
+                "description": {
+                    "description": "Free text description of the subject of a triple.\n",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\n",
+                    "type": "string"
+                },
+                "relationship": {
+                    "description": "Term to identify relationship between host sample and the sample relation target. Should be controlled vocabulary (ScopedName). for now start with string, 'derivedFrom'.\n",
+                    "type": "string"
+                },
+                "target": {
+                    "description": "Identifier for the target resource in the relationship. Start with string, should be Identifier object.\n",
+                    "type": "string"
+                }
+            },
+            "title": "SampleRelation",
+            "type": "object"
+        },
+        "SamplingEvent": {
+            "additionalProperties": false,
+            "description": "Information about the event resulting in the creation of the material sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description. If any special protocols were followed in the sampling procedure, they should be documented using the MaterialSampleRecord/complies_with property.",
+            "properties": {
+                "authorized_by": {
+                    "description": "A list of permits or other formal permission documents under which the sample was collected. Use to cite legal documents authorizing sample collection.\n",
+                    "items": {"type": "string"},
+                    "type": "array"
+                },
+                "description": {
+                    "description": "Free text description of the subject of a triple.\n",
+                    "type": "string"
+                },
+                "has_context_category": {
+                    "description": "Top level context, based on the kind of feature sampled. Specific identification of the sampled feature of interest is done through the SamplingEvent/Feature of Interest property. At least one value is an instance of skos\\:Concept from the iSamples sampledfeaturevocabulary.\n",
+                    "items": {"$ref": "#/$defs/IdentifiedConcept"},
+                    "type": "array"
+                },
+                "has_feature_of_interest": {
+                    "description": "A more specific name of the feature that was sampled, as opposed to the kind of feature that is specified by the context_category.\n",
+                    "type": "string"
+                },
+                "label": {
+                    "description": "A human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\n",
+                    "type": "string"
+                },
+                "pid": {
+                    "description": "A string that identifies some resource. Expectation is that it is a URI that is resolvable to some useful representation of the resource.\n",
+                    "type": "string"
+                },
+                "project": {
+                    "description": "The name or identifier for a project that is the sponsor for a samplingEvent. Use to link samples collected in the context of a particular project. We do not have a preferred project model at this point; the RAID effort (ISO23527, https://www.raid.org.au/) will hopefully mature into a registry we can use for project identification and metadata. Property value should be a name or a resolvable URI.\n",
+                    "type": "string"
+                },
+                "responsibility": {
+                    "description": "Agent object includes person name, person identifier, affiliation, or organization name, their role relative to the parent element.\n",
+                    "items": {"$ref": "#/$defs/Agent"},
+                    "type": "array"
+                },
+                "result_time": {
+                    "anyOf": [
+                        {
+                            "format": "date",
+                            "type": "string"
+                        },
+                        {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        {"pattern": "^(?:[1]?[0-9]{3}|20[0-2][0-9])$"},
+                        {"pattern": "^(?:[1]?[0-9]{3}|20[0-2][0-9])-(?:0[1-9]|1[0-2])$"}
+                    ],
+                    "description": "Date on which the sample was collected. Can be YYYY, YYYY-MM, xsd:date, or xsd:dateTime.\n",
+                    "type": "string"
+                },
+                "sample_location": {
+                    "$ref": "#/$defs/GeospatialCoordLocation",
+                    "description": "Geopatial location of sample event; required default is WGS84 latitude, longitude in decimal degrees. Elevation as a string with number, unit of measure, and datum.\n"
+                },
+                "sampling_site": {
+                    "$ref": "#/$defs/SamplingSite",
+                    "description": "Object that identifies the place where the sample was collected\n"
+                }
+            },
+            "title": "SamplingEvent",
+            "type": "object"
+        },
+        "SamplingSite": {
+            "additionalProperties": false,
+            "description": "Documentation of the site where the sample was collected, wtih place name(s) and a geospatial location.",
+            "properties": {
+                "description": {
+                    "description": "Free text description of the subject of a triple.\n",
+                    "type": "string"
+                },
+                "is_part_of": {
+                    "description": "A link from a SamplingSite to a larger sampling site that spatially contains the source SamplingSite.  The container site is specified by its identifier.\n",
+                    "items": {"type": "string"},
+                    "type": "array"
+                },
+                "label": {
+                    "description": "A human intelligible string used to identify a thing, i.e. the name to use for the thing; should be unique in the scope of a sample collection or dataset.\n",
+                    "type": "string"
+                },
+                "pid": {
+                    "description": "A string that identifies some resource. Expectation is that it is a URI that is resolvable to some useful representation of the resource.\n",
+                    "type": "string"
+                },
+                "place_name": {
+                    "description": "One or more names by which the sampling site is known.\n",
+                    "items": {"type": "string"},
+                    "type": "array"
+                },
+                "site_location": {
+                    "$ref": "#/$defs/GeospatialCoordLocation",
+                    "description": "Geopatial location of site; required default is WGS84 latitude, longitude in decimal degrees. Elevation as a string with number, unit of measure, and datum.\n"
+                }
+            },
+            "title": "SamplingSite",
+            "type": "object"
+        }
+    }
+}
