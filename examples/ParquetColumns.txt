@@ -1,0 +1,59 @@
+"Agent.affiliation": "string",
+"Agent.contact_information": "string",
+"Agent.identifier": "string",
+"Agent.name": "string",
+"Agent.role": "string"
+
+"GeospatialCoordLocation.elevation": "string",
+"GeospatialCoordLocation.latitude": decimal,
+"GeospatialCoordLocation.longitude": decimal,
+"GeospatialCoordLocation.obfuscated": boolean,
+
+"IdentifiedConcept.identifier": "string",
+"IdentifiedConcept.label": "string",
+"IdentifiedConcept.scheme_name": "string"
+"IdentifiedConcept.scheme_uri": "string"
+
+"MaterialSampleCuration.access_constraints": ["string"],
+"MaterialSampleCuration.curation_location": "string",
+"MaterialSampleCuration.description": "string",
+"MaterialSampleCuration.label": "string",
+"MaterialSampleCuration.responsibility": [Agent-reference]
+
+"MaterialSampleRecord.alternate_identifiers": ["string"],
+"MaterialSampleRecord.complies_with": ["string"],
+"MaterialSampleRecord.curation":[MaterialSampleCuration-reference]
+"MaterialSampleRecord.description": "string",
+"MaterialSampleRecord.has_context_category": [IdentifiedConcept-reference]
+"MaterialSampleRecord.has_material_category": [IdentifiedConcept-reference]
+"MaterialSampleRecord.has_sample_object_type": [IdentifiedConcept-reference]
+"MaterialSampleRecord.keywords": [IdentifiedConcept-reference]
+"MaterialSampleRecord.label": "string",
+"MaterialSampleRecord.last_modified_time":"DateTime",
+"MaterialSampleRecord.produced_by": [SamplingEvent-reference],
+"MaterialSampleRecord.registrant": [Agent-reference],
+"MaterialSampleRecord.related_resource": [SampleRelation-reference]
+"MaterialSampleRecord.sample_identifier": "string",
+"MaterialSampleRecord.sampling_purpose": "string",
+"MaterialSampleRecord.schema": "string",
+
+
+"SampleRelation.description": "string",
+"SampleRelation.label": "string",
+"SampleRelation.relationship": "string",
+"SampleRelation.target": "string"
+
+"SamplingEvent.authorized_by": ["string"]
+"SamplingEvent.description": "string",
+"SamplingEvent.has_feature_of_interest": "string",
+"SamplingEvent.identifier": "string",
+"SamplingEvent.label": "string",
+"SamplingEvent.project": "string",
+"SamplingEvent.responsibility": [Agent-reference]
+"SamplingEvent.result_time": "date",
+“SamplingEvent.geo_location:[ GeospatialCoordLocation-reference]
+
+"SamplingSite.description": "string",
+"SamplingSite.label": "string",
+"SamplingSite.place_name": ["string"]
+

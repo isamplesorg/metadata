@@ -57,9 +57,9 @@
     ],
     "last_modified_time": "2024-09-13T09:20:00-07:00",
     "produced_by": {
-        "label": "Neolithic and Bronze Age cattle data from Switzerland",
+        "label": "Project:Neolithic and Bronze Age cattle data from Switzerland",
         "description": "",
-        "has_feature_of_interest": "",
+        "has_feature_of_interest": "feature type would be 'bronze age agricultural activity site,  or a URI for this concept if there where such a vocabulary",
         "responsibility": [
             {
                 "role": "collector",
@@ -100,8 +100,8 @@
         ],
         "result_time": "2021-02-10",
         "sampling_site": {
-            "description": "",
-            "label": "Animal Bone",
+            "description": "Bronze-age farm site",
+            "label": "Bronze-age farm 123",
             "sample_location": {
                 "elevation": "",
                 "latitude": 47.210228,

@@ -7,21 +7,27 @@
     "has_context_category": [
         {
             "label": "Any sampled feature",
+
             "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/anysampledfeature"
+
         }
     ],
     "has_context_category_confidence": [1.0],
     "has_material_category": [
         {
             "label": "Mineral",
+
             "identifier": "https://w3id.org/isample/vocabulary/material/mineral"
+
         }
     ],
     "has_material_category_confidence": "None",
     "has_specimen_category": [
         {
             "label": "Physical specimen",
+
             "identifier": "https://w3id.org/isample/vocabulary/specimentype/physicalspecimen"
+
         }
     ],
     "has_specimen_category_confidence": [1.0],
@@ -74,5 +80,7 @@
     "producedBy_samplingSite_location_h3_11": "8bacb32e6408fff",
     "producedBy_samplingSite_location_h3_12": "8cacb32e64083ff",
     "producedBy_samplingSite_location_h3_13": "8dacb32e64082bf",
+
     "producedBy_samplingSite_location_h3_14": "8eacb32e640828f"
 }
+

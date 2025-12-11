@@ -208,7 +208,7 @@
         "SamplingEvent": {
             "additionalProperties": false,
             "description": "Information about the event resulting in the creation of the material sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description. If any special protocols were followed in the sampling procedure, they should be documented using the MaterialSampleRecord/complies_with property.",
-            "properties": {
+         "properties": {
                 "authorized_by": {
                     "description": "a list of permits or other formal permission documents under which the sample was collected. Use to cite legal documents authorizing sample collection.",
                     "items": {"type": "string"},
