@@ -2,8 +2,7 @@
     "$id": "https://w3id.org/isample/schema/2.0",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
-    "description": "This is a data object that is a digital representation of a material sample; this digital object is identified by  the pid property, which plays the same role as the '@id' in schema.org metadata. The sample_identifier property contains the identifier of the physical object that the MaterialSampleRecord is about. IGSN is recommended for sample identifiers. The sample_identifier is expected to be a URI that can be dereferenced on the web; one of the representations  accessible through this dereferencing is expected to be this iSamples MaterialSampleRecord, but other content types may be offered via content negotiation or other mechanisms.",
-    "metamodel_version": "1.7.0",
+    "description": "This is a data object that is a digital representation of a material sample; this digital object is identified by  the pid property, which plays the same role as the '@id' in schema.org metadata. The sample_identifier property contains the identifier of the physical object that the MaterialSampleRecord is about. IGSN is recommended for sample identifiers. The sample_identifier is expected to be a URI that can be dereferenced on the web; one of the representations  accessible through this dereferencing is expected to be this iSamples MaterialSampleRecord, but other content types may be offered via content negotiation or other mechanisms. metamodel_version 1.7.0; version 20250207",
     "required": [
         "pid",
         "label",
@@ -11,7 +10,6 @@
     ],
     "title": "materialSampleRecord",
     "type": "object",
-    "version": "20250207",
     "properties": {
         "alternate_identifiers": {
             "description": "One or more identifiers used to identify the sample in other contexts. In this context, the identifier property and scheme_name should be required.\n",
