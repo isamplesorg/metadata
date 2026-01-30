@@ -1,0 +1,105 @@
+{
+    "$schema": "../src/schemas/iSamplesSchemaCore2.0.json",
+    "pid":"fullexample_146467",
+    "sample_identifier": "igsn:sample_identifier",
+    "label": "label",
+    "description": "description",
+    "alternate_identifiers": [],
+    "produced_by": {
+        "pid": "identifier",
+        "label": "label",
+        "description": "description",
+        "has_feature_of_interest": "has_feature_of_interest",
+        "project": "project",
+        "responsibility": [
+            {
+                "name": "name",
+                "affiliation": "affiliation",
+                "contact_information": "contact_information",
+                "pid": "identifier",
+                "role": "role"
+            }
+        ],
+        "result_time": "2000-01-01",
+        "sample_location": {
+            "elevation": "elevation",
+            "latitude": 0,
+            "longitude": 0,
+            "obfuscated": false
+        },
+        "sampling_site": {
+            "description": "description",
+            "label": "label",
+            "site_location": {
+                "elevation": "elevation",
+                "latitude": 0,
+                "longitude": 0,
+                "obfuscated": false
+                },
+            "place_name": ["place_name0"]
+        },
+        "authorized_by": ["authorized_by0"]
+    },
+    "sampling_purpose": "sampling_purpose",
+    "has_context_category": [
+        {
+            "label": "label",
+            "pid": "http://example.com/resource?foo=bar#fragment",
+            "scheme_name": "scheme_name"
+        }
+    ],
+    "has_material_category": [
+        {
+            "label": "label",
+            "pid": "http://example.com/resource?foo=bar#fragment",
+            "scheme_name": "scheme_name"
+        }
+    ],
+    "has_sample_object_type": [
+        {
+            "label": "label",
+            "pid": "http://example.com/resource?foo=bar#fragment",
+            "scheme_name": "scheme_name"
+        }
+    ],
+    "keywords": [
+        {
+            "label": "keyword",
+            "pid": "keyword_uri",
+            "scheme_name": "scheme_name",
+            "scheme_uri": "scheme_uri"
+        }
+    ],
+    "related_resource": [
+        {
+            "description": "description",
+            "label": "label",
+            "relationship": "relationship",
+            "target": "target"
+        }
+    ],
+    "complies_with": ["complies_with0"],
+    "curation": {
+        "access_constraints": ["access_constraints0"],
+        "curation_location": "curation_location",
+        "description": "description",
+        "label": "label",
+        "responsibility": [
+            {
+                "name": "name",
+                "affiliation": "affiliation",
+                "contact_information": "contact_information",
+                "pid": "identifier",
+                "role": "role"
+            }
+        ]
+    },
+    "last_modified_time":"2025-10-19T06:00:00-07:00",
+    "registrant": {
+        "name": "name",
+        "affiliation": "affiliation",
+        "contact_information": "contact_information",
+        "pid": "identifier",
+        "role": "role"
+    }
+}
