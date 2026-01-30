@@ -22,17 +22,13 @@ metadata/
 │   ├── APItesting/
 │   ├── GEOME/
 │   ├── geoJSON/
-│   ├── iSamples/
 │   ├── OpenContext/
-│   ├── script/
 │   ├── SESAR/
 │   └── smithonsonian/
-├── vocabulary/            # Vocabulary-related files
 ├── tools/                 # Modified docgen tool and templates for Quarto
 ├── quarto/                # Quarto configuration files
 ├── build/                 # Build output (intermediate docs)
 │   └── docs/              # Generated markdown documentation
-├── tests/                 # Test files
 └── notes/                 # Development notes
 ```
 
@@ -151,3 +147,20 @@ Run the container (opens a bash shell with the repository mounted at `/work`):
 ```bash
 docker run -a stdin -a stdout -i -t -v `pwd`:/work isamples_linkml
 ```
+
+## Related iSamples Repositories
+
+| Repo | Purpose | Start Here |
+|------|---------|------------|
+| [isamplesorg-metadata](https://github.com/isamplesorg/metadata) | Schema definition | `src/schemas/isamples_core.yaml` |
+| [isamples-python](https://github.com/isamplesorg/examples) | Jupyter examples | `examples/basic/isamples_explorer.ipynb` |
+| [isamplesorg.github.io](https://isamplesorg.github.io/) | Browser tutorials | `tutorials/isamples_explorer.qmd` |
+| [vocabularies](https://github.com/isamplesorg/vocabularies) | SKOS terms | Material types, context categories |
+
+
+# Sample metadata repository (parquet format)
+## Wide format (primary) - 280MB, 20M rows
+WIDE_URL = "https://pub-a18234d962364c22a50c787b7ca09fa5.r2.dev/isamples_202601_wide.parquet"
+
+## Narrow format (advanced) - 850MB, 106M rows  
+NARROW_URL = "https://pub-a18234d962364c22a50c787b7ca09fa5.r2.dev/isamples_202512_narrow.parquet"
