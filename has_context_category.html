@@ -652,12 +652,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="./MaterialSampleRecord.html">MaterialSampleRecord</a></td>
-<td>This is a data object that is a digital representation of a material sample; this digital object is identified by the pid property, which plays the same role as the ‘<span class="citation" data-cites="id">@id</span>’ in schema.org metadata. The sample_identifier property contains the identifier of the physical object that the MaterialSampleRecord is about. IGSN is recommended for sample identifiers. The sample_identifier is expected to be a URI that can be dereferenced on the web; one of the representations accessible through this dereferencing is expected to be this iSamples MaterialSampleRecord, but other content types may be offered via content negotiation or other mechanisms.</td>
+<td><a href="./SamplingEvent.html">SamplingEvent</a></td>
+<td>Information about the event resulting in the creation of the material sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description. If any special protocols were followed in the sampling procedure, they should be documented using the MaterialSampleRecord/complies_with property.</td>
 </tr>
 </tbody>
 </table>
-<p><a href="./SamplingEvent.html">SamplingEvent</a> | Information about the event resulting in the creation of the material sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description. If any special protocols were followed in the sampling procedure, they should be documented using the MaterialSampleRecord/complies_with property.</p>
+<p><a href="./MaterialSampleRecord.html">MaterialSampleRecord</a> | This is a data object that is a digital representation of a material sample; this digital object is identified by the pid property, which plays the same role as the ‘<span class="citation" data-cites="id">@id</span>’ in schema.org metadata. The sample_identifier property contains the identifier of the physical object that the MaterialSampleRecord is about. IGSN is recommended for sample identifiers. The sample_identifier is expected to be a URI that can be dereferenced on the web; one of the representations accessible through this dereferencing is expected to be this iSamples MaterialSampleRecord, but other content types may be offered via content negotiation or other mechanisms.</p>
 <p>: Classes in which this slot appears. {tbl-colwidths=“[30,70]”}</p>
 </section>
 <section id="properties" class="level2">

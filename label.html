@@ -652,15 +652,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="./MaterialSampleCuration.html">MaterialSampleCuration</a></td>
-<td>Information about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.</td>
+<td><a href="./MaterialSampleRecord.html">MaterialSampleRecord</a></td>
+<td>This is a data object that is a digital representation of a material sample; this digital object is identified by the pid property, which plays the same role as the ‘<span class="citation" data-cites="id">@id</span>’ in schema.org metadata. The sample_identifier property contains the identifier of the physical object that the MaterialSampleRecord is about. IGSN is recommended for sample identifiers. The sample_identifier is expected to be a URI that can be dereferenced on the web; one of the representations accessible through this dereferencing is expected to be this iSamples MaterialSampleRecord, but other content types may be offered via content negotiation or other mechanisms.</td>
 </tr>
 </tbody>
 </table>
-<p><a href="./SamplingSite.html">SamplingSite</a> | Documentation of the site where the sample was collected, with place name(s) and a geospatial location.</p>
 <p><a href="./SampleRelation.html">SampleRelation</a> | Semantic link to other samples or related resources.</p>
-<p><a href="./MaterialSampleRecord.html">MaterialSampleRecord</a> | This is a data object that is a digital representation of a material sample; this digital object is identified by the pid property, which plays the same role as the ‘<span class="citation" data-cites="id">@id</span>’ in schema.org metadata. The sample_identifier property contains the identifier of the physical object that the MaterialSampleRecord is about. IGSN is recommended for sample identifiers. The sample_identifier is expected to be a URI that can be dereferenced on the web; one of the representations accessible through this dereferencing is expected to be this iSamples MaterialSampleRecord, but other content types may be offered via content negotiation or other mechanisms.</p>
+<p><a href="./SamplingSite.html">SamplingSite</a> | Documentation of the site where the sample was collected, with place name(s) and a geospatial location.</p>
 <p><a href="./SamplingEvent.html">SamplingEvent</a> | Information about the event resulting in the creation of the material sample. Include information about permitting in the authorized_by property. The sampling procedure should be described in the description. If any special protocols were followed in the sampling procedure, they should be documented using the MaterialSampleRecord/complies_with property.</p>
+<p><a href="./MaterialSampleCuration.html">MaterialSampleCuration</a> | Information about the current storage of sample, access to sample, and events in curation history. Curation as used here starts when the sample is removed from its original context, and might include various processing steps for preservation. Processing related to analysis preparation such as crushing, dissolution, evaporation, filtering are considered part of the sampling method for the derived child sample.</p>
 <p><a href="./IdentifiedConcept.html">IdentifiedConcept</a> | An identifier with a label, used for vocabulary terms.</p>
 <p>: Classes in which this slot appears. {tbl-colwidths=“[30,70]”}</p>
 </section>
