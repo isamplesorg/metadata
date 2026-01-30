@@ -4,7 +4,7 @@
 
 **Audience:** Developers querying iSamples data, data providers creating metadata, tool builders integrating with iSamples.
 
-> **Schema Alignment (2026-01-29):** The LinkML schema marks `pid`, `label`, and `last_modified_time` as **required** fields. Additionally, `produced_by`, `has_context_category`, `has_material_category`, and `has_sample_object_type` are marked as **recommended** in the schema for meaningful PQG data and cross-domain interoperability. These are marked with 🔶 below.
+> **Note on "Required" vs "Strongly Recommended":** The LinkML schema only marks `pid`, `label`, and `last_modified_time` as technically required fields. However, for meaningful PQG data and cross-domain interoperability, certain predicates are **strongly recommended**. These are marked with 🔶 below.
 
 ---
 
@@ -12,10 +12,10 @@
 
 | Predicate | Subject → Object | Cardinality | Required | Description |
 |-----------|------------------|-------------|----------|-------------|
-| [produced_by](#produced_by) | MaterialSampleRecord → SamplingEvent | One | 🔶 Recommended | Sample creation event |
-| [has_material_category](#has_material_category) | MaterialSampleRecord → IdentifiedConcept | Many | 🔶 Recommended | Material type |
-| [has_context_category](#has_context_category) | MaterialSampleRecord → IdentifiedConcept | Many | 🔶 Recommended | Domain context |
-| [has_sample_object_type](#has_sample_object_type) | MaterialSampleRecord → IdentifiedConcept | Many | 🔶 Recommended | Physical form |
+| [produced_by](#produced_by) | MaterialSampleRecord → SamplingEvent | One | 🔶 Strongly Recommended | Sample creation event |
+| [has_material_category](#has_material_category) | MaterialSampleRecord → IdentifiedConcept | Many | 🔶 Strongly Recommended | Material type |
+| [has_context_category](#has_context_category) | MaterialSampleRecord → IdentifiedConcept | Many | 🔶 Strongly Recommended | Domain context |
+| [has_sample_object_type](#has_sample_object_type) | MaterialSampleRecord → IdentifiedConcept | Many | 🔶 Strongly Recommended | Physical form |
 | [keywords](#keywords) | MaterialSampleRecord → IdentifiedConcept | Many | ⚪ No | Discovery keywords |
 | [registrant](#registrant) | MaterialSampleRecord → Agent | One | ⚪ No | Registering agent |
 | [curation](#curation) | MaterialSampleRecord → MaterialSampleCuration | One | ⚪ No | Storage info |
@@ -35,7 +35,7 @@
 
 **Type:** MaterialSampleRecord → SamplingEvent
 **Cardinality:** One
-**Required:** 🔶 Recommended (essential for provenance)
+**Required:** 🔶 Strongly Recommended (essential for provenance)
 
 #### Purpose
 Links a material sample to the event that created/collected it. This is the **most important relationship** in iSamples - every sample should have provenance for meaningful interoperability.
@@ -993,7 +993,7 @@ edge:
 
 **Key Takeaways:**
 
-1. **4 predicates are recommended in the schema** - produced_by, has_material_category, has_context_category, has_sample_object_type (marked `recommended: true` in LinkML for interoperability)
+1. **4 predicates are strongly recommended** - produced_by, has_material_category, has_context_category, has_sample_object_type (essential for interoperability, but not schema-required)
 2. **3 predicates involve coordinates** - sample_location, site_location (plus is_part_of for nested sites)
 3. **3 predicates involve agents** - registrant, responsibility (SamplingEvent), responsibility (MaterialSampleCuration)
 4. **2 predicates share names** - responsibility, has_context_category (different subjects)

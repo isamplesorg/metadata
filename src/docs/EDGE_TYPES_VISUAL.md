@@ -125,7 +125,7 @@ graph LR
 ```
 
 **Key observations:**
-- **`produced_by` is recommended in schema** - every sample should link to a SamplingEvent for provenance
+- **`produced_by` is strongly recommended** - every sample should link to a SamplingEvent for provenance
 - **Multiple keywords** can be assigned (multivalued)
 - **IdentifiedConcept used 4 different ways** - material, context, object type, keywords
 - **4 relationship types to IdentifiedConcept** enable rich categorization
