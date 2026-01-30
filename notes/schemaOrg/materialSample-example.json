@@ -3,36 +3,14 @@
         "@vocab": "https://schema.org/",
         "dcterms": "http://purl.org/dc/terms/"
     },
-    "@id": "https://metadata.mySystem.org/2311252",
-    "@type": [
-        "Thing",
-        "Product"
-    ],
-    "name": "really cool rock",
+    "@type": "Product",
+    "@id": "https://metadata.mySystem.org/2311252.json",
     "additionalType": [
         "https://w3id.org/isample/vocabulary/materialsampleobjecttype/1.0/solidmaterialsample",
         "solid material sample",
         "sample composed of solid material"
     ],
-    "category": {
-        "@type": "DefinedTerm",
-        "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/earthinterior",
-        "inDefinedTermSet": {
-            "@type": "DefinedTermSet",
-            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/sampledfeaturevocabulary",
-            "name": "Sampled Feature Type vocabulary"
-        },
-        "name": "Earth Interior"
-    },
-    "conditionsOfAccess": "Samples are viewable by contacting the maintainer identifier in this record. Subsamples might be made available for analysis on a case by case basis",
-    "countryOfLastProcessing": "usa",
-    "countryOfOrigin": "usa",
-    "keywords": [
-        "Laramide",
-        "epithermal environment",
-        "Saddle Mountain",
-        "leaverite"
-    ],
+    "name": "really cool rock",
     "description": "Dark purple-gray chunk of leaverite, contains Austinite, Tilasite, Quartz and native Gold. [example generated from isamples first drafts by SMR and P.L. Buttiegieg 2024-10-17",
     "identifier": [
         {
@@ -47,6 +25,9 @@
             "value": "https://igsn.org/slk222-046537"
         }
     ],
+    "countryOfOrigin": "usa",
+    "countryOfLastProcessing": "usa",
+    "conditionsOfAccess": "Samples are viewable by contacting the maintainer identifier in this record. Subsamples might be made available for analysis on a case by case basis",
     "potentialAction": [
         {
             "@type": [
@@ -183,9 +164,15 @@
                 "@type": "Person",
                 "identifier": "https://orcid.org/0000-0111-2241-5355",
                 "name": "Tom Garmin",
-                "email": "garmin@azgs.arizona.edu"
+                 "email": "garmin@azgs.arizona.edu"
             }
         }
+    ],
+    "keywords": [
+        "Laramide",
+        "epithermal environment",
+        "Saddle Mountain",
+        "leaverite"
     ],
     "material": {
         "@type": [
@@ -201,36 +188,43 @@
             "name": "iSamples Materials Vocabulary"
         }
     },
-    "relatedLink": [
+    "category": {
+        "@type": "DefinedTerm",
+        "name": "Earth Interior",
+        "identifier": "https://w3id.org/isample/vocabulary/sampledfeature/1.0/earthinterior",
+        "inDefinedTermSet": {
+            "@type": "DefinedTermSet",
+            "identifier": "https://w3id.org/isample/vocabulary/sampleobjecttype/1.0/sampledfeaturevocabulary",
+            "name": "Sampled Feature Type vocabulary"
+        }
+    },
+    "subjectOf": [
         {
-            "@type": "LinkRole",
+            "@type": [
+                "DigitalDocument",
+                "Dataset"
+            ],
+            "identifier": "https://isamples.org/igsn-id/metadata",
+            "dcterms:conformsTo": "http://resource.isamples.org/schema/1.0/schema.org",
+            "sdPublisher": {
+                "@type": "Organization",
+                "identifier": "https://ror.org/someorg7523824",
+                "name": "Museum of great samples",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "curator@gsample.org"
+                }
+            }
+        },
+        {
+            "@type": "Dataset",
+            "about": "Chemical analysis",
             "name": "Chemistry of rock samples from Saddle Mountain",
-            "target": {
-                "@type": "EntryPoint",
-                "contentType": "Chemical analysis",
-                "encodingType": "text/csv",
-                "url": "https://data.org/chem/26357"
+            "distribution": {
+                "@type": "DataDownload",
+                "contentUrl": "https://data.org/chem/26357",
+                "encodingFormat": "text/csv"
             }
         }
-    ],
-    "subjectOf": {
-        "@id": "https://metadataexample.org/2436",
-        "@type": "DigitalDocument",
-        "about": "https://metadata.mySystem.org/2311252",
-        "dcterms:conformsTo": ["http://resource.isamples.org/schema/1/cdifschema.org"],
-        "sdPublisher": {
-            "@type": "Organization",
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "email": "curator@gsample.org"
-            },
-            "identifier": [
-                {
-                    "@type": "PropertyValue",
-                    "value": "https://ror.org/someorg7523824"
-                }
-            ],
-            "name": "Museum of great samples"
-        }
-    }
+    ]
 }
