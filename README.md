@@ -1,4 +1,4 @@
-[![NSF-2004562](https://img.shields.io/badge/NSF-ID=2004562-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=2004562) 
+[![NSF-2004562](https://img.shields.io/badge/NSF-ID=2004562-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=2004562)
 [![NSF-2004815](https://img.shields.io/badge/NSF-ID=2004815-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=2004815)
 [![NSF-2004839](https://img.shields.io/badge/NSF-ID=2004839-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=2004839)
 [![NSF-2004642](https://img.shields.io/badge/NSF-ID=2004642-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=2004642)
@@ -7,252 +7,154 @@
 
 Defines the core metadata model for iSamples.
 
-`src/schemas/isamples_core.yaml` defines the iSamples core model in linkml. It references vocabularies contained in `[isamplesorg/vocabularies//vocabulary](https://github.com/isamplesorg/vocabularies/tree/develop/vocabulary)` which define terms for the Material Type, Sampled Feature, and Material Sample Object Type vocabularies.
+`src/schemas/isamples_core.yaml` defines the iSamples core model in LinkML. It references vocabularies contained in [`isamplesorg/vocabularies/vocabulary`](https://github.com/isamplesorg/vocabularies/tree/develop/vocabulary) which define terms for the Material Type, Sampled Feature, and Material Sample Object Type vocabularies.
 
-The following artifacts are generated from the linkml and vocabulary sources:
+Documentation is available at https://isamplesorg.github.io/metadata/
 
-* Documentation in HTML, available at https://isamplesorg.github.io/metadata/
+## Repository Structure
 
+```
+metadata/
+├── src/
+│   └── schemas/           # LinkML schema definitions
+│       └── isamples_core.yaml
+├── background/            # Diagrams and information about existing models
+│   ├── DataCite/
+│   ├── ESS-DIVE/
+│   ├── GEOME-TDWG/
+│   ├── GeoScience/
+│   ├── ODM-CUAHSI/
+│   └── OpenContext-Archae-anthro/
+├── examples/              # Example metadata documents from different systems
+│   ├── APItesting/
+│   ├── GEOME/
+│   ├── geoJSON/
+│   ├── iSamples/
+│   ├── OpenContext/
+│   ├── script/
+│   ├── SESAR/
+│   └── smithonsonian/
+├── vocabulary/            # Vocabulary-related files
+├── tools/                 # Modified docgen tool and templates for Quarto
+├── quarto/                # Quarto configuration files
+├── build/                 # Build output (intermediate docs)
+│   └── docs/              # Generated markdown documentation
+├── tests/                 # Test files
+└── notes/                 # Development notes
+```
 
 ## Development
 
-Linkml and associated tools require a python environment, version 3.9 or newer, and uses [poetry](https://python-poetry.org/) for dependency management. Poetry can be installed with `pip install poetry`.
+LinkML and associated tools require a Python environment (version 3.9 or newer) and uses [Poetry](https://python-poetry.org/) for dependency management. Poetry can be installed with `pip install poetry`.
 
 To work on project contents and run artifact generators, first grab the source and switch to the develop branch:
 
-```
+```bash
 git clone https://github.com/isamplesorg/metadata.git
 cd metadata
-checkout develop
-pull
+git checkout develop
+git pull
 ```
 
-Setup a virtual environment (e.g. using poetry or mkvirtualenv):
+Setup a virtual environment using Poetry:
 
-```
+```bash
 poetry shell
 poetry install
 ```
 
-
 (To exit poetry shell, use `exit`).
 
-Artifacts in the `generated/` folder are produced by running `make` or `make all`. 
+Artifacts are produced by running `make` or `make all`.
 
-Documentation is rendered with [Quarto]() rather than the defaults `mkdocs` or `Sphinx` (Quarto offers many additional features for including computed examples which are planned). To generate the documentation, install a version of [Quarto >= 1.2](), then run `make`, `make all` or `make gen-docs`.
+### Documentation Generation
 
-This will generate markdown intermediate files in the `build/docs` folder then invoke `quarto render` to generate the HTML docs in the `docs/` folder.
+Documentation is rendered with [Quarto](https://quarto.org/) rather than the default `mkdocs` or `Sphinx` (Quarto offers many additional features for including computed examples). To generate the documentation:
 
-Note that this project uses a version of the `linkml` `docgen` tool and templates modified to render markdown for `quarto`. The modified `docgen` and templates is located in the `tools/` folder.
+1. Install [Quarto >= 1.2](https://quarto.org/docs/get-started/)
+2. Run `make`, `make all` or `make gen-docs`
 
+This will generate markdown intermediate files in the `build/docs` folder, then invoke `quarto render` to generate HTML documentation.
 
-## Older notes below
+Note that this project uses a modified version of the LinkML `docgen` tool and templates to render markdown for Quarto. The modified `docgen` and templates are located in the `tools/` folder.
 
-Collation of metadata examples and notes for the project 
+## LinkML Schema Operations
 
-- background:  contains diagrams and information about some existing models that include metadata for samples; files are organized broadly by domain.
-- examples: example metadata documents from different systems. Subfolders are 
-  - raw: metadata from the originating system
-  - test: corresponding records generated manually using the iSamples basic template
-  - transform: corresponding records generated by automated ETL process from raw records
-- vocabulary: vocabularies related to sample metadata from various systems
+### Convert YAML schema to JSON schema
 
-# linkML (Current version 1.1.15)
-This branch implments how to use linkML to generate various output and operations for iSamples.
-
-## Current workflow (01/01/2022)
-![workflow](https://github.com/isamplesorg/metadata/blob/docker/linkmlExperiment/linkML%201-1-2022%20workflow.png)
-
-
-## iSamples YAML schema to JSON schema
-We could use the following command to convert iSamples YAML schema to JSON schema.
-
+```bash
+gen-json-schema -t PhysicalSampleRecord --not-closed src/schemas/isamples_core.yaml > isamples_core.schema.json
 ```
-gen-json-schema -t PhysicalSampleRecord --not-closed iSamplesSchemaBasic0.3.yaml > iSamplesSchemaBasic0.3.schema.json 
-```
-In this command, `-t PhysicalSampleRecord` means to make "physicalSampleRecord" class become the top level class. And the prepoerties of the class become the top level properties in the JSON-schema. The converted JSON scheme file is "iSamplesSchemaBasic0.3.schema.json". 
 
-## Generating JSON-LD context 
+The `-t PhysicalSampleRecord` option makes the "PhysicalSampleRecord" class the top-level class in the JSON schema.
+
+### Generate JSON-LD context
+
+```bash
+gen-jsonld-context src/schemas/isamples_core.yaml > isamples_core.jsonld
 ```
-gen-jsonld-context iSamplesSchemaBasic0.3.yaml > iSampleSchemaBasic0.3.jsonld
-```
-The command will save the result in the jsonld file. After we have the converted JSON-LD context. The enumeration part of JSON-context should be modified by us manually.
+
+After generating the JSON-LD context, the enumeration part may need manual modification. For each enumeration, use `@type` to declare the enumeration type.
+
 <details>
-  <summary>Modified JSON-LD context example</summary>
-<pre>
-   "@context": {
-      "dct": "http://purl.org/dc/terms/",
-      "isam": "http://resource.isamples.org/schema/",
-      "mat": "http://resource.isamples.org/vocabulary/material/",
-      "pur": "http://resource.isamples.org/vocabulary/samplepurpose/",
-      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-      "sf": "http://resource.isamples.org/vocabulary/sampledFeature/",
-      "skos": "http://www.w3.org/2004/02/skos/core#",
-      "spt": "http://resource.isamples.org/vocabulary/sampleobjecttype/",
-      "w3cpos": "http://www.w3.org/2003/01/geo/wgs84_pos#",
-      "xsd": "http://www.w3.org/2001/XMLSchema#",
-      "@vocab": "http://resource.isamples.org/schema/",
-      "curation": {
-         "@type": "@id"
-      },
-      "hasContextCategory": {
-         "@type":"contextcategory"
-      },
-      "hasMaterialCategory": {
-         "@type":"materialtype"
-      },
-      "has_sample_object_type": {
-         "@type":"specimencategory"
-      },
-      "id": "@id",
-      "latitude": {
-         "@type": "xsd:decimal"
-      },
-      "location": {
-         "@type": "@id"
-      },
-      "longitude": {
-         "@type": "xsd:decimal"
-      },
-      "producedBy": {
-         "@type": "@id"
-      },
-      "relatedResource": {
-         "@type": "@id"
-      },
-      "resultTime": {
-         "@type": "xsd:date"
-      },
-      "samplingSite": {
-         "@type": "@id"
-      }
-   }
-</pre>
-</details>
-This is an example of modified JSON-LD context. For each enumeartion, we use `@type` to declare enumeration type.
+  <summary>Example modified JSON-LD context</summary>
 
-## Validating schema and instance file
-Before we valideting all instance files, we need to add modified JSON-LD context to the front of instances properties. 
-<details>
-  <summary>Full instance example</summary>
-<pre>
+```json
 {
    "@context": {
       "dct": "http://purl.org/dc/terms/",
       "isam": "http://resource.isamples.org/schema/",
       "mat": "http://resource.isamples.org/vocabulary/material/",
-      "pur": "http://resource.isamples.org/vocabulary/samplepurpose/",
-      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "sf": "http://resource.isamples.org/vocabulary/sampledFeature/",
       "skos": "http://www.w3.org/2004/02/skos/core#",
       "spt": "http://resource.isamples.org/vocabulary/sampleobjecttype/",
-      "w3cpos": "http://www.w3.org/2003/01/geo/wgs84_pos#",
       "xsd": "http://www.w3.org/2001/XMLSchema#",
       "@vocab": "http://resource.isamples.org/schema/",
-      "curation": {
-         "@type": "@id"
-      },
       "hasContextCategory": {
-         "@type":"contextcategory"
+         "@type": "contextcategory"
       },
       "hasMaterialCategory": {
-         "@type":"materialtype"
+         "@type": "materialtype"
       },
       "has_sample_object_type": {
-         "@type":"specimencategory"
+         "@type": "specimencategory"
       },
       "id": "@id",
       "latitude": {
          "@type": "xsd:decimal"
       },
-      "location": {
-         "@type": "@id"
-      },
       "longitude": {
          "@type": "xsd:decimal"
       },
-      "producedBy": {
-         "@type": "@id"
-      },
-      "relatedResource": {
-         "@type": "@id"
-      },
       "resultTime": {
          "@type": "xsd:date"
-      },
-      "samplingSite": {
-         "@type": "@id"
       }
-   },
-   
-   
-    "@schema": "../../iSamplesSchemaBasic0.2.json",
-    "@id": "metadata/21547/Car2PIRE_0334",
-    "label": "PIRE_0334",
-    "sampleidentifier": "ark:/21547/Car2PIRE_0334",
-    "description": "",
-    "hasContextCategory": ["Marine Biome"],
-    "hasMaterialCategory": ["Organic Material"],
-    "has_sample_object_type": ["Whole Organism"],
-    "informalClassification": ["Gastropoda"],
-    "keywords": ["Aceh", "Sumatra","Indonesia","Asia", "Mollusca"],
-    "producedBy": {
-        "@id":"ark:/21547/Cas2INDO_2016_SEU_1B",
-        "label": "INDO_2016_SEU_1B",
-        "description": "expeditionCode: INDO_PIRE | samplingProtocol: ARMS | taxonomy team: MINV | projectId: 80",
-        "hasFeatureOfInterest": "coral reef",
-        "responsibility": ["Aji Wahyu Anggoro","Andrianus Sembiring"],
-        "resultTime": "2016-08-09",
-        "samplingSite": {
-            "description": "Shallow, coastal reef. Apparent exposure to current, Porites dominated. Less impacted bleaching site, high recruitment, 12 m.",
-            "label": "",
-            "location": {
-                "elevation": "maximumDepthInMeters: 12",
-                "latitude": 5.89430,
-                "longitude": 95.25293
-            },
-            "placeName": ["Pulau Seulako"]
-        }
-    },
-    "registrant": "Chris Meyer",
-    "samplingPurpose": "genomic analysis",
-    "curation": {
-        "accessConstraints": "",
-        "curationLocation": "",
-        "responsibility": ""
-    },
-    "relatedResource": {
-        "label":"subsample tissue",
-        "description":"",
-        "target":"ark:/21547/Cat2INDO106431.1",
-        "relationship":"subsample"
-    }
+   }
 }
-</pre>
+```
 </details>
 
-We need to use the following command to validate our instance files with schema.
+### Validate instance files
+
+```bash
+linkml-validate -s src/schemas/isamples_core.yaml instance.json
+jsonschema -i instance.json isamples_core.schema.json
 ```
-linkml-validate -s iSamplesSchemaBasic0.3.yaml instance.json
-jsonschema -i instance.json iSamplesSchemaBasic0.3.schema.json
+
+The first command validates an instance file against the YAML schema. The second command validates against the JSON schema.
+
+## Docker
+
+The iSamples Metadata Docker container is based on the Docker container from the LinkML project ([https://hub.docker.com/r/monarchinitiative/linkml/tags](https://hub.docker.com/r/monarchinitiative/linkml/tags)).
+
+Build the image:
+
+```bash
+docker build -t isamples_linkml .
 ```
-The first command is to validate instance file with yaml schema. The second command is to validate instance file with json schema.
 
-## Run tools in a Docker container
-The iSamples Metadata Docker container is based on the Docker container from the LinkML project [https://hub.docker.com/r/monarchinitiative/linkml/tags]
+Run the container (opens a bash shell with the repository mounted at `/work`):
 
-First you'll build the image:
-`docker build -t isamples_linkml .`
-
-Then, running it will open a bash shell opened to `/work`, which is the Docker container volume representing the iSamples metadata repository:
-``docker run -a stdin -a stdout -i -t -v `pwd`:/work isamples_linkml``
-
-Then use the following commands to generate LinkML:
-* Command 1
-* Command 2
-* Command 3
-
-## To do
-- We still focus on implementing the iSamples schema under linkML requirements.
-- There are some bugs or unimplemented parts in the linkML.
-- The different pc platform will have different results or errors. We prefer to use [docker](https://www.docker.com/products/docker-desktop) to run linkML. Please follow the [linkML tutorial](https://linkml.io/linkml/intro/install.html)
+```bash
+docker run -a stdin -a stdout -i -t -v `pwd`:/work isamples_linkml
+```

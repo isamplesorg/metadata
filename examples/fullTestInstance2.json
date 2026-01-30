@@ -1,11 +1,12 @@
 {
-    "$schema": "../src/schemas/iSamplesSchemaCore1.0.json",
-    "sample_identifier": "sample_identifier",
+    "$schema": "../src/schemas/iSamplesSchemaCore2.0.json",
+    "pid":"fullexample_146467",
+    "sample_identifier": "igsn:sample_identifier",
     "label": "label",
     "description": "description",
     "alternate_identifiers": [],
     "produced_by": {
-        "identifier": "identifier",
+        "pid": "identifier",
         "label": "label",
         "description": "description",
         "has_feature_of_interest": "has_feature_of_interest",
@@ -15,15 +16,21 @@
                 "name": "name",
                 "affiliation": "affiliation",
                 "contact_information": "contact_information",
-                "identifier": "identifier",
+                "pid": "identifier",
                 "role": "role"
             }
         ],
         "result_time": "2000-01-01",
+        "sample_location": {
+            "elevation": "elevation",
+            "latitude": 0,
+            "longitude": 0,
+            "obfuscated": false
+        },
         "sampling_site": {
             "description": "description",
             "label": "label",
-            "sample_location": {
+            "site_location": {
                 "elevation": "elevation",
                 "latitude": 0,
                 "longitude": 0,
@@ -37,28 +44,28 @@
     "has_context_category": [
         {
             "label": "label",
-            "identifier": "http://example.com/resource?foo=bar#fragment",
+            "pid": "http://example.com/resource?foo=bar#fragment",
             "scheme_name": "scheme_name"
         }
     ],
     "has_material_category": [
         {
             "label": "label",
-            "identifier": "http://example.com/resource?foo=bar#fragment",
+            "pid": "http://example.com/resource?foo=bar#fragment",
             "scheme_name": "scheme_name"
         }
     ],
     "has_sample_object_type": [
         {
             "label": "label",
-            "identifier": "http://example.com/resource?foo=bar#fragment",
+            "pid": "http://example.com/resource?foo=bar#fragment",
             "scheme_name": "scheme_name"
         }
     ],
     "keywords": [
         {
-            "keyword": "keyword",
-            "keyword_uri": "keyword_uri",
+            "label": "keyword",
+            "pid": "keyword_uri",
             "scheme_name": "scheme_name",
             "scheme_uri": "scheme_uri"
         }
@@ -82,7 +89,7 @@
                 "name": "name",
                 "affiliation": "affiliation",
                 "contact_information": "contact_information",
-                "identifier": "identifier",
+                "pid": "identifier",
                 "role": "role"
             }
         ]
@@ -92,7 +99,7 @@
         "name": "name",
         "affiliation": "affiliation",
         "contact_information": "contact_information",
-        "identifier": "identifier",
+        "pid": "identifier",
         "role": "role"
     }
 }

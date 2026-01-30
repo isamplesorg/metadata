@@ -1,6 +1,7 @@
 {
     "@schema": "iSamplesSchemaCore1.0.json",
     "@id": "https://data.geosamples.org/sample/igsn/IEDUT103B",
+    "@context": "https://w3id.org/isample/schema/1.0/",
     "label": "JAM42",
     "sample_identifier": "IGSN:IEDUT103B",
     "description": "Macrobiology>Coral>Biology; Coring>HandHeldCorer. piece of short core",
