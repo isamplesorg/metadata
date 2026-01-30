@@ -1,18 +1,57 @@
-[![NSF-2004562](https://img.shields.io/badge/NSF-ID=2004562-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=2004562) 
+[![NSF-2004562](https://img.shields.io/badge/NSF-ID=2004562-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=2004562)
 [![NSF-2004815](https://img.shields.io/badge/NSF-ID=2004815-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=2004815)
 [![NSF-2004839](https://img.shields.io/badge/NSF-ID=2004839-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=2004839)
 [![NSF-2004642](https://img.shields.io/badge/NSF-ID=2004642-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=2004642)
 
-# metadata
+# iSamples Metadata
 
-Defines the core metadata model for iSamples.
+Defines the **canonical metadata model** for iSamples - a domain-agnostic standard for describing material samples across scientific disciplines (geology, archaeology, biology, environmental science).
 
-`src/schemas/isamples_core.yaml` defines the iSamples core model in linkml. It references vocabularies contained in `[isamplesorg/vocabularies//vocabulary](https://github.com/isamplesorg/vocabularies/tree/develop/vocabulary)` which define terms for the Material Type, Sampled Feature, and Material Sample Object Type vocabularies.
+## Quick Start
 
-The following artifacts are generated from the linkml and vocabulary sources:
+**For data users** (exploring samples):
+- Browse tutorials at [isamplesorg.github.io](https://isamplesorg.github.io/)
+- Use Jupyter examples from [isamples-python](https://github.com/isamplesorg/examples)
 
-* Documentation in HTML, available at https://isamplesorg.github.io/metadata/
+**For implementers** (integrating with iSamples):
+- Schema: `src/schemas/isamples_core.yaml` (LinkML source)
+- JSON Schema: `src/schemas/iSamplesSchemaCore1.0.json`
+- Documentation: https://isamplesorg.github.io/metadata/
 
+**For understanding the data model**:
+- Start with `src/docs/UNDERSTANDING_THE_GRAPH.md` - explains 8 entity types + 14 predicates
+- See `src/docs/EDGE_TYPES_VISUAL.md` - visual relationship diagrams
+
+## The Model at a Glance
+
+**8 Entity Types:**
+- `MaterialSampleRecord` - The physical sample (core entity)
+- `SamplingEvent` - When/how collection occurred
+- `SamplingSite` - Named location (e.g., "Çatalhöyük")
+- `GeospatialCoordLocation` - WGS84 coordinates
+- `Agent` - Person/organization
+- `IdentifiedConcept` - Vocabulary terms
+- `MaterialSampleCuration` - Repository info
+- `SampleRelation` - Links between samples
+
+**14 Predicates** connect these entities (see `src/docs/PREDICATES_REFERENCE.md`).
+
+## Related Repositories
+
+| Repo | Purpose | Start Here |
+|------|---------|------------|
+| [isamples-python](https://github.com/isamplesorg/examples) | Jupyter examples (DuckDB + Lonboard) | `examples/basic/isamples_explorer.ipynb` |
+| [isamplesorg.github.io](https://isamplesorg.github.io/) | Browser tutorials (DuckDB-WASM + Cesium) | `tutorials/isamples_explorer.qmd` |
+| [vocabularies](https://github.com/isamplesorg/vocabularies) | SKOS vocabulary terms | Material types, context categories |
+
+## Data Access
+
+All 6.7M samples available as geoparquet on Cloudflare R2:
+
+```python
+# Wide format (recommended) - 280 MB, 20M rows
+WIDE_URL = "https://pub-a18234d962364c22a50c787b7ca09fa5.r2.dev/isamples_202601_wide.parquet"
+```
 
 ## Development
 
