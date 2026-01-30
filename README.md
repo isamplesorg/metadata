@@ -11,7 +11,7 @@ Defines the **canonical metadata model** for iSamples - a domain-agnostic standa
 
 **For data users** (exploring samples):
 - Browse tutorials at [isamplesorg.github.io](https://isamplesorg.github.io/)
-- Use Jupyter examples from [isamples-python](https://github.com/isamplesorg/examples)
+- Use Jupyter examples from [isamples-python (examples repo)](https://github.com/isamplesorg/examples)
 
 **For implementers** (integrating with iSamples):
 - Schema: `src/schemas/isamples_core.yaml` (LinkML source)
@@ -36,11 +36,13 @@ Defines the **canonical metadata model** for iSamples - a domain-agnostic standa
 
 **14 Predicates** connect these entities (see `src/docs/PREDICATES_REFERENCE.md`).
 
+> **Note:** The schema also defines `is_part_of` (SamplingSite → SamplingSite) for nested site hierarchies. This is excluded from the "14 predicates" count as it's used for site containment rather than sample description.
+
 ## Related Repositories
 
 | Repo | Purpose | Start Here |
 |------|---------|------------|
-| [isamples-python](https://github.com/isamplesorg/examples) | Jupyter examples (DuckDB + Lonboard) | `examples/basic/isamples_explorer.ipynb` |
+| [isamples-python (examples)](https://github.com/isamplesorg/examples) | Jupyter examples (DuckDB + Lonboard) | `examples/basic/isamples_explorer.ipynb` |
 | [isamplesorg.github.io](https://isamplesorg.github.io/) | Browser tutorials (DuckDB-WASM + Cesium) | `tutorials/isamples_explorer.qmd` |
 | [vocabularies](https://github.com/isamplesorg/vocabularies) | SKOS vocabulary terms | Material types, context categories |
 
@@ -78,7 +80,7 @@ poetry install
 
 Artifacts in the `generated/` folder are produced by running `make` or `make all`. 
 
-Documentation is rendered with [Quarto]() rather than the defaults `mkdocs` or `Sphinx` (Quarto offers many additional features for including computed examples which are planned). To generate the documentation, install a version of [Quarto >= 1.2](), then run `make`, `make all` or `make gen-docs`.
+Documentation is rendered with [Quarto](https://quarto.org/) rather than the defaults `mkdocs` or `Sphinx` (Quarto offers many additional features for including computed examples which are planned). To generate the documentation, install a version of [Quarto >= 1.2](https://quarto.org/docs/get-started/), then run `make`, `make all` or `make gen-docs`.
 
 This will generate markdown intermediate files in the `build/docs` folder then invoke `quarto render` to generate the HTML docs in the `docs/` folder.
 

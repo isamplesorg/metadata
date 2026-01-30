@@ -269,7 +269,7 @@ MaterialSampleRecord (Basalt Core)
   │                           └─ responsibility ───→ Agent (Dr. Maria Rodriguez)
   │
   ├─ has_material_category ─→ IdentifiedConcept (Basalt)
-  ├─ has_context_category ──→ IdentifiedConcept (Marine > Submerged terrestrial)
+  ├─ has_context_category ──→ IdentifiedConcept (Marine water body)
   ├─ has_sample_object_type ─→ IdentifiedConcept (Core)
   ├─ keywords ──────────────→ IdentifiedConcept (MORB - Mid-Ocean Ridge Basalt)
   ├─ curation ──────────────→ MaterialSampleCuration (Lamont Core Repository)

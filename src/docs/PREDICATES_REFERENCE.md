@@ -4,16 +4,18 @@
 
 **Audience:** Developers querying iSamples data, data providers creating metadata, tool builders integrating with iSamples.
 
+> **Note on "Required" vs "Strongly Recommended":** The LinkML schema only marks `pid`, `label`, and `last_modified_time` as technically required fields. However, for meaningful PQG data and cross-domain interoperability, certain predicates are **strongly recommended**. These are marked with 🔶 below.
+
 ---
 
 ## Quick Reference Table
 
 | Predicate | Subject → Object | Cardinality | Required | Description |
 |-----------|------------------|-------------|----------|-------------|
-| [produced_by](#produced_by) | MaterialSampleRecord → SamplingEvent | One | ✅ Yes | Sample creation event |
-| [has_material_category](#has_material_category) | MaterialSampleRecord → IdentifiedConcept | Many | ✅ Yes | Material type |
-| [has_context_category](#has_context_category) | MaterialSampleRecord → IdentifiedConcept | Many | ✅ Yes | Domain context |
-| [has_sample_object_type](#has_sample_object_type) | MaterialSampleRecord → IdentifiedConcept | Many | ✅ Yes | Physical form |
+| [produced_by](#produced_by) | MaterialSampleRecord → SamplingEvent | One | 🔶 Strongly Recommended | Sample creation event |
+| [has_material_category](#has_material_category) | MaterialSampleRecord → IdentifiedConcept | Many | 🔶 Strongly Recommended | Material type |
+| [has_context_category](#has_context_category) | MaterialSampleRecord → IdentifiedConcept | Many | 🔶 Strongly Recommended | Domain context |
+| [has_sample_object_type](#has_sample_object_type) | MaterialSampleRecord → IdentifiedConcept | Many | 🔶 Strongly Recommended | Physical form |
 | [keywords](#keywords) | MaterialSampleRecord → IdentifiedConcept | Many | ⚪ No | Discovery keywords |
 | [registrant](#registrant) | MaterialSampleRecord → Agent | One | ⚪ No | Registering agent |
 | [curation](#curation) | MaterialSampleRecord → MaterialSampleCuration | One | ⚪ No | Storage info |
@@ -32,11 +34,11 @@
 ### produced_by
 
 **Type:** MaterialSampleRecord → SamplingEvent
-**Cardinality:** One (required)
-**Required:** ✅ Yes
+**Cardinality:** One
+**Required:** 🔶 Strongly Recommended (essential for provenance)
 
 #### Purpose
-Links a material sample to the event that created/collected it. This is the **most important relationship** in iSamples - every sample must have provenance.
+Links a material sample to the event that created/collected it. This is the **most important relationship** in iSamples - every sample should have provenance for meaningful interoperability.
 
 #### Controlled Vocabulary
 Not applicable - targets a SamplingEvent node.
@@ -991,11 +993,13 @@ edge:
 
 **Key Takeaways:**
 
-1. **4 predicates are required** - produced_by, has_material_category, has_context_category, has_sample_object_type
+1. **4 predicates are strongly recommended** - produced_by, has_material_category, has_context_category, has_sample_object_type (essential for interoperability, but not schema-required)
 2. **3 predicates involve coordinates** - sample_location, site_location (plus is_part_of for nested sites)
 3. **3 predicates involve agents** - registrant, responsibility (SamplingEvent), responsibility (MaterialSampleCuration)
 4. **2 predicates share names** - responsibility, has_context_category (different subjects)
 5. **Different domains use different subsets** - Same schema, different instantiations
+
+> **Note on `is_part_of`:** The schema also defines `is_part_of` (SamplingSite → SamplingSite) for nested site hierarchies (e.g., "Trench 5" is_part_of "Çatalhöyük"). This is excluded from the "14 predicates" count as it represents site containment rather than sample description, and is not commonly used in PQG data.
 
 **Next steps:**
 - [EXAMPLES_BY_DOMAIN.md](./EXAMPLES_BY_DOMAIN.md) - See these predicates in real-world examples

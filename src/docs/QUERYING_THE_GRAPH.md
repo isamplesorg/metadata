@@ -30,7 +30,7 @@ CREATE TABLE pqg (
     s INTEGER,                      -- Subject row_id (for edges)
     p TEXT,                         -- Predicate (for edges)
     o INTEGER[],                    -- Array of object row_ids (for edges)
-    n TEXT,                         -- Node value (for simple nodes)
+    n TEXT,                         -- Named graph / source identifier (e.g., 'OPENCONTEXT', 'SESAR')
     -- Plus entity-specific columns (label, description, etc.)
 );
 ```
@@ -461,13 +461,13 @@ LIMIT 100;
 ### Hierarchical Queries (Parent-Child Samples)
 
 ```sql
--- Find child samples and their parents
+-- Find child samples and their parents via SampleRelation
+-- Note: SampleRelation has 'relationship' (type) and 'target' (PID) fields
 SELECT
     child.pid AS child_id,
     child.label AS child_label,
-    relation.relationship_type,
-    parent.pid AS parent_id,
-    parent.label AS parent_label
+    relation.relationship AS relationship_type,
+    relation.target AS parent_pid
 FROM pqg AS child
 -- Child → SampleRelation edge
 JOIN pqg AS edge1
@@ -476,15 +476,29 @@ JOIN pqg AS edge1
 JOIN pqg AS relation
     ON relation.row_id = ANY(edge1.o)
     AND relation.otype = 'SampleRelation'
--- SampleRelation → Parent edge
-JOIN pqg AS edge2
-    ON edge2.s = relation.row_id
-    AND edge2.p = 'related_sample'  -- Assuming this predicate exists
+WHERE child.otype = 'MaterialSampleRecord'
+  AND relation.relationship = 'isPartOf'
+LIMIT 1000;
+
+-- To resolve the parent sample details, join on PID:
+SELECT
+    child.pid AS child_id,
+    child.label AS child_label,
+    relation.relationship AS relationship_type,
+    parent.pid AS parent_id,
+    parent.label AS parent_label
+FROM pqg AS child
+JOIN pqg AS edge1
+    ON edge1.s = child.row_id
+    AND edge1.p = 'related_resource'
+JOIN pqg AS relation
+    ON relation.row_id = ANY(edge1.o)
+    AND relation.otype = 'SampleRelation'
 JOIN pqg AS parent
-    ON parent.row_id = ANY(edge2.o)
+    ON parent.pid = relation.target
     AND parent.otype = 'MaterialSampleRecord'
 WHERE child.otype = 'MaterialSampleRecord'
-  AND relation.relationship_type = 'isPartOf'
+  AND relation.relationship = 'isPartOf'
 LIMIT 1000;
 ```
 
@@ -532,10 +546,14 @@ LIMIT 100;
 ```sql
 -- Create indexes for common join patterns
 CREATE INDEX idx_row_id ON pqg(row_id);
-CREATE INDEX idx_edge_s ON pqg(s) WHERE otype = '_edge_';
-CREATE INDEX idx_edge_p ON pqg(p) WHERE otype = '_edge_';
+CREATE INDEX idx_edge_s ON pqg(s);
+CREATE INDEX idx_edge_p ON pqg(p);
 CREATE INDEX idx_otype ON pqg(otype);
-CREATE INDEX idx_pid ON pqg(pid) WHERE otype != '_edge_';
+CREATE INDEX idx_pid ON pqg(pid);
+
+-- Note: DuckDB does not support partial indexes (WHERE clause in CREATE INDEX).
+-- For PostgreSQL, you can use partial indexes:
+-- CREATE INDEX idx_edge_s ON pqg(s) WHERE otype = '_edge_';
 ```
 
 ### Filter Early
@@ -633,7 +651,7 @@ SELECT
     coords.longitude,
     coords.elevation,
     site.label AS site_name,
-    agent.label AS collector
+    agent.name AS collector
 FROM pqg AS sample
 -- Material
 LEFT JOIN pqg AS mat_edge ON mat_edge.s = sample.row_id AND mat_edge.p = 'has_material_category'
@@ -732,14 +750,14 @@ LIMIT 1000;
 ```sql
 -- Samples by collection year (if date data available)
 SELECT
-    EXTRACT(YEAR FROM event.event_date) AS collection_year,
+    EXTRACT(YEAR FROM event.result_time) AS collection_year,
     COUNT(DISTINCT sample.pid) AS sample_count
 FROM pqg AS sample
 JOIN pqg AS edge ON edge.s = sample.row_id AND edge.p = 'produced_by'
 JOIN pqg AS event ON event.row_id = ANY(edge.o)
 WHERE sample.otype = 'MaterialSampleRecord'
   AND event.otype = 'SamplingEvent'
-  AND event.event_date IS NOT NULL
+  AND event.result_time IS NOT NULL
 GROUP BY collection_year
 ORDER BY collection_year;
 ```
