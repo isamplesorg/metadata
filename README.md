@@ -83,10 +83,10 @@ Note that this project uses a modified version of the LinkML `docgen` tool and t
 ### Convert YAML schema to JSON schema
 
 ```bash
-gen-json-schema -t PhysicalSampleRecord --not-closed src/schemas/isamples_core.yaml > isamples_core.schema.json
+gen-json-schema -t MaterialSampleRecord --not-closed src/schemas/isamples_core.yaml > isamples_core.schema.json
 ```
 
-The `-t PhysicalSampleRecord` option makes the "PhysicalSampleRecord" class the top-level class in the JSON schema.
+The `-t MaterialSampleRecord` option makes the "MaterialSampleRecord" class the top-level class in the JSON schema.
 
 ### Generate JSON-LD context
 
