@@ -18,13 +18,6 @@ metadata/
 ├── src/
 │   └── schemas/           # LinkML schema definitions
 │       └── isamples_core.yaml
-├── background/            # Diagrams and information about existing models
-│   ├── DataCite/
-│   ├── ESS-DIVE/
-│   ├── GEOME-TDWG/
-│   ├── GeoScience/
-│   ├── ODM-CUAHSI/
-│   └── OpenContext-Archae-anthro/
 ├── examples/              # Example metadata documents from different systems
 │   ├── APItesting/
 │   ├── GEOME/
