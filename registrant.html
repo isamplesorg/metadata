@@ -658,7 +658,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td><a href="./MaterialSampleRecord.html">MaterialSampleRecord</a></td>
-<td>This is a data object that is a digital representation of a material sample, and thus shares the same identifier as the physical object. It provides descriptive properties for any iSamples material sample, URI for the metadata record is same as URI for material sample– digital object is considered twin of physical object, a representation. IGSN is recommended. Must be a URI that can be dereferenced on the web.</td>
+<td>This is a data object that is a digital representation of a material sample; this digital object is identified by the pid property, which plays the same role as the ‘<span class="citation" data-cites="id">@id</span>’ in schema.org metadata. The sample_identifier property contains the identifier of the physical object that the MaterialSampleRecord is about. IGSN is recommended for sample identifiers. The sample_identifier is expected to be a URI that can be dereferenced on the web; one of the representations accessible through this dereferencing is expected to be this iSamples MaterialSampleRecord, but other content types may be offered via content negotiation or other mechanisms.</td>
 </tr>
 </tbody>
 </table>
