@@ -1,6 +1,8 @@
 ---
 id: https://w3id.org/isample/schema/2.0
+
 name: MaterialSampleRecord
+
 title: Schema for documenting material samples
 description: |
   SMR 2022-10-07. Schema for iSamples sample registry integration. Updated from 0.2 by synchronizing the vocabulary enumerations, change
@@ -12,7 +14,8 @@ description: |
   up formatting, put hard return in text bodies.  Update schema URI to dereference with w3id. SMR 2024-09-13 add last_modified_time
   as property of MaterialSampleRecord. DV 2025-02-07. Modifications after discussion on iSamples tech.  Change IdentifierObject to 
   IdentifiedConcept, change identifier property labels to 'pid' add geo location directly to SamplingEvent, add has_context_category 
-  to SamplingEvent, change keywords values to IdentifiedConcept.
+  to SamplingEvent, change keywords values to IdentifiedConcept. make version 2.0
+
 license: https://creativecommons.org/publicdomain/zero/1.0/
 version: "20250207"
 prefixes:
