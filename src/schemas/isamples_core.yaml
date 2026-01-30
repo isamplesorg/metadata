@@ -3,17 +3,20 @@ id: https://w3id.org/isample/schema/1.0
 name: materialSample
 title: Schema for documenting material samples
 description: |
+  RY 2026-01-29. Schema/PQG alignment: (1) Mark produced_by, has_context_category, has_material_category,
+  has_sample_object_type as recommended on MaterialSampleRecord to reflect practical usage; (2) Add pid slot
+  to GeospatialCoordLocation and SampleRelation for consistent entity identification in PQG implementations.
   DV 2025-02-07. Modifications after discussion on iSamples tech. Add geo directly to SamplingEvent, add has_context_category to SamplingEvent.
   SMR 2022-10-07. Schema for iSamples sample registry integration. Updated from 0.2 by synchronizing the vocabulary enumerations, change
   'id' to '@id' and 'schema' to '$schema'.  Schema name is iSamplesSchemaCore1.0.json. Target JSON schema version is
   https://json-schema.org/draft/2019-09/schema.  SMR 2023-03-17. Move authorized_by into SamplingEvent, change
   keywords to list of Keyword objects with string, uri, scheme and scheme URI. Reorder elements in slot list. Update
   scheme URI to 1.0 2023-06-13 SMR add project property on SamplingEvent, with text or URI value. 2024-01-17 SMR run
-  linkml-lint from current linkml version before rebuilding JSON schema.  2024-04-19. DV ran yaml linter on the file to clean 
+  linkml-lint from current linkml version before rebuilding JSON schema.  2024-04-19. DV ran yaml linter on the file to clean
   up formatting, put hard return in text bodies.  Update schema URI to dereference with w3id. SMR 2024-09-13 add last_modified_time
   as property of MaterialSampleRecord.
 license: https://creativecommons.org/publicdomain/zero/1.0/
-version: "20250207"
+version: "20260129"
 prefixes:
   linkml: https://w3id.org/linkml/
   isam: https://w3id.org/isample/schema/1.0/
@@ -67,6 +70,14 @@ classes:
         required: true
       last_modified_time:
         required: true
+      produced_by:
+        recommended: true
+      has_context_category:
+        recommended: true
+      has_material_category:
+        recommended: true
+      has_sample_object_type:
+        recommended: true
 
   Agent:
     description: >
@@ -114,6 +125,7 @@ classes:
       area. Elevation is specified as a string that should include the measure, units of measure, and the
       vertical reference system, e.g. 'above mean sea level', 'below ground surface', 'below sea floor'...
     slots:
+      - pid
       - elevation
       - latitude
       - longitude
@@ -137,6 +149,7 @@ classes:
     description: >
       Semantic link to other samples or related resources.
     slots:
+      - pid
       - description
       - label
       - relationship

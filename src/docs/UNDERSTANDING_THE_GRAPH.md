@@ -70,13 +70,13 @@ These are the **node types** in the iSamples graph. Each node has an `otype` fie
 - `description` - Detailed description
 - `sample_identifier` - Canonical sample ID
 
-**Strongly Recommended relationships** (for meaningful interoperability):
+**Recommended relationships** (marked `recommended: true` in schema for interoperability):
 - Should have `produced_by` → SamplingEvent (provenance)
 - Should have `has_material_category` → IdentifiedConcept (what it's made of)
 - Should have `has_context_category` → IdentifiedConcept (domain context)
 - Should have `has_sample_object_type` → IdentifiedConcept (physical form)
 
-> **Note:** The LinkML schema only requires `pid`, `label`, and `last_modified_time` as mandatory fields. The relationships above are strongly recommended for cross-domain interoperability but not technically required by the schema.
+> **Schema Alignment (2026-01-29):** The LinkML schema requires `pid`, `label`, and `last_modified_time` as mandatory fields. The relationships above are marked `recommended: true` in the schema for cross-domain interoperability. Additionally, `pid` has been added to `GeospatialCoordLocation` and `SampleRelation` for consistent entity identification.
 
 **Example:**
 ```yaml
