@@ -9,29 +9,53 @@ format:
       - styles.scss
 
 website:
-  title: "iSamples Model"
-  page-footer:
-    left: >
-        © Copyright 2020, iSamples Project.
-
-        This material is based upon work supported by the National Science Foundation under Grant Numbers
-        [2004839](https://nsf.gov/awardsearch/showAward?AWD_ID=2004839),
-        [2004562](https://nsf.gov/awardsearch/showAward?AWD_ID=2004562),
-        [2004642](https://nsf.gov/awardsearch/showAward?AWD_ID=2004642),
-        and [2004815](https://nsf.gov/awardsearch/showAward?AWD_ID=2004815).
-        Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the [National Science Foundation](https://nsf.gov/).
-  repo-url: "https://github.com/isamplesorg/metadata"
-  repo-actions: [edit, issue]
-  sidebar:
-    style: "docked"
-    search: true
-    tools:
-      - icon: table
-        href: https://hyde.cyverse.org/isamples_central/ui/
+  title: "iSamples"
+  favicon: https://isamples.org/assets/isamplesfavicon.ico
+  navbar:
+    logo: https://isamples.org/assets/isampleslogopetal.png
+    left:
+      - href: https://isamples.org/
+        text: Home
+      - href: https://isamples.org/tutorials/progressive_globe.html
+        text: Interactive Explorer
+      - text: How to Use
+        href: https://isamples.org/how-to-use.html
+      - text: About
+        href: https://isamples.org/about.html
+      - text: "Architecture & Vocabularies"
+        menu:
+          - text: Overview
+            href: https://isamples.org/design/index.html
+          - text: Requirements
+            href: https://isamples.org/design/requirements.html
+          - text: Metadata Model
+            href: index.html
+          - text: Vocabularies
+            href: https://isamples.org/models/index.html
+      - text: "Research & Resources"
+        href: https://isamples.org/pubs.html
+    right:
       - icon: github
         href: https://github.com/isamplesorg
       - icon: slack
         href: https://isamples.slack.com/
+  sidebar:
+    style: "docked"
+    search: true
+  repo-url: "https://github.com/isamplesorg/metadata"
+  repo-actions: [edit, issue]
+  page-footer:
+    left: >
+      © Copyright 2020-2026, iSamples Project. Based on work
+      under National Science Foundation (NSF) Grant Numbers
+      [2004839](https://nsf.gov/awardsearch/showAward?AWD_ID=2004839),
+      [2004562](https://nsf.gov/awardsearch/showAward?AWD_ID=2004562),
+      [2004642](https://nsf.gov/awardsearch/showAward?AWD_ID=2004642), and
+      [2004815](https://nsf.gov/awardsearch/showAward?AWD_ID=2004815).
+    right: >
+      Opinions, findings, and conclusions or recommendations expressed in
+      this material are those of the authors and do not necessarily reflect
+      the views of the [NSF](https://nsf.gov/).
 
 metadata-files:
   - _model.yml
