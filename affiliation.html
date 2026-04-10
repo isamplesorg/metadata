@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>affiliation – iSamples Model</title>
+<title>affiliation – iSamples</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,6 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./https://isamples.org/assets/isamplesfavicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,13 +73,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-ed20e031201a2f52d49632ac7658f477.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c8046207b7fad71f2d7e9f420a0753b2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-491917aa1ba9f3770f84513e5ee484e9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -104,10 +105,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="https://isamples.org/assets/isampleslogopetal.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">iSamples</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://isamples.org/"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://isamples.org/tutorials/progressive_globe.html"> 
+<span class="menu-text">Interactive Explorer</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://isamples.org/how-to-use.html"> 
+<span class="menu-text">How to Use</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://isamples.org/about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-architecture--vocabularies" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Architecture &amp; Vocabularies</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-architecture--vocabularies">    
+        <li>
+    <a class="dropdown-item" href="https://isamples.org/design/index.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://isamples.org/design/requirements.html">
+ <span class="dropdown-text">Requirements</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./index.html">
+ <span class="dropdown-text">Metadata Model</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://isamples.org/models/index.html">
+ <span class="dropdown-text">Vocabularies</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://isamples.org/pubs.html"> 
+<span class="menu-text">Research &amp; Resources</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/isamplesorg"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://isamples.slack.com/"> <i class="bi bi-slack" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -123,19 +201,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">iSamples Model</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://hyde.cyverse.org/isamples_central/ui/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-table"></i></a>
-    <a href="https://github.com/isamplesorg" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-    <a href="https://isamples.slack.com/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-slack"></i></a>
-</div>
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -627,7 +695,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">January 30, 2026</p>
+      <p class="date-modified">April 10, 2026</p>
     </div>
   </div>
     
@@ -1121,14 +1189,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© Copyright 2020, iSamples Project. This material is based upon work supported by the National Science Foundation under Grant Numbers <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004839">2004839</a>, <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004562">2004562</a>, <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004642">2004642</a>, and <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004815">2004815</a>. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the <a href="https://nsf.gov/">National Science Foundation</a>.</p>
+<p>© Copyright 2020-2026, iSamples Project. Based on work under National Science Foundation (NSF) Grant Numbers <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004839">2004839</a>, <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004562">2004562</a>, <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004642">2004642</a>, and <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=2004815">2004815</a>.</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     <div class="toc-actions"><ul><li><a href="https://github.com/isamplesorg/metadata/edit/main/affiliation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/isamplesorg/metadata/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
-      &nbsp;
-    </div>
+<p>Opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the <a href="https://nsf.gov/">NSF</a>.</p>
+</div>
   </div>
 </footer>
 
