@@ -675,7 +675,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>SMR 2022-10-07. Schema for iSamples sample registry integration. Updated from 0.2 by synchronizing the vocabulary enumerations, change ‘id’ to ‘<span class="citation" data-cites="id">@id</span>’ and ‘schema’ to ‘$schema’. Schema name is iSamplesSchemaCore1.0.json. Target JSON schema version is https://json-schema.org/draft/2019-09/schema. SMR 2023-03-17. Move authorized_by into SamplingEvent, change keywords to list of Keyword objects with string, uri, scheme and scheme URI. Reorder elements in slot list. Update scheme URI to 1.0 2023-06-13 SMR add project property on SamplingEvent, with text or URI value. 2024-01-17 SMR run linkml-lint from current linkml version before rebuilding JSON schema. 2024-04-19. DV ran yaml linter on the file to clean up formatting, put hard return in text bodies. Update schema URI to dereference with w3id. SMR 2024-09-13 add last_modified_time as property of MaterialSampleRecord. DV 2025-02-07. Modifications after discussion on iSamples tech. Change IdentifierObject to IdentifiedConcept, change identifier property labels to ‘pid’ add geo location directly to SamplingEvent, add has_context_category to SamplingEvent, change keywords values to IdentifiedConcept. make version 2.0</p>
 <p>URI: https://w3id.org/isample/schema/2.0 Name: MaterialSampleRecord</p>
 <section id="how-this-schema-is-organized" class="level2">
 <h2 class="anchored" data-anchor-id="how-this-schema-is-organized">How this schema is organized</h2>
@@ -1150,6 +1149,25 @@ classDiagram
 <section id="subsets" class="level2">
 <h2 class="anchored" data-anchor-id="subsets">Subsets</h2>
 <p>No subsets are defined.</p>
+</section>
+<section id="revision-history" class="level2">
+<h2 class="anchored" data-anchor-id="revision-history">Revision history</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schema changelog
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>SMR 2022-10-07. Schema for iSamples sample registry integration. Updated from 0.2 by synchronizing the vocabulary enumerations, change ‘id’ to ‘<span class="citation" data-cites="id">@id</span>’ and ‘schema’ to ‘$schema’. Schema name is iSamplesSchemaCore1.0.json. Target JSON schema version is https://json-schema.org/draft/2019-09/schema. SMR 2023-03-17. Move authorized_by into SamplingEvent, change keywords to list of Keyword objects with string, uri, scheme and scheme URI. Reorder elements in slot list. Update scheme URI to 1.0 2023-06-13 SMR add project property on SamplingEvent, with text or URI value. 2024-01-17 SMR run linkml-lint from current linkml version before rebuilding JSON schema. 2024-04-19. DV ran yaml linter on the file to clean up formatting, put hard return in text bodies. Update schema URI to dereference with w3id. SMR 2024-09-13 add last_modified_time as property of MaterialSampleRecord. DV 2025-02-07. Modifications after discussion on iSamples tech. Change IdentifierObject to IdentifiedConcept, change identifier property labels to ‘pid’ add geo location directly to SamplingEvent, add has_context_category to SamplingEvent, change keywords values to IdentifiedConcept. make version 2.0</p>
+</div>
+</div>
+</div>
 
 
 </section>
