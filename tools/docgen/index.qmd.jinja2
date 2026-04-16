@@ -4,8 +4,6 @@ subtitle: Schema documentation generated from linkml sources.
 date-modified: {{ gen.timestamp }}
 ---
 
-{{ schema.description }}
-
 URI: {{ schema.id }}
 Name: {{ schema.name }}
 
@@ -126,3 +124,11 @@ No enumerations are defined.
 {% else %}
 No subsets are defined.
 {% endif %}
+
+## Revision history
+
+::: {.callout-note collapse="true"}
+## Schema changelog
+
+{{ schema.description }}
+:::
